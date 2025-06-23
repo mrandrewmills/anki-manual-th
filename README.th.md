@@ -32,3 +32,21 @@
 หากคุณส่ง PR ที่เปลี่ยนแปลงหรือเอาหัวข้อออก กรุณาเพิ่มสมอแบบซ่อนไว้ เพื่อให้ลิงก์เดิมยังใช้งานได้
 
 ตัวอย่าง: หากต้องการเปลี่ยนหัวข้อ "Clocks" เป็น "Timers" ให้แทนที่:
+```
+## Clocks
+```
+ด้วย:
+```
+## Timers
+<a id="Clocks"></a>
+```
+
+### การลบหน้า
+
+หากคุณส่ง PR ที่ลบหน้าใดหน้าหนึ่งออกจากคู่มือหรือ FAQ โดยสิ้นเชิง:
+
+1. ลบ "บท" นั้นออกจาก [SUMMARY](src/SUMMARY.md) ของคู่มือ [หรือ FAQ: [SUMMARY](../../../faqs/blob/main/src/SUMMARY.md)]
+
+2. พิจารณาว่าควรเปลี่ยนเส้นทาง (redirect) ไปยังตำแหน่งใหม่ของเอกสาร หรือปล่อยให้เกิด [ข้อผิดพลาด 404](https://docs.ankiweb.net/404.html) หากควรเปลี่ยนเส้นทาง ให้เพิ่มรายการในส่วน `[output.html.redirect]` ของ [book.toml](book.toml) ในคู่มือ [หรือ FAQ: [book.toml](../../../faqs/blob/main/book.toml)]
+   * ตัวอย่าง: `"old-page-name.html" = "new-page-name.html"`
+   * ดูเพิ่มเติมได้จาก [เอกสาร mdBook](https://rust-lang.github.io/mdBook/format/configuration/renderers.html#outputhtmlredirect)
