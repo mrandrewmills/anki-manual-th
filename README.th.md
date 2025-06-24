@@ -8,7 +8,7 @@
 
 ## การมีส่วนร่วม
 
-ยินดีต้อนรับการมีส่วนร่วม! กรุณาดูที่ [issue tracker](https://github.com/ankitects/anki-manual/issues) เพื่อดูงานที่คุณสามารถช่วยได้ หากต้องการดูรายละเอียดเกี่ยวกับการพัฒนาในเครื่อง โปรดดูที่ [CONTRIBUTING](CONTRIBUTING.md)
+ยินดีต้อนรับการมีส่วนร่วม! กรุณาดูที่ [issue tracker](https://github.com/ankitects/anki-manual/issues) เพื่อดูงานที่คุณสามารถช่วยได้ หากต้องการดูรายละเอียดเกี่ยวกับการพัฒนาในเครื่อง โปรดดูที่ [CONTRIBUTING](CONTRIBUTING.th.md)
 
 หากไม่ระบุไว้เป็นอย่างอื่น คำขอดึง (pull request) ใด ๆ ที่คุณส่งเข้ามา จะอยู่ภายใต้ [สัญญาอนุญาต CC BY-SA 4](https://creativecommons.org/licenses/by-sa/)
 
