@@ -1,55 +1,55 @@
-# Anki Manual
+# คู่มือของ Anki
 
-This repository contains the source of [Anki's user manual](https://docs.ankiweb.net).
+ที่เก็บนี้มีซอร์สของ [คู่มือการใช้งาน Anki](https://docs.ankiweb.net)
 
-## License 
+## ใบอนุญาต
 
-This manual is licensed under the [CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/).
+คู่มือนี้อยู่ภายใต้ [สัญญาอนุญาต CC BY-SA 4](https://creativecommons.org/licenses/by-sa/4.0/)
 
-## Contributing
+## การมีส่วนร่วม
 
-Contributions are welcome! Please see the [issue tracker](https://github.com/ankitects/anki-manual/issues) for things you can start working on. For details on local development, see [CONTRIBUTING](CONTRIBUTING.md).
+ยินดีต้อนรับการมีส่วนร่วม! กรุณาดูที่ [issue tracker](https://github.com/ankitects/anki-manual/issues) เพื่อดูงานที่คุณสามารถช่วยได้ หากต้องการดูรายละเอียดเกี่ยวกับการพัฒนาในเครื่อง โปรดดูที่ [CONTRIBUTING](CONTRIBUTING.md)
 
-Unless stated otherwise, any pull requests you
-submit will be licensed under the [CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/).
+หากไม่ระบุไว้เป็นอย่างอื่น คำขอดึง (pull request) ใด ๆ ที่คุณส่งเข้ามา จะอยู่ภายใต้ [สัญญาอนุญาต CC BY-SA 4](https://creativecommons.org/licenses/by-sa/)
 
-## Style Guidelines
+## แนวทางการเขียน
 
-In 2024, we began efforts to standardize the styles used throughout the documentation. You will probably find that following conventions are not consistently applied in the manual, but these are the rules we are using going forward. If you are submitting edits or updates, please follow these guidelines, and you are welcome to update other text to fit these guidelines as well. 
+ในปี 2024 เราได้เริ่มต้นความพยายามในการกำหนดรูปแบบที่ใช้ในเอกสารให้เป็นมาตรฐาน คุณอาจพบว่าคู่มือฉบับปัจจุบันยังไม่สอดคล้องกับแนวทางเหล่านี้ทั้งหมด แต่เราจะยึดแนวทางเหล่านี้ในการเขียนต่อไป หากคุณกำลังส่งการแก้ไขหรืออัปเดต โปรดปฏิบัติตามแนวทางเหล่านี้ และคุณสามารถปรับเนื้อหาเดิมให้สอดคล้องกับแนวทางนี้ได้เช่นกัน
 
-- Use double quotes, `"`, instead of single quotes, `'`.
-- For emphasis, such as when defining a word, use italics, `_`.
-- Also use italics when referring to a word itself rather than what it means, e.g. "To search for either _dog_ or _cat_, use `dog or cat`".
-- When referring to UI elements, use bold formatting, `**`.
-- When referring to keyboard buttons, wrap them with `<kbd></kbd>`.
-- Use code formatting for example inputs by wrapping them with backticks, `` ` ``.
+- ใช้เครื่องหมายคำพูดแบบคู่ `"` แทนการใช้แบบเดี่ยว `'`
+- เมื่อต้องการเน้นคำ เช่น การให้คำจำกัดความ ให้ใช้ตัวเอียง `_`
+- ใช้ตัวเอียงเมื่อกล่าวถึงคำศัพท์ในตัวมันเอง เช่น "เพื่อค้นหา _หมา_ หรือ _แมว_ ให้ใช้ `dog or cat`"
+- เมื่ออ้างถึงส่วนต่าง ๆ ของ UI ให้ใช้ตัวหนา `**`
+- เมื่ออ้างถึงปุ่มบนแป้นพิมพ์ ให้ห่อด้วย `<kbd></kbd>`
+- เมื่อยกตัวอย่างคำสั่งหรืออินพุต ให้ห่อด้วย backticks `` ` ``
 
-## Preserving Legacy Links
+## การรักษาลิงก์เก่า
 
-### Removing a section
+### การลบหัวข้อ
 
-We often use anchor links to direct users to the specific section of a page that will be most useful to them. These anchor links are created from section headers, e.g., `https://docs.ankiweb.net/deck-options.html#timers`. 
+เรามักใช้ลิงก์สมอ (anchor links) เพื่อพาผู้ใช้ไปยังหัวข้อเฉพาะในแต่ละหน้า ลิงก์เหล่านี้สร้างจากหัวข้อ เช่น `https://docs.ankiweb.net/deck-options.html#timers`
 
-If you are submitting a PR that changes or deletes a section header, please add a hidden anchor so those legacy anchor links will continue to function correctly. 
+หากคุณส่ง PR ที่เปลี่ยนแปลงหรือเอาหัวข้อออก กรุณาเพิ่มสมอแบบซ่อนไว้ เพื่อให้ลิงก์เดิมยังใช้งานได้
 
-Example: To change the header "Clocks" to "Timers" -- replace: 
+ตัวอย่าง: หากต้องการเปลี่ยนหัวข้อ "Clocks" เป็น "Timers" ให้แทนที่:
+
 ```
 ## Clocks
 ```
-with:
+
+ด้วย:
+
 ```
 ## Timers
 <a id="Clocks"></a>
 ```
 
-### Removing a page
+### การลบหน้า
 
-If you are submitting a PR that results in a page being removed from the manual or FAQ entirely:  
+หากคุณส่ง PR ที่ลบหน้าใดหน้าหนึ่งออกจากคู่มือหรือ FAQ โดยสิ้นเชิง:
 
-1. Remove that "chapter" from the [SUMMARY](src/SUMMARY.md) in the manual [or FAQ: [SUMMARY](../../../faqs/blob/main/src/SUMMARY.md)].
+1. ลบ "บท" นั้นออกจาก [SUMMARY](src/SUMMARY.md) ของคู่มือ [หรือ FAQ: [SUMMARY](../../../faqs/blob/main/src/SUMMARY.md)]
 
-2. Consider whether the link should be redirected to a new location for that documentation, or fail with a [404 error](https://docs.ankiweb.net/404.html). If it should be redirected, add an entry to the `[output.html.redirect]` section of [book.toml](book.toml) in the manual [or FAQ: [book.toml](../../../faqs/blob/main/book.toml)]. 
-   * Example: `"old-page-name.html" = "new-page-name.html"`
-   * See the [mdBook Documentation](https://rust-lang.github.io/mdBook/format/configuration/renderers.html#outputhtmlredirect). 
-
-
+2. พิจารณาว่าควรเปลี่ยนเส้นทาง (redirect) ไปยังตำแหน่งใหม่ของเอกสาร หรือปล่อยให้เกิด [ข้อผิดพลาด 404](https://docs.ankiweb.net/404.html) หากควรเปลี่ยนเส้นทาง ให้เพิ่มรายการในส่วน `[output.html.redirect]` ของ [book.toml](book.toml) ในคู่มือ [หรือ FAQ: [book.toml](../../../faqs/blob/main/book.toml)]
+   - ตัวอย่าง: `"old-page-name.html" = "new-page-name.html"`
+   - ดูเพิ่มเติมได้จาก [เอกสาร mdBook](https://rust-lang.github.io/mdBook/format/configuration/renderers.html#outputhtmlredirect)
