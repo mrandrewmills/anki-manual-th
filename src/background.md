@@ -1,141 +1,55 @@
-# Background
+# พื้นฐาน
 
-<!-- toc -->
+Anki คือโปรแกรมที่ช่วยให้การจดจำข้อมูลเป็นเรื่องง่าย เนื่องจากมีประสิทธิภาพมากกว่าวิธีการเรียนแบบดั้งเดิม คุณจึงสามารถลดเวลาที่ใช้ในการเรียนได้อย่างมาก หรือเรียนรู้ข้อมูลได้มากขึ้นในเวลาเท่าเดิม
 
-Anki is a program which makes remembering things easy. Because it is a
-lot more efficient than traditional study methods, you can either
-greatly decrease your time spent studying, or greatly increase the
-amount you learn.
+ใครก็ตามที่ต้องจดจำข้อมูลในชีวิตประจำวันสามารถได้รับประโยชน์จาก Anki เนื่องจากไม่จำกัดเนื้อหา และรองรับรูปภาพ เสียง วิดีโอ และสัญลักษณ์ทางวิทยาศาสตร์ ความเป็นไปได้จึงไม่มีที่สิ้นสุด ตัวอย่างเช่น:
 
-Anyone who needs to remember things in their daily life can benefit from
-Anki. Since it is content-agnostic and supports images, audio, videos
-and scientific markup, the possibilities are endless. For
-example:
+- เรียนรู้ภาษา
+- เตรียมสอบทางการแพทย์และกฎหมาย
+- จดจำชื่อและใบหน้าผู้คน
+- ทบทวนภูมิศาสตร์
+- ท่องบทกวีที่ยาว
+- แม้กระทั่งฝึกเล่นคอร์ดกีตาร์!
 
-- Learning a language
+มีแนวคิดง่าย ๆ สองประการที่อยู่เบื้องหลัง Anki: **การทดสอบแบบเรียกคืนเชิงรุก (Active Recall)** และ **การเว้นระยะการทบทวน (Spaced Repetition)** แนวคิดเหล่านี้ยังไม่เป็นที่รู้จักในหมู่นักเรียนทั่วไป แม้จะมีการวิจัยทางวิทยาศาสตร์จำนวนมากที่สนับสนุน การเข้าใจหลักการเหล่านี้จะทำให้คุณเรียนรู้ได้อย่างมีประสิทธิภาพมากขึ้น
 
-- Studying for medical and law exams
+## การทดสอบแบบเรียกคืนเชิงรุก
 
-- Memorizing names and faces of people
+_การทดสอบแบบเรียกคืนเชิงรุก_ หมายถึงการถูกตั้งคำถามและพยายามนึกคำตอบ ซึ่งแตกต่างจาก _การเรียนแบบรับรู้_ ที่เราเพียงแค่อ่าน ดู หรือฟัง โดยไม่หยุดคิดว่าเรารู้คำตอบหรือไม่ งานวิจัยแสดงให้เห็นว่า การทดสอบแบบเรียกคืนเชิงรุกช่วยเสริมความจำได้ดีกว่าการเรียนแบบรับรู้ด้วยเหตุผลสองประการ:
 
-- Brushing up on geography
+- การพยายามนึกคำตอบช่วย _เสริมสร้าง_ ความจำ ทำให้มีโอกาสจำได้ในอนาคตมากขึ้น
+- หากเรานึกคำตอบไม่ออก จะทำให้รู้ว่าเราต้องกลับไปทบทวนหรือเรียนรู้เนื้อหานั้นใหม่
 
-- Mastering long poems
+คุณอาจเคยเผชิญกับการทดสอบแบบนี้ในช่วงเรียน โดยไม่รู้ตัว เช่น ครูที่ดีจะให้คุณตอบคำถามหลังอ่านบทความ หรือสอบย่อยประจำสัปดาห์ ไม่ใช่เพียงเพื่อตรวจความเข้าใจ แต่เพื่อเพิ่มโอกาสที่คุณจะจำเนื้อหาได้ในระยะยาว
 
-- Even practising guitar chords!
+วิธีที่ดีในการใช้แนวคิดนี้คือ _การ์ดช่วยจำ (flashcards)_ การ์ดกระดาษแบบดั้งเดิมจะมีคำถามด้านหนึ่งและคำตอบอีกด้านหนึ่ง โดยไม่ดูคำตอบจนกว่าจะนึกออก จะช่วยให้เรียนรู้ได้ดีกว่าการอ่านเฉย ๆ
 
-There are two simple concepts behind Anki: **active recall testing** and
-**spaced repetition**. They are not known to most learners, despite being well-documented in scientific literature.
-Understanding how these concepts work will make you a more effective learner.
+## ใช้หรือจะลืม
 
-## Active Recall Testing
+สมองของเราทำงานอย่างมีประสิทธิภาพ และจะลืมข้อมูลที่ไม่มีประโยชน์อย่างรวดเร็ว คุณอาจจำไม่ได้ว่ากินอะไรเย็นวันจันทร์เมื่อสองสัปดาห์ก่อน เพราะมันไม่สำคัญนัก แต่ถ้าคุณไปทานร้านอาหารที่ยอดเยี่ยมในวันนั้น และบอกเล่าให้คนอื่นฟังตลอดสองสัปดาห์ที่ผ่านมา คุณก็น่าจะยังจำรายละเอียดได้ชัดเจน
 
-_Active recall testing_ means being asked a question and trying to
-remember the answer. This is in contrast to _passive study_, where we
-read, watch, or listen to something without pausing to consider if we
-know the answer. Research has shown that active recall testing is far
-more effective at building strong memories than passive study. There are
-two reasons for this:
+นโยบาย "ใช้หรือจะลืม" ของสมองใช้กับทุกสิ่งที่เราเรียนรู้ หากคุณใช้เวลาช่วงบ่ายเพื่อจำคำศัพท์วิทยาศาสตร์ แล้วไม่แตะต้องมันอีกเลยสองสัปดาห์ คุณอาจลืมเกือบหมด งานวิจัยชี้ว่าเราลืมเนื้อหาที่เรียนไปราว 75% ภายใน 48 ชั่วโมง ฟังดูน่าหดหู่หากคุณต้องเรียนข้อมูลจำนวนมาก!
 
-- The act of recalling something _strengthens_ the memory, increasing
-  the chances we’ll be able to remember it again.
+แต่ทางแก้ก็ง่ายมาก: _ทบทวน_ การทบทวนข้อมูลใหม่จะช่วยลดการหลงลืมได้มาก
 
-- When we're unable to answer a question, it tells us we need to
-  return to the material to review or relearn it.
+ปัญหาคือ การทบทวนแบบเดิมไม่ค่อยสะดวก หากคุณมีการ์ด 30 ใบ ยังพอไล่ดูได้หมด แต่ถ้าเป็น 300 หรือ 3000 ใบ จะควบคุมได้ยากมาก
 
-You have probably encountered active recall testing in your school years
-without even realizing it. When good teachers give you a series of
-questions to answer after reading an article, or make you take weekly
-tests, they are not doing it simply to see if you
-understood the material or not. By testing you, they are increasing the
-chances you will be able to remember the material in the future.
+## การเว้นระยะการทบทวน
 
-A good way to integrate active recall testing into your own studies is
-to use _flashcards_. With traditional paper flashcards, you write a
-question on one side of a card, and the answer on the other side. By not
-turning the card over until you've recalled the answer, you can
-learn things more effectively than passive observation allows.
+"spacing effect" ถูกค้นพบในปี 1885 โดยนักจิตวิทยาชาวเยอรมันชื่อ Hermann Ebbinghaus เขาพบว่าเราจำข้อมูลได้ดีขึ้นเมื่อทบทวนแบบเว้นระยะ แทนที่จะเรียนซ้ำในช่วงเวลาเดียวกัน ตั้งแต่ปี 1930 เป็นต้นมา มีหลายแนวคิดในการประยุกต์ใช้ spacing effect เพื่อพัฒนา _spaced repetition_
 
-## Use It or Lose It
+ในปี 1972 นักวิทยาศาสตร์ชาวเยอรมันชื่อ Sebastian Leitner ได้เผยแพร่วิธีใช้การ์ดกระดาษแบบเว้นระยะ โดยแยกการ์ดใส่กล่องตามระดับความเข้าใจ และย้ายการ์ดระหว่างกล่องตามผลการทดสอบ ช่วยให้ประเมินระดับความเข้าใจได้คร่าว ๆ และกำหนดเวลาทบทวนถัดไปได้ แม้จะไม่แม่นยำหรือเหมาะกับเนื้อหาที่ยากง่ายต่างกัน
 
-Our brains are efficient machines, and they rapidly forget information
-that doesn't seem useful. Chances are that you don't remember what you
-had for dinner on Monday two weeks ago, because this information is not
-usually useful. However, if you went to a fantastic restaurant that day and have spent
-the last two weeks telling people about how great it was,
-you're likely to still remember it in vivid detail.
+พัฒนาการที่สำคัญที่สุดในช่วง 30 ปีที่ผ่านมา มาจากผู้พัฒนา SuperMemo โปรแกรมแฟลชการ์ดเชิงพาณิชย์ที่ใช้ระบบ spaced repetition อย่างจริงจัง SuperMemo คิดค้นระบบที่ติดตามเวลาที่เหมาะสมในการทบทวน และปรับปรุงตามประสิทธิภาพของผู้ใช้
 
-The brain's "use it or lose it" policy applies to everything we learn.
-If you spend an afternoon memorizing some science terms, and then don't
-think about that material for two weeks, you'll probably have forgotten
-most of it. In fact, studies show we forget about 75% of material learned
-within a 48 hour period. This can seem pretty depressing when you need
-to learn a lot of information!
+ในระบบของ SuperMemo ทุกครั้งที่คุณตอบคำถาม คุณจะให้คะแนนว่าคุณจำได้ดีแค่ไหน เช่น ลืมสนิท ผิดเล็กน้อย จำได้ยาก หรือจำได้ง่าย โปรแกรมจะใช้ข้อมูลนี้คำนวณเวลาที่เหมาะสมที่สุดในการทบทวนอีกครั้ง ความจำจะแข็งแรงขึ้นทุกครั้งที่จำได้สำเร็จ ดังนั้นช่วงเวลาระหว่างการทบทวนจะยาวขึ้นเรื่อย ๆ เช่น วันนี้, อีก 3 วัน, 15 วัน, 45 วัน ฯลฯ
 
-However, the solution is simple: _review_. By reviewing newly-learned
-information, we can greatly reduce forgetting.
+นี่คือการปฏิวัติวงการเรียนรู้ เพราะช่วยให้เรียนได้อย่างมีประสิทธิภาพสูงสุด ด้วยความพยายามน้อยที่สุด คำขวัญของ SuperMemo คือ: "ลืมการลืมไปได้เลย"
 
-The only problem is that traditionally, reviewing has not been very practical. If
-you are using paper flashcards, it's easy to flick through all of them
-if you only have 30 of them to review, but as the number grows to 300 or
-3000, it quickly becomes unmanageable.
+## ทำไมต้อง Anki?
 
-## Spaced Repetition
+แม้ SuperMemo จะมีบทบาทสำคัญในวงการนี้ แต่ก็มีข้อจำกัด เช่น โปรแกรมมีบั๊ก ใช้งานยาก รองรับแค่ Windows เป็นซอฟต์แวร์ปิด ผู้ใช้ไม่สามารถแก้ไขหรือดูข้อมูลได้ และแม้จะมีเวอร์ชันเก่าให้ใช้ฟรี ก็ล้าสมัยเกินไป
 
-The _spacing effect_ was reported in 1885 by a German psychologist called Hermann Ebbinghaus. He
-observed that we tend to remember things more effectively, if we spread
-reviews out over time, instead of studying multiple times in one
-session. Since the 1930s, there have been a number of proposals for
-utilizing the spacing effect to improve learning, in what has come to be
-called _spaced repetition_.
+Anki แก้ปัญหาเหล่านี้ มีโปรแกรมให้ใช้ฟรีในหลายแพลตฟอร์ม นักเรียนหรือนักการศึกษาที่มีงบจำกัดก็ใช้ได้ Anki เป็นโอเพนซอร์ส และมีส่วนเสริมมากมายที่พัฒนาโดยผู้ใช้ รองรับหลายระบบ: Windows, macOS, Linux/FreeBSD และอุปกรณ์พกพาบางชนิด และใช้ง่ายกว่า SuperMemo มาก
 
-One example was in 1972, when a German scientist called Sebastian Leitner
-popularized a method of spaced repetition with paper flashcards. By
-separating the paper cards into a series of boxes, and moving the
-cards to a different box on each successful or unsuccessful review, it
-was possible to see at a glance a rough estimate of how well a card was
-known and when it should be reviewed again. This was a great improvement
-over a single box of cards, and it has been widely adopted by
-computerized flashcard software. It is a rather rough approach however,
-as it cannot give you an exact date on which you should review something
-again, and it does not work very well with material of varying
-difficulty.
-
-The biggest developments in the last 30 years have come from the authors
-of SuperMemo, a commercial flashcard program that implements spaced
-repetition. SuperMemo pioneered the concept of a system that keeps track
-of the ideal time to review material and optimizes itself based on the
-performance of the user.
-
-In SuperMemo's spaced repetition system, every time you answer a
-question, you tell the program how well you were able to remember it —
-whether you forgot completely, made a small mistake, remembered with
-trouble, remembered easily, etc. The program uses this feedback to
-decide the optimal time to show you the question again. Because a memory
-gets stronger each time you successfully recall it, the time between
-reviews gets longer and longer — so you may see a question for the first
-time today, then 3 days later, 15 days later, 45 days later, and so on.
-
-This was a revolution in learning, as it meant material could be learned
-and retained with the absolute minimum amount of effort necessary.
-SuperMemo's slogan sums it up: with spaced repetition, you can: "forget
-about forgetting".
-
-## Why Anki?
-
-While there is no denying the huge impact SuperMemo has had on the
-field, it is not without its problems. The program is often criticized
-for being buggy and difficult to navigate. It only runs on Windows
-computers. It is proprietary software, meaning that end-users cannot extend it
-or access the raw data. And while very old versions have been made available
-for free, they are quite limited for modern use.
-
-Anki addresses these issues. There are free clients for Anki available
-on many platforms, so struggling students and teachers with budgetary
-constraints are not left out. Anki is open source, with an already
-flourishing library of add-ons contributed by end-users. It is
-multi-platform, running on Windows, macOS, Linux/FreeBSD, and some
-mobile devices. And it is considerably easier to use than SuperMemo.
-
-Anki's spaced repetition system is based on an older version of the
-SuperMemo algorithm called [SM-2](https://faqs.ankiweb.net/what-spaced-repetition-algorithm). Recently, a new algorithm called [FSRS](https://docs.ankiweb.net/deck-options.html?highlight=FSRS#fsrs) has been integrated as an alternative to the legacy SM-2 algorithm.
+ระบบ spaced repetition ของ Anki ใช้ [อัลกอริทึม SM-2](https://faqs.ankiweb.net/what-spaced-repetition-algorithm) ซึ่งเป็นเวอร์ชันเก่าของ SuperMemo และปัจจุบันมีการเพิ่มอัลกอริทึมใหม่ [FSRS](https://docs.ankiweb.net/deck-options.html?highlight=FSRS#fsrs) เป็นอีกทางเลือกแทน SM-2
