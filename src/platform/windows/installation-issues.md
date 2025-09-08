@@ -1,16 +1,16 @@
-# Windows installation issues
+# ปัญหาการติดตั้ง Windows
 
-Some error messages you may encounter when installing Anki:
+ข้อความแสดงข้อผิดพลาดบางอย่างที่คุณอาจพบเมื่อติดตั้ง Anki:
 
 <!-- toc -->
 
-Please also see [startup issues](./startup-issues.md).
+โปรดดู [ปัญหาการเริ่มต้นระบบ](./startup-issues.md) ด้วย
 
-## "Error opening file for writing"
+## "เกิดข้อผิดพลาดในการเปิดไฟล์เพื่อเขียน"
 
-If closing Anki and your browser does not help, please try restarting your
-computer, then running the installer again.
+หากการปิด Anki และเบราว์เซอร์ของคุณไม่ช่วย โปรดลองรีสตาร์ท
+คอมพิวเตอร์ของคุณ จากนั้นเรียกใช้โปรแกรมติดตั้งอีกครั้ง
 
-## Antivirus issues
+## ปัญหาโปรแกรมป้องกันไวรัส
 
-Antivirus programs may sometimes report a [false positive](https://faqs.ankiweb.net/my-antivirus-program-says-anki-is-infected.html).
+บางครั้งโปรแกรมป้องกันไวรัสอาจรายงาน [ผลบวกลวง](https://faqs.ankiweb.net/my-antivirus-program-says-anki-is-infected.html)

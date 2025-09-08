@@ -1,33 +1,33 @@
-# Windows permission problems
+# ปัญหาการอนุญาตของ Windows
 
 <!-- toc -->
 
-## Permission Problems
+## ปัญหาการอนุญาต
 
-If you receive "access denied" messages, some of Anki's files may be set to read only mode, meaning Anki is not able to write to them.
+หากคุณได้รับข้อความ "ปฏิเสธการเข้าถึง" ไฟล์บางไฟล์ของ Anki อาจถูกตั้งค่าเป็นโหมดอ่านอย่างเดียว ซึ่งหมายความว่า Anki ไม่สามารถเขียนไฟล์เหล่านั้นได้
 
-To fix the problem, you can do the following:
+ในการแก้ไขปัญหา คุณสามารถทำสิ่งต่อไปนี้:
 
-- in the search area of the start bar, type `cmd.exe` and hit <kbd>Enter</kbd>
-- in the window that opens, type the following and hit <kbd>Enter</kbd> to see your username:
+- ในพื้นที่ค้นหาของแถบเริ่มต้น พิมพ์ `cmd.exe` แล้วกด <kbd>Enter</kbd>
+- ในหน้าต่างที่เปิดขึ้น ให้พิมพ์ข้อความต่อไปนี้แล้วกด <kbd>Enter</kbd> เพื่อดูชื่อผู้ใช้ของคุณ:
 
 whoami
 
-- type the following, hitting <kbd>Enter</kbd> after each line, and replacing ____ (and keeping the :F part) with your username from the previous command
+- พิมพ์ข้อความต่อไปนี้ กด <kbd>Enter</kbd> หลังแต่ละบรรทัด และแทนที่ ____ (และคงส่วน :F ไว้) ด้วยชื่อผู้ใช้ของคุณจากคำสั่งก่อนหน้า
 
 cd %APPDATA%
 
 icacls Anki2 /grant ____:F /t
 
-That command should fix the permissions on Anki's data folder, and you should now be able to start the program.
+คำสั่งนั้นควรแก้ไขการอนุญาตในโฟลเดอร์ข้อมูลของ Anki และตอนนี้คุณควรจะสามารถเริ่มโปรแกรมได้
 
-## Antivirus/Firewall/Anti-Malware
+## โปรแกรมป้องกันไวรัส/ไฟร์วอลล์/โปรแกรมป้องกันมัลแวร์
 
-Some users have experienced "permission denied" or "readonly" errors that were caused by security software installed on their machine. You may need to add an exception for Anki, or try temporarily disabling the software to rule it out as the cause. Some users have reported that simply turning off their software did not fix the problem, and they either had to add an exception for Anki or uninstall the software.
+ผู้ใช้บางรายประสบข้อผิดพลาด "ปฏิเสธการอนุญาต" หรือ "อ่านอย่างเดียว" ซึ่งเกิดจากซอฟต์แวร์ความปลอดภัยที่ติดตั้งบนเครื่องของตน คุณอาจต้องเพิ่มข้อยกเว้นสำหรับ Anki หรือลองปิดใช้งานซอฟต์แวร์ชั่วคราวเพื่อตัดออกจากการเป็นสาเหตุ ผู้ใช้บางรายรายงานว่าเพียงแค่ปิดซอฟต์แวร์ของตนก็ไม่สามารถแก้ไขปัญหาได้ และพวกเขาต้องเพิ่มข้อยกเว้นสำหรับ Anki หรือถอนการติดตั้งซอฟต์แวร์
 
-## Debugging Permission Problems
+## การดีบักปัญหาการอนุญาต
 
-If problems persist after you've ruled out Antivirus and related programs, have performed the steps above to fix permissions, and don't use OneDrive, please run the following commands in `cmd.exe`, pressing <kbd>Enter</kbd> after each one.
+หากปัญหายังคงมีอยู่หลังจากที่คุณได้ตัดโปรแกรมป้องกันไวรัสและโปรแกรมที่เกี่ยวข้องออกไปแล้ว ได้ทำตามขั้นตอนข้างต้นเพื่อแก้ไขการอนุญาต และไม่ได้ใช้ OneDrive โปรดเรียกใช้คำสั่งต่อไปนี้ใน `cmd.exe` โดยกด <kbd>Enter</kbd> หลังแต่ละคำสั่ง
 
 whoami
 
@@ -35,4 +35,4 @@ cd %APPDATA%
 
 icacls Anki2 /t
 
-Then please copy & paste or screenshot what you see, and post it to us in a support ticket.
+จากนั้นโปรดคัดลอกและวางหรือจับภาพหน้าจอสิ่งที่คุณเห็น แล้วโพสต์ให้เราในตั๋วสนับสนุน

@@ -1,10 +1,11 @@
 # Linux
 
-## Installing & Upgrading Anki on Linux
+## การติดตั้งและอัปเกรด Anki บน Linux
 
-For instructions on how to install or upgrade Anki on Linux, please see:
-- [Install & Upgrade](installing.md)
+สำหรับคำแนะนำเกี่ยวกับวิธีการติดตั้งหรืออัปเกรด Anki บน Linux โปรดดู:
 
-## Problems
+- [ติดตั้งและอัปเกรด](installing.md)
 
-If you encounter any issues when installing or starting Anki, please see the subsections in the table of contents.
+## ปัญหา
+
+หากคุณพบปัญหาใด ๆ ในระหว่างการติดตั้งหรือเริ่ม Anki โปรดดูหัวข้อย่อยในสารบัญ

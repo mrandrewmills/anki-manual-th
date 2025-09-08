@@ -1,35 +1,35 @@
-# Installing & Upgrading Anki on Linux
+# การติดตั้งและอัปเกรด Anki บน Linux
 
 <!-- toc -->
 
-## Requirements
+## ข้อกำหนด
 
-The packaged version requires a recent 64 bit Intel/AMD Linux with glibc 2.36+, and common
-libraries like libwayland-client and systemd. If you are on a different
-architecture (e.g ARM/AArch64), or a barebones Linux distro, you will not be able to use the
-packaged version, but you may be able to use the [Python wheels](https://betas.ankiweb.net/#via-pypipip)
-instead.
+เวอร์ชันที่จัดทำเป็นแพ็กเกจต้องการ Linux 64 บิตสำหรับ Intel/AMD รุ่นล่าสุดที่มี glibc 2.36+ และไลบรารีทั่วไป
+เช่น libwayland-client และ systemd หากคุณใช้สถาปัตยกรรมอื่น
+(เช่น ARM/AArch64) หรือ Linux distro แบบ barebones คุณจะไม่สามารถใช้เวอร์ชันที่จัดทำเป็นแพ็กเกจได้
+แต่คุณอาจสามารถใช้ [Python wheels](https://betas.ankiweb.net/#via-pypipip)
+แทนได้
 
-Debian and derivatives, such as Ubuntu and [Chromebooks with Linux enabled](https://support.google.com/chromebook/answer/9145439?), please use the following before
-installing:
+สำหรับ Debian และอนุพันธ์ เช่น Ubuntu และ [Chromebooks ที่เปิดใช้งาน Linux](https://support.google.com/chromebook/answer/9145439?) โปรดใช้คำสั่งต่อไปนี้ก่อน
+การติดตั้ง:
 
 ```shell
 sudo apt install libxcb-xinerama0 libxcb-cursor0 libnss3
 ```
 
-If Anki fails to start after installing, you may be [missing other libraries](./missing-libraries.md).
+หาก Anki ไม่สามารถเริ่มทำงานได้หลังจากการติดตั้ง คุณอาจ [ขาดไลบรารีอื่น ๆ](./missing-libraries.md)
 
-If you're on Ubuntu 24.04 and Anki won't start, please see [this thread](https://forums.ankiweb.net/t/issues-running-on-ubuntu-24-04/40974).
+หากคุณใช้ Ubuntu 24.04 และ Anki ไม่เริ่มทำงาน โปรดดู [กระทู้นี้](https://forums.ankiweb.net/t/issues-running-on-ubuntu-24-04/40974)
 
-Anki's build system only supports glibc, so musl-based distros are not currently supported.
+ระบบบิลด์ของ Anki รองรับเฉพาะ glibc ดังนั้น distro ที่ใช้ musl จึงไม่รองรับในขณะนี้
 
-## Installing
+## การติดตั้ง
 
-To install Anki:
+ในการติดตั้ง Anki:
 
-1. Download Anki from <https://apps.ankiweb.net> to your Downloads folder.
-2. If zstd is not already installed on your system, you'll need to install it (e.g `sudo apt install zstd`).
-3. Open a terminal and run the following commands, replacing the filename as appropriate.
+1. ดาวน์โหลด Anki จาก <https://apps.ankiweb.net> ไปยังโฟลเดอร์ดาวน์โหลดของคุณ
+2. หากยังไม่ได้ติดตั้ง zstd บนระบบของคุณ คุณจะต้องติดตั้ง (เช่น `sudo apt install zstd`)
+3. เปิดเทอร์มินัลและเรียกใช้คำสั่งต่อไปนี้ โดยแทนที่ชื่อไฟล์ตามความเหมาะสม
 
 ```shell
 tar xaf Downloads/anki-2XXX-linux-qt6.tar.zst
@@ -37,68 +37,68 @@ cd anki-2XXX-linux-qt6
 sudo ./install.sh
 ```
 
-On some Linux systems, you may need to use `tar xaf --use-compress-program=unzstd`.
+ในบางระบบ Linux คุณอาจต้องใช้ `tar xaf --use-compress-program=unzstd`
 
-4. You can then start Anki by typing `anki` and hitting <kbd>Enter</kbd>. If you encounter
-   any issues, please see the links on the left.
+4. จากนั้นคุณสามารถเริ่ม Anki ได้โดยพิมพ์ `anki` แล้วกด <kbd>Enter</kbd> หากคุณพบ
+   ปัญหาใด ๆ โปรดดูลิงก์ทางด้านซ้าย
 
-## Upgrading
+## การอัปเกรด
 
-If you were running Anki from a .deb/.rpm/etc in the past, please make
-sure to remove the system version before installing the package
-provided here.
+หากคุณเคยใช้ Anki จาก .deb/.rpm/etc มาก่อน โปรดตรวจสอบให้แน่ใจว่า
+ได้ลบเวอร์ชันของระบบออกก่อนที่จะติดตั้งแพ็กเกจ
+ที่ให้ไว้ที่นี่
 
-If you're upgrading from a previous package, simply repeat the
-installation steps to upgrade to the latest version. Your user data
-will be preserved.
+หากคุณกำลังอัปเกรดจากแพ็กเกจก่อนหน้า เพียงทำซ้ำขั้นตอน
+การติดตั้งเพื่ออัปเกรดเป็นเวอร์ชันล่าสุด ข้อมูลผู้ใช้ของคุณ
+จะถูกเก็บรักษาไว้
 
-If you wish to downgrade to a previous version, please make sure you
-[downgrade first](http://changes.ankiweb.net).
+หากคุณต้องการดาวน์เกรดเป็นเวอร์ชันก่อนหน้า โปรดตรวจสอบให้แน่ใจว่าคุณ
+[ดาวน์เกรดก่อน](http://changes.ankiweb.net)
 
-## Add-on Compatibility
+## ความเข้ากันได้ของส่วนเสริม
 
-Some add-ons may not always work with the latest Anki release. If you upgrade to
-the latest Anki version and find an add-on you cannot live without stops working,
-you can download older Anki versions from the [releases page](https://github.com/ankitects/anki/releases).
+ส่วนเสริมบางตัวอาจไม่ทำงานกับ Anki รุ่นล่าสุดเสมอไป หากคุณอัปเกรดเป็น
+Anki เวอร์ชันล่าสุดและพบว่าส่วนเสริมที่คุณขาดไม่ได้หยุดทำงาน
+คุณสามารถดาวน์โหลด Anki เวอร์ชันเก่าได้จาก [หน้าเผยแพร่](https://github.com/ankitects/anki/releases)
 
-## System Qt versions
+## เวอร์ชัน Qt ของระบบ
 
-Anki's launcher uses the official PyQt builds by default. This makes it easier to
-install Anki on distros that don't have the relevant Python/Qt versions, but means that
-you may not have access certain Qt features provided by your Linux distro, such as certain
-Qt themes, support for the FCITX input method, etc.
+ตัวเรียกใช้งานของ Anki ใช้บิลด์ PyQt อย่างเป็นทางการเป็นค่าเริ่มต้น ซึ่งจะทำให้ง่ายต่อการ
+ติดตั้ง Anki บน distro ที่ไม่มีเวอร์ชัน Python/Qt ที่เกี่ยวข้อง แต่หมายความว่า
+คุณอาจไม่สามารถเข้าถึงคุณสมบัติบางอย่างของ Qt ที่ Linux distro ของคุณมีให้ เช่น
+ธีม Qt บางอย่าง การรองรับวิธีการป้อนข้อมูล FCITX เป็นต้น
 
-If your Linux distro provides up-to-date Anki packages, you may find using them easiest.
+หาก Linux distro ของคุณมีแพ็กเกจ Anki ที่ทันสมัย คุณอาจพบว่าการใช้งานนั้นง่ายที่สุด
 
-If it doesn't, advanced users may wish to combine Anki's launcher with their system's Qt version.
-To do this, your system needs to have a Python version Anki supports (soon to be 3.11+),
-and suitable PyQt libraries (6.2+).
+หากไม่มี ผู้ใช้ขั้นสูงอาจต้องการรวมตัวเรียกใช้งานของ Anki เข้ากับเวอร์ชัน Qt ของระบบ
+ในการทำเช่นนี้ ระบบของคุณต้องมีเวอร์ชัน Python ที่ Anki รองรับ (เร็ว ๆ นี้จะเป็น 3.11+)
+และไลบรารี PyQt ที่เหมาะสม (6.2+)
 
-WARNING: This is an experimental feature, and your system's Qt may fix some bugs while
-introducing others.
+คำเตือน: นี่เป็นคุณสมบัติทดลอง และ Qt ของระบบของคุณอาจแก้ไขข้อบกพร่องบางอย่างในขณะที่
+แนะนำข้อบกพร่องอื่น ๆ
 
-1. Install Python and the relevant PyQt packages. On Ubuntu:
+1. ติดตั้ง Python และแพ็กเกจ PyQt ที่เกี่ยวข้อง บน Ubuntu:
 
    > sudo apt install python3-pyqt6.qtwebengine
 
-1. If you previously used the launcher, `rm -rf ~/.local/share/AnkiProgramFiles`.
+1. หากคุณเคยใช้ตัวเรียกใช้งานมาก่อน `rm -rf ~/.local/share/AnkiProgramFiles`
 
-1. Untar the launcher, and cd to its folder.
+1. แตกไฟล์ตัวเรียกใช้งาน และ cd ไปยังโฟลเดอร์ของมัน
 
-1. Run `touch system_qt` to create a system_qt file in that folder.
+1. เรียกใช้ `touch system_qt` เพื่อสร้างไฟล์ system_qt ในโฟลเดอร์นั้น
 
-1. Install Anki via ./anki or ./install.sh. In the list of installed packages,
-   you should not see any mention of PyQt6.
+1. ติดตั้ง Anki ผ่าน ./anki หรือ ./install.sh ในรายการแพ็กเกจที่ติดตั้ง
+   คุณไม่ควรเห็นการกล่าวถึง PyQt6 ใด ๆ
 
-## Problems
+## ปัญหา
 
-If you encounter any issues when installing or starting Anki, please see the
-following pages:
+หากคุณพบปัญหาใด ๆ ในระหว่างการติดตั้งหรือเริ่ม Anki โปรดดู
+หน้าต่อไปนี้:
 
-- [Missing Libraries](missing-libraries.md)
-- [Display Issues](display-issues.md)
-- [Blank Main Window](blank-window.md)
-- [Linux Distro Packages](distro-packages.md)
-- [Incorrect GTK Theme](gtk-theme.md)
+- [ไลบรารีที่ขาดหายไป](missing-libraries.md)
+- [ปัญหาการแสดงผล](display-issues.md)
+- [หน้าต่างหลักว่างเปล่า](blank-window.md)
+- [แพ็คเกจ Linux Distro](distro-packages.md)
+- [ธีม GTK ไม่ถูกต้อง](gtk-theme.md)
 - [Wayland](wayland.md)
-- [Input Methods](input-methods.md)
+- [วิธีการป้อนข้อมูล](input-methods.md)

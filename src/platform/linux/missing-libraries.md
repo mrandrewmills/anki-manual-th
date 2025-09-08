@@ -1,14 +1,14 @@
-# Missing Libraries
+# ไลบรารีที่ขาดหายไป
 
-If Anki fails to start, please run it from a terminal with `anki`. If it says a
-library is missing, please install it and try again.
+หาก Anki ไม่สามารถเริ่มทำงานได้ โปรดเรียกใช้จากเทอร์มินัลด้วย `anki` หากมีข้อความแจ้งว่า
+ไลบรารีหายไป โปรดติดตั้งแล้วลองอีกครั้ง
 
-If it complains about no platform being available, please start Anki with the
-following command line, which should reveal a missing library:
+หากมีข้อความร้องเรียนว่าไม่มีแพลตฟอร์ม โปรดเริ่ม Anki ด้วย
+บรรทัดคำสั่งต่อไปนี้ ซึ่งจะแสดงไลบรารีที่ขาดหายไป:
 
 ```shell
 QT_DEBUG_PLUGINS=1 anki
 ```
 
-After installing the library with apt-get or similar, repeat the process. You
-may need to do this a few times before all required libraries are installed.
+หลังจากติดตั้งไลบรารีด้วย apt-get หรือคล้ายกันแล้ว ให้ทำซ้ำขั้นตอน คุณ
+อาจต้องทำเช่นนี้สองสามครั้งก่อนที่จะติดตั้งไลบรารีที่จำเป็นทั้งหมด

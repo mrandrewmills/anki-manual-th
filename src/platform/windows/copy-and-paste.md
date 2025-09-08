@@ -1,6 +1,6 @@
-# Copy and paste issues
+# ปัญหาการคัดลอกและวาง
 
-If you are experiencing problems with copying and pasting, please check if you
-are running other programs on your computer that monitor the clipboard, such as
-dictionary programs, clipboard managers or clipping tools. The toolkit Anki uses
-can have trouble when such programs are running.
+หากคุณกำลังประสบปัญหาเกี่ยวกับการคัดลอกและวาง โปรดตรวจสอบว่าคุณ
+กำลังใช้โปรแกรมอื่นบนคอมพิวเตอร์ของคุณที่ตรวจสอบคลิปบอร์ด เช่น
+โปรแกรมพจนานุกรม โปรแกรมจัดการคลิปบอร์ด หรือเครื่องมือตัดคลิป ชุดเครื่องมือที่ Anki ใช้
+อาจมีปัญหาเมื่อโปรแกรมดังกล่าวทำงาน

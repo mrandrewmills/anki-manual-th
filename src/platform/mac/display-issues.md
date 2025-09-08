@@ -1,32 +1,32 @@
-# Display Issues on macOS
+# ปัญหาการแสดงผลบน macOS
 
 <!-- toc -->
 
-## Change the Video Driver
+## เปลี่ยนไดรเวอร์วิดีโอ
 
-### Changing the Driver From the Preferences Screen
-If you're experiencing display issues or crashes in Anki 23.10+, you can try
-changing the video driver in the preferences screen by navigating to **Anki →
-Preferences** and then selecting the driver from the dropdown menu. After that it
-is necessary to restart Anki.
+### การเปลี่ยนไดรเวอร์จากหน้าจอการตั้งค่า
+หากคุณกำลังประสบปัญหาการแสดงผลหรือการขัดข้องใน Anki 23.10+ คุณสามารถลอง
+เปลี่ยนไดรเวอร์วิดีโอในหน้าจอการตั้งค่าโดยไปที่ **Anki →
+การตั้งค่า** จากนั้นเลือกไดรเวอร์จากเมนูแบบเลื่อนลง หลังจากนั้น
+จำเป็นต้องรีสตาร์ท Anki
 
-### Changing the Driver From Terminal.app
-Older Anki versions did not provide an option in the preferences, but allowed
-you to adjust the driver by opening Terminal.app, then pasting the following and hit <kbd>Enter</kbd>:
+### การเปลี่ยนไดรเวอร์จาก Terminal.app
+Anki เวอร์ชันเก่าไม่มีตัวเลือกในการตั้งค่า แต่อนุญาตให้
+คุณปรับไดรเวอร์ได้โดยเปิด Terminal.app จากนั้นวางข้อมูลต่อไปนี้แล้วกด <kbd>Enter</kbd>:
 
 ```
 echo software > ~/Library/Application\ Support/Anki2/gldriver6
 ```
 
-It will not print anything. You can then start Anki again.
+มันจะไม่พิมพ์อะไรออกมา จากนั้นคุณสามารถเริ่ม Anki ได้อีกครั้ง
 
-If you wish to switch back to the default, change `software` to `auto`, or
-remove that file.
+หากคุณต้องการเปลี่ยนกลับไปเป็นค่าเริ่มต้น ให้เปลี่ยน `software` เป็น `auto` หรือ
+ลบไฟล์นั้นทิ้ง
 
 ## eGPUs
 
-If you experience blank screens when using an external graphics card on a Mac, you can <kbd>Ctrl</kbd>+click on the Anki app, click **Get Info**, and enable the **prefer eGPU** option.
+หากคุณพบหน้าจอว่างเปล่าเมื่อใช้การ์ดจอภายนอกบน Mac คุณสามารถ <kbd>Ctrl</kbd>+คลิกที่แอป Anki คลิก **รับข้อมูล** และเปิดใช้งานตัวเลือก **ต้องการ eGPU**
 
-## Monitors with Different Resolutions
+## จอภาพที่มีความละเอียดต่างกัน
 
-Please see [this forum post](https://forums.ankiweb.net/t/mac-known-issues-wording-suggestion/7331).
+โปรดดู [โพสต์ในฟอรัมนี้](https://forums.ankiweb.net/t/mac-known-issues-wording-suggestion/7331)
