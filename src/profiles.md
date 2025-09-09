@@ -1,33 +1,21 @@
-# Profiles
+# โปรไฟล์
 
-If more than one person wants to use Anki on your computer, you can set
-up a separate profile for each user. Each user profile has their own
-collection, and own program settings. Add-ons are shared across profiles.
-Profiles are configured by going to the File menu and choosing "Switch Profile".
+หากมีผู้ใช้งาน Anki มากกว่าหนึ่งคนบนคอมพิวเตอร์ของคุณ คุณสามารถตั้งค่าโปรไฟล์แยกสำหรับผู้ใช้แต่ละคนได้ แต่ละโปรไฟล์ผู้ใช้จะมีคอลเลกชันและการตั้งค่าโปรแกรมเป็นของตัวเอง ส่วนเสริม (Add-ons) จะถูกใช้งานร่วมกันในทุกโปรไฟล์
+สามารถกำหนดค่าโปรไฟล์ได้โดยไปที่เมนู File แล้วเลือก "Switch Profile"
 
-**Only a single profile can be synced to an AnkiWeb account.**
-If you have different users on your computer, each user will
-need to set up a separate AnkiWeb account for their profile. If you attempt
-to link two or more profiles to the same AnkiWeb account, you will overwrite
-the data from one profile with the data from the other.
+**หนึ่งโปรไฟล์สามารถซิงค์กับบัญชี AnkiWeb ได้เพียงบัญชีเดียวเท่านั้น**
+หากคุณมีผู้ใช้หลายคนบนคอมพิวเตอร์ของคุณ ผู้ใช้แต่ละคนจะต้องสร้างบัญชี AnkiWeb แยกต่างหากสำหรับโปรไฟล์ของตน หากคุณพยายามเชื่อมโยงสองโปรไฟล์ขึ้นไปกับบัญชี AnkiWeb เดียวกัน ข้อมูลจากโปรไฟล์หนึ่งจะเขียนทับข้อมูลจากอีกโปรไฟล์หนึ่ง
 
-Profiles are primarily intended to be used by different people, and are not
-recommended for splitting up your own content.
-If you have created multiple profiles for yourself, the best option is to
-merge them into a single profile. You can do so by exporting one deck from
-profile A, and then importing it into profile B, repeating for any other decks
-in profile A, until everything is in profile B.
+โปรไฟล์มีไว้สำหรับให้ผู้ใช้หลายคนใช้งานเป็นหลัก และไม่แนะนำให้ใช้เพื่อแบ่งเนื้อหาของคุณเอง
+หากคุณสร้างหลายโปรไฟล์สำหรับตัวเอง ทางเลือกที่ดีที่สุดคือการรวมโปรไฟล์เหล่านั้นให้เป็นโปรไฟล์เดียว คุณสามารถทำได้โดยการส่งออก (export) สำรับไพ่หนึ่งสำรับจากโปรไฟล์ A แล้วนำเข้า (import) ไปยังโปรไฟล์ B ทำซ้ำเช่นนี้กับสำรับไพ่อื่นๆ ในโปรไฟล์ A จนกระทั่งทุกอย่างย้ายไปอยู่ในโปรไฟล์ B
 
-AnkiDroid does not support profiles.
+AnkiDroid ไม่รองรับการใช้งานโปรไฟล์
 
-## Profiles window
+## หน้าต่างโปรไฟล์
 
-From the Profiles window (accessible via File>Switch Profile from the main window), you can:
+จากหน้าต่างโปรไฟล์ (เข้าถึงได้ผ่าน File > Switch Profile จากหน้าต่างหลัก) คุณสามารถ:
 
-- Open / Add / Rename / Delete user profiles.
-- Quit the program.
-- Restore an [automatic backup.](./backups.md)
-- Downgrade your collection, which is necessary if you want to open it with
-  an earlier Anki release. If you skip this step, you may get an error message
-  when opening your collection in an older Anki version, and you will need to
-  return to this version, downgrade, then try again.
+- เปิด / เพิ่ม / เปลี่ยนชื่อ / ลบ โปรไฟล์ผู้ใช้
+- ออกจากโปรแกรม
+- กู้คืน[ข้อมูลสำรองอัตโนมัติ](./backups.md)
+- ดาวน์เกรดคอลเลกชันของคุณ ซึ่งจำเป็นหากคุณต้องการเปิดด้วย Anki เวอร์ชันก่อนหน้า หากคุณข้ามขั้นตอนนี้ คุณอาจได้รับข้อความแสดงข้อผิดพลาดเมื่อเปิดคอลเลกชันของคุณใน Anki เวอร์ชันเก่า และคุณจะต้องกลับไปใช้เวอร์ชันนี้เพื่อดาวน์เกรด แล้วลองอีกครั้ง

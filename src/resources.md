@@ -1,3 +1,3 @@
-# Resources
+# แหล่งข้อมูล
 
-You can find guides, templates, custom schedulers and other resources in [this resource list](https://forums.ankiweb.net/t/collection-of-anki-resources/60044).
+คุณสามารถค้นหาคำแนะนำ เทมเพลต ตัวจัดตารางเวลาแบบกำหนดเอง และแหล่งข้อมูลอื่น ๆ ได้ใน[รายการแหล่งข้อมูลนี้](https://forums.ankiweb.net/t/collection-of-anki-resources/60044)

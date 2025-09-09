@@ -1,67 +1,52 @@
-# Getting help
+# การขอความช่วยเหลือ
 
-## Asking good questions
+## การตั้งคำถามอย่างมีประสิทธิภาพ
 
-With the exception of AnkiMobile, Anki and its support are provided free of
-charge, by people who generously volunteer their time. Please bear this in mind
-when posting - if you are rude and demanding, or have made no effort to solve
-the problem on your own, people are less likely to want to help you.
+ยกเว้น AnkiMobile แล้ว Anki และบริการสนับสนุนอื่น ๆ ล้วนให้บริการฟรีโดยอาสาสมัครผู้เสียสละเวลาของตนเอง โปรดคำนึงถึงข้อนี้เมื่อคุณโพสต์คำถาม — หากคุณหยาบคาย เรียกร้องมากเกินไป หรือไม่ได้พยายามแก้ปัญหาด้วยตนเองเลย ผู้คนก็จะไม่ค่อยอยากช่วยเหลือคุณนัก
 
-Please start by trying to resolve the issue on your own:
+โปรดเริ่มต้นด้วยการพยายามแก้ไขปัญหาด้วยตัวเอง:
 
-- Read the [getting started](./getting-started.md) section
-  of the manual, and check out the intro videos.
-- If you've encountered a bug, please follow [these steps](./troubleshooting.md).
-- Use the search button on this page to search frequently asked questions.
-- Use the search button in the manual.
-- Use the search button on the forums.
-- Google the issue.
+- อ่านส่วน [เริ่มต้นใช้งาน](./getting-started.md) ของคู่มือ และดูวิดีโอแนะนำ
+- หากคุณพบข้อผิดพลาด โปรดทำตาม [ขั้นตอนเหล่านี้](./troubleshooting.md)
+- ใช้ปุ่มค้นหาในหน้านี้เพื่อค้นหาคำถามที่พบบ่อย
+- ใช้ปุ่มค้นหาในคู่มือ
+- ใช้ปุ่มค้นหาในฟอรัม
+- ค้นหาปัญหาใน Google
 
-If you have tried the above and are still stuck, it's time to ask for help.
-When writing a post, please explain the problem you are having clearly, and in detail.
+หากคุณได้ลองทำตามข้างต้นแล้วและยังคงติดอยู่ ก็ถึงเวลาขอความช่วยเหลือ เมื่อเขียนโพสต์ โปรดอธิบายปัญหาที่คุณกำลังประสบอยู่ให้ชัดเจนและละเอียด
 
-Please avoid vague questions like:
+โปรดหลีกเลี่ยงคำถามคลุมเครือ เช่น:
 
-> "My Anki doesn't work, what should I do?"
+> "Anki ของฉันไม่ทำงาน ฉันควรทำอย่างไร?"
 
-Instead, please provide as much detail as you can. For example:
+แต่โปรดให้รายละเอียดให้มากที่สุดเท่าที่จะทำได้ ตัวอย่างเช่น:
 
-> "When I double-click on the Anki icon, an error message pops up. I tried
-> searching for the error on Google, but couldn't find anything useful. I have
-> copied and pasted the error message to the bottom of my post. I followed the
-> steps on the "When problems occur" page, but the error message does not go
-> away. What should I do?"
+> "เมื่อฉันดับเบิลคลิกที่ไอคอน Anki ข้อความแสดงข้อผิดพลาดจะปรากฏขึ้น ฉันพยายามค้นหาข้อผิดพลาดใน Google แต่ไม่พบสิ่งที่เป็นประโยชน์ ฉันได้คัดลอกและวางข้อความแสดงข้อผิดพลาดไว้ที่ด้านล่างของโพสต์ ฉันทำตามขั้นตอนในหน้า 'เมื่อเกิดปัญหา' แล้ว แต่ข้อความแสดงข้อผิดพลาดไม่หายไป ฉันควรทำอย่างไร?"
 
-This is a much better question. It tells us:
+นี่เป็นคำถามที่ดีกว่ามาก มันบอกเราว่า:
 
-- What you have tried.
-- What steps you are taking when the problem happens.
-- What problems/errors you are getting when things go wrong.
+- คุณได้ลองทำอะไรไปแล้ว
+- คุณกำลังทำตามขั้นตอนใดเมื่อเกิดปัญหา
+- คุณกำลังได้รับปัญหา/ข้อผิดพลาดอะไรเมื่อสิ่งต่างๆ ผิดพลาด
 
-Knowing these things makes it much easier to answer your question.
+การรู้สิ่งเหล่านี้ทำให้การตอบคำถามของคุณง่ายขึ้นมาก
 
-The user forums use a different login to AnkiWeb, so please create an
-account there if it's your first time.
+ฟอรัมผู้ใช้ใช้การเข้าสู่ระบบที่แตกต่างจาก AnkiWeb ดังนั้นโปรดสร้างบัญชีที่นั่นหากเป็นครั้งแรกของคุณ
 
-## Anki Desktop (the computer version) and AnkiWeb
+## Anki Desktop (เวอร์ชันคอมพิวเตอร์) และ AnkiWeb
 
-After reading the above section, please post on the
-[user forums](https://forums.ankiweb.net) for assistance.
+หลังจากอ่านส่วนข้างต้นแล้ว โปรดโพสต์ใน [ฟอรัมผู้ใช้](https://forums.ankiweb.net) เพื่อขอความช่วยเหลือ
 
-The user forums use a different login to AnkiWeb, so please create an
-account there if it's your first time.
+ฟอรัมผู้ใช้ใช้การเข้าสู่ระบบที่แตกต่างจาก AnkiWeb ดังนั้นโปรดสร้างบัญชีที่นั่นหากเป็นครั้งแรกของคุณ
 
-## AnkiDroid (Android devices)
+## AnkiDroid (อุปกรณ์ Android)
 
-Please see [AnkiDroid's support page](https://docs.ankidroid.org/help.html).
+โปรดดู [หน้าสนับสนุนของ AnkiDroid](https://docs.ankidroid.org/help.html)
 
 ## AnkiMobile (iPhone/iPad)
 
-Please see [AnkiMobile's support page](https://docs.ankimobile.net/support.html).
+โปรดดู [หน้าสนับสนุนของ AnkiMobile](https://docs.ankimobile.net/support.html)
 
-## Private questions
+## คำถามส่วนตัว
 
-For security reports and business enquiries, you can post a private ticket
-[here](https://anki.tenderapp.com/discussions/private). If you have a question
-about Anki, AnkiWeb or AnkiDroid, please use the [user forums](https://forums.ankiweb.net)
-instead.
+สำหรับการรายงานความปลอดภัยและการสอบถามทางธุรกิจ คุณสามารถส่งตั๋วส่วนตัวได้ [ที่นี่](https://anki.tenderapp.com/discussions/private) หากคุณมีคำถามเกี่ยวกับ Anki, AnkiWeb หรือ AnkiDroid โปรดใช้ [ฟอรัมผู้ใช้](https://forums.ankiweb.net) แทน

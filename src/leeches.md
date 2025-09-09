@@ -1,55 +1,25 @@
-# Leeches
+# Leech
 
 <!-- toc -->
 
-Leeches are cards that you keep forgetting. Because they require so
-many reviews, they take up a lot more of your time, compared to other cards.
+Leeches คือการ์ดที่คุณมักจะลืม เพราะต้องทบทวนบ่อยครั้ง ทำให้ใช้เวลาของคุณมากกว่าการ์ดอื่นๆ มาก
 
-Anki can help you identify leeches. Each time a review card "lapses" (is 
-failed while it is in review mode), a counter increases. When this counter
-reaches 8, Anki tags the note as a leech and suspends the card. The 
-threshold, and whether to suspend or not, can be adjusted in the
-[deck options](deck-options.md).
+Anki สามารถช่วยคุณระบุ Leech ได้ ทุกครั้งที่การ์ดทบทวน "ล้มเหลว" (สอบตกในโหมดทบทวน) ตัวนับจะเพิ่มขึ้น เมื่อตัวนับนี้ถึง 8 Anki จะแท็กโน้ตนั้นว่าเป็น Leech และระงับการ์ด เกณฑ์และว่าจะระงับหรือไม่ สามารถปรับได้ใน [ตัวเลือกสำรับ](deck-options.md)
 
-If you keep failing that card, Anki will continue to alert you about the 
-leech periodically. These warnings occur at half the initial leech 
-threshold. For example, if you set the warning at 8 lapses, future 
-warnings will happen every 4 lapses (at 12, 16, and so on).
+หากคุณยังคงสอบตกการ์ดนั้น Anki จะแจ้งเตือนคุณเกี่ยวกับ Leech เป็นระยะๆ คำเตือนเหล่านี้จะเกิดขึ้นที่ครึ่งหนึ่งของเกณฑ์ Leech เริ่มต้น ตัวอย่างเช่น หากคุณตั้งค่าคำเตือนที่ 8 ครั้งที่ล้มเหลว คำเตือนในอนาคตจะเกิดขึ้นทุกๆ 4 ครั้งที่ล้มเหลว (ที่ 12, 16 เป็นต้น)
 
-Once a leech is found, there are several ways to handle it.
+เมื่อพบ Leech แล้ว มีหลายวิธีในการจัดการกับมัน
 
-## Editing
+## การแก้ไข
 
-The most efficient method to deal with leeches is to change how the
-information is presented. Maybe your cards have too much information, or 
-you’re trying to memorize something without fully understanding it. Often, 
-it helps to follow the [20 rules of formulating 
-knowledge](https://supermemo.guru/wiki/20_rules_of_knowledge_formulation),
-proposed by Dr Piotr Wozniak, the creator of SuperMemo. Some cards can 
-benefit from a mnemonic. Even some well-written cards may need a boost in 
-coherence, e.g. by adding cards for related concepts. However, it takes a 
-lot of experience to know how to formulate the material properly, break it 
-down into smallest possible components, and use mnemonic techniques.
+วิธีที่มีประสิทธิภาพที่สุดในการจัดการกับ Leech คือการเปลี่ยนวิธีการนำเสนอข้อมูล บางทีการ์ดของคุณอาจมีข้อมูลมากเกินไป หรือคุณกำลังพยายามจดจำบางสิ่งโดยไม่เข้าใจอย่างถ่องแท้ บ่อยครั้ง การปฏิบัติตาม [20 กฎของการกำหนดความรู้](https://supermemo.guru/wiki/20_rules_of_knowledge_formulation) ที่เสนอโดย Dr. Piotr Wozniak ผู้สร้าง SuperMemo จะช่วยได้ การ์ดบางใบอาจได้รับประโยชน์จากการใช้เทคนิคช่วยจำ แม้แต่การ์ดที่เขียนมาอย่างดีก็อาจต้องการการปรับปรุงความสอดคล้อง เช่น โดยการเพิ่มการ์ดสำหรับแนวคิดที่เกี่ยวข้อง อย่างไรก็ตาม ต้องใช้ประสบการณ์มากในการรู้วิธีการกำหนดเนื้อหาอย่างเหมาะสม แบ่งย่อยเป็นส่วนประกอบที่เล็กที่สุดเท่าที่จะเป็นไปได้ และใช้เทคนิคช่วยจำ
 
-## Deleting
+## การลบ
 
-If the material you’re struggling with isn't important enough to justify 
-the time spent, you can simply delete the card. By selectively deleting
-difficult and obscure items, you can spend more time learning other 
-material, making studying more enjoyable. If you think the card might be 
-useful for future reference, you can leave it suspended.
+หากเนื้อหาที่คุณกำลังประสบปัญหาไม่สำคัญพอที่จะคุ้มค่ากับเวลาที่ใช้ไป คุณสามารถลบการ์ดนั้นได้ง่ายๆ โดยการลบรายการที่ยากและคลุมเครือออกไป คุณสามารถใช้เวลาเรียนรู้เนื้อหาอื่นๆ ได้มากขึ้น ทำให้การเรียนสนุกขึ้น หากคุณคิดว่าการ์ดนั้นอาจมีประโยชน์สำหรับการอ้างอิงในอนาคต คุณสามารถปล่อยให้มันถูกระงับไว้ได้
 
-## Waiting
+## การรอ
 
-Some leeches are caused by "interference". For example, an English
-learner may have recently learned the words "disappoint" and "disappear".
-As they look similar, the learner may find themselves confusing the two
-when trying to answer. In such situations, it’s often helpful to
-concentrate on one idea at a time. Once that idea is firmly ingrained in 
-your mind, you can then start learning the other idea. So, in these
-situations, you might want to leave one of the words suspended until you
-have learned the other one well, and then unsuspend it.
+Leech บางตัวเกิดจาก "การรบกวน" ตัวอย่างเช่น ผู้เรียนภาษาอังกฤษอาจเพิ่งเรียนรู้คำว่า "disappoint" และ "disappear" เนื่องจากดูคล้ายกัน ผู้เรียนอาจสับสนระหว่างสองคำนี้เมื่อพยายามตอบ ในสถานการณ์เช่นนี้ มักจะเป็นประโยชน์ที่จะมุ่งเน้นไปที่แนวคิดเดียวในแต่ละครั้ง เมื่อแนวคิดนั้นฝังแน่นในใจของคุณแล้ว คุณก็สามารถเริ่มเรียนรู้แนวคิดอื่นได้ ดังนั้น ในสถานการณ์เหล่านี้ คุณอาจต้องการปล่อยให้คำใดคำหนึ่งถูกระงับไว้จนกว่าคุณจะเรียนรู้อีกคำหนึ่งได้ดี แล้วจึงยกเลิกการระงับ
 
-For a more detailed discussion, you can refer to the article "[Dealing 
-with Leeches](https://controlaltbackspace.org/leech/)", written by Soren 
-Bjornstad.
+สำหรับการอภิปรายโดยละเอียดเพิ่มเติม คุณสามารถอ้างอิงบทความ "[การจัดการกับ Leeches](https://controlaltbackspace.org/leech/)" ที่เขียนโดย Soren Bjornstad

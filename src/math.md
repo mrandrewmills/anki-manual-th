@@ -1,58 +1,46 @@
-# Math and Symbols
+# คณิตศาสตร์และสัญลักษณ์
 
 <!-- toc -->
 
 ## MathJax
 
-[MathJax](https://www.mathjax.org) is a modern, browser-based
-typesetting system, useful for mathematical and chemical equations. It
-does not require the installation of any extra software, so it is easy
-to use, and it is recommended for most users.
+[MathJax](https://www.mathjax.org) คือระบบเรียงพิมพ์ที่ทันสมัยและทำงานบนเบราว์เซอร์ เหมาะสำหรับสมการทางคณิตศาสตร์และเคมี ไม่จำเป็นต้องติดตั้งซอฟต์ต์แวร์เพิ่มเติมใดๆ จึงใช้งานง่าย และแนะนำสำหรับผู้ใช้ส่วนใหญ่
 
-MathJax is supported out of the box on Anki 2.1+, AnkiMobile, and
-AnkiDroid 2.9+.
+MathJax ได้รับการสนับสนุนใน Anki 2.1+, AnkiMobile และ AnkiDroid 2.9+ โดยไม่ต้องตั้งค่าใดๆ เพิ่มเติม
 
-To try it out:
+วิธีทดลองใช้:
 
-1. Type the following in a field:
+1.  พิมพ์ข้อความต่อไปนี้ลงในช่องข้อมูล:
 
-       \sqrt{x}
+        \sqrt{x}
 
-2. Select the text you just typed.
+2.  เลือกข้อความที่คุณเพิ่งพิมพ์
 
-3. Click the rightmost button in the editor, and choose "MathJax
-   inline" from the menu. Anki will change the text so it reads:
+3.  คลิกปุ่มขวาสุดในเครื่องมือแก้ไข และเลือก "MathJax inline" จากเมนู Anki จะเปลี่ยนข้อความเป็น:
 
-       \(\sqrt{x}\)
+        \(\sqrt{x}\)
 
-4. Click the **Cards...** button. You’ll see a preview of how the
-   equation will appear when the card is reviewed.
+4.  คลิกปุ่ม **การ์ด...** คุณจะเห็นตัวอย่างว่าสมการจะปรากฏอย่างไรเมื่อทบทวนการ์ด
 
     $$
     \sqrt{x}
     $$
-Anki’s MathJax support expects content in TeX format. If you’re not
-familiar with TeX formatting, please see [this cheatsheet](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
-Please note that point 1 does not apply in Anki - Anki uses `\(` and
-`\)` for inline equations, and `\[` and `\]` for display equations.
+การสนับสนุน MathJax ของ Anki คาดหวังเนื้อหาในรูปแบบ TeX หากคุณไม่คุ้นเคยกับรูปแบบ TeX โปรดดู [เอกสารสรุปนี้](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
+โปรดทราบว่าข้อ 1 ใช้ไม่ได้กับ Anki - Anki ใช้ `\(` และ `\)` สำหรับสมการในบรรทัด และ `\[` และ `\]` สำหรับสมการที่แสดงแยกบรรทัด
 
-If you want to use newlines in a MathJax expression, please use
-<kbd>Shift</kbd>+<kbd>Enter</kbd> instead of just <kbd>Enter</kbd>, as a normal newline will prevent
-MathJax from working correctly.
+หากคุณต้องการขึ้นบรรทัดใหม่ในนิพจน์ MathJax โปรดใช้ <kbd>Shift</kbd>+<kbd>Enter</kbd> แทนการใช้ <kbd>Enter</kbd> เพียงอย่างเดียว เนื่องจากการขึ้นบรรทัดใหม่แบบปกติจะทำให้ MathJax ทำงานไม่ถูกต้อง
 
-Anki includes built in support for mhchem for rendering chemical
-equations. Please see the "chemical equations" section and the following
-sections for more information:
+Anki มีการสนับสนุน mhchem ในตัวสำหรับการแสดงสมการเคมี โปรดดูส่วน "สมการเคมี" และส่วนต่อไปนี้สำหรับข้อมูลเพิ่มเติม:
 <https://mhchem.github.io/MathJax-mhchem/>
 
-### Customize MathJax
+### การปรับแต่ง MathJax
 
-Anki's bundled MathJax support is loaded before card content, so if you wish to customise MathJax you'll have to do so in a specific way. An example is provided here.
+การสนับสนุน MathJax ที่มาพร้อมกับ Anki จะถูกโหลดก่อนเนื้อหาของการ์ด ดังนั้นหากคุณต้องการปรับแต่ง MathJax คุณจะต้องทำในลักษณะเฉพาะ มีตัวอย่างให้ไว้ที่นี่
 
 ```javascript
 <script>
 MathJax.config.tex['macros'] = {
-    R: '{\\mathbb {R}}',
+    R: '{\mathbb {R}}',
 };
 if (typeof is_already_run == 'undefined') {
   is_already_run = true
@@ -61,143 +49,99 @@ if (typeof is_already_run == 'undefined') {
 </script>
 ```
 
-Note that Anki has special logic for cloze deletions that might not work if you change the standard delimiters for MathJax equations.
+โปรดทราบว่า Anki มีตรรกะพิเศษสำหรับการลบคำในช่องว่าง (cloze deletions) ซึ่งอาจทำงานไม่ถูกต้องหากคุณเปลี่ยนตัวคั่นมาตรฐานสำหรับสมการ MathJax
 
 ## LaTeX
 
-LaTeX is a powerful typesetting system, useful for entering mathematical
-formulas, chemical formulas, musical notation and so on. Anki provides
-some support for LaTeX, allowing you to enter LaTeX code in your notes.
-When you review a card, Anki will call LaTeX and display the generated
-image instead.
+LaTeX เป็นระบบเรียงพิมพ์ที่มีประสิทธิภาพ เหมาะสำหรับการป้อนสูตรคณิตศาสตร์ สูตรเคมี โน้ตดนตรี และอื่นๆ Anki ให้การสนับสนุน LaTeX บางส่วน ทำให้คุณสามารถป้อนโค้ด LaTeX ในบันทึกของคุณได้ เมื่อคุณทบทวนการ์ด Anki จะเรียกใช้ LaTeX และแสดงภาพที่สร้างขึ้นมาแทน
 
-LaTeX is more work to set up, and images can only be generated with the
-computer version of Anki - though once generated, the images can be
-displayed by mobile clients. Because of the extra complexity LaTeX
-brings, it is only recommended for users that need more features than
-MathJax provides.
+LaTeX ต้องใช้ความพยายามในการตั้งค่ามากกว่า และสามารถสร้างภาพได้เฉพาะกับ Anki เวอร์ชันคอมพิวเตอร์เท่านั้น - แต่เมื่อสร้างแล้ว ภาพเหล่านั้นสามารถแสดงผลบนไคลเอนต์มือถือได้ เนื่องจากความซับซ้อนที่เพิ่มขึ้นของ LaTeX จึงแนะนำให้ใช้สำหรับผู้ใช้ที่ต้องการคุณสมบัติมากกว่าที่ MathJax มีให้เท่านั้น
 
-### Security Warning
+### คำเตือนด้านความปลอดภัย
 
-LaTeX code can contain malicious commands that can read or write non-Anki
-data on your computer. For this reason, recent Anki versions will refuse to
-generate LaTeX images by default.
+โค้ด LaTeX อาจมีคำสั่งที่เป็นอันตรายซึ่งสามารถอ่านหรือเขียนข้อมูลที่ไม่ใช่ของ Anki บนคอมพิวเตอร์ของคุณได้ ด้วยเหตุนี้ Anki เวอร์ชันล่าสุดจะปฏิเสธการสร้างภาพ LaTeX โดยค่าเริ่มต้น
 
-If you wish to use LaTeX on your own cards, you will need to enable the **Generate LaTeX images** option in the preferences screen.
+หากคุณต้องการใช้ LaTeX บนการ์ดของคุณเอง คุณจะต้องเปิดใช้งานตัวเลือก **สร้างภาพ LaTeX** ในหน้าจอการตั้งค่า
 
-**We strongly recommend you do not enable this option if you use shared decks, or think
-you will import shared decks in the future, as you are potentially giving any shared
-deck author access to your computer**.
+**เราขอแนะนำอย่างยิ่งว่าอย่าเปิดใช้งานตัวเลือกนี้หากคุณใช้สำรับที่แชร์ร่วมกัน หรือคิดว่าจะนำเข้าสำรับที่แชร์ร่วมกันในอนาคต เนื่องจากคุณอาจกำลังให้สิทธิ์ผู้สร้างสำรับที่แชร์เข้าถึงคอมพิวเตอร์ของคุณได้**
 
-You do not need to enable this option for shared decks. If a shared deck author has
-correctly generated all the images prior to them sharing the deck, the images should
-already be available.
+คุณไม่จำเป็นต้องเปิดใช้งานตัวเลือกนี้สำหรับสำรับที่แชร์ หากผู้สร้างสำรับที่แชร์ได้สร้างภาพทั้งหมดอย่างถูกต้องก่อนที่จะแชร์สำรับ ภาพเหล่านั้นควรจะพร้อมใช้งานอยู่แล้ว
 
-### Assumed Knowledge
+### ความรู้ที่ควรมี
 
-Anki’s LaTeX support is not turn-key: it is assumed that you know how to
-use LaTeX already, and that you have it installed. If you have no
-experience with LaTeX, please consult one of the many guides available
-on the internet. If you are having trouble with markup, please ask on a
-LaTeX forum.
+การสนับสนุน LaTeX ของ Anki ไม่ใช่แบบสำเร็จรูป: สันนิษฐานว่าคุณรู้วิธีใช้ LaTeX อยู่แล้ว และคุณได้ติดตั้งมันแล้ว หากคุณไม่มีประสบการณ์กับ LaTeX โปรดศึกษาจากคู่มือมากมายที่มีอยู่บนอินเทอร์เน็ต หากคุณมีปัญหากับมาร์กอัป โปรดสอบถามในฟอรัม LaTeX
 
-To install LaTeX, on Windows use MiKTeX; on macOS use MacTeX, and on Linux
-use your distro’s package manager. Dvipng must also be installed.
+ในการติดตั้ง LaTeX บน Windows ให้ใช้ MiKTeX; บน macOS ให้ใช้ MacTeX และบน Linux ให้ใช้ตัวจัดการแพ็คเกจของดิสโทรของคุณ ต้องติดตั้ง Dvipng ด้วย
 
-On Windows, go to Settings in MikTeX’s maintenance window, and make sure
-"Install missing packages on the fly" is set to "Always", not to "Ask me
-first". If you continue to have difficulties, one user reported that
-running Anki as an administrator until all the packages were fetched
-helped.
+บน Windows ไปที่การตั้งค่าในหน้าต่างการบำรุงรักษาของ MikTeX และตรวจสอบให้แน่ใจว่า "ติดตั้งแพ็คเกจที่ขาดหายไปทันที" ถูกตั้งค่าเป็น "เสมอ" ไม่ใช่ "ถามฉันก่อน" หากคุณยังคงประสบปัญหา มีผู้ใช้รายหนึ่งรายงานว่าการเรียกใช้ Anki ในฐานะผู้ดูแลระบบจนกว่าจะดึงแพ็คเกจทั้งหมดมาได้ช่วยแก้ปัญหาได้
 
-On macOS, LaTeX has only been tested with MacTeX and BasicTeX. If you use
-BasicTeX, you need to install dvipng separately, with the following
-command:
+บน macOS, LaTeX ได้รับการทดสอบกับ MacTeX และ BasicTeX เท่านั้น หากคุณใช้ BasicTeX คุณต้องติดตั้ง dvipng แยกต่างหากด้วยคำสั่งต่อไปนี้:
 
     sudo tlmgr update --self; sudo tlmgr install dvipng
 
-The command may not be on the path, so you may need to provide the full
-path, e.g /usr/local/texlive/2014basic/bin/x86_64-darwin/tlmgr.
+คำสั่งอาจไม่ได้อยู่ใน path ดังนั้นคุณอาจต้องระบุพาธเต็ม เช่น /usr/local/texlive/2014basic/bin/x86_64-darwin/tlmgr
 
-If you are not using the above LaTeX packages, you will need to use the
-[edit LaTeX](https://ankiweb.net/shared/info/937148547) add-on to specify
-the full path to latex and dvipng.
+หากคุณไม่ได้ใช้แพ็คเกจ LaTeX ข้างต้น คุณจะต้องใช้ส่วนเสริม [edit LaTeX](https://ankiweb.net/shared/info/937148547) เพื่อระบุพาธเต็มไปยัง latex และ dvipng
 
-### Web/Mobile
+### เว็บ/มือถือ
 
-When you review a card with LaTeX on it, Anki will generate an image for
-that LaTeX and place the image in your collection’s media folder for
-future use. The web & mobile clients will display these images if they
-already exist, but can not generate the images on their own.
+เมื่อคุณทบทวนการ์ดที่มี LaTeX อยู่ Anki จะสร้างภาพสำหรับ LaTeX นั้นและวางภาพไว้ในโฟลเดอร์สื่อของคอลเลกชันของคุณเพื่อใช้ในอนาคต ไคลเอนต์เว็บและมือถือจะแสดงภาพเหล่านี้หากมีอยู่แล้ว แต่ไม่สามารถสร้างภาพได้ด้วยตนเอง
 
-To avoid having to review all your cards at least once before you can
-study on the other clients, Anki can generate the images in bulk for
-you. To generate all the images, please go to Tools&gt;Check Media.
-After that, syncing should upload the generated media to AnkiWeb and the
-other clients.
+เพื่อหลีกเลี่ยงการต้องทบทวนการ์ดทั้งหมดของคุณอย่างน้อยหนึ่งครั้งก่อนที่คุณจะสามารถเรียนบนไคลเอนต์อื่นได้ Anki สามารถสร้างภาพทั้งหมดให้คุณได้ หากต้องการสร้างภาพทั้งหมด โปรดไปที่ เครื่องมือ>ตรวจสอบสื่อ หลังจากนั้น การซิงค์ควรจะอัปโหลดสื่อที่สร้างขึ้นไปยัง AnkiWeb และไคลเอนต์อื่นๆ
 
-### Example
+### ตัวอย่าง
 
-The most general way to input LaTeX content is to surround it with
-\[latex\]\[/latex\] tags. There’s a shortcut button for this documented
-in the [editor](editing.md) section.
+วิธีทั่วไปที่สุดในการป้อนเนื้อหา LaTeX คือการล้อมรอบด้วยแท็ก \[latex\]\[/latex\] มีปุ่มลัดสำหรับสิ่งนี้ซึ่งมีเอกสารอยู่ในส่วน [เครื่องมือแก้ไข](editing.md)
 
-\[latex\] tags must be used inside a field - placing them in the card
-template will [cause problems](templates/fields.md).
+แท็ก \[latex\] ต้องใช้ภายในช่องข้อมูล - การวางไว้ในเทมเพลตการ์ดจะ [ทำให้เกิดปัญหา](templates/fields.md)
 
-For example, entering the following on the front of an Anki flashcard:
+ตัวอย่างเช่น การป้อนข้อความต่อไปนี้ที่ด้านหน้าของการ์ด Anki:
 
-    Does [latex]\begin{math}\sum_{k = 1}^{\infty}\frac{1}{k}\end{math}[/latex] converge?
+    Does \[latex\]\begin{math}\sum_{k = 1}^{\infty}\frac{1}{k}\end{math}\[/latex\] converge?
 
-will produce this when the flashcard is viewed:
+จะให้ผลลัพธ์นี้เมื่อดูการ์ด:
 
-![convergence question](math/convergence_question.png)
+![คำถามเรื่องการลู่เข้า](math/convergence_question.png)
 
-The formula in the example above is called a "text formula", because it
-is displayed right within the non-mathematical text. In contrast, the
-following example shows a "displayed formula":
+สูตรในตัวอย่างข้างต้นเรียกว่า "สูตรในบรรทัด" (text formula) เพราะมันแสดงผลอยู่ภายในข้อความที่ไม่ใช่คณิตศาสตร์ ในทางตรงกันข้าม ตัวอย่างต่อไปนี้แสดง "สูตรที่แสดงแยกบรรทัด" (displayed formula):
 
-    Does the sum below converge?
+    ผลรวมด้านล่างนี้ลู่เข้าหรือไม่?
 
-    [latex]\begin{displaymath}\sum_{k = 1}^{\infty}\frac{1}{k}\end{displaymath}[/latex]
+    \[latex\]\begin{displaymath}\sum_{k = 1}^{\infty}\frac{1}{k}\end{displaymath}\[/latex\]
 
-![convergence question 2](math/convergence_question_2.png)
+![คำถามเรื่องการลู่เข้า 2](math/convergence_question_2.png)
 
-"Text formulas" and "display formulas" are the most common type of LaTeX
-expressions, so Anki provides abbreviated versions of them. Expressions
-of the form:
+"สูตรในบรรทัด" และ "สูตรที่แสดงแยกบรรทัด" เป็นนิพจน์ LaTeX ที่พบบ่อยที่สุด ดังนั้น Anki จึงมีเวอร์ชันย่อให้ นิพจน์ในรูปแบบ:
 
-    [latex]\begin{math}...\end{math}[/latex]
+    \[latex\]\begin{math}...\end{math}\[/latex\]
 
-can be shortened to
+สามารถย่อได้เป็น
 
-    [$]...[/$]
+    \[$\]...\[/$\]
 
-and expressions of the form
+และนิพจน์ในรูปแบบ
 
-    [latex]\begin{displaymath}...\end{displaymath}[/latex]
+    \[latex\]\begin{displaymath}...\end{displaymath}\[/latex\]
 
-can be shortened to
+สามารถย่อได้เป็น
 
-    [$$]...[/$$]
+    \[$$\]...\[/$$\]
 
-For example, the two LaTeX snippets shown before are equivalent to
+ตัวอย่างเช่น โค้ด LaTeX สองส่วนที่แสดงก่อนหน้านี้เทียบเท่ากับ
 
-    Does [$]\sum_{k = 1}^{\infty}\frac{1}{k}[/$] converge?
+    Does \[$]\sum_{k = 1}^{\infty}\frac{1}{k}\[/$\] converge?
 
-and
+และ
 
-    Does the sum below converge?
+    ผลรวมด้านล่างนี้ลู่เข้าหรือไม่?
 
-    [$$]\sum_{k = 1}^{\infty}\frac{1}{k}[/$$]
+    \[$$]\sum_{k = 1}^{\infty}\frac{1}{k}\[/$$\]
 
-respectively.
+ตามลำดับ
 
-### Packages
+### แพ็คเกจ
 
-Anki allows you to customize the LaTeX preamble so you can import custom
-packages for chemistry, music and so on. For example, imagine you find
-an example file for chemtex on the internet:
+Anki อนุญาตให้คุณปรับแต่งส่วนหัวของ LaTeX เพื่อให้คุณสามารถนำเข้าแพ็คเกจที่กำหนดเองสำหรับเคมี ดนตรี และอื่นๆ ได้ ตัวอย่างเช่น สมมติว่าคุณพบไฟล์ตัวอย่างสำหรับ chemtex บนอินเทอร์เน็ต:
 
     \documentclass[a4paper,12pt]{report}
     \usepackage{chemtex}
@@ -217,16 +161,9 @@ an example file for chemtex on the internet:
 
     \end{document}
 
-Firstly, follow the documentation of the package and MiKTeX/MacTeX in
-order to install the package. To check the package is working, you’ll
-want to put code like the above into a .latex file and test if you can
-compile it from the command line. Once you’ve confirmed that the package
-is available and working, we can integrate it with Anki.
+ขั้นแรก ทำตามเอกสารประกอบของแพ็คเกจและ MiKTeX/MacTeX เพื่อติดตั้งแพ็คเกจ ในการตรวจสอบว่าแพ็คเกจทำงานได้ คุณจะต้องใส่โค้ดเช่นข้างต้นลงในไฟล์ .latex และทดสอบว่าคุณสามารถคอมไพล์จากบรรทัดคำสั่งได้หรือไม่ เมื่อคุณยืนยันแล้วว่าแพ็คเกจพร้อมใช้งานและทำงานได้ เราสามารถรวมเข้ากับ Anki ได้
 
-To use the package with Anki, click "Add" in the main window, then click
-the note type selection button. Click the "Manage" button, then select
-the note type you plan to use and click "Options". The LaTeX header and
-footer are shown. The header will look something like:
+ในการใช้แพ็คเกจกับ Anki ให้คลิก "เพิ่ม" ในหน้าต่างหลัก จากนั้นคลิกปุ่มเลือกประเภทบันทึก คลิกปุ่ม "จัดการ" จากนั้นเลือกประเภทบันทึกที่คุณวางแผนจะใช้แล้วคลิก "ตัวเลือก" ส่วนหัวและส่วนท้ายของ LaTeX จะปรากฏขึ้น ส่วนหัวจะมีลักษณะดังนี้:
 
     \documentclass[12pt]{article}
     \special{papersize=3in,5in}
@@ -235,8 +172,7 @@ footer are shown. The header will look something like:
     \setlength{\parindent}{0in}
     \begin{document}
 
-To use chemtex, you’d add the usepackage line in the earlier example, so
-it looks like:
+ในการใช้ chemtex คุณจะต้องเพิ่มบรรทัด usepackage ในตัวอย่างก่อนหน้านี้ เพื่อให้มีลักษณะดังนี้:
 
     \documentclass[12pt]{article}
     \special{papersize=3in,5in}
@@ -246,71 +182,45 @@ it looks like:
     \setlength{\parindent}{0in}
     \begin{document}
 
-After that, you should be able to include lines like the following in
-your Anki cards:
+หลังจากนั้น คุณควรจะสามารถใส่บรรทัดเช่นต่อไปนี้ในการ์ด Anki ของคุณได้:
 
-    [latex]\ethene{H}{H$_3$C}{CH$_3$}{Br}[/latex]
+    \[latex\]\ethene{H}{H$_3$C}{CH$_3$}{Br}\[/latex\]
 
-### Template Conflicts
+### ความขัดแย้งของเทมเพลต
 
-As of Anki 2.1.20 / AnkiMobile 2.0.56 / AnkiDroid 2.13, this workaround is no
-longer required, as `{{field}}` text inside fields no longer causes problems. If
-you need to support older versions and want to keep using this syntax, please
-make sure you place the `{{=<% %>=}}` string at the very top of your front and
-back template, as recent Anki versions will not recognize it anywhere but the
-start.
+ตั้งแต่ Anki 2.1.20 / AnkiMobile 2.0.56 / AnkiDroid 2.13 ไม่จำเป็นต้องใช้วิธีแก้ปัญหานี้อีกต่อไป เนื่องจากข้อความ `{{field}}` ภายในช่องข้อมูลไม่ก่อให้เกิดปัญหาอีกต่อไป หากคุณต้องการสนับสนุนเวอร์ชันเก่าและต้องการใช้ไวยากรณ์นี้ต่อไป โปรดตรวจสอบให้แน่ใจว่าคุณวางสตริง `{{=<% %>=}}` ไว้ที่ด้านบนสุดของเทมเพลตด้านหน้าและด้านหลังของคุณ เนื่องจาก Anki เวอร์ชันล่าสุดจะไม่รู้จักมันในที่อื่นนอกจากตอนเริ่มต้น
 
-For older versions:
+สำหรับเวอร์ชันเก่า:
 
-It’s not uncommon for {{ and }} to pop up in LaTeX code when writing
-mathematical equations. To ensure that your LaTeX equations don’t
-conflict with Anki’s field replacements, it’s possible to change the
-separator to something else.
+เป็นเรื่องปกติที่ {{ และ }} จะปรากฏในโค้ด LaTeX เมื่อเขียนสมการทางคณิตศาสตร์ เพื่อให้แน่ใจว่าสมการ LaTeX ของคุณจะไม่ขัดแย้งกับการแทนที่ช่องข้อมูลของ Anki คุณสามารถเปลี่ยนตัวคั่นเป็นอย่างอื่นได้
 
-For example, if you have a template:
+ตัวอย่างเช่น หากคุณมีเทมเพลต:
 
     {{latex field}}
 
-Changing it to the following will make it unlikely that the LaTeX will
-conflict:
+การเปลี่ยนเป็นแบบต่อไปนี้จะทำให้โอกาสที่ LaTeX จะขัดแย้งกันน้อยลง:
 
     {{=<% %>=}}
     <%latex field%>
 
-### Cloze Conflicts
+### ความขัดแย้งของ Cloze
 
-Cloze deletions are terminated with `}}`, which can conflict with a `}}`
-appearing in your LaTeX. To prevent LaTeX from being interpreted as a closing
-cloze marker, you can put a space between any double closing braces that do not
-indicate the end of the cloze, so
+การลบคำในช่องว่าง (Cloze deletions) จะสิ้นสุดด้วย `}}` ซึ่งอาจขัดแย้งกับ `}}` ที่ปรากฏใน LaTeX ของคุณ เพื่อป้องกันไม่ให้ LaTeX ถูกตีความว่าเป็นเครื่องหมายปิดของ cloze คุณสามารถใส่ช่องว่างระหว่างวงเล็บปีกกาปิดสองอันใดๆ ที่ไม่ได้หมายถึงจุดสิ้นสุดของ cloze ดังนั้น
 
-    {{c1::[$]\frac{foo}{\frac{bar}{baz}}[/$] blah blah blah.}}
+    {{c1::\[$\]\frac{foo}{\frac{bar}{baz}}\[/$\] blah blah blah.}}
 
-will not work, but
+จะทำงานไม่ถูกต้อง แต่
 
-    {{c1::[$]\frac{foo}{\frac{bar}{baz} }[/$] blah blah blah.}}
+    {{c1::\[$\]\frac{foo}{\frac{bar}{baz} }\[/$\] blah blah blah.}}
 
-will (and LaTeX ignores spaces in math mode, so your equation will
-render the same). If you want to avoid adding the extra space into the
-rendered text (for example, when you are making Cloze cards for learning
-programming languages), another option is to use a HTML comment when
-editing the card in HTML mode:
+จะทำงานได้ (และ LaTeX จะไม่สนใจช่องว่างในโหมดคณิตศาสตร์ ดังนั้นสมการของคุณจะแสดงผลเหมือนเดิม) หากคุณต้องการหลีกเลี่ยงการเพิ่มช่องว่างพิเศษลงในข้อความที่แสดงผล (ตัวอย่างเช่น เมื่อคุณสร้างการ์ด Cloze สำหรับการเรียนรู้ภาษาโปรแกรม) อีกทางเลือกหนึ่งคือการใช้ความคิดเห็น HTML เมื่อแก้ไขการ์ดในโหมด HTML:
 
-    {{c1::[$]\frac{foo}{\frac{bar}{baz}<!-- -->}[/$] blah blah blah.}}
+    {{c1::\[$\]\frac{foo}{\frac{bar}{baz}<!-- -->}\[/$\] blah blah blah.}}
 
-You may use either workaround if you need to use the `::` character
-sequence within the Cloze-deleted text. The first card generated for the
-following note text will read `[type] in C++ is a type-safe union`:
+คุณสามารถใช้วิธีแก้ปัญหาอย่างใดอย่างหนึ่งได้หากคุณต้องการใช้ลำดับอักขระ `::` ภายในข้อความที่ถูกลบแบบ Cloze การ์ดใบแรกที่สร้างขึ้นสำหรับข้อความบันทึกต่อไปนี้จะอ่านว่า `[type] in C++ is a type-safe union`:
 
     {{c1::std:<!-- -->:variant::~type~}} in C++ is a {{c2::type-safe union}}
 
-### Unsafe Commands
+### คำสั่งที่ไม่ปลอดภัย
 
-Anki prohibits certain commands like \\input or \\def from being used on
-cards or in templates, because allowing them could allow malicious
-shared decks to damage your system. (To be on the safe side, these
-commands are prohibited even in comments, so if you’re getting this
-error but don’t think you’ve used one, please double-check any comments
-you have in your headers, templates, and cards.) If you need to use
-these commands, please add them to a system package and import that
-package as described in the previous section.
+Anki ห้ามใช้คำสั่งบางอย่างเช่น \input หรือ \def บนการ์ดหรือในเทมเพลต เพราะการอนุญาตให้ใช้คำสั่งเหล่านี้อาจทำให้สำรับที่แชร์ที่เป็นอันตรายสามารถทำลายระบบของคุณได้ (เพื่อความปลอดภัย คำสั่งเหล่านี้จะถูกห้ามแม้ในความคิดเห็น ดังนั้นหากคุณได้รับข้อผิดพลาดนี้แต่ไม่คิดว่าคุณได้ใช้คำสั่งใดๆ โปรดตรวจสอบความคิดเห็นใดๆ ที่คุณมีในส่วนหัว เทมเพลต และการ์ดของคุณอีกครั้ง) หากคุณจำเป็นต้องใช้คำสั่งเหล่านี้ โปรดเพิ่มลงในแพ็คเกจระบบและนำเข้าแพ็คเกจนั้นตามที่อธิบายไว้ในส่วนก่อนหน้า

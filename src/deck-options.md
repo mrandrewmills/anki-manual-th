@@ -1,685 +1,510 @@
-# Deck Options
+# ตัวเลือกสำรับ
 
 <!-- toc -->
 
-Deck options primarily control the way Anki schedules cards. It is recommended
-that you spend a few weeks with the defaults to get a feel for how Anki works
-before you start adjusting the options. Please make sure you understand the options
-before changing them, as mistakes can reduce Anki's effectiveness.
+ตัวเลือกสำรับส่วนใหญ่ควบคุมวิธีการจัดตารางการ์ดของ Anki ขอแนะนำให้คุณใช้เวลาสองสามสัปดาห์กับค่าเริ่มต้นเพื่อทำความเข้าใจวิธีการทำงานของ Anki ก่อนที่คุณจะเริ่มปรับตัวเลือก โปรดตรวจสอบให้แน่ใจว่าคุณเข้าใจตัวเลือกต่างๆ ก่อนที่จะเปลี่ยนแปลง เนื่องจากการทำผิดพลาดอาจลดประสิทธิภาพของ Anki ได้
 
-On your computer, do any of the following to open deck options:
+บนคอมพิวเตอร์ของคุณ ให้ทำอย่างใดอย่างหนึ่งต่อไปนี้เพื่อเปิดตัวเลือกสำรับ:
 
-- Click the gear icon on the Decks screen.
-- Select a deck on the Decks screen, and then click **Options**
-  at the bottom of the screen.
-- Click **More > Options** while in review mode.
-- Press <kbd>O</kbd> while in review mode.
+- คลิกไอคอนรูปเฟืองบนหน้าจอสำรับ
+- เลือกสำรับบนหน้าจอสำรับ แล้วคลิก **ตัวเลือก** ที่ด้านล่างของหน้าจอ
+- คลิก **เพิ่มเติม > ตัวเลือก** ขณะอยู่ในโหมดทบทวน
+- กด <kbd>O</kbd> ขณะอยู่ในโหมดทบทวน
 
-Here are some community posts about deck options that have been contributed in the past:
+นี่คือโพสต์ชุมชนบางส่วนเกี่ยวกับตัวเลือกสำรับที่มีส่วนร่วมในอดีต:
 
-- [Deck Options Explained](https://forums.ankiweb.net/t/deck-options-explained/213)
-- [Deck Options in a Mental Map](https://forums.ankiweb.net/t/deck-options-in-a-mental-map/15757)
+- [คำอธิบายตัวเลือกสำรับ](https://forums.ankiweb.net/t/deck-options-explained/213)
+- [ตัวเลือกสำรับในแผนที่ความคิด](https://forums.ankiweb.net/t/deck-options-in-a-mental-map/15757)
 
-## Presets
+## ค่าที่ตั้งไว้ล่วงหน้า
 
-Anki allows you to share options between different decks, to make
-it easier to update options in many decks at once. To do this, options are
-grouped into _presets_. If you change an option in a preset, the change is applied to all decks that use the same preset. All newly created decks use the "Default" preset.
+Anki อนุญาตให้คุณแชร์ตัวเลือกระหว่างสำรับต่างๆ เพื่อให้ง่ายต่อการอัปเดตตัวเลือกในหลายสำรับพร้อมกัน ในการทำเช่นนี้ ตัวเลือกต่างๆ จะถูกจัดกลุ่มเป็น _ค่าที่ตั้งไว้ล่วงหน้า_ หากคุณเปลี่ยนตัวเลือกในค่าที่ตั้งไว้ล่วงหน้า การเปลี่ยนแปลงนั้นจะถูกนำไปใช้กับสำรับทั้งหมดที่ใช้ค่าที่ตั้งไว้ล่วงหน้าเดียวกัน สำรับที่สร้างขึ้นใหม่ทั้งหมดจะใช้ค่าที่ตั้งไว้ล่วงหน้า "ค่าเริ่มต้น"
 
-To change the options in one deck but not other decks, click the
-arrow icon in the top right of the Deck Options window. You can do the following:
+หากต้องการเปลี่ยนตัวเลือกในสำรับเดียวแต่ไม่ใช่สำรับอื่น ให้คลิกไอคอนลูกศรที่มุมบนขวาของหน้าต่างตัวเลือกสำรับ คุณสามารถทำสิ่งต่อไปนี้ได้:
 
-- **Save**: Save all modifications you've made in deck options.
-- **Add Preset**: Add a new preset for this deck, with the default options.
-- **Clone**: Clone your current preset, which is useful if you
-  want to modify some of the options but keep the rest as they are.
-- **Rename**: Change the name of the current preset.
-- **Delete**: Delete the current preset. This will make your next sync
-  a [one-way sync](./syncing.md#conflicts).
-- **Save to All Subdecks**: Like **Save**, but also assigns the selected preset to all
-  subdecks of the currently selected deck.
+- **บันทึก**: บันทึกการแก้ไขทั้งหมดที่คุณทำในตัวเลือกสำรับ
+- **เพิ่มค่าที่ตั้งไว้ล่วงหน้า**: เพิ่มค่าที่ตั้งไว้ล่วงหน้าใหม่สำหรับสำรับนี้ พร้อมตัวเลือกเริ่มต้น
+- **โคลน**: โคลนค่าที่ตั้งไว้ล่วงหน้าปัจจุบันของคุณ ซึ่งมีประโยชน์หากคุณต้องการแก้ไขตัวเลือกบางอย่างแต่คงส่วนที่เหลือไว้ตามเดิม
+- **เปลี่ยนชื่อ**: เปลี่ยนชื่อของค่าที่ตั้งไว้ล่วงหน้าปัจจุบัน
+- **ลบ**: ลบค่าที่ตั้งไว้ล่วงหน้าปัจจุบัน การทำเช่นนี้จะทำให้การซิงค์ครั้งต่อไปของคุณเป็น [การซิงค์ทางเดียว](./syncing.th.md#conflicts)
+- **บันทึกลงในสำรับย่อยทั้งหมด**: เหมือนกับ **บันทึก** แต่ยังกำหนดค่าที่ตั้งไว้ล่วงหน้าที่เลือกให้กับสำรับย่อยทั้งหมดของสำรับที่เลือกในปัจจุบันด้วย
 
-Deck options are not retroactive. For example, if you change an option that
-controls the delay after failing a card, cards that you failed before
-changing this option will still have the old delay, not the new one.
+ตัวเลือกสำรับไม่มีผลย้อนหลัง ตัวอย่างเช่น หากคุณเปลี่ยนตัวเลือกที่ควบคุมการหน่วงเวลาหลังจากทำการ์ดไม่สำเร็จ การ์ดที่คุณทำไม่สำเร็จก่อนที่จะเปลี่ยนตัวเลือกนี้จะยังคงมีการหน่วงเวลาแบบเก่า ไม่ใช่แบบใหม่
 
-## Subdecks
+## สำรับย่อย
 
-If your deck has subdecks, and you wish one or more subdecks to have different settings to the parent decks, you can assign those subdecks to different presets.
-When Anki shows a card, it will check which subdeck the card is in, and use the options
-for that deck. There are two exceptions:
+หากสำรับของคุณมีสำรับย่อย และคุณต้องการให้สำรับย่อยหนึ่งสำรับหรือมากกว่ามีการตั้งค่าที่แตกต่างจากสำรับหลัก คุณสามารถกำหนดสำรับย่อยเหล่านั้นให้กับค่าที่ตั้งไว้ล่วงหน้าที่แตกต่างกันได้
+เมื่อ Anki แสดงการ์ด จะตรวจสอบว่าการ์ดอยู่ในสำรับย่อยใด และใช้ตัวเลือกสำหรับสำรับนั้น มีข้อยกเว้นสองประการ:
 
-- The **New cards/day** and **Maximum reviews/day** [limits](#daily-limits) of a subdeck affect the number of cards that can be gathered from that subdeck. But the total number of cards you see during your study session is controlled by the limits of the deck you select to study.
-- The [display order](#display-order) options are taken from the
-  deck you select to study, not the deck of the current card.
+- **การ์ดใหม่/วัน** และ **การทบทวนสูงสุด/วัน** [ขีดจำกัด](#daily-limits) ของสำรับย่อยส่งผลต่อจำนวนการ์ดที่สามารถรวบรวมได้จากสำรับย่อยนั้น แต่จำนวนการ์ดทั้งหมดที่คุณเห็นระหว่างเซสชันการเรียนของคุณจะถูกควบคุมโดยขีดจำกัดของสำรับที่คุณเลือกเรียน
+- ตัวเลือก [ลำดับการแสดงผล](#display-order) จะนำมาจากสำรับที่คุณเลือกเรียน ไม่ใช่สำรับของการ์ดปัจจุบัน
 
-For example, let's say you have this collection:
+ตัวอย่างเช่น สมมติว่าคุณมีคอลเล็กชันนี้:
 
-    - Deck A (Preset 1)
-      - Deck A::Subdeck B (Preset 2)
+    - สำรับ A (ค่าที่ตั้งไว้ล่วงหน้า 1)
+      - สำรับ A::สำรับย่อย B (ค่าที่ตั้งไว้ล่วงหน้า 2)
 
-Preset 1 and Preset 2 are identical, with two exceptions:
+ค่าที่ตั้งไว้ล่วงหน้า 1 และค่าที่ตั้งไว้ล่วงหน้า 2 เหมือนกันทุกประการ โดยมีข้อยกเว้นสองประการ:
 
-- Preset 1:
-  - **Learning steps**: `1m 10m`
-  - **New/review order**: `Mix with reviews`
-- Preset 2:
-  - **Learning steps**: `20m 2h`
-  - **New/review order**: `Show after reviews`
+- ค่าที่ตั้งไว้ล่วงหน้า 1:
+  - **ขั้นตอนการเรียนรู้**: `1m 10m`
+  - **ลำดับใหม่/ทบทวน**: `ผสมกับการทบทวน`
+- ค่าที่ตั้งไว้ล่วงหน้า 2:
+  - **ขั้นตอนการเรียนรู้**: `20m 2h`
+  - **ลำดับใหม่/ทบทวน**: `แสดงหลังการทบทวน`
 
-If you choose to study Subdeck B:
+หากคุณเลือกเรียนสำรับย่อย B:
 
-- Learning steps for all new cards will be `20m 2h` (Preset 2 applies).
-- All new cards will be shown after reviews (Preset 2 applies).
+- ขั้นตอนการเรียนรู้สำหรับการ์ดใหม่ทั้งหมดจะเป็น `20m 2h` (ใช้ค่าที่ตั้งไว้ล่วงหน้า 2)
+- การ์ดใหม่ทั้งหมดจะแสดงหลังการทบทวน (ใช้ค่าที่ตั้งไว้ล่วงหน้า 2)
 
-If you choose to study Deck A:
+หากคุณเลือกเรียนสำรับ A:
 
-- Learning steps for new cards in Deck A will be `1m 10m` (Preset 1 applies).
-- Learning steps for new cards in Subdeck B will be `20m 2h` (Preset 2 applies).
-- All new cards will be mixed with reviews (Preset 1 applies).
+- ขั้นตอนการเรียนรู้สำหรับการ์ดใหม่ในสำรับ A จะเป็น `1m 10m` (ใช้ค่าที่ตั้งไว้ล่วงหน้า 1)
+- ขั้นตอนการเรียนรู้สำหรับการ์ดใหม่ในสำรับย่อย B จะเป็น `20m 2h` (ใช้ค่าที่ตั้งไว้ล่วงหน้า 2)
+- การ์ดใหม่ทั้งหมดจะผสมกับการทบทวน (ใช้ค่าที่ตั้งไว้ล่วงหน้า 1)
 
-## Daily Limits
+## ขีดจำกัดรายวัน
 
-### New Cards/Day
+### การ์ดใหม่/วัน
 
-This option controls how many new cards can be introduced each day you open the program. If you
-study fewer than the limit, or miss a day, the next day the counts will be back
-to their original setting: you won't be given more cards than your limit allows.
+ตัวเลือกนี้ควบคุมจำนวนการ์ดใหม่ที่สามารถแนะนำได้ในแต่ละวันที่คุณเปิดโปรแกรม หากคุณเรียนน้อยกว่าขีดจำกัด หรือขาดเรียนไปหนึ่งวัน วันถัดไปจำนวนจะกลับไปเป็นการตั้งค่าเดิม: คุณจะไม่ได้รับการ์ดเกินขีดจำกัดที่อนุญาต
 
-When studying a deck that has subdecks inside it, the limits set on each subdeck control the maximum number of cards drawn from that particular deck. The selected deck's limits control the total number of cards that will be shown.
+เมื่อเรียนสำรับที่มีสำรับย่อยอยู่ข้างใน ขีดจำกัดที่ตั้งไว้ในแต่ละสำรับย่อยจะควบคุมจำนวนการ์ดสูงสุดที่ดึงมาจากสำรับนั้นๆ ขีดจำกัดของสำรับที่เลือกจะควบคุมจำนวนการ์ดทั้งหมดที่จะแสดง
 
-For earlier versions, see [this FAQ page](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html).
+สำหรับเวอร์ชันก่อนหน้า โปรดดู [หน้าคำถามที่พบบ่อยนี้](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)
 
-Studying new cards will temporarily increase the number of reviews you need to
-do a day, as newly-learned material needs to be repeated a number of times
-before the delay between repetitions can increase appreciably. If you are
-consistently learning 20 new cards a day, you can expect your daily reviews to
-be roughly about 200 cards/day. You can decrease the reviews required by
-introducing fewer new cards each day until your review burden decreases. More than one Anki user has excitedly studied
-hundreds of new cards over their first few days of using the program, and then has
-become overwhelmed by the reviews required.
+การเรียนการ์ดใหม่จะเพิ่มจำนวนการทบทวนที่คุณต้องทำต่อวันเป็นการชั่วคราว เนื่องจากเนื้อหาที่เรียนรู้ใหม่จำเป็นต้องทำซ้ำหลายครั้งก่อนที่การหน่วงเวลาระหว่างการทำซ้ำจะเพิ่มขึ้นอย่างเห็นได้ชัด หากคุณเรียนการ์ดใหม่ 20 ใบอย่างสม่ำเสมอต่อวัน คุณสามารถคาดหวังว่าการทบทวนรายวันของคุณจะอยู่ที่ประมาณ 200 ใบ/วัน คุณสามารถลดการทบทวนที่ต้องการได้โดยการแนะนำการ์ดใหม่น้อยลงในแต่ละวันจนกว่าภาระการทบทวนของคุณจะลดลง มีผู้ใช้ Anki มากกว่าหนึ่งรายที่เรียนการ์ดใหม่หลายร้อยใบอย่างตื่นเต้นในช่วงสองสามวันแรกที่ใช้โปรแกรม แล้วก็รู้สึกท่วมท้นกับการทบทวนที่ต้องทำ
 
-### Maximum Reviews/Day
+### การทบทวนสูงสุด/วัน
 
-Allows you to set an upper limit on the number of review cards to show each day.
-When this limit is reached, Anki will not show any more review cards for the
-day, even if there are more waiting. If you study consistently, this setting can
-help to smooth out occasional peaks in due card counts, and can save you from a
-heart attack when returning to Anki after taking a week off. When reviews have been
-hidden due to this option, a message will appear in the congratulations screen,
-suggesting you consider increasing the limit if you have time.
+อนุญาตให้คุณตั้งค่าขีดจำกัดสูงสุดสำหรับจำนวนการ์ดทบทวนที่จะแสดงในแต่ละวัน
+เมื่อถึงขีดจำกัดนี้ Anki จะไม่แสดงการ์ดทบทวนอีกในวันนั้น แม้ว่าจะมีรออยู่ก็ตาม หากคุณเรียนอย่างสม่ำเสมอ การตั้งค่านี้สามารถช่วยลดความผันผวนของจำนวนการ์ดที่ต้องทำในบางครั้ง และสามารถช่วยคุณจากอาการหัวใจวายเมื่อกลับมาใช้ Anki หลังจากหยุดไปหนึ่งสัปดาห์ เมื่อการทบทวนถูกซ่อนเนื่องจากตัวเลือกนี้ ข้อความจะปรากฏขึ้นในหน้าจอแสดงความยินดี แนะนำให้คุณพิจารณาเพิ่มขีดจำกัดหากคุณมีเวลา
 
-When studying a deck that has subdecks inside it, the review limit behaves similarly to the new card limit.
+เมื่อเรียนสำรับที่มีสำรับย่อยอยู่ข้างใน ขีดจำกัดการทบทวนจะทำงานคล้ายกับขีดจำกัดการ์ดใหม่
 
-Anki includes any learning cards that have [crossed the day boundary](./preferences.md#scheduler) (interday learning cards) in the review count,
-so those learning cards will be subject to the review limit.
+Anki รวมการ์ดเรียนรู้ใดๆ ที่ [ข้ามขอบเขตของวัน](./preferences.th.md#scheduler) (การ์ดเรียนรู้ระหว่างวัน) ไว้ในจำนวนการทบทวน ดังนั้นการ์ดเรียนรู้เหล่านั้นจะอยู่ภายใต้ขีดจำกัดการทบทวน
 
-### Per-Deck Daily Limits
+### ขีดจำกัดรายวันต่อสำรับ
 
-It is possible to use the same preset for different decks, with customized limits for each of them. This eliminates the need to create cloned presets just for that purpose, and makes it easier to set custom limits on subdecks.
+เป็นไปได้ที่จะใช้ค่าที่ตั้งไว้ล่วงหน้าเดียวกันสำหรับสำรับต่างๆ โดยมีขีดจำกัดที่กำหนดเองสำหรับแต่ละสำรับ ซึ่งช่วยลดความจำเป็นในการสร้างค่าที่ตั้งไว้ล่วงหน้าที่โคลนขึ้นมาเพื่อจุดประสงค์นั้น และทำให้ง่ายต่อการตั้งค่าขีดจำกัดที่กำหนดเองบนสำรับย่อย
 
-Anki provides three options for daily limits:
+Anki มีสามตัวเลือกสำหรับขีดจำกัดรายวัน:
 
-- **Preset**: applies to all the decks using a preset.
-- **This deck**: specific to a particular deck.
-- **Today only**: specific to a particular deck, and temporary.
+- **ค่าที่ตั้งไว้ล่วงหน้า**: ใช้กับสำรับทั้งหมดที่ใช้ค่าที่ตั้งไว้ล่วงหน้า
+- **สำรับนี้**: เฉพาะสำหรับสำรับใดสำรับหนึ่ง
+- **วันนี้เท่านั้น**: เฉพาะสำหรับสำรับใดสำรับหนึ่ง และเป็นแบบชั่วคราว
 
-### New Cards Ignore Review Limit
+### การ์ดใหม่ไม่สนใจขีดจำกัดการทบทวน
 
-By default, the review limit also applies to new cards, and no new cards will be shown when the review limit has been reached. If this option is enabled, new cards will be shown regardless of the review limit.
+โดยค่าเริ่มต้น ขีดจำกัดการทบทวนยังใช้กับการ์ดใหม่ด้วย และจะไม่มีการแสดงการ์ดใหม่เมื่อถึงขีดจำกัดการทบทวนแล้ว หากเปิดใช้งานตัวเลือกนี้ การ์ดใหม่จะแสดงโดยไม่คำนึงถึงขีดจำกัดการทบทวน
 
-If you have a backlog of overdue review cards, it is recommended that you stop introducing new cards until you
-catch up with that backlog. Continuing to introduce new cards when you're already behind can
-make the backlog worse.
+หากคุณมีงานค้างของการ์ดทบทวนที่ค้างชำระ ขอแนะนำให้คุณหยุดแนะนำการ์ดใหม่จนกว่าคุณจะทันกับงานค้างนั้น การแนะนำการ์ดใหม่ต่อไปในขณะที่คุณตามหลังอยู่แล้วอาจทำให้งานค้างแย่ลงได้
 
-### Limits Start From Top
+### ขีดจำกัดเริ่มจากด้านบน
 
-By default, the daily limits of a higher-level deck do not apply if you select one of its subdecks. A parent deck can have a new card limit of 10 cards/day and its subdecks can have a new card limit of 20 cards/day. The limits set on parent deck do not affect the number of new cards you can study from its subdeck.
+โดยค่าเริ่มต้น ขีดจำกัดรายวันของสำรับระดับสูงกว่าจะไม่มีผลหากคุณเลือกสำรับย่อยสำรับใดสำรับหนึ่ง สำรับหลักสามารถมีขีดจำกัดการ์ดใหม่ 10 ใบ/วัน และสำรับย่อยสามารถมีขีดจำกัดการ์ดใหม่ 20 ใบ/วัน ขีดจำกัดที่ตั้งไว้ในสำรับหลักไม่มีผลต่อจำนวนการ์ดใหม่ที่คุณสามารถเรียนได้จากสำรับย่อย
 
-When this option is enabled, the limits set on higher-level decks also apply to their subdecks when a subdeck is selected. In the previous example, you will be able to study only 10 new cards from the subdecks instead of 20 new cards.
+เมื่อเปิดใช้งานตัวเลือกนี้ ขีดจำกัดที่ตั้งไว้ในสำรับระดับสูงกว่าจะมีผลกับสำรับย่อยด้วยเมื่อเลือกสำรับย่อย ในตัวอย่างก่อนหน้านี้ คุณจะสามารถเรียนการ์ดใหม่ได้เพียง 10 ใบจากสำรับย่อยแทนที่จะเป็น 20 ใบ
 
-This option can be useful if you wish to study individual subdecks, while enforcing a total limit on cards all the subdecks.
+ตัวเลือกนี้อาจมีประโยชน์หากคุณต้องการเรียนสำรับย่อยแต่ละสำรับ ในขณะที่บังคับใช้ขีดจำกัดทั้งหมดกับการ์ดทุกสำรับย่อย
 
-## New Cards
+## การ์ดใหม่
 
-The options here only affect new cards and
-[learning cards](getting-started.md#card-states). Once a card
-has graduated (that is, gone through all the learning steps), the options in this section no longer apply to the card.
+ตัวเลือกที่นี่มีผลกับการ์ดใหม่และ [การ์ดเรียนรู้](getting-started.th.md#card-states) เท่านั้น เมื่อการ์ดสำเร็จการศึกษา (นั่นคือ ผ่านขั้นตอนการเรียนรู้ทั้งหมดแล้ว) ตัวเลือกในส่วนนี้จะไม่มีผลกับการ์ดอีกต่อไป
 
-### Learning Steps
+### ขั้นตอนการเรียนรู้
 
-Controls the number of learning repetitions, and the delay
-between them. One or more delays, separated by spaces must be entered.
-Each time you click **Good** during review, the card moves to the next step. Each time you click **Again**, the card goes back to the first step.
+ควบคุมจำนวนการทำซ้ำในการเรียนรู้ และการหน่วงเวลาระหว่างการทำซ้ำ ต้องป้อนการหน่วงเวลาหนึ่งรายการหรือมากกว่า คั่นด้วยช่องว่าง
+ทุกครั้งที่คุณคลิก **ดี** ระหว่างการทบทวน การ์ดจะย้ายไปยังขั้นตอนถัดไป ทุกครั้งที่คุณคลิก **อีกครั้ง** การ์ดจะกลับไปที่ขั้นตอนแรก
 
-For example, let's say that your learning steps are `1m 10m 1d`.
+ตัวอย่างเช่น สมมติว่าขั้นตอนการเรียนรู้ของคุณคือ `1m 10m 1d`
 
-- When you click **Again**, the card goes through the first step, and is shown
-  again 1 minute later.
-- When you click **Good** on a new card or after the 1 minute step, it moves
-  to the next step, and is shown again in 10 minutes.
-- When you click **Good** on a card after the 10 minute step, it is delayed
-  until the next day.
-- When you click **Good** on the card the next day, it graduates and
-  becomes a review card. The card is shown again after the delay configured by the
-  _graduating interval_.
+- เมื่อคุณคลิก **อีกครั้ง** การ์ดจะผ่านขั้นตอนแรก และจะแสดงอีกครั้งในอีก 1 นาทีต่อมา
+- เมื่อคุณคลิก **ดี** บนการ์ดใหม่หรือหลังจากขั้นตอน 1 นาที การ์ดจะย้ายไปยังขั้นตอนถัดไป และจะแสดงอีกครั้งในอีก 10 นาที
+- เมื่อคุณคลิก **ดี** บนการ์ดหลังจากขั้นตอน 10 นาที การ์ดจะถูกหน่วงเวลาจนถึงวันถัดไป
+- เมื่อคุณคลิก **ดี** บนการ์ดในวันถัดไป การ์ดจะสำเร็จการศึกษาและกลายเป็นการ์ดทบทวน การ์ดจะแสดงอีกครั้งหลังจากการหน่วงเวลาที่กำหนดโดย _ช่วงเวลาสำเร็จการศึกษา_
 
-The **Hard** button works differently depending on which step you're on.
+ปุ่ม **ยาก** ทำงานแตกต่างกันไปขึ้นอยู่กับว่าคุณอยู่ในขั้นตอนใด
 
-- When you're on the first step, the **Hard** button shows a delay of `6m`. The `6m` delay is the average of first two steps: `1m` and `10m`.
-  - Exception: When there's only one learning step, the **Hard** button shows a delay 1.5 times that step. This delay is at most 1 day longer than the learning step.
-- When you're on any other step, the **Hard** button repeats that step.
+- เมื่อคุณอยู่ในขั้นตอนแรก ปุ่ม **ยาก** จะแสดงการหน่วงเวลา `6m` การหน่วงเวลา `6m` คือค่าเฉลี่ยของสองขั้นตอนแรก: `1m` และ `10m`
+  - ข้อยกเว้น: เมื่อมีขั้นตอนการเรียนรู้เพียงขั้นตอนเดียว ปุ่ม **ยาก** จะแสดงการหน่วงเวลา 1.5 เท่าของขั้นตอนนี้ การหน่วงเวลานี้จะยาวกว่าขั้นตอนการเรียนรู้ไม่เกิน 1 วัน
+- เมื่อคุณอยู่ในขั้นตอนอื่นใด ปุ่ม **ยาก** จะทำซ้ำขั้นตอนนี้
 
-If there’s nothing else to study, Anki will show learning cards up to 20 minutes
-early by default. To turn this off or change the amount of time to look ahead, see [Preferences](preferences.md).
+หากไม่มีอะไรให้เรียนอีก Anki จะแสดงการ์ดเรียนรู้ล่วงหน้าสูงสุด 20 นาทีโดยค่าเริ่มต้น หากต้องการปิดหรือเปลี่ยนระยะเวลาที่จะมองไปข้างหน้า โปรดดู [การตั้งค่า](preferences.th.md)
 
-#### Day Boundaries
+#### ขอบเขตของวัน
 
-Anki treats small steps and steps that [cross a day boundary](./preferences.md#review) differently.
-With small steps, the cards are shown as soon as the delay has passed,
-in preference to review cards and new cards. This is done so that
-you can answer the card as closely to your requested delay as possible.
-In contrast, if the step crosses a day boundary, the delay is automatically converted to days. For example, if next day starts after 5 hours and the delay is 6 hours, Anki converts the delay to 1 day.
+Anki ปฏิบัติต่อขั้นตอนเล็กๆ และขั้นตอนที่ [ข้ามขอบเขตของวัน](./preferences.th.md#review) แตกต่างกัน
+ด้วยขั้นตอนเล็กๆ การ์ดจะแสดงทันทีที่การหน่วงเวลาผ่านไป โดยให้ความสำคัญกับการ์ดทบทวนและการ์ดใหม่ ซึ่งทำเพื่อให้คุณสามารถตอบการ์ดได้ใกล้เคียงกับการหน่วงเวลาที่คุณร้องขอมากที่สุด
+ในทางตรงกันข้าม หากขั้นตอนข้ามขอบเขตของวัน การหน่วงเวลาจะถูกแปลงเป็นวันโดยอัตโนมัติ ตัวอย่างเช่น หากวันถัดไปเริ่มในอีก 5 ชั่วโมง และการหน่วงเวลาคือ 6 ชั่วโมง Anki จะแปลงการหน่วงเวลาเป็น 1 วัน
 
-### Graduating Interval
+### ช่วงเวลาสำเร็จการศึกษา
 
-The number of days to wait before showing a card again, after the Good button is used on the final learning step. This means that it is the first interval
-after the learning card graduates. Please see the example
-from [earlier in this section](deck-options.md#learning-steps).
+จำนวนวันที่จะรอก่อนที่จะแสดงการ์ดอีกครั้ง หลังจากใช้ปุ่ม ดี ในขั้นตอนการเรียนรู้สุดท้าย ซึ่งหมายความว่านี่คือช่วงเวลาแรกหลังจากที่การ์ดเรียนรู้สำเร็จการศึกษา โปรดดูตัวอย่างจาก [ก่อนหน้านี้ในส่วนนี้](deck-options.th.md#learning-steps)
 
-### Easy Interval
+### ช่วงเวลาง่าย
 
-The number of days to wait before showing a card again, after the Easy button is used on it.
+จำนวนวันที่จะรอก่อนที่จะแสดงการ์ดอีกครั้ง หลังจากใช้ปุ่ม ง่าย กับการ์ดนั้น
 
-The **Easy** button turns learning cards into a review cards regardless of which step you're on,
-and assigns them the delay you have configured in this option. Easy interval should always be at least
-as long as the graduating interval, and typically a few days longer.
+ปุ่ม **ง่าย** จะเปลี่ยนการ์ดเรียนรู้ให้เป็นการ์ดทบทวนโดยไม่คำนึงว่าคุณอยู่ในขั้นตอนใด และกำหนดการหน่วงเวลาที่คุณกำหนดค่าไว้ในตัวเลือกนี้ ช่วงเวลาง่ายควรยาวอย่างน้อยเท่ากับช่วงเวลาสำเร็จการศึกษา และโดยทั่วไปจะยาวกว่าสองสามวัน
 
-### Insertion Order
+### ลำดับการแทรก
 
-Controls whether Anki should add new cards into the deck randomly, or sequentially.
-When you change this option, Anki will re-sort the decks in the current preset.
+ควบคุมว่า Anki ควรเพิ่มการ์ดใหม่ลงในสำรับแบบสุ่ม หรือตามลำดับ
+เมื่อคุณเปลี่ยนตัวเลือกนี้ Anki จะจัดเรียงสำรับใหม่ในค่าที่ตั้งไว้ล่วงหน้าปัจจุบัน
 
-On recent Anki versions, you should leave this option set to `Sequential`, and adjust the [display order](deck-options.md#display-order) instead.
+ใน Anki เวอร์ชันล่าสุด คุณควรปล่อยให้ตัวเลือกนี้ตั้งค่าเป็น `ตามลำดับ` และปรับ [ลำดับการแสดงผล](deck-options.th.md#display-order) แทน
 
-## Lapses
+## การพลาด
 
-When you click **Again** on a review card, it is called a _lapse_. The options listed here affect such lapsed cards.
+เมื่อคุณคลิก **อีกครั้ง** บนการ์ดทบทวน จะเรียกว่า _การพลาด_ ตัวเลือกที่ระบุไว้ที่นี่มีผลกับการ์ดที่พลาดดังกล่าว
 
-### Relearning Steps
+### ขั้นตอนการเรียนรู้ซ้ำ
 
-The same as learning steps, but for lapsed cards. When you fail a review card
-(press **Again**), the card goes through _relearning steps_, before it becomes a review card again.
+เหมือนกับขั้นตอนการเรียนรู้ แต่สำหรับการ์ดที่พลาด เมื่อคุณทำการ์ดทบทวนไม่สำเร็จ (กด **อีกครั้ง**) การ์ดจะผ่าน _ขั้นตอนการเรียนรู้ซ้ำ_ ก่อนที่จะกลายเป็นการ์ดทบทวนอีกครั้ง
 
-If you leave the steps blank, the card will skip relearning, and will be assigned
-a new interval of 1 day by default.
+หากคุณปล่อยให้ขั้นตอนว่างเปล่า การ์ดจะข้ามการเรียนรู้ซ้ำ และจะได้รับช่วงเวลาใหม่ 1 วันโดยค่าเริ่มต้น
 
-### Minimum Interval
+### ช่วงเวลาขั้นต่ำ
 
-Specifies a minimum number of days a card should wait after it finishes relearning.
-The default is one day, meaning once relearning is finished, it will be shown again
-the next day.
+ระบุจำนวนวันขั้นต่ำที่การ์ดควรรอหลังจากเรียนรู้ซ้ำเสร็จสิ้น
+ค่าเริ่มต้นคือหนึ่งวัน ซึ่งหมายความว่าเมื่อเรียนรู้ซ้ำเสร็จสิ้นแล้ว จะแสดงอีกครั้งในวันถัดไป
 
-### Leeches
+### ปลิง
 
-Control the way Anki handles leeches. For details, see the [leeches](leeches.md)
-section.
+ควบคุมวิธีที่ Anki จัดการกับปลิง สำหรับรายละเอียด โปรดดูส่วน [ปลิง](leeches.th.md)
 
-## Display Order
+## ลำดับการแสดงผล
 
-The options in this section are taken from the deck you select to study, not
-the deck of the currently displayed card.
+ตัวเลือกในส่วนนี้จะนำมาจากสำรับที่คุณเลือกเรียน ไม่ใช่สำรับของการ์ดที่แสดงในปัจจุบัน
 
-Some further information about display order is available in the [studying section](studying.md#display-order).
+ข้อมูลเพิ่มเติมเกี่ยวกับลำดับการแสดงผลมีอยู่ใน [ส่วนการเรียน](studying.th.md#display-order)
 
-### New Card Gather Order
+### ลำดับการรวบรวมการ์ดใหม่
 
-Controls how Anki gathers new cards from a deck. The options are:
+ควบคุมวิธีที่ Anki รวบรวมการ์ดใหม่จากสำรับ ตัวเลือกคือ:
 
-- **Deck**: Gathers cards from each subdeck in order, starting from the top. Cards from
-  each subdeck are gathered in ascending position. If the daily limit of the selected
-  deck is reached, gathering may stop before all subdecks have been checked. This
-  order is fastest in large collections, and allows you to prioritize subdecks that
-  are closer to the top.
+- **สำรับ**: รวบรวมการ์ดจากแต่ละสำรับย่อยตามลำดับ เริ่มจากด้านบน การ์ดจากแต่ละสำรับย่อยจะถูกรวบรวมในตำแหน่งจากน้อยไปมาก หากถึงขีดจำกัดรายวันของสำรับที่เลือก การรวบรวมอาจหยุดก่อนที่จะตรวจสอบสำรับย่อยทั้งหมด ลำดับนี้เร็วที่สุดในคอลเล็กชันขนาดใหญ่ และช่วยให้คุณจัดลำดับความสำคัญของสำรับย่อยที่อยู่ใกล้ด้านบนได้
 
-  Decks/subdecks are always ordered alphabetically, so you can give them a numeric prefix like
-  001 to control the order they appear in. You can also use `_` and `~` as a
-  prefix to place items at the top or bottom.
+  สำรับ/สำรับย่อยจะเรียงตามตัวอักษรเสมอ ดังนั้นคุณสามารถใส่คำนำหน้าตัวเลข เช่น 001 เพื่อควบคุมลำดับที่ปรากฏได้ คุณยังสามารถใช้ `_` และ `~` เป็นคำนำหน้าเพื่อวางรายการไว้ที่ด้านบนหรือด้านล่างได้
 
-  Although position order depends initially on the insertion order option, you can manually
-  [reposition](./browsing.md#cards) cards in different
-  ways.
+  แม้ว่าลำดับตำแหน่งจะขึ้นอยู่กับตัวเลือกลำดับการแทรกในตอนแรก แต่คุณสามารถ [จัดตำแหน่งใหม่](./browsing.th.md#cards) การ์ดด้วยตนเองได้หลายวิธี
 
-- **Deck, then random notes**: Gathers cards from each subdeck in order, starting from the top.
-  Cards from each subdeck are gathered from randomly selected notes.
+- **สำรับ แล้วบันทึกแบบสุ่ม**: รวบรวมการ์ดจากแต่ละสำรับย่อยตามลำดับ เริ่มจากด้านบน การ์ดจากแต่ละสำรับย่อยจะถูกรวบรวมจากบันทึกที่เลือกแบบสุ่ม
 
-- **Ascending position**: Gathers cards by ascending position (due #), which is typically the oldest-added first.
+- **ตำแหน่งจากน้อยไปมาก**: รวบรวมการ์ดตามตำแหน่งจากน้อยไปมาก (ครบกำหนด #) ซึ่งโดยทั่วไปคือการ์ดที่เพิ่มเข้ามาเก่าที่สุดก่อน
 
-- **Descending position**: Gathers cards by descending position (due #), which is typically the latest-added first.
+- **ตำแหน่งจากมากไปน้อย**: รวบรวมการ์ดตามตำแหน่งจากมากไปน้อย (ครบกำหนด #) ซึ่งโดยทั่วไปคือการ์ดที่เพิ่มเข้ามาล่าสุดก่อน
 
-- **Random notes**: Gathers cards from randomly selected notes.
+- **บันทึกแบบสุ่ม**: รวบรวมการ์ดจากบันทึกที่เลือกแบบสุ่ม
 
-- **Random cards**: Gathers cards in a random order.
+- **การ์ดแบบสุ่ม**: รวบรวมการ์ดในลำดับแบบสุ่ม
 
-### New Card Sort Order
+### ลำดับการจัดเรียงการ์ดใหม่
 
-Controls how the new cards are sorted after they have been gathered. The options are:
+ควบคุมวิธีการจัดเรียงการ์ดใหม่หลังจากรวบรวมแล้ว ตัวเลือกคือ:
 
-- **Card type, then order gathered**: Shows cards in order of card type number. Cards of each card type number are shown in the order they were gathered. If you have sibling burying disabled, this ensures all front→back cards are seen before any back→front cards.
-  This order is useful if you don't want sibling cards to appear too close to each other.
+- **ประเภทการ์ด แล้วลำดับที่รวบรวม**: แสดงการ์ดตามลำดับหมายเลขประเภทการ์ด การ์ดของแต่ละหมายเลขประเภทการ์ดจะแสดงตามลำดับที่รวบรวม หากคุณปิดใช้งานการฝังพี่น้อง สิ่งนี้จะช่วยให้แน่ใจว่าการ์ดหน้า→หลังทั้งหมดจะถูกเห็นก่อนการ์ดหลัง→หน้าใดๆ
+  ลำดับนี้มีประโยชน์หากคุณไม่ต้องการให้การ์ดพี่น้องปรากฏใกล้กันเกินไป
 
-- **Order gathered**: Shows cards exactly as they were gathered. If sibling burying is disabled, this typically results in all sibling cards appearing one after the other.
+- **ลำดับที่รวบรวม**: แสดงการ์ดตรงตามที่รวบรวม หากปิดใช้งานการฝังพี่น้อง โดยทั่วไปจะส่งผลให้การ์ดพี่น้องทั้งหมดปรากฏต่อกัน
 
-- **Card type, then random**: Shows cards in order of card type number, but shuffles the cards of each card type number.
-  This order is useful if you don't want sibling cards to appear too close to each other, but still want the cards to appear in a random order.
+- **ประเภทการ์ด แล้วสุ่ม**: แสดงการ์ดตามลำดับหมายเลขประเภทการ์ด แต่สับการ์ดของแต่ละหมายเลขประเภทการ์ด
+  ลำดับนี้มีประโยชน์หากคุณไม่ต้องการให้การ์ดพี่น้องปรากฏใกล้กันเกินไป แต่ยังคงต้องการให้การ์ดปรากฏในลำดับแบบสุ่ม
 
-- **Random note, then card type**: Picks notes at random, then shows all of their siblings in order.
+- **บันทึกแบบสุ่ม แล้วประเภทการ์ด**: เลือกบันทึกแบบสุ่ม แล้วแสดงพี่น้องทั้งหมดตามลำดับ
 
-- **Random**: Fully shuffles the gathered cards.
+- **สุ่ม**: สับการ์ดที่รวบรวมทั้งหมด
 
-### New/Review Order
+### ลำดับใหม่/ทบทวน
 
-Whether new cards should be mixed in with review cards, shown before them, or shown after them.
+ว่าการ์ดใหม่ควรผสมกับการ์ดทบทวน แสดงก่อน หรือแสดงหลัง
 
-### Interday Learning/Review Order
+### ลำดับการเรียนรู้/ทบทวนระหว่างวัน
 
-Whether (re)learning cards that cross a day boundary should be mixed in with review cards,
-shown before them, or shown after them. Because learning cards tend to be harder than
-review cards, some users prefer to see them at the end (getting the easy stuff done
-first), or at the start (allowing more time to review forgotten ones).
+ว่าการ์ดเรียนรู้ (ซ้ำ) ที่ข้ามขอบเขตของวันควรผสมกับการ์ดทบทวน แสดงก่อน หรือแสดงหลัง เนื่องจากการ์ดเรียนรู้มักจะยากกว่าการ์ดทบทวน ผู้ใช้บางคนจึงต้องการเห็นการ์ดเหล่านี้ในตอนท้าย (ทำงานง่ายๆ ให้เสร็จก่อน) หรือในตอนต้น (เพื่อให้มีเวลาทบทวนการ์ดที่ลืมไปแล้วมากขึ้น)
 
-### Review Sort Order
+### ลำดับการจัดเรียงการทบทวน
 
-Controls how the review cards are sorted. The options are:
+ควบคุมวิธีการจัดเรียงการ์ดทบทวน ตัวเลือกคือ:
 
-- **Due date, then random**: The default order prioritizes cards that have been waiting
-  longer, and it's the recommended order when you are up to date, or when you only have a small
-  backlog. If you have taken an extended break or have fallen behind in your reviews,
-  you may want to consider changing the sort order temporarily.
-- **Due date, then deck**: This also prioritizes cards that have been waiting
-  longer, and then shows review cards for each subdeck in turn.
-- **Deck, then due date**: Shows review cards for each
-  subdeck in turn. This order is generally not recommended, as having material appear
-  consistently in the same order makes it easier to guess the answer based on context,
-  and leads to weaker memories.
-- **Ascending intervals**: Shows cards with shorter intervals first.
-- **Descending intervals**: Shows cards with longer intervals first.
-- **Ascending ease**: Shows more difficult cards first.
-- **Descending ease**: Shows less difficult cards first.
-- **Relative overdueness**: Shows cards that you're more likely to have forgotten first. This is generally recommended if
-  you have a large backlog that may take some time to get through, and you want to
-  reduce the chances of forgetting more cards.
+- **วันที่ครบกำหนด แล้วสุ่ม**: ลำดับเริ่มต้นจะจัดลำดับความสำคัญของการ์ดที่รอนานกว่า และเป็นลำดับที่แนะนำเมื่อคุณทันสมัย หรือเมื่อคุณมีงานค้างเพียงเล็กน้อย หากคุณหยุดพักเป็นเวลานานหรือตามหลังในการทบทวนของคุณ คุณอาจต้องการพิจารณาเปลี่ยนลำดับการจัดเรียงชั่วคราว
+- **วันที่ครบกำหนด แล้วสำรับ**: สิ่งนี้ยังจัดลำดับความสำคัญของการ์ดที่รอนานกว่า แล้วแสดงการ์ดทบทวนสำหรับแต่ละสำรับย่อยตามลำดับ
+- **สำรับ แล้ววันที่ครบกำหนด**: แสดงการ์ดทบทวนสำหรับแต่ละสำรับย่อยตามลำดับ โดยทั่วไปไม่แนะนำลำดับนี้ เนื่องจากการมีเนื้อหาปรากฏในลำดับเดียวกันอย่างสม่ำเสมอทำให้ง่ายต่อการเดาคำตอบตามบริบท และนำไปสู่ความทรงจำที่อ่อนแอลง
+- **ช่วงเวลาจากน้อยไปมาก**: แสดงการ์ดที่มีช่วงเวลาสั้นกว่าก่อน
+- **ช่วงเวลาจากมากไปน้อย**: แสดงการ์ดที่มีช่วงเวลายาวกว่าก่อน
+- **ความง่ายจากน้อยไปมาก**: แสดงการ์ดที่ยากกว่าก่อน
+- **ความง่ายจากมากไปน้อย**: แสดงการ์ดที่ง่ายกว่าก่อน
+- **ความค้างชำระสัมพัทธ์**: แสดงการ์ดที่คุณมีแนวโน้มที่จะลืมไปแล้วก่อน โดยทั่วไปแนะนำหากคุณมีงานค้างจำนวนมากที่อาจใช้เวลาสักพักในการทำให้เสร็จ และคุณต้องการลดโอกาสที่จะลืมการ์ดมากขึ้น
 
-  When using the SM-2 algorithm, overdueness is determined by comparing how
-  overdue cards are, and how long their interval is. For example, a card with a
-  current interval of 5 days that is overdue by 2 days, will display before a card
-  with a current interval of 10 days that is overdue by 3 days.
+  เมื่อใช้อัลกอริทึม SM-2 ความค้างชำระจะถูกกำหนดโดยการเปรียบเทียบว่าการ์ดค้างชำระนานแค่ไหน และช่วงเวลาของมันนานแค่ไหน ตัวอย่างเช่น การ์ดที่มีช่วงเวลาปัจจุบัน 5 วันที่ค้างชำระ 2 วัน จะแสดงก่อนการ์ดที่มีช่วงเวลาปัจจุบัน 10 วันที่ค้างชำระ 3 วัน
 
-  When FSRS is enabled, this sort order is removed; the FSRS equivalent is **Ascending retrievability**,
-  which is calculated based on each card's retrievability (probability of recall) and the desired retention in the preset.
+  เมื่อเปิดใช้งาน FSRS ลำดับการจัดเรียงนี้จะถูกลบออก สิ่งที่เทียบเท่ากับ FSRS คือ **ความสามารถในการดึงข้อมูลจากน้อยไปมาก** ซึ่งคำนวณจากความสามารถในการดึงข้อมูลของการ์ดแต่ละใบ (ความน่าจะเป็นของการจำ) และการคงอยู่ของข้อมูลที่ต้องการในค่าที่ตั้งไว้ล่วงหน้า
 
-## Burying
+## การฝัง
 
-When Anki gathers cards, it first gathers intraday learning cards, then interday learning cards, then review cards, and finally new cards. This affects how burying works:
+เมื่อ Anki รวบรวมการ์ด จะรวบรวมการ์ดเรียนรู้ภายในวันก่อน แล้วจึงรวบรวมการ์ดเรียนรู้ระหว่างวัน การ์ดทบทวน และสุดท้ายคือการ์ดใหม่ ซึ่งส่งผลต่อวิธีการทำงานของการฝัง:
 
-- If you have all burying options enabled, the sibling that comes earliest in that list will be shown. For example, a review card will be shown in preference to a new card.
-- Siblings later in the list can not bury earlier card types. For example, if you disable burying of new cards, and study a new card, it will not bury any interday learning or review cards, and you may see both a review sibling and new sibling in the same session.
+- หากคุณเปิดใช้งานตัวเลือกการฝังทั้งหมด พี่น้องที่มาก่อนที่สุดในรายการนั้นจะถูกแสดง ตัวอย่างเช่น การ์ดทบทวนจะแสดงโดยให้ความสำคัญกับการ์ดใหม่
+- พี่น้องที่อยู่หลังในรายการไม่สามารถฝังประเภทการ์ดก่อนหน้าได้ ตัวอย่างเช่น หากคุณปิดใช้งานการฝังการ์ดใหม่ และเรียนการ์ดใหม่ การ์ดนั้นจะไม่ฝังการ์ดเรียนรู้ระหว่างวันหรือการ์ดทบทวนใดๆ และคุณอาจเห็นทั้งพี่น้องทบทวนและพี่น้องใหม่ในเซสชันเดียวกัน
 
-The options are:
+ตัวเลือกคือ:
 
-- **Bury new siblings**: Whether other new cards of the same note (e.g. reverse cards, adjacent cloze deletions) will be delayed until the next day.
-- **Bury review siblings**: Whether other review cards of the same note will be delayed until the next day.
-- **Bury interday learning siblings**: Whether other learning cards of the same note that crossed a day boundary will be delayed until the next day.
+- **ฝังพี่น้องใหม่**: ว่าการ์ดใหม่อื่นๆ ของบันทึกเดียวกัน (เช่น การ์ดกลับด้าน การลบ cloze ที่อยู่ติดกัน) จะถูกเลื่อนไปจนถึงวันถัดไปหรือไม่
+- **ฝังพี่น้องทบทวน**: ว่าการ์ดทบทวนอื่นๆ ของบันทึกเดียวกันจะถูกเลื่อนไปจนถึงวันถัดไปหรือไม่
+- **ฝังพี่น้องเรียนรู้ระหว่างวัน**: ว่าการ์ดเรียนรู้อื่นๆ ของบันทึกเดียวกันที่ข้ามขอบเขตของวันจะถูกเลื่อนไปจนถึงวันถัดไปหรือไม่
 
-For more info about burying cards, please see [this section](./studying.md#siblings-and-burying) of the manual.
+สำหรับข้อมูลเพิ่มเติมเกี่ยวกับการฝังการ์ด โปรดดู [ส่วนนี้](./studying.th.md#siblings-and-burying) ของคู่มือ
 
-## Audio
+## เสียง
 
-- **Don't play audio automatically**: By default, Anki automatically plays any audio you have on
-  cards. If you turn on this option Anki will not play audio until you press the replay audio key, <kbd>R</kbd> or <kbd>F5</kbd>.
+- **ไม่เล่นเสียงโดยอัตโนมัติ**: โดยค่าเริ่มต้น Anki จะเล่นเสียงใดๆ ที่คุณมีบนการ์ดโดยอัตโนมัติ หากคุณเปิดตัวเลือกนี้ Anki จะไม่เล่นเสียงจนกว่าคุณจะกดปุ่มเล่นเสียงซ้ำ <kbd>R</kbd> หรือ <kbd>F5</kbd>
 
-- **Skip question when replaying answer**: Controls whether audio from
-  the question side is played when you use replay action on the answer side. Note that, Anki [does not automatically play](./templates/fields.md#special-fields) audio from the `{{FrontSide}}` field. This option does not influence the behaviour of automatic play.
+- **ข้ามคำถามเมื่อเล่นคำตอบซ้ำ**: ควบคุมว่าเสียงจากด้านคำถามจะเล่นหรือไม่เมื่อคุณใช้การกระทำเล่นซ้ำในด้านคำตอบ โปรดทราบว่า Anki [ไม่เล่นเสียงโดยอัตโนมัติ](./templates/fields.th.md#special-fields) จากฟิลด์ `{{FrontSide}}` ตัวเลือกนี้ไม่มีผลต่อพฤติกรรมการเล่นอัตโนมัติ
 
-## Timers
+## ตัวจับเวลา
 
 <a id="timer"></a>
 
-Anki monitors how long it takes you to answer each card, so that it
-can show you how long was spent studying each day. The time taken does
-not influence scheduling.
+Anki จะตรวจสอบระยะเวลาที่คุณใช้ในการตอบการ์ดแต่ละใบ เพื่อให้สามารถแสดงให้คุณเห็นว่าใช้เวลาเรียนไปเท่าใดในแต่ละวัน เวลาที่ใช้ไม่มีผลต่อการจัดตารางเวลา
 
-### Internal Timer
+### ตัวจับเวลาภายใน
 
-- Maximum answer seconds: The default limit is 60 seconds. If you take
-  longer than that, Anki assumes you have walked away from your computer
-  or have been distracted, and caps the recorded time at 60 seconds, so
-  that you don’t end up with inaccurate statistics.
-- This internal timer runs from when the question is shown until you press a button to grade your answer. If you consistently
-  spend longer than 60 seconds on a card,
-  you may want to consider either raising
-  this limit, or even better, making your cards simpler.
+- วินาทีสูงสุดในการตอบ: ขีดจำกัดเริ่มต้นคือ 60 วินาที หากคุณใช้เวลานานกว่านั้น Anki จะถือว่าคุณเดินออกจากคอมพิวเตอร์หรือถูกรบกวน และจะจำกัดเวลาที่บันทึกไว้ที่ 60 วินาที เพื่อที่คุณจะได้ไม่มีสถิติที่ไม่ถูกต้อง
+- ตัวจับเวลาภายในนี้จะทำงานตั้งแต่เมื่อคำถามปรากฏขึ้นจนกว่าคุณจะกดปุ่มเพื่อให้คะแนนคำตอบของคุณ หากคุณใช้เวลามากกว่า 60 วินาทีกับการ์ดอย่างสม่ำเสมอ คุณอาจต้องการพิจารณาเพิ่มขีดจำกัดนี้ หรือดีกว่านั้นคือทำให้การ์ดของคุณง่ายขึ้น
 
-### On-screen Timer
+### ตัวจับเวลาบนหน้าจอ
 
-- Show on-screen timer: On the Study screen, show a timer that counts the time
-  you're taking to study each card. (This timer will stop when it reaches the Maximum answer seconds set for the internal timer.)
-- Stop on-screen timer on answer: Whether the on-screen timer should continue running from when you show
-  the answer until you press a button to grade your answer. This option does not impact the time that is recorded for your statistics.
+- แสดงตัวจับเวลาบนหน้าจอ: บนหน้าจอเรียน ให้แสดงตัวจับเวลาที่นับเวลาที่คุณใช้ในการเรียนการ์ดแต่ละใบ (ตัวจับเวลานี้จะหยุดเมื่อถึงวินาทีสูงสุดในการตอบที่ตั้งไว้สำหรับตัวจับเวลาภายใน)
+- หยุดตัวจับเวลาบนหน้าจอเมื่อตอบ: ว่าตัวจับเวลาบนหน้าจอควรทำงานต่อไปหรือไม่ตั้งแต่เมื่อคุณแสดงคำตอบจนกว่าคุณจะกดปุ่มเพื่อให้คะแนนคำตอบของคุณ ตัวเลือกนี้ไม่มีผลต่อเวลาที่บันทึกไว้สำหรับสถิติของคุณ
 
-## Auto Advance
+## เลื่อนอัตโนมัติ
 
-Requires Anki 23.12 or later. Auto Advance allows you to automatically take some actions after a certain amount of time has passed. To use it, you must first set a non-zero
-time in **Seconds to show question for** and/or **Seconds to show answer for**. Then, in the
-study screen, use the Auto Advance action from the **More** button to start advancing.
+ต้องใช้ Anki 23.12 หรือใหม่กว่า การเลื่อนอัตโนมัติช่วยให้คุณดำเนินการบางอย่างโดยอัตโนมัติหลังจากผ่านไประยะเวลาหนึ่ง ในการใช้งาน คุณต้องตั้งค่าเวลาที่ไม่ใช่ศูนย์ใน **วินาทีที่จะแสดงคำถาม** และ/หรือ **วินาทีที่จะแสดงคำตอบ** ก่อน จากนั้นในหน้าจอเรียน ให้ใช้การกระทำเลื่อนอัตโนมัติจากปุ่ม **เพิ่มเติม** เพื่อเริ่มเลื่อน
 
-## Easy Days
+## วันสบายๆ
 
-If you want to spend less time on Anki on some days of the week, such as Sundays, this feature can help you do that.
-After the interval is calculated, it will be adjusted by a small amount to change the due date.
-Note that setting all days to "Reduced" or "Minimum" will result in the same workload as setting all days to "Normal".
-This feature works with both FSRS and the legacy SM-2 algorithm.
-Changing your Easy Days configuration doesn't retroactively change existing intervals and will only affect future intervals. Simply put, you will not see immediate changes in the number of due cards.
+หากคุณต้องการใช้เวลากับ Anki น้อยลงในบางวันของสัปดาห์ เช่น วันอาทิตย์ คุณลักษณะนี้สามารถช่วยคุณได้
+หลังจากคำนวณช่วงเวลาแล้ว จะมีการปรับเล็กน้อยเพื่อเปลี่ยนวันที่ครบกำหนด
+โปรดทราบว่าการตั้งค่าทุกวันเป็น "ลดลง" หรือ "ขั้นต่ำ" จะส่งผลให้มีภาระงานเท่ากับการตั้งค่าทุกวันเป็น "ปกติ"
+คุณลักษณะนี้ทำงานได้กับทั้ง FSRS และอัลกอริทึม SM-2 แบบดั้งเดิม
+การเปลี่ยนการกำหนดค่าวันสบายๆ ของคุณจะไม่มีผลย้อนหลังกับช่วงเวลาที่มีอยู่ และจะมีผลกับช่วงเวลาในอนาคตเท่านั้น พูดง่ายๆ คือ คุณจะไม่เห็นการเปลี่ยนแปลงจำนวนการ์ดที่ครบกำหนดในทันที
 
 ## FSRS
 
-The [Free Spaced Repetition Scheduler (FSRS)](https://github.com/open-spaced-repetition/fsrs4anki/wiki/ABC-of-FSRS) is an alternative to Anki's legacy
-SuperMemo 2 (SM-2) algorithm. By more accurately determining how much information you are likely
-to forget, it can help you remember more material in the same amount of time.
+[Free Spaced Repetition Scheduler (FSRS)](https://github.com/open-spaced-repetition/fsrs4anki/wiki/ABC-of-FSRS) เป็นทางเลือกแทนอัลกอริทึม SuperMemo 2 (SM-2) แบบดั้งเดิมของ Anki โดยการกำหนดว่าคุณมีแนวโน้มที่จะลืมข้อมูลมากน้อยเพียงใดได้อย่างแม่นยำยิ่งขึ้น จะช่วยให้คุณจำเนื้อหาได้มากขึ้นในระยะเวลาเท่ากัน
 
-When you turn on FSRS, some new options
-become available, and SM-2 specific options, such as **Graduating interval**,
-**Easy bonus**, etc. are hidden. This option is shared by all presets.
+เมื่อคุณเปิด FSRS ตัวเลือกใหม่บางอย่างจะพร้อมใช้งาน และตัวเลือกเฉพาะของ SM-2 เช่น **ช่วงเวลาสำเร็จการศึกษา**, **โบนัสง่าย** ฯลฯ จะถูกซ่อนไว้ ตัวเลือกนี้ใช้ร่วมกันโดยค่าที่ตั้งไว้ล่วงหน้าทั้งหมด
 
-**Before Enabling**
+**ก่อนเปิดใช้งาน**
 
-- Please ensure all of your Anki clients support FSRS. Anki 23.10, AnkiMobile 23.10,
-  and AnkiWeb all support it. AnkiDroid supports it in 2.17+. If
-  one of your clients doesn't support it, things will not work correctly.
-- If you previously used the "custom scheduling" version of FSRS, please make
-  sure you clear out the custom scheduling section before enabling FSRS.
+- โปรดตรวจสอบให้แน่ใจว่าไคลเอนต์ Anki ทั้งหมดของคุณรองรับ FSRS Anki 23.10, AnkiMobile 23.10 และ AnkiWeb ทั้งหมดรองรับ AnkiDroid รองรับในเวอร์ชัน 2.17+ หากไคลเอนต์ของคุณไม่รองรับ สิ่งต่างๆ จะทำงานไม่ถูกต้อง
+- หากคุณเคยใช้ FSRS เวอร์ชัน "การจัดตารางเวลาแบบกำหนดเอง" มาก่อน โปรดตรวจสอบให้แน่ใจว่าคุณได้ล้างส่วนการจัดตารางเวลาแบบกำหนดเองออกก่อนที่จะเปิดใช้งาน FSRS
 
-### A Short Guide
+### คำแนะนำสั้นๆ
 
-- Enable FSRS under the "FSRS" section, at the bottom of the deck options page. FSRS can only be enabled globally; you cannot enable it for some presets and disable it for others.
-- Ensure that all your learning and re-learning steps are shorter than 1d and can be completed on the same day. 23h is not recommended even though it's less than one day because you won't be able to finish this step on the same day as your first review. Steps such as 10m or 30m are good.
-- Click the "Optimize" button under the "FSRS parameters" field. If you see a message that says "The FSRS parameters currently appear to be optimal", that's fine.
-- Choose a value of desired retention: the proportion of cards recalled successfully when they are due. **This is the most important setting in FSRS. Higher retention leads to shorter intervals and more reviews per day.** The default is 90%, which offers a good balance of retention and workload. Above 90% the workload increases very quickly, and above 97% the workload can be overwhelming. You can use ["Compute minimum recommended retention"](#compute-minimum-recommended-retention) to help you choose the value of desired retention.
-  Parameters and desired retention are preset-specific, you can make multiple presets with different parameters and desired retention.
+- เปิดใช้งาน FSRS ในส่วน "FSRS" ที่ด้านล่างของหน้าตัวเลือกสำรับ FSRS สามารถเปิดใช้งานได้ทั่วโลกเท่านั้น คุณไม่สามารถเปิดใช้งานสำหรับค่าที่ตั้งไว้ล่วงหน้าบางอย่างและปิดใช้งานสำหรับค่าอื่นได้
+- ตรวจสอบให้แน่ใจว่าขั้นตอนการเรียนรู้และการเรียนรู้ซ้ำทั้งหมดของคุณสั้นกว่า 1 วัน และสามารถทำได้ในวันเดียวกัน ไม่แนะนำให้ใช้ 23 ชั่วโมงแม้ว่าจะน้อยกว่าหนึ่งวันก็ตาม เพราะคุณจะไม่สามารถทำขั้นตอนนี้ให้เสร็จในวันเดียวกับการทบทวนครั้งแรกของคุณได้ ขั้นตอนต่างๆ เช่น 10 นาที หรือ 30 นาที นั้นดี
+- คลิกปุ่ม "ปรับให้เหมาะสม" ใต้ฟิลด์ "พารามิเตอร์ FSRS" หากคุณเห็นข้อความว่า "พารามิเตอร์ FSRS ในปัจจุบันดูเหมือนจะเหมาะสมที่สุด" ก็ไม่เป็นไร
+- เลือกค่าการคงอยู่ของข้อมูลที่ต้องการ: สัดส่วนของการ์ดที่จำได้สำเร็จเมื่อถึงกำหนด **นี่คือการตั้งค่าที่สำคัญที่สุดใน FSRS การคงอยู่ของข้อมูลที่สูงขึ้นจะนำไปสู่ช่วงเวลาที่สั้นลงและมีการทบทวนต่อวันมากขึ้น** ค่าเริ่มต้นคือ 90% ซึ่งให้ความสมดุลที่ดีระหว่างการคงอยู่ของข้อมูลและภาระงาน ที่สูงกว่า 90% ภาระงานจะเพิ่มขึ้นอย่างรวดเร็ว และที่สูงกว่า 97% ภาระงานอาจท่วมท้นได้ คุณสามารถใช้ ["คำนวณการคงอยู่ของข้อมูลที่แนะนำขั้นต่ำ"](#compute-minimum-recommended-retention) เพื่อช่วยคุณเลือกค่าการคงอยู่ของข้อมูลที่ต้องการ
+  พารามิเตอร์และการคงอยู่ของข้อมูลที่ต้องการเป็นแบบเฉพาะค่าที่ตั้งไว้ล่วงหน้า คุณสามารถสร้างค่าที่ตั้งไว้ล่วงหน้าหลายค่าด้วยพารามิเตอร์และการคงอยู่ของข้อมูลที่ต้องการที่แตกต่างกันได้
 
-FSRS can adapt to almost any habit, except for one: pressing "Hard" instead of "Again" when you forget the information. When you press "Hard", FSRS assumes you have recalled the information correctly (though with hesitation and a lot of mental effort). If you press "Hard" when you have failed to recall the information, all intervals will be unreasonably high. So, if you have this habit, please change it and use "Again" when you forget the information.
+FSRS สามารถปรับให้เข้ากับนิสัยเกือบทุกอย่างได้ ยกเว้นอย่างเดียว: การกด "ยาก" แทน "อีกครั้ง" เมื่อคุณลืมข้อมูล เมื่อคุณกด "ยาก" FSRS จะถือว่าคุณจำข้อมูลได้ถูกต้อง (แม้ว่าจะลังเลและใช้ความพยายามทางจิตใจอย่างมากก็ตาม) หากคุณกด "ยาก" เมื่อคุณจำข้อมูลไม่ได้ ช่วงเวลาทั้งหมดจะสูงเกินไปอย่างไม่มีเหตุผล ดังนั้น หากคุณมีนิสัยนี้ โปรดเปลี่ยนและใช้ "อีกครั้ง" เมื่อคุณลืมข้อมูล
 
-Regarding add-on compatibility, as a general rule of thumb, if an add-on affects intervals and scheduling in some way, it shouldn't be used with FSRS.
+เกี่ยวกับความเข้ากันได้ของส่วนเสริม ตามกฎทั่วไป หากส่วนเสริมส่งผลต่อช่วงเวลาและการจัดตารางเวลาในทางใดทางหนึ่ง ก็ไม่ควรใช้กับ FSRS
 
-### Desired Retention
+### การคงอยู่ของข้อมูลที่ต้องการ
 
-Desired retention controls how likely you are to remember cards when they are scheduled for a review.
-The default value of `0.90` will schedule cards so you have a 90% chance of remembering
-them when they come up for review again. This should normally translate to remembering around 90% cards when they are reviewed, and only failing around 10%.
+การคงอยู่ของข้อมูลที่ต้องการควบคุมว่าคุณมีแนวโน้มที่จะจำการ์ดได้มากน้อยเพียงใดเมื่อถึงกำหนดทบทวน
+ค่าเริ่มต้น `0.90` จะจัดตารางการ์ดเพื่อให้คุณมีโอกาส 90% ที่จะจำได้เมื่อถึงกำหนดทบทวนอีกครั้ง โดยปกติแล้วควรแปลเป็นการจำการ์ดได้ประมาณ 90% เมื่อทบทวน และล้มเหลวเพียงประมาณ 10%
 
-Here is a graph that shows how adjusting this value will affect your workload:
+นี่คือกราฟที่แสดงว่าการปรับค่านี้จะส่งผลต่อภาระงานของคุณอย่างไร:
 
-![graph showing an exponential increase in workload as desired retention nears one.](./media/FSRS_retention.png)
+![กราฟแสดงการเพิ่มขึ้นแบบทวีคูณของภาระงานเมื่อการคงอยู่ของข้อมูลที่ต้องการเข้าใกล้หนึ่ง](./media/FSRS_retention.png)
 
-The exact shape of the graph is different for everyone. However, there are two patterns that hold true for all:
+รูปร่างที่แน่นอนของกราฟจะแตกต่างกันไปสำหรับทุกคน อย่างไรก็ตาม มีสองรูปแบบที่เหมือนกันสำหรับทุกคน:
 
-- As desired retention approaches 1.0, the workload increases drastically.
-  Imagine you have a card with a 90% chance of remembering it after 100 days. If your desired retention is `0.90`, you'll review the card again in 100 days. But if your desired retention is `0.95`, you'll need to review it after 46 days instead.
-  This means that the intervals of your cards almost halve at `0.95` desired retention and you need to review cards twice as frequently compared to `0.90` desired retention.
-  At `0.97`, the interval will be 27 days (you'll have to review your cards 3.7x as frequently).
-  At `0.99`, the interval will be only 9 days (you'll have to review your cards more than 10x more frequently than with the defaults).
+- เมื่อการคงอยู่ของข้อมูลที่ต้องการเข้าใกล้ 1.0 ภาระงานจะเพิ่มขึ้นอย่างมาก
+  ลองนึกภาพว่าคุณมีการ์ดที่มีโอกาส 90% ที่จะจำได้หลังจากผ่านไป 100 วัน หากการคงอยู่ของข้อมูลที่ต้องการของคุณคือ `0.90` คุณจะทบทวนการ์ดอีกครั้งในอีก 100 วัน แต่ถ้าการคงอยู่ของข้อมูลที่ต้องการของคุณคือ `0.95` คุณจะต้องทบทวนหลังจากผ่านไป 46 วันแทน
+  ซึ่งหมายความว่าช่วงเวลาของการ์ดของคุณเกือบจะลดลงครึ่งหนึ่งที่การคงอยู่ของข้อมูลที่ต้องการ `0.95` และคุณต้องทบทวนการ์ดบ่อยเป็นสองเท่าเมื่อเทียบกับการคงอยู่ของข้อมูลที่ต้องการ `0.90`
+  ที่ `0.97` ช่วงเวลาจะเป็น 27 วัน (คุณจะต้องทบทวนการ์ดของคุณบ่อยขึ้น 3.7 เท่า)
+  ที่ `0.99` ช่วงเวลาจะเป็นเพียง 9 วัน (คุณจะต้องทบทวนการ์ดของคุณบ่อยขึ้นกว่า 10 เท่าเมื่อเทียบกับค่าเริ่มต้น)
 
-- As desired retention decreases, you'll forget a greater percentage of your
-  cards, and those cards will need to be reviewed again. Eventually, you'll
-  get to a point where the forgotten cards contribute more to your workload
-  than you gain from the longer delays. Also, keep in mind that forgetting
-  material frequently is demotivating.
+- เมื่อการคงอยู่ของข้อมูลที่ต้องการลดลง คุณจะลืมเปอร์เซ็นต์ของการ์ดของคุณมากขึ้น และการ์ดเหล่านั้นจะต้องได้รับการทบทวนอีกครั้ง ในที่สุด คุณจะไปถึงจุดที่การ์ดที่ลืมไปแล้วมีส่วนทำให้ภาระงานของคุณมากกว่าที่คุณได้รับจากการหน่วงเวลาที่ยาวนานขึ้น นอกจากนี้ โปรดทราบว่าการลืมเนื้อหาบ่อยๆ เป็นการบั่นทอนกำลังใจ
 
-For these reasons, we suggest you be conservative when adjusting this
-number, and recommend you keep it lower than `0.97` and higher than the [minimum recommended retention](#compute-minimum-recommended-retention).
+ด้วยเหตุผลเหล่านี้ เราขอแนะนำให้คุณระมัดระวังในการปรับตัวเลขนี้ และแนะนำให้คุณรักษาระดับให้ต่ำกว่า `0.97` และสูงกว่า [การคงอยู่ของข้อมูลที่แนะนำขั้นต่ำ](#compute-minimum-recommended-retention)
 
-### FSRS Parameters
+### พารามิเตอร์ FSRS
 
-FSRS parameters affect how cards are scheduled. Do not change the parameters manually or copy them from someone else.
+พารามิเตอร์ FSRS ส่งผลต่อวิธีการจัดตารางการ์ด อย่าเปลี่ยนพารามิเตอร์ด้วยตนเองหรือคัดลอกจากผู้อื่น
 
-**Optimize FSRS Parameters**
+**ปรับพารามิเตอร์ FSRS ให้เหมาะสม**
 
-The FSRS optimizer uses machine learning to learn your memory patterns and find parameters that best fit your review history. To do this, the optimizer requires several reviews to fine-tune the parameters.
+เครื่องมือเพิ่มประสิทธิภาพ FSRS ใช้การเรียนรู้ของเครื่องเพื่อเรียนรู้รูปแบบความจำของคุณและค้นหาพารามิเตอร์ที่เหมาะสมกับประวัติการทบทวนของคุณมากที่สุด ในการทำเช่นนี้ เครื่องมือเพิ่มประสิทธิภาพต้องการการทบทวนหลายครั้งเพื่อปรับแต่งพารามิเตอร์
 
-When you click the **Optimize** button, FSRS will analyze your review history, and generate parameters that are optimal for your memory and the content you're studying. If you have decks that vary wildly in subjective difficulty, it
-is recommended to assign them separate presets, as the parameters for easier
-decks will be different from harder decks. There is no need to optimize your
-parameters frequently: once every month is sufficient.
+เมื่อคุณคลิกปุ่ม **ปรับให้เหมาะสม** FSRS จะวิเคราะห์ประวัติการทบทวนของคุณ และสร้างพารามิเตอร์ที่เหมาะสมที่สุดสำหรับความจำของคุณและเนื้อหาที่คุณกำลังเรียน หากคุณมีสำรับที่มีความยากตามอัตวิสัยแตกต่างกันอย่างมาก ขอแนะนำให้กำหนดค่าที่ตั้งไว้ล่วงหน้าที่แยกจากกัน เนื่องจากพารามิเตอร์สำหรับสำรับที่ง่ายกว่าจะแตกต่างจากสำรับที่ยากกว่า ไม่จำเป็นต้องปรับพารามิเตอร์ของคุณให้เหมาะสมบ่อยครั้ง: เดือนละครั้งก็เพียงพอแล้ว
 
-By default, parameters are calculated from the review history of all
-decks using the current preset. You can optionally [adjust the search](./searching.md)
-before optimizing the parameters, if you'd like to change which cards
-are used for optimization.
+โดยค่าเริ่มต้น พารามิเตอร์จะคำนวณจากประวัติการทบทวนของสำรับทั้งหมดที่ใช้ค่าที่ตั้งไว้ล่วงหน้าปัจจุบัน คุณสามารถ [ปรับการค้นหา](./searching.th.md) ก่อนที่จะปรับพารามิเตอร์ให้เหมาะสมได้ หากคุณต้องการเปลี่ยนการ์ดที่ใช้สำหรับการปรับให้เหมาะสม
 
-You can also optimize the parameters for all of your presets at once by clicking on **Optimize All Presets**.
+คุณยังสามารถปรับพารามิเตอร์ให้เหมาะสมสำหรับค่าที่ตั้งไว้ล่วงหน้าทั้งหมดของคุณได้ในครั้งเดียวโดยคลิกที่ **ปรับค่าที่ตั้งไว้ล่วงหน้าทั้งหมดให้เหมาะสม**
 
-**Evaluate FSRS Parameters**
+**ประเมินพารามิเตอร์ FSRS**
 
-You can use the **Evaluate** button to see metrics that show how well the parameters fit your review history. Smaller numbers
-indicate a better fit to your review history.
+คุณสามารถใช้ปุ่ม **ประเมิน** เพื่อดูเมตริกที่แสดงว่าพารามิเตอร์เหมาะสมกับประวัติการทบทวนของคุณได้ดีเพียงใด ตัวเลขที่น้อยลงบ่งชี้ว่าเหมาะสมกับประวัติการทบทวนของคุณได้ดีขึ้น
 
-Log loss doesn't have an intuitive interpretation. RMSE (bins) can be
-interpreted as the average difference between the predicted probability
-of recalling a card (R) and the actual
-probability measured from your review history. For example, RMSE=5% means that, on average, FSRS
-is off by 5% when predicting R. You don't need to understand these metrics to use FSRS.
+Log loss ไม่มีการตีความที่เข้าใจง่าย RMSE (bins) สามารถตีความได้ว่าเป็นความแตกต่างโดยเฉลี่ยระหว่างความน่าจะเป็นที่คาดการณ์ไว้ในการจำการ์ด (R) และความน่าจะเป็นจริงที่วัดได้จากประวัติการทบทวนของคุณ ตัวอย่างเช่น RMSE=5% หมายความว่าโดยเฉลี่ยแล้ว FSRS คลาดเคลื่อนไป 5% เมื่อคาดการณ์ R คุณไม่จำเป็นต้องเข้าใจเมตริกเหล่านี้เพื่อใช้ FSRS
 
-Note that log loss and RMSE (bins) are not perfectly correlated,
-so two decks may have similar RMSE values but very different log-loss values, or the other way around.
+โปรดทราบว่า log loss และ RMSE (bins) ไม่ได้มีความสัมพันธ์กันอย่างสมบูรณ์ ดังนั้นสำรับสองสำรับอาจมีค่า RMSE ที่คล้ายกัน แต่มีค่า log-loss ที่แตกต่างกันมาก หรือในทางกลับกัน
 
-By default, log loss and RMSE (bins) are calculated from all decks using the current preset. You can optionally [adjust the search](./searching.md) before evaluating the parameters, if you'd like to change which cards are used for evaluation.
+โดยค่าเริ่มต้น log loss และ RMSE (bins) จะคำนวณจากสำรับทั้งหมดที่ใช้ค่าที่ตั้งไว้ล่วงหน้าปัจจุบัน คุณสามารถ [ปรับการค้นหา](./searching.th.md) ก่อนที่จะประเมินพารามิเตอร์ได้ หากคุณต้องการเปลี่ยนการ์ดที่ใช้สำหรับการประเมิน
 
-### Reschedule Cards on Change
+### จัดตารางการ์ดใหม่เมื่อมีการเปลี่ยนแปลง
 
-This option controls whether the due dates of cards will be changed when you enable FSRS, change desired retention, or change the parameters. The default is not to reschedule cards: future reviews will use the new scheduling, but there will be no immediate change to your workload. If rescheduling is enabled, the due dates of cards will be changed. Depending on your desired retention, it will often result in a large number of cards becoming due, so **this option is not recommended** when first switching from SM-2.
+ตัวเลือกนี้ควบคุมว่าจะมีการเปลี่ยนแปลงวันที่ครบกำหนดของการ์ดหรือไม่เมื่อคุณเปิดใช้งาน FSRS เปลี่ยนการคงอยู่ของข้อมูลที่ต้องการ หรือเปลี่ยนพารามิเตอร์ ค่าเริ่มต้นคือไม่จัดตารางการ์ดใหม่: การทบทวนในอนาคตจะใช้การจัดตารางเวลาใหม่ แต่จะไม่มีการเปลี่ยนแปลงภาระงานของคุณในทันที หากเปิดใช้งานการจัดตารางใหม่ วันที่ครบกำหนดของการ์ดจะมีการเปลี่ยนแปลง ขึ้นอยู่กับการคงอยู่ของข้อมูลที่ต้องการของคุณ มักจะส่งผลให้การ์ดจำนวนมากถึงกำหนด ดังนั้น **ไม่แนะนำให้ใช้ตัวเลือกนี้** เมื่อเปลี่ยนจาก SM-2 เป็นครั้งแรก
 
-Use this option sparingly, as it will add a review entry to each of your cards, and increase the size of your collection.
+ใช้ตัวเลือกนี้เท่าที่จำเป็น เนื่องจากจะเพิ่มรายการทบทวนลงในการ์ดแต่ละใบของคุณ และเพิ่มขนาดคอลเล็กชันของคุณ
 
-If you're first switching from SM-2 and still wish to use this option, we recommend you first create a backup, enable FSRS with rescheduling, and then if needed, you can undo or restore from the backup.
+หากคุณเพิ่งเปลี่ยนจาก SM-2 และยังคงต้องการใช้ตัวเลือกนี้ เราขอแนะนำให้คุณสร้างข้อมูลสำรองก่อน เปิดใช้งาน FSRS พร้อมการจัดตารางใหม่ จากนั้นหากจำเป็น คุณสามารถเลิกทำหรือกู้คืนจากข้อมูลสำรองได้
 
-### Compute Minimum Recommended Retention
+### คำนวณการคงอยู่ของข้อมูลที่แนะนำขั้นต่ำ
 
-Compute minimum recommended retention (CMRR) attempts to find the desired retention value that leads to the most material learned, in the least amount of time. The calculated number can serve as a reference when deciding what to set your desired retention to. You may wish to choose a higher desired retention, if you’re willing to trade more study time for a greater retention rate. However, setting your desired retention lower than the minimum is not recommended, as you'll spend more time studying than necessary, due to increased forgetting.
+การคำนวณการคงอยู่ของข้อมูลที่แนะนำขั้นต่ำ (CMRR) พยายามค้นหาค่าการคงอยู่ของข้อมูลที่ต้องการซึ่งนำไปสู่การเรียนรู้เนื้อหาได้มากที่สุดในระยะเวลาที่สั้นที่สุด ตัวเลขที่คำนวณได้สามารถใช้เป็นข้อมูลอ้างอิงในการตัดสินใจว่าจะตั้งค่าการคงอยู่ของข้อมูลที่ต้องการของคุณเป็นเท่าใด คุณอาจต้องการเลือกการคงอยู่ของข้อมูลที่ต้องการที่สูงขึ้น หากคุณยินดีที่จะแลกเปลี่ยนเวลาเรียนที่มากขึ้นเพื่ออัตราการคงอยู่ของข้อมูลที่มากขึ้น อย่างไรก็ตาม ไม่แนะนำให้ตั้งค่าการคงอยู่ของข้อมูลที่ต้องการของคุณให้ต่ำกว่าขั้นต่ำ เนื่องจากคุณจะใช้เวลาเรียนมากกว่าที่จำเป็น เนื่องจากการลืมที่เพิ่มขึ้น
 
-### The Simulator
+### เครื่องจำลอง
 
-You can use the simulator to get an estimate of your workload,
-either in reviews per day or in minutes of studying per day.
+คุณสามารถใช้เครื่องจำลองเพื่อประเมินภาระงานของคุณได้ ทั้งในรูปแบบการทบทวนต่อวันหรือนาทีของการเรียนต่อวัน
 
-- **Days to simulate** controls the duration of the simulated study history.
-- **Additional new cards to simulate** controls whether the simulator should
-  simulate more cards than this preset already has. For example, if you currently have 100 cards under this preset,
-  and you set **Additional new cards to simulate** to 50, the simulator will simulate a total of 150 cards.
-  This can be useful if you plan to create more new cards in the future.
-- **New cards/day** and **Maximum reviews/day** control how many new cards will be learned each day and
-  the maximum number of reviews per day.
-- **Maximum interval** controls the maximum interval length (in days).
+- **จำนวนวันที่จะจำลอง** ควบคุมระยะเวลาของประวัติการเรียนที่จำลองขึ้น
+- **การ์ดใหม่เพิ่มเติมที่จะจำลอง** ควบคุมว่าเครื่องจำลองควรจำลองการ์ดมากกว่าที่ค่าที่ตั้งไว้ล่วงหน้านี้มีอยู่แล้วหรือไม่ ตัวอย่างเช่น หากคุณมีการ์ด 100 ใบภายใต้ค่าที่ตั้งไว้ล่วงหน้านี้ และคุณตั้งค่า **การ์ดใหม่เพิ่มเติมที่จะจำลอง** เป็น 50 เครื่องจำลองจะจำลองการ์ดทั้งหมด 150 ใบ
+  ซึ่งอาจมีประโยชน์หากคุณวางแผนที่จะสร้างการ์ดใหม่เพิ่มเติมในอนาคต
+- **การ์ดใหม่/วัน** และ **การทบทวนสูงสุด/วัน** ควบคุมจำนวนการ์ดใหม่ที่จะเรียนในแต่ละวันและจำนวนการทบทวนสูงสุดต่อวัน
+- **ช่วงเวลาสูงสุด** ควบคุมความยาวช่วงเวลาสูงสุด (เป็นวัน)
 
-To make the simulation as realistic as possible, the simulator takes into account the real memory states (difficulty, stability, retrievability) of your cards.
-It also uses your FSRS parameters and the value of desired retention, therefore changing them will affect the simulation.
+เพื่อให้การจำลองสมจริงที่สุดเท่าที่จะเป็นไปได้ เครื่องจำลองจะพิจารณาสถานะความจำที่แท้จริง (ความยาก ความเสถียร ความสามารถในการดึงข้อมูล) ของการ์ดของคุณ
+นอกจากนี้ยังใช้พารามิเตอร์ FSRS และค่าการคงอยู่ของข้อมูลที่ต้องการของคุณด้วย ดังนั้นการเปลี่ยนแปลงค่าเหล่านี้จะส่งผลต่อการจำลอง
 
-#### Learning and Relearning Steps
+#### ขั้นตอนการเรียนรู้และการเรียนรู้ซ้ำ
 
-(Re)learning steps of 1 day or greater are not recommended when using FSRS. The main
-reason they were popular with the legacy SM-2 algorithm is because repeatedly
-failing a card after it has graduated from the learning phase could reduce
-its ease a lot, leading to what some people called "ease hell". This is not
-a problem that FSRS suffers from. By keeping your learning steps under a
-day, you will allow FSRS to schedule cards at times it has calculated are
-optimal for your material and memory. Another reason not to use longer
-learning steps is because FSRS may end up scheduling the first review for a
-shorter time than your last learning step, leading to the **Hard** button
-showing a longer time than **Good**.
+ไม่แนะนำให้ใช้ขั้นตอนการเรียนรู้ (ซ้ำ) 1 วันหรือมากกว่าเมื่อใช้ FSRS เหตุผลหลักที่ได้รับความนิยมในอัลกอริทึม SM-2 แบบดั้งเดิมคือการทำการ์ดไม่สำเร็จซ้ำๆ หลังจากที่สำเร็จการศึกษาจากขั้นตอนการเรียนรู้แล้วอาจลดความง่ายลงได้มาก ซึ่งนำไปสู่สิ่งที่บางคนเรียกว่า "นรกแห่งความง่าย" นี่ไม่ใช่ปัญหาที่ FSRS ประสบ การรักษาระยะเวลาการเรียนรู้ของคุณให้ต่ำกว่าหนึ่งวันจะช่วยให้ FSRS สามารถจัดตารางการ์ดในเวลาที่คำนวณแล้วว่าเหมาะสมที่สุดสำหรับเนื้อหาและความจำของคุณ อีกเหตุผลหนึ่งที่ไม่ควรใช้ขั้นตอนการเรียนรู้ที่ยาวขึ้นคือ FSRS อาจจัดตารางการทบทวนครั้งแรกให้สั้นกว่าขั้นตอนการเรียนรู้สุดท้ายของคุณ ซึ่งจะทำให้ปุ่ม **ยาก** แสดงเวลานานกว่า **ดี**
 
-We also recommend you keep the number of learning steps to a minimum. Evidence
-shows that repeating a card multiple times in a single day does not significantly
-contribute to long-term memory, so your time is
-better spent on other cards or a shorter study session.
+เราขอแนะนำให้คุณรักษาจำนวนขั้นตอนการเรียนรู้ให้น้อยที่สุด หลักฐานแสดงให้เห็นว่าการทำซ้ำการ์ดหลายครั้งในวันเดียวไม่ได้มีส่วนช่วยในการจำระยะยาวอย่างมีนัยสำคัญ ดังนั้นเวลาของคุณจึงควรใช้กับการ์ดอื่นหรือเซสชันการเรียนที่สั้นลง
 
-In the latest version of Anki you can let FSRS control short-term scheduling by leaving the (re)learning steps field empty. This is an experimental feature.
-Note that just because FSRS-5 _can_ give you intervals shorter than one day doesn't necessarily mean that it _will_. Your **Again** interval can be one day long, or even longer.
+ใน Anki เวอร์ชันล่าสุด คุณสามารถให้ FSRS ควบคุมการจัดตารางเวลาระยะสั้นได้โดยปล่อยให้ฟิลด์ขั้นตอนการเรียนรู้ (ซ้ำ) ว่างไว้ นี่เป็นคุณลักษณะทดลอง
+โปรดทราบว่าเพียงเพราะ FSRS-5 _สามารถ_ ให้ช่วงเวลาที่สั้นกว่าหนึ่งวันได้ ไม่ได้หมายความว่ามัน _จะ_ ทำเช่นนั้น ช่วงเวลา **อีกครั้ง** ของคุณอาจยาวหนึ่งวัน หรือนานกว่านั้น
 
-#### Add-On Compatibility
+#### ความเข้ากันได้ของส่วนเสริม
 
-Some add-ons can cause conflicts with FSRS. As a general rule of thumb,
-if an add-on affects a card's intervals, it shouldn't be used with FSRS.
-A list of commonly used add-ons and their FSRS compatibility can be found in [Add-on Compatibility](https://github.com/open-spaced-repetition/fsrs4anki#add-on-compatibility).
+ส่วนเสริมบางอย่างอาจทำให้เกิดความขัดแย้งกับ FSRS ตามกฎทั่วไป หากส่วนเสริมส่งผลต่อช่วงเวลาของการ์ด ก็ไม่ควรใช้กับ FSRS รายการส่วนเสริมที่ใช้กันทั่วไปและความเข้ากันได้กับ FSRS สามารถดูได้ที่ [ความเข้ากันได้ของส่วนเสริม](https://github.com/open-spaced-repetition/fsrs4anki#add-on-compatibility)
 
-#### More
+#### เพิ่มเติม
 
-Several frequently asked questions about FSRS have been answered in [its FAQ](https://faqs.ankiweb.net/frequently-asked-questions-about-fsrs.html).
+คำถามที่พบบ่อยหลายข้อเกี่ยวกับ FSRS ได้รับการตอบแล้วใน [คำถามที่พบบ่อย](https://faqs.ankiweb.net/frequently-asked-questions-about-fsrs.html)
 
-For more info on FSRS, please check:
+สำหรับข้อมูลเพิ่มเติมเกี่ยวกับ FSRS โปรดตรวจสอบ:
 
 - [FSRS4Anki Wiki](https://github.com/open-spaced-repetition/fsrs4anki/wiki)
-- [FSRS4Anki on Github](https://github.com/open-spaced-repetition/fsrs4anki)
+- [FSRS4Anki บน Github](https://github.com/open-spaced-repetition/fsrs4anki)
 
-## Advanced
+## ขั้นสูง
 
-### Maximum Interval
+### ช่วงเวลาสูงสุด
 
-The maximum number of days a review card will wait before it's shown again. When reviews have reached the limit, **Hard**, **Good** and **Easy** will all give the same delay. The shorter you set this, the greater your workload will be. The default is 100 years; you can decrease this to a smaller number if you’re willing to trade extra study time for higher retention.
+จำนวนวันสูงสุดที่การ์ดทบทวนจะรอก่อนที่จะแสดงอีกครั้ง เมื่อการทบทวนถึงขีดจำกัดแล้ว **ยาก**, **ดี** และ **ง่าย** จะให้การหน่วงเวลาเท่ากัน ยิ่งคุณตั้งค่านี้สั้นลงเท่าใด ภาระงานของคุณก็จะยิ่งมากขึ้นเท่านั้น ค่าเริ่มต้นคือ 100 ปี คุณสามารถลดค่านี้ลงเป็นจำนวนที่น้อยลงได้หากคุณยินดีที่จะแลกเปลี่ยนเวลาเรียนที่มากขึ้นเพื่อการคงอยู่ของข้อมูลที่สูงขึ้น
 
-### Historical Retention
+### การคงอยู่ของข้อมูลในอดีต
 
-This setting is hidden unless FSRS is turned on.
+การตั้งค่านี้จะถูกซ่อนไว้จนกว่าจะเปิด FSRS
 
-When some of your review history is missing, FSRS needs to fill in the gaps. By default, it will assume that when you did those old reviews, you remembered 90% of the material. If your old retention was appreciably higher or lower than 90%, adjusting this option will allow FSRS to better approximate the missing reviews.
+เมื่อประวัติการทบทวนบางส่วนของคุณหายไป FSRS จำเป็นต้องเติมช่องว่าง โดยค่าเริ่มต้น จะถือว่าเมื่อคุณทำการทบทวนเก่าๆ เหล่านั้น คุณจำเนื้อหาได้ 90% หากการคงอยู่ของข้อมูลเก่าของคุณสูงกว่าหรือต่ำกว่า 90% อย่างเห็นได้ชัด การปรับตัวเลือกนี้จะช่วยให้ FSRS ประมาณการทบทวนที่ขาดหายไปได้ดีขึ้น
 
-Your review history may be incomplete for two reasons:
+ประวัติการทบทวนของคุณอาจไม่สมบูรณ์ด้วยเหตุผลสองประการ:
 
-- Because you're using the **Ignore cards reviewed before** option.
-- Because you previously deleted review logs to free up space, or imported material from a different SRS program.
+- เนื่องจากคุณกำลังใช้ตัวเลือก **ไม่สนใจการ์ดที่ทบทวนก่อน**
+- เนื่องจากคุณเคยลบบันทึกการทบทวนเพื่อเพิ่มพื้นที่ว่าง หรือนำเข้าเนื้อหาจากโปรแกรม SRS อื่น
 
-The latter is quite rare, so unless you're using the former option, you probably don't need to adjust this setting.
+อย่างหลังค่อนข้างหายาก ดังนั้นเว้นแต่คุณจะใช้ตัวเลือกแรก คุณอาจไม่จำเป็นต้องปรับการตั้งค่านี้
 
-### Ignore Cards Reviewed Before
+### ไม่สนใจการ์ดที่ทบทวนก่อน
 
-If set, cards reviewed before the provided date will be ignored when optimizing FSRS parameters. This can be useful if you imported someone else's scheduling data, or have changed the way you use the answer buttons.
+หากตั้งค่าไว้ การ์ดที่ทบทวนก่อนวันที่ระบุจะถูกละเว้นเมื่อปรับพารามิเตอร์ FSRS ให้เหมาะสม ซึ่งอาจมีประโยชน์หากคุณนำเข้าข้อมูลการจัดตารางเวลาของผู้อื่น หรือเปลี่ยนวิธีการใช้ปุ่มคำตอบ
 
-### Starting Ease
+### ความง่ายเริ่มต้น
 
-Controls the ease that cards start out with. It is
-set when a card graduates from learning for the first time. It defaults
-to 2.50, meaning that once you have finished learning a card, answering
-**Good** on subsequent reviews will increase the delay by approximately
-2.5x (e.g. if the last delay was 10 days, the next delay would be around 25
-days). Based upon how you rate the card in subsequent reviews, the
-ease may increase or decrease from its starting value.
+ควบคุมความง่ายที่การ์ดเริ่มต้นด้วย จะถูกตั้งค่าเมื่อการ์ดสำเร็จการศึกษาจากการเรียนรู้เป็นครั้งแรก ค่าเริ่มต้นคือ 2.50 ซึ่งหมายความว่าเมื่อคุณเรียนการ์ดเสร็จแล้ว การตอบ **ดี** ในการทบทวนครั้งต่อๆ ไปจะเพิ่มการหน่วงเวลาประมาณ 2.5 เท่า (เช่น หากการหน่วงเวลาครั้งล่าสุดคือ 10 วัน การหน่วงเวลาครั้งต่อไปจะอยู่ที่ประมาณ 25 วัน) จากการที่คุณให้คะแนนการ์ดในการทบทวนครั้งต่อๆ ไป ความง่ายอาจเพิ่มขึ้นหรือลดลงจากค่าเริ่มต้น
 
-### Easy Bonus
+### โบนัสง่าย
 
-An extra multiplier applied to the interval when a review card is answered
-**Easy**. With the default value of 1.30, **Easy** will give an interval that is
-1.3 times the Good interval (e.g. if the Good interval was 10 days, the Easy
-interval would be around 13 days).
+ตัวคูณพิเศษที่ใช้กับช่วงเวลาเมื่อตอบการ์ดทบทวนว่า **ง่าย** ด้วยค่าเริ่มต้น 1.30 **ง่าย** จะให้ช่วงเวลาที่ยาวกว่าช่วงเวลาดี 1.3 เท่า (เช่น หากช่วงเวลาดีคือ 10 วัน ช่วงเวลาง่ายจะอยู่ที่ประมาณ 13 วัน)
 
-### Interval Modifier
+### ตัวปรับแต่งช่วงเวลา
 
-An extra multiplier that is applied to all reviews. At its default of 1.00 it
-does nothing. If you set it to 0.80, intervals will be generated at
-80% of their normal size (so a 10 day interval would become 8 days).
-You can thus use the multiplier to to make your reviews less or more frequent.
+ตัวคูณพิเศษที่ใช้กับการทบทวนทั้งหมด ที่ค่าเริ่มต้น 1.00 จะไม่ทำอะไรเลย หากคุณตั้งค่าเป็น 0.80 ช่วงเวลาจะถูกสร้างขึ้นที่ 80% ของขนาดปกติ (ดังนั้นช่วงเวลา 10 วันจะกลายเป็น 8 วัน) คุณจึงสามารถใช้ตัวคูณเพื่อทำให้การทบทวนของคุณบ่อยขึ้นหรือน้อยลงได้
 
-For moderately difficult material, the average user should find they
-remember approximately 90% of mature cards when they come up for review. You
-can find out your own performance by opening the graphs/statistics for a
-deck and looking at the Answer Buttons graph - mature retention is the
-correct% on the right side of the graph. If you haven’t been studying for
-long, you may not have any mature cards yet. As performance with new
-cards and younger cards can vary considerably, it’s a good idea to wait
-until you have a reasonable amount of mature reviews before you start
-drawing conclusions about your retention rate.
+สำหรับเนื้อหาที่ค่อนข้างยาก ผู้ใช้โดยเฉลี่ยควรพบว่าพวกเขาจำการ์ดที่โตเต็มที่ได้ประมาณ 90% เมื่อถึงกำหนดทบทวน คุณสามารถดูประสิทธิภาพของคุณเองได้โดยการเปิดกราฟ/สถิติสำหรับสำรับและดูกราฟปุ่มคำตอบ - การคงอยู่ของข้อมูลที่โตเต็มที่คือ % ที่ถูกต้องทางด้านขวาของกราฟ หากคุณไม่ได้เรียนมานาน คุณอาจยังไม่มีการ์ดที่โตเต็มที่ เนื่องจากประสิทธิภาพของการ์ดใหม่และการ์ดที่อายุน้อยกว่าอาจแตกต่างกันอย่างมาก จึงเป็นความคิดที่ดีที่จะรอจนกว่าคุณจะมีการทบทวนที่โตเต็มที่ในจำนวนที่เหมาะสมก่อนที่คุณจะเริ่มสรุปเกี่ยวกับการคงอยู่ของข้อมูลของคุณ
 
-On the SuperMemo website, they suggest that you can find an appropriate
-multiplier for a desired retention rate. Their formula boils down to:
+บนเว็บไซต์ SuperMemo พวกเขาแนะนำว่าคุณสามารถหาตัวคูณที่เหมาะสมสำหรับอัตราการคงอยู่ของข้อมูลที่ต้องการได้ สูตรของพวกเขาสรุปได้ดังนี้:
 
-    log(desired retention%) / log(current retention%)
+    log(เปอร์เซ็นต์การคงอยู่ของข้อมูลที่ต้องการ) / log(เปอร์เซ็นต์การคงอยู่ของข้อมูลปัจจุบัน)
 
-Imagine we have a current retention rate of 85% and we want to increase
-it to 90%. We’d calculate the modifier as:
+ลองนึกภาพว่าเรามีอัตราการคงอยู่ของข้อมูลปัจจุบันที่ 85% และเราต้องการเพิ่มเป็น 90% เราจะคำนวณตัวปรับแต่งดังนี้:
 
     log(90%) / log(85%) = 0.65
 
-You can use [Google to calculate this](https://www.google.com/search?q=log(90%25)+%2F+log(85%25)).
+คุณสามารถใช้ [Google เพื่อคำนวณสิ่งนี้](https://www.google.com/search?q=log(90%25)+%2F+log(85%25))
 
-If you enter the resulting 65% into the interval modifier, you should
-find over time that your retention moves closer to your desired
-retention.
+หากคุณป้อน 65% ที่ได้ลงในตัวปรับแต่งช่วงเวลา คุณควรพบว่าเมื่อเวลาผ่านไป การคงอยู่ของข้อมูลของคุณจะเข้าใกล้การคงอยู่ของข้อมูลที่คุณต้องการมากขึ้น
 
-One important thing to note however is that the trade-off between time
-spent studying and retention is not linear: we can see here that to
-increase our retention by 5 percentage points, we would have to study 35%
-more frequently. If the material you are learning is very important then
-it may be worth the extra effort – that is, of course, something you will need to
-decide for yourself. If you are simply worried that you are forgetting too
-much, then you may find investing more time at the initial learning stage, or using mnemonics will give you more gain for less effort.
+สิ่งสำคัญอย่างหนึ่งที่ควรทราบคือความสัมพันธ์ระหว่างเวลาที่ใช้ในการเรียนและการคงอยู่ของข้อมูลนั้นไม่เป็นเส้นตรง: เราจะเห็นได้ว่าในการเพิ่มการคงอยู่ของข้อมูลของเรา 5 เปอร์เซ็นต์ เราจะต้องเรียนบ่อยขึ้น 35% หากเนื้อหาที่คุณกำลังเรียนมีความสำคัญมาก ก็อาจคุ้มค่ากับความพยายามที่เพิ่มขึ้น – แน่นอนว่านั่นเป็นสิ่งที่คุณจะต้องตัดสินใจด้วยตัวเอง หากคุณกังวลว่าคุณกำลังลืมมากเกินไป คุณอาจพบว่าการลงทุนเวลามากขึ้นในขั้นตอนการเรียนรู้เริ่มต้น หรือการใช้ช่วยจำจะให้ผลตอบแทนมากกว่าโดยใช้ความพยายามน้อยลง
 
-One final thing to note is that Anki forces a new interval to be at
-least 1 day longer than it was previously, so that you do not get stuck
-reviewing with the same interval forever. If your goal is to repeat a
-card once a day for multiple days, you can do that by setting more
-learning mode steps, instead of by adjusting this modifier.
+สิ่งสุดท้ายที่ควรทราบคือ Anki บังคับให้ช่วงเวลาใหม่อย่างน้อยต้องยาวกว่าเดิม 1 วัน เพื่อที่คุณจะได้ไม่ติดอยู่กับการทบทวนด้วยช่วงเวลาเดิมตลอดไป หากเป้าหมายของคุณคือการทำซ้ำการ์ดวันละครั้งเป็นเวลาหลายวัน คุณสามารถทำได้โดยการตั้งค่าขั้นตอนโหมดการเรียนรู้เพิ่มเติม แทนที่จะปรับตัวปรับแต่งนี้
 
-### Hard Interval
+### ช่วงเวลายาก
 
-The multiplier applied when you use the **Hard** button. The percentage is relative
-to the previous interval, e.g. with a default of 1.20, a card with a 10-day interval
-will be given 12 days.
+ตัวคูณที่ใช้เมื่อคุณใช้ปุ่ม **ยาก** เปอร์เซ็นต์จะสัมพันธ์กับช่วงเวลาก่อนหน้า เช่น ด้วยค่าเริ่มต้น 1.20 การ์ดที่มีช่วงเวลา 10 วันจะได้รับ 12 วัน
 
-### New Interval
+### ช่วงเวลาใหม่
 
-The multiplier applied when you use the **Again** button on a review card. The
-default 0.00 means that a review card's delay is reset to zero when you forget it
-(which then becomes 1 day after the [minimum interval](#minimum-interval) is
-applied).
+ตัวคูณที่ใช้เมื่อคุณใช้ปุ่ม **อีกครั้ง** บนการ์ดทบทวน ค่าเริ่มต้น 0.00 หมายความว่าการหน่วงเวลาของการ์ดทบทวนจะถูกรีเซ็ตเป็นศูนย์เมื่อคุณลืม (ซึ่งจะกลายเป็น 1 วันหลังจากใช้ [ช่วงเวลาขั้นต่ำ](#minimum-interval))
 
-If changed from the default, it is possible for forgotten cards to preserve part
-of their previous delay. For example, if a card had a 100 day interval, and you set
-the **New Interval** to 0.20, the new interval would be 20 days.
+หากเปลี่ยนจากค่าเริ่มต้น เป็นไปได้ที่การ์ดที่ลืมไปแล้วจะรักษาส่วนหนึ่งของการหน่วงเวลาก่อนหน้าไว้ได้ ตัวอย่างเช่น หากการ์ดมีช่วงเวลา 100 วัน และคุณตั้งค่า **ช่วงเวลาใหม่** เป็น 0.20 ช่วงเวลาใหม่จะเป็น 20 วัน
 
-While preserving part of the interval may seem to make sense, SuperMemo has observed
-that preserving part of the delay can actually [be counter-productive](https://supermemo.guru/wiki/Post-lapse_stability). For this reason, we recommend you leave it on the default setting.
+แม้ว่าการรักษาส่วนหนึ่งของช่วงเวลาอาจดูสมเหตุสมผล แต่ SuperMemo ได้สังเกตว่าการรักษาส่วนหนึ่งของการหน่วงเวลาอาจ [ส่งผลเสีย](https://supermemo.guru/wiki/Post-lapse_stability) ได้ ด้วยเหตุนี้ เราขอแนะนำให้คุณปล่อยให้เป็นการตั้งค่าเริ่มต้น
 
-### Custom Scheduling
+### การจัดตารางเวลาแบบกำหนดเอง
 
-You can have more control over Anki's scheduling of cards by using your own JavaScript in the custom scheduling field. This is a global option, so code entered here applies to every preset.
+คุณสามารถควบคุมการจัดตารางการ์ดของ Anki ได้มากขึ้นโดยใช้ JavaScript ของคุณเองในฟิลด์การจัดตารางเวลาแบบกำหนดเอง นี่เป็นตัวเลือกส่วนกลาง ดังนั้นโค้ดที่ป้อนที่นี่จะใช้กับทุกค่าที่ตั้งไว้ล่วงหน้า
 
-Here is an example custom scheduling script. Note that, for Qt5 versions of Anki, the code needs to be transpiled.
+นี่คือตัวอย่างสคริปต์การจัดตารางเวลาแบบกำหนดเอง โปรดทราบว่าสำหรับ Anki เวอร์ชัน Qt5 โค้ดจะต้องถูกแปลง
 
 ```javascript
-// print the existing states
+// พิมพ์สถานะที่มีอยู่
 console.log(
   JSON.stringify(states, null, 4)
 );
 
-// load the debugger if the web inspector is open
+// โหลดดีบักเกอร์หากตัวตรวจสอบเว็บเปิดอยู่
 debugger;
 
-// if the hard button is a learning step, make it
-// a 123 minute delay
+// หากปุ่มยากเป็นขั้นตอนการเรียนรู้ ให้ทำให้เป็น
+// การหน่วงเวลา 123 นาที
 if (states.hard.normal?.learning) {
   states.hard.normal.learning.scheduledSecs = 123 * 60;
 }
 
-// apply the same change in a rescheduling filtered deck
+// ใช้การเปลี่ยนแปลงเดียวกันในสำรับที่กรองการจัดตารางใหม่
 if (states.hard.filtered?.rescheduling?.originalState?.learning) {
   states.hard.filtered.rescheduling.originalState.learning.scheduledSecs =
     123 * 60;
 }
 
-// increase ease factor by 0.2 when Easy used on a review
+// เพิ่มปัจจัยความง่าย 0.2 เมื่อใช้ง่ายในการทบทวน
 if (states.good.normal?.review) {
   states.easy.normal.review.easeFactor =
     states.good.normal.review.easeFactor + 0.2;
 }
 ```
 
-You can also see [FSRS custom scheduling code](https://github.com/open-spaced-repetition/fsrs4anki/blob/main/fsrs4anki_scheduler.js) as an example.
+คุณยังสามารถดู [โค้ดการจัดตารางเวลาแบบกำหนดเองของ FSRS](https://github.com/open-spaced-repetition/fsrs4anki/blob/main/fsrs4anki_scheduler.js) เป็นตัวอย่างได้
 
-The various scheduling states of cards are described in [SchedulingStates](https://github.com/ankitects/anki/blob/main/proto/anki/scheduler.proto).
+สถานะการจัดตารางเวลาต่างๆ ของการ์ดได้อธิบายไว้ใน [SchedulingStates](https://github.com/ankitects/anki/blob/main/proto/anki/scheduler.proto)

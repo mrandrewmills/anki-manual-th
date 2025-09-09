@@ -1,48 +1,31 @@
-# Miscellanea
+# เบ็ดเตล็ด
 
 <!-- toc -->
 
-## Menu Shortcuts
+## เมนูลัด
 
-On Windows/Linux you can hold down the <kbd>Alt</kbd> key and press a highlighted
-letter to activate a particular menu.
+บน Windows/Linux คุณสามารถกดปุ่ม <kbd>Alt</kbd> ค้างไว้แล้วกดตัวอักษรที่ไฮไลต์เพื่อเปิดใช้งานเมนูนั้นๆ
 
-Although macOS doesn’t support this feature, it does allow you instead to assign
-shortcuts to specific menu items. Please see
-<https://support.apple.com/en-au/guide/mac-help/mchlp2271/mac>
-for more information.
+แม้ว่า macOS จะไม่รองรับฟีเจอร์นี้ แต่ก็อนุญาตให้คุณกำหนดคีย์ลัดให้กับรายการเมนูที่ต้องการได้ โปรดดู <https://support.apple.com/th-th/guide/mac-help/mchlp2271/mac> สำหรับข้อมูลเพิ่มเติม
 
-## Debug Console
+## คอนโซลดีบัก
 
-Sometimes you may be asked to use the debug console to change a setting
-or check something. Unless asked to enter text in the "debug console",
-you will probably not need this. Advanced users may like to read more
-about it in the [add-on writing guide](https://addon-docs.ankiweb.net/debugging.html#debug-console).
+บางครั้งคุณอาจถูกขอให้ใช้คอนโซลดีบักเพื่อเปลี่ยนการตั้งค่าหรือตรวจสอบบางอย่าง หากไม่ถูกขอให้ป้อนข้อความใน "คอนโซลดีบัก" คุณอาจไม่จำเป็นต้องใช้มัน ผู้ใช้ขั้นสูงอาจต้องการอ่านเพิ่มเติมเกี่ยวกับเรื่องนี้ใน [คู่มือการเขียนส่วนเสริม](https://addon-docs.ankiweb.net/debugging.html#debug-console)
 
-When asked to enter text into the "debug console", please start Anki,
-and in the main window, press
+เมื่อถูกขอให้ป้อนข้อความลงใน "คอนโซลดีบัก" โปรดเริ่ม Anki และในหน้าต่างหลัก ให้กด
 
 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>;</kbd>
 
-(the control key, shift key, and semi-colon key at the same time)
+(ปุ่ม control, ปุ่ม shift และปุ่ม semi-colon พร้อมกัน)
 
-On a Mac, press
+บน Mac ให้กด
 
 <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>;</kbd>
 
-(the command key, shift key, and semi-colon key at the same time)
+(ปุ่ม command, ปุ่ม shift และปุ่ม semi-colon พร้อมกัน)
 
-On some non-English keyboards, you may need to press <kbd>:</kbd> or <kbd>+</kbd> instead
-of <kbd>;</kbd>.
+สำหรับคีย์บอร์ดที่ไม่ใช่ภาษาอังกฤษบางรุ่น คุณอาจต้องกด <kbd>:</kbd> หรือ <kbd>+</kbd> แทน <kbd>;</kbd>
 
-In the window that has popped up, please paste the text you were asked
-to paste in the top section. When you’ve done so, please press
-<kbd>Ctrl</kbd>+<kbd>Return</kbd> (On Mac, <kbd>Command</kbd>+<kbd>Return</kbd>), and some text should appear in
-the bottom section. If you’ve been asked to paste the resulting output,
-please copy it from the bottom area, and paste it back to the support
-person.
+ในหน้าต่างที่ปรากฏขึ้นมา โปรดวางข้อความที่คุณถูกขอให้วางในส่วนบน เมื่อเสร็จแล้ว โปรดกด <kbd>Ctrl</kbd>+<kbd>Return</kbd> (บน Mac, <kbd>Command</kbd>+<kbd>Return</kbd>) และข้อความบางอย่างควรจะปรากฏในส่วนล่าง หากคุณถูกขอให้วางผลลัพธ์ที่ได้ โปรดคัดลอกจากพื้นที่ด้านล่าง แล้วนำไปวางกลับไปยังเจ้าหน้าที่ฝ่ายสนับสนุน
 
-If you press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Return</kbd> instead of just <kbd>Ctrl</kbd>+<kbd>Return</kbd>, Anki will
-try to print the result rather than doing what you asked it to. If you
-are getting unexpected errors, please make sure you’re not holding down
-the <kbd>Shift</kbd> key.
+หากคุณกด <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Return</kbd> แทนที่จะเป็นแค่ <kbd>Ctrl</kbd>+<kbd>Return</kbd> Anki จะพยายามพิมพ์ผลลัพธ์แทนที่จะทำตามที่คุณขอ หากคุณได้รับข้อผิดพลาดที่ไม่คาดคิด โปรดตรวจสอบให้แน่ใจว่าคุณไม่ได้กดปุ่ม <kbd>Shift</kbd> ค้างไว้
