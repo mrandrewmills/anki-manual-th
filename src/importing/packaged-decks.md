@@ -1,53 +1,29 @@
-# Packaged Decks
+# เด็คที่บรรจุไว้
 
 <!-- toc -->
 
-Anki packages (.apkg files) enable you to import decks, notes, note types, and cards from
-other users. They are commonly shared on [AnkiWeb](https://ankiweb.net/shared/decks).
+ไฟล์แพ็คเกจ Anki (.apkg) ช่วยให้คุณนำเข้าเด็ค, โน้ต, ประเภทโน้ต และบัตรจากผู้ใช้อื่น โดยมักจะแชร์กันบน [AnkiWeb](https://ankiweb.net/shared/decks)
 
-## Scheduling
+## การตั้งเวลาทบทวน
 
-Anki packages may also contain scheduling information, which is useful if you want to
-transfer decks between devices or profiles. However, when importing
-a deck shared by someone else, you typically do not want to adopt their card intervals
-or review history.
+ไฟล์แพ็คเกจ Anki อาจมีข้อมูลการตั้งเวลาทบทวนด้วย ซึ่งมีประโยชน์หากคุณต้องการถ่ายโอนเด็คระหว่างอุปกรณ์หรือโปรไฟล์ อย่างไรก็ตาม เมื่อคุณนำเข้าเด็คที่แชร์โดยผู้อื่น โดยปกติคุณจะไม่ต้องการนำช่วงเวลาหรือประวัติการทบทวนของพวกเขามาด้วย
 
-If you encounter imported cards with unexpectedly large intevals, the deck author may
-accidentally have included their scheduling information. You can use the
-[Set Due Date feature](../browsing.md#cards) to reset the imported cards. On Anki
-23.10 and later, you can remove any scheduling information during the import process
-by leaving the "Import any learning progress" option unselected. This will also remove
-any "leech" or "marked" tags from the imported cards.
+หากคุณพบว่าบัตรที่นำเข้ามีช่วงเวลาทบทวนที่ยาวผิดปกติ อาจเป็นเพราะผู้สร้างเด็คใส่ข้อมูลการตั้งเวลาทบทวนมาด้วยโดยไม่ได้ตั้งใจ คุณสามารถใช้ฟีเจอร์ [กำหนดวันครบกำหนด](../browsing.md#cards) เพื่อรีเซ็ตบัตรที่นำเข้าได้ ใน Anki 23.10 ขึ้นไป คุณสามารถลบข้อมูลการตั้งเวลาทบทวนขณะนำเข้าได้โดยไม่เลือกตัวเลือก "นำเข้าความคืบหน้าการเรียนรู้" ซึ่งจะลบแท็ก "leech" หรือ "marked" ออกจากบัตรที่นำเข้าด้วย
 
-## Updating
+## การอัปเดต
 
-When you import an .apkg file, Anki will identify any notes in it that are
-already in your collection due to a previous import. If the notes in the file
-are newer than your local copy, the notes will be updated with the contents of
-the file by default.
+เมื่อคุณนำเข้าไฟล์ .apkg Anki จะตรวจสอบโน้ตในไฟล์ว่ามีอยู่ในคลังของคุณแล้วหรือไม่จากการนำเข้าก่อนหน้า หากโน้ตในไฟล์ใหม่กว่าที่คุณมีอยู่ โน้ตจะถูกอัปเดตด้วยเนื้อหาใหม่โดยอัตโนมัติ
 
-This updating process is generally not possible if the note type is changed (e.g. if either
-you or the deck author do things like add an extra field to the note type).
-You will still be able to import any missing notes from the file, but
-notes you have imported previously will not be updated if the deck author
-has made changes.
+โดยทั่วไปกระบวนการอัปเดตนี้จะไม่สามารถทำได้หากประเภทโน้ตถูกเปลี่ยน (เช่น ถ้าคุณหรือผู้สร้างเด็คเพิ่มฟิลด์ใหม่ในประเภทโน้ต) คุณยังสามารถนำเข้าโน้ตที่ขาดหายไปจากไฟล์ได้ แต่โน้ตที่เคยนำเข้าแล้วจะไม่ถูกอัปเดตหากผู้สร้างเด็คมีการเปลี่ยนแปลง
 
-### Anki 23.10 and Later
+### Anki 23.10 ขึ้นไป
 
-Anki 23.10 introduced more flexibility: You can choose to unconditionally
-update notes and note types, always overwriting your modifications,
-or, on the other hand, never update existing objects.
+Anki 23.10 เพิ่มความยืดหยุ่นมากขึ้น: คุณสามารถเลือกให้อัปเดตโน้ตและประเภทโน้ตเสมอ (เขียนทับการแก้ไขของคุณ), หรือไม่อัปเดตวัตถุที่มีอยู่เลย
 
-Also, if both you and the deck author modified the same note type, you can now decide to
-_merge_ the two versions. This will preserve all templates and fields contained in
-either one, but will require a full sync, and may mark other existing notes as modified.
+นอกจากนี้ หากทั้งคุณและผู้สร้างเด็คแก้ไขประเภทโน้ตเดียวกัน คุณสามารถเลือกที่จะ _ผสาน_ เวอร์ชันทั้งสองได้ ซึ่งจะเก็บเทมเพลตและฟิลด์ทั้งหมดที่มีในแต่ละเวอร์ชันไว้ แต่จะต้องซิงค์เต็มรูปแบบ และอาจทำให้โน้ตอื่นๆ ถูกทำเครื่องหมายว่าแก้ไขแล้ว
 
-#### Note to Deck Authors
+#### หมายเหตุสำหรับผู้สร้างเด็ค
 
-Merging relies on template and field ids, which were introduced in Anki 2.1.67.
-If a template or field lacks an id, because it has been created with an earlier
-release, Anki attempts to find an equivalent by comparing names.
+การผสานอาศัยรหัสของเทมเพลตและฟิลด์ ซึ่งถูกเพิ่มใน Anki 2.1.67 หากเทมเพลตหรือฟิลด์ไม่มีรหัสเพราะสร้างด้วยเวอร์ชันเก่า Anki จะพยายามจับคู่โดยเปรียบเทียบชื่อ
 
-See this [this add-on](https://ankiweb.net/shared/info/2063785767) for why it is
-advantageous to share note types with field and template ids, and how to add them to
-existing ones.
+ดู [ปลั๊กอินนี้](https://ankiweb.net/shared/info/2063785767) ว่าทำไมจึงควรแชร์ประเภทโน้ตที่มีรหัสฟิลด์และเทมเพลต และวิธีเพิ่มรหัสเหล่านี้ให้กับประเภทโน้ตที่มีอยู่

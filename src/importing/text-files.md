@@ -1,239 +1,146 @@
-# Text Files
+# ไฟล์ข้อความ
 
 <!-- toc -->
 
-Any **plain text** file that contains fields separated by commas,
-semicolons or tabs can be imported into Anki, provided some conditions
-are met.
+ไฟล์ **ข้อความธรรมดา** ใดๆ ที่มีฟิลด์คั่นด้วยเครื่องหมายจุลภาค, เซมิโคลอน หรือแท็บ สามารถนำเข้าใน Anki ได้ หากตรงตามเงื่อนไขบางประการ
 
-- The files must be plain text (myfile.txt). Other formats like
-  myfile.xls, myfile.rtf, myfile.doc must be saved as a plain text
-  file first.
+- ไฟล์ต้องเป็นข้อความธรรมดา (myfile.txt) รูปแบบอื่นเช่น myfile.xls, myfile.rtf, myfile.doc ต้องบันทึกเป็นไฟล์ข้อความธรรมดาก่อน
 
-- The files must be in UTF-8 format (see below).
+- ไฟล์ต้องอยู่ในรูปแบบ UTF-8 (ดูด้านล่าง)
 
-- Anki determines the number of fields in the file by looking at the first
-  (non-commented) line. If some of the later records in the file contain fewer
-  fields, Anki will treat the missing fields as if they were blank. If some of your
-  records contain extra fields, the extra content will not be imported.
+- Anki จะตรวจสอบจำนวนฟิลด์ในไฟล์โดยดูจากบรรทัดแรก (ที่ไม่ใช่คอมเมนต์) หากบางเรคคอร์ดในไฟล์มีฟิลด์น้อยกว่า Anki จะถือว่าฟิลด์ที่ขาดเป็นค่าว่าง หากบางเรคคอร์ดมีฟิลด์เกิน เนื้อหาส่วนเกินจะไม่ถูกนำเข้า
 
-- Anki tries to guess which field separator (commas, tabs, etc.) your file uses. 
-  If it guesses wrongly, you can change it in the import options window and preview 
-  the results. Or you can add [file headers](#file-headers) to force a specific field separator.
+- Anki จะพยายามเดาว่าไฟล์ของคุณใช้ตัวคั่นฟิลด์แบบใด (จุลภาค, แท็บ ฯลฯ) หากเดาผิด คุณสามารถเปลี่ยนได้ในหน้าต่างตัวเลือกนำเข้าและดูตัวอย่างผลลัพธ์ หรือเพิ่ม [ส่วนหัวไฟล์](#file-headers) เพื่อบังคับใช้ตัวคั่นฟิลด์ที่ต้องการ
 
-Fields in your text file can be mapped to any field in your notes,
-including the tags field. You can choose which field in the text file
-corresponds to which field in the note when you import.
+ฟิลด์ในไฟล์ข้อความของคุณสามารถจับคู่กับฟิลด์ใดก็ได้ในโน้ต รวมถึงฟิลด์แท็กด้วย คุณสามารถเลือกว่าฟิลด์ใดในไฟล์จะตรงกับฟิลด์ใดในโน้ตขณะนำเข้า
 
-When you import a text file, you can choose what deck to put the cards
-in. Keep in mind that if you have the deck override option set for one
-or more of your templates, the cards will go to that deck rather than
-the one you’ve selected.
+เมื่อคุณนำเข้าไฟล์ข้อความ คุณสามารถเลือกเด็คที่จะใส่บัตรได้ โปรดทราบว่าหากคุณตั้งค่าตัวเลือกเด็คแทนที่ไว้ในเทมเพลตหนึ่งหรือมากกว่า บัตรจะไปที่เด็คนั้นแทนที่จะเป็นเด็คที่คุณเลือก
 
-This is an example of a valid file with three fields:
+ตัวอย่างไฟล์ที่ถูกต้องที่มีสามฟิลด์:
 
     apple;banana;grape
     first field;second field;third field
 
-There are two ways to include newlines or the field separator in fields.
+มีสองวิธีในการใส่บรรทัดใหม่หรือเครื่องหมายคั่นฟิลด์ในฟิลด์
 
-**Escape the characters by placing the contents of the field in
-quotation marks**:
+**ใส่เครื่องหมายอัญประกาศรอบเนื้อหาฟิลด์เพื่อ escape ตัวอักษรพิเศษ**:
 
     hello;"this is
     a two line answer"
     two;this is a one line field
     "this includes a ; (semicolon)";another field
 
-Because quotes are used to mark where a field begins and ends, if you
-wish to include them inside your field, you need to replace a single
-doublequote with two doublequotes to "escape" them from the regular
-handling, like so:
+เนื่องจากเครื่องหมายอัญประกาศใช้ระบุจุดเริ่มและจบของฟิลด์ หากต้องการใส่เครื่องหมายอัญประกาศในฟิลด์ ให้ใช้เครื่องหมายอัญประกาศสองครั้งติดกันเพื่อ escape เช่น:
 
     field one;"field two with ""escaped quotes"" inside it"
 
-When you use a spreadsheet program like Libreoffice to create the CSV
-file for you, it will automatically take care of escaping double quotes.
+หากคุณใช้โปรแกรมสเปรดชีตอย่าง Libreoffice เพื่อสร้างไฟล์ CSV โปรแกรมจะจัดการ escape เครื่องหมายอัญประกาศให้อัตโนมัติ
 
-**Use HTML new lines**:
+**ใช้ HTML new lines**:
 
     hello; this is<br>a two line answer
     two; this is a one line one
 
-You need to turn on the **Allow HTML in fields** in the import
-dialog for HTML newlines to work.
+คุณต้องเปิดใช้งาน **Allow HTML in fields** ในหน้าต่างนำเข้าเพื่อให้ HTML newlines ใช้งานได้
 
-Escaped multi-lines will not work correctly if you are using cloze
-deletions that span multiple lines. In this case, please use HTML
-newlines instead.
+การ escape หลายบรรทัดจะไม่ทำงานถูกต้องหากคุณใช้ cloze deletion ที่ข้ามหลายบรรทัด ในกรณีนี้โปรดใช้ HTML newline แทน
 
-You can also include tags in another field and select it as a tags field
-in the import dialog:
+คุณยังสามารถใส่แท็กในฟิลด์อื่นและเลือกเป็นฟิลด์แท็กในหน้าต่างนำเข้าได้:
 
     first field;second field;tags
 
-This is an example of a valid file where the first line is ignored (\#):
+ตัวอย่างไฟล์ที่ถูกต้องซึ่งบรรทัดแรกถูกละเว้น (\#):
 
     # this is a comment and is ignored
     foo bar;bar baz;baz quux
     field1;field2;field3
 
-## Spreadsheets and UTF-8
+## สเปรดชีตและ UTF-8
 
-If you have non-Latin characters in your file (such as accents, Japanese
-and so on), Anki expects files to be saved in a "UTF-8 encoding". The
-easiest way to do this is to use the free LibreOffice spreadsheet
-program instead of Excel to edit your file, as it supports UTF-8 easily,
-and also exports multi-line content properly, unlike Excel. If you wish
-to keep using Excel, please see [this doc](https://docs.google.com/document/d/12YE_FS6A9ANLTESJNtPP116ti4nNmCBghyoJBRtno_k/edit?usp=sharing)
-for more information.
+หากไฟล์ของคุณมีอักขระที่ไม่ใช่ละติน (เช่น ตัวอักษรมีวรรณยุกต์, ญี่ปุ่น ฯลฯ) Anki คาดว่าไฟล์จะถูกบันทึกเป็น "UTF-8 encoding" วิธีที่ง่ายที่สุดคือใช้โปรแกรม LibreOffice แทน Excel ในการแก้ไขไฟล์ เพราะรองรับ UTF-8 ได้ดี และยังส่งออกเนื้อหาหลายบรรทัดได้ถูกต้อง ต่างจาก Excel หากต้องการใช้ Excel ต่อ โปรดดู [เอกสารนี้](https://docs.google.com/document/d/12YE_FS6A9ANLTESJNtPP116ti4nNmCBghyoJBRtno_k/edit?usp=sharing) สำหรับข้อมูลเพิ่มเติม
 
-To save your spreadsheet to a file Anki can read with LibreOffice, go to
-**File &gt; Save As**, and then select CSV for the type of file. After
-accepting the default options, LibreOffice will save the file and you
-can then import the saved file into Anki.
+ในการบันทึกสเปรดชีตเป็นไฟล์ที่ Anki อ่านได้ด้วย LibreOffice ให้ไปที่ **ไฟล์ &gt; บันทึกเป็น** แล้วเลือก CSV เป็นประเภทไฟล์ หลังจากยอมรับตัวเลือกเริ่มต้น LibreOffice จะบันทึกไฟล์และคุณสามารถนำเข้าไฟล์นั้นใน Anki ได้
 
 ## HTML
 
-Anki can treat text imported from text files as HTML (the language used
-for web pages). This means that text with bold, italics and other
-formatting can be exported to a text file and imported again. If you
-want to include HTML formatting, you can check the "allow HTML in
-fields" checkbox when importing. You may wish to turn this off if you’re
-trying to import cards whose content contains angle brackets or other
-HTML syntax.
+Anki สามารถจัดการข้อความที่นำเข้าจากไฟล์ข้อความเป็น HTML (ภาษาสำหรับเว็บเพจ) ได้ ซึ่งหมายความว่าข้อความที่มีตัวหนา ตัวเอียง และรูปแบบอื่นๆ สามารถส่งออกเป็นไฟล์ข้อความและนำเข้ากลับมาได้ หากต้องการใส่รูปแบบ HTML ให้เลือก "อนุญาต HTML ในฟิลด์" ขณะนำเข้า คุณอาจต้องปิดตัวเลือกนี้หากต้องการนำเข้าบัตรที่มีเนื้อหาประกอบด้วยเครื่องหมาย < หรือสัญลักษณ์ HTML อื่นๆ
 
-If you wish to use HTML for formatting your file but also wish to
-include angle brackets or ampersands, you may use the following replacements:
+หากต้องการใช้ HTML เพื่อจัดรูปแบบไฟล์แต่ต้องการใส่เครื่องหมาย < หรือ & ด้วย ให้ใช้การแทนที่ดังนี้:
 
-| Character | Replacement |
-| --------- | ----------- |
-| &lt;      | `&lt;`      |
-| &gt;      | `&gt;`      |
-| &amp;     | `&amp;`     |
+| ตัวอักษร | การแทนที่ |
+| -------- | --------- |
+| &lt;     | `&lt;`    |
+| &gt;     | `&gt;`    |
+| &amp;    | `&amp;`   |
 
-## Importing Media
+## การนำเข้าสื่อ
 
-If you want to include audio and pictures from a text file import, copy
-the files into the [collection.media folder](../files.md). **Do not put
-subdirectories in the media folder, or some features will not work.**
+หากต้องการใส่เสียงหรือรูปภาพจากไฟล์ข้อความ ให้นำไฟล์ไปไว้ใน [โฟลเดอร์ collection.media](../files.md) **ห้ามใส่โฟลเดอร์ย่อยในโฟลเดอร์สื่อ มิฉะนั้นฟีเจอร์บางอย่างจะไม่ทำงาน**
 
-After you’ve copied the files, change one of the fields in your text
-file as follows.
+หลังจากคัดลอกไฟล์แล้ว ให้เปลี่ยนฟิลด์ในไฟล์ข้อความของคุณดังนี้
 
     <img src="myimage.jpg">
 
-or
+หรือ
 
     [sound:myaudio.mp3]
 
-Alternatively, you can use the [find and replace](../browsing.md) feature
-in the browse screen to update all the fields at once. If each field
-contains text like "myaudio", and you wish to make it play a sound,
-you’d search for (.\*) and replace it with "\[sound:\\1.mp3\]", with the
-**regular expressions** option enabled.
+หรือจะใช้ฟีเจอร์ [ค้นหาและแทนที่](../browsing.md) ในหน้าจอเบราว์เซอร์เพื่ออัปเดตฟิลด์ทั้งหมดพร้อมกันก็ได้ หากแต่ละฟิลด์มีข้อความเช่น "myaudio" และคุณต้องการให้เล่นเสียง ให้ค้นหา (.\*) และแทนที่ด้วย "\[sound:\\1.mp3\]" โดยเปิดใช้งานตัวเลือก **regular expressions**
 
-When importing a text file with these references, you must make sure to
-enable the "Allow HTML" option.
+ขณะนำเข้าไฟล์ข้อความที่มีการอ้างอิงเหล่านี้ ต้องแน่ใจว่าเปิดใช้งาน "Allow HTML" ด้วย
 
-You might be tempted to do this in a template, like:
+คุณอาจอยากทำแบบนี้ในเทมเพลต เช่น
 
     <img src="{{field name}}">
 
-Anki doesn’t support this for two reasons: searching for used media is
-expensive, as each card has to be rendered, and such functionality isn’t
-obvious to shared deck users. Please use the find & replace technique
-instead.
+Anki ไม่รองรับด้วยสองเหตุผล: การค้นหาสื่อที่ใช้จะช้า เพราะต้องเรนเดอร์บัตรแต่ละใบ และฟีเจอร์นี้ไม่ชัดเจนสำหรับผู้ใช้เด็คที่แชร์ โปรดใช้เทคนิคค้นหาและแทนที่แทน
 
-## Bulk Media
+## การนำเข้าสื่อจำนวนมาก
 
-Another option for importing large amounts of media at once is to use
-the [media import add-on](https://ankiweb.net/shared/info/129299120).
-This add-on will automatically create notes for all files in a folder
-you select, with the filenames on the front (minus the file extension,
-so if you have a file named apple.jpg, the front would say "apple") and
-the images or audio on the back. If you would like a different
-arrangement of media and filenames, you can [change the note type](../browsing.md) of the created cards afterwards.
+อีกทางเลือกสำหรับการนำเข้าสื่อจำนวนมากในครั้งเดียวคือใช้ [ปลั๊กอิน media import](https://ankiweb.net/shared/info/129299120) ปลั๊กอินนี้จะสร้างโน้ตอัตโนมัติสำหรับไฟล์ทั้งหมดในโฟลเดอร์ที่คุณเลือก โดยชื่อไฟล์จะอยู่ด้านหน้า (ไม่รวมสกุลไฟล์ เช่น apple.jpg จะได้ "apple" ด้านหน้า) และรูปภาพหรือเสียงจะอยู่ด้านหลัง หากต้องการจัดเรียงสื่อและชื่อไฟล์แบบอื่น สามารถ [เปลี่ยนประเภทโน้ต](../browsing.md) ของบัตรที่สร้างขึ้นภายหลังได้
 
-## Duplicates and Updating
+## การซ้ำและการอัปเดต
 
-When importing text files, Anki uses the first field to determine if a
-note is unique. By default, if the file you are importing has a first
-field that matches one of the existing notes in your collection and that
-existing note is the same type as the type you’re importing, the
-existing note’s other fields will be updated based on content of the
-imported file. A drop-down box in the import screen allows you to change
-this behaviour, to either ignore duplicates completely, or import them
-as new notes instead of updating existing ones.
+ขณะนำเข้าไฟล์ข้อความ Anki จะใช้ฟิลด์แรกเพื่อตรวจสอบว่าโน้ตนั้นซ้ำหรือไม่ โดยปกติ หากไฟล์ที่นำเข้ามีฟิลด์แรกตรงกับโน้ตที่มีอยู่ในคลังของคุณและเป็นประเภทโน้ตเดียวกัน โน้ตที่มีอยู่จะถูกอัปเดตฟิลด์อื่นๆ ตามเนื้อหาในไฟล์ที่นำเข้า กล่องเลือกในหน้าต่างนำเข้าช่วยให้คุณเปลี่ยนพฤติกรรมนี้ได้ว่าจะไม่สนใจโน้ตซ้ำเลย หรือให้นำเข้าเป็นโน้ตใหม่แทนการอัปเดตโน้ตเดิม
 
-The **match scope** setting controls how duplicates are identified. When
-**note type** is selected, Anki will identify a duplicate if another note
-with the same note type has the same first field. When set to **note type and deck**,
-a duplicate will only be flagged if the existing note also happens to be
-in the deck you are importing into.
+การตั้งค่า **ขอบเขตการจับคู่** จะควบคุมวิธีระบุโน้ตซ้ำ เมื่อเลือก **note type** Anki จะระบุว่าเป็นโน้ตซ้ำหากมีโน้ตประเภทเดียวกันที่มีฟิลด์แรกเหมือนกัน เมื่อเลือก **note type and deck** จะถือว่าเป็นโน้ตซ้ำก็ต่อเมื่อโน้ตที่มีอยู่ก็อยู่ในเด็คเดียวกับที่คุณนำเข้า
 
-If you have updating turned on and older versions of the notes you’re
-importing are already in your collection, they will be updated in place
-(in their current decks) rather than being moved to the deck you have
-set in the import dialog. If notes are updated in place, the existing
-scheduling information on all their cards will be preserved.
+หากเปิดใช้งานการอัปเดตและมีโน้ตเวอร์ชันเก่าอยู่ในคลัง โน้ตเหล่านั้นจะถูกอัปเดตในตำแหน่งเดิม (ในเด็คปัจจุบัน) แทนที่จะถูกย้ายไปเด็คที่คุณตั้งไว้ในหน้าต่างนำเข้า หากโน้ตถูกอัปเดตในตำแหน่งเดิม ข้อมูลการตั้งเวลาทบทวนเดิมของบัตรทั้งหมดจะยังคงอยู่
 
-For info on how duplicates are handled in .apkg files, please see the
-[Deck Packages](../exporting.md#packaged-decks) section.
+สำหรับข้อมูลเกี่ยวกับการจัดการโน้ตซ้ำในไฟล์ .apkg โปรดดูหัวข้อ [Deck Packages](../exporting.md#packaged-decks)
 
-## File Headers
+## ส่วนหัวไฟล์
 
-Anki 2.1.54+ supports certain headers that can be included in the text file to
-make importing more powerful or convenient. They consist of `#key:value` pairs
-and must be listed in separate lines at the top of the file.
+Anki 2.1.54+ รองรับส่วนหัวบางอย่างที่สามารถใส่ในไฟล์ข้อความเพื่อให้การนำเข้าทรงพลังหรือสะดวกขึ้น ส่วนหัวเหล่านี้เป็นคู่ `#key:value` และต้องอยู่ในบรรทัดแยกที่ด้านบนของไฟล์
 
-| Key               | Allowed Values                                                                             | Behaviour                                                                                                       |
-| ----------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| `separator`       | `Comma`, `Semicolon`, `Tab`, `Space`, `Pipe`, `Colon`, or the according literal characters | Determines the field separator.                                                                                 |
-| `html`            | `true`, `false`                                                                            | Determines whether the file is treated as HTML.                                                                 |
-| `tags`            | List of tags, separated by spaces                                                          | Adds the listed tags to every imported note.                                                                      |
-| `columns`         | List of names, separated by the previously set separator                                   | Determines the number of columns and shows their given names when importing.                                    |
-| `notetype`        | Note type name or id                                                                        | Presets the note type, if it exists.                                                                             |
-| `deck`            | Deck name or id                                                                            | Presets the deck, if it exists.                                                                                 |
-| `notetype column` | `1`, `2`, `3`, ...                                                                         | Determines which column contains the note type name or id of each note, see [Notetype Column](#notetype-column). |
-| `deck column`     | `1`, `2`, `3`, ...                                                                         | Determines which column contains the deck name or id of each note, see [Deck Column](#deck-column).             |
-| `tags column`     | `1`, `2`, `3`, ...                                                                         | Determines which column contains the tags of each note.                                                         |
-| `guid column`     | `1`, `2`, `3`, ...                                                                         | Determines which column contains the GUID of each note, see [GUID Column](#guid-column).                        |
+| คีย์              | ค่าที่อนุญาต                                                               | พฤติกรรม                                                                                     |
+| ----------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `separator`       | `Comma`, `Semicolon`, `Tab`, `Space`, `Pipe`, `Colon` หรืออักขระที่ต้องการ | กำหนดตัวคั่นฟิลด์                                                                            |
+| `html`            | `true`, `false`                                                            | กำหนดว่าไฟล์จะถูกจัดการเป็น HTML หรือไม่                                                     |
+| `tags`            | รายการแท็ก คั่นด้วยช่องว่าง                                                | เพิ่มแท็กที่ระบุให้กับโน้ตที่นำเข้าทุกใบ                                                     |
+| `columns`         | รายชื่อคอลัมน์ คั่นด้วยตัวคั่นที่ตั้งไว้ก่อนหน้า                           | กำหนดจำนวนคอลัมน์และแสดงชื่อขณะนำเข้า                                                        |
+| `notetype`        | ชื่อหรือรหัสประเภทโน้ต                                                     | กำหนดประเภทโน้ตล่วงหน้า หากมีอยู่                                                            |
+| `deck`            | ชื่อหรือรหัสเด็ค                                                           | กำหนดเด็คล่วงหน้า หากมีอยู่                                                                  |
+| `notetype column` | `1`, `2`, `3`, ...                                                         | กำหนดว่าคอลัมน์ใดมีชื่อหรือรหัสประเภทโน้ตของแต่ละโน้ต ดู [Notetype Column](#notetype-column) |
+| `deck column`     | `1`, `2`, `3`, ...                                                         | กำหนดว่าคอลัมน์ใดมีชื่อหรือรหัสเด็คของแต่ละโน้ต ดู [Deck Column](#deck-column)               |
+| `tags column`     | `1`, `2`, `3`, ...                                                         | กำหนดว่าคอลัมน์ใดมีแท็กของแต่ละโน้ต                                                          |
+| `guid column`     | `1`, `2`, `3`, ...                                                         | กำหนดว่าคอลัมน์ใดมี GUID ของแต่ละโน้ต ดู [GUID Column](#guid-column)                         |
 
-Some headers have further implications.
+ส่วนหัวบางอย่างมีรายละเอียดเพิ่มเติมดังนี้
 
 ### Notetype Column
 
-Usually, all notes from a file will be mapped to a single note type. That changes, if there is a column with note type names or ids. 
-
-This allows you to
-import notes with different note types, and their fields will be mapped implicitly:
-The first regular column is used for the first field of any note regardless of
-its note type, the second regular column for the second field, and so on.
-A _regular column_ here being a column that does not contain special information
-like decks, tags, note types or GUIDs.
+โดยปกติ โน้ตทั้งหมดจากไฟล์จะถูกจับคู่กับประเภทโน้ตเดียว แต่หากมีคอลัมน์ที่มีชื่อหรือรหัสประเภทโน้ต จะสามารถนำเข้าโน้ตที่มีประเภทโน้ตต่างกันได้ และฟิลด์จะถูกจับคู่อัตโนมัติ: คอลัมน์ปกติแรกจะใช้เป็นฟิลด์แรกของโน้ตทุกประเภท คอลัมน์ปกติที่สองเป็นฟิลด์ที่สอง ฯลฯ  
+_คอลัมน์ปกติ_ หมายถึงคอลัมน์ที่ไม่ใช่ข้อมูลพิเศษ เช่น เด็ค แท็ก ประเภทโน้ต หรือ GUID
 
 ### Deck Column
 
-Usually, any new cards created as a result of importing a text file will be placed
-in a single deck of your choice. If the file contains a deck column, however, new
-cards of a note will be placed in its specified deck instead. If the deck does not
-exist, a deck with the given name will be created.
+โดยปกติบัตรใหม่ที่สร้างจากการนำเข้าไฟล์ข้อความจะถูกวางในเด็คเดียวที่คุณเลือก แต่หากไฟล์มีคอลัมน์เด็ค บัตรใหม่ของโน้ตจะถูกวางในเด็คที่ระบุ หากเด็คไม่มีอยู่ จะสร้างเด็คใหม่ตามชื่อที่ระบุ
 
 ### GUID Column
 
-GUID stands for _Globally Unique Identifier_. When you create notes in Anki, Anki
-assigns each note a unique ID, which can be used for duplicate checking. If you
-export your notes with the GUID included, you can make changes to the notes, and
-as long as you do not modify the GUID field, you'll be able to import the notes back
-in to update the existing notes.
+GUID หมายถึง _Globally Unique Identifier_ เมื่อคุณสร้างโน้ตใน Anki, Anki จะกำหนดรหัสเฉพาะให้แต่ละโน้ต ซึ่งใช้สำหรับตรวจสอบโน้ตซ้ำ หากคุณส่งออกโน้ตพร้อม GUID คุณสามารถแก้ไขโน้ตและนำเข้ากลับมาได้โดยไม่เปลี่ยน GUID ฟิลด์
 
-Please note that the GUID is intended to be created by Anki. If you are creating
-your own IDs, such as `MYNOTE0001`, then it's recommended that you place the IDs
-in the first field, instead of assigning them to Anki's internal GUID. When importing,
-Anki is able to use either the first field or the GUID for duplicate checking, so you do not
-need to make IDs a GUID in order to be able to update your notes.
+โปรดทราบว่า GUID ควรสร้างโดย Anki หากคุณสร้างรหัสเอง เช่น `MYNOTE0001` แนะนำให้ใส่รหัสในฟิลด์แรกแทนที่จะใช้ GUID ภายในของ Anki ขณะนำเข้า Anki สามารถใช้ฟิลด์แรกหรือ GUID เพื่อตรวจสอบโน้ตซ้ำได้ ดังนั้นไม่จำเป็นต้องทำให้รหัสเป็น GUID เพื่ออัปเดตโน้ต
 
-One other thing to note is that the duplicate option will not work for rows that have a
-non-empty GUID. If a GUID is provided, and already exists in the collection, a duplicate will
-not be created.
+อีกประเด็นหนึ่งคือ
