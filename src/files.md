@@ -1,187 +1,122 @@
-# Managing Files and Your Collection
+# การจัดการไฟล์และคอลเลกชันของคุณ
 
 <!-- toc -->
 
-## Checking Your Collection
+## การตรวจสอบคอลเลกชันของคุณ
 
-It is a good idea to occasionally check your collection file for
-problems. You can do this via the Tools&gt;Check Database menu item.
-Checking the database ensures the file has not been corrupted, rebuilds some
-internal structures, and optimizes the file.
+เป็นความคิดที่ดีที่จะตรวจสอบไฟล์คอลเลกชันของคุณเป็นครั้งคราวเพื่อหาปัญหา คุณสามารถทำได้ผ่านรายการเมนู Tools>Check Database (เครื่องมือ>ตรวจสอบฐานข้อมูล) การตรวจสอบฐานข้อมูลทำให้แน่ใจว่าไฟล์ไม่ได้รับความเสียหาย สร้างโครงสร้างภายในบางอย่างขึ้นมาใหม่ และปรับให้ไฟล์มีประสิทธิภาพสูงสุด
 
-When you check the database, your tag list is also rebuilt. When you
-delete individual decks or cards, Anki does not update the list of used
-tags, as it's inefficient to do so. If you want to clear old tags out
-from the list that are no longer in use, checking your database is the
-way to do it.
+เมื่อคุณตรวจสอบฐานข้อมูล รายการแท็กของคุณจะถูกสร้างขึ้นใหม่ด้วย เมื่อคุณลบสำรับไพ่หรือการ์ดแต่ละใบ Anki จะไม่อัปเดตรายการแท็กที่ใช้แล้ว เนื่องจากไม่มีประสิทธิภาพ หากคุณต้องการล้างแท็กเก่าที่ไม่ได้ใช้งานออกจากรายการ การตรวจสอบฐานข้อมูลเป็นวิธีที่จะทำ
 
-Please note that Anki will automatically optimize your collection once
-every 2 weeks. This optimization ensures the collection performs well,
-but it does not check for errors or rebuild the tag list when
-automatically optimizing.
+โปรดทราบว่า Anki จะปรับคอลเลกชันของคุณให้มีประสิทธิภาพสูงสุดโดยอัตโนมัติทุกๆ 2 สัปดาห์ การปรับให้เหมาะสมนี้ช่วยให้คอลเลกชันทำงานได้ดี แต่จะไม่ตรวจสอบข้อผิดพลาดหรือสร้างรายการแท็กใหม่เมื่อปรับให้เหมาะสมโดยอัตโนมัติ
 
 <a id="file-locations"></a>
 
-## User Data
+## ข้อมูลผู้ใช้
 
-On **Windows**, the latest Anki versions store your collection files in your
-appdata folder. You can access it by opening the file manager, and
-typing `%APPDATA%\Anki2` in the location field. Older versions of Anki
-stored your Anki files in a folder called `Anki` in your `Documents`
-folder.
+บน **Windows** Anki เวอร์ชันล่าสุดจะจัดเก็บไฟล์คอลเลกชันของคุณในโฟลเดอร์ appdata ของคุณ คุณสามารถเข้าถึงได้โดยเปิดตัวจัดการไฟล์และพิมพ์ `%APPDATA%\Anki2` ในช่องตำแหน่งที่ตั้ง Anki เวอร์ชันเก่าจะจัดเก็บไฟล์ Anki ของคุณในโฟลเดอร์ชื่อ `Anki` ในโฟลเดอร์ `Documents` ของคุณ
 
-On **Mac** computers, recent Anki versions store all user data in the
-`~/Library/Application Support/Anki2` folder. The Library folder is
-hidden by default, but can be revealed in Finder by holding down the
-option key while clicking on the Go menu. If you're on an older Anki
-version, your Anki files will be in your `Documents/Anki` folder.
+บนคอมพิวเตอร์ **Mac** Anki เวอร์ชันล่าสุดจะจัดเก็บข้อมูลผู้ใช้ทั้งหมดในโฟลเดอร์ `~/Library/Application Support/Anki2` โฟลเดอร์ Library จะถูกซ่อนไว้โดยค่าเริ่มต้น แต่สามารถเปิดเผยได้ใน Finder โดยกดปุ่ม option ค้างไว้ขณะคลิกที่เมนู Go หากคุณใช้ Anki เวอร์ชันเก่า ไฟล์ Anki ของคุณจะอยู่ในโฟลเดอร์ `Documents/Anki`
 
-On **Linux**, recent Anki versions store your user data in
-`~/.local/share/Anki2`, or `$XDG_DATA_HOME/Anki2` if you have set a
-custom data path. If you are using a third-party **Flatpak** build,
-your files will be in `~/.var/app/net.ankiweb.Anki/data/Anki2/`.
-Older versions of Anki stored your files in
-`~/Documents/Anki` or `~/Anki`.
+บน **Linux** Anki เวอร์ชันล่าสุดจะจัดเก็บข้อมูลผู้ใช้ของคุณใน `~/.local/share/Anki2` หรือ `$XDG_DATA_HOME/Anki2` หากคุณได้ตั้งค่าเส้นทางข้อมูลที่กำหนดเอง หากคุณใช้ **Flatpak** build ของบุคคลที่สาม ไฟล์ของคุณจะอยู่ใน `~/.var/app/net.ankiweb.Anki/data/Anki2/` Anki เวอร์ชันเก่าจะจัดเก็บไฟล์ของคุณใน `~/Documents/Anki` หรือ `~/Anki`
 
-Within the Anki folder, the program-level and profile-level preferences
-are stored in a file called `prefs.db`.
+ภายในโฟลเดอร์ Anki การตั้งค่าระดับโปรแกรมและระดับโปรไฟล์จะถูกจัดเก็บไว้ในไฟล์ชื่อ `prefs.db`
 
-There is also a separate folder for each profile. The folder contains:
+นอกจากนี้ยังมีโฟลเดอร์แยกต่างหากสำหรับแต่ละโปรไฟล์ โฟลเดอร์ประกอบด้วย:
 
-- Your notes, decks, cards and so on in a file called `collection.anki2`
+- บันทึกย่อ สำรับไพ่ การ์ด และอื่นๆ ของคุณในไฟล์ชื่อ `collection.anki2`
 
-- Your audio and images in a `collection.media` folder
+- เสียงและรูปภาพของคุณในโฟลเดอร์ `collection.media`
 
-- A backups folder
+- โฟลเดอร์สำรองข้อมูล
 
-- Some system files
+- ไฟล์ระบบบางไฟล์
 
-You should never copy or move your collection while Anki is open. Doing
-so could cause your collection to become corrupt. Please do not move or
-modify the other files in the folder either.
+คุณไม่ควรคัดลอกหรือย้ายคอลเลกชันของคุณในขณะที่ Anki เปิดอยู่ การทำเช่นนั้นอาจทำให้คอลเลกชันของคุณเสียหายได้ โปรดอย่าย้ายหรือแก้ไขไฟล์อื่นๆ ในโฟลเดอร์ด้วย
 
-## Program Files
+## ไฟล์โปรแกรม
 
-Anki's launcher is installed in the following locations by default:
+ตัวเรียกใช้งานของ Anki ได้รับการติดตั้งในตำแหน่งต่อไปนี้โดยค่าเริ่มต้น:
 
 - Windows: `%LOCALAPPDATA%\Programs\Anki`
 - macOS: `/Applications/Anki.app`
 - Linux: `/usr/local/share/anki`
 
-When you install/update Anki with the launcher, it downloads support
-files and places them in the following locations:
+เมื่อคุณติดตั้ง/อัปเดต Anki ด้วยตัวเรียกใช้งาน มันจะดาวน์โหลดไฟล์สนับสนุนและวางไว้ในตำแหน่งต่อไปนี้:
 
 - Windows: `%LOCALAPPDATA%\AnkiProgramFiles`
 - macOS: `~/Library/Application Support/AnkiProgramFiles`
 - Linux: `~/.local/share/AnkiProgramFiles`
 
-Removing that folder will cause the launcher to behave like a fresh install.
+การลบโฟลเดอร์นั้นจะทำให้ตัวเรียกใช้งานทำงานเหมือนกับการติดตั้งใหม่
 
-The `AnkiProgramFiles` contains all the files needed to run Anki aside from
-the launcher. You can copy it to a different folder or system, and start
-Anki from the new location by opening `AnkiProgramFiles/.venv/bin/anki` (or
-`AnkiProgramFiles\.venv\scripts\anki` on Windows). If placed in the standard location on a new computer, the launcher will also be able to re-use the existing files, provided the files were copied with modification times preserved.
+`AnkiProgramFiles` มีไฟล์ทั้งหมดที่จำเป็นในการรัน Anki นอกเหนือจากตัวเรียกใช้งาน คุณสามารถคัดลอกไปยังโฟลเดอร์หรือระบบอื่น และเริ่ม Anki จากตำแหน่งใหม่โดยเปิด `AnkiProgramFiles/.venv/bin/anki` (หรือ `AnkiProgramFiles\.venv\scripts\anki` บน Windows) หากวางไว้ในตำแหน่งมาตรฐานบนคอมพิวเตอร์เครื่องใหม่ ตัวเรียกใช้งานจะสามารถใช้ไฟล์ที่มีอยู่ซ้ำได้ หากไฟล์ถูกคัดลอกโดยรักษาวันที่แก้ไขไว้
 
-See the flash drive section below for more.
+ดูส่วนแฟลชไดรฟ์ด้านล่างสำหรับข้อมูลเพิ่มเติม
 
-## Startup Options
+## ตัวเลือกการเริ่มต้น
 
-If you have made a destructive change on one computer and have an
-undamaged copy on another computer, you may wish to start Anki without
-syncing in order to use the full sync option without first downloading
-the changes. Similarly, if you are experiencing problems with Anki, you
-might need to (or might be instructed to) disable add-ons temporarily to
-see if one might be causing the problem. To do both of these things at the same time, you can
-open Anki in safe mode by holding down the <kbd>Shift</kbd> key while starting Anki. Keep holding <kbd>Shift</kbd> down until the on-screen message informs you that Anki has started in safe mode. If you're on Linux and that didn't work, run 'anki --safemode'.
+หากคุณได้ทำการเปลี่ยนแปลงที่ทำลายล้างบนคอมพิวเตอร์เครื่องหนึ่งและมีสำเนาที่ไม่เสียหายในคอมพิวเตอร์อีกเครื่องหนึ่ง คุณอาจต้องการเริ่ม Anki โดยไม่ต้องซิงค์เพื่อใช้ตัวเลือกการซิงค์แบบเต็มโดยไม่ต้องดาวน์โหลดการเปลี่ยนแปลงก่อน ในทำนองเดียวกัน หากคุณกำลังประสบปัญหากับ Anki คุณอาจต้อง (หรืออาจได้รับคำแนะนำให้) ปิดใช้งานส่วนเสริมชั่วคราวเพื่อดูว่ามีส่วนเสริมใดที่ก่อให้เกิดปัญหาหรือไม่ ในการทำทั้งสองอย่างนี้พร้อมกัน คุณสามารถเปิด Anki ในเซฟโหมดได้โดยกดปุ่ม <kbd>Shift</kbd> ค้างไว้ขณะเริ่ม Anki กด <kbd>Shift</kbd> ค้างไว้จนกว่าข้อความบนหน้าจอจะแจ้งให้คุณทราบว่า Anki ได้เริ่มทำงานในเซฟโหมดแล้ว หากคุณใช้ Linux และวิธีนี้ไม่ได้ผล ให้รัน 'anki --safemode'
 
-It is possible to specify a custom folder location during startup. This
-is an advanced feature that is primarily intended to be used with
-portable installations, and we recommend you use the default location in
-most circumstances.
+เป็นไปได้ที่จะระบุตำแหน่งโฟลเดอร์ที่กำหนดเองระหว่างการเริ่มต้น นี่เป็นคุณสมบัติขั้นสูงที่มีไว้สำหรับใช้กับการติดตั้งแบบพกพาเป็นหลัก และเราขอแนะนำให้คุณใช้ตำแหน่งเริ่มต้นในสถานการณ์ส่วนใหญ่
 
-The syntax to specify an alternate folder is as follows:
+ไวยากรณ์ในการระบุโฟลเดอร์อื่นมีดังนี้:
 
     anki -b /path/to/anki/folder
 
-- If you have multiple profiles, you can pass -p &lt;name&gt; to load
-  a specific profile.
-- If you pass -p some-fake-name, Anki will show the profile screen on startup.
-  If no profile is provided, the last-used profile is loaded.
+- หากคุณมีหลายโปรไฟล์ คุณสามารถส่ง -p <name> เพื่อโหลดโปรไฟล์เฉพาะได้
+- หากคุณส่ง -p some-fake-name Anki จะแสดงหน้าจอโปรไฟล์เมื่อเริ่มต้น หากไม่มีโปรไฟล์ให้มา โปรไฟล์ที่ใช้ล่าสุดจะถูกโหลด
 
-- To change the interface language, use -l &lt;iso 639-1 language
-  code&gt;, such as "-l ja" for Japanese.
+- ในการเปลี่ยนภาษาของอินเทอร์เฟซ ให้ใช้ -l <รหัสภาษา iso 639-1 ภาษา
+  code>, such as "-l ja" for Japanese.
 
-If you always want to use a custom folder location, you can modify your
-shortcut to Anki. On Windows, right-click on the shortcut, choose
-Properties, select the Shortcut tab, and add "-b
-\\path\\to\\data\\folder" after the path to the program, which should
-leave you with something like
+หากคุณต้องการใช้ตำแหน่งโฟลเดอร์ที่กำหนดเองเสมอ คุณสามารถแก้ไขทางลัดไปยัง Anki ของคุณได้ บน Windows ให้คลิกขวาที่ทางลัด เลือก Properties เลือกแท็บ Shortcut และเพิ่ม "-b
+\path\to\data\folder" หลังเส้นทางไปยังโปรแกรม ซึ่งควรจะทำให้คุณได้บางอย่างเช่น
 
     "C:\Program Files\Anki\anki.exe" -b "C:\AnkiDataFolder"
 
-You can also use this technique with the -l option to easily use Anki in
-different languages.
+คุณยังสามารถใช้เทคนิคนี้กับตัวเลือก -l เพื่อใช้ Anki ในภาษาต่างๆ ได้อย่างง่ายดาย
 
-On Windows, you should use a backslash (\\) not a forward slash (/).
+บน Windows คุณควรใช้แบ็กสแลช (\\) ไม่ใช่ฟอร์เวิร์ดสแลช (/)
 
-On a Mac there is no easy way to alter the behaviour when clicking on
-the Anki icon, but it is possible to start Anki with a custom base
-folder from a terminal:
+บน Mac ไม่มีวิธีง่ายๆ ในการเปลี่ยนพฤติกรรมเมื่อคลิกที่ไอคอน Anki แต่เป็นไปได้ที่จะเริ่ม Anki ด้วยโฟลเดอร์พื้นฐานที่กำหนดเองจากเทอร์มินัล:
 
     open /Applications/Anki.app --args -b ~/myankifolder
 
-Alternatively, you can define the environment variable "ANKI_BASE".
-On Windows, you can define the environment variable with:
+อีกทางเลือกหนึ่ง คุณสามารถกำหนดตัวแปรสภาพแวดล้อม "ANKI_BASE" ได้
+บน Windows คุณสามารถกำหนดตัวแปรสภาพแวดล้อมด้วย:
 
     set "ANKI_BASE=C:/path/to/AnkiDataFolder"
 
-On Linux and macOS, you can use:
+บน Linux และ macOS คุณสามารถใช้:
 
     export ANKI_BASE="/path/to/AnkiDataFolder"
 
-## DropBox and File Syncing
+## DropBox และการซิงค์ไฟล์
 
-We do not recommend you sync your Anki folder directly with a
-third-party synchronization service, as it can lead to database
-corruption when files are synced while in use.
+เราไม่แนะนำให้คุณซิงค์โฟลเดอร์ Anki ของคุณโดยตรงกับบริการซิงโครไนซ์ของบุคคลที่สาม เนื่องจากอาจทำให้ฐานข้อมูลเสียหายได้เมื่อไฟล์ถูกซิงค์ขณะใช้งาน
 
-If you just want to synchronize your media, you can link external
-folders into services like DropBox. Please see [DropboxWiki: Sync
-Folders Outside Dropbox (archive.org)][dropboxwiki-sync-other]
-for more info.
+หากคุณต้องการซิงโครไนซ์สื่อของคุณเท่านั้น คุณสามารถเชื่อมโยงโฟลเดอร์ภายนอกเข้ากับบริการต่างๆ เช่น DropBox โปรดดู [DropboxWiki: Sync Folders Outside Dropbox (archive.org)][dropboxwiki-sync-other] สำหรับข้อมูลเพิ่มเติม
 
 [dropboxwiki-sync-other]: http://web.archive.org/web/20180919153730/http://www.dropboxwiki.com/tips-and-tricks/sync-other-folders
 
-If you wish to keep your collection in sync as well, it is strongly
-recommended that you create a script that copies your files from your
-synced folder to a local folder, launches Anki, and then copies the
-files back when Anki is closed. This will ensure that the files are
-never synchronized while they are open.
+หากคุณต้องการให้คอลเลกชันของคุณซิงค์อยู่เสมอ ขอแนะนำอย่างยิ่งให้คุณสร้างสคริปต์ที่คัดลอกไฟล์ของคุณจากโฟลเดอร์ที่ซิงค์ไปยังโฟลเดอร์ในเครื่อง เปิด Anki แล้วคัดลอกไฟล์กลับเมื่อปิด Anki ซึ่งจะช่วยให้แน่ใจว่าไฟล์จะไม่ถูกซิงโครไนซ์ในขณะที่เปิดอยู่
 
-## Network Filesystems
+## ระบบไฟล์เครือข่าย
 
-We strongly recommend you have Anki store your files on a local hard
-disk, as network filesystems can lead to database corruption. If a
-network filesystem is your only option, regular use of Tools&gt;Check
-Database to detect corruption is recommended.
+เราขอแนะนำอย่างยิ่งให้คุณให้ Anki จัดเก็บไฟล์ของคุณบนฮาร์ดดิสก์ในเครื่อง เนื่องจากระบบไฟล์เครือข่ายอาจทำให้ฐานข้อมูลเสียหายได้ หากระบบไฟล์เครือข่ายเป็นทางเลือกเดียวของคุณ ขอแนะนำให้ใช้ Tools>Check Database เป็นประจำเพื่อตรวจหาความเสียหาย
 
-## Running from a Flash Drive
+## การทำงานจากแฟลชไดรฟ์
 
-On Windows, Anki can be installed on a USB / flash drive and run as a
-portable application. The following example assumes your USB drive is
-drive E; adjust as necessary.
+บน Windows สามารถติดตั้ง Anki บนไดรฟ์ USB / แฟลชและรันเป็นแอปพลิเคชันแบบพกพาได้ ตัวอย่างต่อไปนี้สมมติว่าไดรฟ์ USB ของคุณคือไดรฟ์ E; ปรับตามความจำเป็น
 
-WARNING: The drive letter must be the same on all devices. If you set this up for drive E,
-it won't work for a flash drive mapped to drive D for example.
+คำเตือน: อักษรระบุไดรฟ์ต้องเหมือนกันในทุกอุปกรณ์ หากคุณตั้งค่านี้สำหรับไดรฟ์ E มันจะไม่ทำงานสำหรับแฟลชไดรฟ์ที่แมปกับไดรฟ์ D เป็นต้น
 
-WARNING: Media syncing with AnkiWeb may not work if your flash drive is formatted
-as FAT32. Please format the drive as NTFS to ensure media syncs
-correctly.
+คำเตือน: การซิงค์สื่อกับ AnkiWeb อาจไม่ทำงานหากแฟลชไดรฟ์ของคุณฟอร์แมตเป็น FAT32 โปรดฟอร์แมตไดรฟ์เป็น NTFS เพื่อให้แน่ใจว่าสื่อซิงค์อย่างถูกต้อง
 
-1. Download the latest Anki launcher, and install it in a custom location:
-   `E:\Anki\Launcher`. Not `E:\Anki\Launcher\Anki`.
-2. When the launcher appears, close it without installing.
-3. Put the following in a file `E:\Anki\Anki.bat`:
+1. ดาวน์โหลดตัวเรียกใช้งาน Anki ล่าสุด และติดตั้งในตำแหน่งที่กำหนดเอง: `E:\Anki\Launcher` ไม่ใช่ `E:\Anki\Launcher\Anki`
+2. เมื่อตัวเรียกใช้งานปรากฏขึ้น ให้ปิดโดยไม่ต้องติดตั้ง
+3. ใส่ข้อมูลต่อไปนี้ในไฟล์ `E:\Anki\Anki.bat`:
 
 ```bat
 @echo off
@@ -193,128 +128,89 @@ set ANKI_BASE=%USB_ROOT%\AnkiData
 start /b %ANKI_LAUNCHER%
 ```
 
-4. Double-click on the .bat file you created, and install Anki as normal.
-5. You can now double-click on the .bat file to run Anki from other machines.
+4. ดับเบิลคลิกที่ไฟล์ .bat ที่คุณสร้างขึ้น และติดตั้ง Anki ตามปกติ
+5. ตอนนี้คุณสามารถดับเบิลคลิกที่ไฟล์ .bat เพื่อรัน Anki จากเครื่องอื่นได้
 
-Tools>Upgrade/Downgrade will continue to function, but only when your machine
-has access to the internet.
+Tools>Upgrade/Downgrade จะยังคงทำงานต่อไป แต่เฉพาะเมื่อเครื่องของคุณสามารถเข้าถึงอินเทอร์เน็ตได้เท่านั้น
 
-## Backups
+## การสำรองข้อมูล
 
-Please see [this section](./backups.md).
+โปรดดู [ส่วนนี้](./backups.md)
 
-## Inaccessible Harddisk
+## ฮาร์ดดิสก์ที่ไม่สามารถเข้าถึงได้
 
-If Anki can't write to files in the [Anki folder](#user-data), a message
-will be displayed on startup saying that Anki can't write to the
-harddisk, and Anki will close. If you're unsure how to fix the
-permissions, please contact someone near you who is knowledgeable about
-computers and can help you out.
+หาก Anki ไม่สามารถเขียนไฟล์ใน [โฟลเดอร์ Anki](#user-data) ได้ ข้อความจะปรากฏขึ้นเมื่อเริ่มต้นว่า Anki ไม่สามารถเขียนไปยังฮาร์ดดิสก์ได้ และ Anki จะปิด หากคุณไม่แน่ใจว่าจะแก้ไขสิทธิ์ได้อย่างไร โปรดติดต่อผู้ที่มีความรู้เกี่ยวกับคอมพิวเตอร์ที่อยู่ใกล้คุณและสามารถช่วยคุณได้
 
-## Permissions of Temp Folder
+## สิทธิ์ของโฟลเดอร์ Temp
 
-Anki uses the system's temporary folder to store temporary data. If the
-permissions of this folder have been changed from the default settings
-by a rogue app or buggy antivirus app, Anki will not function properly.
+Anki ใช้โฟลเดอร์ชั่วคราวของระบบเพื่อจัดเก็บข้อมูลชั่วคราว หากสิทธิ์ของโฟลเดอร์นี้ถูกเปลี่ยนแปลงจากการตั้งค่าเริ่มต้นโดยแอปที่ไม่ได้รับอนุญาตหรือแอปป้องกันไวรัสที่มีข้อบกพร่อง Anki จะไม่ทำงานอย่างถูกต้อง
 
-If you're on a Windows 7 machine, the general steps to fix the problem
-are listed below. As this is somewhat complicated, please ask someone
-knowledgeable about Windows if you are not sure.
+หากคุณใช้เครื่อง Windows 7 ขั้นตอนทั่วไปในการแก้ไขปัญหามีดังต่อไปนี้ เนื่องจากค่อนข้างซับซ้อน โปรดสอบถามผู้ที่มีความรู้เกี่ยวกับ Windows หากคุณไม่แน่ใจ
 
-1. Click on the start bar, and type in %temp% (including the percents),
-   then hit <kbd>Enter</kbd>.
+1. คลิกที่แถบเริ่มต้น และพิมพ์ %temp% (รวมถึงเครื่องหมายเปอร์เซ็นต์) จากนั้นกด <kbd>Enter</kbd>
 
-2. Go up one folder, and locate the temp folder. Right click on it, and
-   choose Properties.
+2. ไปที่โฟลเดอร์ด้านบนหนึ่งโฟลเดอร์ และค้นหาโฟลเดอร์ temp คลิกขวาที่โฟลเดอร์นั้น และเลือก Properties
 
-3. In the security tab, click on Advanced.
+3. ในแท็บ security คลิกที่ Advanced
 
-4. Click on the Owner tab. If you're not listed as the owner, click the
-   button to take ownership.
+4. คลิกที่แท็บ Owner หากคุณไม่ได้อยู่ในรายชื่อเจ้าของ ให้คลิกปุ่มเพื่อรับสิทธิ์ความเป็นเจ้าของ
 
-5. On the permissions tab, ensure that you have full control. On a
-   default W7 install the control will actually be inherited from
-   c:\\users\\your-username.
+5. ในแท็บ permissions ตรวจสอบให้แน่ใจว่าคุณมีการควบคุมเต็มรูปแบบ ในการติดตั้ง W7 เริ่มต้น การควบคุมจะได้รับการสืบทอดมาจาก c:\users\your-username
 
-## Corrupt Collections
+## คอลเลกชันที่เสียหาย
 
-Anki uses a file format that is robust against program and computer
-crashes, but it's still possible for your collection to become corrupt
-if the files are modified while Anki is open, stored on a network drive,
-or corrupted by a bug.
+Anki ใช้รูปแบบไฟล์ที่ทนทานต่อการขัดข้องของโปรแกรมและคอมพิวเตอร์ แต่ก็ยังเป็นไปได้ที่คอลเลกชันของคุณจะเสียหายได้หากไฟล์ถูกแก้ไขในขณะที่ Anki เปิดอยู่ จัดเก็บไว้ในไดรฟ์เครือข่าย หรือเสียหายจากข้อบกพร่อง
 
-When you run Tools&gt;Check Database, you will receive a message if Anki
-detects the file has been corrupted. **The best way to recover from this
-is to restore from the most recent [automatic backup](#backups)**, but
-if your backup is too old, then you can attempt to repair the corruption
-instead.
+เมื่อคุณรัน Tools>Check Database คุณจะได้รับข้อความหาก Anki ตรวจพบว่าไฟล์ได้รับความเสียหาย **วิธีที่ดีที่สุดในการกู้คืนจากปัญหานี้คือการกู้คืนจาก [การสำรองข้อมูลอัตโนมัติล่าสุด](#backups)** แต่หากการสำรองข้อมูลของคุณเก่าเกินไป คุณสามารถพยายามซ่อมแซมความเสียหายแทนได้
 
-On Linux, make sure sqlite3 is installed. On a Mac, it should be
-installed already. On Windows, download
-<http://www.sqlite.org/sqlite-3_6_23.zip>.
+บน Linux ตรวจสอบให้แน่ใจว่าได้ติดตั้ง sqlite3 แล้ว บน Mac ควรติดตั้งไว้แล้ว บน Windows ดาวน์โหลด <http://www.sqlite.org/sqlite-3_6_23.zip>
 
-Next, create a backup of your collection.anki2 file, in case something
-goes wrong with the steps below.
+ถัดไป สร้างการสำรองข้อมูลของไฟล์ collection.anki2 ของคุณ ในกรณีที่เกิดข้อผิดพลาดกับขั้นตอนด้านล่าง
 
 ### Linux/macOS
 
-Open a terminal, change to the folder your collection is located in, and
-type:
+เปิดเทอร์มินัล เปลี่ยนไปยังโฟลเดอร์ที่คอลเลกชันของคุณอยู่ และพิมพ์:
 
     sqlite3 collection.anki2 .dump > dump.txt
 
-Open the resulting dump.txt file in a text editor, and look at the final
-line. If it reads "rollback;", change it to "commit;"
+เปิดไฟล์ dump.txt ที่ได้ในโปรแกรมแก้ไขข้อความ และดูที่บรรทัดสุดท้าย หากอ่านว่า "rollback;" ให้เปลี่ยนเป็น "commit;"
 
-Then run the following in a terminal:
+จากนั้นรันคำสั่งต่อไปนี้ในเทอร์มินัล:
 
     cat dump.txt | sqlite3 temp.file
 
-Make sure you use temp.file - do not put collection.anki2 on the right,
-or you will blank out the file. When you're done, proceed to the final
-step.
+ตรวจสอบให้แน่ใจว่าคุณใช้ temp.file - อย่าใส่ collection.anki2 ทางด้านขวา มิฉะนั้นคุณจะล้างไฟล์ เมื่อคุณทำเสร็จแล้ว ให้ไปยังขั้นตอนสุดท้าย
 
 ### Windows
 
-Copy the `sqlite3.exe` program and your deck to your desktop. Then go to
-**Start&gt;Run** and type in `cmd.exe`.
+คัดลอกโปรแกรม `sqlite3.exe` และสำรับไพ่ของคุณไปยังเดสก์ท็อปของคุณ จากนั้นไปที่ **Start>Run** และพิมพ์ `cmd.exe`
 
-If you're on a recent Windows, the command prompt may not start on your
-desktop. If you don't see desktop displayed in the command prompt, type
-something like the following, replacing "administrator" with your login
-name.
+หากคุณใช้ Windows เวอร์ชันล่าสุด พรอมต์คำสั่งอาจไม่เริ่มทำงานบนเดสก์ท็อปของคุณ หากคุณไม่เห็นเดสก์ท็อปแสดงในพรอมต์คำสั่ง ให้พิมพ์บางอย่างเช่นต่อไปนี้ โดยแทนที่ "administrator" ด้วยชื่อล็อกอินของคุณ
 
     cd C:\Users\Administrator\Desktop
 
-Then type:
+จากนั้นพิมพ์:
 
     sqlite3 collection.anki2 .dump > dump.txt
 
-Open the resulting dump.txt file in a text editor, and look at the final
-line. If it reads "rollback;", change it to "commit;"
+เปิดไฟล์ dump.txt ที่ได้ในโปรแกรมแก้ไขข้อความ และดูที่บรรทัดสุดท้าย หากอ่านว่า "rollback;" ให้เปลี่ยนเป็น "commit;"
 
-Then run the following in a terminal:
+จากนั้นรันคำสั่งต่อไปนี้ในเทอร์มินัล:
 
     type dump.txt | sqlite3 temp.file
 
-Make sure you use temp.file - do not put collection.anki2 on the right,
-or you will blank out the file. When you're done, proceed to the final
-step.
+ตรวจสอบให้แน่ใจว่าคุณใช้ temp.file - อย่าใส่ collection.anki2 ทางด้านขวา มิฉะนั้นคุณจะล้างไฟล์ เมื่อคุณทำเสร็จแล้ว ให้ไปยังขั้นตอนสุดท้าย
 
-### Final Step
+### ขั้นตอนสุดท้าย
 
-Check that you didn't get an error message, and that temp.file is not
-empty. The procedure optimizes the collection in the process, so it's
-normal for the new file to be somewhat smaller than the old one.
+ตรวจสอบว่าคุณไม่ได้รับข้อความแสดงข้อผิดพลาด และ temp.file ไม่ว่างเปล่า กระบวนการนี้จะปรับคอลเลกชันให้เหมาะสมในกระบวนการ ดังนั้นจึงเป็นเรื่องปกติที่ไฟล์ใหม่จะมีขนาดเล็กกว่าไฟล์เก่าเล็กน้อย
 
-When you've confirmed the file is not empty:
+เมื่อคุณยืนยันแล้วว่าไฟล์ไม่ว่างเปล่า:
 
-- rename the original collection.anki2 file to something else
+- เปลี่ยนชื่อไฟล์ collection.anki2 เดิมเป็นอย่างอื่น
 
-- rename temp.file to collection.anki2
+- เปลี่ยนชื่อ temp.file เป็น collection.anki2
 
-- move collection.anki2 back into your collection folder, overwriting
-  the old version
+- ย้าย collection.anki2 กลับไปที่โฟลเดอร์คอลเลกชันของคุณ โดยเขียนทับเวอร์ชันเก่า
 
-- start Anki and go to Tools&gt;Check Database to make sure the
-  collection has been successfully restored.
+- เริ่ม Anki และไปที่ Tools>Check Database เพื่อให้แน่ใจว่าคอลเลกชันได้รับการกู้คืนเรียบร้อยแล้ว
