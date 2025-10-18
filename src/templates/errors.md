@@ -1,65 +1,65 @@
-# การตรวจสอบและข้อผิดพลาด
+# Checks and Errors
 
 <!-- toc -->
 
-เมื่อคุณบันทึกการเปลี่ยนแปลงประเภทโน้ตหรือส่งออกสำรับ Anki 2.1.45+ จะตรวจสอบ
-ข้อผิดพลาดทั่วไปบางประการ ข้อผิดพลาดเหล่านี้จะทำให้เกิดปัญหาในภายหลังเมื่อมีคนศึกษา
-การ์ดที่ได้รับผลกระทบ ดังนั้น Anki จะไม่ให้คุณดำเนินการต่อจนกว่าคุณจะแก้ไขข้อผิดพลาดเหล่านั้น
+When you save changes to a note type or export a deck, Anki 2.1.45+ checks
+for some common errors. These errors will cause issues later on when anyone studies
+the affected cards, so Anki won't let you proceed before you have fixed them.
 
-## พื้นฐาน
+## Basics
 
-โปรดดู [แนวคิดหลัก](../getting-started.md#key-concepts) ก่อนอ่านเพิ่มเติม
+Please see [Key Concepts](../getting-started.md#key-concepts) before reading further.
 
-ข้อผิดพลาดส่วนใหญ่ด้านล่างนี้จะต้องการให้คุณแก้ไขเทมเพลตประเภทโน้ต/การ์ดของคุณ โดยทำดังนี้:
+Most of the errors below will require you to modify your note type/card template. To do so:
 
-- เปิดหน้าจอ Browse และดูรายการทางด้านซ้าย
-- ค้นหาประเภทโน้ตที่กล่าวถึงในข้อความแสดงข้อผิดพลาด คุณสามารถใช้แถบค้นหาที่ด้านบนซ้าย
-  หากจำเป็น
-- คลิกที่ประเภทโน้ต เพื่อแสดงการ์ด/โน้ตทางด้านขวา
-- คลิกปุ่ม Cards... ที่ด้านบนของพื้นที่แก้ไขเพื่อเปิด [หน้าจอเทมเพลต](./intro.md#the-templates-screen)
+- Open the Browse screen, and look at the items on the left.
+- Locate the note type mentioned in error message. You can use the search bar at the top left
+  if necessary.
+- Click on the note type, to show its cards/notes on the right.
+- Click the Cards... button at the top of the editing area to open the [templates screen](./intro.md#the-templates-screen).
 
-## ปัญหาเฉพาะ
+## Specific Issues
 
-### ข้อผิดพลาดทางไวยากรณ์ของเทมเพลต
+### Template Syntax Error
 
-ข้อผิดพลาดประเภทนี้บ่งชี้ถึงการใช้ไวยากรณ์ [การแทนที่ฟิลด์](./fields.md)
-ไม่ถูกต้อง
+This kind of error indicates an incorrect usage of the [field replacement](./fields.md)
+syntax.
 
-คุณสามารถแก้ไขข้อผิดพลาดบนเทมเพลตได้โดยการเปิดหน้าจอเทมเพลตการ์ด:
+You can correct mistakes on the template by opening the card templates screen:
 
-- ในเวอร์ชันคอมพิวเตอร์ ให้แก้ไขการ์ดที่มีปัญหา แล้วคลิกที่ปุ่ม Cards...
-- ใน AnkiMobile ขณะดูการ์ดที่มีปัญหาในหน้าจอเรียน ให้แตะที่ฟันเฟือง/เกียร์ จากนั้นเลือก Card Template
+- On the computer version, edit a problem card, and then click on the Cards... button
+- On AnkiMobile, while viewing a problem card in the study screen, tap the cog/gear, then Card Template.
 
-เมื่อคุณแก้ไขข้อผิดพลาด มันจะอัปเดตการ์ดทั้งหมดของประเภทนั้น - คุณไม่จำเป็นต้องทำการเปลี่ยนแปลงเดียวกันสำหรับทุกการ์ดที่ใช้เทมเพลต
+When you correct a mistake, it will update all cards of that type - you do not need to make the same change for every card that uses the template.
 
-สิ่งที่ต้องเปลี่ยนแปลงจะขึ้นอยู่กับข้อความที่คุณได้รับ
+What needs changing will depend on the message you are getting.
 
-**พบ '{{Field}}' แต่ไม่มีฟิลด์ชื่อ 'Field'**
+**Found '{{Field}}', but there is no field called 'Field'**
 
-สิ่งนี้บ่งชี้ว่าเทมเพลตของคุณมีชื่อของฟิลด์ที่ไม่มีอยู่จริง ในการแก้ไขปัญหา ให้ค้นหา
-{{Field}} ภายในเทมเพลตการ์ดและลบออก
+This indicates your template includes the name of a field that doesn't exist. To fix the problem, locate the
+{{Field}} inside the card template, and remove it.
 
-**ขาด }} ใน {{Field**
+**Missing }} in {{Field**
 
-ข้อความนี้จะแสดงเมื่อพบ {{ ในเทมเพลตโดยไม่มี }} ที่ตรงกัน ตัวอย่างเช่น หากคุณมี
+This message is shown when {{ is found in the template without a matching }}. For example, if you have
 
 ```
 {{Field
 ```
 
-แล้วต้องเปลี่ยนเป็น
+then this needs to be changed to
 
 ```
 {{Field}}
 ```
 
-**ขาด {{/Field}}**
+**Missing {{/Field}}**
 
-ซึ่งหมายความว่า Anki พบ `{{#Field}}` หรือ `{{^Field}}` ในเทมเพลตการ์ดของคุณ โดยไม่มี `{{/Field}}` ที่ตรงกัน การลบ `{{#Field}}` หรือ `{{^Field}}` ออกจากเทมเพลตจะแก้ไขข้อผิดพลาดได้
+This means Anki found `{{#Field}}` or `{{^Field}}` in your card template, without a matching `{{/Field}}`. Removing `{{#Field}}` or `{{^Field}}` from the template will fix the error.
 
-**พบ {{/One}} แต่คาดว่าจะเป็น {{/Two}}**
+**Found {{/One}}, but expected {{/Two}}**
 
-การแทนที่แบบมีเงื่อนไขจำเป็นต้องปิดตามลำดับเดียวกับที่เปิด ตัวอย่างเช่น เทมเพลตต่อไปนี้ไม่ถูกต้อง:
+Conditional replacements need to be closed in the same order they are opened. For example, the following template is incorrect:
 
 ```
 {{#One}}
@@ -69,7 +69,7 @@
 {{/Two}}
 ```
 
-ในการแก้ไขปัญหา ควรเปลี่ยนเทมเพลตดังนี้:
+To fix the problem, the template should be changed like so:
 
 ```
 {{#One}}
@@ -79,89 +79,90 @@
 {{/One}}
 ```
 
-**พบ {{/Field}} แต่ขาด '{{#Field}}' หรือ '{{^Field}}'**
+**Found {{/Field}}, but missing '{{#Field}}' or '{{^Field}}'**
 
-แท็กปิดต้องตรงกับแท็กเปิด ตัวอย่างเช่น ข้อมูลต่อไปนี้ไม่ถูกต้อง เนื่องจากไม่มี `{{#Two}}` หรือ `{{^Two}}` ที่จุดเริ่มต้น:
+Closing tags must be matched by opening tags. For example, the following is invalid, because there is no `{{#Two}}` or `{{^Two}}` at the start:
 
 ```
   {{Field}}
 {{/Two}}
 ```
 
-สามารถแก้ไขได้โดยการลบแท็กปิด:
+It can be fixed by removing the closing tag:
 
 ```
 {{Field}}
 ```
 
-### ด้านหน้าที่เหมือนกัน
+### Identical Front Sides
 
-คุณได้กำหนดค่า Anki ให้สร้างคำถามที่เหมือนกันสองข้อสำหรับแต่ละอินพุต สิ่งนี้สามารถ
-เกิดขึ้นได้หากคุณเพิ่มประเภทการ์ดใหม่โดยไม่ได้ทำการปรับเปลี่ยนใดๆ การ์ดที่เหมือนกัน
-จะเพิ่มภาระงานของคุณเป็นสองเท่า และทำให้การจัดตารางเวลาของ Anki มีประสิทธิภาพน้อยลง
+You have Anki configured to create two identical questions for each input. This can
+happen if you add a new card type without making any adjustments to it. Identical
+cards double your workload, and make Anki's scheduling less effective.
 
-ในการแก้ไขปัญหานี้ ให้เปิด [หน้าจอเทมเพลต](./intro.md#the-templates-screen) และ
-เลือกหนึ่งในรายการที่ซ้ำกันที่ด้านบน จากนั้นใช้ปุ่มที่ด้านบนขวาเพื่อ
-ลบประเภทการ์ดที่เลือก ซึ่งจะลบการ์ด/โน้ตที่ซ้ำกันทั้งหมดที่
-ใช้ประเภทการ์ดนั้นด้วย
+To fix this, open the [templates screen](./intro.md#the-templates-screen), and
+select one of the duplicates at the top. Then use the button on the top right to
+remove the selected card type. This will delete all the duplicate cards/notes that
+were using the card type as well.
 
-### ด้านหน้าของการ์ดว่างเปล่า
+### Front of Card is Blank
 
 <div id="no-field-replacement-on-front-side" />
 
-Anki แสดงการ์ดโดยการรวมฟิลด์ที่คุณป้อนเข้ากับ
-เทมเพลตที่ระบุว่าฟิลด์ใดควรปรากฏที่ด้านหน้าและด้านหลังของการ์ดของคุณ หากคุณได้รับ
-ข้อความว่าการ์ดมีด้านหน้าที่ว่างเปล่า หมายความว่าไม่มีฟิลด์ใดที่รวมอยู่ในเทมเพลตด้านหน้าของคุณมีข้อความอยู่เลย หรือคุณมีฟิลด์ที่มีข้อความ
-แต่ไม่มีฟิลด์ใดรวมอยู่ในเทมเพลตด้านหน้า
-คุณสามารถแก้ไขปัญหานี้ได้โดยการแก้ไขการ์ดในเวอร์ชันคอมพิวเตอร์ คลิกที่ **Cards...**
-และตรวจสอบให้แน่ใจว่ามีฟิลด์อย่างน้อยหนึ่งฟิลด์ที่มีข้อความรวมอยู่ในเทมเพลตด้านหน้า
-คุณสามารถเพิ่มฟิลด์พิเศษได้ด้วยปุ่ม Add Field
+Anki displays cards by combining the fields you've entered with a
+template that says which fields should appear on the front and back of your cards. If you receive a
+message that a card has a blank front, it means either none of the fields included on your front template have any text in them, or you have fields that have text,
+but none are included on the front template.
+You can fix this problem by editing the card on the computer version, clicking on **Cards...**,
+and checking to make sure at least one field with some text on it is included on the front template.
+You can add extra fields with the Add Field button.
 
-หากคุณกำลังใช้ประเภทโน้ต Cloze
-โปรดตรวจสอบให้แน่ใจว่าคุณได้รวมการลบ cloze อย่างน้อยหนึ่งรายการในฟิลด์ Text เช่น {{c1::some cloze-deleted text}}
+If you are using the Cloze note type,
+please make sure you've included one or more cloze deletions in the Text field, e.g. {{c1::some cloze-deleted text}}.
 
-หากคุณกำลังใช้ฟังก์ชันพิมพ์คำตอบ โปรดตรวจสอบให้แน่ใจว่าคุณได้รวมฟิลด์อื่นไว้ที่ด้านหน้าด้วย
+If you're using the type-in-the-answer functionality, please make sure you've included another field on the front side as well.
 
-### ไม่มีตัวกรอง Cloze ในประเภทโน้ต Cloze
+### No Cloze Filter on Cloze Note Type
+
 <div id="no-cloze-filter-on-cloze-notetype" />
 
-เทมเพลตด้านหน้าและด้านหลังของประเภทโน้ต Cloze ควรมีตัวกรอง [cloze](../editing.md#cloze-deletion)
-หากไม่มี คุณจะต้องเพิ่มกลับเข้าไปเพื่อให้ Anki สามารถสร้างการ์ด cloze
-ได้อย่างถูกต้อง
+A Cloze note type's front and back templates should have a [cloze](../editing.md#cloze-deletion)
+filter. If one is missing, you will need to add it back so that Anki can create cloze cards
+correctly.
 
-#### การ์ดว่างเดี่ยว
+#### Single empty cards
 
-เมื่อสร้าง cloze แต่ละหมายเลข cloze จะถูกเปลี่ยนเป็นการ์ดแยกต่างหาก ตัวอย่างเช่น ข้อมูลต่อไปนี้จะสร้างการ์ดสามใบ:
+When making clozes, each cloze number is turned into a separate card. For example, the following will create three cards:
 
 ```
 {{c1::This}} is a {{c2::sample}} {{c3::sentence}}.
 ```
 
-หากคุณแก้ไขข้อความในภายหลัง และลบหรือเปลี่ยนหมายเลข cloze การ์ดที่สร้างไว้ก่อนหน้านี้อาจกลายเป็นว่างเปล่า ตัวอย่างเช่น:
+If you later edit the text, and either remove or change a cloze number, the previously created card may become blank. For example:
 
 ```
 {{c1::This}} is a {{c2::sample}}
 ```
 
-และ
+and
 
 ```
 {{c1::This}} is a {{c2::sample}} {{c1::sentence}}.
 ```
 
-เป็นการเปลี่ยนแปลงทั้งสองอย่างที่จะทำให้การ์ด 3 ว่างเปล่า เมื่อคุณดูการ์ด 3 คุณจะเห็นข้อความที่ระบุว่าการ์ดว่างเปล่า และสามารถล้างได้ด้วยฟังก์ชัน Empty Cards คุณสามารถเข้าถึงฟังก์ชันนั้นผ่านเมนู Tools ของหน้าต่างหลักของเวอร์ชันคอมพิวเตอร์ และใช้เพื่อลบการ์ดที่ว่างเปล่า โปรดตรวจสอบการ์ดว่างที่รายงานก่อน และหากไม่แน่ใจ ให้สร้างข้อมูลสำรองด้วยรายการเมนู File>Export ก่อนดำเนินการต่อ
+are both changes that would make card 3 blank. When you view card 3, you'll see a message indicating that the card is blank, and can be cleaned up with the Empty Cards function. You can access that function via the Tools menu of the computer version's main window, and use it to remove blank cards. Please check the reported empty cards first, and if in doubt, create a backup with the File>Export menu item before proceeding.
 
-#### การ์ด cloze ทั้งหมดว่างเปล่า
+#### All cloze cards empty
 
-หากคุณแก้ไขเทมเพลตการ์ดของคุณโดยไม่ได้ตั้งใจ อาจทำให้การลบ cloze ใดๆ ไม่ปรากฏขึ้น หากเกิดเหตุการณ์เช่นนี้ขึ้น โปรดแก้ไขการ์ดที่มีปัญหาดังกล่าว และจดชื่อของฟิลด์แรก - โดยปกติจะเรียกว่า "Text" จากนั้น โปรด:
+If you accidentally modify your card template, it may prevent any cloze deletions from appearing. If that has happened, please edit one such problem card, and note down the name of the first field - it is usually called "Text". Then, please:
 
-- คลิกที่ปุ่ม Cards...
-- แทนที่ข้อความด้านหน้าด้วย
+- Click on the Cards... button
+- Replace the front text with
 
   ```
   {{cloze:Text}}
   ```
 
-- แทนที่ข้อความด้านหลังด้วยข้อความเดียวกัน
+- Replace the back text with the same.
 
-หากฟิลด์ของคุณมีชื่ออื่นที่ไม่ใช่ Text ให้แทนที่ Text ด้วยชื่อของฟิลด์
+If your field was called something other than Text, replace Text with the name of the field.
