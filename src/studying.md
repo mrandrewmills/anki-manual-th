@@ -1,145 +1,246 @@
-# การเรียน
+# Studying
 
 <!-- toc -->
 
-เมื่อคุณพบสำรับไพ่ที่ชอบหรือป้อนโน้ตบางส่วนแล้ว ก็ถึงเวลาเริ่มเรียน
+When you have found a deck you like or entered some notes in, it’s time
+to start studying.
 
-## สำรับไพ่ (Decks)
+## Decks
 
-การเรียนใน Anki จะจำกัดอยู่แค่สำรับไพ่ที่เลือกในปัจจุบันและสำรับไพ่ย่อยที่อยู่ภายในเท่านั้น
+Study in Anki is limited to the currently selected deck as well as any
+subdecks it contains.
 
-บนหน้าจอสำรับไพ่ สำรับไพ่และสำรับไพ่ย่อยของคุณจะแสดงเป็นรายการ บัตร [ใหม่ (New), กำลังเรียน (Learn), และครบกำหนด (Due/To Review)](getting-started.md#card-states) สำหรับวันนั้นจะแสดงที่นี่ด้วย
+On the decks screen, your decks and subdecks will be displayed in a list. [New, Learn, and Due (To Review)](getting-started.md#card-states)
+cards for that day will be also displayed here.
 
-![หน้าจอสำรับไพ่](media/decks_screen.png)
+![](media/decks_screen.png)
 
-เมื่อคุณคลิกที่สำรับไพ่ สำรับนั้นจะกลายเป็น "สำรับปัจจุบัน" และ Anki จะเปลี่ยนไปยังหน้าจอเรียน คุณสามารถกลับไปยังรายการสำรับไพ่ได้ตลอดเวลาโดยคลิกที่ “Decks” ที่ด้านบนของหน้าต่างหลัก (คุณยังสามารถใช้การกระทำ Study Deck ในเมนูเพื่อเลือกสำรับไพ่ใหม่จากคีย์บอร์ด หรือคุณสามารถกดปุ่ม <kbd>S</kbd> เพื่อเรียนสำรับไพ่ที่เลือกในปัจจุบัน)
+When you click on a deck, it will become the "current deck", and Anki
+will change to the study screen. You can return to the deck list at any time by clicking on “Decks” at
+the top of the main window. (You can also use the Study
+Deck action in the menu to select a new deck from the keyboard, or you
+can press the <kbd>S</kbd> key to study the currently selected deck.)
 
-คุณสามารถคลิกปุ่มรูปเฟืองทางด้านขวาของสำรับไพ่เพื่อเปลี่ยนชื่อหรือลบสำรับไพ่ เปลี่ยน[ตัวเลือก](deck-options.md) หรือ[ส่งออก](exporting.md)ได้
+You can click the gears button to the right of a deck to rename or
+delete the deck, change its [options](deck-options.md), or [export](exporting.md) it.
 
-## ภาพรวมการเรียน
+## Study Overview
 
-หลังจากคลิกที่สำรับไพ่เพื่อเรียน คุณจะเห็นหน้าจอที่แสดงจำนวนบัตรที่ครบกำหนดในวันนี้ หน้าจอนี้เรียกว่า "ภาพรวมสำรับไพ่":
+After clicking on a deck to study, you’ll see a screen that shows you
+how many cards are due today. This is called the "deck overview" screen:
 
-![ภาพรวมการเรียน](media/study_overview.png)
+![](media/study_overview.png)
 
-บัตรจะถูกแบ่งออกเป็น [สามประเภท](getting-started.md#card-states): ใหม่ (New), กำลังเรียน (Learning), และต้องทบทวน (To Review) หากคุณเปิดใช้งาน [การซ่อนบัตรพี่น้อง (Bury siblings)](#siblings-and-burying) ในตัวเลือกสำรับไพ่ของคุณ คุณอาจเห็นจำนวนบัตรที่จะถูกซ่อนเป็นสีเทา:
+The cards are split into [three types](getting-started.md#card-states): New, Learning, and To Review.
+If you have [Bury siblings](#siblings-and-burying) activated in your deck options, you
+may see how many cards will be buried in grey:
 
-![ภาพรวมการเรียน (บัตรที่ถูกซ่อน)](media/study_overview_buried_cards.png)
+![](media/study_overview_buried_cards.png)
 
-เพื่อเริ่มเซสชันการเรียน ให้คลิกปุ่ม **Study Now** Anki จะแสดงบัตรไปเรื่อยๆ จนกว่าบัตรที่ต้องแสดงในวันนั้นจะหมด
+To start a study session, click the **Study Now** button. Anki will
+proceed to show you cards until the cards to be shown for the day have
+run out.
 
-ขณะเรียน คุณสามารถกลับไปยังหน้าจอภาพรวมได้โดยการกดปุ่ม <kbd>S</kbd> บนคีย์บอร์ดของคุณ
+While studying, you can return to the overview by pressing the <kbd>S</kbd> key
+on your keyboard.
 
-## คำถาม
+## Questions
 
-เมื่อบัตรถูกแสดง จะมีเพียงคำถามที่แสดงในตอนแรก หลังจากคิดคำตอบแล้ว ให้คลิกปุ่ม **Show Answer** หรือกด <kbd>Space</kbd> คำตอบจะถูกแสดงขึ้นมา ไม่เป็นไรหากคุณใช้เวลาสักครู่ในการนึกถึงคำตอบ แต่ตามกฎทั่วไป หากคุณไม่สามารถตอบได้ภายในประมาณ 10 วินาที การกดดูคำตอบและไปต่ออาจจะดีกว่าการพยายามนึกต่อไป
+When a card is shown, only the question is shown at first. After
+thinking about the answer, either click the **Show Answer** button, or
+press the <kbd>Space</kbd>. The answer will then be shown. It’s okay if it takes
+you a little while to recall the answer, but as a general rule if you
+can’t answer within about 10 seconds, it’s probably better to move on
+and show the answer than keep struggling to remember.
 
-## ปุ่มคำตอบ
+## Answer Buttons
 
-หลังจากที่คำตอบแสดงขึ้นมา ให้เปรียบเทียบคำตอบที่คุณคิดกับคำตอบที่แสดง แล้วเลือกปุ่มใดปุ่มหนึ่งต่อไปนี้
+After the answer is shown, compare the answer you thought of
+with the answer that is shown and select any of the following buttons.
 
-- **Again (อีกครั้ง)**: เลือกปุ่มนี้เมื่อคำตอบของคุณไม่ถูกต้อง หรือเมื่อคุณนึกคำตอบไม่ออก หากคำตอบของคุณถูกต้องเพียงบางส่วน คุณควรจะเข้มงวดกับตัวเอง: หากมันนับว่าเป็นความล้มเหลวในสถานการณ์จริงนอก Anki มันก็นับว่าเป็นความล้มเหลวใน Anki เช่นกัน โดยทั่วไปคุณจะใช้ปุ่มนี้ประมาณ 5-20% ของเวลาทั้งหมด
+- **Again**: Select this when your answer is incorrect or when you couldn't recall the answer. If your answer is partially correct, you should be strict with yourself: if it counts as a fail in a real-life context outside of Anki, then it counts as a fail in Anki as well. You'll typically use this button about 5-20% of the time.
 
-  คีย์ลัด: <kbd>1</kbd>
+  Keyboard Shortcut: <kbd>1</kbd>
 
-- **Hard (ยาก)**: เลือกปุ่มนี้เมื่อคำตอบของคุณถูกต้อง แต่คุณไม่แน่ใจเกี่ยวกับมันหรือใช้เวลานานในการนึก
+- **Hard**: Select this button when your answer is correct, but you had doubts about it or it took a long time to recall.
 
-  คีย์ลัด: <kbd>2</kbd>
+  Keyboard Shortcut: <kbd>2</kbd>
 
-- **Good (ดี)**: เลือกปุ่มนี้เมื่อคำตอบของคุณถูกต้อง แต่ต้องใช้ความพยายามทางจิตใจในการนึกถึงมัน เมื่อใช้ Anki อย่างถูกต้อง ปุ่มนี้ควรเป็นปุ่มที่ใช้บ่อยที่สุด โดยทั่วไปคุณจะใช้ปุ่มนี้ประมาณ 80-95% ของเวลาทั้งหมด
+- **Good**: Select this when your answer is correct, but it took some mental effort to recall it. When Anki is used properly, this should be the most commonly used button. You'll typically use this button about 80-95% of the time.
 
-  คีย์ลัด: <kbd>3</kbd>, <kbd>Space</kbd>, <kbd>Enter</kbd>
+  Keyboard Shortcut: <kbd>3</kbd>, <kbd>Space</kbd>, <kbd>Enter</kbd>
 
-- **Easy (ง่าย)**: เลือกปุ่มนี้หากคำตอบของคุณถูกต้องและไม่ต้องใช้ความพยายามทางจิตใจในการนึกถึงมันเลย
+- **Easy**: Select this if your answer is correct and it took no mental effort to recall it.
 
-  คีย์ลัด: <kbd>4</kbd>
+  Keyboard Shortcut: <kbd>4</kbd>
 
-หากคุณพบว่าการใช้ปุ่มคำตอบสี่ปุ่มนั้นยาก คุณสามารถใช้เพียงปุ่ม **Again** และ **Good** ก็ได้ ใช้ **Again** สำหรับคำตอบที่ไม่ถูกต้อง และใช้ **Good** สำหรับคำตอบที่ถูกต้อง
+If you find it hard to use four answer buttons, you can also use only **Again** and **Good** buttons. Use **Again** for incorrect answers and use **Good** for correct answers.
 
-ปุ่มคำตอบแต่ละปุ่มจะแสดงเวลาครั้งถัดไปที่บัตรจะถูกทบทวนอีกครั้งหากคุณเลือกปุ่มนั้น หากต้องการเรียนรู้เกี่ยวกับการตั้งค่าที่ควบคุมช่วงเวลาการทบทวนครั้งถัดไป โปรดดูหัวข้อ [ขั้นตอนการเรียน (Learning Steps)](deck-options.html#learning-steps), [การลืม (Lapses)](deck-options.md#lapses), [FSRS](deck-options.html#fsrs) และ [ขั้นสูง (Advanced)](deck-options.md#advanced) ในส่วนตัวเลือกสำรับไพ่
+Each answer button shows the next time a card will be reviewed again if you select that button. To learn about the settings that control the next review intervals, see the topics [Learning Steps](deck-options.html#learning-steps), [Lapses](deck-options.md#lapses), [FSRS](deck-options.html#fsrs) and [Advanced](deck-options.md#advanced) in the Deck Options section.
 
-## ปัจจัยสุ่ม (Fuzz Factor)
+## Fuzz Factor
 
-เมื่อคุณเลือกปุ่มคำตอบบนบัตรทบทวน Anki จะใช้ "การสุ่ม" เล็กน้อยเพื่อป้องกันไม่ให้บัตรที่ถูกเพิ่มเข้ามาในเวลาเดียวกันและได้รับการจัดอันดับเหมือนกันติดกันและปรากฏขึ้นมาทบทวนในวันเดียวกันเสมอ
+When you select an answer button on a review card, Anki also applies a small amount of random “fuzz”
+to prevent cards that were introduced at the same time and given the same ratings
+from sticking together and always coming up for review on the same day.
 
-บัตรที่กำลังเรียนจะได้รับการหน่วงเวลาเพิ่มเติมสูงสุด 5 นาที เพื่อไม่ให้ปรากฏในลำดับเดียวกันเสมอ แต่ปุ่มคำตอบจะไม่สะท้อนสิ่งนั้น ไม่สามารถปิดคุณสมบัตินี้ได้
+Learning cards are also given up to 5 minutes of extra delay so that they
+don’t always appear in the same order, but answer buttons won't reflect that. It
+is not possible to turn this feature off.
 
-## การแก้ไขและอื่น ๆ
+## Editing and More
 
-คุณสามารถคลิกปุ่ม **Edit** ที่มุมล่างซ้ายเพื่อแก้ไขโน้ตปัจจุบัน เมื่อคุณแก้ไขเสร็จสิ้น คุณจะกลับสู่การเรียน หน้าจอการแก้ไขทำงานคล้ายกับหน้าจอ[เพิ่มโน้ต](editing.md)มาก
+You can click the **Edit** button in the bottom left to edit the current
+note. When you finish editing, you’ll be returned to study. The editing
+screen works very similarly to the [add notes](editing.md) screen.
 
-ที่มุมล่างขวาของหน้าจอเรียนมีปุ่มชื่อ **More** ปุ่มนี้มีการดำเนินการอื่น ๆ ที่คุณสามารถทำได้กับบัตรหรือโน้ตปัจจุบัน:
+At the bottom right of the study screen is a button labeled **More**.
+This button provides some other operations you can do on the current
+card or note:
 
-- [**Flag Card (ติดธงบัตร)**](editing.md#using-flags): เพิ่มเครื่องหมายสีให้กับบัตร หรือสลับเปิด/ปิด ธงจะปรากฏระหว่างการเรียน และคุณสามารถค้นหาบัตรที่ติดธงได้ในหน้าจอเบราส์ สิ่งนี้มีประโยชน์เมื่อคุณต้องการดำเนินการบางอย่างกับบัตรในภายหลัง เช่น ค้นหาคำศัพท์เมื่อกลับถึงบ้าน หากคุณใช้ Anki 2.1.45+ คุณยังสามารถเปลี่ยนชื่อธงได้จาก[เบราว์เซอร์](browsing.md)
+- [**Flag Card**](editing.md#using-flags): Adds a colored marker to the card, or toggles it off. Flags will appear during
+  study, and you can search for flagged cards in the Browse screen. This is useful
+  when you want to take some action on the card at a later date, such as looking
+  up a word when you get home. If you're using Anki 2.1.45+, you can also rename flags
+  from the [browser](browsing.md).
 
-- **Bury Card / Note (ซ่อนบัตร / โน้ต)**: ซ่อนบัตรหรือบัตรทั้งหมดของโน้ตจากการทบทวนจนถึงวันถัดไป (หากคุณต้องการเลิกซ่อนบัตรก่อนหน้านั้น คุณสามารถคลิกปุ่ม "unbury" บนหน้าจอ[ภาพรวมสำรับไพ่](studying.md#study-overview)) สิ่งนี้มีประโยชน์หากคุณไม่สามารถตอบบัตรได้ในขณะนั้น หรือต้องการกลับมาดูในภายหลัง การซ่อนยังสามารถ[เกิดขึ้นโดยอัตโนมัติ](studying.md#siblings-and-burying)สำหรับบัตรของโน้ตเดียวกัน
+- **Bury Card / Note**: Hides a card or all of the note’s cards from review until the next day.
+  (If you want to unbury cards before then, you can click the “unbury”
+  button on the [deck overview](studying.md#study-overview) screen.) This is useful if
+  you cannot answer the card at the moment or you want to come back to it
+  another time. Burying can also [happen automatically](studying.md#siblings-and-burying) for
+  cards of the same note.
 
-- **Reset card (รีเซ็ตบัตร)**: ย้ายบัตรปัจจุบันไปที่[ท้ายสุดของคิวบัตรใหม่](browsing.md#cards)
+- **Reset card**: Moves the current card to [the end of the new queue](browsing.md#cards).
 
-  ตัวเลือก "Restore original position" ช่วยให้คุณสามารถรีเซ็ตบัตรกลับไปยังตำแหน่งเดิมเมื่อคุณรีเซ็ต
+  The "Restore original position" option allows you to reset the card back to its original position when you reset it.
 
-  ตัวเลือก "Reset repetition and lapse count" หากเปิดใช้งาน จะตั้งค่าตัวนับการทบทวนและความล้มเหลวของบัตรกลับเป็นศูนย์ แต่จะไม่ลบประวัติการทบทวนที่แสดงที่ด้านล่างของหน้าจอข้อมูลบัตร
+  The "Reset repetition and lapse count" option, if enabled, will set the review and failure counters
+  for the card back to zero. It does not remove the review history that is shown at the bottom of the
+  card info screen.
 
-- **Set Due Date (กำหนดวันครบกำหนด)**: ใส่บัตรในคิวการทบทวน และ[ทำให้ครบกำหนดในวันที่กำหนด](browsing.md#cards)
+- **Set Due Date**: Puts cards in the review queue, and [makes them due on a certain date.](browsing.md#cards)
 
-- **Suspend Card / Note (พักการใช้งานบัตร / โน้ต)**: ซ่อนบัตรหรือบัตรทั้งหมดของโน้ตจากการทบทวนจนกว่าจะถูกเลิกพักการใช้งานด้วยตนเอง (โดยคลิกปุ่ม suspend ในเบราว์เซอร์) สิ่งนี้มีประโยชน์หากคุณต้องการหลีกเลี่ยงการทบทวนโน้ตเป็นระยะเวลาหนึ่ง แต่ไม่ต้องการลบมัน
+- **Suspend Card / Note**: Hides a card or all of the note’s cards from review until they are
+  manually unsuspended (by clicking the suspend button in the browser).
+  This is useful if you want to avoid reviewing the note for some time,
+  but don’t want to delete it.
 
-- **Options (ตัวเลือก)**: แก้ไข[ตัวเลือก](deck-options.md)สำหรับสำรับไพ่ปัจจุบัน
+- **Options**: Edit the [options](deck-options.md) for the current deck.
 
-- **Card Info (ข้อมูลบัตร)**: แสดง[ข้อมูลทางสถิติ](stats.md#card-info)เกี่ยวกับบัตร
+- **Card Info**: Displays [statistical information](stats.md#card-info) about the card.
 
-- **Previous Card Info (ข้อมูลบัตรก่อนหน้า)**: แสดง[ข้อมูลทางสถิติ](stats.md#card-info)เกี่ยวกับบัตรก่อนหน้า
+- **Previous Card Info**: Displays [statistical information](stats.md#card-info) about the previous card.
 
-- [**Mark Note (ทำเครื่องหมายโน้ต)**](editing.md#the-marked-tag): เพิ่มแท็ก "marked" ให้กับโน้ตปัจจุบัน เพื่อให้สามารถค้นหาได้ง่ายในเบราว์เซอร์ สิ่งนี้คล้ายกับการติดธงบัตรแต่ละใบ แต่ทำงานกับแท็กแทน ดังนั้นหากโน้ตมีหลายบัตร บัตรทั้งหมดจะปรากฏในการค้นหาแท็ก marked ผู้ใช้ส่วนใหญ่จะต้องการใช้ธงแทน
+- [**Mark Note**](editing.md#the-marked-tag): Adds a “marked” tag to the current note, so it can be easily found in the
+  browser. This is similar to flagging individual cards, but works with a tag
+  instead, so if the note has multiple cards, all cards will appear in a search
+  for the marked tag. Most users will want to use flags instead.
 
-- **Create Copy (สร้างสำเนา)**: เปิด[สำเนา](browsing.md#finding-duplicates)ของโน้ตปัจจุบันในโปรแกรมแก้ไข ซึ่งสามารถแก้ไขเล็กน้อยเพื่อให้ได้รูปแบบต่างๆ ของบัตรของคุณได้อย่างง่ายดาย โดยค่าเริ่มต้น บัตรที่ซ้ำกันจะถูกสร้างขึ้นในสำรับไพ่เดียวกับต้นฉบับ
+- **Create Copy**: Opens a [duplicate](browsing.md#finding-duplicates) of the current
+  note in the editor, which can be slightly modified to easily obtain variations of your cards.
+  By default, the duplicate card will be created in the same deck as the original.
 
-- **Delete Note (ลบโน้ต)**: ลบโน้ตและบัตรทั้งหมดของมัน
+- **Delete Note**: Deletes the note and all of its cards.
 
-- **Replay Audio (เล่นเสียงซ้ำ)**: หากบัตรมีเสียงที่ด้านหน้าหรือด้านหลัง ให้เล่นอีกครั้ง
+- **Replay Audio**: If the card has audio on the front or back, play it again.
 
-- **Pause Audio (หยุดเสียงชั่วคราว)**: หยุดเสียงชั่วคราวหากกำลังเล่นอยู่
+- **Pause Audio**: Pauses the audio if it is playing.
 
-- **Audio -5s / +5s (เสียง -5วิ / +5วิ)**: ข้ามไปข้างหลัง / ข้างหน้า 5 วินาทีในเสียงที่กำลังเล่นอยู่
+- **Audio -5s / +5s**: Jump backwards / forward 5 seconds in the currently playing audio.
 
-- **Record Own Voice (บันทึกเสียงของคุณ)**: บันทึกจากไมโครโฟนของคุณเพื่อตรวจสอบการออกเสียงของคุณ การบันทึกนี้เป็นแบบชั่วคราวและจะหายไปเมื่อคุณไปยังบัตรถัดไป หากคุณต้องการเพิ่มเสียงลงในบัตรอย่างถาวร คุณสามารถทำได้ในหน้าต่างแก้ไข
+- **Record Own Voice**: Record from your microphone for the purposes of checking your
+  pronunciation. This recording is temporary and will go away when you
+  move to the next card. If you want to add audio to a card permanently,
+  you can do that in the edit window.
 
-- **Replay Own Voice (เล่นเสียงที่บันทึกไว้ซ้ำ)**: เล่นการบันทึกเสียงของคุณครั้งก่อนซ้ำ (สันนิษฐานว่าหลังจากแสดงคำตอบแล้ว)
+- **Replay Own Voice**: Replay the previous recording of your voice (presumably after showing
+  the answer).
 
-## ลำดับการแสดงผล
+## Display Order
 
-การเรียนจะแสดงบัตรจากสำรับไพ่ที่เลือกและสำรับไพ่ใดๆ ที่อยู่ภายใน ดังนั้น หากคุณเลือกสำรับไพ่ "French" ของคุณ สำรับไพ่ย่อย "French::Vocab" และ "French::My Textbook::Lesson 1" จะถูกแสดงด้วย
+Studying will show cards from the selected deck and any decks it
+contains. Thus, if you select your “French” deck, the subdecks
+“French::Vocab” and “French::My Textbook::Lesson 1” will be shown as
+well.
 
-โดยค่าเริ่มต้น สำหรับบัตรใหม่ Anki จะรวบรวมบัตรจากสำรับไพ่ตามลำดับตัวอักษร ดังนั้นในตัวอย่างข้างต้น คุณจะได้รับบัตรจาก "French" ก่อน แล้วจึงตามด้วย "My Textbook" และสุดท้าย "Vocab" คุณสามารถใช้วิธีนี้เพื่อควบคุมลำดับที่บัตรปรากฏ โดยวางบัตรที่มีลำดับความสำคัญสูงไว้ในสำรับไพ่ที่ปรากฏอยู่สูงกว่าในรายการ เมื่อคอมพิวเตอร์เรียงลำดับข้อความตามตัวอักษร อักขระ "-" จะมาก่อนอักขระตัวอักษร และ "~" จะมาทีหลัง ดังนั้นคุณสามารถตั้งชื่อสำรับไพ่ว่า "-Vocab" เพื่อให้ปรากฏก่อน และคุณสามารถเรียกอีกสำรับหนึ่งว่า "~My Textbook" เพื่อบังคับให้ปรากฏหลังสุด
+By default, for new cards, Anki gathers cards from the decks in
+alphabetical order. So in the above example, you would get cards first
+from “French”, then “My Textbook”, and finally “Vocab”. You can use this
+to control the order cards appear in, placing high priority cards in
+decks that appear higher in the list. When computers sort text
+alphabetically, the “-” character comes before alphabetical characters,
+and “\~” comes after them. So you could call the deck “-Vocab” to make
+them appear first, and you could call the other deck “\~My Textbook” to
+force it to appear after everything else.
 
-บัตรใหม่และการทบทวนจะถูกรวบรวมแยกกัน และ Anki จะไม่รอจนกว่าคิวทั้งสองจะว่างเปล่าก่อนที่จะไปยังสำรับไพ่ถัดไป ดังนั้นจึงเป็นไปได้ที่คุณจะเห็นบัตรใหม่จากสำรับหนึ่งในขณะที่เห็นการทบทวนจากอีกสำรับหนึ่ง หรือในทางกลับกัน หากคุณไม่ต้องการสิ่งนี้ ให้คลิกโดยตรงบนสำรับไพ่ที่คุณต้องการเรียนแทนที่จะเป็นหนึ่งในสำรับไพ่หลัก
+New cards and reviews are gathered separately, and Anki won’t wait until
+both queues are empty before moving on to the next deck, so it’s
+possible you’ll be exposed to new cards from one deck while seeing
+reviews from another deck, or vice versa. If you don’t want this, click
+directly on the deck you want to study instead of one of the parent
+decks.
 
-เนื่องจากบัตรที่กำลังเรียนมีความสำคัญต่อเวลาพอสมควร บัตรเหล่านี้จึงถูกดึงมาจากทุกสำรับไพ่พร้อมกันและแสดงตามลำดับที่ครบกำหนด
+Since cards in learning are somewhat time-critical, they are fetched
+from all decks at once and shown in the order they are due.
 
-เพื่อควบคุมลำดับที่บัตรปรากฏ โปรดดู [ลำดับการแสดงผล](./deck-options.md#display-order) สำหรับการเรียงลำดับบัตรใหม่ที่ละเอียดขึ้น คุณสามารถเปลี่ยนลำดับได้ใน[เบราว์เซอร์](browsing.md)
+To control the order cards appear in, see [Display Order](./deck-options.md#display-order). For more fine-grained ordering of new cards, you
+can change the order in the [browser](browsing.md).
 
-## บัตรพี่น้องและการซ่อน (Siblings and Burying)
+## Siblings and Burying
 
-จาก[พื้นฐาน](getting-started.md) คุณจะรู้ว่า Anki สามารถสร้างบัตรได้มากกว่าหนึ่งใบสำหรับแต่ละสิ่งที่คุณป้อน เช่น บัตรหน้า→หลัง และบัตรหลัง→หน้า หรือการลบคำในช่องว่าง (cloze deletions) สองแบบจากข้อความเดียวกัน บัตรที่เกี่ยวข้องกันเหล่านี้เรียกว่า "บัตรพี่น้อง" (siblings)
+Recall from [the basics](getting-started.md) that Anki can create more than one
+card for each thing you input, such as a front→back card and a
+back→front card, or two different cloze deletions from the same text.
+These related cards are called "siblings".
 
-เมื่อคุณตอบบัตรที่มีบัตรพี่น้อง Anki สามารถป้องกันไม่ให้บัตรพี่น้องของบัตรนั้นแสดงในเซสชันเดียวกันได้โดยการ "ซ่อน" (burying) โดยอัตโนมัติ บัตรที่ถูกซ่อนจะถูกซ่อนจากการทบทวนจนกว่านาฬิกาจะเปลี่ยนเป็นวันใหม่ หรือคุณเลิกซ่อนด้วยตนเองโดยใช้ปุ่ม "Unbury" ที่มองเห็นได้ที่ด้านล่างของหน้าจอ[ภาพรวมสำรับไพ่](studying.md#study-overview) Anki จะซ่อนบัตรพี่น้องแม้ว่าบัตรพี่น้องจะไม่ได้อยู่ในสำรับไพ่เดียวกัน (ตัวอย่างเช่น หากคุณใช้คุณสมบัติ[การแทนที่สำรับไพ่](templates/intro.md))
+When you answer a card that has siblings, Anki can prevent the card’s
+siblings from being shown in the same session by automatically "burying"
+them. Buried cards are hidden from review until the clock rolls over to
+a new day or you manually unbury them using the “Unbury” button that’s
+visible at the bottom of the [deck overview](studying.md#study-overview) screen. Anki
+will bury siblings even if the siblings are not in the same deck (for
+instance, if you use the [deck override](templates/intro.md) feature).
 
-คุณสามารถเปิดใช้งานการซ่อนได้จากหน้าจอ[ตัวเลือกสำรับไพ่](deck-options.md) - มีการตั้งค่าแยกต่างหากสำหรับบัตรใหม่และการทบทวน
+You can enable burying from the [deck options](deck-options.md) screen -
+there are separate settings for new cards and reviews.
 
-Anki จะซ่อนเฉพาะบัตรพี่น้องที่เป็นบัตรใหม่หรือบัตรทบทวนเท่านั้น จะไม่ซ่อนบัตรที่กำลังเรียน เนื่องจากเวลาเป็นสิ่งสำคัญสำหรับบัตรเหล่านั้น ในทางกลับกัน เมื่อคุณเรียนบัตรที่กำลังเรียน บัตรพี่น้องที่เป็นบัตรใหม่/ทบทวนจะถูกซ่อน
+Anki will only bury siblings that are new or review cards. It will not
+hide cards in learning, as time is of the essence for those cards. On
+the other hand, when you study a learning card, any new/review siblings
+will be buried.
 
-โปรดทราบว่าบัตรไม่สามารถถูกซ่อนและพักการใช้งานในเวลาเดียวกันได้ การพักการใช้งานบัตรที่ถูกซ่อนจะเลิกซ่อนบัตรนั้น บัตรที่ถูกพักการใช้งานไม่สามารถถูกซ่อนได้
+Also note that a card cannot be buried and suspended at the same time. Suspending a
+buried card will unbury it. Suspended cards can't be buried.
 
-## คีย์ลัด (Keyboard Shortcuts)
+## Keyboard Shortcuts
 
-การดำเนินการทั่วไปส่วนใหญ่ใน Anki มีคีย์ลัด ส่วนใหญ่สามารถค้นพบได้ในอินเทอร์เฟซ: รายการเมนูจะแสดงคีย์ลัดไว้ข้างๆ และการวางเคอร์เซอร์ของเมาส์ไว้เหนือปุ่มโดยทั่วไปจะแสดงคีย์ลัดในคำแนะนำ (tooltip)
+Most of the common operations in Anki have keyboard shortcuts. Most of
+them are discoverable in the interface: menu items list their shortcuts
+next to them, and hovering the mouse cursor over a button will generally
+show its shortcut in a tooltip.
 
-เมื่อเรียน การกด <kbd>Space</kbd> หรือ <kbd>Enter</kbd> จะแสดงคำตอบ เมื่อคำตอบแสดงขึ้น คุณสามารถใช้ <kbd>Space</kbd> หรือ <kbd>Enter</kbd> เพื่อเลือกปุ่ม Good ได้ คุณสามารถใช้ปุ่ม <kbd>1</kbd>-<kbd>4</kbd> เพื่อเลือกปุ่มความง่ายที่ต้องการ หลายคนพบว่าสะดวกที่จะตอบบัตรส่วนใหญ่ด้วย <kbd>Space</kbd> และวางนิ้วหนึ่งไว้บน <kbd>1</kbd> สำหรับเมื่อพวกเขาลืม
+When studying, either <kbd>Space</kbd> or <kbd>Enter</kbd> will show the answer. When the
+answer is shown, you can use <kbd>Space</kbd> or <kbd>Enter</kbd> to select the Good button.
+You can use the <kbd>1</kbd>-<kbd>4</kbd> keys to select a specific ease button. Many people
+find it convenient to answer most cards with <kbd>Space</kbd> and keep one finger
+on <kbd>1</kbd> for when they forget.
 
-รายการ "Study Deck" ในเมนู Tools ช่วยให้คุณสามารถสลับไปยังสำรับไพ่ได้อย่างรวดเร็วด้วยคีย์บอร์ด คุณสามารถเรียกใช้ได้ด้วยปุ่ม <kbd>/</kbd> เมื่อเปิดขึ้นมา จะแสดงสำรับไพ่ทั้งหมดของคุณและแสดงพื้นที่ตัวกรองที่ด้านบน ขณะที่คุณพิมพ์อักขระ Anki จะแสดงเฉพาะสำรับไพ่ที่ตรงกับอักขระที่คุณพิมพ์ คุณสามารถเพิ่มช่องว่างเพื่อแยกคำค้นหาหลายคำ และ Anki จะแสดงเฉพาะสำรับไพ่ที่ตรงกับทุกคำ ดังนั้น "ja 1" หรือ "on1 ja" จะตรงกับสำรับไพ่ที่ชื่อว่า "Japanese::Lesson1"
+The "Study Deck" item in the Tools menu allows you to quickly switch to
+a deck with the keyboard. You can trigger it with the <kbd>/</kbd> key. When
+opened, it will display all of your decks and show a filter area at the
+top. As you type characters, Anki will display only decks matching the
+characters you type. You can add a space to separate multiple search
+terms, and Anki will show only decks that match all the terms. So “ja 1”
+or “on1 ja” would both match a deck called “Japanese::Lesson1”.
 
-## การเรียนตามไม่ทัน (Falling Behind)
+## Falling Behind
 
-เมื่อคุณเรียนทบทวนตามไม่ทัน โดยค่าเริ่มต้น Anki จะจัดลำดับความสำคัญของบัตรที่รอนานที่สุดก่อน การเรียงลำดับนี้ช่วยให้แน่ใจว่าจะไม่มีบัตรใดถูกทิ้งไว้รออย่างไม่มีกำหนด แต่นั่นหมายความว่าหากคุณเพิ่มบัตรใหม่ การทบทวนของบัตรเหล่านั้นจะไม่ปรากฏจนกว่าคุณจะจัดการกับงานที่ค้างอยู่ให้เสร็จ
+When you fall behind in your reviews, Anki by default prioritizes cards that have
+been waiting the longest. This ordering ensures that no cards will
+be left waiting indefinitely, but it means that if you introduce new
+cards, their reviews won’t appear until you’ve gotten through your
+backlog.
 
-เมื่อคุณตอบบัตรที่รอมาสักพัก Anki จะคำนึงถึงความล่าช้านั้นเมื่อกำหนดเวลาที่บัตรควรจะแสดงในครั้งต่อไป ซึ่งหมายความว่าหากคุณกลับมาใช้ Anki หลังจากหยุดพักไปนาน คุณไม่จำเป็นต้องเริ่มต้นใหม่และสามารถเริ่มจากจุดที่คุณค้างไว้ได้เลย
+When you answer cards that have been waiting for a while, Anki factors
+in that delay when determining the next time a card should be shown. This means if you are returning to Anki after a long break, you don't have to start anew and can just start back from where you left.
