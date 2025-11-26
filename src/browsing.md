@@ -1,217 +1,315 @@
-# การเรียกดู
+# Browsing
 
 <!-- toc -->
 
-หน้าต่างเรียกดูช่วยให้คุณค้นหาบัตรและโน้ตของคุณ รวมถึงแก้ไขได้ เปิดโดยคลิกที่ **เรียกดู** ในหน้าต่างหลัก หรือกด <kbd>B</kbd> หน้าต่างนี้ประกอบด้วย 3 ส่วน: _แถบด้านข้าง_ ทางซ้าย, _ตารางบัตร/โน้ต_ ด้านขวาบน และ _พื้นที่แก้ไข_ ด้านขวาล่าง คุณสามารถวางเมาส์ระหว่างสองส่วนเพื่อคลิกและลากขยายหรือย่อขนาดแต่ละส่วนได้
+The Browse window allows you to search through your cards and notes, and edit
+them. It is opened by clicking **Browse** in the main window, or by pressing
+<kbd>B</kbd>. It is comprised of three sections: the _sidebar_ on the
+left, the _card/note table_ on the top right, and the _editing area_ on the bottom
+right. By positioning the mouse between two sections, it is possible to click
+and drag to expand one section and shrink the other.
 
-## โหมดตาราง
+## Table Modes
 
 ![Table Modes](media/browser_table_modes.png)
 
-Anki 2.1.45+ มี 2 โหมด: แสดงบัตรหรือโน้ตในตารางข้อมูล คุณสามารถเปลี่ยนโหมดได้โดยคลิกสวิตช์ที่ด้านบนซ้ายของพื้นที่ค้นหา หรือกด <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> หรือ <kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd>T</kbd> สวิตช์จะแสดงด้วยว่าแสดง **C**ards หรือ **N**otes อยู่
+Anki 2.1.45+ offers two modes: either cards or notes are shown in the data table.
+You can change the current mode by clicking the switch at the top, to the left
+of the search area, or pressing <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> or
+<kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd>T</kbd>. The switch also indicates if **C**ards
+or **N**otes are currently shown.
 
-**หมายเหตุ**: เพื่อความง่าย คู่มือนี้จะสมมติว่าโหมดบัตร (Cards) เป็นโหมดหลัก เมื่อใดที่มีการกล่าวถึงการเลือก/ค้นหา "บัตร" ผู้อ่านสามารถแทนที่ด้วย "บัตรหรือโน้ตขึ้นอยู่กับโหมดที่ใช้งานอยู่"
+**Note**: For the sake of simplicity, this manual generally assumes the Cards
+mode to be the active one. Whenever selecting/finding/etc. "cards" is mentioned,
+the reader may substitute it for "cards or notes depending on the active mode".
 
-## แถบด้านข้าง
+## Sidebar
 
-_แถบด้านข้าง_ ทางซ้ายช่วยให้เข้าถึงคำค้นหาทั่วไปได้อย่างรวดเร็ว ใน Anki 2.1.45+ ยังมีแถบค้นหา, เครื่องมือแก้ไขแท็กและเด็ค และเครื่องมือ 2 แบบที่กล่าวถึงในส่วนถัดไป คุณสามารถสลับเครื่องมือได้โดยใช้แถบเครื่องมือด้านบนของแถบด้านข้างหรือกด <kbd>Alt</kbd>+<kbd>1</kbd>/<kbd>2</kbd>
+The _sidebar_ on the left allows quick access to common search terms. On Anki
+2.1.45+, it also provides a searchbar, facilities to edit tags and decks, and a
+choice of two different tools, which are discussed in the following sections.
+You can switch tools using the toolbar at the top of the sidebar or the shortcuts
+<kbd>Alt</kbd>+<kbd>1</kbd>/<kbd>2</kbd>.
 
-### เครื่องมือค้นหา
+### Search Tool
 
 ![Search Tool](media/browser_search_tool.png)
 
-เครื่องมือนี้ทำงานเหมือนเวอร์ชันก่อน: คลิกที่รายการใดจะค้นหารายการนั้น
+With this tool, the sidebar behaves as in previous versions: Clicking on an item
+will search for it.
 
-คุณสามารถกด <kbd>Ctrl</kbd> (<kbd>Command</kbd> บน Mac) ค้างไว้ขณะคลิกเพื่อเพิ่มรายการที่คลิกเข้าไปในเงื่อนไขค้นหาปัจจุบันแบบ AND แทนที่จะเริ่มค้นหาใหม่ เช่น หากต้องการแสดงบัตร _กำลังเรียนรู้_ ที่อยู่ในเด็คภาษาเยอรมันด้วย ให้คลิก "Learning" แล้ว <kbd>Ctrl</kbd>-คลิก "German"
+You can hold down <kbd>Ctrl</kbd> (<kbd>Command</kbd> on Mac) while clicking in
+order to append the clicked item to the current search with an AND condition,
+instead of starting a new search. If you wanted to show _learning_ cards that were
+also in the German deck for instance, you could click on "Learning",
+then <kbd>Ctrl</kbd>-click on "German".
 
-คุณสามารถกด <kbd>Shift</kbd> เพื่อสร้างการค้นหาแบบ OR แทน AND เช่น คลิกเด็คหนึ่ง แล้ว <kbd>Shift</kbd>-คลิกอีกเด็คเพื่อแสดงบัตรจากเด็คใดก็ได้ในมุมมองเดียวกัน
+You can hold down <kbd>Shift</kbd> to create an OR search instead of an AND. For
+example, you could click one deck, then <kbd>Shift</kbd>-click another to show
+cards from either of the decks in the same view.
 
-คุณสามารถกด <kbd>Alt</kbd> (<kbd>Option</kbd> บน Mac) เพื่อกลับด้านการค้นหา (เติม `-` ข้างหน้า): เช่น เพื่อแสดงบัตรทั้งหมดในเด็คปัจจุบันที่ _ไม่มี_ แท็กบางแท็ก <kbd>Alt</kbd>/<kbd>Option</kbd> สามารถใช้ร่วมกับ <kbd>Ctrl</kbd> หรือ <kbd>Shift</kbd> ได้ (เช่น คลิกด้วย <kbd>Ctrl</kbd>+<kbd>Alt</kbd> จะเพิ่มเงื่อนไขค้นหาใหม่ที่เป็นแบบปฏิเสธ)
+You can hold down <kbd>Alt</kbd> (<kbd>Option</kbd> on Mac) in order to reverse the
+search (prepend a `-`): for example, to show all cards in a current deck that
+do _not_ have a certain tag. <kbd>Alt</kbd>/<kbd>Option</kbd> can be combined with
+either <kbd>Ctrl</kbd> or <kbd>Shift</kbd> (e.g. clicking with <kbd>Ctrl</kbd>+<kbd>Alt</kbd>
+will result in adding a new search term that is negated).
 
-ใน Anki 2.1.39+ คุณยังสามารถกด <kbd>Ctrl</kbd> และ <kbd>Shift</kbd> พร้อมกันขณะคลิกคำค้นหาเพื่อแทนที่คำค้นหาประเภทเดียวกันทั้งหมดด้วยคำใหม่ สมมติว่าคุณเคยพิมพ์คำค้นหาซับซ้อนเช่น  
-`deck:Swahili (is:due or tag:important)`  
-และตอนนี้ต้องการค้นหาแบบเดียวกันในเด็ค Urdu ให้กด <kbd>Ctrl</kbd>+<kbd>Shift</kbd> ขณะคลิกเด็ค Urdu ในแถบด้านข้าง จะได้  
-`deck:Urdu (is:due or tag:important)`
+On Anki 2.1.39+, you can also hold down both <kbd>Ctrl</kbd> and
+<kbd>Shift</kbd> together when clicking a search term to replace all occurrences of the
+same kind of search with the new one.
+Let's say you had previously typed in a complicated search expression like
+`deck:Swahili (is:due or tag:important)`
+and now want to perform the same search for your Urdu deck. You can hold down
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd> while clicking the Urdu deck in the sidebar to obtain the
+following search expression:
+`deck:Urdu (is:due or tag:important)`.
 
-### เครื่องมือเลือก
+### Selection Tool
 
 ![Selection Tool](media/browser_selection_tool2.png)
 
-เครื่องมือเลือกช่วยให้เลือกหลายรายการพร้อมกันได้โดยกด <kbd>Ctrl</kbd> หรือ <kbd>Shift</kbd> ขณะคลิก และยังสามารถลากและวางเพื่อจัดลำดับเด็คและแท็กใหม่ได้
+The Selection tool allows for selecting multiple items at the same time by holding down <kbd>Ctrl</kbd>
+or <kbd>Shift</kbd> while clicking. It also enables drag-and-drop to reorder decks and
+tags.
 
-ตัวอย่างเช่น: สมมติว่าคุณมีแท็ก `Math`, `Calculus` และ `Algebra` คลิกแท็ก `Calculus` แล้ว <kbd>Ctrl</kbd>-คลิกแท็ก `Algebra` ตอนนี้ทั้งสองแท็กถูกเลือก ให้คลิกและลากแท็กใดก็ได้ไปที่แท็ก `Math` เพื่อทำให้ทั้งสองแท็กเป็นลูกของแท็กนี้ เบื้องหลัง Anki จะเปลี่ยนชื่อแท็กเป็น `Math::Calculus` และ `Math::Algebra` และอัปเดตโน้ตของคุณ
+Here is an example: Say you have the tags `Math`, `Calculus`, and `Algebra`.
+Click on the `Calculus` tag, then <kbd>Ctrl</kbd>-click on the `Algebra` tag. Now both
+tags are selected, click and drag any of the two onto the `Math` tag to make them
+both children of this tag. Behind the scenes, Anki has renamed the two tags to
+`Math::Calculus` and `Math::Algebra` respectively and updated your notes accordingly.
 
-อีกกรณีหนึ่งของการเลือกหลายรายการคือการค้นหา: หากคุณคลิกขวาที่รายการที่เลือก สามารถเลือก **ค้นหา &gt; ทั้งหมด/ใดๆ ที่เลือก** ได้ ซึ่งสามารถใช้ร่วมกับคีย์ลัดที่อธิบายไว้ใน [เครื่องมือค้นหา](#search-tool) เพื่อเพิ่มผลลัพธ์การค้นหาเข้าไปในเงื่อนไขปัจจุบัน
+Another use case for selecting multiple items is searching: If you right-click on
+a selection of items, you can choose **Search &gt; All/Any Selected**. This
+can be combined with keyboard modifiers as described in [Search Tool](#search-tool)
+to append the resulting search to the current search.
 
-### การค้นหาที่บันทึกไว้
+### Saved Searches
 
-หากคุณค้นหาสิ่งเดิมบ่อยๆ คุณสามารถบันทึกการค้นหาปัจจุบันได้โดยคลิกขวาที่รายการบนสุดในแถบด้านข้าง เลือก “บันทึกการค้นหาปัจจุบัน” แล้วตั้งชื่อ  
-คุณยังสามารถลากและวางรายการใดในแถบด้านข้างไปยังพื้นที่นี้เพื่อเพิ่มการค้นหาแบบเดียวกันที่บันทึกไว้ เหมือนกับการปักหมุดไว้ด้านบน
+If you regularly search for the same thing,
+you can save the current search by right-clicking the topmost item in the sidebar,
+choosing **Save Current Search** and typing in a name.
+You can also drag and drop any sidebar item onto this area to add an equivalent
+saved search, effectively pinning it at the top.
 
-### การแก้ไขรายการ
+### Editing Items
 
-คุณสามารถลบหรือเปลี่ยนชื่อแท็ก เด็ค และการค้นหาที่บันทึกไว้ได้โดยตรงจากแถบด้านข้าง จากเมนูคลิกขวา หรือใช้คีย์ลัด (<kbd>Del</kbd> และ <kbd>F2</kbd> บน Windows) การลบสามารถทำกับหลายรายการพร้อมกันได้ (ดู [เครื่องมือเลือก](#selection-tool))
+You can delete or rename tags, decks, and saved searches directly from the sidebar,
+from the right-click menu, or by using a shortcut key (<kbd>Del</kbd> and
+<kbd>F2</kbd> on Windows). Deletion even works for multiple items at once
+(see [Selection Tool](#selection-tool)).
 
-### การค้นหารายการ
+### Finding Items
 
-เพื่อค้นหารายการในแถบด้านข้าง ให้พิมพ์บางส่วนของชื่อในแถบค้นหาด้านบน
+To find a certain item in the sidebar tree, type part of its name into the searchbar
+at the top.
 
-## กล่องค้นหา
+## Search Box
 
-เหนือรายการบัตรจะมีกล่องค้นหา คุณสามารถพิมพ์ข้อความต่างๆ เพื่อค้นหาบัตรได้ สำหรับข้อมูลเกี่ยวกับไวยากรณ์การค้นหา ดูที่ [การค้นหา](searching.md)
+Above the card list is a search box. You can type in various things
+there to search for cards. For information on the search syntax,
+see [Searching](searching.md).
 
-## ตารางบัตร/โน้ต
+## Card/Note Table
 
-แถวในตารางแสดงบัตรหรือโน้ตที่ตรงกับการค้นหาปัจจุบัน เมื่อคุณคลิกที่แถว โน้ตที่เกี่ยวข้องจะแสดงในส่วนล่าง
+The table's rows represent cards or notes that match the current search.
+When you click on a row, the corresponding note will be shown in the bottom section.
 
-### แถว
+### Rows
 
-หากคุณลากเมาส์หรือกด <kbd>Ctrl</kbd> หรือ <kbd>Command</kbd> เพื่อเลือกหลายแถว ตัวแก้ไขจะถูกซ่อนไว้ชั่วคราว การดำเนินการต่างๆ (เช่น เปลี่ยนเด็ค) สามารถทำกับหลายบัตรหรือโน้ตพร้อมกันได้ ไม่ขึ้นกับโหมดที่ใช้งานอยู่ ดังนั้นในโหมดบัตร (Cards) โน้ตจะถือว่าเลือกไว้หากบัตรใดของโน้ตนั้นถูกเลือก และในโหมดโน้ต (Notes) บัตรจะถือว่าเลือกไว้หากโน้ตของบัตรนั้นถูกเลือก
+If you drag the mouse or hold <kbd>Ctrl</kbd> or <kbd>Command</kbd> to select multiple
+rows, the editor will be temporarily hidden. Various operations (such as
+changing the deck) can operate on multiple cards or notes at once, independent
+of the active mode. Therefore in Cards mode, a note is considered to be selected
+if any of its cards is selected, and in Notes mode, a card is considered to be selected
+if its note is selected.
 
-การดำเนินการอื่น (เช่น แสดงข้อมูลบัตร) จะทำได้กับบัตรหรือโน้ตเดียวเท่านั้น เรียกว่า _บัตรหรือโน้ตปัจจุบัน_ ซึ่งโดยปกติคือรายการที่เลือกหรือคลิกล่าสุด  
-ในโหมดบัตร โน้ตปัจจุบันคือโน้ตของบัตรปัจจุบัน และในโหมดโน้ต บัตรปัจจุบันคือบัตรแรกของโน้ตปัจจุบัน
+Other operations (like showing card information) only operate on a single card
+or note. This is called the _current_ card or note, which is usually the one that
+was last selected or clicked.
+In Cards Mode, again, the current note is the note of the current card and in Notes
+mode, the current card is the first card of the current note.
 
-สีพื้นหลังจะเปลี่ยนตามสถานะของบัตรและโน้ต ในโหมดบัตร จะใช้เงื่อนไขแรกที่ตรง:
+The background colour will change depending on the card and note. In Cards mode,
+the first match will be used:
 
-1. ถ้าบัตร **ถูกตั้งค่าสถานะ** ใช้สีของสถานะ
-2. ถ้าบัตร **ถูกระงับ** ใช้สีเหลือง
-3. ถ้าโน้ตของบัตร **ถูกทำเครื่องหมาย** ใช้สีม่วง
+1. if the card is **flagged**, use the flag colour,
+2. if the card is **suspended**, yellow,
+3. if the card's note is **marked**, purple.
 
-ในโหมดโน้ต จะใช้สีเฉพาะกับโน้ตที่ถูกทำเครื่องหมาย  
-สำหรับข้อมูลเพิ่มเติมเกี่ยวกับโน้ตที่ถูกทำเครื่องหมายและบัตรที่ถูกระงับ ดู [การแก้ไขและอื่นๆ](studying.md#editing-and-more)
+In Notes mode, colour is only applied to marked notes.\
+For more information about marked notes and suspended cards, see [Editing and More](studying.md#editing-and-more).
 
-### คอลัมน์
+### Columns
 
-คอลัมน์สามารถปรับแต่งได้: คลิกขวาที่คอลัมน์ (หรือ <kbd>Ctrl</kbd>-คลิกบน Mac) เพื่อเลือกคอลัมน์ที่ต้องการแสดง  
-คุณสามารถลากคอลัมน์เพื่อจัดลำดับใหม่ คลิกที่คอลัมน์เพื่อเรียงลำดับตามคอลัมน์นั้น คลิกอีกครั้งเพื่อสลับลำดับการเรียง หมายเหตุ: ไม่สามารถเรียงลำดับตามคอลัมน์คำถามและคำตอบได้
+The columns are configurable: right click on one (or <kbd>Ctrl</kbd>-click on a
+Mac) to choose which columns you'd like to see.
+You can drag columns to reorder them. Clicking on a column will sort by that column;
+click again to reverse the sort order. Note that you cannot sort by the Question
+and Answer columns.
 
-ทุกคอลัมน์สามารถใช้ได้ทั้ง [โหมดบัตรและโน้ต](#table-modes) แต่บางครั้งชื่อและข้อมูลจะแตกต่างกัน ตารางต่อไปนี้แสดงพฤติกรรมของแต่ละโหมด
+All columns are available for both [Cards and Notes mode](#table-modes)
+but sometimes with slightly different names and data. The following table lists
+the behaviours for both modes.
 
 <!-- prettier-ignore -->
-| คอลัมน์         | โหมดบัตร                                                                                                                                                                                                                             | โหมดโน้ต                                                                                                                                                                                                     |
+
+| Column          | Cards mode                                                                                                                                                                                                                             | Notes mode                                                                                                                                                                                                     |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| คำตอบ           | ด้านหลังของบัตรในบรรทัดเดียวโดยตัดคำถามออก คุณสามารถเลือก [รูปแบบกำหนดเอง](templates/styling.md#browser-appearance) ในตัวแก้ไขประเภทบัตรได้เช่นกัน                                    | เช่นเดียวกับโหมดบัตร แต่สำหรับบัตรแรกของโน้ต                                                                                                                         |
-| บัตร            | ชื่อของเทมเพลตบัตร                                                                                                                                                                            | จำนวนบัตรที่โน้ตมี                                                                                                                                                     |
-| แก้ไขบัตร       | เวลาล่าสุดที่มีการเปลี่ยนแปลงบัตร (เช่น เมื่อคุณทบทวนบัตรและอัปเดตประวัติการทบทวนและช่วงเวลา)                                                                                              | เวลาล่าสุดที่มีการเปลี่ยนแปลงบัตรใดของโน้ต                                                                                                                           |
-| สร้าง           | เช่นเดียวกับโหมดโน้ตสำหรับโน้ตของบัตร                                                                                                                 | วันที่สร้างโน้ต                                                                                                                                                       |
-| เด็ค            | ชื่อเด็คที่บัตรอยู่                                                                                                                                                                            | จำนวนเด็คที่บัตรของโน้ตอยู่ หรือชื่อเด็คถ้าทุกบัตรอยู่ในเด็คเดียวกัน                                                                                                 |
-| ครบกำหนด        | วันที่ครบกำหนดสำหรับบัตรที่อยู่ในสถานะทบทวนหรือเรียนรู้ใหม่ และลำดับในคิวบัตรใหม่สำหรับบัตรใหม่ หากบัตรถูกระงับหรือฝังไว้จะแสดงในวงเล็บ การเรียงลำดับจะเรียงตามประเภทก่อนแล้วจึงตามวันที่หรือคิว | วันที่ครบกำหนดสำหรับบัตรถัดไปของโน้ตที่ยังไม่ถูกระงับ ฝัง หรืออยู่ในเด็คกรอง                                                                                        |
-| (เฉลี่ย) Ease   | Ease ของบัตรถ้าไม่ใช่บัตรใหม่                                                                                                                           | ค่าเฉลี่ย Ease ของบัตรที่ไม่ใช่บัตรใหม่ของโน้ต                                                                                                                        |
-| (เฉลี่ย) Interval| Interval ของบัตรถ้าบัตรอยู่ในสถานะทบทวนหรือเรียนรู้ใหม่                                                                                                | ค่าเฉลี่ย Interval ของบัตรที่อยู่ในสถานะทบทวนหรือเรียนรู้ใหม่ของโน้ต                                                                                                  |
-| Lapses          | จำนวนครั้งที่บัตรถูกให้คะแนน “อีกครั้ง”                                                                                                                  | ผลรวม Lapses ของบัตรทั้งหมดของโน้ต                                                                                                                                     |
-| โน้ต            | เช่นเดียวกับโหมดโน้ตสำหรับโน้ตของบัตร                                                                                                                 | ชื่อประเภทโน้ตของโน้ตนั้น                                                                                                                                             |
-| แก้ไขโน้ต       | เช่นเดียวกับโหมดโน้ตสำหรับโน้ตของบัตร                                                                                                                 | เวลาล่าสุดที่โน้ต (เช่น เนื้อหาของฟิลด์) ถูกแก้ไข                                                                                                                     |
-| คำถาม           | ด้านหน้าของบัตรในบรรทัดเดียว คุณสามารถเลือก [รูปแบบกำหนดเอง](templates/styling.md#browser-appearance) ในตัวแก้ไขประเภทบัตรได้เช่นกัน                    | เช่นเดียวกับโหมดบัตร แต่สำหรับบัตรแรกของโน้ต                                                                                                                         |
-| ทบทวน           | จำนวนครั้งที่บัตรถูกทบทวน                                                                                                                               | ผลรวมจำนวนครั้งที่บัตรทั้งหมดของโน้ตถูกทบทวน                                                                                                                          |
-| ฟิลด์จัดเรียง   | เช่นเดียวกับโหมดโน้ตสำหรับโน้ตของบัตร                                                                                                                 | เนื้อหาของฟิลด์โน้ตที่กำหนดเป็นฟิลด์จัดเรียงของประเภทโน้ตนี้ สามารถแสดงและเรียงลำดับได้เพียงฟิลด์เดียวเท่านั้น คุณสามารถเปลี่ยนฟิลด์จัดเรียงได้โดยคลิก **Fields...** ในพื้นที่แก้ไข |
-| แท็ก            | เช่นเดียวกับโหมดโน้ตสำหรับโน้ตของบัตร                                                                                                                 | แท็กของโน้ต                                                                                                                                                            |
+| Answer          | The back side of the card in one line with the question stripped. You can also choose a [custom format](templates/styling.md#browser-appearance) in the card type editor instead.                                                      | The same as in Cards mode, only for the first card of the note.                                                                                                                                                |
+| Card(s)         | The name of the card's template.                                                                                                                                                                                                       | The number of cards the note has.                                                                                                                                                                              |
+| Card Modified   | The last time changes were made to the card (e.g. when you reviewed the card and the review history and interval were updated).                                                                                                        | The last time changes were made to one of the note's cards.                                                                                                                                                    |
+| Created         | The same as in Notes mode for the card's note.                                                                                                                                                                                         | The date the note was created.                                                                                                                                                                                 |
+| Deck            | The name of the deck the card is in.                                                                                                                                                                                                   | The number of different decks the note's cards are in, or the deck name if all cards are in the same deck.                                                                                                     |
+| Due             | The due date for cards in review or (re)learning, and the position in the new card queue for new cards. The line is wrapped in brackets if the card is suspended or buried. Sorting is done by type and only then by date or position. | The due date for the note's next due review or (re)learning card that is not suspended, buried or in a filtered deck.                                                                                          |
+| (Avg.) Ease     | The card's ease if it is not new.                                                                                                                                                                                                      | The average ease for the note's cards that are not new.                                                                                                                                                        |
+| (Avg.) Interval | The card's interval if the card is in review or relearning.                                                                                                                                                                            | The average interval for the note's cards that are in review or relearning.                                                                                                                                    |
+| Lapses          | How often the card was rated “Again”.                                                                                                                                                                                                  | The total lapses for all cards of the note.                                                                                                                                                                    |
+| Note            | The same as in Notes mode for the card's note.                                                                                                                                                                                         | The name of the note's note type.                                                                                                                                                                               |
+| Note Modified   | The same as in Notes mode for the card's note.                                                                                                                                                                                         | The last time the note (e.g. the content of a field) was edited.                                                                                                                                               |
+| Question        | The front side of the card in one line. You can also choose a [custom format](templates/styling.md#browser-appearance) in the card type editor instead.                                                                                | The same as in Cards mode, only for the first card of the note.                                                                                                                                                |
+| Reviews         | How often the card has been reviewed.                                                                                                                                                                                                  | The total review count for all cards of the note.                                                                                                                                                              |
+| Sort Field      | The same as in Notes mode for the card's note.                                                                                                                                                                                         | The content of the note's field that is defined as the note type's sort field. Only this one field can be displayed and sorted by. You can change the sort field by clicking **Fields...** in the editing area. |
+| Tags            | The same as in Notes mode for the card's note.                                                                                                                                                                                         | The note's tags.                                                                                                                                                                                               |
 
-## พื้นที่แก้ไข
+## Editing Area
 
-พื้นที่ด้านขวาล่างจะแสดงโน้ตของแถวที่เลือกอยู่ สำหรับข้อมูลเพิ่มเติมเกี่ยวกับบัตรและโน้ต ดู [เริ่มต้นใช้งาน](getting-started.md)  
-สำหรับข้อมูลเกี่ยวกับปุ่มจัดรูปแบบ ดู [การแก้ไข](editing.md)
+The bottom right area displays the note of the currently selected row. For
+more information about cards and notes, see [Getting Started](getting-started.md).
+For more information on formatting buttons, see [Editing](editing.md).
 
-คุณสามารถดูตัวอย่างว่าบัตรที่เลือกจะมีหน้าตาอย่างไรขณะทบทวนได้โดยคลิกปุ่ม **แสดงตัวอย่าง** ที่ด้านบนของพื้นที่แก้ไข หมายเหตุ: จะไม่แสดงฟิลด์ที่ต้องพิมพ์คำตอบบนบัตร เพื่อให้ดูตัวอย่างได้รวดเร็วขึ้น  
-ในโหมดโน้ต ตัวอย่างจะแสดงสำหรับบัตรแรกของโน้ตที่เลือก
+You can see a preview of what the currently selected card would look
+like when reviewing by clicking the **Preview** button at the top of the editing area.
+Note that this will not display any type-the-answer fields on your
+cards, which makes it easier to preview the cards quickly.
+In Notes mode, the preview is shown for the first card of the selected note.
 
-## เมนูและการดำเนินการ
+## Menus and Actions
 
-ด้านบนของหน้าต่างเบราว์เซอร์จะมีแถบเครื่องมือพร้อมเมนูต่างๆ ซึ่งมีการดำเนินการที่สามารถทำได้ในเบราว์เซอร์
+At the top of the browser window, you find a toolbar with various menus which in
+turn offer various actions that can be performed in the browser.
 
-### แก้ไข
-
-<!-- prettier-ignore -->
-| ชื่อ                  | การดำเนินการ                                                                                                                                                                                                                        |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| เลิกทำ                | ย้อนกลับการดำเนินการล่าสุดที่ทำไป                                                                                                                                                                                                   |
-| เลือกทั้งหมด          | เลือกทุกแถวที่แสดงอยู่                                                                                                                                                                                                             |
-| เลือกโน้ต             | แสดงเฉพาะโน้ตที่เลือกอยู่และเลือกทุกแถว                                                                                                                                                                                            |
-| สลับการเลือก          | เลือกแถวที่ไม่ได้เลือก และยกเลิกการเลือกแถวที่เลือกอยู่                                                                                                                                                                             |
-| สร้างเด็คกรอง         | แสดงกล่องโต้ตอบ [เด็คกรอง](filtered-decks.md#creating-manually) และตั้งค่าการค้นหาเบราว์เซอร์ปัจจุบันเป็นตัวกรอง ใช้ <kbd>Alt</kbd> / <kbd>Option</kbd> เพื่อกำหนดตัวกรองที่สอง              |
-
-### โน้ต
-
-การดำเนินการต่อไปนี้ส่วนใหญ่จะใช้กับโน้ตที่เลือกอยู่ สามารถเข้าถึงได้จากเมนูคลิกขวาเมื่อคลิกแถวที่เลือกในโหมดโน้ต ในโหมดบัตรจะอยู่ในเมนูย่อยของเมนูคลิกขวา
+### Edit
 
 <!-- prettier-ignore -->
-| ชื่อ                | การดำเนินการ                                                                                                                                                                                                                                                                                                                                                     |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| เพิ่มโน้ต           | เปิดกล่องโต้ตอบ [เพิ่ม](editing.md#adding-cards-and-notes)                                                                                                                                                                                                                                                              |
-| สร้างสำเนา          | เปิด [สำเนา](browsing.md#finding-duplicates) ของโน้ตปัจจุบันใน [ตัวแก้ไข](editing.md#adding-cards-and-notes) ซึ่งสามารถแก้ไขเล็กน้อยเพื่อสร้างบัตรแบบต่างๆ ได้ง่าย โดยปกติบัตรที่ซ้ำจะถูกสร้างในเด็คเดียวกับต้นฉบับ |
-| ส่งออกโน้ต         | เปิดกล่องโต้ตอบ [ส่งออก](exporting.md)                                                                                                                                                                                                                                                                                    |
-| เพิ่มแท็ก           | เพิ่มแท็กที่ระบุให้กับโน้ตที่เลือกทั้งหมด                                                                                                                                                                                                                                                                                |
-| ลบแท็ก              | ป้อนแท็กและลบออกจากโน้ตที่เลือกทั้งหมด                                                                                                                                                                                                                                            |
-| ล้างแท็กที่ไม่ได้ใช้ | ลบแท็กทั้งหมดในแถบด้านข้างที่ไม่ได้ใช้โดยโน้ตใดๆ                                                                                                                                                                                                                                |
-| สลับเครื่องหมาย     | หากโน้ตปัจจุบันถูกทำเครื่องหมาย (เช่น มีแท็ก _Marked_) ให้ยกเลิกเครื่องหมายโน้ตที่เลือกทั้งหมด หากไม่ถูกทำเครื่องหมาย ให้ทำเครื่องหมายโน้ตที่เลือกทั้งหมด                                                                                 |
-| เปลี่ยนประเภทโน้ต   | แปลงโน้ตที่เลือกจากประเภทหนึ่งเป็นอีกประเภทหนึ่ง เช่น หากคุณมีประเภทโน้ต _Russian_ และ _Computer_ และใส่ข้อความเกี่ยวกับคอมพิวเตอร์ลงในโน้ต _Russian_ โดยไม่ได้ตั้งใจ คุณสามารถใช้ตัวเลือกนี้เพื่อแก้ไข ตารางเวลาของบัตรจะไม่เปลี่ยน การเปลี่ยนประเภทโน้ตต้องซิงค์แบบทางเดียว |
-| ค้นหาซ้ำ            | เปิดกล่องโต้ตอบ [ซ้ำ](#finding-duplicates)                                                                                                                                                                                                                                       |
-| ค้นหาและแทนที่      | เปิดกล่องโต้ตอบ [ค้นหาและแทนที่](#find-and-replace)                                                                                                                                                                                                                              |
-| จัดการประเภทโน้ต    | เปิดกล่องโต้ตอบ [ประเภทโน้ต](editing.md#adding-a-note-type)                                                                                                                                                                                                                       |
-| ลบ                  | ลบโน้ตที่เลือกทั้งหมดและบัตรของโน้ตเหล่านั้น ไม่สามารถลบบัตรเดี่ยวได้ เพราะบัตรแต่ละใบถูกควบคุมโดย [เทมเพลต](templates/intro.md)                                                                                                         |
 
-### บัตร
+| Name                 | Action                                                                                                                                                                                                                        |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Undo                 | Revert the most recently performed operation.                                                                                                                                                                                 |
+| Select All           | Select all rows displayed.                                                                                                                                                                                                    |
+| Select Notes         | Show only the currently selected notes and select all rows.                                                                                                                                                                   |
+| Invert Selection     | Select those rows not selected, and deselect the currently selected rows.                                                                                                                                                     |
+| Create Filtered Deck | Show the [filtered deck](filtered-decks.md#creating-manually) dialog and set the current browser search as a filter. Use <kbd>Alt</kbd> / <kbd>Option</kbd> to set the second filter instead.|
 
-การดำเนินการต่อไปนี้ใช้กับบัตรที่เลือกอยู่ สามารถเข้าถึงได้จากเมนูคลิกขวาเมื่อคลิกแถวที่เลือกในโหมดบัตร ในโหมดโน้ตจะอยู่ในเมนูย่อยของเมนูคลิกขวา
+### Notes
+
+Most of the following actions operate on the selected notes. They are also available through
+a context menu when a selected row is right-clicked in Notes mode. In Cards mode,
+they can be found in a submenu of the context menu.
 
 <!-- prettier-ignore -->
-| ชื่อ           | การดำเนินการ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+
+| Name              | Action                                                                                                                                                                                                                                                                                                                                                     |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Add Notes         | Open the [Add](editing.md#adding-cards-and-notes) dialog.                                                                                                                                                                                                                                                                                                  |
+| Create Copy       | Open a [duplicate](browsing.md#finding-duplicates) of the current note in the [editor](editing.md#adding-cards-and-notes), which can be slightly modified to easily obtain variations of your cards. By default, the duplicate card will be created in the same deck as the original.                                                                      |
+| Export Notes      | Open the [Export](exporting.md) dialog.                                                                                                                                                                                                                                                                                                                    |
+| Add Tags          | Add provided tags to all selected notes.                                                                                                                                                                                                                                                                                                                   |
+| Remove Tags       | Enter tags and remove them from all selected notes.                                                                                                                                                                                                                                                                                                        |
+| Clear Unused Tags | Remove all tags from the sidebar that are not used by any notes.                                                                                                                                                                                                                                                                                           |
+| Toggle Mark       | If the current note is marked (i.e., has the _Marked_ tag), unmark all selected notes. If the current is not marked, mark all selected notes.                                                                                                                                                                                                              |
+| Change Note Type   | Convert the selected notes from one type to another. For example, imagine you have a _Russian_ note type and a _Computer_ note type, and you accidentally added some computer-related text into a _Russian_ note. You can use this option to fix that mistake. The scheduling of cards is not affected. Changing the type of a note requires a one-way sync. |
+| Find Duplicates   | Open the [Duplicates](#finding-duplicates) dialog.                                                                                                                                                                                                                                                                                                         |
+| Find and Replace  | Open the [Find and Replace](#find-and-replace) dialog.                                                                                                                                                                                                                                                                                                     |
+| Manage Note Types  | Open the [Note Types](editing.md#adding-a-note-type) dialog.                                                                                                                                                                                                                                                                                                |
+| Delete            | Delete all selected notes and their cards. It is not possible to remove individual cards, as individual cards are controlled by the [templates](templates/intro.md).                                                                                                                                                                                       |
+
+### Cards
+
+The following actions operate on the currently selected cards. They are also available through
+a context menu when a selected row is rightclicked in Cards mode. In Notes mode,
+they can be found in a submenu of the context menu.
+
+<!-- prettier-ignore -->
+
+| Name           | Action                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| เปลี่ยนเด็ค    | ย้ายบัตรที่เลือกอยู่ไปยังเด็คอื่น                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| กำหนดวันครบกำหนด| เปลี่ยนบัตรเป็นบัตรทบทวนหากเป็นบัตรใหม่ และกำหนดให้ครบกำหนดในวันที่ระบุ ใช้สำหรับเลื่อนบัตรไปข้างหน้าหรือย้อนกลับเมื่อแผนการเรียนถูกรบกวน การใส่ช่วงเช่น `60-90` จะทำให้บัตรครบกำหนดระหว่าง 60 ถึง 90 วันนับจากนี้ บัตรใหม่จะมีช่วงเวลาเดียวกัน แต่บัตรทบทวนจะถูกกำหนดใหม่โดยไม่เปลี่ยนช่วงเวลาปัจจุบัน เว้นแต่จะใส่เครื่องหมายตกใจ (`!`) ท้ายช่วง หมายเหตุ: เวลาตอบจะไม่ถูกบันทึกเมื่อกำหนดตารางบัตรด้วยตนเอง เพราะสามารถทำได้แม้อยู่นอกการทบทวน และ Anki ไม่ทราบว่าบัตรใดจะแสดงหรือไม่ในขณะนั้น                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| รีเซ็ต         | ย้ายบัตรที่เลือกไปท้ายคิวบัตรใหม่ ประวัติการทบทวนเดิมจะยังคงอยู่ ใน 2.1.50+ มีตัวเลือกคืนค่าตำแหน่งบัตรเดิม และรีเซ็ตตัวนับการล้มเหลวและการทบทวนของบัตร                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| จัดลำดับใหม่   | เปลี่ยนลำดับที่บัตรใหม่จะปรากฏ คุณสามารถดูตำแหน่งปัจจุบันได้โดยเปิดคอลัมน์ _ครบกำหนด_ ตามที่อธิบายไว้ใน [ตาราง](#cardnote-table) หากคุณใช้คำสั่งจัดลำดับใหม่กับหลายบัตร จะกำหนดหมายเลขเพิ่มขึ้นทีละหนึ่งให้แต่ละบัตร ค่า "step" สามารถปรับได้ ตัวเลือก **เลื่อนตำแหน่งบัตรที่มีอยู่** ช่วยให้แทรกบัตรระหว่างบัตรที่มีอยู่ โดยเลื่อนบัตรที่มีอยู่ไปข้างหน้า เช่น หากคุณมี 5 บัตรและต้องการย้าย 3, 4, 5 ไประหว่าง 1 กับ 2 การเปิดใช้งานตัวเลือกนี้จะทำให้บัตรเรียงเป็น 1, 3, 4, 5, 2 หากปิดตัวเลือกนี้ 1 และ 2 จะได้หมายเลขเดียวกัน (และไม่สามารถคาดเดาได้ว่าบัตรใดจะมาก่อน) หมายเหตุ: เมื่อเปิดใช้งาน บัตรที่มีตำแหน่งสูงกว่าจะถูกเปลี่ยนแปลง และต้องซิงค์บัตรเหล่านั้นในการซิงค์ครั้งถัดไป |
-| สลับระงับ      | [ระงับ](studying.md#editing-and-more) หรือยกเลิกระงับบัตรที่เลือกทั้งหมด ขึ้นอยู่กับว่าบัตรปัจจุบันถูกระงับหรือไม่                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| ธง             | สลับธงของบัตรที่เลือกทั้งหมด การเพิ่มหรือลบธงขึ้นอยู่กับว่าบัตรปัจจุบันมีธงที่เลือกหรือไม่                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| ข้อมูล         | แสดงข้อมูลต่างๆ เกี่ยวกับบัตรปัจจุบัน รวมถึงประวัติการทบทวน สำหรับข้อมูลเพิ่มเติม ดู [ข้อมูลบัตร](stats.md#card-info)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Change Deck    | Move currently selected cards to a different deck.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Set Due Date   | Turns cards into review cards if they are new, and makes them due on a certain date. This can be useful for moving cards forward or back a few days when your study schedule is interrupted. Entering a range like `60-90` will make the selected cards due between 60 and 90 days from now. New cards will have their interval set to the same delay, but review cards will be rescheduled without changing their current interval, unless an exclamation mark (`!`) is included at the end of the range. Note that the answer time is not recorded when manually scheduling cards, since the action can be performed even outside of review, and Anki isn't aware of which card may or may not be shown at the time.                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Reset        | Move currently selected cards to the end of the new queue. The existing review history is preserved. In 2.1.50+, there are options to restore the original card position, and to reset the card's lapse and repetition counters.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Reposition     | Change the order new cards will appear in. You can find out the existing positions by enabling the _due_ column, as described in the [table](#cardnote-table) section above. If you run the reposition command when multiple cards are selected, it will apply increasing numbers to each card in turn. By default the number increases by one for each card, but this can be adjusted by changing the "step" setting. The **Shift position of existing cards** option allows you to insert cards between currently existing ones, pushing the currently existing ones apart. For instance, if you have five cards and you want to move 3, 4, and 5 between 1 and 2, selecting this setting would cause the cards to end up in the order 1, 3, 4, 5, 2. By contrast, if you turn this option off, 1 and 2 will get the same position number (and it will thus be unpredictable which of the cards with the same number comes up first). Please note that when enabled, any card with a higher position will be modified, and all of those changed cards will need to be sent the next time you sync. |
+| Toggle Suspend | [Suspend](studying.md#editing-and-more) or unsuspend all selected cards, depending on whether the current card is suspended or not.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Flag           | Toggle the flags of all selected cards. Whether a flag is added or removed depends on whether the current card has the chosen flag.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Info           | Show various information about the current card, including its review history. For more information, see [Card Info](stats.md#card-info).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
-### ไปที่
+### Go
 
-เมนูนี้มีไว้สำหรับคีย์ลัดเพื่อข้ามไปยังส่วนต่างๆ ของเบราว์เซอร์ และเลื่อนขึ้นลงในรายการบัตร
+This menu exists to provide keyboard shortcuts to jump to various
+parts of the browser, and to go up and down the card list.
 
-## ค้นหาและแทนที่
+## Find and Replace
 
-กล่องโต้ตอบนี้ช่วยให้แทนที่ข้อความในโน้ตได้ ตามที่อธิบายไว้ข้างต้น สามารถเข้าถึงได้จากแถบเครื่องมือและเมนูคลิกขวาของตาราง
+This dialog allows for replacing text on notes. As described above, it is available
+from the toolbar and the table's context menu.
 
-ช่องแรกสำหรับข้อความที่ต้องการแทนที่ ช่องที่สองสำหรับข้อความใหม่ ถัดไปเป็นเมนูแบบเลื่อนลงเพื่อระบุว่า Anki ควรค้นหาข้อความที่จะเปลี่ยนที่ใด: ในแท็กของโน้ต (ต้องใช้ Anki 2.1.45+), ในทุกฟิลด์ หรือเฉพาะฟิลด์ที่ระบุ (เฉพาะฟิลด์ของโน้ตที่เลือกเท่านั้นที่จะถูกแสดง)
+The first input field is for the text that is going to be replaced, the second
+one for the replacement. Next, there is a dropdown menu that allows you to specify
+where Anki should look for text to replace: in a note's tags (requires Anki 2.1.45+),
+in all fields, or just in a specific field (only fields belonging to a selected
+note will be listed).
 
-โดยปกติจะมีผลเฉพาะโน้ตที่เลือก หากต้องการยกเลิกข้อจำกัดนี้ ให้ยกเลิกการเลือก "โน้ตที่เลือกเท่านั้น" (ต้องใช้ Anki 2.1.45+)
+By default, only selected notes will be affected. If you want to lift that
+restriction, you can untick the "selected notes only" checkbox (requires Anki 2.1.45+).
 
-ตัวเลือก regular expression ช่วยให้แทนที่ข้อความแบบซับซ้อนได้  
-ตัวอย่างเช่น สมมติว่ามีข้อความนี้ในฟิลด์:
+The regular expression option allows you to perform complex replacements.
+For example, assume there is the following text in a field:
 
     <img src="pic.jpg" />
 
-ตั้งค่าดังนี้:
+We use these settings:
 
 ![Find and Replace dialog](media/find_and_replace.png)
 
-(หมายเหตุ: ใน Anki เวอร์ชันก่อน 2.1.28 ต้องแทนที่ `${1}` ด้วย `\1`)
+(Note that on Anki versions prior to 2.1.28, you would need to replace `${1}`
+with `\1`.)
 
-ผลลัพธ์ในฟิลด์จะเปลี่ยนเป็น:
+Then the assumed field content will change to:
 
     pic.jpg
 
-การอธิบาย regular expression อย่างละเอียดอยู่นอกขอบเขตของเอกสารนี้  
-มีคู่มือไวยากรณ์มากมายบนเว็บ:
+A full discussion on regular expressions is outside the scope of this document.
+There are a number of syntax guides available on the web:
 
-- สำหรับ Anki 2.1.28+ ดู <https://docs.rs/regex/latest/regex/index.html#syntax>
-- สำหรับ Anki เวอร์ชันเก่า ดู <http://docs.python.org/library/re.html>
+- For Anki 2.1.28+, see <https://docs.rs/regex/latest/regex/index.html#syntax>.
+- For older Anki versions, see <http://docs.python.org/library/re.html>.
 
-## การค้นหาซ้ำ
+## Finding Duplicates
 
-คุณสามารถใช้ตัวเลือก **โน้ต > ค้นหาซ้ำ** เพื่อค้นหาโน้ตที่มีเนื้อหาเหมือนกัน เมื่อเปิดหน้าต่างนี้ Anki จะดูทุกประเภทโน้ตและแสดงรายการฟิลด์ทั้งหมด หากต้องการค้นหาซ้ำในฟิลด์ _Back_ ให้เลือกจากรายการแล้วคลิก **ค้นหา**
+You can use the **Notes > Find Duplicates** option to search for notes that
+have the same content. When you open the window, Anki will look at all
+of your note types and present a list of all possible fields. If you
+want to look for duplicates in the _Back_ field, you’d select it from
+the list and then click **Search**.
 
-โดยปกติจะค้นหาในทุกประเภทโน้ตที่มีฟิลด์ที่ระบุ ซึ่งต่างจากการตรวจสอบซ้ำขณะเพิ่มบัตรด้วยตนเองที่จำกัดเฉพาะประเภทโน้ตเดียว
+By default, it will search in all note types that have the field you provided.
+This differs from the duplicate check when you add cards manually, which
+is limited to a single note type.
 
-กล่องข้อความ **ตัวกรองเพิ่มเติม** ช่วยให้จำกัดขอบเขตการค้นหาซ้ำได้ เช่น หากต้องการค้นหาเฉพาะในประเภทโน้ต "French Vocab" และ "French Verbs" ให้ใส่:
+The **Optional filter** text box allows you to narrow down where Anki will
+look for duplicates. If you only want to search for duplicates in the
+"French Vocab" and "French Verbs" note types, you would enter:
 
     "note:french vocab" or "note:french verbs"
 
-หรือหากต้องการค้นหาเฉพาะในเด็คใดเด็คหนึ่ง ให้ใช้:
+Or you might want to look only for duplicates in a particular deck, so
+you could use:
 
     "deck:myDeck"
 
-ไวยากรณ์การค้นหาเหมือนกับที่ใช้ในเบราว์เซอร์  
-สำหรับข้อมูลเพิ่มเติม ดู [การค้นหา](searching.md)
+The search syntax is the same as used when searching in the browser.
+For more information, see [Searching](searching.md).
 
-คุณสามารถคลิกลิงก์ในผลลัพธ์เพื่อแสดงโน้ตซ้ำในชุดนั้น หากผลลัพธ์มีจำนวนมาก
+You can click one of the links in the search results list to display the
+duplicate notes in that set. If the search brings up a large number of
+duplicates, you may wish to instead click the **Tag Duplicates** button,
+which will tag all matching notes with _duplicate_. You can then search
+for this tag in the browser and handle them all from the same screen.

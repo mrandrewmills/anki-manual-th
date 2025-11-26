@@ -1,48 +1,58 @@
-# เซิร์ฟเวอร์ซิงค์ที่โฮสต์เอง
+# Self-Hosted Sync Server
 
-ผู้ใช้ขั้นสูงที่ไม่สามารถหรือไม่ต้องการใช้ AnkiWeb สามารถใช้เซิร์ฟเวอร์ซิงค์ที่โฮสต์เองแทนได้
+Advanced users who cannot or do not wish to use AnkiWeb can use a self-hosted
+sync server instead.
 
-ข้อควรระวัง:
+Things to be aware of:
 
-- นี่คือฟีเจอร์ขั้นสูง สำหรับผู้ใช้ที่คุ้นเคยกับระบบเครือข่ายและคอมมานด์ไลน์ หากคุณใช้ฟีเจอร์นี้ เราคาดหวังว่าคุณจะสามารถแก้ไขปัญหาการตั้งค่า/เครือข่าย/ไฟร์วอลล์ที่พบเจอได้ด้วยตนเอง และการใช้งานนี้ถือเป็นความเสี่ยงของคุณเองทั้งหมด
-- ไคลเอนต์เวอร์ชันใหม่อาจต้องใช้โปรโตคอลการซิงค์ที่มีการเปลี่ยนแปลง ดังนั้นการซิงค์อาจหยุดทำงานหากคุณอัปเดตไคลเอนต์ Anki ของคุณโดยไม่ได้อัปเดตเซิร์ฟเวอร์ด้วย
-- มีเซิร์ฟเวอร์ซิงค์ของบุคคลที่สามอยู่เช่นกัน แต่ไม่มีการทดสอบกับเซิร์ฟเวอร์เหล่านั้น และมักจะใช้เวลาในการอัปเดตตามเมื่อโปรโตคอลการซิงค์เปลี่ยนแปลง ดังนั้นจึงไม่แนะนำให้ใช้
-- ข้อความภายใน Anki จะใช้คำว่า "AnkiWeb" แม้ว่าจะมีการกำหนดค่าเซิร์ฟเวอร์เองก็ตาม (เช่น "ไม่สามารถเชื่อมต่อกับ AnkiWeb" เมื่อเซิร์ฟเวอร์ของคุณล่ม)
+- This is an advanced feature, targeted at users who are comfortable with
+  networking and the command line. If you use this, the expectation is you
+  can resolve any setup/network/firewall issues you run into yourself, and
+  use of this is entirely at your own risk.
+- Newer clients may depend on changes to the sync protocol, so syncing may
+  stop working if you update your Anki clients without also updating the server.
+- Third-party sync servers also exist. No testing is done against them, and
+  they tend to take time to catch up when the sync protocol changes, so they
+  are not recommended.
+- The messages inside Anki will use the term "AnkiWeb" even if a custom server
+  has been configured, (e.g. "Cannot connect to AnkiWeb" when your server is down).
 
-## การติดตั้ง/การรัน
+## Installing/Running
 
-มีหลายวิธีที่คุณสามารถติดตั้งและรันเซิร์ฟเวอร์ได้ คุณสามารถใช้:
+There are various ways you can install and run the server. You can use either:
 
-- เซิร์ฟเวอร์ซิงค์ที่มาพร้อมกับ Anki เวอร์ชันเดสก์ท็อป
-- เซิร์ฟเวอร์ซิงค์ขนาดเล็กแยกต่างหากที่ไม่รวมส่วนประกอบ GUI ของ Anki มีให้ใช้งานทั้งแบบ Python และ Rust
+- the sync server bundled with the desktop version of Anki
+- a separate minimal sync server that doesn't include Anki's GUI dependencies. Python and Rust implementations are available.
 
-### จากเวอร์ชันที่แพ็กเกจแล้ว
+### From a Packaged Build
 
-วิธีนี้ใช้เซิร์ฟเวอร์ซิงค์ที่ติดตั้งมาพร้อมกับ Anki เวอร์ชันเดสก์ท็อปตั้งแต่เวอร์ชัน 2.1.57 ขึ้นไป
+This uses the sync server built into the desktop version of Anki as of version 2.1.57+.
 
-บน Windows ใน cmd.exe:
+On Windows in a cmd.exe session:
 
 ```
 set SYNC_USER1=user:pass
-"\Program Files\anki\anki.exe" --syncserver
+"\Program Files\anki\anki-console" --syncserver
 ```
 
-หรือบน MacOS ใน Terminal.app:
+Or MacOS, in Terminal.app:
 
 ```
-SYNC_USER1=user:pass /Applications/Anki.app/Contents/MacOS/anki --syncserver
+SYNC_USER1=user:pass /Applications/Anki.app/Contents/MacOS/launcher --syncserver
 ```
 
-หรือบน Linux:
+Replace 'launcher' with 'anki' for old packaged builds prior to 25.07.
+
+Or Linux:
 
 ```
 SYNC_USER1=user:pass anki --syncserver
 ```
 
-### ด้วย Pip
+### With Pip
 
-เพื่อหลีกเลี่ยงการดาวน์โหลดส่วนประกอบ GUI ของ Anki สำหรับเดสก์ท็อป คุณสามารถรันเซิร์ฟเวอร์ซิงค์ Anki แบบสแตนด์อโลนโดยใช้แพ็กเกจ Python ที่ดาวน์โหลดจาก PyPI แทน
-ตรวจสอบให้แน่ใจว่าคุณได้ติดตั้ง Python 3.9+ แล้ว
+To avoid downloading desktop Anki's GUI dependencies, you can run a standalone Anki sync server using a Python package downloaded from PyPI instead.
+Make sure you have Python 3.9+ installed.
 
 ```
 python3 -m venv ~/syncserver
@@ -50,115 +60,118 @@ python3 -m venv ~/syncserver
 SYNC_USER1=user:pass ~/syncserver/bin/python -m anki.syncserver
 ```
 
-### ด้วย Cargo
+### With Cargo
 
-ตั้งแต่ Anki 2.1.66+ เป็นต้นไป คุณสามารถสร้างเซิร์ฟเวอร์ซิงค์แบบสแตนด์อโลนที่เขียนด้วย Rust โดยใช้คำสั่งด้านล่าง
-ตรวจสอบให้แน่ใจว่าคุณได้ติดตั้ง Rustup แล้ว
+From Anki 2.1.66+, you can alternatively build a Rust implementation of the standalone sync server using the below command.
+Make sure you have Rustup installed.
 
 ```
 cargo install --locked --git https://github.com/ankitects/anki.git --tag 25.02.5 anki-sync-server
 ```
 
-แทนที่ 25.02.5 ด้วยเวอร์ชันล่าสุดของ Anki
+Replace 25.02.5 with whatever the latest Anki version is.
 
-จำเป็นต้องติดตั้ง Protobuf (protoc)
+Protobuf (protoc) will need to be installed.
 
-หลังจากสร้างเสร็จแล้ว คุณสามารถรันด้วยคำสั่ง:
+After building, you can run it with:
 
 ```
 SYNC_USER1=user:pass anki-sync-server
 ```
 
-### จากซอร์สโค้ดที่โคลนมา
+### From a source checkout
 
-หากคุณได้โคลน repository ของ Anki จาก GitHub คุณสามารถติดตั้งจากที่นั่นได้:
+If you've cloned the Anki repo from GitHub, you can install from there:
 
 ```
 ./ninja extract:protoc ftl_repo
 cargo install --path rslib/sync
 ```
 
-### ด้วย Docker
+### With Docker
 
-คุณสามารถหา Dockerfile ที่ผู้ใช้สร้างขึ้นและคำแนะนำบางส่วนได้
-[ที่นี่](https://github.com/ankitects/anki/tree/main/docs/syncserver)
+You can find a user-contributed Dockerfile and some instructions
+[here](https://github.com/ankitects/anki/tree/main/docs/syncserver).
 
-## ผู้ใช้หลายคน
+## Multiple Users
 
-`SYNC_USER1` ใช้สำหรับประกาศผู้ใช้และรหัสผ่านคนแรก และต้องตั้งค่านี้
-คุณสามารถประกาศ `SYNC_USER2`, `SYNC_USER3` และอื่นๆ เพิ่มเติมได้ หากคุณ
-ต้องการตั้งค่าหลายบัญชี
+`SYNC_USER1` declares the first user and password, and must be set.
+You can optionally declare `SYNC_USER2`, `SYNC_USER3` and so on, if you
+wish to set up multiple accounts.
 
-## รหัสผ่านที่แฮชแล้ว
+## Hashed Passwords
 
-ผู้ใช้ขั้นสูงอาจต้องการใช้รหัสผ่านที่แฮชแล้วแทนรหัสผ่านแบบข้อความธรรมดา
-หากคุณต้องการทำเช่นนี้ คุณจะต้องใช้เครื่องมือแยกต่างหาก (เช่น
-[อันนี้](https://git.sr.ht/~laalsaas/pbkdf2-password-hash)) เพื่อสร้างแฮชของรหัสผ่าน จากนั้นคุณสามารถบอกเซิร์ฟเวอร์ให้คาดหวังรหัสผ่านที่แฮชแล้วโดยการตั้งค่าตัวแปรสภาพแวดล้อม PASSWORDS_HASHED เป็น 1 (หรือค่าอื่นใดก็ได้)
+Advanced users may wish to use hashed passwords instead of plain text
+passwords. If you wish to do this, you'll need to use a separate tool (such as
+[this one](https://git.sr.ht/~laalsaas/pbkdf2-password-hash)) to generate a
+password hash. You can then tell the server to expect hashed passwords by
+setting the env var PASSWORDS_HASHED to 1 (or any other value).
 
-เมื่อใช้รหัสผ่านที่แฮชแล้ว ตัวแปร SYNC_USER จะต้องอยู่ในรูปแบบ
-username:password_hash โดยที่ password_hash คือแฮชของรหัสผ่านใน
-รูปแบบ PHC
+When hashed passwords are used, SYNC_USER variables are expected to be in
+username:password_hash format, where password_hash is a hash of the password in
+the PHC Format.
 
-## ตำแหน่งที่จัดเก็บ
+## Storage Location
 
-เซิร์ฟเวอร์จำเป็นต้องเก็บสำเนาของชุดการ์ดและสื่อของคุณไว้ในโฟลเดอร์
-โดยค่าเริ่มต้นจะอยู่ที่ ~/.syncserver; คุณสามารถเปลี่ยนได้โดยการกำหนด
-ตัวแปรสภาพแวดล้อม `SYNC_BASE`
+The server needs to store a copy of your collection and media in a folder.
+By default it is ~/.syncserver; you can change this by defining
+a `SYNC_BASE` environment variable.
 
-- ตำแหน่งนี้ต้องไม่ซ้ำกับโฟลเดอร์ข้อมูล Anki ปกติของคุณ เนื่องจาก
-  เซิร์ฟเวอร์และไคลเอนต์ต้องเก็บสำเนาแยกกัน
-- คุณต้องซิงค์ข้อมูลของคุณไปยังเซิร์ฟเวอร์ ไม่ใช่คัดลอกไฟล์เข้าไปใน
-  โฟลเดอร์ของเซิร์ฟเวอร์ด้วยตนเอง
+- This must not be the same location as your normal Anki data folder, as the
+  server and client must store separate copies.
+- You must sync your data to the server, not manually copy files into the
+  server folder.
 
-## การเข้าถึงแบบสาธารณะ
+## Public Access
 
-เซิร์ฟเวอร์จะรอรับการเชื่อมต่อผ่าน HTTP ที่ไม่ได้เข้ารหัส ดังนั้นจึงไม่ควร
-เปิดให้เข้าถึงได้โดยตรงจากอินเทอร์เน็ต คุณควรจำกัดการใช้งาน
-ให้อยู่ในเครือข่ายท้องถิ่นของคุณ หรือวางรูปแบบการเข้ารหัสบางอย่างไว้หน้า
-เซิร์ฟเวอร์ เช่น VPN (Tailscale ดูเหมือนจะง่าย) หรือ HTTPS
-reverse proxy
+The server listens on an unencrypted HTTP connection, so it's not a good
+idea to expose it directly to the internet. You'll want to either restrict
+usage to your local network, or place some form of encryption in front of
+the server, such as a VPN (Tailscale is apparently easy), or a HTTPS
+reverse proxy.
 
-คุณสามารถกำหนด `SYNC_HOST` และ `SYNC_PORT` เพื่อเปลี่ยนโฮสต์และพอร์ต
-ที่เซิร์ฟเวอร์จะผูกไว้
+You can define `SYNC_HOST` and `SYNC_PORT` to change the host and port
+that the server binds to.
 
-## การตั้งค่าไคลเอนต์
+## Client Setup
 
-คุณจะต้องหาที่อยู่ IP ของเครือข่ายคอมพิวเตอร์ของคุณ จากนั้น
-ชี้ไคลเอนต์ Anki แต่ละตัวของคุณไปยังที่อยู่นั้น เช่น `http://192.168.1.200:8080/` URL นี้สามารถกำหนดค่าได้ในการตั้งค่า
+You'll need to determine your computer's network IP address, and then
+point each of your Anki clients to the address, e.g something like
+`http://192.168.1.200:8080/`. The URL can be configured in the preferences.
 
-หากคุณใช้ AnkiMobile และไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ในเครือข่ายท้องถิ่นของคุณได้
-โปรดไปที่การตั้งค่าของ iOS ค้นหา Anki ที่ด้านล่าง และ
-สลับ "Allow Anki to access local network" (อนุญาตให้ Anki เข้าถึงเครือข่ายท้องถิ่น) ปิดแล้วเปิดใหม่อีกครั้ง
+If you're using AnkiMobile and are unable to connect to a server on your local
+network, please go into the iOS settings, locate Anki near the bottom, and
+toggle "Allow Anki to access local network" off and then on again.
 
-ไคลเอนต์เดสก์ท็อปเวอร์ชันเก่าต้องการให้คุณกำหนด `SYNC_ENDPOINT` และ
-`SYNC_ENDPOINT_MEDIA` หากใช้ไคลเอนต์เวอร์ชันเก่า คุณจะต้องใส่เป็นเช่น
-`http://192.168.1.200:8080/sync/` และ `http://192.168.1.200:8080/msync/`
-ตามลำดับ ไคลเอนต์ AnkiDroid ก่อนเวอร์ชัน 2.16 ต้องการการกำหนดค่าแยกกันสำหรับ
-endpoint ทั้งสอง
+Older desktop clients required you to define `SYNC_ENDPOINT` and
+`SYNC_ENDPOINT_MEDIA`. If using an older client, you'd put it as e.g.
+`http://192.168.1.200:8080/sync/` and `http://192.168.1.200:8080/msync/`
+respectively. AnkiDroid clients before 2.16 require separate configuration for
+the two endpoints.
 
 ## Reverse Proxies
 
-หากใช้ reverse proxy เพื่อให้สามารถเข้าถึงผ่าน HTTPS (เช่น nginx) และผูกกับ subpath
-(เช่น `http://example.com/custom/` -> `http://localhost:8080/`) คุณต้องแน่ใจว่า
-ได้ใส่เครื่องหมายทับต่อท้าย (trailing slash) เมื่อกำหนดค่า Anki หากคุณใส่เป็น `http://example.com/custom`
-แทน มันจะไม่ทำงาน
+If using a reverse proxy to provide HTTPS access (e.g. nginx), and binding to a subpath
+(e.g. `http://example.com/custom/` -> `http://localhost:8080/`), you must make sure to
+include a trailing slash when configuring Anki. If you put `http://example.com/custom`
+instead, it will not work.
 
-บน iOS ไม่รองรับ TLS 1.3 ดังนั้น reverse proxy ของคุณจะต้องเปิดใช้งาน TLS 1.2
-มิฉะนั้นคุณจะได้รับข้อความ "error code -9836"
+On iOS, TLS 1.3 is not supported, so your reverse proxy will need to have TLS 1.2
+enabled, or you'll get an "error code -9836".
 
-## คำขอขนาดใหญ่
+## Large Requests
 
-ขีดจำกัดการอัปโหลดมาตรฐานของ AnkiWeb จะถูกนำมาใช้เป็นค่าเริ่มต้น คุณสามารถ
-ตั้งค่า `MAX_SYNC_PAYLOAD_MEGS` ให้มากกว่า 100 ได้หากต้องการ
-เพิ่มขีดจำกัด โปรดทราบว่าหากคุณใช้ reverse proxy คุณอาจ
-ต้องปรับขีดจำกัดที่นั่นด้วย
+The standard AnkiWeb limit on uploads is applied by default. You can optionally
+set `MAX_SYNC_PAYLOAD_MEGS` to something greater than 100 if you wish to
+increase the limit. Bear in mind that if you're using a reverse proxy, you may
+need to adjust the limit there as well.
 
-## การมีส่วนร่วมในการเปลี่ยนแปลง
+## Contributing Changes
 
-เนื่องจากเซิร์ฟเวอร์นี้มาพร้อมกับ Anki ความเรียบง่ายจึงเป็นเป้าหมายในการออกแบบ - มัน
-มีเป้าหมายเพื่อการใช้งานส่วนบุคคล/ครอบครัว และ PR ที่เพิ่มสิ่งต่างๆ เช่น REST API หรือ
-ฐานข้อมูลภายนอก ไม่น่าจะได้รับการยอมรับในขณะนี้ หากไม่แน่ใจ โปรด
-ติดต่อสอบถามก่อนเริ่มทำงานกับ PR
+Because this server is bundled with Anki, simplicity is a design goal - it is
+targeted at individual/family use, and PRs that add things like a REST API or
+external databases are unlikely to be accepted at this time. If in doubt, please
+reach out before starting work on a PR.
 
-หากคุณกำลังมองหาโซลูชัน API ที่มีอยู่แล้ว ส่วนเสริม AnkiConnect อาจ
-ตอบสนองความต้องการของคุณได้
+If you're looking for an existing API solution, the AnkiConnect add-on may
+meet your needs.

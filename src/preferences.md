@@ -1,121 +1,160 @@
-# การตั้งค่า
+# Preferences
 
 <!-- toc -->
 
-การตั้งค่าสามารถเข้าถึงได้จากเมนู Tools บน Windows/Linux หรือเมนู Anki บน Mac
+The preferences are available from the **Tools** menu on Windows/Linux, or
+the **Anki** menu on a Mac.
 
-## หน้าตาโปรแกรม
+## Appearance
 
-### ทั่วไป
+### General
 
-**ภาษา**
-เปลี่ยนภาษาที่แสดงผล คุณสามารถช่วยปรับปรุงการแปลได้[ที่นี่](https://translating.ankiweb.net/)
+**Language**\
+Change your display language. You can help to improve translations [here](https://translating.ankiweb.net/)
 
-### ส่วนติดต่อผู้ใช้
+### User Interface
 
-**ธีม**
-โหมดมืด (กลางคืน) จะทำให้อินเทอร์เฟซของ Anki เป็นสีเข้ม และจะทำให้การ์ดแสดงเป็นข้อความสีขาวบนพื้นหลังสีดำ เทมเพลตการ์ดบางอันอาจต้องมีการแก้ไขเพื่อให้ทำงานได้อย่างถูกต้องเมื่อเปิดใช้งานตัวเลือกนี้ - โปรดดู [การจัดรูปแบบโหมดกลางคืน](templates/styling.md#night-mode) สำหรับข้อมูลเพิ่มเติม
+**Theme**\
+Dark (night) mode will make Anki's interface dark, and will cause cards to be shown as white text on a
+black background. Some card templates may need to be modified to work
+properly with this option enabled - please see [night mode styling](templates/styling.md#night-mode) for more information.
 
-ตั้งแต่เวอร์ชัน 2.1.50+ มีตัวเลือกให้สลับเป็นโหมดกลางวันหรือกลางคืนโดยอัตโนมัติ
+From 2.1.50+ there is an option to switch to day or night mode automatically.
 
-**ขนาดส่วนติดต่อผู้ใช้**
-หากคุณพบว่าองค์ประกอบของอินเทอร์เฟซเล็กเกินไปสำหรับคุณ คุณสามารถลองเพิ่มค่าการตั้งค่านี้ได้
+**User interface size**\
+If you find that the interface elements are too small for you, you can
+try to increase this setting.
 
-**รีเซ็ตขนาดหน้าต่าง**
-การดำเนินการนี้จะรีเซ็ตขนาดและตำแหน่งของหน้าต่างทั้งหมดกลับไปเป็นการตั้งค่าเริ่มต้น
+**Reset Window Sizes**\
+This will reset all window sizes and locations to the default settings.
 
-**ไดรเวอร์วิดีโอ**
-ไลบรารีของ Anki ต้องการไดรเวอร์วิดีโอเพื่อวาดเนื้อหาบนหน้าจอ เนื่องจากการกำหนดค่าฮาร์ดแวร์และซอฟต์แวร์ที่แตกต่างกัน ไดรเวอร์ที่ทำงานได้ดีที่สุดบนเครื่องของคุณอาจแตกต่างกันไป โดยทั่วไปแล้วซอฟต์แวร์จะช้ากว่า แต่จะทำงานได้ในบางระบบที่ตัวเลือกอื่นใช้ไม่ได้
+**Video driver**\
+Anki's libraries need a video driver to draw content on the screen.
+Due to different hardware and software configurations, the driver that
+works best on your machine may vary. Software tends to be slower, but will
+work on some systems where the other options do not.
 
-หมายเหตุ: หากคุณใช้ Windows โปรดตรวจสอบ [หน้านี้](./platform/windows/display-issues.md) ด้วย
+Note: If you're on Windows, please check [this page](./platform/windows/display-issues.md) as well.
 
-### สิ่งรบกวน
+### Distractions
 
-ตัวเลือกเหล่านี้ช่วยให้คุณสามารถลบองค์ประกอบที่ไม่จำเป็นบางอย่างออกจากหน้าจอระหว่างการทบทวนได้ คุณสามารถ:
+These options allow you to remove some unnecessary elements from the screen during reviews. You can:
 
-- ซ่อนแถบด้านบนและด้านล่างระหว่างการทบทวน
-- เปิดใช้งานโหมด "มินิมอล" ซึ่งทำให้อินเทอร์เฟซกะทัดรัดขึ้น/หรูหราน้อยลง
-- ลดการเคลื่อนไหว เพื่อปิดใช้งานการเปลี่ยนภาพ/แอนิเมชันบางอย่าง
-- สลับระหว่างสไตล์แบบเนทีฟและธีมของ Anki (เฉพาะบน Mac/Linux)
+- Hide the top and bottom bar during reviews.
+- Enable the "minimalist" mode, making the interface more compact/less fancy.
+- Reduce motion, to disable some transitions/animations.
+- Switching between native styling and the Anki theme (only on Mac/Linux).
 
-## การทบทวน
+## Review
 
-### ตัวจัดกำหนดการ
+### Scheduler
 
-**วันถัดไปเริ่มต้นที่**
-ควบคุมเวลาที่ Anki ควรเริ่มแสดงการ์ดของวันถัดไป การตั้งค่าเริ่มต้นที่ 4AM ทำให้แน่ใจได้ว่าหากคุณกำลังเรียนอยู่ประมาณเที่ยงคืน คุณจะไม่เห็นการ์ดของสองวันแสดงในเซสชันเดียว หากคุณนอนดึกมากหรือตื่นเช้ามาก คุณอาจต้องการปรับเวลานี้เป็นเวลาที่คุณมักจะนอนหลับ โปรดทราบว่าการเริ่มต้นของวันถัดไปจะสัมพันธ์กับเขตเวลาปัจจุบันของคุณ และโปรดทราบว่าการ์ดใดๆ ที่ข้ามเขตแดนของวัน [จะปรากฏขึ้นเมื่อเริ่มต้นของวันที่กำหนดไว้](./deck-options.md#day-boundaries) เช่นเดียวกับการ์ดทบทวน
+**Next day starts at**\
+Controls when Anki should start showing the next day’s cards. The default
+setting of 4AM ensures that if you’re studying around midnight, you won’t have
+two days' worth of cards shown to you in one session. If you stay up very late
+or wake up very early, you may want to adjust this to a time you’re usually
+sleeping. Note that the start of the next day is relative to your current time zone.
+Also note that any cards that cross a day boundary [will appear at the start of
+the day they are scheduled for](./deck-options.md#day-boundaries), just like review cards do.
 
-**ขีดจำกัดการเรียนล่วงหน้า**
-บอก Anki ว่าจะให้ทำงานอย่างไรเมื่อไม่มีอะไรเหลือให้เรียนในสำรับปัจจุบัน แต่ยังมีการ์ดที่อยู่ในช่วงเรียนรู้ การตั้งค่าเริ่มต้นที่ 20 นาทีบอก Anki ว่าควรแสดงการ์ดก่อนกำหนดหากมีความล่าช้าน้อยกว่า 20 นาทีและไม่มีอะไรให้ทำอีก หากคุณตั้งค่านี้เป็น 0 Anki จะรอจนครบตามความล่าช้าเต็มจำนวนเสมอ โดยจะแสดงหน้าจอแสดงความยินดีจนกว่าการ์ดที่เหลือจะพร้อมสำหรับการทบทวน
+**Learn ahead limit**\
+Tells Anki how to behave when there is nothing left to study in the current deck
+but cards in learning. The default setting of 20 minutes tells Anki that cards
+should be shown early if they have a delay of less than 20 minutes and there’s
+nothing else to do. If you set this to 0, Anki will always wait the full delay,
+showing the congratulations screen until the remaining cards are ready to be
+reviewed.
 
-**ขีดจำกัดเวลาไทม์บ็อกซ์**
-ไทม์บ็อกซ์เป็นเทคนิคที่ช่วยให้คุณมีสมาธิโดยการแบ่งกิจกรรมที่ยาวนาน (เช่น การเรียน 30 นาที) ออกเป็นช่วงย่อยๆ หากคุณตั้งค่าขีดจำกัดเวลาไทม์บ็อกซ์เป็นจำนวนนาทีที่ไม่ใช่ศูนย์ Anki จะแสดงให้คุณเห็นเป็นระยะๆ ว่าคุณศึกษาการ์ดไปได้กี่ใบในช่วงเวลาที่กำหนด
+**Timebox time limit**\
+Timeboxing is a technique to help you focus by dividing a longer activity (such
+as a 30 minute study session) into smaller blocks. If you set the timebox time
+limit to a non-zero number of minutes, Anki will periodically show you how many
+cards you’ve managed to study during the prescribed time limit.
 
-### การทบทวน
+### Review
 
-**แสดงปุ่มเล่นบนการ์ดที่มีเสียง**
-กำหนดว่าจะแสดงปุ่ม (เล่นซ้ำ) ที่คลิกได้บนหน้าจอการเรียนสำหรับการ์ดที่มีเสียงหรือไม่
+**Show play buttons on cards with audio**\
+Whether a clickable (re)play button will be shown in the study screen
+for cards with audio.
 
-**ขัดจังหวะเสียงปัจจุบันเมื่อตอบ**
-กำหนดว่าไฟล์เสียงที่กำลังเล่นอยู่ควรหยุดเมื่อตอบการ์ดหรือไม่
+**Interrupt current audio when answering**\
+Whether a currently playing audio file should be stopped when answering
+a card.
 
-**แสดงจำนวนการ์ดที่เหลือ**
-ปิดใช้งานตัวเลือกนี้เพื่อซ่อนจำนวนการ์ดที่ด้านล่างของหน้าจอ
+**Show remaining card count**\
+Disable this option to hide the card count at the bottom of the screen.
 
-**แสดงเวลาทบทวนครั้งถัดไปเหนือปุ่มคำตอบ**
-มีประโยชน์ในการทราบว่าการ์ดของคุณถูกเลื่อนออกไปในอนาคตไกลแค่ไหน
+**Show next review time above answer buttons**\
+Useful to know how far in the future your cards are being pushed.
 
-**สเปซบาร์ (หรือ Enter) ใช้ตอบการ์ดด้วย**
-กำหนดว่าการกด <kbd>Space</kbd> หรือ <kbd>Enter</kbd> จะเป็นการตอบการ์ดหรือไม่
+**Spacebar (or enter) also answers card**\
+Defines whether a press on <kbd>Space</kbd> or <kbd>Enter</kbd> answers cards.
 
-## การแก้ไข
+## Editing
 
-### การแก้ไข
+### Editing
 
-**วางรูปภาพในคลิปบอร์ดเป็น PNG**
-โดยค่าเริ่มต้น Anki จะวางรูปภาพในคลิปบอร์ดเป็นไฟล์ JPG เพื่อประหยัดพื้นที่ดิสก์ คุณสามารถใช้ตัวเลือกนี้เพื่อวางเป็นภาพ PNG แทนได้ ภาพ PNG รองรับพื้นหลังโปร่งใสและไม่มีการสูญเสียข้อมูล แต่โดยปกติแล้วจะมีขนาดไฟล์ใหญ่กว่ามาก
+**Paste clipboard images as PNG**\
+By default Anki pastes images on the clipboard as JPG files, to save disk space.
+You can use the option to paste as PNG images instead. PNG images support
+transparent backgrounds and are lossless, but they usually result in much larger
+file sizes.
 
-**วางโดยไม่กด Shift จะล้างการจัดรูปแบบ**
-โดยค่าเริ่มต้น การจัดรูปแบบเช่นตัวหนาและสีจะถูกเก็บไว้เมื่อวาง เว้นแต่จะกดปุ่ม <kbd>Shift</kbd> ค้างไว้ ตัวเลือกนี้จะสลับพฤติกรรมดังกล่าว
+**Paste without Shift strips formatting**\
+By default, formatting like bold and colors are kept when pasting,
+unless the <kbd>Shift</kbd> key is held down. This option reverses the behaviour.
 
-**สำรับเริ่มต้น**
-ควบคุมวิธีการทำงานร่วมกันของประเภทโน้ตและสำรับ ค่าเริ่มต้นของ "เมื่อเพิ่ม ให้ใช้สำรับปัจจุบันเป็นค่าเริ่มต้น" หมายความว่า Anki จะบันทึกประเภทโน้ตที่ใช้ล่าสุดสำหรับแต่ละสำรับและเลือกอีกครั้งในครั้งต่อไปที่คุณเลือกสำรับนั้น (และนอกจากนี้ จะเริ่มต้นด้วยสำรับปัจจุบันที่เลือกไว้เมื่อเลือก "เพิ่ม" จากที่ใดก็ได้) ตัวเลือกอื่น "เปลี่ยนสำรับขึ้นอยู่กับประเภทโน้ต" จะบันทึกสำรับที่ใช้ล่าสุดสำหรับแต่ละประเภทโน้ต (และเปิดหน้าต่างเพิ่มไปยังประเภทโน้ตที่ใช้ล่าสุดเมื่อคุณเลือก "เพิ่ม") ซึ่งอาจสะดวกกว่าหากคุณใช้ประเภทโน้ตเดียวสำหรับแต่ละสำรับเสมอ
+**Default deck**\
+Controls how note types and decks interact. The default option **When adding, default
+to current deck** means that Anki saves the last-used note type for each deck and
+selects it again the next time you choose the deck (and, in addition, will
+start with the current deck selected when choosing **Add** from anywhere). The other
+option, **Change deck depending on note type**, saves the last-used deck for each
+note type (and opens the add window to the last-used note type when you choose
+**Add**). This may be more convenient if you always use a single note type for each
+deck.
 
-สำรับ/ประเภทโน้ตที่ใช้ล่าสุดจะได้รับการอัปเดตเมื่อคุณเพิ่มการ์ด หากคุณเปลี่ยนสำรับและปิดหน้าต่างเพิ่มโดยไม่เพิ่มการ์ด จะไม่มีการบันทึก
+The last used deck/note type is updated when you add a card. If you change the deck
+and close the add window without adding a card, it won't be saved.
 
-### การเรียกดู
+### Browsing
 
-**ข้อความค้นหาเริ่มต้น**
-ช่วยให้คุณสามารถปรับแต่งข้อความค้นหาเริ่มต้นในเบราว์เซอร์ได้ (เช่น เพื่อเริ่มต้นด้วย "deck:current")
+**Default search text**\
+Allows you to customize the starting search text in the browser (eg, to start
+with "deck:current").
 
-**ไม่สนใจเครื่องหมายเน้นเสียงในการค้นหา (ช้าลง)**
-เมื่อเปิดใช้งาน การค้นหาข้อความธรรมดาจะ[ไม่สนใจเครื่องหมายเน้นเสียง](./searching.md#ignoring-accentscombining-characters)โดยอัตโนมัติ
+**Ignore accents in search (slower)**\
+When enabled, simple text searches automatically [ignore accents](./searching.md#ignoring-accentscombining-characters).
 
-## การซิงค์
+## Syncing
 
-แท็บนี้มีตัวเลือกที่เกี่ยวข้องกับการซิงค์กับ AnkiWeb
+This tab contains options related to syncing with AnkiWeb.
 
-### การซิงโครไนซ์
+### Synchronisation
 
-**ซิงโครไนซ์เสียงและรูปภาพด้วย**
-เมื่อเปิดใช้งาน สื่อต่างๆ จะถูกซิงค์กับ AnkiWeb ด้วย
+**Synchronize audio and images too**\
+When enabled, media will also be synced with AnkiWeb.
 
-**ซิงค์โดยอัตโนมัติเมื่อเปิด/ปิดโปรไฟล์**
-ปิดใช้งานตัวเลือกนี้หากคุณไม่ต้องการให้มีการซิงค์กับ AnkiWeb โดยอัตโนมัติเมื่อเปิด/ปิด[โปรไฟล์](./profiles.md)
+**Automatically sync on profile open/close**\
+Disable this if you don't want an automatic sync with AnkiWeb when opening / closing a [profile](./profiles.md).
 
-**ซิงค์สื่อเป็นระยะ**
+**Periodically sync media**
 
-**ในการซิงค์ครั้งถัดไป บังคับการเปลี่ยนแปลงในทิศทางเดียว**
-เมื่อเปิดใช้งานตัวเลือกนี้ การซิงค์ครั้งต่อไปจะถามคุณว่าต้องการอัปโหลดหรือดาวน์โหลด ซึ่งมีประโยชน์หากคุณทำการเปลี่ยนแปลงบางอย่างโดยไม่ได้ตั้งใจ และต้องการเขียนทับด้วยเวอร์ชันเก่าที่อยู่บน AnkiWeb
+**On next sync, force changes in one direction**\
+When this option is enabled, the next sync will
+ask you whether you wish to upload or download. This is useful if
+you have made some changes accidentally, and wish to overwrite them
+with an older version that is on AnkiWeb.
 
-### บัญชี AnkiWeb
+### AnkiWeb Account
 
-เมื่อเข้าสู่ระบบแล้ว การคลิกที่ Log Out จะเป็นการออกจากระบบ
+When logged in, clicking on **Log Out** will log you out.
 
-### เซิร์ฟเวอร์ซิงค์ที่โฮสต์เอง
+### Self-hosted Sync Server
 
-สำหรับข้อมูลเกี่ยวกับตัวเลือกเซิร์ฟเวอร์ซิงค์แบบกำหนดเอง โปรดดู[ส่วนนี้](./sync-server.md)
+For info on the custom sync server option, see [this section](./sync-server.md).
 
-## การสำรองข้อมูล
+## Backups
 
-โปรดดูส่วน[นี้](backups.md#automatic-backups)ของคู่มือ
+Please see [this](backups.md#automatic-backups) section of the manual.

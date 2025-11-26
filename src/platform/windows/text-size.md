@@ -1,21 +1,21 @@
-# ขนาดตัวอักษร
+# Text Size
 
-หากคุณพบว่าขนาดตัวอักษรไม่ถูกต้อง มีสองตัวแปรสภาพแวดล้อม
-ที่คุณสามารถลองได้:
+If you find the text is the wrong size, there are two environment
+variables you can try:
 
-- ANKI_NOHIGHDPI=1 จะปิดการรองรับ dpi สูงของ Qt บางส่วน
+- ANKI_NOHIGHDPI=1 will turn off some of Qt’s high dpi support
 
-- ANKI_WEBSCALE=1 จะเปลี่ยนขนาดของมุมมองเว็บของ Anki (เช่น
-  รายการสำรับไพ่ หน้าจอเรียน ฯลฯ) ในขณะที่ปล่อยให้องค์ประกอบอินเทอร์เฟซเช่น
-  แถบเมนูอยู่ตามลำพัง แทนที่ 1 ด้วยมาตราส่วนที่ต้องการ เช่น 1.5 หรือ
-  0.75
+- ANKI_WEBSCALE=1 will alter the scale of Anki’s web views (like the
+  deck list, study screen, etc), while leaving interface elements like
+  the menu bar alone. Replace 1 with the desired scale, such as 1.5 or
+  0.75.
 
-บน Windows คุณสามารถเพิ่มสิ่งเหล่านี้ลงในไฟล์แบตช์เพื่อให้ง่ายต่อการเริ่ม
-Anki ตัวอย่างเช่น สร้างไฟล์ชื่อ startanki.bat บนเดสก์ท็อปของคุณ
-ด้วยข้อความต่อไปนี้:
+On Windows you can add these to a batch file to make it easier to start
+Anki. For example, create a file called startanki.bat on your desktop
+with the following text:
 
     set ANKI_WEBSCALE=0.75
     start "Anki" "%LocalAppData%\Programs\Anki\anki.exe"
 
-หลังจากบันทึกแล้ว คุณสามารถดับเบิลคลิกที่ไฟล์เพื่อเริ่ม Anki ด้วย
-การตั้งค่านั้น
+After saving, you can double click on the file to start Anki with that
+setting.
