@@ -1,252 +1,246 @@
-# Filtered Decks & Cramming
+# สำรับที่กรองแล้วและการอัด
 
 <!-- toc -->
 
-When you study a regular deck in Anki, only a limited number of cards
-are shown: the cards Anki thinks you are about to forget, and a daily
-limit of new cards. This is generally useful, as it ensures you don't
-spend more time studying than necessary. But sometimes it can be useful
-to step outside of these normal limits, such as when you need to review
-for a test, focus on particular material, and so on. To make this
-possible, Anki provides a different type of deck called a "filtered
-deck".
+เมื่อคุณเรียนสำรับปกติใน Anki จะมีการแสดงการ์ดเพียงจำนวนจำกัด:
+การ์ดที่ Anki คิดว่าคุณกำลังจะลืม และการ์ดใหม่ตามขีดจำกัดรายวัน
+โดยทั่วไปแล้วสิ่งนี้มีประโยชน์ เนื่องจากช่วยให้แน่ใจว่าคุณจะไม่ใช้เวลาเรียน
+มากเกินความจำเป็น แต่บางครั้งก็อาจมีประโยชน์ที่จะก้าวข้าม
+ขีดจำกัดปกติเหล่านี้ เช่น เมื่อคุณต้องการทบทวนเพื่อสอบ
+เน้นเนื้อหาเฉพาะ และอื่นๆ เพื่อให้สิ่งนี้เป็นไปได้ Anki
+มีสำรับประเภทอื่นที่เรียกว่า "สำรับที่กรองแล้ว"
 
-Filtered decks offer a lot of possibilities. They can be used for
-previewing cards, cramming cards before a test, studying particular
-tags, catching up on a backlog with a particular sort order, reviewing
-ahead of schedule, going over the day's failed cards, and more.
+สำรับที่กรองแล้วมีความเป็นไปได้มากมาย สามารถใช้สำหรับ
+ดูตัวอย่างการ์ด อัดการ์ดก่อนสอบ เรียนแท็กเฉพาะ
+ตามทันงานค้างด้วยลำดับการจัดเรียงเฉพาะ ทบทวนล่วงหน้า
+ทบทวนการ์ดที่ทำไม่ผ่านในแต่ละวัน และอื่นๆ
 
-## Custom Study
+## การเรียนแบบกำหนดเอง
 
-The easiest way to create a filtered deck is with the Custom Study
-button, which appears at the bottom of the screen when you click on a
-deck. It offers some convenient preset filters for common tasks like reviewing
-the cards that you have failed that day. It will create a filtered deck called
-"Custom Study Session" and automatically open it for you.
+วิธีที่ง่ายที่สุดในการสร้างสำรับที่กรองแล้วคือการใช้ปุ่ม Custom Study
+ซึ่งปรากฏที่ด้านล่างของหน้าจอเมื่อคุณคลิกที่สำรับ
+มีตัวกรองที่ตั้งไว้ล่วงหน้าที่สะดวกสบายสำหรับงานทั่วไป เช่น การทบทวน
+การ์ดที่คุณทำไม่ผ่านในวันนั้น จะสร้างสำรับที่กรองแล้วชื่อว่า
+"Custom Study Session" และเปิดให้คุณโดยอัตโนมัติ
 
-If an existing "Custom Study Session" deck exists, it will be emptied
-before a new one is created. If you wish to keep a custom study deck,
-you can rename it from the deck list.
+หากมีสำรับ "Custom Study Session" อยู่แล้ว สำรับนั้นจะถูกล้าง
+ก่อนที่จะสร้างสำรับใหม่ หากคุณต้องการเก็บสำรับการเรียนแบบกำหนดเองไว้
+คุณสามารถเปลี่ยนชื่อได้จากรายการสำรับ
 
-Here is a summary of each of the options:
+นี่คือสรุปของแต่ละตัวเลือก:
 
-**Increase today's new card limit**\
-Add more new cards to the deck you are currently studying. Note that
-unlike other options, this does "not" create a new filtered deck, it
-modifies the existing deck.
+**เพิ่มขีดจำกัดการ์ดใหม่ของวันนี้**
+เพิ่มการ์ดใหม่ลงในสำรับที่คุณกำลังเรียนอยู่ โปรดทราบว่า
+ไม่เหมือนตัวเลือกอื่น ตัวเลือกนี้ "ไม่" สร้างสำรับที่กรองแล้วใหม่ แต่จะ
+แก้ไขสำรับที่มีอยู่
 
-**Increase today's review card limit**\
-If not all reviews due today were shown because of the daily review limit,
-this option allows you to show more of them. As with the new cards
-option, this modifies the existing deck.
+**เพิ่มขีดจำกัดการทบทวนของวันนี้**
+หากการทบทวนที่ครบกำหนดในวันนี้ยังไม่แสดงทั้งหมดเนื่องจากขีดจำกัดการทบทวนรายวัน
+ตัวเลือกนี้ช่วยให้คุณแสดงการทบทวนได้มากขึ้น เช่นเดียวกับตัวเลือกการ์ดใหม่
+ตัวเลือกนี้จะแก้ไขสำรับที่มีอยู่
 
-**Review forgotten cards**\
-Show all the cards, for which you've answered Again (1) within the number of days
-you specify.
+**ทบทวนการ์ดที่ลืม**
+แสดงการ์ดทั้งหมดที่คุณตอบว่า อีกครั้ง (1) ภายในจำนวนวันที่
+คุณระบุ
 
-**Review ahead**\
-Show cards that will be due in the near future (the number of days you
-specify). This is useful for working through some of your older cards
-before a vacation, but it will not help with cards you have learned
-recently. Please see the [reviewing ahead](#reviewing-ahead) section
-below for more info.
+**ทบทวนล่วงหน้า**
+แสดงการ์ดที่จะครบกำหนดในอนาคตอันใกล้ (จำนวนวันที่
+คุณระบุ) ซึ่งมีประโยชน์สำหรับการทบทวนการ์ดเก่าๆ ของคุณ
+ก่อนวันหยุด แต่จะไม่ช่วยกับการ์ดที่คุณเพิ่งเรียนรู้
+โปรดดูส่วน [การทบทวนล่วงหน้า](#reviewing-ahead)
+ด้านล่างสำหรับข้อมูลเพิ่มเติม
 
-**Preview new cards**\
-Show cards that you have recently added, without converting them to
-review cards as they are answered.
+**ดูตัวอย่างการ์ดใหม่**
+แสดงการ์ดที่คุณเพิ่งเพิ่ม โดยไม่แปลงเป็นการ์ดทบทวน
+เมื่อตอบ
 
-**Study by card state or tag**\
-Select a certain number of cards from the current deck to study. You can
-choose to select new cards only, due cards only, or all cards; after you
-click "Choose Tags", you can also limit the selected cards by tags. If
-you wish to see all the cards in the deck (for instance, to study before
-a big test), you can set the number of cards to more than the number of
-cards in the deck.
+**เรียนตามสถานะการ์ดหรือแท็ก**
+เลือกจำนวนการ์ดที่ต้องการจากสำรับปัจจุบันเพื่อเรียน คุณสามารถ
+เลือกที่จะเลือกเฉพาะการ์ดใหม่ การ์ดที่ครบกำหนดเท่านั้น หรือการ์ดทั้งหมด หลังจากที่คุณ
+คลิก "เลือกแท็ก" คุณยังสามารถจำกัดการ์ดที่เลือกตามแท็กได้อีกด้วย หาก
+คุณต้องการเห็นการ์ดทั้งหมดในสำรับ (เช่น เพื่อเรียนก่อน
+สอบใหญ่) คุณสามารถตั้งค่าจำนวนการ์ดให้มากกว่าจำนวน
+การ์ดในสำรับได้
 
-## Home Decks
+## สำรับหลัก
 
-When a card is moved to a filtered deck, it retains a link to the deck,
-from which it came. That previous deck is said to be the card's "home
-deck".
+เมื่อการ์ดถูกย้ายไปยังสำรับที่กรองแล้ว การ์ดจะยังคงเชื่อมโยงไปยังสำรับ
+เดิมที่มันมาจาก สำรับก่อนหน้านั้นเรียกว่า "สำรับหลัก" ของการ์ด
 
-Cards automatically return to their home deck after they are studied in
-the filtered deck. This can be after a single review, or after multiple
-reviews, depending on your settings.
+การ์ดจะกลับสู่สำรับหลักโดยอัตโนมัติหลังจากเรียนใน
+สำรับที่กรองแล้ว ซึ่งอาจเกิดขึ้นหลังจากการทบทวนเพียงครั้งเดียว หรือหลังจากการทบทวน
+หลายครั้ง ขึ้นอยู่กับการตั้งค่าของคุณ
 
-It is also possible to move all cards back to their home decks at once:
+นอกจากนี้ยังสามารถย้ายการ์ดทั้งหมดกลับไปยังสำรับหลักพร้อมกันได้:
 
-- The "Empty" button in the study overview moves all cards in the
-  filtered deck back to their home deck, but does not delete the empty
-  filtered deck. This can be useful if you want to fill it again later
-  (using the Rebuild button).
+-   ปุ่ม "ว่าง" ในภาพรวมการเรียนจะย้ายการ์ดทั้งหมดใน
+    สำรับที่กรองแล้วกลับไปยังสำรับหลัก แต่จะไม่ลบ
+    สำรับที่กรองแล้วที่ว่างเปล่า ซึ่งมีประโยชน์หากคุณต้องการเติม
+    อีกครั้งในภายหลัง (โดยใช้ปุ่มสร้างใหม่)
 
-- Deleting a filtered deck does the same thing as "Empty" does, but
-  also removes the emptied deck from the deck list. No cards are
-  deleted when you delete a filtered deck.
+-   การลบสำรับที่กรองแล้วจะทำเช่นเดียวกับ "ว่าง" แต่
+    ยังลบสำรับที่ว่างเปล่าออกจากรายการสำรับด้วย ไม่มีการ์ดใดถูก
+    ลบเมื่อคุณลบสำรับที่กรองแล้ว
 
-## Creating Manually
+## การสร้างด้วยตนเอง
 
-Advanced users can create filtered decks with arbitrary search strings
-(or "filters"),
-instead of relying on the preset filters. To create a filtered deck manually,
-choose Create Filtered Deck from the Tools menu.
+ผู้ใช้ขั้นสูงสามารถสร้างสำรับที่กรองแล้วด้วยสตริงการค้นหา (หรือ "ตัวกรอง") ตามอำเภอใจ
+แทนที่จะอาศัยตัวกรองที่ตั้งไว้ล่วงหน้า หากต้องการสร้างสำรับที่กรองแล้วด้วยตนเอง
+ให้เลือก สร้างสำรับที่กรองแล้ว จากเมนูเครื่องมือ
 
-When you click the Build button, Anki finds cards that match the
-settings you specified, and temporarily moves them from their existing
-decks into your new filtered deck for study.
+เมื่อคุณคลิกปุ่มสร้าง Anki จะค้นหาการ์ดที่ตรงกับ
+การตั้งค่าที่คุณระบุ และย้ายการ์ดเหล่านั้นจากสำรับที่มีอยู่
+ชั่วคราวไปยังสำรับที่กรองแล้วใหม่ของคุณเพื่อการศึกษา
 
-If you wish to fetch cards again using the same filter options (for
-instance, if you want to study all cards with a particular tag every
-day), you can use the Rebuild button at the bottom of the deck's
-overview screen.
+หากคุณต้องการดึงการ์ดอีกครั้งโดยใช้ตัวเลือกตัวกรองเดียวกัน (ตัวอย่างเช่น
+หากคุณต้องการเรียนการ์ดทั้งหมดที่มีแท็กเฉพาะทุกวัน)
+คุณสามารถใช้ปุ่มสร้างใหม่ที่ด้านล่างของหน้าจอภาพรวมของสำรับได้
 
-The **search** area controls what cards Anki will gather. All of the
-searches possible in the browser are also possible for filtered decks,
-such as limiting to tags, finding cards forgotten a certain number of
-times, and so on. Please see the [searching](searching.md) section of the
-manual for more information on the different possibilities.
+พื้นที่ **ค้นหา** ควบคุมว่า Anki จะรวบรวมการ์ดใด การค้นหาทั้งหมด
+ที่เป็นไปได้ในเบราว์เซอร์ยังเป็นไปได้สำหรับสำรับที่กรองแล้ว เช่น
+การจำกัดแท็ก การค้นหาการ์ดที่ลืมจำนวนครั้งที่กำหนด
+และอื่นๆ โปรดดูส่วน [การค้นหา](searching.md) ของ
+คู่มือสำหรับข้อมูลเพิ่มเติมเกี่ยวกับความเป็นไปได้ต่างๆ
 
-Filtered decks cannot pull in cards that are suspended, buried, or already in a
-different filtered deck. For this reason, a search in the
-browser may reveal cards that do not end up in the filtered deck.
+สำรับที่กรองแล้วไม่สามารถดึงการ์ดที่ถูกระงับ ฝัง หรืออยู่ใน
+สำรับที่กรองแล้วอื่นได้ ด้วยเหตุนี้ การค้นหาใน
+เบราว์เซอร์อาจเปิดเผยการ์ดที่ไม่ได้อยู่ในสำรับที่กรองแล้ว
 
-The **limit** option controls how many cards will be gathered into the
-deck. The order you select controls both the order cards are gathered
-in, and the order they will be reviewed in. If you select "most lapses"
-and a limit of 20 for example, then Anki will show you only the 20 most
-lapsed cards.
+ตัวเลือก **ขีดจำกัด** ควบคุมจำนวนการ์ดที่จะถูกรวบรวมลงใน
+สำรับ ลำดับที่คุณเลือกจะควบคุมทั้งลำดับที่การ์ดถูกรวบรวม
+และลำดับที่จะถูกทบทวน หากคุณเลือก "การลืมมากที่สุด"
+และขีดจำกัด 20 ตัวอย่างเช่น Anki จะแสดงให้คุณเห็นเฉพาะ
+การ์ดที่ลืมมากที่สุด 20 ใบ
 
-The **enable second filter** option allows you to create a filtered deck
-comprised of two different searches, so that you can, for example, include
-due cards with one order, and a smaller amount of new cards with a different order.
+ตัวเลือก **เปิดใช้งานตัวกรองที่สอง** ช่วยให้คุณสามารถสร้างสำรับที่กรองแล้ว
+ประกอบด้วยการค้นหาที่แตกต่างกันสองแบบ เพื่อให้คุณสามารถรวม
+การ์ดที่ครบกำหนดด้วยลำดับหนึ่ง และการ์ดใหม่จำนวนน้อยกว่าด้วยลำดับที่แตกต่างกันได้
 
-## Order
+## ลำดับ
 
-The "cards selected by" option controls the order that cards will appear
-in. If the maximum number of cards you select is lower than the number
-of cards that match the filter criteria, Anki will exclude the cards at
-the end of this sorted list first.
+ตัวเลือก "การ์ดที่เลือกโดย" ควบคุมลำดับที่การ์ดจะปรากฏ
+หากจำนวนการ์ดสูงสุดที่คุณเลือกต่ำกว่าจำนวน
+การ์ดที่ตรงตามเกณฑ์ตัวกรอง Anki จะยกเว้นการ์ดที่
+ท้ายสุดของรายการที่จัดเรียงนี้ก่อน
 
-**Oldest seen first**\
-Display those cards first, that you haven't seen in reviews for the longest
-time.
+**เห็นเก่าสุดก่อน**
+แสดงการ์ดที่คุณไม่ได้เห็นในการทบทวนมานานที่สุดก่อน
 
-**Random**\
-Randomize the order of all cards that match the filter criteria (use no
-set order).
+**สุ่ม**
+สุ่มลำดับของการ์ดทั้งหมดที่ตรงตามเกณฑ์ตัวกรอง (ไม่ใช้
+ลำดับที่กำหนด)
 
-**Increasing intervals**\
-Display cards that have the smallest interval first.
+**ช่วงเวลาเพิ่มขึ้น**
+แสดงการ์ดที่มีช่วงเวลาสั้นที่สุดก่อน
 
-**Decreasing intervals**\
-Display cards that have the largest interval first.
+**ช่วงเวลาลดลง**
+แสดงการ์ดที่มีช่วงเวลายาวที่สุดก่อน
 
-**Most lapses**\
-Display those cards first, that you have failed the most times.
+**การลืมมากที่สุด**
+แสดงการ์ดที่คุณทำไม่ผ่านบ่อยที่สุดก่อน
 
-**Order added**\
-Display cards that you added first (i.e. those cards that have the earliest
-creation date).
+**ลำดับที่เพิ่ม**
+แสดงการ์ดที่คุณเพิ่มก่อน (เช่น การ์ดที่มีวันที่
+สร้างเร็วที่สุด)
 
-**Order due**\
-Display cards with the earliest due date first.
+**ลำดับครบกำหนด**
+แสดงการ์ดที่มีวันครบกำหนดเร็วที่สุดก่อน
 
-**Latest added first**\
-Display cards that you have most recently added to the deck first.
-(This is the opposite of "Order added".)
+**เพิ่มล่าสุดก่อน**
+แสดงการ์ดที่คุณเพิ่งเพิ่มลงในสำรับก่อน
+(นี่คือสิ่งที่ตรงกันข้ามกับ "ลำดับที่เพิ่ม")
 
-**Relative overdueness**\
-Display cards that you're most likely to have forgotten first. This is useful if
-you have a large backlog that may take some time to get through, and you want to
-reduce the chances of forgetting more cards.
+**ความค้างชำระสัมพัทธ์**
+แสดงการ์ดที่คุณมีแนวโน้มที่จะลืมมากที่สุดก่อน ซึ่งมีประโยชน์หาก
+คุณมีงานค้างจำนวนมากที่อาจใช้เวลาสักพักในการทำให้เสร็จ และคุณต้องการ
+ลดโอกาสที่จะลืมการ์ดเพิ่มขึ้น
 
-When using the SM-2 algorithm, overdueness is determined by comparing how
-overdue cards are, and how long their interval is. For example, a card with a
-current interval of 5 days that is overdue by 2 days, will display before a card
-with a current interval of 10 days that is overdue by 3 days.
+เมื่อใช้อัลกอริทึม SM-2 ความค้างชำระจะถูกกำหนดโดยการเปรียบเทียบว่า
+การ์ดค้างชำระนานแค่ไหน และช่วงเวลาของมันนานแค่ไหน ตัวอย่างเช่น การ์ดที่มี
+ช่วงเวลาปัจจุบัน 5 วันที่ค้างชำระ 2 วัน จะแสดงก่อนการ์ดที่มี
+ช่วงเวลาปัจจุบัน 10 วันที่ค้างชำระ 3 วัน
 
-When using FSRS, overdueness is calculated based on on each card's retrievability,
-and the desired retention in the deck preset.
+เมื่อใช้ FSRS ความค้างชำระจะคำนวณจากความสามารถในการดึงข้อมูลของการ์ดแต่ละใบ
+และความคงอยู่ของข้อมูลที่ต้องการในค่าที่ตั้งไว้ล่วงหน้าของสำรับ
 
-## Steps & Returning
+## ขั้นตอนและการกลับมา
 
-By default, Anki will use the steps of a card’s home deck. If a new card
-would normally be reviewed twice when being learned, the same thing will
-happen when you study it in a filtered deck.
-To learn about how (re)learning steps work, see [Deck Options](deck-options.md#learning-steps) section.
+โดยค่าเริ่มต้น Anki จะใช้ขั้นตอนของสำรับหลักของการ์ด หากการ์ดใหม่
+ปกติจะถูกทบทวนสองครั้งเมื่อเรียนรู้ สิ่งเดียวกันจะ
+เกิดขึ้นเมื่อคุณเรียนในสำรับที่กรองแล้ว
+หากต้องการเรียนรู้ว่าขั้นตอนการเรียนรู้ (ซ้ำ) ทำงานอย่างไร โปรดดูส่วน [ตัวเลือกสำรับ](deck-options.md#learning-steps)
 
-Cards return to their home deck when (re)learning is complete. Thus if
-you have 3 learning steps, a new card will return to its home deck upon
-three presses of "Good" or a single press of "Easy".
+การ์ดจะกลับสู่สำรับหลักเมื่อการเรียนรู้ (ซ้ำ) เสร็จสิ้น ดังนั้นหาก
+คุณมีขั้นตอนการเรียนรู้ 3 ขั้นตอน การ์ดใหม่จะกลับสู่สำรับหลักเมื่อ
+กด "ดี" สามครั้ง หรือกด "ง่าย" ครั้งเดียว
 
-Filtered decks with rescheduling disabled show 4 buttons. The **Again**, **Hard**, and **Good** buttons have configurable delays. The **Easy** button removes cards from the filtered deck.
+สำรับที่กรองแล้วที่ปิดใช้งานการจัดตารางเวลาใหม่จะแสดง 4 ปุ่ม ปุ่ม **อีกครั้ง**, **ยาก** และ **ดี** มีการหน่วงเวลาที่กำหนดค่าได้ ปุ่ม **ง่าย** จะลบการ์ดออกจากสำรับที่กรองแล้ว
 
-## Due Reviews
+## การทบทวนที่ครบกำหนด
 
-If the filtered deck includes cards that were due for review, they will
-be shown like they would have been in their original deck: they appear
-in the review card count at the bottom of the screen, and there are four
-choices for how well you remembered. Upon a correct answer, the card
-will be moved back to its home deck, and its next delay adjusted using
-the home deck's settings. If you forget the card, it will be shown
-according to the relearning steps defined in the home deck.
+หากสำรับที่กรองแล้วมีการ์ดที่ครบกำหนดทบทวน การ์ดเหล่านั้นจะ
+แสดงเหมือนกับที่เคยแสดงในสำรับเดิม: ปรากฏใน
+จำนวนการ์ดทบทวนที่ด้านล่างของหน้าจอ และมีสี่
+ตัวเลือกสำหรับว่าคุณจำได้ดีเพียงใด เมื่อตอบถูก การ์ด
+จะถูกย้ายกลับไปยังสำรับหลัก และการหน่วงเวลาครั้งต่อไปจะถูกปรับโดยใช้
+การตั้งค่าของสำรับหลัก หากคุณลืมการ์ด การ์ดจะแสดง
+ตามขั้นตอนการเรียนรู้ซ้ำที่กำหนดไว้ในสำรับหลัก
 
-## Reviewing Ahead
+## การทบทวนล่วงหน้า
 
-If your search included cards that are not due, Anki will show the
-reviews ahead of time.
+หากการค้นหาของคุณรวมการ์ดที่ยังไม่ครบกำหนด Anki จะแสดง
+การทบทวนล่วงหน้า
 
-Anki uses a special algorithm for these reviews that takes into account
-how early you are reviewing. If the cards were almost due to be shown,
-they will be given a new delay similar to what they would have received
-if you had reviewed them on time. If the cards are reviewed soon after
-they were scheduled however, their new delay will be similar to their
-previous delay. This calculation works on a sliding scale.
+Anki ใช้อัลกอริทึมพิเศษสำหรับการทบทวนเหล่านี้ซึ่งคำนึงถึง
+ว่าคุณทบทวนเร็วเพียงใด หากการ์ดใกล้จะถึงกำหนดแสดงแล้ว
+การ์ดจะได้รับการหน่วงเวลาใหม่คล้ายกับที่เคยได้รับ
+หากคุณทบทวนตามกำหนดเวลา อย่างไรก็ตาม หากการ์ดถูกทบทวนหลังจาก
+กำหนดเวลาไม่นาน การหน่วงเวลาใหม่จะคล้ายกับ
+การหน่วงเวลาก่อนหน้า การคำนวณนี้ทำงานในระดับเลื่อน
 
-Because reviewing a card shortly after it is scheduled has little impact
-on scheduling (e.g. a card due tomorrow with a one day interval will
-remain due tomorrow if reviewed early), **the "review ahead" custom
-study setting is not appropriate for repeated use**. If used to go
-through a week's worth of cards before a trip, the mature cards will be
-rescheduled into the future and the new cards will remain at small
-intervals, because you don't know them well enough for them to be
-rescheduled further. If you review ahead again the next day, all you'll
-end up doing is going through those same new cards again, to little
-benefit.
+เนื่องจากการทบทวนการ์ดหลังจากกำหนดเวลาไม่นานมีผลกระทบ
+เพียงเล็กน้อยต่อการจัดตารางเวลา (เช่น การ์ดที่ครบกำหนดพรุ่งนี้ด้วยช่วงเวลาหนึ่งวันจะ
+ยังคงครบกำหนดพรุ่งนี้หากทบทวนก่อนกำหนด) **การตั้งค่าการเรียนแบบกำหนดเอง "ทบทวนล่วงหน้า"
+ไม่เหมาะสำหรับการใช้งานซ้ำ** หากใช้เพื่อ
+ทบทวนการ์ดของสัปดาห์ก่อนการเดินทาง การ์ดที่โตเต็มที่จะถูก
+จัดตารางเวลาใหม่ในอนาคตและการ์ดใหม่จะยังคงอยู่ที่ช่วงเวลาสั้นๆ
+เนื่องจากคุณยังไม่รู้จักดีพอที่จะ
+จัดตารางเวลาใหม่ได้ไกลขึ้น หากคุณทบทวนล่วงหน้าอีกครั้งในวันถัดไป สิ่งที่คุณจะ
+ทำคือทบทวนการ์ดใหม่เหล่านั้นอีกครั้ง ซึ่งมีประโยชน์น้อยมาก
 
-## Rescheduling
+## การจัดตารางเวลาใหม่
 
-By default, Anki will return cards to their home decks with altered scheduling,
-based on your performance in the filtered deck. 
+โดยค่าเริ่มต้น Anki จะส่งคืนการ์ดไปยังสำรับหลักด้วยการจัดตารางเวลาที่เปลี่ยนแปลงไป
+ตามประสิทธิภาพของคุณในสำรับที่กรองแล้ว
 
-To change this behaviour, turn off **Reschedule
-cards based on my answers**. When this is turned off, cards are shown in a simple "preview mode", and
-when they are returned to their original deck, they are returned exactly as they started.
+หากต้องการเปลี่ยนพฤติกรรมนี้ ให้ปิด **จัดตารางการ์ดใหม่
+ตามคำตอบของฉัน** เมื่อปิดตัวเลือกนี้ การ์ดจะแสดงใน "โหมดดูตัวอย่าง" อย่างง่าย และ
+เมื่อส่งคืนไปยังสำรับเดิม การ์ดจะถูกส่งคืนตรงตามที่เริ่มต้น
 
-## Catching Up
+## การตามทัน
 
-Filtered decks can be useful for catching up when you've fallen behind
-in your reviews. One Anki user describes the way they use the filtered
-decks to catch up as follows:
+สำรับที่กรองแล้วมีประโยชน์สำหรับการตามทันเมื่อคุณตามหลัง
+ในการทบทวนของคุณ ผู้ใช้ Anki คนหนึ่งอธิบายวิธีที่พวกเขาใช้
+สำรับที่กรองแล้วเพื่อตามทันดังนี้:
 
-    I did this for a backlog of 800 cards with filtered subdecks. Worked
-    very well for me.
+    ฉันทำสิ่งนี้กับงานค้าง 800 ใบด้วยสำรับย่อยที่กรองแล้ว ได้ผล
+    ดีมากสำหรับฉัน
 
-    Just Due filter with: "is:due prop:due>-7"
+    ตัวกรอง Just Due ด้วย: "is:due prop:due>-7"
 
-    Over Due filter with: "is:due prop:due<=-7"
+    ตัวกรอง Over Due ด้วย: "is:due prop:due<=-7"
 
-    The Just Due deck will then contain cards that became due in the past
-    week. That's the deck you should study every day as it gets the cards
-    that become due regularly. With this you can study as if there weren't
-    any backlog.
+    สำรับ Just Due จะมีการ์ดที่ครบกำหนดในสัปดาห์ที่ผ่านมา
+    นั่นคือสำรับที่คุณควรเรียนทุกวันเนื่องจากจะได้รับการ์ด
+    ที่ครบกำหนดเป็นประจำ ด้วยสิ่งนี้คุณสามารถเรียนได้ราวกับว่าไม่มี
+    งานค้างใดๆ
 
-    The Over Due deck will contain your backlog — cards which you didn't
-    study in time. You can study them the same way you would study new
-    cards. They go back into the regular cards, so the number of overdue
-    will never grow as long as you keep your Just Due deck in check.
+    สำรับ Over Due จะมีงานค้างของคุณ — การ์ดที่คุณไม่ได้
+    เรียนทันเวลา คุณสามารถเรียนได้เช่นเดียวกับที่คุณจะเรียน
+    การ์ดใหม่ การ์ดจะกลับไปอยู่ในการ์ดปกติ ดังนั้นจำนวน
+    การ์ดที่ค้างชำระจะไม่เพิ่มขึ้นตราบใดที่คุณควบคุมสำรับ Just Due ของคุณ
 
-    How long it takes depends on how many overdue cards you study each day
-    in addition to the ones that become due regularly. You can still motor
-    through them when you feel like it - or you can do a specific number per
-    day like you would for new cards. Up to you.
+    ระยะเวลาที่ใช้ขึ้นอยู่กับจำนวนการ์ดที่ค้างชำระที่คุณเรียนในแต่ละวัน
+    นอกเหนือจากที่ครบกำหนดเป็นประจำ คุณยังสามารถ
+    เร่งทำได้เมื่อคุณรู้สึกอยากทำ - หรือคุณสามารถทำตามจำนวนที่กำหนดต่อ
+    วันเหมือนที่คุณทำกับการ์ดใหม่ ขึ้นอยู่กับคุณ

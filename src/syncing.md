@@ -1,240 +1,239 @@
-# Syncing with AnkiWeb
+# การซิงค์กับ AnkiWeb
 
 <!-- toc -->
 
-AnkiWeb is a service that allows you to keep your collection
-synchronized across multiple devices, and to study online. Please sign
-up for a [free account](https://ankiweb.net/) before following the steps
-below.
+AnkiWeb เป็นบริการที่ช่วยให้คุณสามารถซิงโครไนซ์คอลเลกชันของคุณ
+ข้ามอุปกรณ์หลายเครื่อง และเรียนออนไลน์ได้ โปรดสมัคร
+[บัญชีฟรี](https://ankiweb.net/) ก่อนทำตามขั้นตอน
+ด้านล่าง
 
-## Intro Videos
+## วิดีโอแนะนำ
 
-For a quick introduction to syncing, please check out the
-[syncing intro videos](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on).
+สำหรับคำแนะนำเบื้องต้นเกี่ยวกับการซิงค์ โปรดดู
+[วิดีโอแนะนำการซิงค์](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on)
 
-## Setup
+## การตั้งค่า
 
-To start syncing your collection across devices, click the sync button
-(the top right one on the [main screen](studying.md#decks), or press <kbd>Y</kbd> on your keyboard.
-You’ll be prompted for your AnkiWeb ID and password, which you created
-in the signup process.
+หากต้องการเริ่มซิงโครไนซ์คอลเลกชันของคุณข้ามอุปกรณ์ ให้คลิกปุ่มซิงค์
+(ปุ่มบนขวาบน [หน้าจอหลัก](studying.md#decks)) หรือกด <kbd>Y</kbd> บนแป้นพิมพ์ของคุณ
+คุณจะถูกขอให้ป้อน AnkiWeb ID และรหัสผ่านของคุณ ซึ่งคุณสร้างขึ้น
+ในขั้นตอนการสมัคร
 
-When you synchronize your collection for the first time, Anki will ask
-you if you want to upload or download. If you have cards on your
-computer and your AnkiWeb account is empty, choose **Upload** to send your
-data to AnkiWeb. If you have cards on AnkiWeb from another device, and
-no cards on your computer, choose **Download** to replace the empty local
-collection with the cards that are on AnkiWeb. If you have different
-cards on both devices, [more work is required](#merging-conflicts) to
-avoid losing data.
+เมื่อคุณซิงโครไนซ์คอลเลกชันของคุณเป็นครั้งแรก Anki จะถาม
+คุณว่าคุณต้องการอัปโหลดหรือดาวน์โหลด หากคุณมีการ์ดบนคอมพิวเตอร์
+และบัญชี AnkiWeb ของคุณว่างเปล่า ให้เลือก **อัปโหลด** เพื่อส่ง
+ข้อมูลของคุณไปยัง AnkiWeb หากคุณมีการ์ดบน AnkiWeb จากอุปกรณ์อื่น และ
+ไม่มีการ์ดบนคอมพิวเตอร์ของคุณ ให้เลือก **ดาวน์โหลด** เพื่อแทนที่
+คอลเลกชันในเครื่องที่ว่างเปล่าด้วยการ์ดที่อยู่บน AnkiWeb หากคุณมีการ์ด
+ที่แตกต่างกันบนอุปกรณ์ทั้งสอง [ต้องทำงานเพิ่มเติม](#merging-conflicts) เพื่อ
+หลีกเลี่ยงการสูญเสียข้อมูล
 
-Once the initial one-way sync is completed, Anki will be able to merge
-changes from multiple locations with a few exceptions.
+เมื่อการซิงค์ทางเดียวครั้งแรกเสร็จสิ้น Anki จะสามารถรวม
+การเปลี่ยนแปลงจากหลายตำแหน่งได้ ยกเว้นบางกรณี
 
-If you have multiple people using Anki on one machine and have created a
-profile for each user, each user will need to create their own AnkiWeb
-account to sync with. If you attempt to synchronize multiple profiles
-with a single AnkiWeb account, you will lose data.
+หากคุณมีผู้ใช้หลายคนใช้ Anki บนเครื่องเดียวและได้สร้าง
+โปรไฟล์สำหรับผู้ใช้แต่ละคน ผู้ใช้แต่ละคนจะต้องสร้างบัญชี AnkiWeb
+ของตนเองเพื่อซิงค์ด้วย หากคุณพยายามซิงโครไนซ์หลายโปรไฟล์
+ด้วยบัญชี AnkiWeb เดียว คุณจะสูญเสียข้อมูล
 
-## Automatic Syncing
+## การซิงค์อัตโนมัติ
 
-Once syncing is enabled, Anki will automatically sync each time your
-collection is closed or opened. If you would prefer to synchronize
-manually, you can disable automatic syncing in Anki’s [preferences.](preferences.md#syncing)
+เมื่อเปิดใช้งานการซิงค์แล้ว Anki จะซิงค์โดยอัตโนมัติทุกครั้งที่คอลเลกชันของคุณ
+ถูกปิดหรือเปิด หากคุณต้องการซิงโครไนซ์
+ด้วยตนเอง คุณสามารถปิดใช้งานการซิงค์อัตโนมัติได้ใน [การตั้งค่าของ Anki](preferences.md#syncing)
 
-## Button Color
+## สีของปุ่ม
 
-The sync button will change to blue when a normal sync is required,
-and red when a full sync is required.
+ปุ่มซิงค์จะเปลี่ยนเป็นสีน้ำเงินเมื่อจำเป็นต้องซิงค์ปกติ
+และเป็นสีแดงเมื่อจำเป็นต้องซิงค์เต็มรูปแบบ
 
-## Media
+## สื่อ
 
-You can watch a [related video](https://www.youtube.com/watch?v=phP9GGG-PxY) on this topic.
+คุณสามารถดู [วิดีโอที่เกี่ยวข้อง](https://www.youtube.com/watch?v=phP9GGG-PxY) ในหัวข้อนี้ได้
 
-Anki will synchronize any sounds and images used by your notes. It will
-notice when media has been added, removed or replaced in your [media folder](files.md#user-data), but
-will not notice if you have made edits to existing files. To get your edits synced, you
-need to add, remove or replace a file as well.
+Anki จะซิงโครไนซ์เสียงและรูปภาพใดๆ ที่ใช้โดยบันทึกย่อของคุณ มันจะ
+สังเกตเห็นเมื่อสื่อถูกเพิ่ม ลบ หรือแทนที่ใน [โฟลเดอร์สื่อ](files.md#user-data) ของคุณ แต่
+จะไม่สังเกตเห็นหากคุณได้แก้ไขไฟล์ที่มีอยู่ หากต้องการให้การแก้ไขของคุณซิงค์ คุณ
+ต้องเพิ่ม ลบ หรือแทนที่ไฟล์ด้วย
 
-One-way syncs (where you're prompted to upload or download) have no influence over how media
-syncs - media changes are always merged.
+การซิงค์ทางเดียว (ที่คุณได้รับแจ้งให้อัปโหลดหรือดาวน์โหลด) ไม่มีผลต่อวิธีการซิงค์สื่อ
+- การเปลี่ยนแปลงสื่อจะถูกรวมเข้าด้วยกันเสมอ
 
-To prevent accidental data loss, deletions will only sync to other devices if they are made after
-media is fully in sync. If you delete files before your device is fully in sync, and the deleted
-files are already on AnkiWeb, they will be downloaded the next time you sync.
+เพื่อป้องกันการสูญเสียข้อมูลโดยไม่ได้ตั้งใจ การลบจะซิงค์ไปยังอุปกรณ์อื่นก็ต่อเมื่อทำหลัง
+สื่อซิงค์ข้อมูลทั้งหมดแล้ว หากคุณลบไฟล์ก่อนที่อุปกรณ์ของคุณจะซิงค์ข้อมูลทั้งหมด และไฟล์ที่ถูกลบ
+มีอยู่แล้วใน AnkiWeb ไฟล์เหล่านั้นจะถูกดาวน์โหลดในครั้งต่อไปที่คุณซิงค์
 
-If you have accidentally deleted media files, and want to restore them, open the preferences
-and log out. The next time you sync, Anki will restore any deleted files, if they are available
-on AnkiWeb still.
+หากคุณลบไฟล์สื่อโดยไม่ได้ตั้งใจ และต้องการกู้คืน ให้เปิดการตั้งค่า
+และออกจากระบบ ในครั้งต่อไปที่คุณซิงค์ Anki จะกู้คืนไฟล์ที่ถูกลบใดๆ หากยังมี
+อยู่บน AnkiWeb
 
-If you’re running Anki off a [USB flash drive](files.md#running-from-a-flash-drive), you should use an NTFS
-file system, as Anki may not be able to detect media changes on a FAT32
-filesystem.
+หากคุณใช้ Anki จาก [แฟลชไดรฟ์ USB](files.md#running-from-a-flash-drive) คุณควรใช้ระบบไฟล์ NTFS
+เนื่องจาก Anki อาจไม่สามารถตรวจจับการเปลี่ยนแปลงสื่อบนระบบไฟล์
+FAT32 ได้
 
-## Conflicts
+## ความขัดแย้ง
 
-You can watch a [related video](https://www.youtube.com/watch?v=UEAcpfMQnjo) on this topic.
+คุณสามารถดู [วิดีโอที่เกี่ยวข้อง](https://www.youtube.com/watch?v=UEAcpfMQnjo) ในหัวข้อนี้ได้
 
-Under normal circumstances, reviews and note edits can be merged, so if
-you review or edit on two different devices before syncing, Anki will
-preserve your changes from both locations. If the same card has been
-reviewed in two different locations, both reviews will be marked in the
-revision history, and the card will be kept in the state it was when it
-was most recently answered.
+ภายใต้สถานการณ์ปกติ การทบทวนและการแก้ไขบันทึกย่อสามารถรวมเข้าด้วยกันได้ ดังนั้นหาก
+คุณทบทวนหรือแก้ไขบนอุปกรณ์สองเครื่องที่แตกต่างกันก่อนที่จะซิงค์ Anki จะ
+เก็บรักษาการเปลี่ยนแปลงของคุณจากทั้งสองตำแหน่ง หากมีการทบทวน
+การ์ดเดียวกันในสองตำแหน่งที่แตกต่างกัน การทบทวนทั้งสองจะถูกทำเครื่องหมายใน
+ประวัติการแก้ไข และการ์ดจะถูกเก็บไว้ในสถานะที่เป็นอยู่เมื่อ
+ตอบล่าสุด
 
-There are certain changes that Anki is unable to merge. These mainly
-relate to the format of notes: things like adding a new field, or
-removing a card template. When you perform an operation that can’t be
-merged, Anki will warn you, and give you the option of aborting the
-operation. If you choose to continue, you’ll be asked to choose whether
-to keep the local copy or the copy on AnkiWeb when your collection is
-next synchronized.
+มีการเปลี่ยนแปลงบางอย่างที่ Anki ไม่สามารถรวมได้ สิ่งเหล่านี้ส่วนใหญ่
+เกี่ยวข้องกับรูปแบบของบันทึกย่อ: สิ่งต่างๆ เช่น การเพิ่มฟิลด์ใหม่ หรือ
+การลบเทมเพลตการ์ด เมื่อคุณดำเนินการที่ไม่สามารถ
+รวมได้ Anki จะเตือนคุณ และให้ตัวเลือกในการยกเลิก
+การดำเนินการ หากคุณเลือกที่จะดำเนินการต่อ คุณจะถูกขอให้เลือกว่า
+จะเก็บสำเนาในเครื่องหรือสำเนาบน AnkiWeb เมื่อคอลเลกชันของคุณ
+ซิงโครไนซ์ครั้งต่อไป
 
-If certain problems are detected while syncing, Anki forces a
+หากตรวจพบปัญหาบางอย่างระหว่างการซิงค์ Anki จะบังคับให้ทำการ
 
-one-way sync. If you find this consistently happening, please post on our
-[support site](https://forums.ankiweb.net).
+ซิงค์ทางเดียว หากคุณพบว่าสิ่งนี้เกิดขึ้นอย่างต่อเนื่อง โปรดโพสต์บน
+[เว็บไซต์สนับสนุน](https://forums.ankiweb.net) ของเรา
 
-When a one-way sync is required, you need to choose whether you wish to
-keep the collection on your local device, or the collection on AnkiWeb.
-If changes have been made on both ends, only changes on one end can be
-preserved.
+เมื่อจำเป็นต้องซิงค์ทางเดียว คุณต้องเลือกว่าคุณต้องการ
+เก็บคอลเล็กชันบนอุปกรณ์ในเครื่องของคุณ หรือคอลเล็กชันบน AnkiWeb
+หากมีการเปลี่ยนแปลงทั้งสองด้าน จะสามารถเก็บรักษาการเปลี่ยนแปลงได้เพียงด้านเดียวเท่านั้น
 
-If you choose **Upload**, the content on your local device will be sent to
-AnkiWeb. You then need to sync your other devices, and choose **Download**
-to have them grab a copy of that content.
+หากคุณเลือก **อัปโหลด** เนื้อหาบนอุปกรณ์ในเครื่องของคุณจะถูกส่งไปยัง
+AnkiWeb จากนั้นคุณต้องซิงค์อุปกรณ์อื่นๆ ของคุณ และเลือก **ดาวน์โหลด**
+เพื่อให้พวกเขารับสำเนาของเนื้อหานั้น
 
-If you choose **Download**, it will replace any local changes you’ve made
-with the data that is on AnkiWeb.
+หากคุณเลือก **ดาวน์โหลด** มันจะแทนที่การเปลี่ยนแปลงในเครื่องที่คุณทำ
+ด้วยข้อมูลที่อยู่บน AnkiWeb
 
-Once all devices are in sync, future syncs will return to the normal
-behaviour of merging changes from both ends.
+เมื่ออุปกรณ์ทั้งหมดซิงค์กันแล้ว การซิงค์ในอนาคตจะกลับสู่
+พฤติกรรมปกติของการรวมการเปลี่ยนแปลงจากทั้งสองด้าน
 
-If you wish to force a full upload or download (for example, because you
-accidentally deleted a deck on one side and want to restore the deck
-rather than having its deletion synchronized), you can check the "On
-next sync, force changes in one direction" box in
-**Tools &gt; Preferences &gt; Network**, then sync as usual. (You’ll be given
-the option to choose which side you want to use.)
+หากคุณต้องการบังคับให้อัปโหลดหรือดาวน์โหลดเต็มรูปแบบ (ตัวอย่างเช่น เนื่องจากคุณ
+ลบสำรับโดยไม่ได้ตั้งใจในด้านหนึ่งและต้องการกู้คืนสำรับ
+แทนที่จะให้การลบถูกซิงโครไนซ์) คุณสามารถเลือกช่อง "ใน
+การซิงค์ครั้งต่อไป บังคับให้เปลี่ยนแปลงในทิศทางเดียว" ใน
+**เครื่องมือ > การตั้งค่า > เครือข่าย** จากนั้นซิงค์ตามปกติ (คุณจะได้รับ
+ตัวเลือกให้เลือกว่าคุณต้องการใช้ด้านใด)
 
-Forcing a one way sync only affects card syncing - media is synced as
-normal. If you have files that you want to remove from AnkiWeb, please
-ensure your client is fully in sync first. After syncing is up to date,
-any files you remove (e.g. via the **Check Media** function) will be removed
-from AnkiWeb on the following sync.
+การบังคับให้ซิงค์ทางเดียวมีผลต่อการซิงค์การ์ดเท่านั้น - สื่อจะซิงค์ตาม
+ปกติ หากคุณมีไฟล์ที่ต้องการลบออกจาก AnkiWeb โปรด
+ตรวจสอบให้แน่ใจว่าไคลเอ็นต์ของคุณซิงค์ข้อมูลทั้งหมดแล้ว หลังจากซิงค์ข้อมูลล่าสุดแล้ว
+ไฟล์ใดๆ ที่คุณลบ (เช่น ผ่านฟังก์ชัน **ตรวจสอบสื่อ**) จะถูกลบ
+ออกจาก AnkiWeb ในการซิงค์ครั้งต่อไป
 
-## Merging Conflicts
+## การรวมความขัดแย้ง
 
-Because the [first sync](#setup) can only sync changes in one
-direction, if you have added different content to different devices or
-profiles before setting syncing up, content on one device will be lost
-if you overwrite it with the content from the other device. With some
-work, it is possible to manually merge data into a single collection.
+เนื่องจาก [การซิงค์ครั้งแรก](#setup) สามารถซิงค์การเปลี่ยนแปลงได้ในทิศทางเดียวเท่านั้น
+หากคุณได้เพิ่มเนื้อหาที่แตกต่างกันไปยังอุปกรณ์หรือ
+โปรไฟล์ที่แตกต่างกันก่อนที่จะตั้งค่าการซิงค์ เนื้อหาบนอุปกรณ์หนึ่งจะสูญหายไป
+หากคุณเขียนทับด้วยเนื้อหาจากอุปกรณ์อื่น ด้วยการทำงานบางอย่าง
+เป็นไปได้ที่จะรวมข้อมูลด้วยตนเองลงในคอลเล็กชันเดียว
 
-Start by taking a backup on each device/profile, in case something goes
-wrong. With the computer version you can use **File &gt; Export** to export
-"all decks" with scheduling information and media files included, and
-save the file somewhere safe. In AnkiMobile, the Add/Export button on
-the decks list screen will let you export all decks with media.
+เริ่มต้นด้วยการสำรองข้อมูลในแต่ละอุปกรณ์/โปรไฟล์ ในกรณีที่เกิดข้อผิดพลาด
+ด้วยเวอร์ชันคอมพิวเตอร์ คุณสามารถใช้ **ไฟล์ > ส่งออก** เพื่อส่งออก
+"สำรับทั้งหมด" พร้อมข้อมูลการจัดตารางเวลาและไฟล์สื่อรวมอยู่ด้วย และ
+บันทึกไฟล์ไว้ในที่ปลอดภัย ใน AnkiMobile ปุ่มเพิ่ม/ส่งออกบน
+หน้าจอรายการสำรับจะช่วยให้คุณสามารถส่งออกสำรับทั้งหมดพร้อมสื่อได้
 
-Next, if one of your devices is a mobile device, synchronize it first.
-If there’s a conflict, choose **Upload** to overwrite any existing data on
-AnkiWeb with the data from your mobile device. If both devices/profiles
-are on your computer, synchronize the device/profile with the most
-number of decks first.
+ถัดไป หากอุปกรณ์ใดอุปกรณ์หนึ่งของคุณเป็นอุปกรณ์พกพา ให้ซิงโครไนซ์ก่อน
+หากมีความขัดแย้ง ให้เลือก **อัปโหลด** เพื่อเขียนทับข้อมูลที่มีอยู่บน
+AnkiWeb ด้วยข้อมูลจากอุปกรณ์พกพาของคุณ หากอุปกรณ์/โปรไฟล์ทั้งสอง
+อยู่บนคอมพิวเตอร์ของคุณ ให้ซิงโครไนซ์อุปกรณ์/โปรไฟล์ที่มีจำนวน
+สำรับมากที่สุดก่อน
 
-Now return to the other device/profile. If automatic syncing is enabled,
-a message may pop up asking if you want to upload or download. Click the
-cancel button - we don’t want to sync yet.
+ตอนนี้กลับไปที่อุปกรณ์/โปรไฟล์อื่น หากเปิดใช้งานการซิงค์อัตโนมัติ
+ข้อความอาจปรากฏขึ้นเพื่อถามว่าคุณต้องการอัปโหลดหรือดาวน์โหลดหรือไม่ คลิกปุ่ม
+ยกเลิก - เรายังไม่ต้องการซิงค์
 
-Once you’re looking at the deck list, click the cog icon next to the
-first deck, and choose **Export**. Export the content with scheduling
-information and media included, and save the `.apkg` file somewhere. Now
-you’ll need to repeat this for each top-level deck.
+เมื่อคุณกำลังดูรายการสำรับ ให้คลิกไอคอนรูปเฟืองถัดจาก
+สำรับแรก แล้วเลือก **ส่งออก** ส่งออกเนื้อหาพร้อมข้อมูลการจัดตารางเวลา
+และสื่อรวมอยู่ด้วย และบันทึกไฟล์ `.apkg` ไว้ที่ใดที่หนึ่ง ตอนนี้
+คุณจะต้องทำซ้ำสำหรับสำรับระดับบนสุดแต่ละสำรับ
 
-Once all top-level decks have been exported, click the sync button at
-the top right, and choose **Download**, which will overwrite the local
-content with the content you synced from your other device.
+เมื่อส่งออกสำรับระดับบนสุดทั้งหมดแล้ว ให้คลิกปุ่มซิงค์ที่
+มุมบนขวา แล้วเลือก **ดาวน์โหลด** ซึ่งจะเขียนทับเนื้อหาในเครื่อง
+ด้วยเนื้อหาที่คุณซิงค์จากอุปกรณ์อื่นของคุณ
 
-You can now use **File &gt; Import** to import the `.apkg` files you exported
-earlier, which will merge the exported content with the existing
-content, so everything will be in one place.
+ตอนนี้คุณสามารถใช้ **ไฟล์ > นำเข้า** เพื่อนำเข้าไฟล์ `.apkg` ที่คุณส่งออก
+ก่อนหน้านี้ ซึ่งจะรวมเนื้อหาที่ส่งออกกับเนื้อหาที่มีอยู่
+เพื่อให้ทุกอย่างอยู่ในที่เดียว
 
-## AnkiWeb Data Deletion
+## การลบข้อมูล AnkiWeb
 
-As AnkiWeb is a free service, we need to periodically delete unused account data
-to keep costs down. If you haven't accessed your account or synced in the last 6 months,
-the data on your account might get deleted.
+เนื่องจาก AnkiWeb เป็นบริการฟรี เราจึงต้องลบข้อมูลบัญชีที่ไม่ได้ใช้งานเป็นระยะๆ
+เพื่อลดค่าใช้จ่าย หากคุณไม่ได้เข้าถึงบัญชีของคุณหรือซิงค์ในช่วง 6 เดือนที่ผ่านมา
+ข้อมูลในบัญชีของคุณอาจถูกลบ
 
-### What Gets Deleted
+### สิ่งที่จะถูกลบ
 
-Only your data stored on AnkiWeb is deleted. Your account itself will remain and can be used again.
+เฉพาะข้อมูลของคุณที่จัดเก็บไว้ใน AnkiWeb เท่านั้นที่จะถูกลบ บัญชีของคุณจะยังคงอยู่และสามารถใช้งานได้อีกครั้ง
 
-Any cards you have stored on your computer, phone or tablet will remain on those devices. Items shared from your account, including decks and add-ons will also remain on AnkiWeb.
+การ์ดใดๆ ที่คุณจัดเก็บไว้ในคอมพิวเตอร์ โทรศัพท์ หรือแท็บเล็ตของคุณจะยังคงอยู่ในอุปกรณ์เหล่านั้น รายการที่แชร์จากบัญชีของคุณ รวมถึงสำรับและส่วนเสริมจะยังคงอยู่บน AnkiWeb ด้วย
 
-### Returning to AnkiWeb
+### การกลับมาที่ AnkiWeb
 
-Once your deck data has expired, it is not possible for us to recover your data from AnkiWeb,
-but you may be able to recover it if you have a local copy or a [backup](./backups.md).
+เมื่อข้อมูลสำรับของคุณหมดอายุแล้ว เราไม่สามารถกู้คืนข้อมูลของคุณจาก AnkiWeb ได้
+แต่คุณอาจสามารถกู้คืนได้หากคุณมีสำเนาในเครื่องหรือ [ข้อมูลสำรอง](./backups.md)
 
-### Avoiding Data Deletion
+### การหลีกเลี่ยงการลบข้อมูล
 
-Each time you visit ankiweb.net, or use the synchronization feature in Anki, AnkiMobile or AnkiDroid,
-your account will automatically be marked as active.
+ทุกครั้งที่คุณเยี่ยมชม ankiweb.net หรือใช้คุณสมบัติการซิงโครไนซ์ใน Anki, AnkiMobile หรือ AnkiDroid
+บัญชีของคุณจะถูกทำเครื่องหมายว่าใช้งานอยู่โดยอัตโนมัติ
 
-If your account has been inactive for 6 months or more, and you used the service for a week or longer,
-we will send you an email notifying you that deletion is pending.
-If you'd like to keep your account active, please log in to ankiweb.net
-and study a card, or sync one of your devices within 30 days.
+หากบัญชีของคุณไม่ได้ใช้งานเป็นเวลา 6 เดือนขึ้นไป และคุณใช้บริการเป็นเวลาหนึ่งสัปดาห์ขึ้นไป
+เราจะส่งอีเมลแจ้งให้คุณทราบว่าการลบกำลังจะเกิดขึ้น
+หากคุณต้องการให้บัญชีของคุณยังคงใช้งานได้ โปรดลงชื่อเข้าใช้ ankiweb.net
+และเรียนการ์ด หรือซิงค์อุปกรณ์ใดอุปกรณ์หนึ่งของคุณภายใน 30 วัน
 
-## Firewalls
+## ไฟร์วอลล์
 
-Anki needs to be able to make outbound HTTPS connections to sync. It must be
-able to connect to ankiweb.net, sync.ankiweb.net, sync2.ankiweb.net, and so on.
-These domains may change over time, and the IP addresses they point to may also
-change, so we recommend you allow wildcard access to \*.ankiweb.net to reduce
-the chance of the firewall rules needing to be updated in the future.
+Anki จำเป็นต้องสามารถทำการเชื่อมต่อ HTTPS ขาออกเพื่อซิงค์ได้ จะต้อง
+สามารถเชื่อมต่อกับ ankiweb.net, sync.ankiweb.net, sync2.ankiweb.net และอื่นๆ
+โดเมนเหล่านี้อาจเปลี่ยนแปลงเมื่อเวลาผ่านไป และที่อยู่ IP ที่ชี้ไปก็อาจ
+เปลี่ยนแปลงได้เช่นกัน ดังนั้นเราขอแนะนำให้คุณอนุญาตการเข้าถึงแบบไวด์การ์ดไปยัง \*.ankiweb.net เพื่อลด
+โอกาสที่กฎไฟร์วอลล์จะต้องได้รับการอัปเดตในอนาคต
 
-If you have a firewall on your machine, you should add an exception for
-Anki. If you are on a work or school network, please contact your
-network administrator for assistance - it is not something we can help
-you with.
+หากคุณมีไฟร์วอลล์บนเครื่องของคุณ คุณควรเพิ่มข้อยกเว้นสำหรับ
+Anki หากคุณอยู่ในเครือข่ายของที่ทำงานหรือโรงเรียน โปรดติดต่อ
+ผู้ดูแลระบบเครือข่ายของคุณเพื่อขอความช่วยเหลือ - นี่ไม่ใช่สิ่งที่เราสามารถช่วย
+คุณได้
 
-## Proxies
+## พร็อกซี
 
-If you need a proxy to access the internet, Anki should automatically
-pick up your system proxy settings if you’re on Windows or macOS, and
-will honour the HTTP_PROXY environment variable if you’re on another
-platform.
+หากคุณต้องการพร็อกซีเพื่อเข้าถึงอินเทอร์เน็ต Anki ควรจะ
+ดึงการตั้งค่าพร็อกซีของระบบของคุณโดยอัตโนมัติหากคุณใช้ Windows หรือ macOS และ
+จะเคารพตัวแปรสภาพแวดล้อม HTTP_PROXY หากคุณใช้
+แพลตฟอร์มอื่น
 
-Anki will only be able to pick up your system settings if a proxy is
-manually configured, and does not require a password. If your system
-uses automatic proxy setup, or uses a proxy that requires a username and
-password, you will need to manually tell Anki the proxy configuration.
+Anki จะสามารถดึงการตั้งค่าระบบของคุณได้ก็ต่อเมื่อมีการ
+กำหนดค่าพร็อกซีด้วยตนเอง และไม่ต้องการรหัสผ่าน หากระบบของคุณ
+ใช้การตั้งค่าพร็อกซีอัตโนมัติ หรือใช้พร็อกซีที่ต้องการชื่อผู้ใช้และ
+รหัสผ่าน คุณจะต้องบอก Anki ด้วยตนเองเกี่ยวกับการกำหนดค่าพร็อกซี
 
-To tell Anki your proxy settings, define a HTTPS_PROXY environment
-variable that points to the proxy server. It will look like:
+ในการบอก Anki เกี่ยวกับการตั้งค่าพร็อกซีของคุณ ให้กำหนดตัวแปรสภาพแวดล้อม HTTPS_PROXY
+ที่ชี้ไปยังเซิร์ฟเวอร์พร็อกซี จะมีลักษณะดังนี้:
 
     http://user:pass@proxy.company.com:8080
 
-If your username or password contains an @ (e.g `user@workdomain.com`),
-you need to change it to %40, like so:
+หากชื่อผู้ใช้หรือรหัสผ่านของคุณมี @ (เช่น `user@workdomain.com`)
+คุณต้องเปลี่ยนเป็น %40 ดังนี้:
 
     http://user%40workdomain.com:pass@proxy.company.com:8080
 
-Anki 2.0 expects to find HTTP_PROXY instead of HTTPS_PROXY.
+Anki 2.0 คาดว่าจะพบ HTTP_PROXY แทนที่จะเป็น HTTPS_PROXY
 
-To set environment variables on Windows, please see
+หากต้องการตั้งค่าตัวแปรสภาพแวดล้อมบน Windows โปรดดู
 <https://www.google.com/search?q=windows+set+environmental+variable>
 
-If you’re on a Mac, please see
+หากคุณใช้ Mac โปรดดู
 <http://stackoverflow.com/questions/135688/setting-environment-variables-in-os-x>
 
-Heavily locked down networks that intercept secure connections and
-present their own certificates may cause Anki to throw up SSL
-errors. In such environments, you may be able to work around the errors using [this add-on](https://ankiweb.net/shared/info/1332261690).
+เครือข่ายที่ถูกล็อกอย่างแน่นหนาซึ่งสกัดกั้นการเชื่อมต่อที่ปลอดภัยและ
+แสดงใบรับรองของตนเองอาจทำให้ Anki แสดง
+ข้อผิดพลาด SSL ในสภาพแวดล้อมดังกล่าว คุณอาจสามารถแก้ไขข้อผิดพลาดได้โดยใช้ [ส่วนเสริมนี้](https://ankiweb.net/shared/info/1332261690)
 
-An alternative solution is to install a local proxy server, and point
-that proxy server at your normal proxy server. You can then tell Anki to
-use the local proxy, which will redirect requests to the proxy you
-normally use.
+วิธีแก้ปัญหาอีกทางหนึ่งคือการติดตั้งเซิร์ฟเวอร์พร็อกซีในเครื่อง และชี้
+พร็อกซีเซิร์ฟเวอร์นั้นไปยังเซิร์ฟเวอร์พร็อกซีปกติของคุณ จากนั้นคุณสามารถบอก Anki ให้
+ใช้พร็อกซีในเครื่อง ซึ่งจะเปลี่ยนเส้นทางคำขอไปยังพร็อกซีที่คุณ
+ใช้ตามปกติ

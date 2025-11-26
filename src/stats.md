@@ -1,290 +1,287 @@
-# Card Info, Graphs and Statistics
+# ข้อมูลการ์ด, กราฟ และสถิติ
 
 <!-- toc -->
 
-## Card Info
+## ข้อมูลการ์ด
 
-You can display information about a card by using the Cards&gt;Info menu item,
-by right-clicking on the card and then selecting **Info**, or by pressing
-<kbd>I</kbd> on the study screen.
+คุณสามารถแสดงข้อมูลเกี่ยวกับการ์ดได้โดยใช้รายการเมนู Cards>Info,
+โดยการคลิกขวาที่การ์ดแล้วเลือก **Info** หรือโดยการกด
+<kbd>I</kbd> บนหน้าจอการเรียน
 
-![Card Info](media/card_info.png)
+![ข้อมูลการ์ด](media/card_info.png)
 
-A few notes:
+หมายเหตุเล็กน้อย:
 
-**Position**\
-It shows the order the card will appear
-in relative to other new cards. The position can be changed in the
-browser. Once a card has been studied, the position is not used, unless
-the card is manually reset to new again.
+**ตำแหน่ง**
+แสดงลำดับที่การ์ดจะปรากฏ
+เมื่อเทียบกับการ์ดใหม่อื่นๆ ตำแหน่งสามารถเปลี่ยนแปลงได้ใน
+เบราว์เซอร์ เมื่อการ์ดถูกเรียนแล้ว ตำแหน่งจะไม่ถูกใช้ เว้นแต่
+การ์ดจะถูกรีเซ็ตเป็นใหม่ด้วยตนเองอีกครั้ง
 
-**Interval**\
-The delay from one review to the next. Times are abbreviated; "0s, 1m,
-3h, 4d, 5mo, 6y" refers to seconds, minutes, hours, days, months and
-years respectively.
+**ช่วงเวลา**
+การหน่วงเวลาระหว่างการทบทวนหนึ่งครั้งไปยังครั้งถัดไป เวลาจะถูกย่อ "0s, 1m,
+3h, 4d, 5mo, 6y" หมายถึง วินาที, นาที, ชั่วโมง, วัน, เดือน และ
+ปี ตามลำดับ
 
-**Ease**\
-The approximate amount the interval will grow when you answer a review
-card with the "Good" button.
+**ความง่าย**
+ปริมาณโดยประมาณที่ช่วงเวลาจะเพิ่มขึ้นเมื่อคุณตอบ
+การ์ดทบทวนด้วยปุ่ม "ดี"
 
-The bottom section shows the review history for the card. Rating denotes
-the button (1 = Again, 4 = Easy). When cards are manually rescheduled using
-the "reset" or "set due date" actions, the type will be listed as Manual
-and the rating as 0.
+ส่วนล่างแสดงประวัติการทบทวนสำหรับการ์ด การให้คะแนนหมายถึง
+ปุ่ม (1 = อีกครั้ง, 4 = ง่าย) เมื่อการ์ดถูกจัดตารางเวลาใหม่ด้วยตนเองโดยใช้
+การกระทำ "รีเซ็ต" หรือ "ตั้งวันครบกำหนด" ประเภทจะถูกระบุเป็น Manual
+และการให้คะแนนเป็น 0
 
-## Statistics
+## สถิติ
 
-The statistics window is accessed by clicking on **Stats** button at the
-top of the main window, or by pressing <kbd>T</kbd>.
+หน้าต่างสถิติสามารถเข้าถึงได้โดยคลิกที่ปุ่ม **สถิติ** ที่
+ด้านบนของหน้าต่างหลัก หรือโดยการกด <kbd>T</kbd>
 
-![Statistics screen](media/Statistics.png)
+![หน้าจอสถิติ](media/Statistics.png)
 
-## Selecting Decks / Collection
+## การเลือกสำรับ / คอลเล็กชัน
 
-### Deck
+### สำรับ
 
-By default, the statistics window will show statistics from the currently selected deck and any
-subdecks it may contain, but you can select any deck from your collection by typing its name in the
-text box at the top of the screen or (from Anki 2.1.61), by using the deck selector at the bottom.
+โดยค่าเริ่มต้น หน้าต่างสถิติจะแสดงสถิติจากสำรับที่เลือกในปัจจุบันและ
+สำรับย่อยใดๆ ที่อาจมีอยู่ แต่คุณสามารถเลือกสำรับใดก็ได้จากคอลเล็กชันของคุณโดยพิมพ์ชื่อ
+ลงในกล่องข้อความที่ด้านบนของหน้าจอ หรือ (จาก Anki 2.1.61) โดยใช้ตัวเลือกสำรับที่ด้านล่าง
 
-### Collection
+### คอลเล็กชัน
 
-If you select this checkbox, statistics will be shown for your entire collection. You can also display graphs
-for arbitrary searches by adding filters in the search box at the top (2.1.28+).
+หากคุณเลือกช่องทำเครื่องหมายนี้ สถิติจะแสดงสำหรับคอลเล็กชันทั้งหมดของคุณ คุณยังสามารถแสดงกราฟ
+สำหรับการค้นหาตามอำเภอใจได้โดยการเพิ่มตัวกรองในช่องค้นหาที่ด้านบน (2.1.28+)
 
-### History
+### ประวัติ
 
-By default, Anki shows you statistics for the last 12 months.
-You can change this to all history scope or deck life scope at the top. (The
-"today" section at the top remains of course unaffected by this selection.)
+โดยค่าเริ่มต้น Anki จะแสดงสถิติสำหรับ 12 เดือนที่ผ่านมา
+คุณสามารถเปลี่ยนเป็นขอบเขตประวัติทั้งหมดหรือขอบเขตอายุการใช้งานของสำรับได้ที่ด้านบน (แน่นอนว่า
+ส่วน "วันนี้" ที่ด้านบนจะไม่ได้รับผลกระทบจากการเลือกนี้)
 
-### More
+### เพิ่มเติม
 
-- Clicking on "Save PDF" at the bottom will save a PDF document of the statistics to a file
-  on your desktop to make it easy to share your statistics with others.
+-   การคลิกที่ "บันทึก PDF" ที่ด้านล่างจะบันทึกเอกสาร PDF ของสถิติไปยังไฟล์
+    บนเดสก์ท็อปของคุณเพื่อให้ง่ายต่อการแบ่งปันสถิติของคุณกับผู้อื่น
 
-- When you delete notes, their review history is maintained in Anki. It
-  will not be included when looking at statistics for a specific deck (as
-  Anki has no way of knowing which deck the deleted cards belonged to),
-  but will be included when you look at statistics for the whole
-  collection.
+-   เมื่อคุณลบบันทึกย่อ ประวัติการทบทวนของบันทึกย่อจะถูกเก็บไว้ใน Anki มัน
+    จะไม่ถูกรวมอยู่เมื่อดูสถิติสำหรับสำรับเฉพาะ (เนื่องจาก
+    Anki ไม่มีทางรู้ว่าการ์ดที่ถูกลบนั้นอยู่ในสำรับใด)
+    แต่จะถูกรวมอยู่เมื่อคุณดูสถิติสำหรับทั้ง
+    คอลเล็กชัน
 
-- Anki 2.1.28+ introduced redesigned graphs. The old graphs are still
-  accessible with a <kbd>Shift</kbd>-click on the Stats button.
+-   Anki 2.1.28+ ได้เปิดตัวกราฟที่ออกแบบใหม่ กราฟเก่ายังคง
+    สามารถเข้าถึงได้ด้วยการคลิก <kbd>Shift</kbd> ที่ปุ่มสถิติ
 
-## Today
+## วันนี้
 
-At the top of the statistics window is a brief list of textual
-statistics about the reviews that you have completed today. A “review”
-in this context is "one answering of a card", so a card might count as
-multiple reviews if it needed to be seen multiple times, and a learning
-card answered also counts as a “review.” A couple of the stats whose
-meaning may not be immediately obvious:
+ที่ด้านบนของหน้าต่างสถิติคือรายการสถิติที่เป็นข้อความสั้นๆ
+เกี่ยวกับบทวิจารณ์ที่คุณทำเสร็จในวันนี้ "บทวิจารณ์"
+ในบริบทนี้คือ "การตอบการ์ดหนึ่งครั้ง" ดังนั้นการ์ดอาจนับเป็น
+บทวิจารณ์หลายครั้งหากต้องดูหลายครั้ง และการเรียนรู้
+การ์ดที่ตอบก็นับเป็น "บทวิจารณ์" ด้วยเช่นกัน สถิติสองสามอย่างที่
+ความหมายอาจไม่ชัดเจนในทันที:
 
-### Again Count
-This is the number of reviews that you have failed (i.e., pressed Again
-on). The correct percentage listed afterwards is the number of cards you
-did "not" fail divided by the total number of cards you studied.
+### จำนวนครั้งที่ตอบว่าอีกครั้ง (Again Count)
+นี่คือจำนวนบทวิจารณ์ที่คุณทำไม่ผ่าน (เช่น กด "อีกครั้ง"
+บน) เปอร์เซ็นต์ที่ถูกต้องที่ระบุไว้หลังจากนั้นคือจำนวนการ์ดที่คุณ
+"ไม่" ทำไม่ผ่านหารด้วยจำนวนการ์ดทั้งหมดที่คุณเรียน
 
-### Learn, Review, Relearn, Filtered
-The number of reviews that were learning cards, review cards, relearning
-cards, or studied in a filtered deck when not due.
+### เรียน, ทบทวน, เรียนซ้ำ, กรองแล้ว
+จำนวนบทวิจารณ์ที่เป็นการ์ดเรียนรู้, การ์ดทบทวน, การ์ดเรียนซ้ำ,
+หรือเรียนในสำรับที่กรองแล้วเมื่อยังไม่ครบกำหนด
 
-The stats for the current day are not a good overall indicator of your
-learning progress; everyone has bad days and good days, and seeing that
-you got a lower percentage correct on a particular day should not be
-cause for concern. The remainder of the stats, which take longer periods
-of time into account, will give more useful information if you wish to
-try to change your study habits or scheduling settings based on your
-performance.
+สถิติสำหรับวันปัจจุบันไม่ใช่ตัวบ่งชี้โดยรวมที่ดีสำหรับความคืบหน้า
+ในการเรียนรู้ของคุณ ทุกคนมีวันที่ดีและวันที่ไม่ดี และการเห็นว่า
+คุณได้เปอร์เซ็นต์ที่ถูกต้องต่ำลงในวันใดวันหนึ่งไม่ควรเป็น
+สาเหตุของความกังวล สถิติที่เหลือ ซึ่งใช้ระยะเวลา
+ที่นานกว่าในการพิจารณา จะให้ข้อมูลที่เป็นประโยชน์มากกว่าหากคุณต้องการ
+พยายามเปลี่ยนนิสัยการเรียนหรือการตั้งค่าการจัดตารางเวลาตาม
+ผลการเรียนของคุณ
 
-The “today” statistics are unaffected by the time period selected at the
-bottom of the window.
+สถิติ "วันนี้" ไม่ได้รับผลกระทบจากช่วงเวลาที่เลือกที่
+ด้านล่างของหน้าต่าง
 
-## The Graphs
+## กราฟ
 
-### Future Due
-This graph shows an estimated number of reviews that will be due on a
-given day in the future if you learn no new cards and fail no cards. The
-bars and the left axis show the number of cards due on each day if you
-study all cards each day, while the gray shaded region and the right axis show
-the number of cards due on that day if you don’t study at all until then.
-Note that the forecast graph does not count reviews that are currently
-overdue, so if you have a large backlog, the overdue cards will not be
-displayed.
+### ครบกำหนดในอนาคต
+กราฟนี้แสดงจำนวนการทบทวนโดยประมาณที่จะครบกำหนดใน
+วันใดวันหนึ่งในอนาคตหากคุณไม่เรียนการ์ดใหม่และไม่ทำการ์ดใดๆ ไม่ผ่าน
+แท่งและแกนซ้ายแสดงจำนวนการ์ดที่ครบกำหนดในแต่ละวันหากคุณ
+เรียนการ์ดทั้งหมดทุกวัน ในขณะที่พื้นที่สีเทาและแกนขวาแสดง
+จำนวนการ์ดที่ครบกำหนดในวันนั้นหากคุณไม่ได้เรียนเลยจนถึงตอนนั้น
+โปรดทราบว่ากราฟพยากรณ์ไม่นับการทบทวนที่ค้างชำระในปัจจุบัน
+ดังนั้นหากคุณมีงานค้างจำนวนมาก การ์ดที่ค้างชำระจะไม่
+แสดง
 
-Daily load is an estimate of the average number of cards to be reviewed daily.
-If you don't have a backlog, daily load should be approximately equal to
-your number of due cards.
+ภาระงานรายวันคือการประมาณจำนวนการ์ดโดยเฉลี่ยที่จะต้องทบทวนในแต่ละวัน
+หากคุณไม่มีงานค้าง ภาระงานรายวันควรจะใกล้เคียงกับ
+จำนวนการ์ดที่ครบกำหนดของคุณ
 
-It is calculated as follows:
+คำนวณดังนี้:
 
+$$ 
+\frac{1}{I_1} + \frac{1}{I_2} + \frac{1}{I_3} + \dots + \frac{1}{I_n} 
 $$
-\frac{1}{I_1} + \frac{1}{I_2} + \frac{1}{I_3} + \dots + \frac{1}{I_n}
-$$
 
-Here, \\(I_n\\) is the interval of
-the n-th card. If the interval is less than one day, the summation term is 1. This
-prevents cards with short intervals from unrealistically skewing the value of daily load.
+ที่นี่ \(I_n\) คือช่วงเวลาของ
+การ์ดที่ n หากช่วงเวลาน้อยกว่าหนึ่งวัน พจน์การรวมจะเป็น 1 ซึ่ง
+ป้องกันไม่ให้การ์ดที่มีช่วงเวลาสั้นๆ บิดเบือนค่าของภาระงานรายวันอย่างไม่สมจริง
 
-Example: you have a card with an interval of 10 days and a card with an interval of 50 days.
-Daily load = \\(\frac{1}{10} + \frac{1}{50} = 0.12\\), meaning that, _on average_, you will have 0.12 due cards per day.
+ตัวอย่าง: คุณมีการ์ดที่มีช่วงเวลา 10 วัน และการ์ดที่มีช่วงเวลา 50 วัน
+ภาระงานรายวัน = \(\frac{1}{10} + \frac{1}{50} = 0.12\) หมายความว่า _โดยเฉลี่ย_ คุณจะมี 0.12 การ์ดที่ครบกำหนดต่อวัน
 
-### Calendar
-This graph shows past card review activity. Hovering the mouse over a specific item
-allows you to view the number of revisions made that day. Click on a day of the
-week to make that the starting day.
+### ปฏิทิน
+กราฟนี้แสดงกิจกรรมการทบทวนการ์ดที่ผ่านมา การวางเมาส์เหนือรายการเฉพาะ
+จะช่วยให้คุณดูจำนวนการแก้ไขที่ทำในวันนั้นได้ คลิกที่วันของ
+สัปดาห์เพื่อทำให้เป็นวันเริ่มต้น
 
-### Reviews
-This graph counts the number of card reviews you have done. The bars may
-correspond to days, weeks, or months, depending on the time period
-you’ve selected at the bottom of the screen. The differently colored
-blocks show how many of the cards you answered on each day were
-[mature](getting-started.md#card-states), young, relearning, or learning cards.
-There is also a separate group for cards answered in a filtered/cram
-deck while they were not due. The gray shaded region and the right axis show
-the cumulative total for each type of review as time progresses across the
-graph (so at 0 days, it would display the number for the entire time
-period displayed on the graph).
+### การทบทวน
+กราฟนี้จะนับจำนวนครั้งที่คุณได้ทบทวนการ์ด แท่งอาจ
+สอดคล้องกับวัน สัปดาห์ หรือเดือน ขึ้นอยู่กับช่วงเวลา
+ที่คุณเลือกที่ด้านล่างของหน้าจอ บล็อกสีต่างๆ
+จะแสดงจำนวนการ์ดที่คุณตอบในแต่ละวันว่าเป็น
+การ์ด [โตเต็มที่](getting-started.md#card-states), อายุน้อย, เรียนซ้ำ หรือเรียนรู้
+นอกจากนี้ยังมีกลุ่มแยกต่างหากสำหรับการ์ดที่ตอบในสำรับที่กรอง/อัด
+ขณะที่ยังไม่ครบกำหนด พื้นที่สีเทาและแกนขวาแสดง
+ผลรวมสะสมสำหรับแต่ละประเภทของการทบทวนเมื่อเวลาผ่านไปใน
+กราฟ (ดังนั้นที่ 0 วัน จะแสดงจำนวนสำหรับช่วงเวลาทั้งหมด
+ที่แสดงบนกราฟ)
 
-### Card Counts
-This pie chart shows what percentage of your deck or collection consists
-of mature, unseen, young/learn, and suspended cards. If you wish to
-calculate a more precise percentage, the key shows the exact number of
-cards in each section, and the total number of cards is displayed to the
-side.
+### จำนวนการ์ด
+แผนภูมิวงกลมนี้แสดงเปอร์เซ็นต์ของสำรับหรือคอลเล็กชันของคุณที่ประกอบด้วย
+การ์ดที่โตเต็มที่ ยังไม่เห็น อายุน้อย/เรียนรู้ และถูกระงับ หากคุณต้องการ
+คำนวณเปอร์เซ็นต์ที่แม่นยำยิ่งขึ้น คำอธิบายจะแสดงจำนวนการ์ดที่แน่นอน
+ในแต่ละส่วน และจำนวนการ์ดทั้งหมดจะแสดงอยู่ด้านข้าง
 
-### Review Time
-This graph works exactly like Review Count, except that it deals with
-the amount of time you spent on each card rather than the number of
-cards answered.
+### เวลาทบทวน
+กราฟนี้ทำงานเหมือนกับจำนวนการทบทวนทุกประการ ยกเว้นว่าเกี่ยวข้องกับ
+ระยะเวลาที่คุณใช้ในการ์ดแต่ละใบแทนที่จะเป็นจำนวน
+การ์ดที่ตอบ
 
-### Review Intervals
-This graph displays the number of cards that have a given interval (the
-delay between two reviews). The gray shaded region and the right axis tell you
-what percentage of your cards have an interval of less than or equal to the
-time below that point. The time scope has a different effect on this
-graph than other graphs: rather than changing which cards or period of
-studying is included, it limits how far out the intervals are displayed
-to (so 14-month intervals are not displayed at all on a 1-year graph).
+### ช่วงเวลาการทบทวน
+กราฟนี้จะแสดงจำนวนการ์ดที่มีช่วงเวลาที่กำหนด (การ
+หน่วงเวลาระหว่างการทบทวนสองครั้ง) พื้นที่สีเทาและแกนขวาจะบอกคุณ
+ว่าเปอร์เซ็นต์ของการ์ดของคุณมีช่วงเวลาน้อยกว่าหรือเท่ากับ
+เวลาที่อยู่ใต้จุดนั้น ขอบเขตเวลามีผลต่อ
+กราฟนี้แตกต่างจากกราฟอื่น: แทนที่จะเปลี่ยนว่าการ์ดใดหรือช่วงเวลา
+ของการเรียนรู้ใดที่จะถูกรวมไว้ มันจะจำกัดว่าช่วงเวลาจะแสดง
+ออกไปไกลแค่ไหน (ดังนั้นช่วงเวลา 14 เดือนจะไม่แสดงเลยบนกราฟ 1 ปี)
 
-### Card Ease
-This graph shows the number of cards that have a specific ease factor.
-Average ease of the selected deck / collection is also displayed here.
+### ความง่ายของการ์ด
+กราฟนี้แสดงจำนวนการ์ดที่มีปัจจัยความง่ายที่เฉพาะเจาะจง
+ความง่ายโดยเฉลี่ยของสำรับ/คอลเล็กชันที่เลือกจะแสดงที่นี่ด้วย
 
-### Card Stability
-Only shown if FSRS is enabled. Stability is defined as the amount of time required
-for the probability of recall to decrease from 100% to 90%.
+### ความเสถียรของการ์ด
+แสดงเฉพาะเมื่อเปิดใช้งาน FSRS ความเสถียรหมายถึงระยะเวลาที่ต้องการ
+เพื่อให้ความน่าจะเป็นในการจำลดลงจาก 100% เป็น 90%
 
-### Card Difficulty
-Only shown if FSRS is enabled. Difficulty determines how quickly a card's interval grows
-after each review.
+### ความยากของการ์ด
+แสดงเฉพาะเมื่อเปิดใช้งาน FSRS ความยากจะกำหนดว่าช่วงเวลาของการ์ดจะเติบโตเร็วเพียงใด
+หลังจากการทบทวนแต่ละครั้ง
 
-### Card Retrievability
-Only shown if FSRS is enabled. "Retrievability" is synonymous with "probability of recall".
+### ความสามารถในการดึงข้อมูลของการ์ด
+แสดงเฉพาะเมื่อเปิดใช้งาน FSRS "ความสามารถในการดึงข้อมูล" มีความหมายเดียวกับ "ความน่าจะเป็นในการจำ"
 
-Estimated total knowledge is the total number of cards you are likely to currently remember,
-calculated by multiplying average retrievability by the number of cards that have been
-reviewed at least once.
+ความรู้โดยรวมโดยประมาณคือจำนวนการ์ดทั้งหมดที่คุณน่าจะจำได้ในปัจจุบัน
+คำนวณโดยการคูณความสามารถในการดึงข้อมูลโดยเฉลี่ยด้วยจำนวนการ์ดที่
+ถูกทบทวนอย่างน้อยหนึ่งครั้ง
 
-### Hourly Breakdown
-This graph shows the percentage of total reviews you have passed during given
-hours.
-1. x-axis (bottom): Time of day (at given hour).
-2. y-axis (right): Amount of cards studied.
-3. secondary y-axis (left): Success rate in percent.
+### การแบ่งตามรายชั่วโมง
+กราฟนี้แสดงเปอร์เซ็นต์ของการทบทวนทั้งหมดที่คุณผ่านในช่วงเวลาที่กำหนด
+1.  แกน x (ด้านล่าง): เวลาของวัน (ณ ชั่วโมงที่กำหนด)
+2.  แกน y (ด้านขวา): จำนวนการ์ดที่เรียน
+3.  แกน y รอง (ด้านซ้าย): อัตราความสำเร็จเป็นเปอร์เซ็นต์
 
-The blue bars thus show you the number of reviews you’ve made at that hour (so
-that you know how significant the results are). The gray shaded region shows
-the percentage of the total reviews you have passed (i.e., not pressed _Again_
-on) at that hour.
+ดังนั้น แท่งสีน้ำเงินจะแสดงจำนวนการทบทวนที่คุณทำในชั่วโมงนั้น (เพื่อให้
+คุณทราบว่าผลลัพธ์มีความสำคัญเพียงใด) พื้นที่สีเทาแสดง
+เปอร์เซ็นต์ของการทบทวนทั้งหมดที่คุณผ่าน (เช่น ไม่ได้กด _อีกครั้ง_
+บน) ในชั่วโมงนั้น
 
-### Answer Buttons
-This graph shows how many times you’ve chosen the Again, Hard, Good, or
-Easy button while studying learning/new, young, and
-[mature](getting-started.md#card-states) cards. Anki also displays the percentage
-of correct reviews for each type of card.
+### ปุ่มคำตอบ
+กราฟนี้แสดงจำนวนครั้งที่คุณเลือกปุ่ม อีกครั้ง, ยาก, ดี หรือ
+ง่าย ขณะเรียนการ์ดเรียนรู้/ใหม่, อายุน้อย และ
+การ์ด [โตเต็มที่](getting-started.md#card-states) Anki ยังแสดงเปอร์เซ็นต์
+ของการทบทวนที่ถูกต้องสำหรับแต่ละประเภทของการ์ดด้วย
 
 
-### True Retention Table
+### ตารางการคงอยู่ของข้อมูลที่แท้จริง
 
-This table shows your retention across different cards and different time frames.
-A card is defined as "mature" if its interval is ≥21 days. Only one review per day - the first one - counts.
-Again counts as "Fail"; Hard, Good, and Easy count as "Pass".
-This table can be used to check how well [Anki's spaced repetition algorithm](https://faqs.ankiweb.net/what-spaced-repetition-algorithm.html) is working for you.
+ตารางนี้แสดงการคงอยู่ของข้อมูลของคุณในการ์ดต่างๆ และกรอบเวลาต่างๆ
+การ์ดจะถูกกำหนดว่าเป็น "โตเต็มที่" หากช่วงเวลาของมันคือ ≥21 วัน นับเฉพาะการทบทวนครั้งแรกของวันเท่านั้น
+อีกครั้ง นับเป็น "ล้มเหลว"; ยาก, ดี และ ง่าย นับเป็น "ผ่าน"
+ตารางนี้สามารถใช้เพื่อตรวจสอบว่า [อัลกอริทึมการเว้นระยะห่างของ Anki](https://faqs.ankiweb.net/what-spaced-repetition-algorithm.html) ทำงานได้ดีเพียงใดสำหรับคุณ
 
-If you are using FSRS, your true retention is expected to be close to your [desired retention](deck-options.md#desired-retention).
-Please keep in mind that data for a single day is noisy, so it's better to look at monthly data. If your true retention doesn't match your desired retention very well, here are some general recommendations:
+หากคุณใช้ FSRS การคงอยู่ของข้อมูลที่แท้จริงของคุณคาดว่าจะใกล้เคียงกับ [การคงอยู่ของข้อมูลที่ต้องการ](deck-options.md#desired-retention) ของคุณ
+โปรดทราบว่าข้อมูลสำหรับวันเดียวมีเสียงรบกวน ดังนั้นจึงเป็นการดีกว่าที่จะดูข้อมูลรายเดือน หากการคงอยู่ของข้อมูลที่แท้จริงของคุณไม่ตรงกับการคงอยู่ของข้อมูลที่ต้องการของคุณมากนัก นี่คือคำแนะนำทั่วไปบางประการ:
 
-1) Optimize your FSRS parameters.
-2) Use different presets with their own parameters for different material.
-3) Suspend/reformulate [leeches](leeches.md).
-4) Make sure you are [using the answer buttons as intended](studying.md#answer-buttons).
+1) ปรับพารามิเตอร์ FSRS ของคุณให้เหมาะสมที่สุด
+2) ใช้ค่าที่ตั้งไว้ล่วงหน้าที่แตกต่างกันพร้อมพารามิเตอร์ของตัวเองสำหรับเนื้อหาที่แตกต่างกัน
+3) ระงับ/กำหนดสูตร [ปลิง](leeches.md) ใหม่
+4) ตรวจสอบให้แน่ใจว่าคุณ [ใช้ปุ่มคำตอบตามที่ตั้งใจไว้](studying.md#answer-buttons)
 
 
-## Manual Analysis
+## การวิเคราะห์ด้วยตนเอง
 
-If you’re interested in getting information from your statistics other
-than what Anki provides, it is possible to access the data directly.
-Because of the complexity involved, this is not something we can provide
-any support for.
+หากคุณสนใจที่จะรับข้อมูลจากสถิติของคุณนอกเหนือจาก
+ที่ Anki ให้ไว้ เป็นไปได้ที่จะเข้าถึงข้อมูลโดยตรง
+เนื่องจากความซับซ้อนที่เกี่ยวข้อง นี่ไม่ใช่สิ่งที่เราสามารถให้
+การสนับสนุนใดๆ ได้
 
-One option is to [write an add-on](addons.md) that adds another graph or
-more details to the statistics window. There are several add-ons of this
-sort on AnkiWeb already, which you can look at to get an idea of how it
-works.
+ทางเลือกหนึ่งคือการ [เขียนส่วนเสริม](addons.md) ที่เพิ่มกราฟอื่นหรือ
+รายละเอียดเพิ่มเติมลงในหน้าต่างสถิติ มีส่วนเสริมประเภทนี้
+หลายอย่างบน AnkiWeb อยู่แล้ว ซึ่งคุณสามารถดูเพื่อเป็นแนวทางว่ามัน
+ทำงานอย่างไร
 
-A more powerful and more complex option is to extract the review log
-information directly from Anki’s database and analyze it in an external
-program. Anki uses a database format called SQLite. There are many tools
-available for working with SQLite databases; one of the easiest to start
-with is called [SQLite Browser](http://sqlitebrowser.org/), which will
-allow you to look around the database as well as export a CSV version of
-tables for import into another program.
+ตัวเลือกที่มีประสิทธิภาพและซับซ้อนกว่าคือการดึงข้อมูลบันทึกการทบทวน
+โดยตรงจากฐานข้อมูลของ Anki และวิเคราะห์ใน
+โปรแกรมภายนอก Anki ใช้รูปแบบฐานข้อมูลที่เรียกว่า SQLite มีเครื่องมือ
+มากมายสำหรับทำงานกับฐานข้อมูล SQLite หนึ่งในเครื่องมือที่ง่ายที่สุด
+ที่จะเริ่มต้นคือ [SQLite Browser](http://sqlitebrowser.org/) ซึ่งจะ
+ให้คุณดูรอบๆ ฐานข้อมูลรวมถึงส่งออกตารางเวอร์ชัน CSV
+เพื่อนำเข้าไปยังโปรแกรมอื่นได้
 
-The most important table for statistics is the "revlog" table, which
-stores an entry for each review that you conduct. The columns are as
-follows:
+ตารางที่สำคัญที่สุดสำหรับสถิติคือตาราง "revlog" ซึ่ง
+เก็บรายการสำหรับการทบทวนแต่ละครั้งที่คุณดำเนินการ คอลัมน์มีดังนี้:
 
-**id**\
-The time at which the review was conducted, as the number of
-milliseconds that had passed since midnight UTC on January 1, 1970.
-(This is sometimes known as "Unix epoch time", especially when in
-straight seconds instead of milliseconds.)
+**id**
+เวลาที่ทำการทบทวน เป็นจำนวน
+มิลลิวินาทีที่ผ่านไปตั้งแตเที่ยงคืน UTC ของวันที่ 1 มกราคม 1970
+(บางครั้งเรียกว่า "เวลา Unix epoch" โดยเฉพาะอย่างยิ่งเมื่ออยู่ใน
+วินาทีล้วนแทนที่จะเป็นมิลลิวินาที)
 
-**cid**\
-The ID of the card that was reviewed. You can look up this value in the
-id field of the "cards" table to get more information about the card,
-although note that the card could have changed between when the revlog
-entry was recorded and when you are looking it up. It is also the
-millisecond timestamp of the card’s creation time.
+**cid**
+ID ของการ์ดที่ถูกทบทวน คุณสามารถค้นหาค่านี้ใน
+ฟิลด์ id ของตาราง "cards" เพื่อรับข้อมูลเพิ่มเติมเกี่ยวกับการ์ด
+แม้ว่าโปรดทราบว่าการ์ดอาจมีการเปลี่ยนแปลงระหว่างเมื่อ
+รายการ revlog ถูกบันทึกและเมื่อคุณกำลังดูอยู่ นอกจากนี้ยังเป็น
+การประทับเวลาเป็นมิลลิวินาทีของเวลาสร้างการ์ดด้วย
 
-**usn**\
-This column is used to keep track of the sync state of reviews and
-provides no useful information for analysis.
+**usn**
+คอลัมน์นี้ใช้เพื่อติดตามสถานะการซิงค์ของบทวิจารณ์และ
+ไม่ได้ให้ข้อมูลที่เป็นประโยชน์สำหรับการวิเคราะห์
 
-**ease**\
-Which button you pressed at the end of the review (1 for Again, 4 for
-Easy).
+**ease**
+ปุ่มที่คุณกดเมื่อสิ้นสุดการทบทวน (1 สำหรับ อีกครั้ง, 4 สำหรับ
+ง่าย)
 
-**ivl**\
-The new interval that the card was pushed to after the review. Positive
-values are in days; negative values are in seconds (for learning cards).
+**ivl**
+ช่วงเวลาใหม่ที่การ์ดถูกผลักไปหลังจากการทบทวน ค่าบวก
+อยู่ในหน่วยวัน ค่าลบอยู่ในหน่วยวินาที (สำหรับการ์ดเรียนรู้)
 
-**lastIvl**\
-The interval the card had before the review. Cards introduced for the
-first time have a last interval equal to the Again delay.
+**lastIvl**
+ช่วงเวลาที่การ์ดมีก่อนการทบทวน การ์ดที่แนะนำเป็นครั้งแรก
+มีช่วงเวลาสุดท้ายเท่ากับการหน่วงเวลาอีกครั้ง
 
-**factor**\
-The new ease factor of the card in permille (parts per thousand). If the
-ease factor is 2500, the card’s interval will be multiplied by 2.5 the
-next time you press Good.
+**factor**
+ปัจจัยความง่ายใหม่ของบัตรในหน่วย permille (ส่วนต่อพัน) หาก
+ปัจจัยความง่ายคือ 2500 ช่วงเวลาของบัตรจะถูกคูณด้วย 2.5 ใน
+ครั้งต่อไปที่คุณกด ดี
 
-**time**\
-The amount of time (in milliseconds) you spent on the question and
-answer sides of the card before selecting an ease button.
+**time**
+ระยะเวลา (เป็นมิลลิวินาที) ที่คุณใช้ในด้านคำถามและ
+คำตอบของบัตรก่อนที่จะเลือกปุ่มความง่าย
 
-**type**\
-This is 0 for learning cards, 1 for review cards, 2 for relearning cards,
-and 3 for early "cram" cards (cards being studied in a filtered deck when they
-are not due).
+**type**
+นี่คือ 0 สำหรับการ์ดเรียนรู้, 1 สำหรับการ์ดทบทวน, 2 สำหรับการ์ดเรียนรู้ซ้ำ
+และ 3 สำหรับการ์ด "อัด" ก่อนกำหนด (การ์ดที่กำลังศึกษาในสำรับที่กรองแล้วเมื่อ
+ยังไม่ครบกำหนด)

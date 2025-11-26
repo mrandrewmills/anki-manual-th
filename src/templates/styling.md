@@ -1,52 +1,52 @@
-# Styling & HTML
+# การจัดรูปแบบและ HTML
 
 <!-- toc -->
 
-## Card Styling
+## การจัดรูปแบบการ์ด
 
-You can watch [a video about styling cards](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on) on YouTube.
-The video shows Anki 2.0’s interface, but the concepts are largely the
-same.
+คุณสามารถดู [วิดีโอเกี่ยวกับการจัดรูปแบบการ์ด](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on) ได้บน YouTube
+วิดีโอแสดงส่วนต่อประสานของ Anki 2.0 แต่แนวคิดส่วนใหญ่
+เหมือนกัน
 
-The styling section of the Cards screen can be accessed by clicking the
-"Styling" button next to the "Back Template" button. In that section,
-you can change the background color of the card, the default font, the
-text alignment, and so on.
+ส่วนการจัดรูปแบบของหน้าจอการ์ดสามารถเข้าถึงได้โดยคลิกที่
+ปุ่ม "การจัดรูปแบบ" ถัดจากปุ่ม "เทมเพลตด้านหลัง" ในส่วนนั้น
+คุณสามารถเปลี่ยนสีพื้นหลังของการ์ด แบบอักษรเริ่มต้น
+การจัดแนวข้อความ และอื่นๆ ได้
 
-The standard options available to you are:
+ตัวเลือกมาตรฐานที่มีให้คุณคือ:
 
-**font-family**\
-The name of the font to use on the card. If your font has spaces in it
-like "MS Unicode", then you need to surround the font name in double
-quotes, like `font-family: "MS Unicode";`. It is also possible to use multiple fonts on
-one card; for information on that, please see below.
+**font-family**
+ชื่อของแบบอักษรที่จะใช้บนการ์ด หากแบบอักษรของคุณมีช่องว่างเช่น
+"MS Unicode" คุณต้องล้อมรอบชื่อแบบอักษรด้วย
+เครื่องหมายคำพูดคู่ เช่น `font-family: "MS Unicode";` นอกจากนี้ยังสามารถใช้หลายแบบอักษร
+บนการ์ดใบเดียวได้ สำหรับข้อมูลเกี่ยวกับเรื่องนั้น โปรดดูด้านล่าง
 
-**font-size**\
-The size of the font in pixels. When changing it, make sure you leave px
-at the end.
+**font-size**
+ขนาดของแบบอักษรเป็นพิกเซล เมื่อเปลี่ยน ตรวจสอบให้แน่ใจว่าคุณเว้น px
+ไว้ที่ท้าย
 
-**text-align**\
-Whether the text should be aligned in the center, left, or right.
+**text-align**
+ว่าข้อความควรจัดชิดกลาง ซ้าย หรือขวา
 
-**color**\
-The color of the text. Simple color names like "blue", "lightyellow",
-and so on will work, or you can use HTML color codes to select arbitrary
-colors. Please see [this webpage](https://htmlcolorcodes.com/) for more
-information.
+**color**
+สีของข้อความ ชื่อสีอย่างง่ายเช่น "blue", "lightyellow"
+และอื่นๆ จะใช้งานได้ หรือคุณสามารถใช้รหัสสี HTML เพื่อเลือกสี
+ตามอำเภอใจได้ โปรดดู [เว็บเพจนี้](https://htmlcolorcodes.com/) สำหรับ
+ข้อมูลเพิ่มเติม
 
-**background-color**\
-The color of the card background.
+**background-color**
+สีของพื้นหลังการ์ด
 
-Any CSS can be placed in the styling section – advanced users may wish
-to do things like add a background image or gradient, for example. If
-you’re wondering how to get some particular formatting, please search
-the web for information about how to do it in CSS, as there is a great
-deal of documentation available.
+CSS ใดๆ ก็ได้สามารถวางไว้ในส่วนการจัดรูปแบบได้ – ผู้ใช้ขั้นสูงอาจต้องการ
+ทำสิ่งต่างๆ เช่น เพิ่มภาพพื้นหลังหรือการไล่ระดับสี เป็นต้น หาก
+คุณสงสัยว่าจะได้รับการจัดรูปแบบบางอย่างได้อย่างไร โปรดค้นหา
+เว็บสำหรับข้อมูลเกี่ยวกับวิธีการทำใน CSS เนื่องจากมี
+เอกสารประกอบมากมาย
 
-The styling is shared between all cards, which means that when you make
-an adjustment it will affect all cards for that note type. It is also
-possible to specify card-specific styling, however. The following
-example will use a yellow background on all cards except the first one:
+การจัดรูปแบบจะใช้ร่วมกันระหว่างการ์ดทั้งหมด ซึ่งหมายความว่าเมื่อคุณทำการ
+ปรับเปลี่ยน มันจะมีผลต่อการ์ดทั้งหมดสำหรับประเภทบันทึกย่อนั้น นอกจากนี้ยัง
+สามารถระบุการจัดรูปแบบเฉพาะการ์ดได้อีกด้วย ตัวอย่างต่อไปนี้
+จะใช้พื้นหลังสีเหลืองกับการ์ดทั้งหมดยกเว้นการ์ดใบแรก:
 
 ```css
 .card {
@@ -57,11 +57,10 @@ example will use a yellow background on all cards except the first one:
 }
 ```
 
-## Image Resizing
+## การปรับขนาดรูปภาพ
 
-Anki shrinks images to fit the screen by default. You can change this by adding
-the following to the bottom of your styling section (outside of the default
-`.card { ... }`):
+Anki จะย่อขนาดรูปภาพให้พอดีกับหน้าจอโดยค่าเริ่มต้น คุณสามารถเปลี่ยนสิ่งนี้ได้โดยการเพิ่ม
+สิ่งต่อไปนี้ที่ด้านล่างของส่วนการจัดรูปแบบของคุณ (นอก `.card { ... }` เริ่มต้น):
 
 ```css
 img {
@@ -70,11 +69,11 @@ img {
 }
 ```
 
-AnkiDroid sometimes has [trouble scaling images to fit the
-screen](https://github.com/ankidroid/Anki-Android/issues/3612). Setting maximum
-image dimensions using css should fix this, but seems to be ignored as of
-AnkiDroid 2.9. A fix is to append `!important` to each style directive, for
-example:
+AnkiDroid บางครั้งมี [ปัญหาในการปรับขนาดรูปภาพให้พอดีกับ
+หน้าจอ](https://github.com/ankidroid/Anki-Android/issues/3612) การตั้งค่าขนาด
+รูปภาพสูงสุดโดยใช้ css ควรจะแก้ไขปัญหานี้ได้ แต่ดูเหมือนว่าจะถูกละเลย ณ
+AnkiDroid 2.9 วิธีแก้ไขคือการต่อท้าย `!important` กับแต่ละคำสั่งสไตล์
+ตัวอย่างเช่น:
 
 ```css
 img {
@@ -83,9 +82,9 @@ img {
 }
 ```
 
-If you try to change the style for images and find that the star that
-appears on marked cards is affected (for instance, it becomes way too
-large), you can target it with the following:
+หากคุณพยายามเปลี่ยนสไตล์สำหรับรูปภาพและพบว่าดาวที่
+ปรากฏบนการ์ดที่ทำเครื่องหมายไว้ได้รับผลกระทบ (เช่น มันใหญ่เกินไป
+มาก) คุณสามารถกำหนดเป้าหมายได้ด้วยสิ่งต่อไปนี้:
 
 ```css
 img#star {
@@ -93,56 +92,55 @@ img#star {
 }
 ```
 
-You can explore the styling of cards interactively by using Chrome:
+คุณสามารถสำรวจการจัดรูปแบบของการ์ดแบบโต้ตอบได้โดยใช้ Chrome:
 
 <https://addon-docs.ankiweb.net/porting2.0.html#webview-changes>
 
-Anki 2.1.50+ supports image resizing within the editor natively.
+Anki 2.1.50+ รองรับการปรับขนาดรูปภาพภายในตัวแก้ไขโดยกำเนิด
 
-## Field Styling
+## การจัดรูปแบบฟิลด์
 
-The default styling applies to the whole card. You can also make certain
-fields or part of the card use a different font, color, and so on. This
-is particularly important when studying foreign languages, as Anki will
-sometimes be unable to correctly display characters unless an
-appropriate font has been chosen.
+การจัดรูปแบบเริ่มต้นจะใช้กับการ์ดทั้งหมด คุณยังสามารถทำให้ฟิลด์บางฟิลด์
+หรือบางส่วนของการ์ดใช้แบบอักษร สี และอื่นๆ ที่แตกต่างกันได้
+สิ่งนี้มีความสำคัญอย่างยิ่งเมื่อศึกษาภาษาต่างประเทศ เนื่องจาก Anki
+บางครั้งจะไม่สามารถแสดงอักขระได้อย่างถูกต้องเว้นแต่จะมีการเลือก
+แบบอักษรที่เหมาะสม
 
-Say you have an “Expression” field, and you want to give it the macOS Thai
-font “Ayuthaya”. Imagine your template already reads:
+สมมติว่าคุณมีฟิลด์ "Expression" และคุณต้องการให้มันใช้แบบอักษร macOS Thai
+"Ayuthaya" ลองนึกภาพว่าเทมเพลตของคุณอ่านว่า:
 
-    What is {{Expression}}?
+    {{Expression}} คืออะไร?
 
     {{Notes}}
 
-What we need to do is wrap the text we want to style in some HTML. We
-will put the following in front of the text:
+สิ่งที่เราต้องทำคือล้อมรอบข้อความที่เราต้องการจัดรูปแบบด้วย HTML บางอย่าง เรา
+จะใส่สิ่งต่อไปนี้ไว้ข้างหน้าข้อความ:
 
     <div class=mystyle1>
 
-And the following behind it:
+และสิ่งต่อไปนี้ไว้ข้างหลัง:
 
     </div>
 
-By wrapping the text like the above, we tell Anki to style the wrapped
-text with a custom style called “mystyle1”, which we will create later.
+โดยการล้อมรอบข้อความเช่นข้างต้น เราบอก Anki ให้จัดรูปแบบ
+ข้อความที่ล้อมรอบด้วยสไตล์ที่กำหนดเองชื่อ "mystyle1" ซึ่งเราจะสร้างขึ้นในภายหลัง
 
-Thus if we wanted the entire “What is …​?” expression to use the Thai
-font, we would use:
+ดังนั้นหากเราต้องการให้ทั้งนิพจน์ "อะไรคือ ... ?" ใช้แบบอักษรภาษาไทย
+เราจะใช้:
 
-    <div class=mystyle1>What is {{Expression}}?</div>
-
-    {{Notes}}
-
-And if we wanted only the expression field itself to use the Thai font,
-we’d use:
-
-    What is <div class=mystyle1>{{Expression}}</div>?
+    <div class=mystyle1>{{Expression}} คืออะไร?</div>
 
     {{Notes}}
 
-After we’ve edited the template, we now need to move to the Styling
-section between the templates. Before editing it, it should look
-something like:
+และถ้าเราต้องการให้เฉพาะฟิลด์นิพจน์เองใช้แบบอักษรภาษาไทย
+เราจะใช้:
+
+    อะไรคือ <div class=mystyle1>{{Expression}}</div>?
+
+    {{Notes}}
+
+หลังจากที่เราแก้ไขเทมเพลตแล้ว ตอนนี้เราต้องย้ายไปที่ส่วนการจัดรูปแบบ
+ระหว่างเทมเพลต ก่อนแก้ไข มันควรจะมีลักษณะดังนี้:
 
 ```css
 .card {
@@ -154,7 +152,7 @@ something like:
 }
 ```
 
-Add your new style to the bottom, so it looks like:
+เพิ่มสไตล์ใหม่ของคุณที่ด้านล่าง เพื่อให้มีลักษณะดังนี้:
 
 ```css
 .card {
@@ -170,9 +168,9 @@ Add your new style to the bottom, so it looks like:
 }
 ```
 
-You can include any styling you want in the style. If you wanted to
-increase the font size too, you’d change the mystyle1 section to look
-like:
+คุณสามารถรวมการจัดรูปแบบใดๆ ที่คุณต้องการในสไตล์ได้ หากคุณต้องการ
+เพิ่มขนาดตัวอักษรด้วย คุณจะต้องเปลี่ยนส่วน mystyle1 ให้มีลักษณะ
+ดังนี้:
 
 ```css
 .mystyle1 {
@@ -181,20 +179,20 @@ like:
 }
 ```
 
-It’s also possible to bundle custom fonts with your deck, so you don’t
-need to install them on your computer or mobile device. Please see the
-[installing fonts](#installing-fonts) section for more info.
+นอกจากนี้ยังสามารถรวมแบบอักษรที่กำหนดเองกับสำรับของคุณได้ ดังนั้นคุณไม่
+จำเป็นต้องติดตั้งบนคอมพิวเตอร์หรืออุปกรณ์พกพาของคุณ โปรดดู
+ส่วน [การติดตั้งแบบอักษร](#installing-fonts) สำหรับข้อมูลเพิ่มเติม
 
-## Audio Replay Buttons
+## ปุ่มเล่นเสียงซ้ำ
 
-When audio or text to speech is included on your cards, Anki will show
-buttons you can click on to replay the audio.
+เมื่อมีเสียงหรือข้อความเป็นคำพูดรวมอยู่ในการ์ดของคุณ Anki จะแสดง
+ปุ่มที่คุณสามารถคลิกเพื่อเล่นเสียงซ้ำได้
 
-If you prefer not to see the buttons, you can hide them in the
-preferences screen.
+หากคุณไม่ต้องการเห็นปุ่ม คุณสามารถซ่อนได้ใน
+หน้าจอการตั้งค่า
 
-You can customize their appearance in your card styling, for example, to
-make them smaller and colored, you could use the following:
+คุณสามารถปรับแต่งลักษณะที่ปรากฏได้ในการจัดรูปแบบการ์ดของคุณ ตัวอย่างเช่น
+เพื่อให้มันเล็กลงและมีสี คุณสามารถใช้สิ่งต่อไปนี้:
 
 ```css
 .replay-button svg {
@@ -210,10 +208,10 @@ make them smaller and colored, you could use the following:
 }
 ```
 
-## Text Direction
+## ทิศทางข้อความ
 
-If you use a language that is written right-to-left, such as Arabic or Hebrew,
-you can add the CSS `direction` property to the .card section for correct display during review:
+หากคุณใช้ภาษาที่เขียนจากขวาไปซ้าย เช่น ภาษาอาหรับหรือฮีบรู
+คุณสามารถเพิ่มคุณสมบัติ CSS `direction` ลงในส่วน .card เพื่อให้แสดงผลอย่างถูกต้องระหว่างการทบทวน:
 
 ```css
 .card {
@@ -221,42 +219,42 @@ you can add the CSS `direction` property to the .card section for correct displa
 }
 ```
 
-This will change the direction of the entire card. You can change the direction
-of only certain fields by wrapping their references in some HTML:
+สิ่งนี้จะเปลี่ยนทิศทางของการ์ดทั้งหมด คุณสามารถเปลี่ยนทิศทาง
+ของเฉพาะบางฟิลด์ได้โดยการล้อมรอบการอ้างอิงของฟิลด์ด้วย HTML บางอย่าง:
 
     <div dir="rtl">{{Front}}</div>
 
-To change the direction of fields in the editor, please see
-the [editing](../editing.md#customizing-fields) section.
+หากต้องการเปลี่ยนทิศทางของฟิลด์ในตัวแก้ไข โปรดดู
+ส่วน [การแก้ไข](../editing.md#customizing-fields)
 
-## Other HTML
+## HTML อื่นๆ
 
-Your templates can contain arbitrary HTML, which means that all the
-layout possibilities used on internet web pages can also be used on your
-cards. Things like tables, lists, images, links to external pages and so
-on are all supported. With tables for example, you could change the
-layout so that the front and back of a card appear on the left and right
-instead of the top and bottom.
+เทมเพลตของคุณสามารถมี HTML ตามอำเภอใจได้ ซึ่งหมายความว่าความเป็นไปได้
+ในการจัดวางทั้งหมดที่ใช้ในหน้าเว็บอินเทอร์เน็ตยังสามารถใช้กับการ์ดของคุณได้อีกด้วย
+สิ่งต่างๆ เช่น ตาราง รายการ รูปภาพ ลิงก์ไปยังหน้าภายนอก และอื่นๆ
+ล้วนได้รับการสนับสนุน ด้วยตาราง ตัวอย่างเช่น คุณสามารถเปลี่ยน
+เค้าโครงเพื่อให้ด้านหน้าและด้านหลังของการ์ดปรากฏทางด้านซ้ายและขวา
+แทนที่จะเป็นด้านบนและด้านล่าง
 
-Covering all of HTML’s features is outside the scope of this manual, but
-there are plenty of good introductory guides to HTML available on the
-web if you’d like to learn more.
+การครอบคลุมคุณสมบัติทั้งหมดของ HTML อยู่นอกขอบเขตของคู่มือนี้ แต่
+มีคู่มือแนะนำ HTML ที่ดีมากมายบน
+เว็บหากคุณต้องการเรียนรู้เพิ่มเติม
 
-## Browser Appearance
+## ลักษณะที่ปรากฏของเบราว์เซอร์
 
-If your card templates are complex, it may be difficult to read the
-question and answer columns (called "Front" and "Back") in the [card list](../browsing.md#cardnote-table). The "browser appearance" option allows you to define a
-custom template to be used only in the browser, so you can include only
-the important fields and change the order if you desire. The syntax is
-the same as in standard card templates.
+หากเทมเพลตการ์ดของคุณซับซ้อน อาจเป็นการยากที่จะอ่าน
+คอลัมน์คำถามและคำตอบ (เรียกว่า "ด้านหน้า" และ "ด้านหลัง") ใน [รายการการ์ด](../browsing.md#cardnote-table) ตัวเลือก "ลักษณะที่ปรากฏของเบราว์เซอร์" ช่วยให้คุณสามารถกำหนด
+เทมเพลตที่กำหนดเองเพื่อใช้เฉพาะในเบราว์เซอร์ได้ ดังนั้นคุณจึงสามารถรวมเฉพาะ
+ฟิลด์ที่สำคัญและเปลี่ยนลำดับได้หากต้องการ ไวยากรณ์
+เหมือนกับในเทมเพลตการ์ดมาตรฐาน
 
-When using this option, if the text in the question column is repeated at the beginning of the answer column, Anki will display the text only in the question column. For example, if the question column text is "People in Ladakh speak", and the answer is "People in Ladakh speak Ladakhi", the answer column will only display "Ladakhi", omitting the rest.
+เมื่อใช้ตัวเลือกนี้ หากข้อความในคอลัมน์คำถามซ้ำกับตอนต้นของคอลัมน์คำตอบ Anki จะแสดงข้อความเฉพาะในคอลัมน์คำถาม ตัวอย่างเช่น หากข้อความในคอลัมน์คำถามคือ "คนในลาดักพูด" และคำตอบคือ "คนในลาดักพูดภาษาลาดัก" คอลัมน์คำตอบจะแสดงเฉพาะ "ภาษาลาดัก" โดยละเว้นส่วนที่เหลือ
 
-## Platform-Specific CSS
+## CSS เฉพาะแพลตฟอร์ม
 
-Anki defines some special CSS classes that allow you to define different
-styling for different platforms. The example below shows how to vary the
-font depending on where you’re reviewing:
+Anki กำหนดคลาส CSS พิเศษบางอย่างที่ช่วยให้คุณสามารถกำหนด
+การจัดรูปแบบที่แตกต่างกันสำหรับแพลตฟอร์มต่างๆ ได้ ตัวอย่างด้านล่างแสดงวิธีการเปลี่ยน
+แบบอักษรขึ้นอยู่กับว่าคุณกำลังทบทวนที่ไหน:
 
 ```css
 /* Windows */
@@ -271,11 +269,11 @@ font depending on where you’re reviewing:
 .linux:not(.android) .example {
   font-family: "Example3";
 }
-/* both Linux desktops, and Android devices */
+/* ทั้ง Linux desktops และอุปกรณ์ Android */
 .linux .example {
   font-family: "Example4";
 }
-/* both Android and iOS */
+/* ทั้ง Android และ iOS */
 .mobile .example {
   font-family: "Example5";
 }
@@ -290,54 +288,54 @@ font depending on where you’re reviewing:
 }
 ```
 
-And in the template:
+และในเทมเพลต:
 
 ```html
 <div class="example">{{Field}}</div>
 ```
 
-You can also use properties like .gecko, .opera, and .ie to select
-particular browsers when using AnkiWeb. Please see
-<http://rafael.adm.br/css_browser_selector/> for a full list of options.
+คุณยังสามารถใช้คุณสมบัติเช่น .gecko, .opera และ .ie เพื่อเลือก
+เบราว์เซอร์เฉพาะเมื่อใช้ AnkiWeb ได้ โปรดดู
+<http://rafael.adm.br/css_browser_selector/> สำหรับรายการตัวเลือกทั้งหมด
 
-## Installing Fonts
+## การติดตั้งแบบอักษร
 
-You can install fonts directly to Anki. This is useful if you’re using Anki on
-a work or school computer where you don’t have permission to install new fonts,
-or if you’re using Anki on a mobile device.
+คุณสามารถติดตั้งแบบอักษรลงใน Anki ได้โดยตรง ซึ่งมีประโยชน์หากคุณใช้ Anki บน
+คอมพิวเตอร์ที่ทำงานหรือโรงเรียนซึ่งคุณไม่มีสิทธิ์ติดตั้งแบบอักษรใหม่
+หรือหากคุณใช้ Anki บนอุปกรณ์พกพา
 
-Anki supports the most widely used font formats, such as TrueType (.ttf),
-OpenType (.otf), Web Open Font Format (.woff) and others.
+Anki รองรับรูปแบบแบบอักษรที่ใช้กันอย่างแพร่หลายที่สุด เช่น TrueType (.ttf),
+OpenType (.otf), Web Open Font Format (.woff) และอื่นๆ
 
-### Add Font to Media Folder
+### เพิ่มแบบอักษรไปยังโฟลเดอร์สื่อ
 
-Once you have downloaded a supported font, such as "Arial.ttf", you have to add
-it to the media folder.
+เมื่อคุณดาวน์โหลดแบบอักษรที่รองรับแล้ว เช่น "Arial.ttf" คุณต้องเพิ่ม
+ไปยังโฟลเดอร์สื่อ
 
-1. Rename the file, adding an underscore at the start, so it becomes
-   like "\_arial.ttf". Adding an underscore will tell Anki that this
-   file will be used on a template, and should not be deleted when
-   checking for unused media.
+1.  เปลี่ยนชื่อไฟล์โดยเพิ่มขีดล่างที่จุดเริ่มต้น เพื่อให้กลายเป็น
+    เหมือน "_arial.ttf" การเพิ่มขีดล่างจะบอก Anki ว่าไฟล์นี้
+    จะถูกใช้ในเทมเพลต และไม่ควรถูกลบเมื่อ
+    ตรวจสอบหาสื่อที่ไม่ได้ใช้
 
-2.  In your computer’s file browser, go to your Anki application data folder (see [File Locations](../files.md#file-locations) for details),
-    and then into your profile folder (e.g., "User 1").
+2.  ในเบราว์เซอร์ไฟล์ของคอมพิวเตอร์ของคุณ ให้ไปที่โฟลเดอร์ข้อมูลแอปพลิเคชัน Anki ของคุณ (ดู [ตำแหน่งไฟล์](../files.md#file-locations) สำหรับรายละเอียด)
+    จากนั้นเข้าไปในโฟลเดอร์โปรไฟล์ของคุณ (เช่น "User 1")
 
-3. Inside the folder, you should see a folder called collection.media.
-   Drag the renamed file to that folder.
+3.  ภายในโฟลเดอร์ คุณควรเห็นโฟลเดอร์ชื่อ collection.media
+    ลากไฟล์ที่เปลี่ยนชื่อแล้วไปยังโฟลเดอร์นั้น
 
-### Update Template to Use That Font
+### อัปเดตเทมเพลตเพื่อใช้แบบอักษรนั้น
 
-After the font has been added to the media folder, you need to update the
-template.
+หลังจากเพิ่มแบบอักษรไปยังโฟลเดอร์สื่อแล้ว คุณต้องอัปเดต
+เทมเพลต
 
-1. Click **Add** at the top of the main screen, and then select the
-   note type you want to change with the top left button.
+1.  คลิก **เพิ่ม** ที่ด้านบนของหน้าจอหลัก แล้วเลือก
+    ประเภทบันทึกย่อที่คุณต้องการเปลี่ยนด้วยปุ่มบนซ้าย
 
-2. Click **Cards**.
+2.  คลิก **การ์ด**
 
-3. In the styling section, add the following text to the bottom (after
-   the last "}" character), replacing "\_arial.ttf" with the name of
-   the file you copied into your media folder:
+3.  ในส่วนการจัดรูปแบบ ให้เพิ่มข้อความต่อไปนี้ที่ด้านล่าง (หลัง
+    อักขระ "}" ตัวสุดท้าย) โดยแทนที่ "_arial.ttf" ด้วยชื่อของ
+    ไฟล์ที่คุณคัดลอกไปยังโฟลเดอร์สื่อของคุณ:
 
 ```css
 @font-face {
@@ -346,25 +344,25 @@ template.
 }
 ```
 
-Only change the "arial" part, not the "myfont" part.
+เปลี่ยนเฉพาะส่วน "arial" เท่านั้น ไม่ใช่ส่วน "myfont"
 
-After that, you can either change the font for the entire card, or for
-individual fields. To change the font for the entire card, simply locate
-the font-family: line in the .card section and change the font to
-"myfont". To change the font for only certain fields, please see the
-[Field Styling](#field-styling) instructions above.
+หลังจากนั้น คุณสามารถเปลี่ยนแบบอักษรสำหรับการ์ดทั้งหมด หรือสำหรับ
+ฟิลด์แต่ละฟิลด์ได้ หากต้องการเปลี่ยนแบบอักษรสำหรับการ์ดทั้งหมด เพียงค้นหา
+บรรทัด font-family: ในส่วน .card และเปลี่ยนแบบอักษรเป็น
+"myfont" หากต้องการเปลี่ยนแบบอักษรสำหรับเฉพาะบางฟิลด์ โปรดดู
+คำแนะนำ [การจัดรูปแบบฟิลด์](#field-styling) ด้านบน
 
-Please make sure the filenames match exactly. If the file is called
-arial.TTF and you write arial.ttf in your card templates, it will not
-work.
+โปรดตรวจสอบให้แน่ใจว่าชื่อไฟล์ตรงกันทุกประการ หากไฟล์ชื่อ
+arial.TTF และคุณเขียน arial.ttf ในเทมเพลตการ์ดของคุณ
+มันจะไม่ทำงาน
 
-## Night Mode
+## โหมดกลางคืน
 
-You can customize the way templates appear when night mode is enabled in
-the preferences screen.
+คุณสามารถปรับแต่งลักษณะที่ปรากฏของเทมเพลตเมื่อเปิดใช้งานโหมดกลางคืนใน
+หน้าจอการตั้งค่าได้
 
-If you wanted a lighter grey background, you could use
-something like:
+หากคุณต้องการพื้นหลังสีเทาอ่อน คุณสามารถใช้
+สิ่งต่อไปนี้:
 
 ```css
 .card.nightMode {
@@ -372,8 +370,8 @@ something like:
 }
 ```
 
-If you have a "myclass" style, the following would show the text in
-yellow when night mode is enabled:
+หากคุณมีสไตล์ "myclass" สิ่งต่อไปนี้จะแสดงข้อความ
+สีเหลืองเมื่อเปิดใช้งานโหมดกลางคืน:
 
 ```css
 .nightMode .myclass {
@@ -381,16 +379,16 @@ yellow when night mode is enabled:
 }
 ```
 
-## Fading and Scrolling
+## การเฟดและการเลื่อน
 
-Anki will automatically scroll to the answer by default. It looks for an
-HTML element with id=answer, and scrolls to that. You can place the id
-on a different element to adjust the scrolling position, or remove the
-id=answer to turn off scrolling.
+Anki จะเลื่อนไปยังคำตอบโดยอัตโนมัติโดยค่าเริ่มต้น มันจะค้นหาองค์ประกอบ
+HTML ที่มี id=answer และเลื่อนไปที่นั่น คุณสามารถวาง id
+บนองค์ประกอบอื่นเพื่อปรับตำแหน่งการเลื่อน หรือลบ
+id=answer เพื่อปิดการเลื่อน
 
-The question side of a card fades in by default. If you wish to adjust
-this delay, you can place the following at the top of your front card
-template:
+ด้านคำถามของการ์ดจะค่อยๆ ปรากฏขึ้นโดยค่าเริ่มต้น หากคุณต้องการปรับ
+การหน่วงเวลานี้ คุณสามารถวางสิ่งต่อไปนี้ที่ด้านบนของ
+เทมเพลตการ์ดด้านหน้าของคุณ:
 
 ```html
 <script>
@@ -399,32 +397,32 @@ template:
 </script>
 ```
 
-100 (milliseconds) is the default; set to 0 to disable fading.
+100 (มิลลิวินาที) เป็นค่าเริ่มต้น ตั้งค่าเป็น 0 เพื่อปิดใช้งานการเฟด
 
 ## Javascript
 
-As Anki cards are treated like web pages, it is possible to embed some
-Javascript on your cards via the card template. For a good reference
-please read [this post](https://forums.ankiweb.net/t/card-templates-user-input-101-buttons-keyboard-shortcuts-etc-guide/13756)
-in the forums.
+เนื่องจากการ์ด Anki ถูกปฏิบัติต่อเหมือนหน้าเว็บ จึงเป็นไปได้ที่จะฝัง
+Javascript บางอย่างในการ์ดของคุณผ่านเทมเพลตการ์ด สำหรับ
+การอ้างอิงที่ดี โปรดอ่าน [โพสต์นี้](https://forums.ankiweb.net/t/card-templates-user-input-101-buttons-keyboard-shortcuts-etc-guide/13756)
+ในฟอรัม
 
-Because Javascript is an advanced feature and so many things can go
-wrong, **Javascript functionality is provided without any support or
-warranty**. We can not provide any assistance with writing Javascript,
-and can not guarantee any code you have written will continue to work
-without modification in future Anki updates. If you are not comfortable
-addressing any issues you encounter on your own, then please avoid using
-Javascript.
+เนื่องจาก Javascript เป็นคุณสมบัติขั้นสูงและมีหลายอย่างที่อาจผิดพลาดได้
+**ฟังก์ชัน Javascript จึงมีให้โดยไม่มีการสนับสนุนหรือ
+การรับประกันใดๆ** เราไม่สามารถให้ความช่วยเหลือในการเขียน Javascript ได้
+และไม่สามารถรับประกันได้ว่าโค้ดใดๆ ที่คุณเขียนจะยังคงทำงาน
+โดยไม่มีการแก้ไขในการอัปเดต Anki ในอนาคต หากคุณไม่สะดวก
+ที่จะแก้ไขปัญหาใดๆ ที่คุณพบด้วยตนเอง โปรดหลีกเลี่ยงการใช้
+Javascript
 
-Each Anki client may implement card display differently, so you will
-need to test the behaviour across platforms. A number of clients are
-implemented by keeping a long running webpage and dynamically updating
-parts of it as cards are reviewed, so your Javascript will need to
-update sections of the document using things like
-document.getElementById() rather than doing things like
-document.write().
+ไคลเอ็นต์ Anki แต่ละตัวอาจใช้งานการแสดงผลการ์ดแตกต่างกัน ดังนั้นคุณจะต้อง
+ทดสอบพฤติกรรมข้ามแพลตฟอร์ม ไคลเอ็นต์จำนวนมาก
+ถูกนำไปใช้โดยการรักษาหน้าเว็บที่ทำงานยาวนานและอัปเดต
+ส่วนต่างๆ แบบไดนามิกเมื่อมีการทบทวนการ์ด ดังนั้น Javascript ของคุณจะต้อง
+อัปเดตส่วนต่างๆ ของเอกสารโดยใช้สิ่งต่างๆ เช่น
+document.getElementById() แทนที่จะทำสิ่งต่างๆ เช่น
+document.write()
 
-Functions like window.alert may not be available. Anki will write
-javascript errors to the terminal, so you'll need to [view the console](https://addon-docs.ankiweb.net/console-output.html#console-output) to
-see them. To debug issues with JavaScript, you can use Chrome's
-[inspector](https://addon-docs.ankiweb.net/debugging.html#webviews).
+ฟังก์ชันเช่น window.alert อาจไม่พร้อมใช้งาน Anki จะเขียน
+ข้อผิดพลาด javascript ไปยังเทอร์มินัล ดังนั้นคุณจะต้อง [ดูคอนโซล](https://addon-docs.ankiweb.net/console-output.html#console-output) เพื่อ
+ดูข้อผิดพลาดเหล่านั้น ในการแก้ไขปัญหาเกี่ยวกับ JavaScript คุณสามารถใช้
+[inspector](https://addon-docs.ankiweb.net/debugging.html#webviews) ของ Chrome ได้
