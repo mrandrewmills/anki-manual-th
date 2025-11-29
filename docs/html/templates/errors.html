@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>การตรวจสอบและข้อผิดพลาด - Anki Manual</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../css/misc.css">
+        <link rel="stylesheet" href="../css/mdbook-admonish.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Anki Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankitects/anki-manual/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="การตรวจสอบและขอผิดพลาด"><a class="header" href="#การตรวจสอบและขอผิดพลาด">การตรวจสอบและข้อผิดพลาด</a></h1>
+<ul>
+<li><a href="#%E0%B8%9E%E0%B8%B7%E0%B8%99%E0%B8%90%E0%B8%B2%E0%B8%99">พื้นฐาน</a></li>
+<li><a href="#%E0%B8%9B%E0%B8%B1%E0%B8%8D%E0%B8%AB%E0%B8%B2%E0%B9%80%E0%B8%89%E0%B8%9E%E0%B8%B2%E0%B8%B0">ปัญหาเฉพาะ</a>
+<ul>
+<li><a href="#%E0%B8%82%E0%B8%AD%E0%B8%9C%E0%B8%B4%E0%B8%94%E0%B8%9E%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B9%84%E0%B8%A7%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B9%80%E0%B8%97%E0%B8%A1%E0%B9%80%E0%B8%9E%E0%B8%A5%E0%B8%95">ข้อผิดพลาดไวยากรณ์เทมเพลต</a></li>
+<li><a href="#%E0%B8%94%E0%B8%B2%E0%B8%99%E0%B8%AB%E0%B8%99%E0%B8%B2%E0%B8%97%E0%B8%B5%E0%B9%80%E0%B8%AB%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B8%81%E0%B8%B1%E0%B8%99">ด้านหน้าที่เหมือนกัน</a></li>
+<li><a href="#%E0%B8%94%E0%B8%B2%E0%B8%99%E0%B8%AB%E0%B8%99%E0%B8%B2%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%9B%E0%B8%A5%E0%B8%B2">ด้านหน้าของการ์ดว่างเปล่า</a></li>
+<li><a href="#%E0%B9%84%E0%B8%A1%E0%B8%A1%E0%B8%B5%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%87-cloze-%E0%B9%83%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%A0%E0%B8%97%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%A2%E0%B8%AD-cloze">ไม่มีตัวกรอง Cloze ในประเภทบันทึกย่อ Cloze</a>
+<ul>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94%E0%B9%80%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B9%83%E0%B8%9A%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A7">การ์ดเปล่าใบเดียว</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94-cloze-%E0%B8%97%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A1%E0%B8%94%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%9B%E0%B8%A5%E0%B8%B2">การ์ด Cloze ทั้งหมดว่างเปล่า</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>เมื่อคุณบันทึกการเปลี่ยนแปลงประเภทบันทึกย่อหรือส่งออกสำรับ Anki 2.1.45+ จะตรวจสอบ
+หาข้อผิดพลาดทั่วไปบางอย่าง ข้อผิดพลาดเหล่านี้จะทำให้เกิดปัญหาในภายหลังเมื่อมีคนเรียน
+การ์ดที่ได้รับผลกระทบ ดังนั้น Anki จะไม่ให้คุณดำเนินการต่อจนกว่าคุณจะแก้ไขข้อผิดพลาดเหล่านั้น</p>
+<h2 id="พืนฐาน"><a class="header" href="#พืนฐาน">พื้นฐาน</a></h2>
+<p>โปรดดู <a href="../getting-started.html#key-concepts">แนวคิดหลัก</a> ก่อนอ่านต่อ</p>
+<p>ข้อผิดพลาดส่วนใหญ่ด้านล่างนี้จะต้องการให้คุณแก้ไขประเภทบันทึกย่อ/เทมเพลตการ์ดของคุณ ในการทำเช่นนั้น:</p>
+<ul>
+<li>เปิดหน้าจอเรียกดู และดูรายการทางด้านซ้าย</li>
+<li>ค้นหาประเภทบันทึกย่อที่กล่าวถึงในข้อความแสดงข้อผิดพลาด คุณสามารถใช้แถบค้นหาที่ด้านบนซ้าย
+ได้หากจำเป็น</li>
+<li>คลิกที่ประเภทบันทึกย่อ เพื่อแสดงการ์ด/บันทึกย่อทางด้านขวา</li>
+<li>คลิกปุ่ม การ์ด… ที่ด้านบนของพื้นที่แก้ไขเพื่อเปิด <a href="./intro.html#the-templates-screen">หน้าจอเทมเพลต</a></li>
+</ul>
+<h2 id="ปัญหาเฉพาะ"><a class="header" href="#ปัญหาเฉพาะ">ปัญหาเฉพาะ</a></h2>
+<h3 id="ขอผิดพลาดไวยากรณเทมเพลต"><a class="header" href="#ขอผิดพลาดไวยากรณเทมเพลต">ข้อผิดพลาดไวยากรณ์เทมเพลต</a></h3>
+<p>ข้อผิดพลาดประเภทนี้บ่งชี้ถึงการใช้ไวยากรณ์ <a href="./fields.html">การแทนที่ฟิลด์</a>
+ที่ไม่ถูกต้อง</p>
+<p>คุณสามารถแก้ไขข้อผิดพลาดบนเทมเพลตได้โดยการเปิดหน้าจอเทมเพลตการ์ด:</p>
+<ul>
+<li>ในเวอร์ชันคอมพิวเตอร์ ให้แก้ไขการ์ดที่มีปัญหา แล้วคลิกที่ปุ่ม การ์ด…</li>
+<li>ใน AnkiMobile ขณะดูการ์ดที่มีปัญหาในหน้าจอเรียน ให้แตะที่รูปเฟือง/เกียร์ แล้วแตะ เทมเพลตการ์ด</li>
+</ul>
+<p>เมื่อคุณแก้ไขข้อผิดพลาด มันจะอัปเดตการ์ดทั้งหมดของประเภทนั้น - คุณไม่จำเป็นต้องทำการเปลี่ยนแปลงเดียวกันสำหรับทุกการ์ดที่ใช้เทมเพลต</p>
+<p>สิ่งที่ต้องเปลี่ยนแปลงจะขึ้นอยู่กับข้อความที่คุณได้รับ</p>
+<p><strong>พบ ‘{{Field}}’ แต่ไม่มีฟิลด์ที่ชื่อว่า ‘Field’</strong></p>
+<p>สิ่งนี้บ่งชี้ว่าเทมเพลตของคุณมีชื่อของฟิลด์ที่ไม่มีอยู่จริง ในการแก้ไขปัญหา ให้ค้นหา
+<code>{{Field}}</code> ภายในเทมเพลตการ์ด แล้วลบออก</p>
+<p><strong>ขาด }} ใน {{Field</strong></p>
+<p>ข้อความนี้จะแสดงเมื่อพบ {{ ในเทมเพลตโดยไม่มี }} ที่ตรงกัน ตัวอย่างเช่น หากคุณมี</p>
+<pre><code>{{Field
+</code></pre>
+<p>จะต้องเปลี่ยนเป็น</p>
+<pre><code>{{Field}}
+</code></pre>
+<p><strong>ขาด {{/Field}}</strong></p>
+<p>ซึ่งหมายความว่า Anki พบ <code>{{#Field}}</code> หรือ <code>{{^Field}}</code> ในเทมเพลตการ์ดของคุณ โดยไม่มี <code>{{/Field}}</code> ที่ตรงกัน การลบ <code>{{#Field}}</code> หรือ <code>{{^Field}}</code> ออกจากเทมเพลตจะแก้ไขข้อผิดพลาดได้</p>
+<p><strong>พบ {{/One}} แต่คาดหวัง {{/Two}}</strong></p>
+<p>การแทนที่ตามเงื่อนไขต้องปิดในลำดับเดียวกับที่เปิด ตัวอย่างเช่น เทมเพลตต่อไปนี้ไม่ถูกต้อง:</p>
+<pre><code>{{#One}}
+  {{#Two}}
+    {{Three}}
+  {{/One}}
+{{/Two}}
+</code></pre>
+<p>ในการแก้ไขปัญหา เทมเพลตควรเปลี่ยนเป็นดังนี้:</p>
+<pre><code>{{#One}}
+  {{#Two}}
+    {{Three}}
+  {{/Two}}
+{{/One}}
+</code></pre>
+<p><strong>พบ {{/Field}} แต่ขาด ‘{{#Field}}’ หรือ ‘{{^Field}}’</strong></p>
+<p>แท็กปิดต้องตรงกับแท็กเปิด ตัวอย่างเช่น ต่อไปนี้ไม่ถูกต้อง เนื่องจากไม่มี <code>{{#Two}}</code> หรือ <code>{{^Two}}</code> ที่จุดเริ่มต้น:</p>
+<pre><code>  {{Field}}
+{{/Two}}
+</code></pre>
+<p>สามารถแก้ไขได้โดยการลบแท็กปิด:</p>
+<pre><code>{{Field}}
+</code></pre>
+<h3 id="ดานหนาทีเหมือนกัน"><a class="header" href="#ดานหนาทีเหมือนกัน">ด้านหน้าที่เหมือนกัน</a></h3>
+<p>คุณได้กำหนดค่า Anki ให้สร้างคำถามที่เหมือนกันสองข้อสำหรับแต่ละอินพุต สิ่งนี้สามารถ
+เกิดขึ้นได้หากคุณเพิ่มประเภทการ์ดใหม่โดยไม่ได้ปรับเปลี่ยนใดๆ การ์ดที่เหมือนกัน
+จะเพิ่มภาระงานของคุณเป็นสองเท่า และทำให้การจัดตารางเวลาของ Anki มีประสิทธิภาพน้อยลง</p>
+<p>ในการแก้ไขปัญหานี้ ให้เปิด <a href="./intro.html#the-templates-screen">หน้าจอเทมเพลต</a> และ
+เลือกหนึ่งในรายการที่ซ้ำกันที่ด้านบน จากนั้นใช้ปุ่มที่ด้านบนขวาเพื่อ
+ลบประเภทการ์ดที่เลือก ซึ่งจะลบการ์ด/บันทึกย่อที่ซ้ำกันทั้งหมด
+ที่ใช้ประเภทการ์ดนั้นด้วย</p>
+<h3 id="ดานหนาของการดวางเปลา"><a class="header" href="#ดานหนาของการดวางเปลา">ด้านหน้าของการ์ดว่างเปล่า</a></h3>
+<div id="no-field-replacement-on-front-side" />
+<p>Anki แสดงการ์ดโดยการรวมฟิลด์ที่คุณป้อนเข้ากับ
+เทมเพลตที่ระบุว่าฟิลด์ใดควรปรากฏที่ด้านหน้าและด้านหลังของการ์ดของคุณ หากคุณได้รับ
+ข้อความว่าการ์ดมีด้านหน้าที่ว่างเปล่า หมายความว่าไม่มีฟิลด์ใดๆ ที่รวมอยู่ในเทมเพลตด้านหน้าของคุณมีข้อความใดๆ อยู่ หรือคุณมีฟิลด์ที่มีข้อความ
+แต่ไม่มีฟิลด์ใดรวมอยู่ในเทมเพลตด้านหน้า
+คุณสามารถแก้ไขปัญหานี้ได้โดยการแก้ไขการ์ดในเวอร์ชันคอมพิวเตอร์ คลิกที่ <strong>การ์ด…</strong>
+และตรวจสอบให้แน่ใจว่ามีฟิลด์อย่างน้อยหนึ่งฟิลด์ที่มีข้อความบางอย่างรวมอยู่ในเทมเพลตด้านหน้า
+คุณสามารถเพิ่มฟิลด์เพิ่มเติมได้ด้วยปุ่มเพิ่มฟิลด์</p>
+<p>หากคุณใช้ประเภทบันทึกย่อแบบเติมคำในช่องว่าง (Cloze)
+โปรดตรวจสอบให้แน่ใจว่าคุณได้รวมการลบคำในช่องว่างอย่างน้อยหนึ่งรายการในฟิลด์ข้อความ เช่น {{c1::ข้อความที่ถูกลบแบบเติมคำ}}</p>
+<p>หากคุณใช้ฟังก์ชันพิมพ์คำตอบ โปรดตรวจสอบให้แน่ใจว่าคุณได้รวมฟิลด์อื่นไว้ที่ด้านหน้าด้วย</p>
+<h3 id="ไมมีตัวกรอง-cloze-ในประเภทบันทึกยอ-cloze"><a class="header" href="#ไมมีตัวกรอง-cloze-ในประเภทบันทึกยอ-cloze">ไม่มีตัวกรอง Cloze ในประเภทบันทึกย่อ Cloze</a></h3>
+<div id="no-cloze-filter-on-cloze-notetype" />
+<p>เทมเพลตด้านหน้าและด้านหลังของประเภทบันทึกย่อแบบเติมคำในช่องว่าง (Cloze) ควรมีตัวกรอง <a href="../editing.html#cloze-deletion">cloze</a>
+หากไม่มี คุณจะต้องเพิ่มกลับเข้าไปเพื่อให้ Anki สามารถสร้างการ์ด Cloze
+ได้อย่างถูกต้อง</p>
+<h4 id="การดเปลาใบเดียว"><a class="header" href="#การดเปลาใบเดียว">การ์ดเปล่าใบเดียว</a></h4>
+<p>เมื่อสร้าง Cloze แต่ละหมายเลข Cloze จะถูกเปลี่ยนเป็นการ์ดแยกกัน ตัวอย่างเช่น ต่อไปนี้จะสร้างการ์ดสามใบ:</p>
+<pre><code>{{c1::นี่}} คือ {{c2::ตัวอย่าง}} {{c3::ประโยค}}
+</code></pre>
+<p>หากคุณแก้ไขข้อความในภายหลัง และลบหรือเปลี่ยนหมายเลข Cloze การ์ดที่สร้างขึ้นก่อนหน้านี้อาจกลายเป็นว่างเปล่า ตัวอย่างเช่น:</p>
+<pre><code>{{c1::นี่}} คือ {{c2::ตัวอย่าง}}
+</code></pre>
+<p>และ</p>
+<pre><code>{{c1::นี่}} คือ {{c2::ตัวอย่าง}} {{c1::ประโยค}}
+</code></pre>
+<p>ทั้งสองการเปลี่ยนแปลงจะทำให้การ์ด 3 ว่างเปล่า เมื่อคุณดูการ์ด 3 คุณจะเห็นข้อความที่ระบุว่าการ์ดว่างเปล่า และสามารถล้างได้ด้วยฟังก์ชันการ์ดเปล่า คุณสามารถเข้าถึงฟังก์ชันนั้นได้ผ่านเมนูเครื่องมือของหน้าต่างหลักของเวอร์ชันคอมพิวเตอร์ และใช้เพื่อลบการ์ดเปล่า โปรดตรวจสอบการ์ดเปล่าที่รายงานก่อน และหากไม่แน่ใจ ให้สร้างข้อมูลสำรองด้วยรายการเมนู ไฟล์&gt;ส่งออก ก่อนดำเนินการต่อ</p>
+<h4 id="การด-cloze-ทังหมดวางเปลา"><a class="header" href="#การด-cloze-ทังหมดวางเปลา">การ์ด Cloze ทั้งหมดว่างเปล่า</a></h4>
+<p>หากคุณแก้ไขเทมเพลตการ์ดของคุณโดยไม่ได้ตั้งใจ อาจทำให้ไม่มีการลบ Cloze ปรากฏขึ้น หากเกิดเหตุการณ์เช่นนั้น โปรดแก้ไขการ์ดที่มีปัญหาดังกล่าว และจดชื่อของฟิลด์แรกไว้ - โดยปกติจะเรียกว่า “Text” จากนั้น โปรด:</p>
+<ul>
+<li>
+<p>คลิกที่ปุ่ม การ์ด…</p>
+</li>
+<li>
+<p>แทนที่ข้อความด้านหน้าด้วย</p>
+<pre><code>{{cloze:Text}}
+</code></pre>
+</li>
+<li>
+<p>แทนที่ข้อความด้านหลังด้วยข้อความเดียวกัน</p>
+</li>
+</ul>
+<p>หากฟิลด์ของคุณมีชื่ออื่นที่ไม่ใช่ Text ให้แทนที่ Text ด้วยชื่อของฟิลด์</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../templates/styling.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../preferences.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../templates/styling.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../preferences.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>การแทนที่ฟิลด์ - Anki Manual</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../css/misc.css">
+        <link rel="stylesheet" href="../css/mdbook-admonish.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Anki Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankitects/anki-manual/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="การแทนทีฟิลด"><a class="header" href="#การแทนทีฟิลด">การแทนที่ฟิลด์</a></h1>
+<ul>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%97%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B8%9E%E0%B8%B7%E0%B8%99%E0%B8%90%E0%B8%B2%E0%B8%99">การแทนที่พื้นฐาน</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%82%E0%B8%B6%E0%B8%99%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%97%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%A1">การขึ้นบรรทัดใหม่</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AD%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%9B%E0%B8%99%E0%B8%84%E0%B8%B3%E0%B8%9E%E0%B8%B9%E0%B8%94%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9F%E0%B8%B4%E0%B8%A5%E0%B8%94%E0%B9%81%E0%B8%95%E0%B8%A5%E0%B8%B0%E0%B8%9F%E0%B8%B4%E0%B8%A5%E0%B8%94">การอ่านออกเสียงข้อความเป็นคำพูดสำหรับฟิลด์แต่ละฟิลด์</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AD%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%9B%E0%B8%99%E0%B8%84%E0%B8%B3%E0%B8%9E%E0%B8%B9%E0%B8%94%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%AB%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B8%9F%E0%B8%B4%E0%B8%A5%E0%B8%94%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%82%E0%B8%AD%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B8%87%E0%B8%97%E0%B8%B5">การอ่านออกเสียงข้อความเป็นคำพูดสำหรับหลายฟิลด์และข้อความคงที่</a></li>
+<li><a href="#%E0%B8%9F%E0%B8%B4%E0%B8%A5%E0%B8%94%E0%B8%9E%E0%B8%B4%E0%B9%80%E0%B8%A8%E0%B8%A9">ฟิลด์พิเศษ</a></li>
+<li><a href="#%E0%B8%9F%E0%B8%B4%E0%B8%A5%E0%B8%94%E0%B8%84%E0%B8%B3%E0%B9%83%E0%B8%9A">ฟิลด์คำใบ้</a></li>
+<li><a href="#%E0%B8%A5%E0%B8%B4%E0%B8%87%E0%B8%81%E0%B8%9E%E0%B8%88%E0%B8%99%E0%B8%B2%E0%B8%99%E0%B8%B8%E0%B8%81%E0%B8%A3%E0%B8%A1">ลิงก์พจนานุกรม</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A5%E0%B8%9A-html">การลบ HTML</a></li>
+<li><a href="#%E0%B8%82%E0%B8%AD%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%82%E0%B8%A7%E0%B8%B2%E0%B9%84%E0%B8%9B%E0%B8%8B%E0%B8%B2%E0%B8%A2">ข้อความจากขวาไปซ้าย</a></li>
+<li><a href="#%E0%B8%AD%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%A3%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1-ruby-characters">อักษรทับทิม (Ruby Characters)</a>
+<ul>
+<li><a href="#%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%87%E0%B8%AD%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%A3%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B8%A1%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%A1">ตัวกรองอักษรทับทิมเพิ่มเติม</a></li>
+</ul>
+</li>
+<li><a href="#%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B9%81%E0%B8%A5%E0%B8%B0-latex">สื่อและ LaTeX</a>
+<ul>
+<li><a href="#%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%99%E0%B8%B4%E0%B8%87">เสียง/ภาพนิ่ง</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AD%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B8%B4%E0%B8%87%E0%B8%9F%E0%B8%B4%E0%B8%A5%E0%B8%94">การอ้างอิงฟิลด์</a></li>
+</ul>
+</li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%B3%E0%B8%95%E0%B8%AD%E0%B8%9A%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%B8%E0%B8%93">การตรวจสอบคำตอบของคุณ</a>
+<ul>
+<li><a href="#%E0%B9%84%E0%B8%A1%E0%B8%AA%E0%B8%99%E0%B9%83%E0%B8%88%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B3%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%87">ไม่สนใจเครื่องหมายกำกับเสียง</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="การแทนทีพืนฐาน"><a class="header" href="#การแทนทีพืนฐาน">การแทนที่พื้นฐาน</a></h2>
+<p>เทมเพลตพื้นฐานที่สุดมีลักษณะดังนี้:</p>
+<pre><code>{{Front}}
+</code></pre>
+<p>เมื่อคุณใส่ข้อความในวงเล็บปีกกา Anki จะค้นหาฟิลด์ตาม
+ชื่อนั้น และแทนที่ข้อความด้วยเนื้อหาจริงของฟิลด์</p>
+<p>ชื่อฟิลด์คำนึงถึงตัวพิมพ์ใหญ่-เล็ก หากคุณมีฟิลด์ชื่อ <code>Front</code>
+การเขียน <code>{{front}}</code> จะไม่ทำงานอย่างถูกต้อง</p>
+<p>เทมเพลตของคุณไม่จำกัดอยู่แค่รายการของฟิลด์ คุณยังสามารถรวม
+ข้อความตามอำเภอใจในเทมเพลตของคุณได้ ตัวอย่างเช่น หากคุณกำลังศึกษา
+เมืองหลวง และคุณได้สร้างประเภทบันทึกย่อที่มีฟิลด์ “Country”
+คุณอาจสร้างเทมเพลตด้านหน้าเช่นนี้:</p>
+<pre><code>เมืองหลวงของ {{Country}} คืออะไร?
+</code></pre>
+<p>เทมเพลตด้านหลังเริ่มต้นจะมีลักษณะดังนี้:</p>
+<pre><code>{{FrontSide}}
+
+&lt;hr id=answer&gt;
+
+{{Back}}
+</code></pre>
+<p>ซึ่งหมายความว่า “แสดงข้อความที่อยู่ด้านหน้า แล้วตามด้วยเส้นแบ่ง
+แล้วตามด้วยฟิลด์ Back”</p>
+<p>ส่วน “id=answer” บอก Anki ว่าเส้นแบ่งระหว่าง
+คำถามและคำตอบอยู่ที่ไหน ซึ่งช่วยให้ Anki สามารถเลื่อนไปยัง
+จุดที่คำตอบเริ่มต้นได้โดยอัตโนมัติเมื่อคุณกด <strong>แสดงคำตอบ</strong> บนการ์ดที่ยาว
+(โดยเฉพาะอย่างยิ่งมีประโยชน์บนอุปกรณ์พกพาที่มีหน้าจอขนาดเล็ก) หากคุณไม่
+ต้องการเส้นแนวนอนที่จุดเริ่มต้นของคำตอบ คุณสามารถใช้
+องค์ประกอบ HTML อื่น เช่น ย่อหน้าหรือ div แทนได้</p>
+<h2 id="การขึนบรรทัดใหม"><a class="header" href="#การขึนบรรทัดใหม">การขึ้นบรรทัดใหม่</a></h2>
+<p>เทมเพลตการ์ดเหมือนกับหน้าเว็บ ซึ่งหมายความว่าต้องใช้คำสั่งพิเศษ
+ในการสร้างบรรทัดใหม่ ตัวอย่างเช่น หากคุณเขียนสิ่งต่อไปนี้ในเทมเพลต:</p>
+<pre><code>หนึ่ง
+สอง
+</code></pre>
+<p>ในตัวอย่าง คุณจะเห็น:</p>
+<pre><code>หนึ่ง สอง
+</code></pre>
+<p>ในการเพิ่มบรรทัดใหม่ คุณต้องเพิ่มโค้ด &lt;br&gt; ที่ท้าย
+บรรทัด ดังนี้:</p>
+<pre><code>หนึ่ง&lt;br&gt;
+สอง
+</code></pre>
+<p>โค้ด br ย่อมาจาก “(line) br(eak)”</p>
+<p>สิ่งเดียวกันนี้ใช้กับฟิลด์ หากคุณต้องการแสดงสองฟิลด์ โดยแต่ละฟิลด์อยู่คนละ
+บรรทัด คุณจะใช้</p>
+<pre><code>{{Field 1}}&lt;br&gt;
+{{Field 2}}
+</code></pre>
+<h2 id="การอานออกเสียงขอความเปนคำพูดสำหรับฟิลดแตละฟิลด"><a class="header" href="#การอานออกเสียงขอความเปนคำพูดสำหรับฟิลดแตละฟิลด">การอ่านออกเสียงข้อความเป็นคำพูดสำหรับฟิลด์แต่ละฟิลด์</a></h2>
+<p>คุณลักษณะนี้ต้องใช้ Anki 2.1.20, AnkiMobile 2.0.56 หรือ AnkiDroid 2.17</p>
+<p>เพื่อให้ Anki อ่านฟิลด์ Front ด้วยเสียงภาษาอังกฤษแบบสหรัฐอเมริกา คุณสามารถใส่
+สิ่งต่อไปนี้ในเทมเพลตการ์ดของคุณ:</p>
+<pre><code>{{tts en_US:Front}}
+</code></pre>
+<p>บน Windows, macOS และ iOS Anki จะใช้เสียงในตัวของระบบปฏิบัติการ บน
+Linux ไม่มีเสียงในตัว แต่สามารถให้เสียงได้โดยส่วนเสริม
+เช่น <a href="https://ankiweb.net/shared/info/391644525">อันนี้</a></p>
+<p>หากต้องการดูรายการภาษา/เสียงทั้งหมดที่มี ให้ใส่
+สิ่งต่อไปนี้ในเทมเพลตการ์ดของคุณ:</p>
+<pre><code>{{tts-voices:}}
+</code></pre>
+<p>หากมีเสียงหลายเสียงที่รองรับภาษาที่คุณเลือก คุณสามารถ
+ระบุเสียงที่ต้องการในรายการ และ Anki จะเลือก
+เสียงแรกที่มีอยู่ ตัวอย่างเช่น:</p>
+<pre><code>{{tts ja_JP voices=Apple_Otoya,Microsoft_Haruka:Field}}
+</code></pre>
+<p>สิ่งนี้จะใช้ Otoya เมื่ออยู่บนอุปกรณ์ Apple และ Haruka เมื่ออยู่บน
+พีซี Windows</p>
+<p>การระบุความเร็วที่แตกต่างกันเป็นไปได้ในการใช้งาน TTS บางอย่าง:</p>
+<pre><code>{{tts fr_FR speed=0.8:SomeField}}
+</code></pre>
+<p>ทั้งความเร็วและเสียงเป็นทางเลือก แต่ต้องรวมภาษาด้วย</p>
+<p>บน Mac คุณสามารถปรับแต่งเสียงที่มีอยู่ได้:</p>
+<ul>
+<li>
+<p>เปิดหน้าจอ System Preferences</p>
+</li>
+<li>
+<p>คลิกที่ Accessibility</p>
+</li>
+<li>
+<p>คลิกที่ Speech</p>
+</li>
+<li>
+<p>คลิกที่เมนูแบบเลื่อนลงของ system voice แล้วเลือก Customize</p>
+</li>
+</ul>
+<p>เสียงบางเสียงฟังดูดีกว่าเสียงอื่น ดังนั้นให้ทดลองเพื่อเลือกเสียง
+ที่คุณชอบ โปรดทราบว่าเสียง Siri สามารถใช้ได้โดยแอปของ Apple เท่านั้น
+เมื่อคุณติดตั้งเสียงใหม่แล้ว คุณจะต้องรีสตาร์ท Anki เพื่อให้
+เสียงใหม่พร้อมใช้งาน</p>
+<p>บน Windows เสียงบางเสียงเช่น Cortana ไม่สามารถเลือกได้ เนื่องจาก Microsoft
+ไม่ได้ทำให้เสียงเหล่านั้นพร้อมใช้งานสำหรับแอปพลิเคชันอื่น</p>
+<p>สำหรับประเภทบันทึกย่อแบบเติมคำในช่องว่าง คุณสามารถให้ Anki อ่านเฉพาะส่วนที่ถูกตัดออกได้
+โดยใช้ตัวกรอง <code>cloze-only</code> ดังนี้:</p>
+<pre><code>{{tts en_US:cloze-only:Text}}
+</code></pre>
+<p>ตัวกรอง cloze-only ได้รับการสนับสนุนใน Anki 2.1.29+, AnkiMobile 2.0.65+ และ AnkiDroid 2.17+</p>
+<h2 id="การอานออกเสียงขอความเปนคำพูดสำหรับหลายฟิลดและขอความคงที"><a class="header" href="#การอานออกเสียงขอความเปนคำพูดสำหรับหลายฟิลดและขอความคงที">การอ่านออกเสียงข้อความเป็นคำพูดสำหรับหลายฟิลด์และข้อความคงที่</a></h2>
+<p>คุณลักษณะนี้ต้องใช้ Anki 2.1.50+, AnkiMobile 2.0.84+ หรือ AnkiDroid 2.17+</p>
+<p>หากคุณต้องการให้ TTS อ่านหลายฟิลด์หรือข้อความคงที่ที่รวมอยู่ในเทมเพลต คุณสามารถใช้สิ่งต่อไปนี้:</p>
+<pre><code>[anki:tts lang=en_US] ข้อความนี้ควรอ่าน นี่คือ {{Field1}} และ {{Field2}}[/anki:tts]
+
+นี่คือข้อความอื่นบนเทมเพลต มันอยู่นอกแท็กดังนั้นจึงไม่ควรอ่าน
+</code></pre>
+<h2 id="ฟิลดพิเศษ"><a class="header" href="#ฟิลดพิเศษ">ฟิลด์พิเศษ</a></h2>
+<p>มีฟิลด์พิเศษบางอย่างที่คุณสามารถรวมไว้ในเทมเพลตของคุณได้:</p>
+<pre><code>แท็กของบันทึกย่อ: {{Tags}}
+
+ประเภทของบันทึกย่อ: {{Type}}
+
+สำรับของการ์ด: {{Deck}}
+
+สำรับย่อยของการ์ด: {{Subdeck}}
+
+ธงของการ์ด: {{CardFlag}}
+
+ประเภทของการ์ด ("Forward" ฯลฯ): {{Card}}
+
+เนื้อหาของเทมเพลตด้านหน้า
+(ใช้ได้เฉพาะในเทมเพลตด้านหลัง): {{FrontSide}}
+</code></pre>
+<p>FrontSide จะไม่เล่นเสียงใดๆ ที่อยู่ด้านหน้าของการ์ดโดยอัตโนมัติ
+หากคุณต้องการให้เสียงเดียวกันเล่นโดยอัตโนมัติทั้ง
+ด้านหน้าและด้านหลังของการ์ด คุณจะต้องรวมฟิลด์เสียง
+ไว้ที่ด้านหลังด้วยตนเอง</p>
+<p>เช่นเดียวกับฟิลด์อื่นๆ ชื่อฟิลด์พิเศษจะคำนึงถึงตัวพิมพ์ใหญ่-เล็ก - คุณต้องใช้
+<code>{{Tags}}</code> แทนที่จะเป็น <code>{{tags}}</code> เป็นต้น</p>
+<h2 id="ฟิลดคำใบ"><a class="header" href="#ฟิลดคำใบ">ฟิลด์คำใบ้</a></h2>
+<p>เป็นไปได้ที่จะเพิ่มฟิลด์ที่ด้านหน้าหรือด้านหลังของการ์ด แต่ซ่อนไว้
+จนกว่าคุณจะแสดงอย่างชัดเจน เราเรียกสิ่งนี้ว่า <em>ฟิลด์คำใบ้</em> ก่อน
+เพิ่มคำใบ้ โปรดทราบว่ายิ่งคุณทำให้การตอบ
+คำถามใน Anki ง่ายขึ้นเท่าไหร่ คุณก็จะยิ่งจำคำถามนั้นได้น้อยลง
+เมื่อคุณเจอในชีวิตจริง โปรดอ่านเกี่ยวกับ
+“หลักการข้อมูลขั้นต่ำ” ที่
+<a href="https://super-memory.com/articles/20rules.htm">https://super-memory.com/articles/20rules.htm</a> ก่อนดำเนินการต่อ</p>
+<p>ก่อนอื่น คุณจะต้องเพิ่มฟิลด์เพื่อเก็บคำใบ้ไว้หากคุณยังไม่ได้
+ทำ โปรดดูส่วน <a href="../editing.html#customizing-fields">ฟิลด์</a> หากคุณไม่แน่ใจว่า
+จะทำอย่างไร</p>
+<p>สมมติว่าคุณได้สร้างฟิลด์ชื่อ MyField คุณสามารถบอก Anki ให้
+รวมไว้ในการ์ดแต่ซ่อนไว้โดยค่าเริ่มต้นโดยเพิ่มสิ่งต่อไปนี้
+ลงในเทมเพลตของคุณ:</p>
+<pre><code>{{hint:MyField}}
+</code></pre>
+<p>สิ่งนี้จะแสดงลิงก์ที่มีข้อความว่า “แสดงคำใบ้” เมื่อคุณคลิก เนื้อหา
+ของฟิลด์จะแสดงบนการ์ด (หาก MyField ว่างเปล่า
+จะไม่มีอะไรแสดง)</p>
+<p>หากคุณแสดงคำใบ้ในคำถามแล้วเปิดเผยคำตอบ
+คำใบ้จะถูกซ่อนอีกครั้ง หากคุณต้องการให้คำใบ้แสดง
+เสมอเมื่อแสดงคำตอบ คุณจะต้องลบ <code>{{FrontSide}}</code>
+ออกจากเทมเพลตด้านหลังและเพิ่มฟิลด์ที่คุณต้องการให้ปรากฏ
+ด้วยตนเอง</p>
+<p>ขณะนี้ยังไม่สามารถใช้ฟิลด์คำใบ้สำหรับเสียงได้ — เสียง
+จะเล่นโดยไม่คำนึงว่าคุณได้คลิกที่ลิงก์คำใบ้หรือไม่</p>
+<p>หากคุณต้องการปรับแต่งลักษณะที่ปรากฏหรือพฤติกรรม คุณจะต้อง
+ใช้ฟิลด์คำใบ้ด้วยตนเอง เราไม่สามารถให้การสนับสนุนใดๆ ในการ
+ทำเช่นนั้นได้ แต่โค้ดต่อไปนี้จะช่วยให้คุณเริ่มต้นได้:</p>
+<pre><code>{{#Back}}
+&lt;a class=hint href="#"
+onclick="this.style.display='none';document.getElementById('hint4753594160').style.display='inline-block';return false;"&gt;
+แสดงด้านหลัง&lt;/a&gt;&lt;div id="hint4753594160" class=hint style="display: none"&gt;{{Back}}&lt;/div&gt;
+{{/Back}}
+</code></pre>
+<h2 id="ลิงกพจนานุกรม"><a class="header" href="#ลิงกพจนานุกรม">ลิงก์พจนานุกรม</a></h2>
+<p>คุณยังสามารถใช้การแทนที่ฟิลด์เพื่อสร้างลิงก์พจนานุกรมได้ ลองนึกภาพ
+ว่าคุณกำลังเรียนภาษาและพจนานุกรมออนไลน์ที่คุณชื่นชอบช่วยให้
+คุณค้นหาข้อความโดยใช้ URL ของเว็บเช่น:</p>
+<pre><code>http://example.com/search?q=myword
+</code></pre>
+<p>คุณสามารถเพิ่มลิงก์อัตโนมัติได้โดยทำดังต่อไปนี้ในเทมเพลตของคุณ:</p>
+<pre><code>{{Expression}}
+
+&lt;a href="http://example.com/search?q={{Expression}}"&gt;ตรวจสอบในพจนานุกรม&lt;/a&gt;
+</code></pre>
+<p>เทมเพลตข้างต้นจะช่วยให้คุณสามารถค้นหานิพจน์ของแต่ละบันทึกย่อ
+ได้โดยการคลิกที่ลิงก์ขณะทบทวน อย่างไรก็ตาม มีข้อควรระวัง
+ดังนั้นโปรดดูส่วนถัดไป</p>
+<h2 id="การลบ-html"><a class="header" href="#การลบ-html">การลบ HTML</a></h2>
+<p>เช่นเดียวกับเทมเพลต ฟิลด์จะถูกจัดเก็บในรูปแบบ HTML ในตัวอย่างลิงก์พจนานุกรม
+ข้างต้น หากนิพจน์มีคำว่า “myword” โดยไม่มี
+การจัดรูปแบบใดๆ HTML ก็จะเป็นเหมือนเดิม: “myword” แต่เมื่อคุณ
+รวมการจัดรูปแบบในฟิลด์ของคุณ จะมีการรวม HTML เพิ่มเติม หาก “myword”
+เป็นตัวหนา ตัวอย่างเช่น HTML จริงจะเป็น
+“&lt;b&gt;myword&lt;/b&gt;”</p>
+<p>สิ่งนี้อาจสร้างปัญหาสำหรับสิ่งต่างๆ เช่น ลิงก์พจนานุกรม ใน
+ตัวอย่างข้างต้น ลิงก์พจนานุกรมจะกลายเป็น:</p>
+<pre><code>&lt;a href="http://example.com/search?q=&lt;b&gt;myword&lt;/b&gt;"&gt;ตรวจสอบในพจนานุกรม&lt;/a&gt;
+</code></pre>
+<p>อักขระเพิ่มเติมในลิงก์น่าจะทำให้
+ไซต์พจนานุกรมสับสน และคุณอาจไม่ได้รับการจับคู่ใดๆ</p>
+<p>เพื่อแก้ปัญหานี้ Anki มีความสามารถในการลบการจัดรูปแบบออกจากฟิลด์
+เมื่อถูกแทนที่ หากคุณนำหน้าชื่อฟิลด์ด้วย text: Anki จะ
+ไม่รวมการจัดรูปแบบใดๆ ดังนั้นลิงก์พจนานุกรมที่ทำงานได้แม้กับ
+ข้อความที่จัดรูปแบบจะเป็น:</p>
+<pre><code>&lt;a href="http://example.com/search?q={{text:Expression}}"&gt;ตรวจสอบในพจนานุกรม&lt;/a&gt;
+</code></pre>
+<h2 id="ขอความจากขวาไปซาย"><a class="header" href="#ขอความจากขวาไปซาย">ข้อความจากขวาไปซ้าย</a></h2>
+<p>หากคุณใช้ภาษาที่อ่านจากขวาไปซ้าย คุณจะต้อง
+ปรับเทมเพลตดังนี้:</p>
+<pre><code>&lt;div dir=rtl&gt;{{FieldThatHasRTLTextInIt}}&lt;/div&gt;
+</code></pre>
+<h2 id="อักษรทับทิม-ruby-characters"><a class="header" href="#อักษรทับทิม-ruby-characters">อักษรทับทิม (Ruby Characters)</a></h2>
+<p>บางภาษาใช้คำอธิบายประกอบเหนือข้อความเพื่อแสดง
+การออกเสียงของอักขระ คำอธิบายประกอบเหล่านี้เรียกว่า
+<a href="https://en.wikipedia.org/wiki/Ruby_character">อักษรทับทิม</a>
+ในภาษาญี่ปุ่น สิ่งเหล่านี้เรียกว่า <a href="https://en.wikipedia.org/wiki/Furigana">ฟุริงานะ</a></p>
+<p>ใน Anki คุณสามารถแสดงอักษรทับทิมได้โดยใช้ไวยากรณ์ต่อไปนี้:</p>
+<pre><code>Text[Ruby]
+</code></pre>
+<p>สมมติว่าข้อความข้างต้นเขียนอยู่ใน MyField โดยค่าเริ่มต้น หากคุณใช้
+<code>{{Myfield}}</code> ฟิลด์จะแสดงตามที่เป็นอยู่ เพื่อจัดตำแหน่ง
+อักษรทับทิมให้อยู่เหนือข้อความอย่างถูกต้อง ให้ใช้ตัวกรอง <code>furigana</code> ในเทมเพลต
+ดังนี้:</p>
+<pre><code>{{furigana:MyField}}
+</code></pre>
+<p>นี่คือตัวอย่างบางส่วน:</p>
+<!-- prettier-ignore -->
+<div class="table-wrapper"><table><thead><tr><th>ข้อความดิบ</th><th>ข้อความที่แสดงผล</th></tr></thead><tbody>
+<tr><td><code>Text[Ruby]</code></td><td><ruby><rb>Text</rb><rt>Ruby</rt></ruby></td></tr>
+<tr><td><code>日本語[にほんご]</code></td><td><ruby><rb>日本語</rb><rt>にほんご</rt></ruby></td></tr>
+<tr><td><code>世[よ]の 中[なか]</code></td><td><ruby><rb>世</rb><rt>よ</rt></ruby>の<ruby><rb>中</rb><rt>なか</rt></ruby></td></tr>
+<tr><td><code>世[よ]の中[なか]</code></td><td><ruby><rb>世</rb><rt>よ</rt></ruby><ruby><rb>の中</rb><rt>なか</rt></ruby> <em>(ไม่ถูกต้อง!)</em></td></tr>
+</tbody></table>
+</div>
+<p>สังเกตว่าตัวอย่างที่สามมีช่องว่างก่อนอักขระ 中 ซึ่งจำเป็น
+เพื่อระบุว่าข้อความทับทิมใช้กับอักขระนั้นเท่านั้น
+หากไม่มีช่องว่าง ข้อความทับทิมจะถูกวางผิดตำแหน่งเหนืออักขระ の
+ดังที่แสดงในตัวอย่างที่สี่</p>
+<h3 id="ตัวกรองอักษรทับทิมเพิมเติม"><a class="header" href="#ตัวกรองอักษรทับทิมเพิมเติม">ตัวกรองอักษรทับทิมเพิ่มเติม</a></h3>
+<p>นอกเหนือจากตัวกรอง <code>furigana</code> แล้ว คุณยังสามารถแสดงเฉพาะบางส่วน
+ของข้อความทับทิมได้ด้วยตัวกรอง <code>kana</code> และ <code>kanji</code> ตัวกรอง <code>kana</code> จะ
+แสดงเฉพาะข้อความทับทิม ในขณะที่ตัวกรอง <code>kanji</code> จะลบข้อความทับทิม
+ทั้งหมด</p>
+<!-- prettier-ignore -->
+<div class="table-wrapper"><table><thead><tr><th>ข้อความดิบ</th><th>ตัวกรองฟิลด์</th><th>ข้อความที่แสดงผล</th></tr></thead><tbody>
+<tr><td><code>日本語[にほんご]</code></td><td><code>{{furigana:MyField}}</code></td><td><ruby><rb>日本語</rb><rt>にほんご</rt></ruby></td></tr>
+<tr><td><code>日本語[にほんご]</code></td><td><code>{{kana:MyField}}</code></td><td>にほんご</td></tr>
+<tr><td><code>日本語[にほんご]</code></td><td><code>{{kanji:MyField}}</code></td><td>日本語</td></tr>
+</tbody></table>
+</div>
+<p>ชื่อเหล่านี้ก็ยืมมาจากภาษาญี่ปุ่นเช่นกัน
+คำว่า <a href="https://en.wikipedia.org/wiki/Kana">คานะ</a> หมายถึงระบบสัทศาสตร์
+ที่ใช้อธิบายวิธีการออกเสียงคำ ในขณะที่คำว่า
+<a href="https://en.wikipedia.org/wiki/Kanji">คันจิ</a> หมายถึงอักษรจีน</p>
+<h2 id="สือและ-latex"><a class="header" href="#สือและ-latex">สื่อและ LaTeX</a></h2>
+<p>Anki ไม่ได้สแกนเทมเพลตเพื่อหาการอ้างอิงสื่อ เนื่องจากทำได้ช้า
+ซึ่งมีผลต่อการรวมสื่อในเทมเพลต</p>
+<h3 id="เสียงภาพนิง"><a class="header" href="#เสียงภาพนิง">เสียง/ภาพนิ่ง</a></h3>
+<p>หากคุณต้องการรวมรูปภาพหรือเสียงในการ์ดของคุณที่เหมือนกัน
+สำหรับทุกการ์ด (เช่น โลโก้บริษัทที่ด้านบนของแต่ละการ์ด):</p>
+<ol>
+<li>
+<p>เปลี่ยนชื่อไฟล์เพื่อให้ขึ้นต้นด้วยขีดล่าง เช่น “_logo.jpg”
+ขีดล่างจะบอก Anki ว่าไฟล์นั้นถูกใช้โดยเทมเพลตและ
+ควรส่งออกเมื่อแชร์สำรับ</p>
+</li>
+<li>
+<p>เพิ่มการอ้างอิงถึงสื่อในเทมเพลตด้านหน้าหรือด้านหลังของคุณ เช่น:</p>
+</li>
+</ol>
+<!-- -->
+<pre><code>&lt;img src="_logo.jpg"&gt;
+</code></pre>
+<h3 id="การอางอิงฟิลด"><a class="header" href="#การอางอิงฟิลด">การอ้างอิงฟิลด์</a></h3>
+<p>ไม่รองรับการอ้างอิงสื่อไปยังฟิลด์ อาจแสดงหรือไม่แสดง
+ระหว่างการทบทวน และจะไม่ทำงานเมื่อตรวจสอบหาสื่อที่ไม่ได้ใช้
+การนำเข้า/ส่งออก และอื่นๆ ตัวอย่างที่จะไม่ทำงาน:</p>
+<pre><code>&lt;img src="{{Expression}}.jpg"&gt;
+
+[sound:{{Word}}]
+
+[latex]{{Field 1}}[/latex]
+</code></pre>
+<p>ให้คุณรวมการอ้างอิงสื่อในฟิลด์แทน โปรด
+ดูส่วน <a href="../importing/text-files.html#importing-media">การนำเข้า</a> สำหรับข้อมูลเพิ่มเติม</p>
+<h2 id="การตรวจสอบคำตอบของคุณ"><a class="header" href="#การตรวจสอบคำตอบของคุณ">การตรวจสอบคำตอบของคุณ</a></h2>
+<p>คุณสามารถดู <a href="http://www.youtube.com/watch?v=5tYObQ3ocrw&amp;yt:cc=on">วิดีโอเกี่ยวกับคุณลักษณะนี้</a> ได้บน
+YouTube</p>
+<p>วิธีที่ง่ายที่สุดในการตรวจสอบคำตอบของคุณคือการคลิก “พื้นฐาน” ที่ด้านบน
+ซ้ายของหน้าจอเพิ่มการ์ด และเลือก “พื้นฐาน (พิมพ์คำตอบ)”</p>
+<p>หากคุณได้ดาวน์โหลดสำรับที่แชร์และต้องการพิมพ์คำตอบ
+ด้วย คุณสามารถแก้ไขเทมเพลตการ์ดได้ หากมีเทมเพลตเช่น:</p>
+<pre><code>{{Native Word}}
+
+{{FrontSide}}
+
+&lt;hr id=answer&gt;
+
+{{Foreign Word}}
+</code></pre>
+<p>ในการพิมพ์คำภาษาต่างประเทศและตรวจสอบว่าคุณถูกต้องหรือไม่ คุณต้อง
+แก้ไขเทมเพลตด้านหน้าของคุณเพื่อให้มีลักษณะดังนี้:</p>
+<pre><code>{{Native Word}}
+{{type:Foreign Word}}
+</code></pre>
+<p>ที่นี่ เราได้เพิ่ม <code>type:</code> ไว้ข้างหน้าฟิลด์ที่เราต้องการ
+เปรียบเทียบ เนื่องจาก FrontSide อยู่ด้านหลังของการ์ด กล่องข้อความประเภทคำตอบ
+จะปรากฏที่ด้านหลังด้วย</p>
+<p>เมื่อทบทวน Anki จะแสดงกล่องข้อความที่คุณสามารถพิมพ์
+คำตอบได้ และเมื่อกด <kbd>Enter</kbd> หรือแสดงคำตอบ Anki จะแสดงให้คุณเห็น
+ว่าส่วนไหนที่คุณตอบถูกและส่วนไหนที่คุณตอบผิด ขนาด
+แบบอักษรของกล่องข้อความจะเป็นขนาดที่คุณกำหนดค่าไว้สำหรับฟิลด์นั้น (ผ่าน
+ปุ่ม “ฟิลด์” เมื่อแก้ไข)</p>
+<p>โปรดทราบว่ากล่องคำตอบประเภทไม่ปรากฏในกล่องโต้ตอบแสดงตัวอย่างหรือใน AnkiWeb</p>
+<p>คุณลักษณะนี้ไม่ได้เปลี่ยนวิธีการตอบการ์ด ดังนั้นจึงยังคง
+ขึ้นอยู่กับคุณที่จะตัดสินใจว่าคุณจำได้ดีเพียงใดหรือไม่</p>
+<p>สามารถใช้การเปรียบเทียบการพิมพ์ได้เพียงครั้งเดียวในการ์ด หากคุณเพิ่ม
+ข้อความข้างต้นหลายครั้ง จะไม่ทำงาน นอกจากนี้ยังรองรับเพียง
+บรรทัดเดียว ดังนั้นจึงไม่มีประโยชน์สำหรับการเปรียบเทียบกับฟิลด์ที่
+ประกอบด้วยหลายบรรทัด</p>
+<p>Anki ใช้แบบอักษรที่มีความกว้างเท่ากันสำหรับการเปรียบเทียบคำตอบเพื่อให้
+ส่วน “ที่ให้ไว้” และ “ที่ถูกต้อง” ตรงกัน หากคุณต้องการแทนที่
+แบบอักษรสำหรับการเปรียบเทียบคำตอบ คุณสามารถใส่สิ่งต่อไปนี้ที่ด้านล่าง
+ของส่วนการจัดรูปแบบของคุณ:</p>
+<pre><code>code#typeans { font-family: "myfontname"; }
+</code></pre>
+<p>ซึ่งจะมีผลต่อ HTML ต่อไปนี้สำหรับการเปรียบเทียบคำตอบ:</p>
+<pre><code>&lt;code id=typeans&gt;...&lt;/code&gt;
+</code></pre>
+<p>ผู้ใช้ขั้นสูงสามารถแทนที่สีประเภทคำตอบเริ่มต้นได้ด้วยคลาส css “typeGood”, “typeBad” และ “typeMissed” AnkiMobile รองรับ
+“typeGood” และ “typeBad” แต่ไม่รองรับ “typeMissed”</p>
+<p>หากคุณต้องการแทนที่ขนาดของกล่องพิมพ์และไม่ต้องการ
+เปลี่ยนแบบอักษรในกล่องโต้ตอบฟิลด์ คุณสามารถแทนที่
+สไตล์อินไลน์เริ่มต้นโดยใช้ <code>!important</code> ดังนี้:</p>
+<pre><code>#typeans { font-size: 50px !important; }
+</code></pre>
+<p>นอกจากนี้ยังสามารถพิมพ์คำตอบสำหรับการ์ดลบคำในช่องว่างได้อีกด้วย
+ในการทำเช่นนี้ ให้เพิ่ม <code>{{type:cloze:Text}}</code> ทั้งในเทมเพลตด้านหน้าและด้านหลัง
+เพื่อให้ด้านหลังมีลักษณะดังนี้:</p>
+<pre><code>{{cloze:Text}}
+{{type:cloze:Text}}
+{{Extra}}
+</code></pre>
+<p>หากมีหลายส่วนที่ถูกตัดออก คุณสามารถแยกคำตอบใน
+กล่องข้อความด้วยเครื่องหมายจุลภาคได้</p>
+<h3 id="ไมสนใจเครืองหมายกำกับเสียง"><a class="header" href="#ไมสนใจเครืองหมายกำกับเสียง">ไม่สนใจเครื่องหมายกำกับเสียง</a></h3>
+<p>หากคุณไม่ต้องการให้ Anki เปรียบเทียบเครื่องหมายกำกับเสียงบนอักขระในอินพุตที่คุณพิมพ์กับคำตอบที่ถูกต้อง คุณสามารถทำได้โดยใช้ <code>type:nc</code> ในฟิลด์ของคุณ</p>
+<pre><code>{{type:nc:Front}}
+</code></pre>
+<p>สิ่งนี้ทำให้แน่ใจว่าความแตกต่างของเครื่องหมายกำกับเสียงจะไม่ถูกทำเครื่องหมายว่าไม่ถูกต้องโดย Anki
+ตัวอย่างเช่น <code>بطيخ</code> จะถูกปฏิบัติต่อเหมือนกับ <code>بَطِّيخ</code> หรือ <code>elite</code> จะถูกปฏิบัติต่อเหมือนกับ <code>élite</code></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../templates/intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../templates/generation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../templates/intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../templates/generation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

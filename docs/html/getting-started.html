@@ -1,0 +1,544 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>เริ่มต้นใช้งาน - Anki Manual</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/misc.css">
+        <link rel="stylesheet" href="css/mdbook-admonish.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Anki Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankitects/anki-manual/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="การเริมตนใชงาน"><a class="header" href="#การเริมตนใชงาน">การเริ่มต้นใช้งาน</a></h1>
+<ul>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B8%B1%E0%B8%87%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AD%E0%B8%B1%E0%B8%9B%E0%B9%80%E0%B8%81%E0%B8%A3%E0%B8%94">การติดตั้งและอัปเกรด</a></li>
+<li><a href="#%E0%B8%A7%E0%B8%B4%E0%B8%94%E0%B8%B5%E0%B9%82%E0%B8%AD">วิดีโอ</a></li>
+<li><a href="#%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%81">แนวคิดหลัก</a>
+<ul>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94">การ์ด</a>
+<ul>
+<li><a href="#%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94">สถานะการ์ด</a></li>
+</ul>
+</li>
+<li><a href="#%E0%B8%AA%E0%B8%B3%E0%B8%A3%E0%B8%B1%E0%B8%9A">สำรับ</a></li>
+<li><a href="#%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%A2%E0%B8%AD%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%9F%E0%B8%B4%E0%B8%A5%E0%B8%94">บันทึกย่อและฟิลด์</a></li>
+<li><a href="#%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%A0%E0%B8%97%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94">ประเภทการ์ด</a></li>
+<li><a href="#%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%A0%E0%B8%97%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%A2%E0%B8%AD">ประเภทบันทึกย่อ</a></li>
+<li><a href="#%E0%B8%84%E0%B8%AD%E0%B8%A5%E0%B9%80%E0%B8%A5%E0%B8%81%E0%B8%8A%E0%B8%B1%E0%B8%99">คอลเล็กชัน</a></li>
+</ul>
+</li>
+<li><a href="#%E0%B8%AA%E0%B8%B3%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%81%E0%B8%8A%E0%B8%A3">สำรับที่แชร์</a></li>
+</ul>
+<h2 id="การติดตังและอัปเกรด"><a class="header" href="#การติดตังและอัปเกรด">การติดตั้งและอัปเกรด</a></h2>
+<p>ระบบนิเวศของ Anki ประกอบด้วย Anki, AnkiMobile, AnkiDroid และ AnkiWeb
+ซึ่งทั้งหมดเชื่อมโยงจาก <a href="https://apps.ankiweb.net">เว็บไซต์อย่างเป็นทางการ</a> ของเรา</p>
+<p>สำหรับคำแนะนำเกี่ยวกับวิธีการติดตั้งและอัปเกรด Anki สำหรับคอมพิวเตอร์ของคุณ โปรด
+อ่านลิงก์ด้านล่าง:</p>
+<ul>
+<li><a href="./platform/windows/installing.html">Windows</a></li>
+<li><a href="./platform/mac/installing.html">Mac</a></li>
+<li><a href="./platform/linux/installing.html">Linux</a></li>
+</ul>
+<h2 id="วิดีโอ"><a class="header" href="#วิดีโอ">วิดีโอ</a></h2>
+<p>สำหรับวิธีที่รวดเร็วในการเริ่มต้นใช้งาน Anki โปรดดูวิดีโอแนะนำ
+เหล่านี้ บางวิดีโอสร้างด้วย Anki เวอร์ชันก่อนหน้า แต่แนวคิด
+ยังคงเหมือนเดิม</p>
+<ul>
+<li>
+<p><a href="http://www.youtube.com/watch?v=QS2G-k2hQyg&amp;yt:cc=on">สำรับที่แชร์และพื้นฐานการทบทวน</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=YkiM4DPzSVc&amp;list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&amp;yt:cc=on">การซิงโครไนซ์</a></p>
+</li>
+<li>
+<p><a href="http://www.youtube.com/watch?v=DnbKwHEQ1mA&amp;yt:cc=on">การสลับลำดับการ์ด</a></p>
+</li>
+<li>
+<p><a href="http://www.youtube.com/watch?v=F1j1Zx0mXME&amp;yt:cc=on">การจัดรูปแบบการ์ด</a></p>
+</li>
+<li>
+<p><a href="http://www.youtube.com/watch?v=5tYObQ3ocrw&amp;yt:cc=on">การพิมพ์คำตอบ</a></p>
+</li>
+</ul>
+<h2 id="แนวคิดหลัก"><a class="header" href="#แนวคิดหลัก">แนวคิดหลัก</a></h2>
+<h3 id="การด"><a class="header" href="#การด">การ์ด</a></h3>
+<p>คู่ของคำถามและคำตอบเรียกว่า <em>การ์ด</em> ซึ่งคล้ายกับบัตรคำกระดาษ
+ที่มีคำถามอยู่ด้านหน้าและคำตอบอยู่ด้านหลัง อย่างไรก็ตาม ใน
+Anki การ์ดไม่ได้ดูเหมือนการ์ดจริง และเมื่อคุณ
+แสดงคำตอบ คำถามจะยังคงมองเห็นได้โดยค่าเริ่มต้น ตัวอย่างเช่น หาก
+คุณกำลังเรียนวิชาเคมีพื้นฐาน คุณอาจเห็นคำถามเช่น:</p>
+<pre><code>Q: สัญลักษณ์ทางเคมีของออกซิเจน?
+</code></pre>
+<p>หลังจากตัดสินใจว่าคำตอบคือ O คุณคลิกปุ่ม
+<strong>แสดงคำตอบ</strong> และ Anki จะแสดงให้คุณเห็น:</p>
+<pre><code>Q: สัญลักษณ์ทางเคมีของออกซิเจน?
+A: O
+</code></pre>
+<p>หลังจากยืนยันว่าคุณตอบถูก คุณบอก Anki ว่าคุณ
+จำคำตอบได้ดีเพียงใด และ Anki จะเลือกเวลาที่จะแสดงการ์ดให้คุณอีกครั้ง ตัวอย่างเช่น Anki อาจตัดสินใจแสดงการ์ดให้คุณอีกครั้งใน 3 วัน ในกรณีนี้ เราจะกล่าวว่าการ์ดมีช่วงเวลา 3 วัน</p>
+<h4 id="สถานะการด"><a class="header" href="#สถานะการด">สถานะการ์ด</a></h4>
+<div id="types-of-cards" />
+<ul>
+<li>
+<p><strong>ใหม่:</strong> การ์ดที่คุณดาวน์โหลดหรือสร้างขึ้นเอง แต่ไม่เคยเรียนมาก่อน</p>
+</li>
+<li>
+<p><strong>กำลังเรียนรู้:</strong> การ์ดที่เพิ่งเห็นเป็นครั้งแรก และยังอยู่ในระหว่างการเรียนรู้</p>
+</li>
+<li>
+<p><strong>ทบทวน:</strong> การ์ดที่คุณเรียนจบแล้ว การ์ดเหล่านี้จะแสดงอีกครั้งหลังจากที่การหน่วงเวลา (ช่วงเวลา) ผ่านไปแล้ว
+การ์ดทบทวนมีสองประเภท:</p>
+<ul>
+<li><strong>อายุน้อย:</strong> การ์ดอายุน้อยคือการ์ดที่มีช่วงเวลาน้อยกว่า 21 วัน</li>
+<li><strong>โตเต็มที่:</strong> การ์ดโตเต็มที่คือการ์ดที่มีช่วงเวลา 21 วันหรือมากกว่า</li>
+</ul>
+</li>
+<li>
+<p><strong>เรียนรู้ซ้ำ:</strong> การ์ดที่คุณลืมในขั้นตอนการทบทวน การ์ดเหล่านี้จะกลับสู่สถานะเรียนรู้ซ้ำเพื่อเรียนรู้อีกครั้ง</p>
+</li>
+</ul>
+<h3 id="สำรับ"><a class="header" href="#สำรับ">สำรับ</a></h3>
+<p><em>สำรับ</em> คือกลุ่มของการ์ด คุณสามารถวางการ์ดในสำรับต่างๆ เพื่อ
+เรียนส่วนต่างๆ ของคอลเล็กชันการ์ดของคุณแทนที่จะเรียนทุกอย่าง
+พร้อมกัน แต่ละสำรับสามารถมีการตั้งค่าที่แตกต่างกันได้ เช่น จำนวนการ์ดใหม่
+ที่จะแสดงในแต่ละวัน หรือระยะเวลาที่จะรอก่อนที่การ์ดจะแสดงอีกครั้ง</p>
+<p>สำรับสามารถบรรจุสำรับอื่นได้ ซึ่งช่วยให้คุณสามารถจัดระเบียบสำรับเป็น
+โครงสร้างต้นไม้ได้ Anki ใช้เครื่องหมายทวิภาคคู่ (“::”) เพื่อแสดงระดับต่างๆ ภายในโครงสร้างต้นไม้ของสำรับ ตัวอย่างเช่น สำรับที่ชื่อว่า
+“Chinese::Hanzi” หมายถึงสำรับ “Hanzi” ซึ่งเป็นส่วนหนึ่งของสำรับ “Chinese”
+หากคุณเลือก “Hanzi” เฉพาะการ์ด Hanzi เท่านั้นที่จะแสดง หาก
+คุณเลือก “Chinese” การ์ดภาษาจีนทั้งหมดจะแสดง รวมถึงการ์ด Hanzi ด้วย</p>
+<p>ในการวางสำรับภายในโครงสร้างต้นไม้ คุณสามารถตั้งชื่อโดยใช้เครื่องหมายทวิภาคคู่ระหว่าง
+แต่ละระดับ หรือลากและวางภายในรายการสำรับได้ สำรับที่
+ถูกวางไว้ในสำรับอื่นมักเรียกว่า “สำรับย่อย” และสำรับระดับบนสุดเรียกว่า “สำรับหลัก”</p>
+<p>Anki เริ่มต้นด้วยสำรับที่ชื่อว่า “ค่าเริ่มต้น”; การ์ดใดๆ ที่
+แยกออกจากสำรับอื่นจะไปอยู่ที่นี่ Anki จะซ่อน
+สำรับค่าเริ่มต้นหากไม่มีการ์ดและคุณได้เพิ่มสำรับอื่นแล้ว
+หรือคุณอาจเปลี่ยนชื่อสำรับนี้และใช้สำหรับการ์ดอื่นๆ ได้</p>
+<p>สำรับในรายการสำรับจะเรียงตามตัวอักษร ซึ่งอาจส่งผลให้
+ลำดับน่าประหลาดใจหากชื่อสำรับของคุณมีตัวเลข ตัวอย่างเช่น “สำรับของฉัน 10” จะมาก่อน “สำรับของฉัน 9” เนื่องจาก 1 มาก่อน 9 หากคุณต้องการให้ “สำรับของฉัน 9” ปรากฏก่อนหน้านี้ คุณสามารถเปลี่ยนชื่อเป็น “สำรับของฉัน 09” ซึ่งจะปรากฏก่อน “สำรับของฉัน 10”</p>
+<p>สำรับเหมาะที่สุดสำหรับใช้เก็บการ์ดประเภทกว้างๆ แทนที่จะเป็น
+หัวข้อเฉพาะ เช่น “คำกริยาเกี่ยวกับอาหาร” หรือ “บทเรียนที่ 1” สำหรับข้อมูลเพิ่มเติม
+เกี่ยวกับเรื่องนี้ โปรดดูส่วน <a href="editing.html#using-decks-appropriately">การใช้สำรับอย่างเหมาะสม</a></p>
+<p>สำหรับข้อมูลเกี่ยวกับลำดับของสำรับส่งผลต่อลำดับการเรียนการ์ดอย่างไร
+โปรดดูส่วน <a href="studying.html#display-order">ลำดับการแสดงผล</a></p>
+<h3 id="บันทึกยอและฟิลด"><a class="header" href="#บันทึกยอและฟิลด">บันทึกย่อและฟิลด์</a></h3>
+<p>เมื่อทำบัตรคำศัพท์ มักเป็นที่ต้องการที่จะสร้างการ์ดมากกว่าหนึ่งใบ
+ที่เกี่ยวข้องกับข้อมูลเดียวกัน ตัวอย่างเช่น หากคุณกำลังเรียน
+ภาษาฝรั่งเศส และคุณเรียนรู้ว่าคำว่า <em>bonjour</em> หมายถึง สวัสดี คุณอาจ
+ต้องการสร้างการ์ดหนึ่งใบที่แสดง “bonjour” และขอให้คุณ
+จำ “สวัสดี” และอีกการ์ดหนึ่งที่แสดง “สวัสดี” และขอให้คุณ
+จำ “bonjour” การ์ดหนึ่งใบกำลังทดสอบความสามารถในการจดจำ
+คำภาษาฝรั่งเศส และอีกการ์ดหนึ่งกำลังทดสอบความสามารถในการผลิตคำ</p>
+<p>เมื่อใช้บัตรคำศัพท์กระดาษ ตัวเลือกเดียวของคุณในกรณีนี้คือการเขียน
+ข้อมูลสองครั้ง ครั้งละหนึ่งใบสำหรับแต่ละการ์ด โปรแกรมบัตรคำศัพท์
+บางโปรแกรมช่วยให้ชีวิตง่ายขึ้นโดยมีคุณสมบัติในการพลิกด้านหน้าและ
+ด้านหลัง ซึ่งเป็นการปรับปรุงจากสถานการณ์กระดาษ แต่มี
+ข้อเสียที่สำคัญสองประการ:</p>
+<ul>
+<li>
+<p>เนื่องจากโปรแกรมดังกล่าวไม่ได้ติดตามประสิทธิภาพการจดจำ
+และการผลิตของคุณแยกจากกัน การ์ดจึงมักจะไม่แสดงให้คุณเห็นใน
+เวลาที่เหมาะสมที่สุด ซึ่งหมายความว่าคุณจะลืมมากกว่าที่คุณต้องการ หรือคุณ
+เรียนมากกว่าที่จำเป็น</p>
+</li>
+<li>
+<p>การย้อนกลับคำถามและคำตอบใช้ได้เฉพาะเมื่อคุณต้องการ
+เนื้อหาเดียวกันทุกประการในแต่ละด้าน ซึ่งหมายความว่าไม่สามารถ
+แสดงข้อมูลเพิ่มเติมที่ด้านหลังของแต่ละการ์ดได้ ตัวอย่างเช่น</p>
+</li>
+</ul>
+<p>Anki แก้ปัญหาเหล่านี้โดยให้คุณสามารถแบ่งเนื้อหาของ
+การ์ดออกเป็นส่วนๆ ของข้อมูลได้ จากนั้นคุณสามารถบอก Anki
+ได้ว่าคุณต้องการข้อมูลส่วนใดในแต่ละการ์ด และ Anki จะดูแล
+การสร้างการ์ดให้คุณ และอัปเดตหากคุณทำการ
+แก้ไขใดๆ ในอนาคต</p>
+<p>ลองนึกภาพว่าเราต้องการเรียนคำศัพท์ภาษาฝรั่งเศส และเราต้องการรวมหมายเลขหน้าตำราเรียน
+ไว้ที่ด้านหลังของการ์ดแต่ละใบ เราต้องการให้การ์ดของเรามีลักษณะดังนี้:</p>
+<pre><code>Q: Bonjour
+A: สวัสดี
+   หน้า #12
+</code></pre>
+<p>และสิ่งนี้:</p>
+<pre><code>Q: สวัสดี
+A: Bonjour
+   หน้า #12
+</code></pre>
+<p>ในการ์ดทั้งสองใบ เรามีข้อมูลที่เกี่ยวข้องกันสามชิ้น: คำภาษาฝรั่งเศส
+ความหมายภาษาอังกฤษ และหมายเลขหน้า หากเรารวมเข้าด้วยกัน
+ก็จะมีลักษณะดังนี้:</p>
+<pre><code>ภาษาฝรั่งเศส: Bonjour
+ภาษาอังกฤษ: สวัสดี
+หน้า: 12
+</code></pre>
+<p>ใน Anki การรวบรวมข้อมูลที่เกี่ยวข้องกันนี้เรียกว่า <em>บันทึกย่อ</em> และข้อมูลแต่ละชิ้นจะอยู่ใน <em>ฟิลด์</em> ในตัวอย่างนี้ บันทึกย่อ
+มีสามฟิลด์: “ภาษาฝรั่งเศส”, “ภาษาอังกฤษ” และ “หน้า”</p>
+<p>หากต้องการเพิ่มและแก้ไขฟิลด์ ให้คลิกปุ่ม <strong>ฟิลด์…</strong> ขณะเพิ่มหรือ
+แก้ไขบันทึกย่อ สำหรับข้อมูลเพิ่มเติมเกี่ยวกับฟิลด์ โปรดดู
+ส่วน <a href="editing.html#customizing-fields">การปรับแต่งฟิลด์</a></p>
+<h3 id="ประเภทการด"><a class="header" href="#ประเภทการด">ประเภทการ์ด</a></h3>
+<p>เพื่อให้ Anki สร้างการ์ดตามบันทึกย่อของเรา เราต้องให้
+พิมพ์เขียวที่ระบุว่าฟิลด์ใดควรแสดงที่ด้านหน้าหรือ
+ด้านหลังของการ์ดแต่ละใบ พิมพ์เขียวนี้เรียกว่า <em>ประเภทการ์ด</em> แต่ละประเภทของ
+บันทึกย่อสามารถมีประเภทการ์ดได้อย่างน้อยหนึ่งประเภท เมื่อคุณเพิ่มบันทึกย่อ Anki จะ
+สร้างการ์ดหนึ่งใบสำหรับแต่ละประเภทการ์ด</p>
+<p>ประเภทการ์ดทั้งหมดมี <em>เทมเพลต</em> สองแบบ แบบหนึ่งสำหรับคำถามและอีกแบบหนึ่งสำหรับ
+คำตอบ ในตัวอย่างภาษาฝรั่งเศสก่อนหน้านี้ เราต้องการให้ด้านหลังของการ์ดจดจำของเรา
+มีลักษณะดังนี้:</p>
+<pre><code>Q: Bonjour
+A: สวัสดี
+   หน้า #12
+</code></pre>
+<p>ในการทำเช่นนี้ เราสามารถตั้งค่าเทมเพลตคำตอบเป็น:</p>
+<pre><code>Q: {{French}}
+A: {{English}}&lt;br&gt;
+   หน้า #{{Page}}
+</code></pre>
+<p>ในเทมเพลตการ์ด ชื่อฟิลด์จะอยู่ในวงเล็บปีกกาสองชั้น เช่น <code>{{French}}</code> หรือ <code>{{English}}</code> Anki จะแทนที่สิ่งเหล่านั้นด้วยข้อความจริงที่ฟิลด์มีอยู่ ซึ่งเรียกว่า <a href="templates/fields.html">“การแทนที่ฟิลด์”</a> ข้อความที่ไม่อยู่ในวงเล็บปีกกาสองชั้นจะปรากฏเหมือนกันในแต่ละการ์ด ตัวอย่างเช่น เราไม่จำเป็นต้องเพิ่ม “หน้า #” ในทุกบันทึกย่อ เพราะเทมเพลตจะเพิ่มให้โดยอัตโนมัติในทุกการ์ด แท็ก <code>&lt;br&gt;</code> เป็น
+รหัสพิเศษที่บอกให้ Anki ย้ายไปบรรทัดถัดไป สำหรับรายละเอียด โปรดดูส่วน <a href="templates/intro.html">เทมเพลต</a></p>
+<p>เทมเพลตของการ์ดผลิตผลก็จะทำงานในลักษณะเดียวกัน:</p>
+<pre><code>Q: {{English}}
+A: {{French}}&lt;br&gt;
+   หน้า #{{Page}}
+</code></pre>
+<p>หลังจากสร้างประเภทการ์ดแล้ว ทุกครั้งที่คุณเพิ่มบันทึกย่อใหม่ การ์ด
+จะถูกสร้างขึ้นตามประเภทการ์ดนั้น ประเภทการ์ดทำให้ง่ายต่อการรักษา
+ความสอดคล้องของรูปแบบการ์ดของคุณ และสามารถลด
+ความพยายามในการเพิ่มข้อมูลได้อย่างมาก นอกจากนี้ยังหมายความว่า Anki สามารถ
+รับรองได้ว่าการ์ดที่เกี่ยวข้องกันจะไม่ปรากฏใกล้กันเกินไป และ
+ช่วยให้คุณสามารถแก้ไขข้อผิดพลาดในการพิมพ์หรือข้อผิดพลาดทางข้อเท็จจริงเพียงครั้งเดียวและให้
+การ์ดที่เกี่ยวข้องทั้งหมดอัปเดตพร้อมกัน</p>
+<p>หากต้องการเพิ่มและแก้ไขประเภทการ์ด ให้คลิกปุ่ม <strong>การ์ด…</strong> ขณะเพิ่มหรือ
+แก้ไขบันทึกย่อ สำหรับข้อมูลเพิ่มเติมเกี่ยวกับประเภทการ์ด โปรดดูส่วน <a href="templates/intro.html">การ์ดและเทมเพลต</a></p>
+<h3 id="ประเภทบันทึกยอ"><a class="header" href="#ประเภทบันทึกยอ">ประเภทบันทึกย่อ</a></h3>
+<p>Anki ช่วยให้คุณสามารถสร้างบันทึกย่อประเภทต่างๆ สำหรับเนื้อหาที่แตกต่างกันได้
+แต่ละประเภทของบันทึกย่อมีชุดฟิลด์และประเภทการ์ดของตัวเอง
+เป็นความคิดที่ดีที่จะสร้างประเภทบันทึกย่อแยกต่างหากสำหรับแต่ละหัวข้อกว้างๆ
+ที่คุณกำลังศึกษา ในตัวอย่างภาษาฝรั่งเศสก่อนหน้านี้ เราอาจสร้าง
+ประเภทบันทึกย่อที่เรียกว่า “ภาษาฝรั่งเศส” สำหรับสิ่งนั้น หากเราต้องการเรียนรู้เมืองหลวง
+เราสามารถสร้างประเภทบันทึกย่อสำหรับสิ่งนั้นได้เช่นกัน โดยมีฟิลด์ต่างๆ เช่น
+“ประเทศ” และ “เมืองหลวง”</p>
+<p>Anki มาพร้อมกับประเภทบันทึกย่อมาตรฐานบางอย่างรวมอยู่ด้วย
+ประเภทบันทึกย่อเหล่านี้มีไว้เพื่อให้ Anki ใช้งานง่ายขึ้นสำหรับ
+ผู้ใช้ใหม่ แต่ในระยะยาว ขอแนะนำให้คุณสร้าง
+ประเภทบันทึกย่อของคุณเองโดยเฉพาะสำหรับเนื้อหาที่คุณกำลังเรียนรู้ ประเภทบันทึกย่อมาตรฐานคือ:</p>
+<ul>
+<li>
+<p><strong>พื้นฐาน</strong>
+มีฟิลด์ “ด้านหน้า” และ “ด้านหลัง” และจะสร้างการ์ดหนึ่งใบ ข้อความที่คุณป้อนใน
+“ด้านหน้า” จะปรากฏที่ด้านหน้าของการ์ด และข้อความที่คุณป้อนใน “ด้านหลัง”
+จะปรากฏที่ด้านหลังของการ์ด</p>
+</li>
+<li>
+<p><strong>พื้นฐาน (และการ์ดกลับด้าน)</strong>
+เหมือนกับ “พื้นฐาน” แต่สร้างการ์ดสองใบสำหรับข้อความที่คุณป้อน:
+หน้า→หลัง และ หลัง→หน้า</p>
+</li>
+<li>
+<p><strong>พื้นฐาน (การ์ดกลับด้านเสริม)</strong>
+เหมือนกับ “พื้นฐาน” แต่มีฟิลด์ที่สามชื่อว่า “เพิ่มการกลับด้าน” หากคุณป้อนข้อความใดๆ ลงใน
+ฟิลด์นั้น การ์ดกลับด้าน (หลัง→หน้า) จะถูกสร้างขึ้นด้วย สำหรับรายละเอียด โปรดดูส่วน <a href="templates/intro.html">การ์ดและเทมเพลต</a></p>
+</li>
+<li>
+<p><strong>พื้นฐาน (พิมพ์คำตอบ)</strong>
+โดยพื้นฐานแล้วคือ “พื้นฐาน” พร้อมกล่องข้อเท็จจริงเพิ่มเติมที่ด้านหน้าซึ่งคุณ
+สามารถพิมพ์คำตอบของคุณได้ เมื่อคุณเปิดเผยด้านหลัง Anki จะแสดงให้คุณเห็นความแตกต่างระหว่างอินพุตของคุณกับคำตอบจริง สำหรับรายละเอียด โปรดดู
+ส่วน <a href="templates/fields.html#checking-your-answer">การตรวจสอบคำตอบของคุณ</a></p>
+</li>
+<li>
+<p><strong>เติมคำในช่องว่าง (Cloze)</strong>
+ประเภทบันทึกย่อที่ให้คุณสามารถเลือกข้อความและเปลี่ยนเป็น
+การลบคำในช่องว่าง (เช่น “มนุษย์ลงจอดบนดวงจันทร์ใน […]” → “มนุษย์ลงจอดบน
+ดวงจันทร์ในปี 1969”) สำหรับรายละเอียด โปรดดูส่วน <a href="editing.html#cloze-deletion">การลบคำในช่องว่าง</a></p>
+</li>
+<li>
+<p><strong>การบดบังรูปภาพ (Image Occlusion)</strong>
+เหมือนกับประเภทบันทึกย่อแบบเติมคำในช่องว่าง แต่ทำงานกับรูปภาพแทนข้อความ
+ซึ่งมีประโยชน์อย่างยิ่งเมื่อศึกษาเนื้อหาที่ต้องอาศัยรูปภาพอย่างมาก
+เช่น กายวิภาคศาสตร์และภูมิศาสตร์ สำหรับรายละเอียด โปรดดูส่วน <a href="editing.html#image-occlusion">การบดบังรูปภาพ</a>
+ของคู่มือ</p>
+</li>
+</ul>
+<p>หากต้องการเพิ่มประเภทบันทึกย่อของคุณเองและแก้ไขประเภทที่มีอยู่ คุณสามารถใช้ <strong>เครื่องมือ &gt; จัดการประเภทบันทึกย่อ</strong>
+จากหน้าต่างหลักของ Anki ได้</p>
+<p>บันทึกย่อและประเภทบันทึกย่อเป็นเรื่องปกติสำหรับคอลเล็กชันทั้งหมดของคุณแทนที่จะ
+จำกัดอยู่แค่สำรับเดียว ซึ่งหมายความว่าคุณสามารถใช้
+ประเภทบันทึกย่อที่แตกต่างกันในสำรับเดียว หรือมีการ์ดที่สร้างจาก
+บันทึกย่อเดียวกันใส่ในสำรับที่แตกต่างกันได้ เมื่อคุณเพิ่มบันทึกย่อโดยใช้
+หน้าต่างเพิ่ม คุณสามารถเลือกประเภทบันทึกย่อที่จะใช้และสำรับที่จะใช้ได้
+และตัวเลือกเหล่านี้เป็นอิสระจากกันโดยสิ้นเชิง คุณยังสามารถ
+<a href="browsing.html#notes">เปลี่ยนประเภทบันทึกย่อของบันทึกย่อ</a> หลังจากที่คุณสร้างขึ้นแล้วได้อีกด้วย</p>
+<h3 id="คอลเลกชัน"><a class="header" href="#คอลเลกชัน">คอลเล็กชัน</a></h3>
+<p><em>คอลเล็กชัน</em> ของคุณคือเนื้อหาทั้งหมดที่จัดเก็บไว้ใน Anki: การ์ดของคุณ
+บันทึกย่อ สำรับ ประเภทบันทึกย่อ ตัวเลือกสำรับ และอื่นๆ</p>
+<h2 id="สำรับทีแชร"><a class="header" href="#สำรับทีแชร">สำรับที่แชร์</a></h2>
+<p>คุณสามารถดูวิดีโอเกี่ยวกับ <a href="http://www.youtube.com/watch?v=QS2G-k2hQyg&amp;yt:cc=on">สำรับที่แชร์และพื้นฐานการทบทวน</a> บน YouTube ได้</p>
+<p>วิธีที่ง่ายที่สุดในการเริ่มต้นใช้งาน Anki คือการดาวน์โหลดสำรับการ์ด
+ที่คนอื่นแชร์ไว้:</p>
+<ol>
+<li>
+<p>คลิกปุ่ม <strong>รับที่แชร์</strong> ที่ด้านล่างของรายการสำรับ</p>
+</li>
+<li>
+<p>เมื่อคุณพบสำรับที่คุณสนใจแล้ว ให้คลิกปุ่ม <strong>ดาวน์โหลด</strong>
+เพื่อดาวน์โหลดแพ็กเกจสำรับ</p>
+</li>
+<li>
+<p>ดับเบิลคลิกที่แพ็กเกจที่ดาวน์โหลดมาเพื่อนำเข้าสู่ Anki หรือไปที่
+<strong>ไฟล์ &gt; นำเข้า</strong></p>
+</li>
+</ol>
+<p>หมายเหตุ: ขณะนี้ยังไม่สามารถเพิ่มสำรับที่แชร์
+โดยตรงไปยังบัญชี AnkiWeb ของคุณได้ คุณต้องนำเข้าสู่
+แอปเดสก์ท็อป, AnkiMobile หรือ AnkiDroid ก่อน จากนั้น <a href="./syncing.html">ซิงโครไนซ์</a> เพื่ออัปโหลดสำรับไปยัง AnkiWeb</p>
+<p>การสร้างสำรับของคุณเองเป็นวิธีที่มีประสิทธิภาพที่สุดในการเรียนรู้
+วิชาที่ซับซ้อน วิชาต่างๆ เช่น ภาษาและวิทยาศาสตร์ไม่สามารถเข้าใจได้
+เพียงแค่การท่องจำข้อเท็จจริง — คุณต้องมีคำอธิบายและบริบทเพื่อ
+เรียนรู้อย่างมีประสิทธิภาพ นอกจากนี้ การป้อนข้อมูลด้วยตนเอง
+ยังบังคับให้คุณต้องตัดสินใจว่าประเด็นสำคัญคืออะไร ซึ่งนำไปสู่
+ความเข้าใจที่ดีขึ้น</p>
+<p>หากคุณเป็นผู้เรียนภาษา คุณอาจอยากจะดาวน์โหลด
+รายการคำศัพท์และการแปลที่ยาวเหยียด แต่นี่จะไม่สอน
+ภาษาให้คุณมากไปกว่าการท่องจำสมการทางวิทยาศาสตร์ที่จะสอน
+ฟิสิกส์ดาราศาสตร์ให้คุณได้ หากต้องการเรียนรู้อย่างถูกต้อง คุณอาจต้องใช้ตำราเรียน ครู หรือ
+การสัมผัสกับประโยคในชีวิตจริง</p>
+<pre><code>อย่าเรียนถ้าคุณไม่เข้าใจ
+--SuperMemo
+</code></pre>
+<p>สำรับที่แชร์ส่วนใหญ่สร้างขึ้นโดยผู้ที่กำลังเรียนรู้เนื้อหา
+นอก Anki เช่น จากตำราเรียน ชั้นเรียน ทีวี ฯลฯ พวกเขาเลือก
+ประเด็นที่น่าสนใจจากสิ่งที่เรียนรู้และใส่ลงใน Anki พวกเขา
+อาจไม่ได้พยายามเพิ่มข้อมูลพื้นหลังหรือคำอธิบายลงใน
+การ์ด เพราะพวกเขาเข้าใจเนื้อหาอยู่แล้ว ดังนั้นเมื่อมีคนอื่น
+ดาวน์โหลดสำรับของพวกเขาและพยายามใช้ อาจพบว่ามัน
+ยากมากเนื่องจากขาดข้อมูลพื้นหลังและคำอธิบาย</p>
+<p>นั่นไม่ได้หมายความว่าสำรับที่แชร์ไม่มีประโยชน์ หากคุณกำลังเรียนตำราเรียน ABC และ
+มีคนแชร์สำรับความคิดจาก ABC นั่นเป็นวิธีที่ยอดเยี่ยมในการประหยัด
+เวลา และสำหรับวิชาง่ายๆ ที่โดยพื้นฐานแล้วเป็นรายการข้อเท็จจริง
+เช่น ชื่อเมืองหลวงหรือธงชาติ คุณอาจไม่ต้องการ
+เนื้อหาภายนอกใดๆ อย่างไรก็ตาม สำหรับวิชาที่ซับซ้อน สำรับที่แชร์ควรใช้เป็น <em>ส่วนเสริม</em> ของเนื้อหาภายนอก ไม่ใช่ <em>สิ่งทดแทน</em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="platform/linux/input-methods.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="getting-help.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="platform/linux/input-methods.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="getting-help.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

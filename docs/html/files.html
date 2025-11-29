@@ -1,0 +1,429 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>การจัดการไฟล์ - Anki Manual</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/misc.css">
+        <link rel="stylesheet" href="css/mdbook-admonish.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Anki Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankitects/anki-manual/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="การจัดการไฟลและคอลเลกชันของคุณ"><a class="header" href="#การจัดการไฟลและคอลเลกชันของคุณ">การจัดการไฟล์และคอลเลกชันของคุณ</a></h1>
+<ul>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%AD%E0%B8%A5%E0%B9%80%E0%B8%A5%E0%B8%81%E0%B8%8A%E0%B8%B1%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%B8%E0%B8%93">การตรวจสอบคอลเลกชันของคุณ</a></li>
+<li><a href="#%E0%B8%82%E0%B8%AD%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%9C%E0%B8%B9%E0%B9%83%E0%B8%8A">ข้อมูลผู้ใช้</a></li>
+<li><a href="#%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%81%E0%B8%81%E0%B8%A3%E0%B8%A1">ไฟล์โปรแกรม</a></li>
+<li><a href="#%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A3%E0%B8%B4%E0%B8%A1%E0%B8%95%E0%B8%99">ตัวเลือกการเริ่มต้น</a></li>
+<li><a href="#dropbox-%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%8B%E0%B8%B4%E0%B8%87%E0%B8%84%E0%B9%84%E0%B8%9F%E0%B8%A5">DropBox และการซิงค์ไฟล์</a></li>
+<li><a href="#%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%82%E0%B8%B2%E0%B8%A2">ระบบไฟล์เครือข่าย</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%B3%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B9%81%E0%B8%9F%E0%B8%A5%E0%B8%8A%E0%B9%84%E0%B8%94%E0%B8%A3%E0%B8%9F">การทำงานจากแฟลชไดรฟ์</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B3%E0%B8%A3%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%A1%E0%B8%B9%E0%B8%A5">การสำรองข้อมูล</a></li>
+<li><a href="#%E0%B8%AE%E0%B8%B2%E0%B8%A3%E0%B8%94%E0%B8%94%E0%B8%B4%E0%B8%AA%E0%B8%81%E0%B8%97%E0%B8%B5%E0%B9%84%E0%B8%A1%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%96%E0%B8%B6%E0%B8%87%E0%B9%84%E0%B8%94">ฮาร์ดดิสก์ที่ไม่สามารถเข้าถึงได้</a></li>
+<li><a href="#%E0%B8%AA%E0%B8%B4%E0%B8%97%E0%B8%98%E0%B8%B4%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%82%E0%B8%9F%E0%B8%A5%E0%B9%80%E0%B8%94%E0%B8%AD%E0%B8%A3-temp">สิทธิ์ของโฟลเดอร์ Temp</a></li>
+<li><a href="#%E0%B8%84%E0%B8%AD%E0%B8%A5%E0%B9%80%E0%B8%A5%E0%B8%81%E0%B8%8A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%AB%E0%B8%B2%E0%B8%A2">คอลเลกชันที่เสียหาย</a>
+<ul>
+<li><a href="#linuxmacos">Linux/macOS</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#%E0%B8%82%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%AA%E0%B8%B8%E0%B8%94%E0%B8%97%E0%B8%B2%E0%B8%A2">ขั้นตอนสุดท้าย</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="การตรวจสอบคอลเลกชันของคุณ"><a class="header" href="#การตรวจสอบคอลเลกชันของคุณ">การตรวจสอบคอลเลกชันของคุณ</a></h2>
+<p>เป็นความคิดที่ดีที่จะตรวจสอบไฟล์คอลเลกชันของคุณเป็นครั้งคราวเพื่อหาปัญหา คุณสามารถทำได้ผ่านรายการเมนู Tools&gt;Check Database (เครื่องมือ&gt;ตรวจสอบฐานข้อมูล) การตรวจสอบฐานข้อมูลทำให้แน่ใจว่าไฟล์ไม่ได้รับความเสียหาย สร้างโครงสร้างภายในบางอย่างขึ้นมาใหม่ และปรับให้ไฟล์มีประสิทธิภาพสูงสุด</p>
+<p>เมื่อคุณตรวจสอบฐานข้อมูล รายการแท็กของคุณจะถูกสร้างขึ้นใหม่ด้วย เมื่อคุณลบสำรับไพ่หรือการ์ดแต่ละใบ Anki จะไม่อัปเดตรายการแท็กที่ใช้แล้ว เนื่องจากไม่มีประสิทธิภาพ หากคุณต้องการล้างแท็กเก่าที่ไม่ได้ใช้งานออกจากรายการ การตรวจสอบฐานข้อมูลเป็นวิธีที่จะทำ</p>
+<p>โปรดทราบว่า Anki จะปรับคอลเลกชันของคุณให้มีประสิทธิภาพสูงสุดโดยอัตโนมัติทุกๆ 2 สัปดาห์ การปรับให้เหมาะสมนี้ช่วยให้คอลเลกชันทำงานได้ดี แต่จะไม่ตรวจสอบข้อผิดพลาดหรือสร้างรายการแท็กใหม่เมื่อปรับให้เหมาะสมโดยอัตโนมัติ</p>
+<p><a id="file-locations"></a></p>
+<h2 id="ขอมูลผูใช"><a class="header" href="#ขอมูลผูใช">ข้อมูลผู้ใช้</a></h2>
+<p>บน <strong>Windows</strong> Anki เวอร์ชันล่าสุดจะจัดเก็บไฟล์คอลเลกชันของคุณในโฟลเดอร์ appdata ของคุณ คุณสามารถเข้าถึงได้โดยเปิดตัวจัดการไฟล์และพิมพ์ <code>%APPDATA%\Anki2</code> ในช่องตำแหน่งที่ตั้ง Anki เวอร์ชันเก่าจะจัดเก็บไฟล์ Anki ของคุณในโฟลเดอร์ชื่อ <code>Anki</code> ในโฟลเดอร์ <code>Documents</code> ของคุณ</p>
+<p>บนคอมพิวเตอร์ <strong>Mac</strong> Anki เวอร์ชันล่าสุดจะจัดเก็บข้อมูลผู้ใช้ทั้งหมดในโฟลเดอร์ <code>~/Library/Application Support/Anki2</code> โฟลเดอร์ Library จะถูกซ่อนไว้โดยค่าเริ่มต้น แต่สามารถเปิดเผยได้ใน Finder โดยกดปุ่ม option ค้างไว้ขณะคลิกที่เมนู Go หากคุณใช้ Anki เวอร์ชันเก่า ไฟล์ Anki ของคุณจะอยู่ในโฟลเดอร์ <code>Documents/Anki</code></p>
+<p>บน <strong>Linux</strong> Anki เวอร์ชันล่าสุดจะจัดเก็บข้อมูลผู้ใช้ของคุณใน <code>~/.local/share/Anki2</code> หรือ <code>$XDG_DATA_HOME/Anki2</code> หากคุณได้ตั้งค่าเส้นทางข้อมูลที่กำหนดเอง หากคุณใช้ <strong>Flatpak</strong> build ของบุคคลที่สาม ไฟล์ของคุณจะอยู่ใน <code>~/.var/app/net.ankiweb.Anki/data/Anki2/</code> Anki เวอร์ชันเก่าจะจัดเก็บไฟล์ของคุณใน <code>~/Documents/Anki</code> หรือ <code>~/Anki</code></p>
+<p>ภายในโฟลเดอร์ Anki การตั้งค่าระดับโปรแกรมและระดับโปรไฟล์จะถูกจัดเก็บไว้ในไฟล์ชื่อ <code>prefs.db</code></p>
+<p>นอกจากนี้ยังมีโฟลเดอร์แยกต่างหากสำหรับแต่ละโปรไฟล์ โฟลเดอร์ประกอบด้วย:</p>
+<ul>
+<li>
+<p>บันทึกย่อ สำรับไพ่ การ์ด และอื่นๆ ของคุณในไฟล์ชื่อ <code>collection.anki2</code></p>
+</li>
+<li>
+<p>เสียงและรูปภาพของคุณในโฟลเดอร์ <code>collection.media</code></p>
+</li>
+<li>
+<p>โฟลเดอร์สำรองข้อมูล</p>
+</li>
+<li>
+<p>ไฟล์ระบบบางไฟล์</p>
+</li>
+</ul>
+<p>คุณไม่ควรคัดลอกหรือย้ายคอลเลกชันของคุณในขณะที่ Anki เปิดอยู่ การทำเช่นนั้นอาจทำให้คอลเลกชันของคุณเสียหายได้ โปรดอย่าย้ายหรือแก้ไขไฟล์อื่นๆ ในโฟลเดอร์ด้วย</p>
+<h2 id="ไฟลโปรแกรม"><a class="header" href="#ไฟลโปรแกรม">ไฟล์โปรแกรม</a></h2>
+<p>ตัวเรียกใช้งานของ Anki ได้รับการติดตั้งในตำแหน่งต่อไปนี้โดยค่าเริ่มต้น:</p>
+<ul>
+<li>Windows: <code>%LOCALAPPDATA%\Programs\Anki</code></li>
+<li>macOS: <code>/Applications/Anki.app</code></li>
+<li>Linux: <code>/usr/local/share/anki</code></li>
+</ul>
+<p>เมื่อคุณติดตั้ง/อัปเดต Anki ด้วยตัวเรียกใช้งาน มันจะดาวน์โหลดไฟล์สนับสนุนและวางไว้ในตำแหน่งต่อไปนี้:</p>
+<ul>
+<li>Windows: <code>%LOCALAPPDATA%\AnkiProgramFiles</code></li>
+<li>macOS: <code>~/Library/Application Support/AnkiProgramFiles</code></li>
+<li>Linux: <code>~/.local/share/AnkiProgramFiles</code></li>
+</ul>
+<p>การลบโฟลเดอร์นั้นจะทำให้ตัวเรียกใช้งานทำงานเหมือนกับการติดตั้งใหม่</p>
+<p><code>AnkiProgramFiles</code> มีไฟล์ทั้งหมดที่จำเป็นในการรัน Anki นอกเหนือจากตัวเรียกใช้งาน คุณสามารถคัดลอกไปยังโฟลเดอร์หรือระบบอื่น และเริ่ม Anki จากตำแหน่งใหม่โดยเปิด <code>AnkiProgramFiles/.venv/bin/anki</code> (หรือ <code>AnkiProgramFiles\.venv\scripts\anki</code> บน Windows) หากวางไว้ในตำแหน่งมาตรฐานบนคอมพิวเตอร์เครื่องใหม่ ตัวเรียกใช้งานจะสามารถใช้ไฟล์ที่มีอยู่ซ้ำได้ หากไฟล์ถูกคัดลอกโดยรักษาวันที่แก้ไขไว้</p>
+<p>ดูส่วนแฟลชไดรฟ์ด้านล่างสำหรับข้อมูลเพิ่มเติม</p>
+<h2 id="ตัวเลือกการเริมตน"><a class="header" href="#ตัวเลือกการเริมตน">ตัวเลือกการเริ่มต้น</a></h2>
+<p>หากคุณได้ทำการเปลี่ยนแปลงที่ทำลายล้างบนคอมพิวเตอร์เครื่องหนึ่งและมีสำเนาที่ไม่เสียหายในคอมพิวเตอร์อีกเครื่องหนึ่ง คุณอาจต้องการเริ่ม Anki โดยไม่ต้องซิงค์เพื่อใช้ตัวเลือกการซิงค์แบบเต็มโดยไม่ต้องดาวน์โหลดการเปลี่ยนแปลงก่อน ในทำนองเดียวกัน หากคุณกำลังประสบปัญหากับ Anki คุณอาจต้อง (หรืออาจได้รับคำแนะนำให้) ปิดใช้งานส่วนเสริมชั่วคราวเพื่อดูว่ามีส่วนเสริมใดที่ก่อให้เกิดปัญหาหรือไม่ ในการทำทั้งสองอย่างนี้พร้อมกัน คุณสามารถเปิด Anki ในเซฟโหมดได้โดยกดปุ่ม <kbd>Shift</kbd> ค้างไว้ขณะเริ่ม Anki กด <kbd>Shift</kbd> ค้างไว้จนกว่าข้อความบนหน้าจอจะแจ้งให้คุณทราบว่า Anki ได้เริ่มทำงานในเซฟโหมดแล้ว หากคุณใช้ Linux และวิธีนี้ไม่ได้ผล ให้รัน ‘anki –safemode’</p>
+<p>เป็นไปได้ที่จะระบุตำแหน่งโฟลเดอร์ที่กำหนดเองระหว่างการเริ่มต้น นี่เป็นคุณสมบัติขั้นสูงที่มีไว้สำหรับใช้กับการติดตั้งแบบพกพาเป็นหลัก และเราขอแนะนำให้คุณใช้ตำแหน่งเริ่มต้นในสถานการณ์ส่วนใหญ่</p>
+<p>ไวยากรณ์ในการระบุโฟลเดอร์อื่นมีดังนี้:</p>
+<pre><code>anki -b /path/to/anki/folder
+</code></pre>
+<ul>
+<li>
+<p>หากคุณมีหลายโปรไฟล์ คุณสามารถส่ง -p <name> เพื่อโหลดโปรไฟล์เฉพาะได้</p>
+</li>
+<li>
+<p>หากคุณส่ง -p some-fake-name Anki จะแสดงหน้าจอโปรไฟล์เมื่อเริ่มต้น หากไม่มีโปรไฟล์ให้มา โปรไฟล์ที่ใช้ล่าสุดจะถูกโหลด</p>
+</li>
+<li>
+<p>ในการเปลี่ยนภาษาของอินเทอร์เฟซ ให้ใช้ -l &lt;รหัสภาษา iso 639-1 ภาษา
+code&gt;, such as “-l ja” for Japanese.</p>
+</li>
+</ul>
+<p>หากคุณต้องการใช้ตำแหน่งโฟลเดอร์ที่กำหนดเองเสมอ คุณสามารถแก้ไขทางลัดไปยัง Anki ของคุณได้ บน Windows ให้คลิกขวาที่ทางลัด เลือก Properties เลือกแท็บ Shortcut และเพิ่ม “-b
+\path\to\data\folder” หลังเส้นทางไปยังโปรแกรม ซึ่งควรจะทำให้คุณได้บางอย่างเช่น</p>
+<pre><code>"C:\Program Files\Anki\anki.exe" -b "C:\AnkiDataFolder"
+</code></pre>
+<p>คุณยังสามารถใช้เทคนิคนี้กับตัวเลือก -l เพื่อใช้ Anki ในภาษาต่างๆ ได้อย่างง่ายดาย</p>
+<p>บน Windows คุณควรใช้แบ็กสแลช (\) ไม่ใช่ฟอร์เวิร์ดสแลช (/)</p>
+<p>บน Mac ไม่มีวิธีง่ายๆ ในการเปลี่ยนพฤติกรรมเมื่อคลิกที่ไอคอน Anki แต่เป็นไปได้ที่จะเริ่ม Anki ด้วยโฟลเดอร์พื้นฐานที่กำหนดเองจากเทอร์มินัล:</p>
+<pre><code>open /Applications/Anki.app --args -b ~/myankifolder
+</code></pre>
+<p>อีกทางเลือกหนึ่ง คุณสามารถกำหนดตัวแปรสภาพแวดล้อม “ANKI_BASE” ได้
+บน Windows คุณสามารถกำหนดตัวแปรสภาพแวดล้อมด้วย:</p>
+<pre><code>set "ANKI_BASE=C:/path/to/AnkiDataFolder"
+</code></pre>
+<p>บน Linux และ macOS คุณสามารถใช้:</p>
+<pre><code>export ANKI_BASE="/path/to/AnkiDataFolder"
+</code></pre>
+<h2 id="dropbox-และการซิงคไฟล"><a class="header" href="#dropbox-และการซิงคไฟล">DropBox และการซิงค์ไฟล์</a></h2>
+<p>เราไม่แนะนำให้คุณซิงค์โฟลเดอร์ Anki ของคุณโดยตรงกับบริการซิงโครไนซ์ของบุคคลที่สาม เนื่องจากอาจทำให้ฐานข้อมูลเสียหายได้เมื่อไฟล์ถูกซิงค์ขณะใช้งาน</p>
+<p>หากคุณต้องการซิงโครไนซ์สื่อของคุณเท่านั้น คุณสามารถเชื่อมโยงโฟลเดอร์ภายนอกเข้ากับบริการต่างๆ เช่น DropBox โปรดดู <a href="http://web.archive.org/web/20180919153730/http://www.dropboxwiki.com/tips-and-tricks/sync-other-folders">DropboxWiki: Sync Folders Outside Dropbox (archive.org)</a> สำหรับข้อมูลเพิ่มเติม</p>
+<p>หากคุณต้องการให้คอลเลกชันของคุณซิงค์อยู่เสมอ ขอแนะนำอย่างยิ่งให้คุณสร้างสคริปต์ที่คัดลอกไฟล์ของคุณจากโฟลเดอร์ที่ซิงค์ไปยังโฟลเดอร์ในเครื่อง เปิด Anki แล้วคัดลอกไฟล์กลับเมื่อปิด Anki ซึ่งจะช่วยให้แน่ใจว่าไฟล์จะไม่ถูกซิงโครไนซ์ในขณะที่เปิดอยู่</p>
+<h2 id="ระบบไฟลเครือขาย"><a class="header" href="#ระบบไฟลเครือขาย">ระบบไฟล์เครือข่าย</a></h2>
+<p>เราขอแนะนำอย่างยิ่งให้คุณให้ Anki จัดเก็บไฟล์ของคุณบนฮาร์ดดิสก์ในเครื่อง เนื่องจากระบบไฟล์เครือข่ายอาจทำให้ฐานข้อมูลเสียหายได้ หากระบบไฟล์เครือข่ายเป็นทางเลือกเดียวของคุณ ขอแนะนำให้ใช้ Tools&gt;Check Database เป็นประจำเพื่อตรวจหาความเสียหาย</p>
+<h2 id="การทำงานจากแฟลชไดรฟ"><a class="header" href="#การทำงานจากแฟลชไดรฟ">การทำงานจากแฟลชไดรฟ์</a></h2>
+<p>บน Windows สามารถติดตั้ง Anki บนไดรฟ์ USB / แฟลชและรันเป็นแอปพลิเคชันแบบพกพาได้ ตัวอย่างต่อไปนี้สมมติว่าไดรฟ์ USB ของคุณคือไดรฟ์ E; ปรับตามความจำเป็น</p>
+<p>คำเตือน: อักษรระบุไดรฟ์ต้องเหมือนกันในทุกอุปกรณ์ หากคุณตั้งค่านี้สำหรับไดรฟ์ E มันจะไม่ทำงานสำหรับแฟลชไดรฟ์ที่แมปกับไดรฟ์ D เป็นต้น</p>
+<p>คำเตือน: การซิงค์สื่อกับ AnkiWeb อาจไม่ทำงานหากแฟลชไดรฟ์ของคุณฟอร์แมตเป็น FAT32 โปรดฟอร์แมตไดรฟ์เป็น NTFS เพื่อให้แน่ใจว่าสื่อซิงค์อย่างถูกต้อง</p>
+<ol>
+<li>ดาวน์โหลดตัวเรียกใช้งาน Anki ล่าสุด และติดตั้งในตำแหน่งที่กำหนดเอง: <code>E:\Anki\Launcher</code> ไม่ใช่ <code>E:\Anki\Launcher\Anki</code></li>
+<li>เมื่อตัวเรียกใช้งานปรากฏขึ้น ให้ปิดโดยไม่ต้องติดตั้ง</li>
+<li>ใส่ข้อมูลต่อไปนี้ในไฟล์ <code>E:\Anki\Anki.bat</code>:</li>
+</ol>
+<pre><code class="language-bat">@echo off
+echo Starting Anki...
+set USB_ROOT=%~dp0
+set ANKI_LAUNCHER_VENV_ROOT=%USB_ROOT%\AnkiProgramFiles
+set ANKI_LAUNCHER=%USB_ROOT%\Launcher\anki
+set ANKI_BASE=%USB_ROOT%\AnkiData
+start /b %ANKI_LAUNCHER%
+</code></pre>
+<ol start="4">
+<li>ดับเบิลคลิกที่ไฟล์ .bat ที่คุณสร้างขึ้น และติดตั้ง Anki ตามปกติ</li>
+<li>ตอนนี้คุณสามารถดับเบิลคลิกที่ไฟล์ .bat เพื่อรัน Anki จากเครื่องอื่นได้</li>
+</ol>
+<p>Tools&gt;Upgrade/Downgrade จะยังคงทำงานต่อไป แต่เฉพาะเมื่อเครื่องของคุณสามารถเข้าถึงอินเทอร์เน็ตได้เท่านั้น</p>
+<h2 id="การสำรองขอมูล"><a class="header" href="#การสำรองขอมูล">การสำรองข้อมูล</a></h2>
+<p>โปรดดู <a href="./backups.html">ส่วนนี้</a></p>
+<h2 id="ฮารดดิสกทีไมสามารถเขาถึงได"><a class="header" href="#ฮารดดิสกทีไมสามารถเขาถึงได">ฮาร์ดดิสก์ที่ไม่สามารถเข้าถึงได้</a></h2>
+<p>หาก Anki ไม่สามารถเขียนไฟล์ใน <a href="#user-data">โฟลเดอร์ Anki</a> ได้ ข้อความจะปรากฏขึ้นเมื่อเริ่มต้นว่า Anki ไม่สามารถเขียนไปยังฮาร์ดดิสก์ได้ และ Anki จะปิด หากคุณไม่แน่ใจว่าจะแก้ไขสิทธิ์ได้อย่างไร โปรดติดต่อผู้ที่มีความรู้เกี่ยวกับคอมพิวเตอร์ที่อยู่ใกล้คุณและสามารถช่วยคุณได้</p>
+<h2 id="สิทธิของโฟลเดอร-temp"><a class="header" href="#สิทธิของโฟลเดอร-temp">สิทธิ์ของโฟลเดอร์ Temp</a></h2>
+<p>Anki ใช้โฟลเดอร์ชั่วคราวของระบบเพื่อจัดเก็บข้อมูลชั่วคราว หากสิทธิ์ของโฟลเดอร์นี้ถูกเปลี่ยนแปลงจากการตั้งค่าเริ่มต้นโดยแอปที่ไม่ได้รับอนุญาตหรือแอปป้องกันไวรัสที่มีข้อบกพร่อง Anki จะไม่ทำงานอย่างถูกต้อง</p>
+<p>หากคุณใช้เครื่อง Windows 7 ขั้นตอนทั่วไปในการแก้ไขปัญหามีดังต่อไปนี้ เนื่องจากค่อนข้างซับซ้อน โปรดสอบถามผู้ที่มีความรู้เกี่ยวกับ Windows หากคุณไม่แน่ใจ</p>
+<ol>
+<li>
+<p>คลิกที่แถบเริ่มต้น และพิมพ์ %temp% (รวมถึงเครื่องหมายเปอร์เซ็นต์) จากนั้นกด <kbd>Enter</kbd></p>
+</li>
+<li>
+<p>ไปที่โฟลเดอร์ด้านบนหนึ่งโฟลเดอร์ และค้นหาโฟลเดอร์ temp คลิกขวาที่โฟลเดอร์นั้น และเลือก Properties</p>
+</li>
+<li>
+<p>ในแท็บ security คลิกที่ Advanced</p>
+</li>
+<li>
+<p>คลิกที่แท็บ Owner หากคุณไม่ได้อยู่ในรายชื่อเจ้าของ ให้คลิกปุ่มเพื่อรับสิทธิ์ความเป็นเจ้าของ</p>
+</li>
+<li>
+<p>ในแท็บ permissions ตรวจสอบให้แน่ใจว่าคุณมีการควบคุมเต็มรูปแบบ ในการติดตั้ง W7 เริ่มต้น การควบคุมจะได้รับการสืบทอดมาจาก c:\users\your-username</p>
+</li>
+</ol>
+<h2 id="คอลเลกชันทีเสียหาย"><a class="header" href="#คอลเลกชันทีเสียหาย">คอลเลกชันที่เสียหาย</a></h2>
+<p>Anki ใช้รูปแบบไฟล์ที่ทนทานต่อการขัดข้องของโปรแกรมและคอมพิวเตอร์ แต่ก็ยังเป็นไปได้ที่คอลเลกชันของคุณจะเสียหายได้หากไฟล์ถูกแก้ไขในขณะที่ Anki เปิดอยู่ จัดเก็บไว้ในไดรฟ์เครือข่าย หรือเสียหายจากข้อบกพร่อง</p>
+<p>เมื่อคุณรัน Tools&gt;Check Database คุณจะได้รับข้อความหาก Anki ตรวจพบว่าไฟล์ได้รับความเสียหาย <strong>วิธีที่ดีที่สุดในการกู้คืนจากปัญหานี้คือการกู้คืนจาก <a href="#backups">การสำรองข้อมูลอัตโนมัติล่าสุด</a></strong> แต่หากการสำรองข้อมูลของคุณเก่าเกินไป คุณสามารถพยายามซ่อมแซมความเสียหายแทนได้</p>
+<p>บน Linux ตรวจสอบให้แน่ใจว่าได้ติดตั้ง sqlite3 แล้ว บน Mac ควรติดตั้งไว้แล้ว บน Windows ดาวน์โหลด <a href="http://www.sqlite.org/sqlite-3_6_23.zip">http://www.sqlite.org/sqlite-3_6_23.zip</a></p>
+<p>ถัดไป สร้างการสำรองข้อมูลของไฟล์ collection.anki2 ของคุณ ในกรณีที่เกิดข้อผิดพลาดกับขั้นตอนด้านล่าง</p>
+<h3 id="linuxmacos"><a class="header" href="#linuxmacos">Linux/macOS</a></h3>
+<p>เปิดเทอร์มินัล เปลี่ยนไปยังโฟลเดอร์ที่คอลเลกชันของคุณอยู่ และพิมพ์:</p>
+<pre><code>sqlite3 collection.anki2 .dump &gt; dump.txt
+</code></pre>
+<p>เปิดไฟล์ dump.txt ที่ได้ในโปรแกรมแก้ไขข้อความ และดูที่บรรทัดสุดท้าย หากอ่านว่า “rollback;” ให้เปลี่ยนเป็น “commit;”</p>
+<p>จากนั้นรันคำสั่งต่อไปนี้ในเทอร์มินัล:</p>
+<pre><code>cat dump.txt | sqlite3 temp.file
+</code></pre>
+<p>ตรวจสอบให้แน่ใจว่าคุณใช้ temp.file - อย่าใส่ collection.anki2 ทางด้านขวา มิฉะนั้นคุณจะล้างไฟล์ เมื่อคุณทำเสร็จแล้ว ให้ไปยังขั้นตอนสุดท้าย</p>
+<h3 id="windows"><a class="header" href="#windows">Windows</a></h3>
+<p>คัดลอกโปรแกรม <code>sqlite3.exe</code> และสำรับไพ่ของคุณไปยังเดสก์ท็อปของคุณ จากนั้นไปที่ <strong>Start&gt;Run</strong> และพิมพ์ <code>cmd.exe</code></p>
+<p>หากคุณใช้ Windows เวอร์ชันล่าสุด พรอมต์คำสั่งอาจไม่เริ่มทำงานบนเดสก์ท็อปของคุณ หากคุณไม่เห็นเดสก์ท็อปแสดงในพรอมต์คำสั่ง ให้พิมพ์บางอย่างเช่นต่อไปนี้ โดยแทนที่ “administrator” ด้วยชื่อล็อกอินของคุณ</p>
+<pre><code>cd C:\Users\Administrator\Desktop
+</code></pre>
+<p>จากนั้นพิมพ์:</p>
+<pre><code>sqlite3 collection.anki2 .dump &gt; dump.txt
+</code></pre>
+<p>เปิดไฟล์ dump.txt ที่ได้ในโปรแกรมแก้ไขข้อความ และดูที่บรรทัดสุดท้าย หากอ่านว่า “rollback;” ให้เปลี่ยนเป็น “commit;”</p>
+<p>จากนั้นรันคำสั่งต่อไปนี้ในเทอร์มินัล:</p>
+<pre><code>type dump.txt | sqlite3 temp.file
+</code></pre>
+<p>ตรวจสอบให้แน่ใจว่าคุณใช้ temp.file - อย่าใส่ collection.anki2 ทางด้านขวา มิฉะนั้นคุณจะล้างไฟล์ เมื่อคุณทำเสร็จแล้ว ให้ไปยังขั้นตอนสุดท้าย</p>
+<h3 id="ขันตอนสุดทาย"><a class="header" href="#ขันตอนสุดทาย">ขั้นตอนสุดท้าย</a></h3>
+<p>ตรวจสอบว่าคุณไม่ได้รับข้อความแสดงข้อผิดพลาด และ temp.file ไม่ว่างเปล่า กระบวนการนี้จะปรับคอลเลกชันให้เหมาะสมในกระบวนการ ดังนั้นจึงเป็นเรื่องปกติที่ไฟล์ใหม่จะมีขนาดเล็กกว่าไฟล์เก่าเล็กน้อย</p>
+<p>เมื่อคุณยืนยันแล้วว่าไฟล์ไม่ว่างเปล่า:</p>
+<ul>
+<li>
+<p>เปลี่ยนชื่อไฟล์ collection.anki2 เดิมเป็นอย่างอื่น</p>
+</li>
+<li>
+<p>เปลี่ยนชื่อ temp.file เป็น collection.anki2</p>
+</li>
+<li>
+<p>ย้าย collection.anki2 กลับไปที่โฟลเดอร์คอลเลกชันของคุณ โดยเขียนทับเวอร์ชันเก่า</p>
+</li>
+<li>
+<p>เริ่ม Anki และไปที่ Tools&gt;Check Database เพื่อให้แน่ใจว่าคอลเลกชันได้รับการกู้คืนเรียบร้อยแล้ว</p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="backups.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="stats.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="backups.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="stats.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

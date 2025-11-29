@@ -1,0 +1,512 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>การเรียกดู - Anki Manual</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/misc.css">
+        <link rel="stylesheet" href="css/mdbook-admonish.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Anki Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankitects/anki-manual/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="การเรียกดู"><a class="header" href="#การเรียกดู">การเรียกดู</a></h1>
+<ul>
+<li><a href="#%E0%B9%82%E0%B8%AB%E0%B8%A1%E0%B8%94%E0%B8%95%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%87">โหมดตาราง</a></li>
+<li><a href="#%E0%B9%81%E0%B8%96%E0%B8%9A%E0%B8%94%E0%B8%B2%E0%B8%99%E0%B8%82%E0%B8%B2%E0%B8%87">แถบด้านข้าง</a>
+<ul>
+<li><a href="#%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%84%E0%B8%99%E0%B8%AB%E0%B8%B2">เครื่องมือค้นหา</a></li>
+<li><a href="#%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%81">เครื่องมือเลือก</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%99%E0%B8%AB%E0%B8%B2%E0%B8%97%E0%B8%B5%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B9%84%E0%B8%A7">การค้นหาที่บันทึกไว้</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%81%E0%B9%84%E0%B8%82%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3">การแก้ไขรายการ</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%99%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3">การค้นหารายการ</a></li>
+</ul>
+</li>
+<li><a href="#%E0%B8%81%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%99%E0%B8%AB%E0%B8%B2">กล่องค้นหา</a></li>
+<li><a href="#%E0%B8%95%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%A2%E0%B8%AD">ตารางการ์ด/บันทึกย่อ</a>
+<ul>
+<li><a href="#%E0%B9%81%E0%B8%96%E0%B8%A7">แถว</a></li>
+<li><a href="#%E0%B8%84%E0%B8%AD%E0%B8%A5%E0%B8%B1%E0%B8%A1%E0%B8%99">คอลัมน์</a></li>
+</ul>
+</li>
+<li><a href="#%E0%B8%9E%E0%B8%B7%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%81%E0%B8%81%E0%B9%84%E0%B8%82">พื้นที่แก้ไข</a></li>
+<li><a href="#%E0%B9%80%E0%B8%A1%E0%B8%99%E0%B8%B9%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94%E0%B8%B3%E0%B9%80%E0%B8%99%E0%B8%B4%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3">เมนูและการดำเนินการ</a>
+<ul>
+<li><a href="#%E0%B9%81%E0%B8%81%E0%B9%84%E0%B8%82">แก้ไข</a></li>
+<li><a href="#%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%A2%E0%B8%AD">บันทึกย่อ</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94">การ์ด</a></li>
+<li><a href="#%E0%B9%84%E0%B8%9B%E0%B8%97%E0%B8%B5">ไปที่</a></li>
+</ul>
+</li>
+<li><a href="#%E0%B8%84%E0%B8%99%E0%B8%AB%E0%B8%B2%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%81%E0%B8%97%E0%B8%99%E0%B8%97%E0%B8%B5">ค้นหาและแทนที่</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%99%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%8B%E0%B8%B3">การค้นหารายการซ้ำ</a></li>
+</ul>
+<p>หน้าต่างเรียกดูช่วยให้คุณสามารถค้นหาการ์ดและบันทึกย่อของคุณ รวมถึงแก้ไข
+ได้ด้วย สามารถเปิดได้โดยคลิก <strong>เรียกดู</strong> ในหน้าต่างหลัก หรือโดยการกด
+<kbd>B</kbd> ประกอบด้วยสามส่วน: <em>แถบด้านข้าง</em> ทาง
+ด้านซ้าย <em>ตารางการ์ด/บันทึกย่อ</em> ที่ด้านบนขวา และ <em>พื้นที่แก้ไข</em> ที่ด้านล่าง
+ขวา โดยการวางเมาส์ระหว่างสองส่วน จะสามารถคลิก
+และลากเพื่อขยายส่วนหนึ่งและย่ออีกส่วนหนึ่งได้</p>
+<h2 id="โหมดตาราง"><a class="header" href="#โหมดตาราง">โหมดตาราง</a></h2>
+<p><img src="media/browser_table_modes.png" alt="โหมดตาราง" /></p>
+<p>Anki 2.1.45+ มีสองโหมด: แสดงการ์ดหรือบันทึกย่อในตารางข้อมูล
+คุณสามารถเปลี่ยนโหมดปัจจุบันได้โดยคลิกสวิตช์ที่ด้านบน ด้านซ้าย
+ของพื้นที่ค้นหา หรือกด <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> หรือ
+<kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd>T</kbd> สวิตช์ยังระบุว่า <strong>การ์ด</strong> (C)
+หรือ <strong>บันทึกย่อ</strong> (N) กำลังแสดงอยู่</p>
+<p><strong>หมายเหตุ</strong>: เพื่อความเรียบง่าย คู่มือนี้โดยทั่วไปจะถือว่าโหมดการ์ด
+เป็นโหมดที่ใช้งานอยู่ เมื่อใดก็ตามที่มีการกล่าวถึงการเลือก/ค้นหา/ฯลฯ “การ์ด”
+ผู้อ่านอาจแทนที่ด้วย “การ์ดหรือบันทึกย่อขึ้นอยู่กับโหมดที่ใช้งานอยู่”</p>
+<h2 id="แถบดานขาง"><a class="header" href="#แถบดานขาง">แถบด้านข้าง</a></h2>
+<p><em>แถบด้านข้าง</em> ทางด้านซ้ายช่วยให้เข้าถึงคำค้นหาทั่วไปได้อย่างรวดเร็ว ใน Anki
+2.1.45+ ยังมีแถบค้นหา สิ่งอำนวยความสะดวกในการแก้ไขแท็กและสำรับ และ
+ตัวเลือกเครื่องมือสองแบบ ซึ่งจะกล่าวถึงในส่วนต่อไปนี้
+คุณสามารถสลับเครื่องมือได้โดยใช้แถบเครื่องมือที่ด้านบนของแถบด้านข้างหรือทางลัด
+<kbd>Alt</kbd>+<kbd>1</kbd>/<kbd>2</kbd></p>
+<h3 id="เครืองมือคนหา"><a class="header" href="#เครืองมือคนหา">เครื่องมือค้นหา</a></h3>
+<p><img src="media/browser_search_tool.png" alt="เครื่องมือค้นหา" /></p>
+<p>ด้วยเครื่องมือนี้ แถบด้านข้างจะทำงานเหมือนกับในเวอร์ชันก่อนหน้า: การคลิกที่รายการ
+จะค้นหารายการนั้น</p>
+<p>คุณสามารถกด <kbd>Ctrl</kbd> (<kbd>Command</kbd> บน Mac) ค้างไว้ขณะคลิกเพื่อ
+ผนวกรายการที่คลิกเข้ากับการค้นหาปัจจุบันด้วยเงื่อนไข AND
+แทนที่จะเริ่มการค้นหาใหม่ ตัวอย่างเช่น หากคุณต้องการแสดงการ์ดที่กำลัง <em>เรียนรู้</em> ซึ่ง
+อยู่ในสำรับภาษาเยอรมันด้วย คุณสามารถคลิกที่ “กำลังเรียนรู้”
+จากนั้น <kbd>Ctrl</kbd>-คลิกที่ “ภาษาเยอรมัน”</p>
+<p>คุณสามารถกด <kbd>Shift</kbd> ค้างไว้เพื่อสร้างการค้นหา OR แทนที่จะเป็น AND
+ตัวอย่างเช่น คุณสามารถคลิกสำรับหนึ่ง จากนั้น <kbd>Shift</kbd>-คลิกอีกสำรับหนึ่งเพื่อแสดง
+การ์ดจากสำรับใดสำรับหนึ่งในมุมมองเดียวกัน</p>
+<p>คุณสามารถกด <kbd>Alt</kbd> (<kbd>Option</kbd> บน Mac) ค้างไว้เพื่อย้อนกลับ
+การค้นหา (เติม <code>-</code> ข้างหน้า): ตัวอย่างเช่น เพื่อแสดงการ์ดทั้งหมดในสำรับปัจจุบันที่
+<em>ไม่มี</em> แท็กบางอย่าง <kbd>Alt</kbd>/<kbd>Option</kbd> สามารถใช้ร่วมกับ
+<kbd>Ctrl</kbd> หรือ <kbd>Shift</kbd> (เช่น การคลิกด้วย <kbd>Ctrl</kbd>+<kbd>Alt</kbd>
+จะส่งผลให้มีการเพิ่มคำค้นหาใหม่ที่ถูกปฏิเสธ)</p>
+<p>ใน Anki 2.1.39+ คุณยังสามารถกดทั้ง <kbd>Ctrl</kbd> และ
+<kbd>Shift</kbd> ค้างไว้พร้อมกันเมื่อคลิกคำค้นหาเพื่อแทนที่การเกิดทั้งหมดของ
+การค้นหาประเภทเดียวกันด้วยการค้นหาใหม่
+สมมติว่าคุณเคยพิมพ์นิพจน์การค้นหาที่ซับซ้อนเช่น
+<code>deck:Swahili (is:due or tag:important)</code>
+และตอนนี้ต้องการทำการค้นหาเดียวกันสำหรับสำรับภาษาอูรดูของคุณ คุณสามารถกด
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd> ค้างไว้ขณะคลิกสำรับภาษาอูรดูในแถบด้านข้างเพื่อรับ
+นิพจน์การค้นหาต่อไปนี้:
+<code>deck:Urdu (is:due or tag:important)</code></p>
+<h3 id="เครืองมือเลือก"><a class="header" href="#เครืองมือเลือก">เครื่องมือเลือก</a></h3>
+<p><img src="media/browser_selection_tool2.png" alt="เครื่องมือเลือก" /></p>
+<p>เครื่องมือเลือกช่วยให้สามารถเลือกหลายรายการพร้อมกันได้โดยกด <kbd>Ctrl</kbd>
+หรือ <kbd>Shift</kbd> ค้างไว้ขณะคลิก นอกจากนี้ยังเปิดใช้งานการลากและวางเพื่อจัดลำดับสำรับและ
+แท็กใหม่</p>
+<p>นี่คือตัวอย่าง: สมมติว่าคุณมีแท็ก <code>คณิตศาสตร์</code>, <code>แคลคูลัส</code> และ <code>พีชคณิต</code>
+คลิกที่แท็ก <code>แคลคูลัส</code> จากนั้น <kbd>Ctrl</kbd>-คลิกที่แท็ก <code>พีชคณิต</code> ตอนนี้ทั้งสอง
+แท็กถูกเลือกแล้ว คลิกและลากแท็กใดแท็กหนึ่งไปวางบนแท็ก <code>คณิตศาสตร์</code> เพื่อทำให้
+ทั้งสองเป็นลูกของแท็กนี้ เบื้องหลัง Anki ได้เปลี่ยนชื่อแท็กทั้งสองเป็น
+<code>คณิตศาสตร์::แคลคูลัส</code> และ <code>คณิตศาสตร์::พีชคณิต</code> ตามลำดับและอัปเดตบันทึกย่อของคุณให้สอดคล้องกัน</p>
+<p>อีกกรณีการใช้งานสำหรับการเลือกหลายรายการคือการค้นหา: หากคุณคลิกขวาที่
+การเลือกรายการ คุณสามารถเลือก <strong>ค้นหา &gt; ทั้งหมด/รายการใดๆ ที่เลือก</strong>
+ซึ่งสามารถใช้ร่วมกับปุ่มปรับค่าคีย์บอร์ดตามที่อธิบายไว้ใน <a href="#search-tool">เครื่องมือค้นหา</a>
+เพื่อผนวกการค้นหาผลลัพธ์เข้ากับการค้นหาปัจจุบัน</p>
+<h3 id="การคนหาทีบันทึกไว"><a class="header" href="#การคนหาทีบันทึกไว">การค้นหาที่บันทึกไว้</a></h3>
+<p>หากคุณค้นหาสิ่งเดียวกันเป็นประจำ
+คุณสามารถบันทึกการค้นหาปัจจุบันได้โดยคลิกขวาที่รายการบนสุดในแถบด้านข้าง
+เลือก <strong>บันทึกการค้นหาปัจจุบัน</strong> และพิมพ์ชื่อ
+คุณยังสามารถลากและวางรายการแถบด้านข้างใดๆ ลงบนพื้นที่นี้เพื่อเพิ่ม
+การค้นหาที่บันทึกไว้ที่เทียบเท่ากัน ซึ่งเป็นการปักหมุดไว้ที่ด้านบนอย่างมีประสิทธิภาพ</p>
+<h3 id="การแกไขรายการ"><a class="header" href="#การแกไขรายการ">การแก้ไขรายการ</a></h3>
+<p>คุณสามารถลบหรือเปลี่ยนชื่อแท็ก สำรับ และการค้นหาที่บันทึกไว้ได้โดยตรงจากแถบด้านข้าง
+จากเมนูคลิกขวา หรือโดยใช้ปุ่มลัด (<kbd>Del</kbd> และ
+<kbd>F2</kbd> บน Windows) การลบยังใช้ได้กับหลายรายการพร้อมกัน
+(ดู <a href="#selection-tool">เครื่องมือเลือก</a>)</p>
+<h3 id="การคนหารายการ"><a class="header" href="#การคนหารายการ">การค้นหารายการ</a></h3>
+<p>หากต้องการค้นหารายการบางอย่างในแผนผังแถบด้านข้าง ให้พิมพ์ส่วนหนึ่งของชื่อลงในแถบค้นหา
+ที่ด้านบน</p>
+<h2 id="กลองคนหา"><a class="header" href="#กลองคนหา">กล่องค้นหา</a></h2>
+<p>เหนือรายการการ์ดคือกล่องค้นหา คุณสามารถพิมพ์สิ่งต่างๆ
+ได้ที่นั่นเพื่อค้นหาการ์ด สำหรับข้อมูลเกี่ยวกับไวยากรณ์การค้นหา
+ดูที่ <a href="searching.html">การค้นหา</a></p>
+<h2 id="ตารางการดบันทึกยอ"><a class="header" href="#ตารางการดบันทึกยอ">ตารางการ์ด/บันทึกย่อ</a></h2>
+<p>แถวของตารางแสดงถึงการ์ดหรือบันทึกย่อที่ตรงกับการค้นหาปัจจุบัน
+เมื่อคุณคลิกที่แถว บันทึกย่อที่เกี่ยวข้องจะแสดงในส่วนล่าง</p>
+<h3 id="แถว"><a class="header" href="#แถว">แถว</a></h3>
+<p>หากคุณลากเมาส์หรือกด <kbd>Ctrl</kbd> หรือ <kbd>Command</kbd> ค้างไว้เพื่อเลือกหลาย
+แถว ตัวแก้ไขจะถูกซ่อนชั่วคราว การดำเนินการต่างๆ (เช่น
+การเปลี่ยนสำรับ) สามารถทำงานกับการ์ดหรือบันทึกย่อหลายใบพร้อมกันได้ โดยไม่ขึ้นอยู่
+กับโหมดที่ใช้งานอยู่ ดังนั้นในโหมดการ์ด บันทึกย่อจะถือว่าถูกเลือก
+หากการ์ดใดๆ ของมันถูกเลือก และในโหมดบันทึกย่อ การ์ดจะถือว่าถูกเลือก
+หากบันทึกย่อของมันถูกเลือก</p>
+<p>การดำเนินการอื่นๆ (เช่น การแสดงข้อมูลการ์ด) จะทำงานกับการ์ด
+หรือบันทึกย่อเพียงใบเดียวเท่านั้น นี่เรียกว่าการ์ดหรือบันทึกย่อ <em>ปัจจุบัน</em> ซึ่งโดยปกติแล้วจะเป็นใบที่
+ถูกเลือกหรือคลิกล่าสุด
+ในโหมดการ์ดอีกครั้ง บันทึกย่อปัจจุบันคือบันทึกย่อของการ์ดปัจจุบัน และในโหมด
+บันทึกย่อ การ์ดปัจจุบันคือการ์ดใบแรกของบันทึกย่อปัจจุบัน</p>
+<p>สีพื้นหลังจะเปลี่ยนไปขึ้นอยู่กับการ์ดและบันทึกย่อ ในโหมดการ์ด
+การจับคู่แรกจะถูกใช้:</p>
+<ol>
+<li>หากการ์ดถูก <strong>ติดธง</strong> ให้ใช้สีของธง</li>
+<li>หากการ์ดถูก <strong>ระงับ</strong> สีเหลือง</li>
+<li>หากบันทึกย่อของการ์ดถูก <strong>ทำเครื่องหมาย</strong> สีม่วง</li>
+</ol>
+<p>ในโหมดบันทึกย่อ สีจะถูกนำไปใช้กับบันทึกย่อที่ทำเครื่องหมายไว้เท่านั้น
+สำหรับข้อมูลเพิ่มเติมเกี่ยวกับบันทึกย่อที่ทำเครื่องหมายไว้และการ์ดที่ถูกระงับ ดูที่ <a href="studying.html#editing-and-more">การแก้ไขและอื่นๆ</a></p>
+<h3 id="คอลัมน"><a class="header" href="#คอลัมน">คอลัมน์</a></h3>
+<p>คอลัมน์สามารถกำหนดค่าได้: คลิกขวาที่คอลัมน์หนึ่ง (หรือ <kbd>Ctrl</kbd>-คลิกบน
+Mac) เพื่อเลือกว่าคุณต้องการเห็นคอลัมน์ใด
+คุณสามารถลากคอลัมน์เพื่อจัดลำดับใหม่ได้ การคลิกที่คอลัมน์จะจัดเรียงตามคอลัมน์นั้น
+คลิกอีกครั้งเพื่อย้อนกลับลำดับการจัดเรียง โปรดทราบว่าคุณไม่สามารถจัดเรียงตามคอลัมน์คำถาม
+และคำตอบได้</p>
+<p>คอลัมน์ทั้งหมดพร้อมใช้งานสำหรับทั้ง <a href="#table-modes">โหมดการ์ดและบันทึกย่อ</a>
+แต่บางครั้งมีชื่อและข้อมูลที่แตกต่างกันเล็กน้อย ตารางต่อไปนี้แสดง
+พฤติกรรมสำหรับทั้งสองโหมด</p>
+<!-- prettier-ignore -->
+<div class="table-wrapper"><table><thead><tr><th>คอลัมน์</th><th>โหมดการ์ด</th><th>โหมดบันทึกย่อ</th></tr></thead><tbody>
+<tr><td>คำตอบ</td><td>ด้านหลังของการ์ดในหนึ่งบรรทัดโดยตัดคำถามออก คุณยังสามารถเลือก <a href="templates/styling.html#browser-appearance">รูปแบบที่กำหนดเอง</a> ในตัวแก้ไขประเภทการ์ดแทนได้</td><td>เหมือนกับในโหมดการ์ด เฉพาะสำหรับการ์ดใบแรกของบันทึกย่อ</td></tr>
+<tr><td>การ์ด</td><td>ชื่อของเทมเพลตของการ์ด</td><td>จำนวนการ์ดที่บันทึกย่อมี</td></tr>
+<tr><td>การ์ดที่แก้ไข</td><td>เวลาล่าสุดที่มีการเปลี่ยนแปลงการ์ด (เช่น เมื่อคุณทบทวนการ์ดและประวัติการทบทวนและช่วงเวลาถูกอัปเดต)</td><td>เวลาล่าสุดที่มีการเปลี่ยนแปลงการ์ดใบใดใบหนึ่งของบันทึกย่อ</td></tr>
+<tr><td>สร้างเมื่อ</td><td>เหมือนกับในโหมดบันทึกย่อสำหรับบันทึกย่อของการ์ด</td><td>วันที่สร้างบันทึกย่อ</td></tr>
+<tr><td>สำรับ</td><td>ชื่อของสำรับที่การ์ดอยู่</td><td>จำนวนสำรับที่แตกต่างกันที่การ์ดของบันทึกย่ออยู่ หรือชื่อสำรับหากการ์ดทั้งหมดอยู่ในสำรับเดียวกัน</td></tr>
+<tr><td>ครบกำหนด</td><td>วันครบกำหนดสำหรับการ์ดในการทบทวนหรือ (เรียนรู้ใหม่) และตำแหน่งในคิวการ์ดใหม่สำหรับการ์ดใหม่ บรรทัดจะอยู่ในวงเล็บหากการ์ดถูกระงับหรือฝัง การจัดเรียงจะทำตามประเภทและจากนั้นตามวันที่หรือตำแหน่ง</td><td>วันครบกำหนดสำหรับการ์ดทบทวนหรือ (เรียนรู้ใหม่) ที่ครบกำหนดถัดไปของบันทึกย่อซึ่งไม่ถูกระงับ ฝัง หรืออยู่ในสำรับที่กรองแล้ว</td></tr>
+<tr><td>(เฉลี่ย) ความง่าย</td><td>ความง่ายของการ์ดหากไม่ใช่การ์ดใหม่</td><td>ความง่ายเฉลี่ยสำหรับการ์ดของบันทึกย่อที่ไม่ใช่การ์ดใหม่</td></tr>
+<tr><td>(เฉลี่ย) ช่วงเวลา</td><td>ช่วงเวลาของการ์ดหากการ์ดอยู่ในการทบทวนหรือเรียนรู้ใหม่</td><td>ช่วงเวลาเฉลี่ยสำหรับการ์ดของบันทึกย่อที่อยู่ในการทบทวนหรือเรียนรู้ใหม่</td></tr>
+<tr><td>การลืม</td><td>ความถี่ที่การ์ดถูกให้คะแนน “อีกครั้ง”</td><td>การลืมทั้งหมดสำหรับการ์ดทั้งหมดของบันทึกย่อ</td></tr>
+<tr><td>บันทึกย่อ</td><td>เหมือนกับในโหมดบันทึกย่อสำหรับบันทึกย่อของการ์ด</td><td>ชื่อของประเภทบันทึกย่อของบันทึกย่อ</td></tr>
+<tr><td>บันทึกย่อที่แก้ไข</td><td>เหมือนกับในโหมดบันทึกย่อสำหรับบันทึกย่อของการ์ด</td><td>เวลาล่าสุดที่บันทึกย่อ (เช่น เนื้อหาของฟิลด์) ถูกแก้ไข</td></tr>
+<tr><td>คำถาม</td><td>ด้านหน้าของการ์ดในหนึ่งบรรทัด คุณยังสามารถเลือก <a href="templates/styling.html#browser-appearance">รูปแบบที่กำหนดเอง</a> ในตัวแก้ไขประเภทการ์ดแทนได้</td><td>เหมือนกับในโหมดการ์ด เฉพาะสำหรับการ์ดใบแรกของบันทึกย่อ</td></tr>
+<tr><td>การทบทวน</td><td>ความถี่ที่การ์ดถูกทบทวน</td><td>จำนวนการทบทวนทั้งหมดสำหรับการ์ดทั้งหมดของบันทึกย่อ</td></tr>
+<tr><td>ฟิลด์จัดเรียง</td><td>เหมือนกับในโหมดบันทึกย่อสำหรับบันทึกย่อของการ์ด</td><td>เนื้อหาของฟิลด์ของบันทึกย่อที่กำหนดเป็นฟิลด์จัดเรียงของประเภทบันทึกย่อ สามารถแสดงและจัดเรียงได้เฉพาะฟิลด์นี้เท่านั้น คุณสามารถเปลี่ยนฟิลด์จัดเรียงได้โดยคลิก <strong>ฟิลด์…</strong> ในพื้นที่แก้ไข</td></tr>
+<tr><td>แท็ก</td><td>เหมือนกับในโหมดบันทึกย่อสำหรับบันทึกย่อของการ์ด</td><td>แท็กของบันทึกย่อ</td></tr>
+</tbody></table>
+</div>
+<h2 id="พืนทีแกไข"><a class="header" href="#พืนทีแกไข">พื้นที่แก้ไข</a></h2>
+<p>พื้นที่ด้านล่างขวาแสดงบันทึกย่อของแถวที่เลือกในปัจจุบัน สำหรับ
+ข้อมูลเพิ่มเติมเกี่ยวกับการ์ดและบันทึกย่อ ดูที่ <a href="getting-started.html">การเริ่มต้นใช้งาน</a>
+สำหรับข้อมูลเพิ่มเติมเกี่ยวกับปุ่มจัดรูปแบบ ดูที่ <a href="editing.html">การแก้ไข</a></p>
+<p>คุณสามารถดูตัวอย่างว่าการ์ดที่เลือกในปัจจุบันจะมีลักษณะอย่างไร
+เมื่อทบทวนโดยคลิกปุ่ม <strong>ดูตัวอย่าง</strong> ที่ด้านบนของพื้นที่แก้ไข
+โปรดทราบว่าสิ่งนี้จะไม่แสดงฟิลด์ประเภทคำตอบใดๆ บน
+การ์ดของคุณ ซึ่งทำให้ง่ายต่อการดูตัวอย่างการ์ดได้อย่างรวดเร็ว
+ในโหมดบันทึกย่อ ตัวอย่างจะแสดงสำหรับการ์ดใบแรกของบันทึกย่อที่เลือก</p>
+<h2 id="เมนูและการดำเนินการ"><a class="header" href="#เมนูและการดำเนินการ">เมนูและการดำเนินการ</a></h2>
+<p>ที่ด้านบนของหน้าต่างเบราว์เซอร์ คุณจะพบแถบเครื่องมือพร้อมเมนูต่างๆ ซึ่งในทางกลับกัน
+เสนอการดำเนินการต่างๆ ที่สามารถทำได้ในเบราว์เซอร์</p>
+<h3 id="แกไข"><a class="header" href="#แกไข">แก้ไข</a></h3>
+<!-- prettier-ignore -->
+<div class="table-wrapper"><table><thead><tr><th>ชื่อ</th><th>การดำเนินการ</th></tr></thead><tbody>
+<tr><td>เลิกทำ</td><td>ย้อนกลับการดำเนินการที่ทำล่าสุด</td></tr>
+<tr><td>เลือกทั้งหมด</td><td>เลือกแถวทั้งหมดที่แสดง</td></tr>
+<tr><td>เลือกบันทึกย่อ</td><td>แสดงเฉพาะบันทึกย่อที่เลือกในปัจจุบันและเลือกแถวทั้งหมด</td></tr>
+<tr><td>สลับการเลือก</td><td>เลือกแถวที่ไม่ได้เลือก และยกเลิกการเลือกแถวที่เลือกในปัจจุบัน</td></tr>
+<tr><td>สร้างสำรับที่กรองแล้ว</td><td>แสดงกล่องโต้ตอบ <a href="filtered-decks.html#creating-manually">สำรับที่กรองแล้ว</a> และตั้งค่าการค้นหาเบราว์เซอร์ปัจจุบันเป็นตัวกรอง ใช้ <kbd>Alt</kbd> / <kbd>Option</kbd> เพื่อตั้งค่าตัวกรองที่สองแทน</td></tr>
+</tbody></table>
+</div>
+<h3 id="บันทึกยอ"><a class="header" href="#บันทึกยอ">บันทึกย่อ</a></h3>
+<p>การดำเนินการส่วนใหญ่ต่อไปนี้ทำงานกับบันทึกย่อที่เลือก นอกจากนี้ยังมีให้ใช้งานผ่าน
+เมนูบริบทเมื่อคลิกขวาที่แถวที่เลือกในโหมดบันทึกย่อ ในโหมดการ์ด
+สามารถพบได้ในเมนูย่อยของเมนูบริบท</p>
+<!-- prettier-ignore -->
+<div class="table-wrapper"><table><thead><tr><th>ชื่อ</th><th>การดำเนินการ</th></tr></thead><tbody>
+<tr><td>เพิ่มบันทึกย่อ</td><td>เปิดกล่องโต้ตอบ <a href="editing.html#adding-cards-and-notes">เพิ่ม</a></td></tr>
+<tr><td>สร้างสำเนา</td><td>เปิด <a href="browsing.html#finding-duplicates">สำเนา</a> ของบันทึกย่อปัจจุบันใน <a href="editing.html#adding-cards-and-notes">ตัวแก้ไข</a> ซึ่งสามารถแก้ไขเล็กน้อยเพื่อให้ได้รูปแบบต่างๆ ของการ์ดของคุณได้อย่างง่ายดาย โดยค่าเริ่มต้น การ์ดที่ซ้ำกันจะถูกสร้างขึ้นในสำรับเดียวกับต้นฉบับ</td></tr>
+<tr><td>ส่งออกบันทึกย่อ</td><td>เปิดกล่องโต้ตอบ <a href="exporting.html">ส่งออก</a></td></tr>
+<tr><td>เพิ่มแท็ก</td><td>เพิ่มแท็กที่ให้ไว้ในบันทึกย่อที่เลือกทั้งหมด</td></tr>
+<tr><td>ลบแท็ก</td><td>ป้อนแท็กและลบออกจากบันทึกย่อที่เลือกทั้งหมด</td></tr>
+<tr><td>ล้างแท็กที่ไม่ได้ใช้</td><td>ลบแท็กทั้งหมดออกจากแถบด้านข้างที่ไม่ได้ใช้โดยบันทึกย่อใดๆ</td></tr>
+<tr><td>สลับการทำเครื่องหมาย</td><td>หากบันทึกย่อปัจจุบันถูกทำเครื่องหมาย (เช่น มีแท็ก <em>Marked</em>) ให้ยกเลิกการทำเครื่องหมายบันทึกย่อที่เลือกทั้งหมด หากปัจจุบันไม่ได้ทำเครื่องหมาย ให้ทำเครื่องหมายบันทึกย่อที่เลือกทั้งหมด</td></tr>
+<tr><td>เปลี่ยนประเภทบันทึกย่อ</td><td>แปลงบันทึกย่อที่เลือกจากประเภทหนึ่งไปอีกประเภทหนึ่ง ตัวอย่างเช่น ลองนึกภาพว่าคุณมีประเภทบันทึกย่อ <em>Russian</em> และประเภทบันทึกย่อ <em>Computer</em> และคุณเพิ่มข้อความที่เกี่ยวข้องกับคอมพิวเตอร์ลงในบันทึกย่อ <em>Russian</em> โดยไม่ได้ตั้งใจ คุณสามารถใช้ตัวเลือกนี้เพื่อแก้ไขข้อผิดพลาดนั้นได้ การจัดตารางเวลาของการ์ดจะไม่ได้รับผลกระทบ การเปลี่ยนประเภทของบันทึกย่อต้องมีการซิงค์ทางเดียว</td></tr>
+<tr><td>ค้นหารายการซ้ำ</td><td>เปิดกล่องโต้ตอบ <a href="#finding-duplicates">รายการซ้ำ</a></td></tr>
+<tr><td>ค้นหาและแทนที่</td><td>เปิดกล่องโต้ตอบ <a href="#find-and-replace">ค้นหาและแทนที่</a></td></tr>
+<tr><td>จัดการประเภทบันทึกย่อ</td><td>เปิดกล่องโต้ตอบ <a href="editing.html#adding-a-note-type">ประเภทบันทึกย่อ</a></td></tr>
+<tr><td>ลบ</td><td>ลบบันทึกย่อที่เลือกทั้งหมดและการ์ดของพวกเขา ไม่สามารถลบการ์ดแต่ละใบได้ เนื่องจากการ์ดแต่ละใบถูกควบคุมโดย <a href="templates/intro.html">เทมเพลต</a></td></tr>
+</tbody></table>
+</div>
+<h3 id="การด"><a class="header" href="#การด">การ์ด</a></h3>
+<p>การดำเนินการต่อไปนี้ทำงานกับการ์ดที่เลือกในปัจจุบัน นอกจากนี้ยังมีให้ใช้งานผ่าน
+เมนูบริบทเมื่อคลิกขวาที่แถวที่เลือกในโหมดการ์ด ในโหมดบันทึกย่อ
+สามารถพบได้ในเมนูย่อยของเมนูบริบท</p>
+<!-- prettier-ignore -->
+<div class="table-wrapper"><table><thead><tr><th>ชื่อ</th><th>การดำเนินการ</th></tr></thead><tbody>
+<tr><td>เปลี่ยนสำรับ</td><td>ย้ายการ์ดที่เลือกในปัจจุบันไปยังสำรับอื่น</td></tr>
+<tr><td>ตั้งวันครบกำหนด</td><td>เปลี่ยนการ์ดให้เป็นการ์ดทบทวนหากเป็นการ์ดใหม่ และทำให้ครบกำหนดในวันที่กำหนด สิ่งนี้มีประโยชน์สำหรับการเลื่อนการ์ดไปข้างหน้าหรือย้อนกลับสองสามวันเมื่อตารางเรียนของคุณถูกขัดจังหวะ การป้อนช่วงเช่น <code>60-90</code> จะทำให้การ์ดที่เลือกครบกำหนดระหว่าง 60 ถึง 90 วันนับจากนี้ การ์ดใหม่จะมีช่วงเวลาที่ตั้งไว้เป็นความล่าช้าเดียวกัน แต่การ์ดทบทวนจะถูกจัดตารางเวลาใหม่โดยไม่เปลี่ยนช่วงเวลาปัจจุบัน เว้นแต่จะรวมเครื่องหมายอัศเจรีย์ (<code>!</code>) ไว้ที่ท้ายช่วง โปรดทราบว่าเวลาตอบไม่ได้ถูกบันทึกเมื่อจัดตารางการ์ดด้วยตนเอง เนื่องจากการดำเนินการสามารถทำได้แม้นอกการทบทวน และ Anki ไม่ทราบว่าการ์ดใดอาจจะแสดงหรือไม่ในเวลานั้น</td></tr>
+<tr><td>รีเซ็ต</td><td>ย้ายการ์ดที่เลือกในปัจจุบันไปยังท้ายคิวใหม่ ประวัติการทบทวนที่มีอยู่จะถูกเก็บรักษาไว้ ใน 2.1.50+ มีตัวเลือกในการคืนค่าตำแหน่งการ์ดเดิม และรีเซ็ตตัวนับการลืมและการทำซ้ำของการ์ด</td></tr>
+<tr><td>จัดตำแหน่งใหม่</td><td>เปลี่ยนลำดับที่การ์ดใหม่จะปรากฏขึ้น คุณสามารถค้นหาตำแหน่งที่มีอยู่ได้โดยเปิดใช้งานคอลัมน์ <em>ครบกำหนด</em> ตามที่อธิบายไว้ในส่วน <a href="#cardnote-table">ตาราง</a> ด้านบน หากคุณเรียกใช้คำสั่งจัดตำแหน่งใหม่เมื่อเลือกการ์ดหลายใบ ระบบจะใช้ตัวเลขที่เพิ่มขึ้นกับการ์ดแต่ละใบตามลำดับ โดยค่าเริ่มต้น ตัวเลขจะเพิ่มขึ้นทีละหนึ่งสำหรับการ์ดแต่ละใบ แต่สามารถปรับได้โดยเปลี่ยนการตั้งค่า “ขั้นตอน” ตัวเลือก <strong>เลื่อนตำแหน่งของการ์ดที่มีอยู่</strong> ช่วยให้คุณสามารถแทรกการ์ดระหว่างการ์ดที่มีอยู่ปัจจุบันได้ โดยจะดันการ์ดที่มีอยู่ปัจจุบันออกจากกัน ตัวอย่างเช่น หากคุณมีการ์ดห้าใบและต้องการย้าย 3, 4 และ 5 ไปอยู่ระหว่าง 1 และ 2 การเลือกการตั้งค่านี้จะทำให้การ์ดอยู่ในลำดับ 1, 3, 4, 5, 2 ในทางตรงกันข้าม หากคุณปิดตัวเลือกนี้ 1 และ 2 จะได้รับหมายเลขตำแหน่งเดียวกัน (และดังนั้นจึงไม่สามารถคาดเดาได้ว่าการ์ดใดที่มีหมายเลขเดียวกันจะขึ้นมาก่อน) โปรดทราบว่าเมื่อเปิดใช้งาน การ์ดใดๆ ที่มีตำแหน่งสูงกว่าจะถูกแก้ไข และการ์ดที่เปลี่ยนแปลงทั้งหมดเหล่านั้นจะต้องถูกส่งในครั้งต่อไปที่คุณซิงค์</td></tr>
+<tr><td>สลับการระงับ</td><td><a href="studying.html#editing-and-more">ระงับ</a> หรือยกเลิกการระงับการ์ดที่เลือกทั้งหมด ขึ้นอยู่กับว่าการ์ดปัจจุบันถูกระงับหรือไม่</td></tr>
+<tr><td>ธง</td><td>สลับธงของการ์ดที่เลือกทั้งหมด การเพิ่มหรือลบธงขึ้นอยู่กับว่าการ์ดปัจจุบันมีธงที่เลือกหรือไม่</td></tr>
+<tr><td>ข้อมูล</td><td>แสดงข้อมูลต่างๆ เกี่ยวกับการ์ดปัจจุบัน รวมถึงประวัติการทบทวน สำหรับข้อมูลเพิ่มเติม ดูที่ <a href="stats.html#card-info">ข้อมูลการ์ด</a></td></tr>
+</tbody></table>
+</div>
+<h3 id="ไปที"><a class="header" href="#ไปที">ไปที่</a></h3>
+<p>เมนูนี้มีขึ้นเพื่อให้มีแป้นพิมพ์ลัดเพื่อข้ามไปยังส่วนต่างๆ
+ของเบราว์เซอร์ และเพื่อเลื่อนขึ้นและลงในรายการการ์ด</p>
+<h2 id="คนหาและแทนที"><a class="header" href="#คนหาและแทนที">ค้นหาและแทนที่</a></h2>
+<p>กล่องโต้ตอบนี้ช่วยให้สามารถแทนที่ข้อความในบันทึกย่อได้ ตามที่อธิบายไว้ข้างต้น มีให้ใช้งาน
+จากแถบเครื่องมือและเมนูบริบทของตาราง</p>
+<p>ช่องป้อนข้อมูลแรกสำหรับข้อความที่จะถูกแทนที่ ช่องที่สอง
+สำหรับข้อความที่จะแทนที่ ถัดไป มีเมนูแบบเลื่อนลงที่ให้คุณระบุ
+ว่า Anki ควรมองหาข้อความที่จะแทนที่ที่ไหน: ในแท็กของบันทึกย่อ (ต้องใช้ Anki 2.1.45+),
+ในทุกฟิลด์ หรือเฉพาะในฟิลด์ที่ต้องการ (เฉพาะฟิลด์ที่เป็นของบันทึกย่อที่เลือก
+เท่านั้นที่จะแสดงรายการ)</p>
+<p>โดยค่าเริ่มต้น จะมีผลเฉพาะบันทึกย่อที่เลือกเท่านั้น หากคุณต้องการยกเลิก
+ข้อจำกัดนั้น คุณสามารถยกเลิกการเลือกช่องทำเครื่องหมาย “เฉพาะบันทึกย่อที่เลือก” (ต้องใช้ Anki 2.1.45+)</p>
+<p>ตัวเลือกนิพจน์ทั่วไปช่วยให้คุณสามารถทำการแทนที่ที่ซับซ้อนได้
+ตัวอย่างเช่น สมมติว่ามีข้อความต่อไปนี้อยู่ในฟิลด์:</p>
+<pre><code>&lt;img src="pic.jpg" /&gt;
+</code></pre>
+<p>เราใช้การตั้งค่าเหล่านี้:</p>
+<p><img src="media/find_and_replace.png" alt="กล่องโต้ตอบค้นหาและแทนที่" /></p>
+<p>(โปรดทราบว่าใน Anki เวอร์ชันก่อน 2.1.28 คุณจะต้องแทนที่ <code>${1}</code>
+ด้วย <code>\1</code>)</p>
+<p>จากนั้นเนื้อหาฟิลด์ที่สมมติไว้จะเปลี่ยนเป็น:</p>
+<pre><code>pic.jpg
+</code></pre>
+<p>การอภิปรายอย่างละเอียดเกี่ยวกับนิพจน์ทั่วไปอยู่นอกขอบเขตของเอกสารนี้
+มีคู่มือไวยากรณ์จำนวนหนึ่งอยู่บนเว็บ:</p>
+<ul>
+<li>สำหรับ Anki 2.1.28+ โปรดดู <a href="https://docs.rs/regex/latest/regex/index.html#syntax">https://docs.rs/regex/latest/regex/index.html#syntax</a></li>
+<li>สำหรับ Anki เวอร์ชันเก่า โปรดดู <a href="http://docs.python.org/library/re.html">http://docs.python.org/library/re.html</a></li>
+</ul>
+<h2 id="การคนหารายการซำ"><a class="header" href="#การคนหารายการซำ">การค้นหารายการซ้ำ</a></h2>
+<p>คุณสามารถใช้ตัวเลือก <strong>บันทึกย่อ &gt; ค้นหารายการซ้ำ</strong> เพื่อค้นหาบันทึกย่อที่
+มีเนื้อหาเหมือนกัน เมื่อคุณเปิดหน้าต่าง Anki จะดูที่
+ประเภทบันทึกย่อทั้งหมดของคุณและแสดงรายการฟิลด์ที่เป็นไปได้ทั้งหมด หากคุณ
+ต้องการค้นหารายการซ้ำในฟิลด์ <em>ด้านหลัง</em> คุณจะต้องเลือกจาก
+รายการแล้วคลิก <strong>ค้นหา</strong></p>
+<p>โดยค่าเริ่มต้น ระบบจะค้นหาในประเภทบันทึกย่อทั้งหมดที่มีฟิลด์ที่คุณให้ไว้
+ซึ่งแตกต่างจากการตรวจสอบรายการซ้ำเมื่อคุณเพิ่มการ์ดด้วยตนเอง ซึ่ง
+จำกัดอยู่แค่ประเภทบันทึกย่อเดียว</p>
+<p>กล่องข้อความ <strong>ตัวกรองเสริม</strong> ช่วยให้คุณสามารถจำกัดขอบเขตที่ Anki จะ
+ค้นหารายการซ้ำได้ หากคุณต้องการค้นหารายการซ้ำใน
+ประเภทบันทึกย่อ “คำศัพท์ภาษาฝรั่งเศส” และ “กริยาภาษาฝรั่งเศส” เท่านั้น คุณจะต้องป้อน:</p>
+<pre><code>"note:french vocab" or "note:french verbs"
+</code></pre>
+<p>หรือคุณอาจต้องการค้นหารายการซ้ำในสำรับใดสำรับหนึ่งโดยเฉพาะ ดังนั้น
+คุณสามารถใช้:</p>
+<pre><code>"deck:myDeck"
+</code></pre>
+<p>ไวยากรณ์การค้นหาเหมือนกับที่ใช้ในการค้นหาในเบราว์เซอร์
+สำหรับข้อมูลเพิ่มเติม โปรดดูที่ <a href="searching.html">การค้นหา</a></p>
+<p>คุณสามารถคลิกลิงก์ใดลิงก์หนึ่งในรายการผลการค้นหาเพื่อแสดง
+บันทึกย่อที่ซ้ำกันในชุดนั้น หากการค้นหาพบ
+รายการซ้ำจำนวนมาก คุณอาจต้องการคลิกปุ่ม <strong>แท็กรายการซ้ำ</strong>
+ซึ่งจะแท็กบันทึกย่อที่ตรงกันทั้งหมดด้วย <em>duplicate</em> จากนั้นคุณสามารถค้นหา
+แท็กนี้ในเบราว์เซอร์และจัดการทั้งหมดได้จากหน้าจอเดียวกัน</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="profiles.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="filtered-decks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="profiles.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="filtered-decks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

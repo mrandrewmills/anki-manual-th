@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>การศึกษา - Anki Manual</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/misc.css">
+        <link rel="stylesheet" href="css/mdbook-admonish.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Anki Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankitects/anki-manual/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="การเรียน"><a class="header" href="#การเรียน">การเรียน</a></h1>
+<ul>
+<li><a href="#%E0%B8%AA%E0%B8%B3%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%84%E0%B8%9E">สำรับไพ่</a></li>
+<li><a href="#%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%A3%E0%B8%A7%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99">ภาพรวมการเรียน</a></li>
+<li><a href="#%E0%B8%84%E0%B8%B3%E0%B8%96%E0%B8%B2%E0%B8%A1">คำถาม</a></li>
+<li><a href="#%E0%B8%9B%E0%B8%B8%E0%B8%A1%E0%B8%84%E0%B8%B3%E0%B8%95%E0%B8%AD%E0%B8%9A">ปุ่มคำตอบ</a></li>
+<li><a href="#fuzz-factor">Fuzz Factor</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%81%E0%B9%84%E0%B8%82%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AD%E0%B8%B7%E0%B8%99%E0%B9%86">การแก้ไขและอื่นๆ</a></li>
+<li><a href="#%E0%B8%A5%E0%B8%B3%E0%B8%94%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%AA%E0%B8%94%E0%B8%87%E0%B8%9C%E0%B8%A5">ลำดับการแสดงผล</a></li>
+<li><a href="#%E0%B8%9E%E0%B8%B5%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%8B%E0%B8%AD%E0%B8%99">พี่น้องและการซ่อน</a></li>
+<li><a href="#%E0%B9%81%E0%B8%9B%E0%B8%99%E0%B8%9E%E0%B8%B4%E0%B8%A1%E0%B8%9E%E0%B8%A5%E0%B8%B1%E0%B8%94">แป้นพิมพ์ลัด</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%B2%E0%B8%A1%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87">การตามหลัง</a></li>
+</ul>
+<p>เมื่อคุณพบสำรับไพ่ที่คุณชอบหรือป้อนบันทึกบางส่วนแล้ว ก็ถึงเวลา
+เริ่มเรียน</p>
+<h2 id="สำรับไพ"><a class="header" href="#สำรับไพ">สำรับไพ่</a></h2>
+<p>การเรียนใน Anki จะจำกัดอยู่แค่สำรับไพ่ที่เลือกในปัจจุบันและสำรับไพ่ย่อยใดๆ
+ที่มันมีอยู่</p>
+<p>บนหน้าจอสำรับไพ่ สำรับไพ่และสำรับไพ่ย่อยของคุณจะแสดงในรายการ <a href="getting-started.html#card-states">ใหม่, กำลังเรียน, และถึงกำหนด (ต้องทบทวน)</a>
+การ์ดสำหรับวันนั้นจะแสดงที่นี่ด้วย</p>
+<p><img src="media/decks_screen.png" alt="" /></p>
+<p>เมื่อคุณคลิกที่สำรับไพ่ มันจะกลายเป็น “สำรับไพ่ปัจจุบัน” และ Anki
+จะเปลี่ยนไปที่หน้าจอการเรียน คุณสามารถกลับไปที่รายการสำรับไพ่ได้ตลอดเวลาโดยคลิกที่ “สำรับไพ่” ที่ด้านบนสุดของหน้าต่างหลัก (คุณยังสามารถใช้การกระทำ Study
+Deck ในเมนูเพื่อเลือกสำรับไพ่ใหม่จากแป้นพิมพ์ หรือคุณ
+สามารถกดปุ่ม <kbd>S</kbd> เพื่อเรียนสำรับไพ่ที่เลือกในปัจจุบัน)</p>
+<p>คุณสามารถคลิกปุ่มรูปเฟืองทางด้านขวาของสำรับไพ่เพื่อเปลี่ยนชื่อหรือ
+ลบสำรับไพ่ เปลี่ยน <a href="deck-options.html">ตัวเลือก</a> หรือ <a href="exporting.html">ส่งออก</a></p>
+<h2 id="ภาพรวมการเรียน"><a class="header" href="#ภาพรวมการเรียน">ภาพรวมการเรียน</a></h2>
+<p>หลังจากคลิกที่สำรับไพ่เพื่อเรียน คุณจะเห็นหน้าจอที่แสดงให้คุณเห็น
+ว่าวันนี้มีการ์ดครบกำหนดกี่ใบ นี่เรียกว่าหน้าจอ “ภาพรวมสำรับไพ่”:</p>
+<p><img src="media/study_overview.png" alt="" /></p>
+<p>การ์ดแบ่งออกเป็น <a href="getting-started.html#card-states">สามประเภท</a>: ใหม่, กำลังเรียน, และต้องทบทวน
+หากคุณเปิดใช้งาน <a href="#siblings-and-burying">ซ่อนพี่น้อง</a> ในตัวเลือกสำรับไพ่ของคุณ คุณ
+อาจเห็นจำนวนการ์ดที่จะถูกซ่อนเป็นสีเทา:</p>
+<p><img src="media/study_overview_buried_cards.png" alt="" /></p>
+<p>ในการเริ่มเซสชันการเรียน ให้คลิกปุ่ม <strong>เรียนตอนนี้</strong> Anki จะ
+ดำเนินการแสดงการ์ดให้คุณจนกว่าการ์ดที่จะแสดงสำหรับวันนั้นจะ
+หมดไป</p>
+<p>ขณะเรียน คุณสามารถกลับไปที่ภาพรวมได้โดยการกดปุ่ม <kbd>S</kbd>
+บนแป้นพิมพ์ของคุณ</p>
+<h2 id="คำถาม"><a class="header" href="#คำถาม">คำถาม</a></h2>
+<p>เมื่อการ์ดปรากฏขึ้น จะแสดงเฉพาะคำถามในตอนแรก หลังจาก
+คิดเกี่ยวกับคำตอบแล้ว ให้คลิกปุ่ม <strong>แสดงคำตอบ</strong> หรือ
+กด <kbd>Space</kbd> จากนั้นคำตอบจะปรากฏขึ้น ไม่เป็นไรถ้ามันใช้เวลา
+คุณสักครู่ในการจำคำตอบ แต่ตามกฎทั่วไปถ้าคุณ
+ไม่สามารถตอบได้ภายในเวลาประมาณ 10 วินาที อาจจะดีกว่าที่จะไปต่อ
+และแสดงคำตอบแทนที่จะพยายามจำต่อไป</p>
+<h2 id="ปุมคำตอบ"><a class="header" href="#ปุมคำตอบ">ปุ่มคำตอบ</a></h2>
+<p>หลังจากแสดงคำตอบแล้ว ให้เปรียบเทียบคำตอบที่คุณคิดไว้
+กับคำตอบที่แสดงและเลือกปุ่มใดปุ่มหนึ่งต่อไปนี้</p>
+<ul>
+<li>
+<p><strong>อีกครั้ง</strong>: เลือกปุ่มนี้เมื่อคำตอบของคุณไม่ถูกต้องหรือไม่สามารถจำคำตอบได้ หากคำตอบของคุณถูกต้องบางส่วน คุณควรเข้มงวดกับตัวเอง: หากถือว่าล้มเหลวในบริบทของชีวิตจริงนอก Anki ก็ถือว่าล้มเหลวใน Anki เช่นกัน โดยทั่วไปคุณจะใช้ปุ่มนี้ประมาณ 5-20% ของเวลาทั้งหมด</p>
+<p>แป้นพิมพ์ลัด: <kbd>1</kbd></p>
+</li>
+<li>
+<p><strong>ยาก</strong>: เลือกปุ่มนี้เมื่อคำตอบของคุณถูกต้อง แต่คุณมีข้อสงสัยเกี่ยวกับมันหรือใช้เวลานานในการจำ</p>
+<p>แป้นพิมพ์ลัด: <kbd>2</kbd></p>
+</li>
+<li>
+<p><strong>ดี</strong>: เลือกปุ่มนี้เมื่อคำตอบของคุณถูกต้อง แต่ต้องใช้ความพยายามทางจิตใจในการจำ เมื่อใช้ Anki อย่างถูกต้อง นี่ควรเป็นปุ่มที่ใช้บ่อยที่สุด โดยทั่วไปคุณจะใช้ปุ่มนี้ประมาณ 80-95% ของเวลาทั้งหมด</p>
+<p>แป้นพิมพ์ลัด: <kbd>3</kbd>, <kbd>Space</kbd>, <kbd>Enter</kbd></p>
+</li>
+<li>
+<p><strong>ง่าย</strong>: เลือกปุ่มนี้หากคำตอบของคุณถูกต้องและไม่ต้องใช้ความพยายามทางจิตใจในการจำ</p>
+<p>แป้นพิมพ์ลัด: <kbd>4</kbd></p>
+</li>
+</ul>
+<p>หากคุณพบว่าการใช้ปุ่มคำตอบสี่ปุ่มเป็นเรื่องยาก คุณสามารถใช้เฉพาะปุ่ม <strong>อีกครั้ง</strong> และ <strong>ดี</strong> ได้ ใช้ <strong>อีกครั้ง</strong> สำหรับคำตอบที่ไม่ถูกต้องและใช้ <strong>ดี</strong> สำหรับคำตอบที่ถูกต้อง</p>
+<p>ปุ่มคำตอบแต่ละปุ่มจะแสดงเวลาถัดไปที่การ์ดจะถูกทบทวนอีกครั้งหากคุณเลือกปุ่มนั้น หากต้องการเรียนรู้เกี่ยวกับการตั้งค่าที่ควบคุมช่วงเวลาการทบทวนครั้งถัดไป โปรดดูหัวข้อ <a href="deck-options.html#learning-steps">ขั้นตอนการเรียนรู้</a>, <a href="deck-options.html#lapses">การลืม</a>, <a href="deck-options.html#fsrs">FSRS</a> และ <a href="deck-options.html#advanced">ขั้นสูง</a> ในส่วนตัวเลือกสำรับไพ่</p>
+<h2 id="fuzz-factor"><a class="header" href="#fuzz-factor">Fuzz Factor</a></h2>
+<p>เมื่อคุณเลือกปุ่มคำตอบบนการ์ดทบทวน Anki ยังใช้ “fuzz” แบบสุ่มเล็กน้อย
+เพื่อป้องกันไม่ให้การ์ดที่แนะนำในเวลาเดียวกันและได้รับการจัดอันดับเดียวกัน
+ติดกันและปรากฏขึ้นเพื่อทบทวนในวันเดียวกันเสมอ</p>
+<p>การ์ดที่กำลังเรียนรู้ยังได้รับการหน่วงเวลาเพิ่มเติมสูงสุด 5 นาทีเพื่อให้
+ไม่ปรากฏในลำดับเดียวกันเสมอไป แต่ปุ่มคำตอบจะไม่สะท้อนสิ่งนั้น มัน
+เป็นไปไม่ได้ที่จะปิดคุณสมบัตินี้</p>
+<h2 id="การแกไขและอืนๆ"><a class="header" href="#การแกไขและอืนๆ">การแก้ไขและอื่นๆ</a></h2>
+<p>คุณสามารถคลิกปุ่ม <strong>แก้ไข</strong> ที่ด้านล่างซ้ายเพื่อแก้ไขบันทึกปัจจุบัน
+เมื่อคุณแก้ไขเสร็จแล้ว คุณจะกลับไปเรียน หน้าจอการแก้ไข
+ทำงานคล้ายกับหน้าจอ <a href="editing.html">เพิ่มบันทึก</a> มาก</p>
+<p>ที่ด้านล่างขวาของหน้าจอการเรียนคือปุ่มที่มีข้อความว่า <strong>เพิ่มเติม</strong>
+ปุ่มนี้มีการดำเนินการอื่นๆ ที่คุณสามารถทำได้กับการ์ดปัจจุบัน
+หรือบันทึก:</p>
+<ul>
+<li>
+<p><a href="editing.html#using-flags"><strong>ติดธงการ์ด</strong></a>: เพิ่มเครื่องหมายสีให้กับการ์ด หรือสลับปิด ธงจะปรากฏขึ้นระหว่าง
+การเรียน และคุณสามารถค้นหาการ์ดที่ติดธงได้ในหน้าจอเรียกดู สิ่งนี้มีประโยชน์
+เมื่อคุณต้องการดำเนินการบางอย่างกับการ์ดในภายหลัง เช่น การค้นหา
+คำศัพท์เมื่อคุณกลับถึงบ้าน หากคุณใช้ Anki 2.1.45+ คุณยังสามารถเปลี่ยนชื่อธง
+จาก <a href="browsing.html">เบราว์เซอร์</a> ได้</p>
+</li>
+<li>
+<p><strong>ซ่อนการ์ด / บันทึก</strong>: ซ่อนการ์ดหรือการ์ดทั้งหมดของบันทึกจากการทบทวนจนถึงวันถัดไป
+(หากคุณต้องการยกเลิกการซ่อนการ์ดก่อนหน้านั้น คุณสามารถคลิกปุ่ม “ยกเลิกการซ่อน”
+บนหน้าจอ <a href="studying.html#study-overview">ภาพรวมสำรับไพ่</a>) สิ่งนี้มีประโยชน์หาก
+คุณไม่สามารถตอบการ์ดได้ในขณะนี้หรือคุณต้องการกลับมาดูอีกครั้ง
+ในเวลาอื่น การซ่อนยังสามารถ <a href="studying.html#siblings-and-burying">เกิดขึ้นโดยอัตโนมัติ</a> สำหรับ
+การ์ดของบันทึกเดียวกัน</p>
+</li>
+<li>
+<p><strong>รีเซ็ตการ์ด</strong>: ย้ายการ์ดปัจจุบันไปที่ <a href="browsing.html#cards">ท้ายคิวใหม่</a></p>
+<p>ตัวเลือก “กู้คืนตำแหน่งเดิม” ช่วยให้คุณสามารถรีเซ็ตการ์ดกลับไปยังตำแหน่งเดิมเมื่อคุณรีเซ็ต</p>
+<p>ตัวเลือก “รีเซ็ตการนับซ้ำและการลืม” หากเปิดใช้งาน จะตั้งค่าตัวนับการทบทวนและความล้มเหลว
+สำหรับการ์ดกลับเป็นศูนย์ มันไม่ได้ลบประวัติการทบทวนที่แสดงที่ด้านล่างของ
+หน้าจอข้อมูลการ์ด</p>
+</li>
+<li>
+<p><strong>ตั้งวันที่ครบกำหนด</strong>: ใส่การ์ดในคิวทบทวน และ <a href="browsing.html#cards">ทำให้ครบกำหนดในวันที่กำหนด</a></p>
+</li>
+<li>
+<p><strong>ระงับการ์ด / บันทึก</strong>: ซ่อนการ์ดหรือการ์ดทั้งหมดของบันทึกจากการทบทวนจนกว่าจะ
+ยกเลิกการระงับด้วยตนเอง (โดยคลิกปุ่มระงับในเบราว์เซอร์)
+สิ่งนี้มีประโยชน์หากคุณต้องการหลีกเลี่ยงการทบทวนบันทึกเป็นระยะเวลาหนึ่ง
+แต่ไม่ต้องการลบ</p>
+</li>
+<li>
+<p><strong>ตัวเลือก</strong>: แก้ไข <a href="deck-options.html">ตัวเลือก</a> สำหรับสำรับไพ่ปัจจุบัน</p>
+</li>
+<li>
+<p><strong>ข้อมูลการ์ด</strong>: แสดง <a href="stats.html#card-info">ข้อมูลทางสถิติ</a> เกี่ยวกับการ์ด</p>
+</li>
+<li>
+<p><strong>ข้อมูลการ์ดก่อนหน้า</strong>: แสดง <a href="stats.html#card-info">ข้อมูลทางสถิติ</a> เกี่ยวกับการ์ดก่อนหน้า</p>
+</li>
+<li>
+<p><a href="editing.html#the-marked-tag"><strong>ทำเครื่องหมายบันทึก</strong></a>: เพิ่มแท็ก “ทำเครื่องหมาย” ให้กับบันทึกปัจจุบัน เพื่อให้สามารถค้นหาได้ง่ายใน
+เบราว์เซอร์ สิ่งนี้คล้ายกับการติดธงการ์ดแต่ละใบ แต่ทำงานกับแท็ก
+แทน ดังนั้นหากบันทึกมีการ์ดหลายใบ การ์ดทั้งหมดจะปรากฏในการค้นหา
+สำหรับแท็กที่ทำเครื่องหมายไว้ ผู้ใช้ส่วนใหญ่จะต้องการใช้ธงแทน</p>
+</li>
+<li>
+<p><strong>สร้างสำเนา</strong>: เปิด <a href="browsing.html#finding-duplicates">สำเนาซ้ำ</a> ของบันทึกปัจจุบัน
+ในโปรแกรมแก้ไข ซึ่งสามารถแก้ไขเล็กน้อยเพื่อให้ได้รูปแบบต่างๆ ของการ์ดของคุณได้อย่างง่ายดาย
+โดยค่าเริ่มต้น การ์ดที่ซ้ำกันจะถูกสร้างขึ้นในสำรับไพ่เดียวกับต้นฉบับ</p>
+</li>
+<li>
+<p><strong>ลบบันทึก</strong>: ลบบันทึกและการ์ดทั้งหมด</p>
+</li>
+<li>
+<p><strong>เล่นเสียงซ้ำ</strong>: หากการ์ดมีเสียงที่ด้านหน้าหรือด้านหลัง ให้เล่นอีกครั้ง</p>
+</li>
+<li>
+<p><strong>หยุดเสียงชั่วคราว</strong>: หยุดเสียงชั่วคราวหากกำลังเล่นอยู่</p>
+</li>
+<li>
+<p><strong>เสียง -5 วินาที / +5 วินาที</strong>: ข้ามไปข้างหลัง / ข้างหน้า 5 วินาทีในเสียงที่กำลังเล่นอยู่</p>
+</li>
+<li>
+<p><strong>บันทึกเสียงของตัวเอง</strong>: บันทึกจากไมโครโฟนของคุณเพื่อตรวจสอบ
+การออกเสียงของคุณ การบันทึกนี้เป็นแบบชั่วคราวและจะหายไปเมื่อคุณ
+ย้ายไปที่การ์ดถัดไป หากคุณต้องการเพิ่มเสียงลงในการ์ดอย่างถาวร
+คุณสามารถทำได้ในหน้าต่างแก้ไข</p>
+</li>
+<li>
+<p><strong>เล่นเสียงของตัวเองซ้ำ</strong>: เล่นการบันทึกเสียงของคุณก่อนหน้านี้ซ้ำ (สันนิษฐานว่าหลังจากแสดง
+คำตอบ)</p>
+</li>
+</ul>
+<h2 id="ลำดับการแสดงผล"><a class="header" href="#ลำดับการแสดงผล">ลำดับการแสดงผล</a></h2>
+<p>การเรียนจะแสดงการ์ดจากสำรับไพ่ที่เลือกและสำรับไพ่ใดๆ ที่มัน
+มีอยู่ ดังนั้น หากคุณเลือกสำรับไพ่ “ภาษาฝรั่งเศส” ของคุณ สำรับไพ่ย่อย
+“ภาษาฝรั่งเศส::คำศัพท์” และ “ภาษาฝรั่งเศส::ตำราเรียนของฉัน::บทที่ 1” จะแสดง
+เช่นกัน</p>
+<p>โดยค่าเริ่มต้น สำหรับการ์ดใหม่ Anki จะรวบรวมการ์ดจากสำรับไพ่ตามลำดับ
+ตัวอักษร ดังนั้นในตัวอย่างข้างต้น คุณจะได้รับการ์ดก่อน
+จาก “ภาษาฝรั่งเศส” จากนั้น “ตำราเรียนของฉัน” และสุดท้าย “คำศัพท์” คุณสามารถใช้สิ่งนี้
+เพื่อควบคุมลำดับที่การ์ดปรากฏ โดยวางการ์ดที่มีลำดับความสำคัญสูงไว้ใน
+สำรับไพ่ที่ปรากฏสูงกว่าในรายการ เมื่อคอมพิวเตอร์เรียงลำดับข้อความ
+ตามตัวอักษร อักขระ “-” จะมาก่อนอักขระตัวอักษร
+และ “~” จะมาหลังอักขระเหล่านั้น ดังนั้นคุณสามารถเรียกสำรับไพ่ว่า “-คำศัพท์” เพื่อให้
+ปรากฏก่อน และคุณสามารถเรียกสำรับไพ่อื่นว่า “~ตำราเรียนของฉัน” เพื่อ
+บังคับให้ปรากฏหลังสิ่งอื่นทั้งหมด</p>
+<p>การ์ดใหม่และการทบทวนจะถูกรวบรวมแยกกัน และ Anki จะไม่รอจนกว่า
+คิวทั้งสองจะว่างเปล่าก่อนที่จะไปยังสำรับไพ่ถัดไป ดังนั้นจึง
+เป็นไปได้ที่คุณจะเห็นการ์ดใหม่จากสำรับไพ่หนึ่งในขณะที่เห็น
+การทบทวนจากสำรับไพ่อื่น หรือในทางกลับกัน หากคุณไม่ต้องการสิ่งนี้ ให้คลิก
+โดยตรงบนสำรับไพ่ที่คุณต้องการเรียนแทนที่จะเป็นหนึ่งในสำรับไพ่หลัก</p>
+<p>เนื่องจากการ์ดที่กำลังเรียนรู้ค่อนข้างมีความสำคัญต่อเวลา จึงถูกดึง
+มาจากสำรับไพ่ทั้งหมดในครั้งเดียวและแสดงตามลำดับที่ครบกำหนด</p>
+<p>ในการควบคุมลำดับที่การ์ดปรากฏ โปรดดู <a href="./deck-options.html#display-order">ลำดับการแสดงผล</a> สำหรับการเรียงลำดับการ์ดใหม่ที่ละเอียดขึ้น คุณ
+สามารถเปลี่ยนลำดับใน <a href="browsing.html">เบราว์เซอร์</a> ได้</p>
+<h2 id="พีนองและการซอน"><a class="header" href="#พีนองและการซอน">พี่น้องและการซ่อน</a></h2>
+<p>จำได้จาก <a href="getting-started.html">พื้นฐาน</a> ว่า Anki สามารถสร้างการ์ดได้มากกว่าหนึ่งใบ
+สำหรับการป้อนข้อมูลแต่ละอย่างของคุณ เช่น การ์ดหน้า→หลัง และการ์ด
+หลัง→หน้า หรือการลบคำในประโยคสองแบบที่แตกต่างกันจากข้อความเดียวกัน
+การ์ดที่เกี่ยวข้องกันเหล่านี้เรียกว่า “พี่น้อง”</p>
+<p>เมื่อคุณตอบการ์ดที่มีพี่น้อง Anki สามารถป้องกันไม่ให้พี่น้องของ
+การ์ดแสดงในเซสชันเดียวกันโดย “ซ่อน”
+โดยอัตโนมัติ การ์ดที่ถูกซ่อนจะถูกซ่อนจากการทบทวนจนกว่านาฬิกาจะหมุนไป
+สู่วันใหม่หรือคุณยกเลิกการซ่อนด้วยตนเองโดยใช้ปุ่ม “ยกเลิกการซ่อน” ที่
+มองเห็นได้ที่ด้านล่างของหน้าจอ <a href="studying.html#study-overview">ภาพรวมสำรับไพ่</a> Anki
+จะซ่อนพี่น้องแม้ว่าพี่น้องจะไม่ได้อยู่ในสำรับไพ่เดียวกัน (ตัวอย่างเช่น
+หากคุณใช้คุณสมบัติ <a href="templates/intro.html">การแทนที่สำรับไพ่</a>)</p>
+<p>คุณสามารถเปิดใช้งานการซ่อนได้จากหน้าจอ <a href="deck-options.html">ตัวเลือกสำรับไพ่</a> -
+มีการตั้งค่าแยกต่างหากสำหรับการ์ดใหม่และการทบทวน</p>
+<p>Anki จะซ่อนเฉพาะพี่น้องที่เป็นการ์ดใหม่หรือการ์ดทบทวนเท่านั้น มันจะไม่
+ซ่อนการ์ดที่กำลังเรียนรู้ เนื่องจากเวลามีความสำคัญสำหรับการ์ดเหล่านั้น บน
+ในทางกลับกัน เมื่อคุณเรียนการ์ดที่กำลังเรียนรู้ พี่น้องใหม่/ทบทวนใดๆ
+จะถูกซ่อน</p>
+<p>โปรดทราบว่าการ์ดไม่สามารถถูกซ่อนและระงับได้ในเวลาเดียวกัน การระงับ
+การ์ดที่ถูกซ่อนจะยกเลิกการซ่อน การ์ดที่ถูกระงับไม่สามารถถูกซ่อนได้</p>
+<h2 id="แปนพิมพลัด"><a class="header" href="#แปนพิมพลัด">แป้นพิมพ์ลัด</a></h2>
+<p>การดำเนินการทั่วไปส่วนใหญ่ใน Anki มีแป้นพิมพ์ลัด ส่วนใหญ่
+สามารถค้นพบได้ในอินเทอร์เฟซ: รายการเมนูจะแสดงแป้นพิมพ์ลัด
+ถัดจากรายการ และการวางเมาส์เหนือปุ่มโดยทั่วไปจะ
+แสดงแป้นพิมพ์ลัดในคำแนะนำเครื่องมือ</p>
+<p>เมื่อเรียน ให้กด <kbd>Space</kbd> หรือ <kbd>Enter</kbd> เพื่อแสดงคำตอบ เมื่อ
+คำตอบปรากฏขึ้น คุณสามารถใช้ <kbd>Space</kbd> หรือ <kbd>Enter</kbd> เพื่อเลือกปุ่ม ดี
+คุณสามารถใช้ปุ่ม <kbd>1</kbd>-<kbd>4</kbd> เพื่อเลือกปุ่มความง่ายที่ต้องการ หลายคน
+พบว่าสะดวกในการตอบการ์ดส่วนใหญ่ด้วย <kbd>Space</kbd> และวางนิ้วหนึ่ง
+บน <kbd>1</kbd> สำหรับเมื่อพวกเขาลืม</p>
+<p>รายการ “เรียนสำรับไพ่” ในเมนูเครื่องมือช่วยให้คุณสามารถสลับไปยัง
+สำรับไพ่ด้วยแป้นพิมพ์ได้อย่างรวดเร็ว คุณสามารถเรียกใช้ได้ด้วยปุ่ม <kbd>/</kbd> เมื่อ
+เปิดขึ้น จะแสดงสำรับไพ่ทั้งหมดของคุณและแสดงพื้นที่ตัวกรองที่
+ด้านบน ในขณะที่คุณพิมพ์อักขระ Anki จะแสดงเฉพาะสำรับไพ่ที่ตรงกับ
+อักขระที่คุณพิมพ์ คุณสามารถเพิ่มช่องว่างเพื่อแยกคำค้นหาหลายคำ
+และ Anki จะแสดงเฉพาะสำรับไพ่ที่ตรงกับทุกคำ ดังนั้น “ja 1”
+หรือ “on1 ja” จะตรงกับสำรับไพ่ที่ชื่อว่า “Japanese::Lesson1”</p>
+<h2 id="การตามหลัง"><a class="header" href="#การตามหลัง">การตามหลัง</a></h2>
+<p>เมื่อคุณตามหลังในการทบทวนของคุณ Anki โดยค่าเริ่มต้นจะจัดลำดับความสำคัญของการ์ดที่
+รอนานที่สุด การเรียงลำดับนี้ช่วยให้แน่ใจว่าจะไม่มีการ์ดใด
+ถูกทิ้งไว้รออย่างไม่มีกำหนด แต่นั่นหมายความว่าหากคุณแนะนำการ์ดใหม่
+การทบทวนของพวกเขาจะไม่ปรากฏจนกว่าคุณจะผ่าน
+งานค้างของคุณ</p>
+<p>เมื่อคุณตอบการ์ดที่รอมาสักพักแล้ว Anki จะคำนึงถึง
+ความล่าช้านั้นเมื่อพิจารณาเวลาถัดไปที่ควรแสดงการ์ด ซึ่งหมายความว่าหากคุณกลับมาที่ Anki หลังจากหยุดพักไปนาน คุณไม่จำเป็นต้องเริ่มต้นใหม่และสามารถเริ่มต้นจากจุดที่คุณจากไปได้เลย</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="getting-help.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="editing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="getting-help.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="editing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

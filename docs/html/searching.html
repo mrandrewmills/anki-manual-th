@@ -1,0 +1,635 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>การค้นหา - Anki Manual</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/misc.css">
+        <link rel="stylesheet" href="css/mdbook-admonish.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Anki Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankitects/anki-manual/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="การคนหา"><a class="header" href="#การคนหา">การค้นหา</a></h1>
+<ul>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%99%E0%B8%AB%E0%B8%B2%E0%B8%AD%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B8%87%E0%B8%B2%E0%B8%A2">การค้นหาอย่างง่าย</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B3%E0%B8%81%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%89%E0%B8%9E%E0%B8%B2%E0%B8%B0%E0%B8%9F%E0%B8%B4%E0%B8%A5%E0%B8%94">การจำกัดเฉพาะฟิลด์</a></li>
+<li><a href="#%E0%B9%81%E0%B8%97%E0%B8%81-%E0%B8%AA%E0%B8%B3%E0%B8%A3%E0%B8%B1%E0%B8%9A-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94-%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%9A%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B6%E0%B8%81%E0%B8%A2%E0%B8%AD">แท็ก, สำรับ, การ์ด และบันทึกย่อ</a></li>
+<li><a href="#%E0%B9%84%E0%B8%A1%E0%B8%AA%E0%B8%99%E0%B9%83%E0%B8%88%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%B3%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%AD%E0%B8%B1%E0%B8%81%E0%B8%82%E0%B8%A3%E0%B8%B0%E0%B8%9C%E0%B8%AA%E0%B8%A1">ไม่สนใจเครื่องหมายกำกับเสียง/อักขระผสม</a></li>
+<li><a href="#%E0%B8%99%E0%B8%B4%E0%B8%9E%E0%B8%88%E0%B8%99%E0%B8%97%E0%B8%B1%E0%B8%A7%E0%B9%84%E0%B8%9B-regular-expressions">นิพจน์ทั่วไป (Regular expressions)</a></li>
+<li><a href="#%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94">สถานะการ์ด</a></li>
+<li><a href="#%E0%B8%98%E0%B8%87">ธง</a></li>
+<li><a href="#%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%AA%E0%B8%A1%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94">คุณสมบัติการ์ด</a></li>
+<li><a href="#%E0%B9%80%E0%B8%AB%E0%B8%95%E0%B8%B8%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%93%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B8%B8%E0%B8%94">เหตุการณ์ล่าสุด</a>
+<ul>
+<li><a href="#%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B8%A1%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD">เพิ่มเมื่อ</a></li>
+<li><a href="#%E0%B9%81%E0%B8%81%E0%B9%84%E0%B8%82%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD">แก้ไขเมื่อ</a></li>
+<li><a href="#%E0%B8%95%E0%B8%AD%E0%B8%9A%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD">ตอบเมื่อ</a></li>
+<li><a href="#%E0%B8%95%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%87%E0%B9%81%E0%B8%A3%E0%B8%81">ตอบครั้งแรก</a></li>
+</ul>
+</li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%84%E0%B8%B9%E0%B8%AD%E0%B8%B1%E0%B8%81%E0%B8%82%E0%B8%A3%E0%B8%B0%E0%B8%9E%E0%B8%B4%E0%B9%80%E0%B8%A8%E0%B8%A9">การจับคู่อักขระพิเศษ</a>
+<ul>
+<li><a href="#%E0%B8%82%E0%B8%AD%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%94%E0%B8%B4%E0%B8%9A-raw-input">ข้อมูลดิบ (Raw input)</a></li>
+</ul>
+</li>
+<li><a href="#%E0%B8%A3%E0%B8%AB%E0%B8%B1%E0%B8%AA%E0%B8%A7%E0%B8%B1%E0%B8%95%E0%B8%96%E0%B8%B8">รหัสวัตถุ</a></li>
+<li><a href="#%E0%B8%82%E0%B8%AD%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%97%E0%B8%B5%E0%B8%81%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B8%94%E0%B9%80%E0%B8%AD%E0%B8%87">ข้อมูลที่กำหนดเอง</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%99%E0%B8%AB%E0%B8%B2%E0%B8%AD%E0%B8%B7%E0%B8%99%E0%B9%86">การค้นหาอื่นๆ</a></li>
+</ul>
+<p>หน้าจอเรียกดูของ Anki และคุณสมบัติสำรับที่กรองแล้วใช้วิธีการทั่วไป
+ในการค้นหาการ์ด/บันทึกย่อที่ต้องการ วิธีการนี้ยังสามารถใช้เพื่อปรับขอบเขตของการปรับให้เหมาะสมของ FSRS ได้อีกด้วย</p>
+<h2 id="การคนหาอยางงาย"><a class="header" href="#การคนหาอยางงาย">การค้นหาอย่างง่าย</a></h2>
+<p>เมื่อคุณพิมพ์ข้อความลงในช่องค้นหา Anki จะค้นหาบันทึกย่อที่ตรงกัน
+และแสดงการ์ดของบันทึกย่อนั้น Anki จะค้นหาในทุกฟิลด์ของบันทึกย่อ แต่
+จะไม่ค้นหาแท็ก (ดู <a href="#tags-decks-cards-and-notes">ภายหลังในส่วนนี้</a> เพื่อค้นหาแท็ก) ตัวอย่างบางส่วน:</p>
+<p><code>dog</code>
+ค้นหา “dog” - จะตรงกับคำว่า “doggy” และ “underdog” ด้วย</p>
+<p><code>dog cat</code>
+ค้นหาบันทึกย่อที่มีทั้ง “dog” และ “cat” อยู่ในนั้น เช่น “raining
+cats and dogs”</p>
+<p><code>dog or cat</code>
+ค้นหาบันทึกย่อที่มี “dog” หรือ “cat”</p>
+<p><code>dog (cat or mouse)</code>
+ค้นหาบันทึกย่อที่มี “dog” และ “cat” หรือ “dog” และ “mouse”</p>
+<p><code>-cat</code>
+ค้นหาบันทึกย่อที่ไม่มี “cat”</p>
+<p><code>-cat -mouse</code>
+ค้นหาบันทึกย่อที่ไม่มีทั้ง “cat” และ “mouse”</p>
+<p><code>-(cat or mouse)</code>
+เหมือนกับข้างบน</p>
+<p><code>"a dog"</code>
+ค้นหาบันทึกย่อที่มีลำดับอักขระ “a dog” ตรงๆ อยู่ในนั้น เช่น
+“atta dog” แต่ไม่ใช่ “dog a” หรือ “adog”</p>
+<p><code>-"a dog"</code>
+ค้นหาบันทึกย่อที่ไม่มีลำดับอักขระ “a dog” ตรงๆ อยู่ในนั้น</p>
+<p><code>d_g</code>
+ค้นหาบันทึกย่อที่มี d, &lt;อักขระหนึ่งตัว&gt;, g เช่น dog, dig, dug และอื่นๆ</p>
+<p><code>d*g</code>
+ค้นหาบันทึกย่อที่มี d, &lt;ศูนย์ตัวอักษรขึ้นไป&gt;, g เช่น dg, dog, dung
+เป็นต้น</p>
+<p><code>w:dog</code>
+ค้นหาคำว่า “dog” ซึ่งตรงข้ามกับลำดับของอักขระ - จะตรงกับ “dog” แต่ไม่ใช่ “doggy”
+หรือ “underdog” ต้องใช้ Anki 2.1.24+, AnkiMobile 2.1.61+ หรือ AnkiDroid 2.17+ โปรดทราบว่า
+การเปลี่ยนแปลงการจัดรูปแบบอาจถูกตีความว่าเป็นขอบเขตของคำ เช่น การค้นหา
+<code>w:exam</code> จะตรงกับ <strong>exam</strong>ple เนื่องจากส่วน “exam” ของ example อยู่ในรูปแบบตัวหนา</p>
+<p><code>w:dog*</code>
+จะตรงกับ “dog” และ “doggy” แต่ไม่ใช่ “underdog”</p>
+<p><code>w:*dog</code>
+จะตรงกับ “dog” และ “underdog” แต่ไม่ใช่ “doggy”</p>
+<p>สิ่งที่ควรทราบจากข้างต้น:</p>
+<ul>
+<li>
+<p>คำค้นหาจะถูกคั่นด้วยช่องว่าง</p>
+</li>
+<li>
+<p>เมื่อมีคำค้นหาหลายคำ Anki จะค้นหาบันทึกย่อที่
+ตรงกับคำค้นหาทั้งหมด - จะมีการใส่ <code>and</code> โดยนัยระหว่างแต่ละ
+คำค้นหา ใน Anki 2.1.24+, AnkiMobile 2.0.60+ และ AnkiDroid 2.17+ คุณสามารถระบุ
+อย่างชัดเจนได้หากต้องการ (<code>dog and cat</code> เหมือนกับ <code>dog cat</code>) แต่
+Anki เวอร์ชันเก่าจะถือว่า <code>and</code> เป็นเพียงคำอื่นที่จะค้นหา</p>
+</li>
+<li>
+<p>คุณสามารถใช้ <code>or</code> หากคุณต้องการให้ตรงกับคำค้นหาเพียงคำเดียว</p>
+</li>
+<li>
+<p>คุณสามารถใส่เครื่องหมายลบ (<code>-</code>) นำหน้าคำค้นหาเพื่อค้นหาบันทึกย่อที่ไม่
+ตรงกับคำค้นหานั้นได้</p>
+</li>
+<li>
+<p>คุณสามารถจัดกลุ่มคำค้นหาโดยใส่วงเล็บล้อมรอบได้ ดังใน
+ตัวอย่าง <code>dog (cat or mouse)</code> สิ่งนี้จะมีความสำคัญเมื่อ
+รวมการค้นหา OR และ AND เข้าด้วยกัน — ในตัวอย่าง ด้วย
+วงเล็บ จะตรงกับ “dog cat” หรือ “dog mouse” ในขณะที่
+ไม่มีวงเล็บ จะตรงกับ “dog and cat” หรือ “mouse”</p>
+</li>
+<li>
+<p>Anki สามารถค้นหาภายในการจัดรูปแบบใน <a href="editing.html#customizing-fields">ฟิลด์จัดเรียง</a> ที่คุณกำหนดค่าไว้เท่านั้น ตัวอย่างเช่น หากคุณเพิ่ม
+“<strong>exa</strong>mple” ลงในฟิลด์ใดฟิลด์หนึ่งของคุณ โดยให้ส่วน “exa” เป็นตัวหนา สิ่งนี้จะไม่ถูกจับคู่เมื่อ
+ค้นหา <code>example</code> เว้นแต่ฟิลด์นั้นจะเป็นฟิลด์จัดเรียง หาก
+คำไม่ได้จัดรูปแบบ หรือการจัดรูปแบบไม่เปลี่ยนแปลงกลาง
+คำ Anki จะสามารถค้นหาได้ในทุกฟิลด์</p>
+</li>
+<li>
+<p>การค้นหามาตรฐานไม่คำนึงถึงตัวพิมพ์ใหญ่-เล็กสำหรับอักขระละติน - a-z จะ
+ตรงกับ A-Z และในทางกลับกัน อักขระอื่นๆ เช่น ซีริลลิกจะคำนึงถึงตัวพิมพ์ใหญ่-เล็ก
+ในการค้นหามาตรฐาน แต่สามารถทำให้ไม่คำนึงถึงตัวพิมพ์ใหญ่-เล็กได้โดยการค้นหาที่ขอบเขตของคำ
+หรือนิพจน์ทั่วไป (<code>w:</code>, <code>re:</code>)</p>
+</li>
+</ul>
+<h2 id="การจำกัดเฉพาะฟิลด"><a class="header" href="#การจำกัดเฉพาะฟิลด">การจำกัดเฉพาะฟิลด์</a></h2>
+<p>คุณยังสามารถขอให้ Anki จับคู่เฉพาะในกรณีที่ฟิลด์ใดฟิลด์หนึ่งมีข้อความ
+บางอย่างอยู่ ซึ่งแตกต่างจากตัวอย่างการค้นหาก่อนหน้านี้ การค้นหาในฟิลด์ต้องการการจับคู่ที่ตรงกันทุกประการ
+โดยค่าเริ่มต้น</p>
+<p><code>front:dog</code>
+ค้นหาบันทึกย่อที่มีฟิลด์ Front เป็น “dog” ทุกประการ ฟิลด์ที่ระบุว่า “a
+dog” จะไม่ตรงกัน</p>
+<p><code>"animal front:a dog"</code>
+ค้นหาบันทึกย่อที่ฟิลด์ “Animal Front” เป็น “a dog” ทุกประการ เครื่องหมายคำพูดคู่
+จำเป็นต้องมี: ดู <a href="#matching-special-characters">ภายหลังในส่วนนี้</a></p>
+<p><code>front:*dog*</code>
+ค้นหาบันทึกย่อที่ฟิลด์ Front มีคำว่า dog อยู่ที่ใดที่หนึ่ง</p>
+<p><code>front:</code>
+ค้นหาบันทึกย่อที่มีฟิลด์ Front ว่างเปล่า</p>
+<p><code>front:_*</code>
+ค้นหาบันทึกย่อที่มีฟิลด์ Front ไม่ว่างเปล่า</p>
+<p><code>front:*</code>
+ค้นหาบันทึกย่อที่มีฟิลด์ Front ไม่ว่าจะว่างเปล่าหรือไม่ก็ตาม</p>
+<p><code>fr*:text</code>
+ค้นหาบันทึกย่อในฟิลด์ที่ขึ้นต้นด้วย “fr” ต้องใช้ Anki 2.1.24+, AnkiMobile 2.1.60+ หรือ AnkiDroid 2.17+</p>
+<h2 id="แทก-สำรับ-การด-และบันทึกยอ"><a class="header" href="#แทก-สำรับ-การด-และบันทึกยอ">แท็ก, สำรับ, การ์ด และบันทึกย่อ</a></h2>
+<p><code>tag:animal</code>
+ค้นหาบันทึกย่อที่มีแท็ก “animal” หรือแท็กย่อยเช่น “animal::mammal”</p>
+<p><code>tag:none</code>
+ค้นหาบันทึกย่อที่ไม่มีแท็ก</p>
+<p><code>tag:ani*</code>
+ค้นหาบันทึกย่อที่มีแท็กขึ้นต้นด้วย “ani”</p>
+<p><code>deck:french</code>
+ค้นหาการ์ดในสำรับระดับบนสุดที่ชื่อ “French” หรือสำรับย่อยเช่น “French::Words” จะไม่ตรงกับสำรับย่อยที่มีชื่อนั้น เช่น “Languages::French”</p>
+<p><code>deck:french::words</code>
+ค้นหาการ์ดในสำรับย่อย “French::Words”</p>
+<p><code>deck:french -deck:french::*</code>
+ค้นหาการ์ดใน “French” แต่ไม่ใช่ในสำรับย่อย</p>
+<p><code>deck:"french words"</code>
+ค้นหาเมื่อชื่อสำรับมีช่องว่าง</p>
+<p><code>"deck:french words"</code>
+เหมือนกับข้างบน</p>
+<p><code>deck:filtered</code>
+เฉพาะสำรับที่กรองแล้ว</p>
+<p><code>-deck:filtered</code>
+เฉพาะสำรับปกติ</p>
+<p><code>preset:"Default"</code>
+การ์ดในสำรับทั้งหมดที่ใช้ค่าที่ตั้งไว้ล่วงหน้าของตัวเลือกสำรับ “Default”
+ต้องใช้ Anki 23.10+, AnkiMobile 23.10+ หรือ AnkiDroid 2.17+</p>
+<p><code>card:forward</code>
+ค้นหาการ์ดที่สร้างโดยประเภทการ์ดชื่อ “Forward”</p>
+<p><code>card:1</code>
+ค้นหาการ์ดตามหมายเลขประเภทการ์ด เช่น เพื่อค้นหาการลบคำในช่องว่างที่สอง
+สำหรับบันทึกย่อ คุณจะใช้ <code>card:2</code></p>
+<p><code>note:basic</code>
+ค้นหาการ์ดที่สร้างด้วยประเภทบันทึกย่อชื่อ “Basic”</p>
+<h2 id="ไมสนใจเครืองหมายกำกับเสียงอักขระผสม"><a class="header" href="#ไมสนใจเครืองหมายกำกับเสียงอักขระผสม">ไม่สนใจเครื่องหมายกำกับเสียง/อักขระผสม</a></h2>
+<p>ต้องใช้ Anki 2.1.24+, AnkiMobile 2.0.60+ หรือ AnkiDroid 2.17+</p>
+<p>คุณสามารถใช้ <code>nc:</code> (nc ย่อมาจาก “no combining”) เพื่อให้ Anki ไม่สนใจอักขระผสม ตัวอย่างเช่น:</p>
+<p><code>nc:uber</code>
+ตรงกับบันทึกย่อที่มี “uber”, “über”, “Über” และอื่นๆ</p>
+<p><code>nc:は</code>
+ตรงกับ “は”, “ば” และ “ぱ”</p>
+<p>การค้นหาที่ไม่สนใจอักขระผสมจะช้ากว่าการค้นหาปกติ</p>
+<h2 id="นิพจนทัวไป-regular-expressions"><a class="header" href="#นิพจนทัวไป-regular-expressions">นิพจน์ทั่วไป (Regular expressions)</a></h2>
+<p>Anki 2.1.24+, AnkiMobile 2.0.60+ และ AnkiDroid 2.17+ รองรับการค้นหาในบันทึกย่อด้วย “นิพจน์ทั่วไป”
+ซึ่งเป็นวิธีการค้นหาในข้อความที่เป็นมาตรฐานและมีประสิทธิภาพ</p>
+<p>เริ่มต้นการค้นหาด้วย <code>re:</code> เพื่อค้นหาโดยใช้นิพจน์ทั่วไป เพื่อให้ง่ายขึ้น Anki จะ
+ปฏิบัติต่อสิ่งต่อไปนี้เป็น <a href="#raw-input">ข้อมูลดิบ</a> ดังนั้นโปรดคำนึงถึงกฎที่ระบุไว้ที่นั่น</p>
+<p>ตัวอย่างบางส่วน:</p>
+<p><code>"re:(some|another).*thing"</code>
+ค้นหาบันทึกย่อที่มี “some” หรือ “another” อยู่ในนั้น ตามด้วยอักขระ 0 ตัวขึ้นไป แล้วตามด้วย “thing”</p>
+<p><code>re:\d{3}</code>
+ค้นหาบันทึกย่อที่มีตัวเลข 3 ตัวเรียงกัน</p>
+<p>นิพจน์ทั่วไปยังสามารถจำกัดเฉพาะฟิลด์ที่ต้องการได้อีกด้วย โปรดทราบว่าซึ่งแตกต่างจากการค้นหาปกติ
+ในฟิลด์ นิพจน์ทั่วไปในฟิลด์ไม่จำเป็นต้องตรงกันทุกประการ:</p>
+<p><code>front:re:[a-c]1</code>
+ตรงกับ a1, B1 หรือ c1 ทั้งตัวพิมพ์ใหญ่และตัวพิมพ์เล็กที่ปรากฏที่ใดก็ได้ในฟิลด์ “Front”</p>
+<p><code>front:re:^[a-c]1$</code>
+เหมือนกับตัวอย่างก่อนหน้า แต่จะไม่ตรงกันหากมีข้อความอื่นใดอยู่ก่อนหรือหลัง a1/b1/c1</p>
+<p>Anki 2.1.50+ รองรับนิพจน์ทั่วไปสำหรับแท็ก:</p>
+<p><code>tag:re:^parent$</code>
+ค้นหาบันทึกย่อที่มีแท็ก “parent” ตรงๆ โดยไม่คำนึงถึงแท็กลูกใดๆ เช่น “parent::child”</p>
+<p><code>"tag:re:lesson-(1[7-9]|2[0-5])"</code>
+ค้นหาบันทึกย่อที่มีแท็ก “lesson-17” ถึง “lesson-25”</p>
+<p>สำหรับข้อมูลเพิ่มเติมเกี่ยวกับนิพจน์ทั่วไป โปรดดู <a href="https://regexone.com/lesson/introduction_abcs">เว็บไซต์นี้</a></p>
+<p>สิ่งที่ควรทราบ:</p>
+<ul>
+<li>การค้นหาไม่คำนึงถึงตัวพิมพ์ใหญ่-เล็กโดยค่าเริ่มต้น ใช้ <code>(?-i)</code> ที่จุดเริ่มต้นเพื่อเปิดใช้งานการคำนึงถึงตัวพิมพ์ใหญ่-เล็ก</li>
+<li>ข้อความบางอย่างเช่นช่องว่างและการขึ้นบรรทัดใหม่อาจแสดงแตกต่างกันใน HTML - คุณสามารถ
+ใช้ตัวแก้ไข HTML ในหน้าจอแก้ไขเพื่อดูเนื้อหา HTML พื้นฐาน</li>
+<li>สำหรับรายละเอียดเฉพาะของการสนับสนุน regex ของ Anki โปรดดู <a href="https://docs.rs/regex/1.3.9/regex/#syntax">เอกสารประกอบ regex crate</a></li>
+</ul>
+<h2 id="สถานะการด"><a class="header" href="#สถานะการด">สถานะการ์ด</a></h2>
+<p><code>is:due</code>
+การ์ดทบทวนและการ์ดที่กำลังเรียนรู้ที่รอการศึกษา</p>
+<p><code>is:new</code>
+การ์ดใหม่</p>
+<p><code>is:learn</code>
+การ์ดที่กำลังเรียนรู้</p>
+<p><code>is:review</code>
+การทบทวน (ทั้งที่ครบกำหนดและยังไม่ครบกำหนด) และการ์ดที่ลืม</p>
+<p><code>is:suspended</code>
+การ์ดที่ถูก <a href="leeches.html">ระงับโดยอัตโนมัติ</a> หรือด้วยตนเอง</p>
+<p><code>is:buried</code>
+การ์ดที่ถูก <a href="studying.html#siblings-and-burying">ฝังโดยอัตโนมัติ</a> หรือ
+ด้วยตนเอง</p>
+<p><code>is:buried-sibling</code>
+การ์ดที่ถูกฝังโดยอัตโนมัติ</p>
+<p><code>is:buried-manually</code>
+การ์ดที่ถูกฝังด้วยตนเอง</p>
+<p>การ์ดที่ <a href="deck-options.html#lapses">ลืม</a> จะอยู่ในหมวดหมู่ก่อนหน้าหลายหมวดหมู่ ดังนั้นจึงอาจ
+เป็นประโยชน์ที่จะรวมคำค้นหาต่างๆ เพื่อให้ได้ผลลัพธ์ที่แม่นยำยิ่งขึ้น:</p>
+<p><code>is:learn is:review</code>
+การ์ดที่ลืมและกำลังรอการเรียนรู้ซ้ำ</p>
+<p><code>-is:learn is:review</code>
+การ์ดทบทวน ไม่รวมการ์ดที่ลืม</p>
+<p><code>is:learn -is:review</code>
+การ์ดที่กำลังเรียนรู้เป็นครั้งแรก</p>
+<h2 id="ธง"><a class="header" href="#ธง">ธง</a></h2>
+<p><code>flag:0</code>
+การ์ดที่ไม่มีธง</p>
+<p><code>flag:1</code>
+การ์ดที่มีธงสีแดง</p>
+<p><code>flag:2</code>
+การ์ดที่มีธงสีส้ม</p>
+<p><code>flag:3</code>
+การ์ดที่มีธงสีเขียว</p>
+<p><code>flag:4</code>
+การ์ดที่มีธงสีน้ำเงิน</p>
+<p><code>flag:5</code>
+การ์ดที่มีธงสีชมพู</p>
+<p><code>flag:6</code>
+การ์ดที่มีธงสีเทอร์ควอยซ์</p>
+<p><code>flag:7</code>
+การ์ดที่มีธงสีม่วง</p>
+<h2 id="คุณสมบัติการด"><a class="header" href="#คุณสมบัติการด">คุณสมบัติการ์ด</a></h2>
+<p><code>prop:ivl&gt;=10</code>
+การ์ดที่มีช่วงเวลา 10 วันขึ้นไป</p>
+<p><code>prop:due=1</code>
+การ์ดที่ครบกำหนดพรุ่งนี้</p>
+<p><code>prop:due=-1</code>
+การ์ดที่ครบกำหนดเมื่อวานนี้และยังไม่ได้ตอบ</p>
+<p><code>prop:due&gt;=1</code>
+การ์ดทั้งหมดที่ครบกำหนดในอนาคต รวมถึงพรุ่งนี้</p>
+<p><code>prop:due&lt;=-1</code>
+การ์ดที่ค้างชำระทั้งหมด</p>
+<p><code>prop:due&gt;=-1 prop:due&lt;=1</code>
+การ์ดที่ครบกำหนดเมื่อวานนี้ วันนี้ และพรุ่งนี้</p>
+<p><code>prop:reps&lt;10</code>
+การ์ดที่ตอบน้อยกว่า 10 ครั้ง</p>
+<p><code>prop:lapses&gt;3</code>
+การ์ดที่ลืมมากกว่า 3 ครั้ง</p>
+<p><code>prop:ease!=2.5</code>
+การ์ดที่ง่ายกว่าหรือยากกว่าความง่ายเริ่มต้น</p>
+<p><code>prop:pos&lt;=100</code>
+การ์ดใหม่ที่มีตำแหน่งในคิวน้อยกว่าหรือเท่ากับ 100</p>
+<p>การค้นหาต่อไปนี้ต้องใช้ Anki 23.10+ และเปิดใช้งาน FSRS:</p>
+<p><code>prop:s&gt;21</code>
+การ์ดที่มีความเสถียรมากกว่า 21 วัน</p>
+<p><code>prop:d&gt;0.3</code>
+การ์ดที่มีความยากมากกว่า 0.3</p>
+<p><code>prop:r&lt;0.9</code>
+การ์ดที่มีความสามารถในการดึงข้อมูลน้อยกว่า 0.9</p>
+<h2 id="เหตุการณลาสุด"><a class="header" href="#เหตุการณลาสุด">เหตุการณ์ล่าสุด</a></h2>
+<h3 id="เพิมเมือ"><a class="header" href="#เพิมเมือ">เพิ่มเมื่อ</a></h3>
+<p><code>added:1</code>
+การ์ดที่เพิ่มในวันนี้</p>
+<p><code>added:7</code>
+การ์ดที่เพิ่มใน 7 วันที่ผ่านมา</p>
+<p>การตรวจสอบจะทำกับเวลาสร้างการ์ดแทนที่จะเป็นเวลาสร้างบันทึกย่อ
+ดังนั้นการ์ดที่สร้างขึ้นภายในกรอบเวลาจะถูกรวมอยู่ด้วย
+แม้ว่าบันทึกย่อของพวกเขาจะถูกเพิ่มเมื่อนานมาแล้วก็ตาม</p>
+<h3 id="แกไขเมือ"><a class="header" href="#แกไขเมือ">แก้ไขเมื่อ</a></h3>
+<p><code>edited:n</code>
+การ์ดที่ข้อความบันทึกย่อถูกเพิ่ม/แก้ไขใน n วันที่ผ่านมา</p>
+<p>ต้องใช้ Anki 2.1.28+ หรือ AnkiMobile 2.0.64+</p>
+<h3 id="ตอบเมือ"><a class="header" href="#ตอบเมือ">ตอบเมื่อ</a></h3>
+<p><code>rated:1</code>
+การ์ดที่ตอบในวันนี้</p>
+<p><code>rated:1:2</code>
+การ์ดที่ตอบว่า ยาก (2) ในวันนี้</p>
+<p><code>rated:7:1</code>
+การ์ดที่ตอบว่า อีกครั้ง (1) ใน 7 วันที่ผ่านมา</p>
+<p><code>rated:31:4</code>
+การ์ดที่ตอบว่า ง่าย (4) ใน 31 วันที่ผ่านมา</p>
+<p>Anki 2.1.39+ รองรับการค้นหาการให้คะแนนเกิน 31 วัน</p>
+<p>โปรดทราบว่า ในการค้นหาการ์ดที่ตอบในวันใดวันหนึ่ง <code>rated:n -rated:(n-1)</code> อาจไม่ทำงานทุกครั้ง ให้ใช้สิ่งต่อไปนี้แทน:</p>
+<p><code>prop:rated=0</code>
+การ์ดที่ตอบในวันนี้</p>
+<p><code>prop:rated=-1</code>
+การ์ดที่ตอบเมื่อหนึ่งวันที่แล้ว</p>
+<p><code>prop:rated=-7</code>
+การ์ดที่ตอบเมื่อ 7 วันที่แล้ว</p>
+<h3 id="ตอบครังแรก"><a class="header" href="#ตอบครังแรก">ตอบครั้งแรก</a></h3>
+<p>ต้องใช้ Anki 2.1.45+</p>
+<p><code>introduced:1</code>
+การ์ดที่ตอบเป็นครั้งแรกในวันนี้</p>
+<p><code>introduced:365</code>
+การ์ดที่ตอบเป็นครั้งแรกภายใน 365 วันที่ผ่านมา</p>
+<h2 id="การจับคูอักขระพิเศษ"><a class="header" href="#การจับคูอักขระพิเศษ">การจับคู่อักขระพิเศษ</a></h2>
+<p>หากคุณใช้เวอร์ชันก่อนหน้า Anki 2.1.36 การค้นหาต่อไปนี้อาจไม่ทำงาน</p>
+<p>ดังที่แสดงในส่วนก่อนหน้า อักขระบางตัวเช่น <code>*</code>, <code>_</code> และ <code>"</code> มี
+ความหมายพิเศษในการค้นหา หากคุณต้องการค้นหาอักขระเหล่านั้นในการค้นหา
+คุณต้องบอก Anki ไม่ให้ปฏิบัติต่อมันเป็นพิเศษ ซึ่งเรียกว่า “การหลีกเลี่ยงอักขระ” และทำได้โดยหลักโดยใช้เครื่องหมายคำพูดคู่และแบ็กสแลช</p>
+<ul>
+<li>
+<p><em>ช่องว่าง</em>
+หากต้องการจับคู่สิ่งที่รวมช่องว่าง ให้ล้อม <code>"คำค้นหาทั้งหมด"</code> ด้วยเครื่องหมายคำพูดคู่
+หากเป็นการค้นหาแบบโคลอน คุณยังมีตัวเลือกที่จะใส่เครื่องหมายคำพูดเฉพาะ
+<code>ส่วน:"หลังเครื่องหมายโคลอน"</code></p>
+</li>
+<li>
+<p><code>And</code>/<code>Or</code>
+หากต้องการค้นหาคำเหล่านี้ ให้ล้อมรอบด้วยเครื่องหมายคำพูดคู่ ตัวอย่างเช่น <code>dog "and" cat</code> ค้นหา “dog”, “cat” และคำว่า “and”
+หากคุณล้อมรอบคำค้นหาทั้งหมดด้วยเครื่องหมายคำพูดเหมือนในตัวอย่างก่อนหน้า คุณไม่จำเป็นต้องหลีกเลี่ยง <code>and</code> หรือ <code>or</code></p>
+</li>
+<li>
+<p><code>"</code>, <code>*</code> และ <code>_</code>
+เพิ่มแบ็กสแลชก่อนอักขระเหล่านี้เพื่อปฏิบัติต่อมันตามตัวอักษร ตัวอย่างเช่น
+<code>_</code> จะตรงกับอักขระใดๆ ก็ได้ แต่ <code>\_</code> จะตรงกับขีดล่างจริงๆ เท่านั้น</p>
+</li>
+<li>
+<p><code>\</code>
+เนื่องจากแบ็กสแลชใช้เพื่อลบความหมายพิเศษของอักขระอื่น
+มันจึงถูกปฏิบัติเป็นพิเศษด้วย หากคุณต้องการค้นหาแบ็กสแลชจริงๆ
+ให้ใช้ <code>\\</code> แทน <code>\</code></p>
+</li>
+<li>
+<p><code>(</code> และ <code>)</code>
+คุณสามารถค้นหาวงเล็บได้โดยการล้อมรอบคำค้นหาทั้งหมดด้วยเครื่องหมายคำพูด
+โดยใช้แบ็กสแลช หรือทั้งสองอย่างพร้อมกัน ตัวอย่างเช่น <code>"(text)"</code>, <code>\(text\)</code> และ
+<code>"\(text\)"</code> เป็นการค้นหาที่เทียบเท่ากันทั้งหมด และค้นหา <code>(text)</code></p>
+</li>
+<li>
+<p><code>-</code>
+การเริ่มต้นคำค้นหาด้วย <code>-</code> มักจะกลับด้าน: <code>-dog</code> ตรงกับทุกอย่าง
+ยกเว้น dog ตัวอย่างเช่น หากคุณต้องการรวมขีดกลางจริงๆ
+คุณสามารถใช้แบ็กสแลช หรือรวมข้อความไว้ในเครื่องหมายคำพูดได้ ตัวอย่างเช่น
+<code>\-free</code> หรือ <code>"-free"</code> จะตรงกับ “guilt-free” และ “cruelty-free”</p>
+</li>
+<li>
+<p><code>:</code>
+เครื่องหมายโคลอนต้องถูกหลีกเลี่ยงโดยใช้แบ็กสแลช เว้นแต่จะนำหน้าด้วยเครื่องหมายโคลอนอื่นที่ไม่ได้หลีกเลี่ยง
+ตัวอย่างเช่น <code>w:3:30</code> ค้นหา “3:30” ที่ขอบเขตของคำและไม่ต้องการให้คุณใช้แบ็กสแลช
+อย่างไรก็ตาม หากคุณไม่ได้ใช้การค้นหาแบบโคลอน เครื่องหมายโคลอนจะต้องถูกหลีกเลี่ยงเช่นนี้: <code>3\:30</code></p>
+</li>
+<li>
+<p><code>&amp;</code>, <code>&lt;</code>, และ <code>&gt;</code>
+<code>&amp;</code>, <code>&lt;</code>, และ <code>&gt;</code> ถูกปฏิบัติต่อเป็น HTML เมื่อค้นหาใน Anki และด้วยเหตุนี้ การค้นหา
+ที่มีอักขระเหล่านี้จึงไม่ทำงานตามที่คาดไว้ อย่างไรก็ตาม คุณสามารถค้นหาได้โดยใช้
+ชื่อเอนทิตี HTML ที่สอดคล้องกัน (<code>&amp;amp;</code> สำหรับ <code>&amp;</code>, <code>&amp;lt;</code> สำหรับ <code>&lt;</code>, และ <code>&amp;gt;</code> สำหรับ <code>&gt;</code>)
+ตัวอย่างเช่น การค้นหา <code>&amp;amp;text</code> จะค้นหาบันทึกย่อที่มี <code>&amp;text</code> ในฟิลด์</p>
+</li>
+</ul>
+<h3 id="ขอมูลดิบ-raw-input"><a class="header" href="#ขอมูลดิบ-raw-input">ข้อมูลดิบ (Raw input)</a></h3>
+<p>ข้อความที่นำหน้าด้วยคีย์เวิร์ดบางคำ (เช่น <code>re:</code>) จะถูกปฏิบัติต่อเป็นข้อมูลดิบ นั่นคือ
+อักขระที่ระบุไว้ข้างต้นส่วนใหญ่จะสูญเสียความหมายพิเศษไป ในบริบทดังกล่าว ต้องการเพียง
+การหลีกเลี่ยงขั้นต่ำเพื่อป้องกันความคลุมเครือ:</p>
+<ul>
+<li>
+<p>เครื่องหมายคำพูดคู่ (<code>"</code>) ต้องถูกหลีกเลี่ยง</p>
+</li>
+<li>
+<p>ช่องว่างและวงเล็บที่ไม่ได้หลีกเลี่ยงต้องการให้คำค้นหาอยู่ในเครื่องหมายคำพูด</p>
+</li>
+<li>
+<p>คำค้นหาต้องไม่ลงท้ายด้วยจำนวนคี่ของแบ็กสแลช</p>
+</li>
+</ul>
+<h2 id="รหัสวัตถุ"><a class="header" href="#รหัสวัตถุ">รหัสวัตถุ</a></h2>
+<p><code>nid:123</code>
+บันทึกย่อที่มีรหัสบันทึกย่อ 123</p>
+<p><code>cid:123,456,789</code>
+การ์ดทั้งหมดที่มีรหัสการ์ด 123, 456 หรือ 789</p>
+<p>รหัสบันทึกย่อและการ์ดสามารถพบได้ในกล่องโต้ตอบ <a href="stats.html">ข้อมูลการ์ด</a> ใน
+เบราว์เซอร์ การค้นหาเหล่านี้อาจเป็นประโยชน์เมื่อทำการพัฒนา
+ส่วนเสริมหรือทำงานอย่างใกล้ชิดกับฐานข้อมูล</p>
+<h2 id="ขอมูลทีกำหนดเอง"><a class="header" href="#ขอมูลทีกำหนดเอง">ข้อมูลที่กำหนดเอง</a></h2>
+<p>Anki อนุญาตให้จัดเก็บข้อมูลที่กำหนดเองจำนวนเล็กน้อยบนการ์ด ซึ่งช่วยให้
+สามารถใช้งานในกรณีขั้นสูง เช่น ตัวจัดตารางเวลาที่กำหนดเอง หนึ่งในการประยุกต์ใช้
+ที่น่าสังเกตของคุณลักษณะนี้คือในการใช้งาน FSRS รุ่นก่อนหน้า ใน Anki 23.10+ มี
+บางวิธีในการค้นหา:</p>
+<p><code>has-cd:v</code>
+การ์ดที่มีคุณสมบัติ <code>v</code> ในข้อมูลที่กำหนดเอง</p>
+<p><code>prop:cdn:d&gt;5</code>
+การ์ดที่มีค่า <code>d</code> ในข้อมูลที่กำหนดเอง (โดยปกติหมายถึงความยากใน FSRS) มากกว่า 5</p>
+<p><code>prop:cds:v=reschedule</code>
+การ์ดที่มีสตริง <code>v</code> ในข้อมูลที่กำหนดเองเท่ากับ <code>reschedule</code></p>
+<h2 id="การคนหาอืนๆ"><a class="header" href="#การคนหาอืนๆ">การค้นหาอื่นๆ</a></h2>
+<p><code>prop:due=1 is:learn</code>
+การ์ดเรียนรู้ระหว่างวันที่ครบกำหนดพรุ่งนี้</p>
+<p><code>prop:due=0 is:learn -introduced:1</code>
+การ์ดเรียนรู้ระหว่างวันที่ครบกำหนดวันนี้</p>
+<p><code>prop:resched=0</code>
+การ์ดที่จัดตารางเวลาใหม่ในวันนี้ ไม่ว่าจะใช้ <strong>ตั้งวันครบกำหนด</strong> หรือ <strong>จัดตารางการ์ดใหม่เมื่อมีการเปลี่ยนแปลง</strong></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="filtered-decks.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="importing/intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="filtered-decks.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="importing/intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

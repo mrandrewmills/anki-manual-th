@@ -1,0 +1,591 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>การจัดรูปแบบและ HTML - Anki Manual</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Anki&#x27;s user manual. Anki is a flashcard program that makes learning easier.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../css/misc.css">
+        <link rel="stylesheet" href="../css/mdbook-admonish.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Anki Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/ankitects/anki-manual/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="การจัดรูปแบบและ-html"><a class="header" href="#การจัดรูปแบบและ-html">การจัดรูปแบบและ HTML</a></h1>
+<ul>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94">การจัดรูปแบบการ์ด</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%A0%E0%B8%B2%E0%B8%9E">การปรับขนาดรูปภาพ</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%9F%E0%B8%B4%E0%B8%A5%E0%B8%94">การจัดรูปแบบฟิลด์</a></li>
+<li><a href="#%E0%B8%9B%E0%B8%B8%E0%B8%A1%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%8B%E0%B8%B3">ปุ่มเล่นเสียงซ้ำ</a></li>
+<li><a href="#%E0%B8%97%E0%B8%B4%E0%B8%A8%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1">ทิศทางข้อความ</a></li>
+<li><a href="#html-%E0%B8%AD%E0%B8%B7%E0%B8%99%E0%B9%86">HTML อื่นๆ</a></li>
+<li><a href="#%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%93%E0%B8%B0%E0%B8%97%E0%B8%B5%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%81%E0%B8%8F%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%9A%E0%B8%A3%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%8B%E0%B8%AD%E0%B8%A3">ลักษณะที่ปรากฏของเบราว์เซอร์</a></li>
+<li><a href="#css-%E0%B9%80%E0%B8%89%E0%B8%9E%E0%B8%B2%E0%B8%B0%E0%B9%81%E0%B8%9E%E0%B8%A5%E0%B8%95%E0%B8%9F%E0%B8%AD%E0%B8%A3%E0%B8%A1">CSS เฉพาะแพลตฟอร์ม</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B8%B1%E0%B8%87%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%AD%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%A3">การติดตั้งแบบอักษร</a>
+<ul>
+<li><a href="#%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B8%A1%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%AD%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%A3%E0%B9%84%E0%B8%9B%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%82%E0%B8%9F%E0%B8%A5%E0%B9%80%E0%B8%94%E0%B8%AD%E0%B8%A3%E0%B8%AA%E0%B8%B7%E0%B8%AD">เพิ่มแบบอักษรไปยังโฟลเดอร์สื่อ</a></li>
+<li><a href="#%E0%B8%AD%E0%B8%B1%E0%B8%9B%E0%B9%80%E0%B8%94%E0%B8%95%E0%B9%80%E0%B8%97%E0%B8%A1%E0%B9%80%E0%B8%9E%E0%B8%A5%E0%B8%95%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B8%AD%E0%B9%83%E0%B8%8A%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%AD%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%A3%E0%B8%99%E0%B8%B1%E0%B8%99">อัปเดตเทมเพลตเพื่อใช้แบบอักษรนั้น</a></li>
+</ul>
+</li>
+<li><a href="#%E0%B9%82%E0%B8%AB%E0%B8%A1%E0%B8%94%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B8%B7%E0%B8%99">โหมดกลางคืน</a></li>
+<li><a href="#%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%9F%E0%B8%94%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%99">การเฟดและการเลื่อน</a></li>
+<li><a href="#javascript">Javascript</a></li>
+</ul>
+<h2 id="การจัดรูปแบบการด"><a class="header" href="#การจัดรูปแบบการด">การจัดรูปแบบการ์ด</a></h2>
+<p>คุณสามารถดู <a href="http://www.youtube.com/watch?v=F1j1Zx0mXME&amp;yt:cc=on">วิดีโอเกี่ยวกับการจัดรูปแบบการ์ด</a> ได้บน YouTube
+วิดีโอแสดงส่วนต่อประสานของ Anki 2.0 แต่แนวคิดส่วนใหญ่
+เหมือนกัน</p>
+<p>ส่วนการจัดรูปแบบของหน้าจอการ์ดสามารถเข้าถึงได้โดยคลิกที่
+ปุ่ม “การจัดรูปแบบ” ถัดจากปุ่ม “เทมเพลตด้านหลัง” ในส่วนนั้น
+คุณสามารถเปลี่ยนสีพื้นหลังของการ์ด แบบอักษรเริ่มต้น
+การจัดแนวข้อความ และอื่นๆ ได้</p>
+<p>ตัวเลือกมาตรฐานที่มีให้คุณคือ:</p>
+<p><strong>font-family</strong>
+ชื่อของแบบอักษรที่จะใช้บนการ์ด หากแบบอักษรของคุณมีช่องว่างเช่น
+“MS Unicode” คุณต้องล้อมรอบชื่อแบบอักษรด้วย
+เครื่องหมายคำพูดคู่ เช่น <code>font-family: "MS Unicode";</code> นอกจากนี้ยังสามารถใช้หลายแบบอักษร
+บนการ์ดใบเดียวได้ สำหรับข้อมูลเกี่ยวกับเรื่องนั้น โปรดดูด้านล่าง</p>
+<p><strong>font-size</strong>
+ขนาดของแบบอักษรเป็นพิกเซล เมื่อเปลี่ยน ตรวจสอบให้แน่ใจว่าคุณเว้น px
+ไว้ที่ท้าย</p>
+<p><strong>text-align</strong>
+ว่าข้อความควรจัดชิดกลาง ซ้าย หรือขวา</p>
+<p><strong>color</strong>
+สีของข้อความ ชื่อสีอย่างง่ายเช่น “blue”, “lightyellow”
+และอื่นๆ จะใช้งานได้ หรือคุณสามารถใช้รหัสสี HTML เพื่อเลือกสี
+ตามอำเภอใจได้ โปรดดู <a href="https://htmlcolorcodes.com/">เว็บเพจนี้</a> สำหรับ
+ข้อมูลเพิ่มเติม</p>
+<p><strong>background-color</strong>
+สีของพื้นหลังการ์ด</p>
+<p>CSS ใดๆ ก็ได้สามารถวางไว้ในส่วนการจัดรูปแบบได้ – ผู้ใช้ขั้นสูงอาจต้องการ
+ทำสิ่งต่างๆ เช่น เพิ่มภาพพื้นหลังหรือการไล่ระดับสี เป็นต้น หาก
+คุณสงสัยว่าจะได้รับการจัดรูปแบบบางอย่างได้อย่างไร โปรดค้นหา
+เว็บสำหรับข้อมูลเกี่ยวกับวิธีการทำใน CSS เนื่องจากมี
+เอกสารประกอบมากมาย</p>
+<p>การจัดรูปแบบจะใช้ร่วมกันระหว่างการ์ดทั้งหมด ซึ่งหมายความว่าเมื่อคุณทำการ
+ปรับเปลี่ยน มันจะมีผลต่อการ์ดทั้งหมดสำหรับประเภทบันทึกย่อนั้น นอกจากนี้ยัง
+สามารถระบุการจัดรูปแบบเฉพาะการ์ดได้อีกด้วย ตัวอย่างต่อไปนี้
+จะใช้พื้นหลังสีเหลืองกับการ์ดทั้งหมดยกเว้นการ์ดใบแรก:</p>
+<pre><code class="language-css">.card {
+  background-color: yellow;
+}
+.card1 {
+  background-color: blue;
+}
+</code></pre>
+<h2 id="การปรับขนาดรูปภาพ"><a class="header" href="#การปรับขนาดรูปภาพ">การปรับขนาดรูปภาพ</a></h2>
+<p>Anki จะย่อขนาดรูปภาพให้พอดีกับหน้าจอโดยค่าเริ่มต้น คุณสามารถเปลี่ยนสิ่งนี้ได้โดยการเพิ่ม
+สิ่งต่อไปนี้ที่ด้านล่างของส่วนการจัดรูปแบบของคุณ (นอก <code>.card { ... }</code> เริ่มต้น):</p>
+<pre><code class="language-css">img {
+  max-width: none;
+  max-height: none;
+}
+</code></pre>
+<p>AnkiDroid บางครั้งมี <a href="https://github.com/ankidroid/Anki-Android/issues/3612">ปัญหาในการปรับขนาดรูปภาพให้พอดีกับ
+หน้าจอ</a> การตั้งค่าขนาด
+รูปภาพสูงสุดโดยใช้ css ควรจะแก้ไขปัญหานี้ได้ แต่ดูเหมือนว่าจะถูกละเลย ณ
+AnkiDroid 2.9 วิธีแก้ไขคือการต่อท้าย <code>!important</code> กับแต่ละคำสั่งสไตล์
+ตัวอย่างเช่น:</p>
+<pre><code class="language-css">img {
+  max-width: 300px !important;
+  max-height: 300px !important;
+}
+</code></pre>
+<p>หากคุณพยายามเปลี่ยนสไตล์สำหรับรูปภาพและพบว่าดาวที่
+ปรากฏบนการ์ดที่ทำเครื่องหมายไว้ได้รับผลกระทบ (เช่น มันใหญ่เกินไป
+มาก) คุณสามารถกำหนดเป้าหมายได้ด้วยสิ่งต่อไปนี้:</p>
+<pre><code class="language-css">img#star {
+  ...;
+}
+</code></pre>
+<p>คุณสามารถสำรวจการจัดรูปแบบของการ์ดแบบโต้ตอบได้โดยใช้ Chrome:</p>
+<p><a href="https://addon-docs.ankiweb.net/porting2.0.html#webview-changes">https://addon-docs.ankiweb.net/porting2.0.html#webview-changes</a></p>
+<p>Anki 2.1.50+ รองรับการปรับขนาดรูปภาพภายในตัวแก้ไขโดยกำเนิด</p>
+<h2 id="การจัดรูปแบบฟิลด"><a class="header" href="#การจัดรูปแบบฟิลด">การจัดรูปแบบฟิลด์</a></h2>
+<p>การจัดรูปแบบเริ่มต้นจะใช้กับการ์ดทั้งหมด คุณยังสามารถทำให้ฟิลด์บางฟิลด์
+หรือบางส่วนของการ์ดใช้แบบอักษร สี และอื่นๆ ที่แตกต่างกันได้
+สิ่งนี้มีความสำคัญอย่างยิ่งเมื่อศึกษาภาษาต่างประเทศ เนื่องจาก Anki
+บางครั้งจะไม่สามารถแสดงอักขระได้อย่างถูกต้องเว้นแต่จะมีการเลือก
+แบบอักษรที่เหมาะสม</p>
+<p>สมมติว่าคุณมีฟิลด์ “Expression” และคุณต้องการให้มันใช้แบบอักษร macOS Thai
+“Ayuthaya” ลองนึกภาพว่าเทมเพลตของคุณอ่านว่า:</p>
+<pre><code>{{Expression}} คืออะไร?
+
+{{Notes}}
+</code></pre>
+<p>สิ่งที่เราต้องทำคือล้อมรอบข้อความที่เราต้องการจัดรูปแบบด้วย HTML บางอย่าง เรา
+จะใส่สิ่งต่อไปนี้ไว้ข้างหน้าข้อความ:</p>
+<pre><code>&lt;div class=mystyle1&gt;
+</code></pre>
+<p>และสิ่งต่อไปนี้ไว้ข้างหลัง:</p>
+<pre><code>&lt;/div&gt;
+</code></pre>
+<p>โดยการล้อมรอบข้อความเช่นข้างต้น เราบอก Anki ให้จัดรูปแบบ
+ข้อความที่ล้อมรอบด้วยสไตล์ที่กำหนดเองชื่อ “mystyle1” ซึ่งเราจะสร้างขึ้นในภายหลัง</p>
+<p>ดังนั้นหากเราต้องการให้ทั้งนิพจน์ “อะไรคือ … ?” ใช้แบบอักษรภาษาไทย
+เราจะใช้:</p>
+<pre><code>&lt;div class=mystyle1&gt;{{Expression}} คืออะไร?&lt;/div&gt;
+
+{{Notes}}
+</code></pre>
+<p>และถ้าเราต้องการให้เฉพาะฟิลด์นิพจน์เองใช้แบบอักษรภาษาไทย
+เราจะใช้:</p>
+<pre><code>อะไรคือ &lt;div class=mystyle1&gt;{{Expression}}&lt;/div&gt;?
+
+{{Notes}}
+</code></pre>
+<p>หลังจากที่เราแก้ไขเทมเพลตแล้ว ตอนนี้เราต้องย้ายไปที่ส่วนการจัดรูปแบบ
+ระหว่างเทมเพลต ก่อนแก้ไข มันควรจะมีลักษณะดังนี้:</p>
+<pre><code class="language-css">.card {
+  font-family: arial;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+</code></pre>
+<p>เพิ่มสไตล์ใหม่ของคุณที่ด้านล่าง เพื่อให้มีลักษณะดังนี้:</p>
+<pre><code class="language-css">.card {
+  font-family: arial;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+
+.mystyle1 {
+  font-family: ayuthaya;
+}
+</code></pre>
+<p>คุณสามารถรวมการจัดรูปแบบใดๆ ที่คุณต้องการในสไตล์ได้ หากคุณต้องการ
+เพิ่มขนาดตัวอักษรด้วย คุณจะต้องเปลี่ยนส่วน mystyle1 ให้มีลักษณะ
+ดังนี้:</p>
+<pre><code class="language-css">.mystyle1 {
+  font-family: ayuthaya;
+  font-size: 30px;
+}
+</code></pre>
+<p>นอกจากนี้ยังสามารถรวมแบบอักษรที่กำหนดเองกับสำรับของคุณได้ ดังนั้นคุณไม่
+จำเป็นต้องติดตั้งบนคอมพิวเตอร์หรืออุปกรณ์พกพาของคุณ โปรดดู
+ส่วน <a href="#installing-fonts">การติดตั้งแบบอักษร</a> สำหรับข้อมูลเพิ่มเติม</p>
+<h2 id="ปุมเลนเสียงซำ"><a class="header" href="#ปุมเลนเสียงซำ">ปุ่มเล่นเสียงซ้ำ</a></h2>
+<p>เมื่อมีเสียงหรือข้อความเป็นคำพูดรวมอยู่ในการ์ดของคุณ Anki จะแสดง
+ปุ่มที่คุณสามารถคลิกเพื่อเล่นเสียงซ้ำได้</p>
+<p>หากคุณไม่ต้องการเห็นปุ่ม คุณสามารถซ่อนได้ใน
+หน้าจอการตั้งค่า</p>
+<p>คุณสามารถปรับแต่งลักษณะที่ปรากฏได้ในการจัดรูปแบบการ์ดของคุณ ตัวอย่างเช่น
+เพื่อให้มันเล็กลงและมีสี คุณสามารถใช้สิ่งต่อไปนี้:</p>
+<pre><code class="language-css">.replay-button svg {
+  width: 20px;
+  height: 20px;
+}
+.replay-button svg circle {
+  fill: blue;
+}
+.replay-button svg path {
+  stroke: white;
+  fill: green;
+}
+</code></pre>
+<h2 id="ทิศทางขอความ"><a class="header" href="#ทิศทางขอความ">ทิศทางข้อความ</a></h2>
+<p>หากคุณใช้ภาษาที่เขียนจากขวาไปซ้าย เช่น ภาษาอาหรับหรือฮีบรู
+คุณสามารถเพิ่มคุณสมบัติ CSS <code>direction</code> ลงในส่วน .card เพื่อให้แสดงผลอย่างถูกต้องระหว่างการทบทวน:</p>
+<pre><code class="language-css">.card {
+  direction: rtl;
+}
+</code></pre>
+<p>สิ่งนี้จะเปลี่ยนทิศทางของการ์ดทั้งหมด คุณสามารถเปลี่ยนทิศทาง
+ของเฉพาะบางฟิลด์ได้โดยการล้อมรอบการอ้างอิงของฟิลด์ด้วย HTML บางอย่าง:</p>
+<pre><code>&lt;div dir="rtl"&gt;{{Front}}&lt;/div&gt;
+</code></pre>
+<p>หากต้องการเปลี่ยนทิศทางของฟิลด์ในตัวแก้ไข โปรดดู
+ส่วน <a href="../editing.html#customizing-fields">การแก้ไข</a></p>
+<h2 id="html-อืนๆ"><a class="header" href="#html-อืนๆ">HTML อื่นๆ</a></h2>
+<p>เทมเพลตของคุณสามารถมี HTML ตามอำเภอใจได้ ซึ่งหมายความว่าความเป็นไปได้
+ในการจัดวางทั้งหมดที่ใช้ในหน้าเว็บอินเทอร์เน็ตยังสามารถใช้กับการ์ดของคุณได้อีกด้วย
+สิ่งต่างๆ เช่น ตาราง รายการ รูปภาพ ลิงก์ไปยังหน้าภายนอก และอื่นๆ
+ล้วนได้รับการสนับสนุน ด้วยตาราง ตัวอย่างเช่น คุณสามารถเปลี่ยน
+เค้าโครงเพื่อให้ด้านหน้าและด้านหลังของการ์ดปรากฏทางด้านซ้ายและขวา
+แทนที่จะเป็นด้านบนและด้านล่าง</p>
+<p>การครอบคลุมคุณสมบัติทั้งหมดของ HTML อยู่นอกขอบเขตของคู่มือนี้ แต่
+มีคู่มือแนะนำ HTML ที่ดีมากมายบน
+เว็บหากคุณต้องการเรียนรู้เพิ่มเติม</p>
+<h2 id="ลักษณะทีปรากฏของเบราวเซอร"><a class="header" href="#ลักษณะทีปรากฏของเบราวเซอร">ลักษณะที่ปรากฏของเบราว์เซอร์</a></h2>
+<p>หากเทมเพลตการ์ดของคุณซับซ้อน อาจเป็นการยากที่จะอ่าน
+คอลัมน์คำถามและคำตอบ (เรียกว่า “ด้านหน้า” และ “ด้านหลัง”) ใน <a href="../browsing.html#cardnote-table">รายการการ์ด</a> ตัวเลือก “ลักษณะที่ปรากฏของเบราว์เซอร์” ช่วยให้คุณสามารถกำหนด
+เทมเพลตที่กำหนดเองเพื่อใช้เฉพาะในเบราว์เซอร์ได้ ดังนั้นคุณจึงสามารถรวมเฉพาะ
+ฟิลด์ที่สำคัญและเปลี่ยนลำดับได้หากต้องการ ไวยากรณ์
+เหมือนกับในเทมเพลตการ์ดมาตรฐาน</p>
+<p>เมื่อใช้ตัวเลือกนี้ หากข้อความในคอลัมน์คำถามซ้ำกับตอนต้นของคอลัมน์คำตอบ Anki จะแสดงข้อความเฉพาะในคอลัมน์คำถาม ตัวอย่างเช่น หากข้อความในคอลัมน์คำถามคือ “คนในลาดักพูด” และคำตอบคือ “คนในลาดักพูดภาษาลาดัก” คอลัมน์คำตอบจะแสดงเฉพาะ “ภาษาลาดัก” โดยละเว้นส่วนที่เหลือ</p>
+<h2 id="css-เฉพาะแพลตฟอรม"><a class="header" href="#css-เฉพาะแพลตฟอรม">CSS เฉพาะแพลตฟอร์ม</a></h2>
+<p>Anki กำหนดคลาส CSS พิเศษบางอย่างที่ช่วยให้คุณสามารถกำหนด
+การจัดรูปแบบที่แตกต่างกันสำหรับแพลตฟอร์มต่างๆ ได้ ตัวอย่างด้านล่างแสดงวิธีการเปลี่ยน
+แบบอักษรขึ้นอยู่กับว่าคุณกำลังทบทวนที่ไหน:</p>
+<pre><code class="language-css">/* Windows */
+.win .example {
+  font-family: "Example1";
+}
+/* macOS */
+.mac .example {
+  font-family: "Example2";
+}
+/* Linux desktops */
+.linux:not(.android) .example {
+  font-family: "Example3";
+}
+/* ทั้ง Linux desktops และอุปกรณ์ Android */
+.linux .example {
+  font-family: "Example4";
+}
+/* ทั้ง Android และ iOS */
+.mobile .example {
+  font-family: "Example5";
+}
+/* iOS */
+.iphone .example,
+.ipad .example {
+  font-family: "Example6";
+}
+/* Android */
+.android .example {
+  font-family: "Example7";
+}
+</code></pre>
+<p>และในเทมเพลต:</p>
+<pre><code class="language-html">&lt;div class="example"&gt;{{Field}}&lt;/div&gt;
+</code></pre>
+<p>คุณยังสามารถใช้คุณสมบัติเช่น .gecko, .opera และ .ie เพื่อเลือก
+เบราว์เซอร์เฉพาะเมื่อใช้ AnkiWeb ได้ โปรดดู
+<a href="http://rafael.adm.br/css_browser_selector/">http://rafael.adm.br/css_browser_selector/</a> สำหรับรายการตัวเลือกทั้งหมด</p>
+<h2 id="การติดตังแบบอักษร"><a class="header" href="#การติดตังแบบอักษร">การติดตั้งแบบอักษร</a></h2>
+<p>คุณสามารถติดตั้งแบบอักษรลงใน Anki ได้โดยตรง ซึ่งมีประโยชน์หากคุณใช้ Anki บน
+คอมพิวเตอร์ที่ทำงานหรือโรงเรียนซึ่งคุณไม่มีสิทธิ์ติดตั้งแบบอักษรใหม่
+หรือหากคุณใช้ Anki บนอุปกรณ์พกพา</p>
+<p>Anki รองรับรูปแบบแบบอักษรที่ใช้กันอย่างแพร่หลายที่สุด เช่น TrueType (.ttf),
+OpenType (.otf), Web Open Font Format (.woff) และอื่นๆ</p>
+<h3 id="เพิมแบบอักษรไปยังโฟลเดอรสือ"><a class="header" href="#เพิมแบบอักษรไปยังโฟลเดอรสือ">เพิ่มแบบอักษรไปยังโฟลเดอร์สื่อ</a></h3>
+<p>เมื่อคุณดาวน์โหลดแบบอักษรที่รองรับแล้ว เช่น “Arial.ttf” คุณต้องเพิ่ม
+ไปยังโฟลเดอร์สื่อ</p>
+<ol>
+<li>
+<p>เปลี่ยนชื่อไฟล์โดยเพิ่มขีดล่างที่จุดเริ่มต้น เพื่อให้กลายเป็น
+เหมือน “_arial.ttf” การเพิ่มขีดล่างจะบอก Anki ว่าไฟล์นี้
+จะถูกใช้ในเทมเพลต และไม่ควรถูกลบเมื่อ
+ตรวจสอบหาสื่อที่ไม่ได้ใช้</p>
+</li>
+<li>
+<p>ในเบราว์เซอร์ไฟล์ของคอมพิวเตอร์ของคุณ ให้ไปที่โฟลเดอร์ข้อมูลแอปพลิเคชัน Anki ของคุณ (ดู <a href="../files.html#file-locations">ตำแหน่งไฟล์</a> สำหรับรายละเอียด)
+จากนั้นเข้าไปในโฟลเดอร์โปรไฟล์ของคุณ (เช่น “User 1”)</p>
+</li>
+<li>
+<p>ภายในโฟลเดอร์ คุณควรเห็นโฟลเดอร์ชื่อ collection.media
+ลากไฟล์ที่เปลี่ยนชื่อแล้วไปยังโฟลเดอร์นั้น</p>
+</li>
+</ol>
+<h3 id="อัปเดตเทมเพลตเพือใชแบบอักษรนัน"><a class="header" href="#อัปเดตเทมเพลตเพือใชแบบอักษรนัน">อัปเดตเทมเพลตเพื่อใช้แบบอักษรนั้น</a></h3>
+<p>หลังจากเพิ่มแบบอักษรไปยังโฟลเดอร์สื่อแล้ว คุณต้องอัปเดต
+เทมเพลต</p>
+<ol>
+<li>
+<p>คลิก <strong>เพิ่ม</strong> ที่ด้านบนของหน้าจอหลัก แล้วเลือก
+ประเภทบันทึกย่อที่คุณต้องการเปลี่ยนด้วยปุ่มบนซ้าย</p>
+</li>
+<li>
+<p>คลิก <strong>การ์ด</strong></p>
+</li>
+<li>
+<p>ในส่วนการจัดรูปแบบ ให้เพิ่มข้อความต่อไปนี้ที่ด้านล่าง (หลัง
+อักขระ “}” ตัวสุดท้าย) โดยแทนที่ “_arial.ttf” ด้วยชื่อของ
+ไฟล์ที่คุณคัดลอกไปยังโฟลเดอร์สื่อของคุณ:</p>
+</li>
+</ol>
+<pre><code class="language-css">@font-face {
+  font-family: myfont;
+  src: url("_arial.ttf");
+}
+</code></pre>
+<p>เปลี่ยนเฉพาะส่วน “arial” เท่านั้น ไม่ใช่ส่วน “myfont”</p>
+<p>หลังจากนั้น คุณสามารถเปลี่ยนแบบอักษรสำหรับการ์ดทั้งหมด หรือสำหรับ
+ฟิลด์แต่ละฟิลด์ได้ หากต้องการเปลี่ยนแบบอักษรสำหรับการ์ดทั้งหมด เพียงค้นหา
+บรรทัด font-family: ในส่วน .card และเปลี่ยนแบบอักษรเป็น
+“myfont” หากต้องการเปลี่ยนแบบอักษรสำหรับเฉพาะบางฟิลด์ โปรดดู
+คำแนะนำ <a href="#field-styling">การจัดรูปแบบฟิลด์</a> ด้านบน</p>
+<p>โปรดตรวจสอบให้แน่ใจว่าชื่อไฟล์ตรงกันทุกประการ หากไฟล์ชื่อ
+arial.TTF และคุณเขียน arial.ttf ในเทมเพลตการ์ดของคุณ
+มันจะไม่ทำงาน</p>
+<h2 id="โหมดกลางคืน"><a class="header" href="#โหมดกลางคืน">โหมดกลางคืน</a></h2>
+<p>คุณสามารถปรับแต่งลักษณะที่ปรากฏของเทมเพลตเมื่อเปิดใช้งานโหมดกลางคืนใน
+หน้าจอการตั้งค่าได้</p>
+<p>หากคุณต้องการพื้นหลังสีเทาอ่อน คุณสามารถใช้
+สิ่งต่อไปนี้:</p>
+<pre><code class="language-css">.card.nightMode {
+  background-color: #555;
+}
+</code></pre>
+<p>หากคุณมีสไตล์ “myclass” สิ่งต่อไปนี้จะแสดงข้อความ
+สีเหลืองเมื่อเปิดใช้งานโหมดกลางคืน:</p>
+<pre><code class="language-css">.nightMode .myclass {
+  color: yellow;
+}
+</code></pre>
+<h2 id="การเฟดและการเลือน"><a class="header" href="#การเฟดและการเลือน">การเฟดและการเลื่อน</a></h2>
+<p>Anki จะเลื่อนไปยังคำตอบโดยอัตโนมัติโดยค่าเริ่มต้น มันจะค้นหาองค์ประกอบ
+HTML ที่มี id=answer และเลื่อนไปที่นั่น คุณสามารถวาง id
+บนองค์ประกอบอื่นเพื่อปรับตำแหน่งการเลื่อน หรือลบ
+id=answer เพื่อปิดการเลื่อน</p>
+<p>ด้านคำถามของการ์ดจะค่อยๆ ปรากฏขึ้นโดยค่าเริ่มต้น หากคุณต้องการปรับ
+การหน่วงเวลานี้ คุณสามารถวางสิ่งต่อไปนี้ที่ด้านบนของ
+เทมเพลตการ์ดด้านหน้าของคุณ:</p>
+<pre><code class="language-html">&lt;script&gt;
+  qFade = 100;
+  if (typeof anki !== "undefined") anki.qFade = qFade;
+&lt;/script&gt;
+</code></pre>
+<p>100 (มิลลิวินาที) เป็นค่าเริ่มต้น ตั้งค่าเป็น 0 เพื่อปิดใช้งานการเฟด</p>
+<h2 id="javascript"><a class="header" href="#javascript">Javascript</a></h2>
+<p>เนื่องจากการ์ด Anki ถูกปฏิบัติต่อเหมือนหน้าเว็บ จึงเป็นไปได้ที่จะฝัง
+Javascript บางอย่างในการ์ดของคุณผ่านเทมเพลตการ์ด สำหรับ
+การอ้างอิงที่ดี โปรดอ่าน <a href="https://forums.ankiweb.net/t/card-templates-user-input-101-buttons-keyboard-shortcuts-etc-guide/13756">โพสต์นี้</a>
+ในฟอรัม</p>
+<p>เนื่องจาก Javascript เป็นคุณสมบัติขั้นสูงและมีหลายอย่างที่อาจผิดพลาดได้
+<strong>ฟังก์ชัน Javascript จึงมีให้โดยไม่มีการสนับสนุนหรือ
+การรับประกันใดๆ</strong> เราไม่สามารถให้ความช่วยเหลือในการเขียน Javascript ได้
+และไม่สามารถรับประกันได้ว่าโค้ดใดๆ ที่คุณเขียนจะยังคงทำงาน
+โดยไม่มีการแก้ไขในการอัปเดต Anki ในอนาคต หากคุณไม่สะดวก
+ที่จะแก้ไขปัญหาใดๆ ที่คุณพบด้วยตนเอง โปรดหลีกเลี่ยงการใช้
+Javascript</p>
+<p>ไคลเอ็นต์ Anki แต่ละตัวอาจใช้งานการแสดงผลการ์ดแตกต่างกัน ดังนั้นคุณจะต้อง
+ทดสอบพฤติกรรมข้ามแพลตฟอร์ม ไคลเอ็นต์จำนวนมาก
+ถูกนำไปใช้โดยการรักษาหน้าเว็บที่ทำงานยาวนานและอัปเดต
+ส่วนต่างๆ แบบไดนามิกเมื่อมีการทบทวนการ์ด ดังนั้น Javascript ของคุณจะต้อง
+อัปเดตส่วนต่างๆ ของเอกสารโดยใช้สิ่งต่างๆ เช่น
+document.getElementById() แทนที่จะทำสิ่งต่างๆ เช่น
+document.write()</p>
+<p>ฟังก์ชันเช่น window.alert อาจไม่พร้อมใช้งาน Anki จะเขียน
+ข้อผิดพลาด javascript ไปยังเทอร์มินัล ดังนั้นคุณจะต้อง <a href="https://addon-docs.ankiweb.net/console-output.html#console-output">ดูคอนโซล</a> เพื่อ
+ดูข้อผิดพลาดเหล่านั้น ในการแก้ไขปัญหาเกี่ยวกับ JavaScript คุณสามารถใช้
+<a href="https://addon-docs.ankiweb.net/debugging.html#webviews">inspector</a> ของ Chrome ได้</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../templates/generation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../templates/errors.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../templates/generation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../templates/errors.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
