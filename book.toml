@@ -1,9 +1,9 @@
 [book]
 authors = ["Ankitects Pty Ltd and contributors"]
-description = "Anki's user manual. Anki is a flashcard program that makes learning easier."
-language = "en"
+description = "คู่มือการใช้งาน Anki — ฉบับแปลภาษาไทย. Anki เป็นโปรแกรมแฟลชการ์ดที่ช่วยให้การเรียนรู้ง่ายขึ้น."
+language = "th"
 src = "src"
-title = "Anki Manual"
+title = "คู่มือ Anki (ภาษาไทย)"
 
 [build]
 create-missing = true
@@ -17,8 +17,8 @@ command = "mdbook-admonish"
 assets_version = "3.0.3" # do not edit: managed by `mdbook-admonish install`
 
 [output.html]
-git-repository-url = "https://github.com/ankitects/anki-manual/"
-cname = "docs.ankiweb.net"
+git-repository-url = "https://github.com/mrandrewmills/anki-manual-th"
+# cname = "docs.ankiweb.net"
 additional-css = ["css/misc.css", "css/mdbook-admonish.css"]
 smart-punctuation = true
 mathjax-support = true
