@@ -1,25 +1,25 @@
-# บทนำ
+# परिचय
 
-## ไคลเอนต์มือถือ
+## मोबाइल क्लाइंट
 
-นี่คือคู่มือสำหรับ Anki เวอร์ชันคอมพิวเตอร์ มีคู่มือแยกต่างหากสำหรับไคลเอนต์มือถือ:
+यह Anki के कंप्यूटर संस्करण के लिए नियमावली है। मोबाइल क्लाइंट के लिए अलग-अलग नियमावली उपलब्ध हैं:
 
-- [คู่มือ AnkiDroid](https://docs.ankidroid.org/) (Android)
-- [คู่มือ AnkiMobile](https://docs.ankimobile.net/) (iPhone/iPad)
+- [AnkiDroid नियमावली](https://docs.ankidroid.org/) (एंड्रॉइड)
+- [AnkiMobile नियमावली](https://docs.ankimobile.net/) (iPhone/iPad)
 
-## เริ่มต้นอย่างรวดเร็ว
+## क्विकस्टार्ट
 
-รีบใช่ไหม? ไปที่ [เริ่มต้นใช้งาน](getting-started.md) ได้เลย
+जल्दी में? सीधे [शुरू करना](getting-started.md) पर जाएं।
 
-## ขอความช่วยเหลือ
+## मदद लेना
 
-กำลังมองหาความช่วยเหลืออยู่ใช่ไหม? โปรดดูที่ [ขอความช่วยเหลือ](./getting-help.md)
+मदद चाहिए? कृपया [मदद लेना](./getting-help.md) देखें।
 
-## การแปล
+## अनुवाद
 
-อาสาสมัครได้ช่วยแปลคู่มือนี้ การแปลอาจไม่ได้รับการอัปเดตอยู่เสมอ
+स्वयंसेवकों ने इस नियमावली के अनुवाद में योगदान दिया है। अनुवाद हमेशा अद्यतित नहीं हो सकते हैं।
 
-- [Bahasa Indonesia](https://web.archive.org/web/20250228144632/https://apps.ankiweb.net/docs/manual.id.html)
+- [बहासा इंडोनेशिया](https://web.archive.org/web/20250228144632/https://apps.ankiweb.net/docs/manual.id.html)
 - [Deutsch](https://web.archive.org/web/20240413080739/https://www.dennisproksch.de/anki)
 - [Español](https://web.archive.org/web/20250130154657/https://apps.ankiweb.net/docs/manual.es.html)
 - [Français](https://web.archive.org/web/20250209100830/https://apps.ankiweb.net/docs/manual.fr.html)
@@ -33,10 +33,10 @@
 - [日本語](http://wikiwiki.jp/rage2050/)
 - [简体中文](https://open-spaced-repetition.github.io/anki-manual-zh-CN/)
 
-หากคุณต้องการช่วยแปลคู่มือเป็นภาษาอื่น โปรดดูที่ [เอกสารการแปล](https://translating.ankiweb.net/anki/manual.html)
+यदि आप नियमावली को किसी भिन्न भाषा में अनुवाद करने में मदद करना चाहते हैं, तो कृपया [अनुवाद दस्तावेज़](https://translating.ankiweb.net/anki/manual.html) देखें।
 
-## เอกสารเก่า
+## विरासत प्रलेखन
 
-ไม่ได้ใช้ Anki เวอร์ชันล่าสุดใช่ไหม? ค้นหาเอกสารเก่าของคู่มือนี้ได้ที่ [Internet Archive](https://web.archive.org/web/20240829022941/https://docs.ankiweb.net/)
+Anki के नवीनतम संस्करण पर नहीं हैं? [इंटरनेट आर्काइव](https://web.archive.org/web/20240829022941/https://docs.ankiweb.net/) पर इस नियमावली के अभिलेखागार खोजें।
 
-สำหรับข้อมูลเกี่ยวกับเวอร์ชันตัวจัดตารางเวลาเก่า โปรดดู [คำถามที่พบบ่อยนี้](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)
+पुराने शेड्यूलर संस्करणों पर जानकारी के लिए, [यह अक्सर पूछे जाने वाले प्रश्न](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html) देखें।
