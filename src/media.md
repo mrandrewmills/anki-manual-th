@@ -1,28 +1,63 @@
-# สื่อ
+# Media
 
-Anki จัดเก็บเสียงและรูปภาพที่ใช้ในบันทึกย่อของคุณในโฟลเดอร์ถัดจากคอลเลกชัน สำหรับข้อมูลเพิ่มเติมเกี่ยวกับตำแหน่งของโฟลเดอร์ โปรดดูส่วน [ตำแหน่งไฟล์](files.md#user-data) เมื่อคุณเพิ่มสื่อภายใน Anki ไม่ว่าจะโดยใช้ไอคอนคลิปหนีบกระดาษใน [เครื่องมือแก้ไข](editing.md) หรือโดยการวางลงในฟิลด์ Anki จะคัดลอกสื่อจากตำแหน่งเดิมไปยังโฟลเดอร์สื่อ ซึ่งทำให้ง่ายต่อการสำรองข้อมูลสื่อของคอลเลกชันของคุณหรือย้ายไปยังคอมพิวเตอร์เครื่องอื่น
+Anki stores the sounds and images used in your notes in a folder next to
+the collection. For more on the folder location, please see the [file locations](files.md#user-data) section. When you add media within Anki, either by
+using the paperclip icon in the [editor](editing.md) or by pasting it into
+a field, Anki will copy it from its original location into the media
+folder. This makes it easy to back up your collection’s media or move it
+to another computer.
 
-หากชื่อไฟล์สื่อของคุณมีช่องว่างหรืออักขระพิเศษอื่นๆ เช่น เครื่องหมายเปอร์เซ็นต์ ลักษณะที่ชื่อไฟล์ปรากฏในเครื่องมือแก้ไข HTML จะแตกต่างจากลักษณะที่ชื่อไฟล์ปรากฏบนดิสก์ ตัวอย่างเช่น ไฟล์ชื่อ `hello 100%.jpg` จะปรากฏเป็น `hello%20100%25.jpg` ในเครื่องมือแก้ไข HTML ภายใน Anki ยังคงใช้ชื่อไฟล์เดิม ดังนั้นหากคุณต้องการ [ค้นหา](searching.md) ไฟล์หรือแก้ไขชื่อไฟล์ด้วย [ค้นหาและแทนที่](browsing.md#find-and-replace) คุณจะต้องใช้ชื่อตามที่ปรากฏบนดิสก์ ไม่ใช่ตามที่ปรากฏในเครื่องมือแก้ไข HTML การส่งออกเป็นไฟล์ข้อความเป็นอีกวิธีหนึ่งในการดูการแสดงผลพื้นฐาน
+If your media filenames contain spaces or other special characters such
+as percentage signs, the way the filenames appear in the HTML editor will
+differ from the way the filenames appear on disk. For example, a file called
+`hello 100%.jpg` will appear as `hello%20100%25.jpg` in the HTML editor.
+Internally, Anki still uses the original filenames, so if you would like to
+[search](searching.md) for the file or modify the filename with [Find&Replace](browsing.md#find-and-replace), you will
+need to use the name as it appears on disk, not as it appears in the
+HTML editor. Exporting to a text file is another way to see the underlying
+representation.
 
-## การตรวจสอบสื่อ
+## Checking Media
 
-คุณสามารถใช้ตัวเลือกเมนู Tools>Check Media เพื่อสแกนบันทึกย่อและโฟลเดอร์สื่อของคุณ ซึ่งจะสร้างรายงานไฟล์ในโฟลเดอร์สื่อที่ไม่ได้ใช้โดยบันทึกย่อใดๆ และสื่อที่อ้างอิงในบันทึกย่อแต่ไม่มีอยู่ในโฟลเดอร์สื่อของคุณ นอกจากนี้ยังช่วยให้คุณ:
+You can use the Tools&gt;Check Media menu option to scan your notes and
+media folder. It will generate a report of files in the media folder
+that are not used by any notes, and media referenced in notes but
+missing from your media folder. It also allows you:
 
-- ลบไฟล์สื่อที่ไม่ได้ใช้
-- แท็กบันทึกย่อที่อ้างอิงถึงไฟล์สื่อที่หายไป
-- ล้างโฟลเดอร์ถังขยะของคุณ
-- กู้คืนไฟล์ที่ถูกลบกลับไปยังโฟลเดอร์สื่อของคุณ
+- To delete unused media files.
+- To tag notes that refer to missing media files.
+- To empty your trash folder.
+- To restore the deleted files back to your media folder.
 
-เครื่องมือนี้ไม่สแกนเทมเพลตคำถามหรือคำตอบ ซึ่งเป็นเหตุผลว่าทำไมคุณจึงไม่สามารถวางการอ้างอิงสื่อไปยังฟิลด์ในเทมเพลตได้ หากคุณต้องการรูปภาพหรือเสียงแบบคงที่ในการ์ดทุกใบ ให้ตั้งชื่อโดยขึ้นต้นด้วย \_ (เช่น `_dog.jpg`) เพื่อบอกให้ Anki ละเว้นเมื่อตรวจสอบสื่อ หากคุณลบสื่อโดยใช้การตรวจสอบสื่อที่ไม่ได้ใช้ Anki จะย้ายสื่อไปยังโฟลเดอร์ถังขยะของระบบปฏิบัติการของคุณ เพื่อให้คุณสามารถกู้คืนได้หากคุณลบสื่อที่ไม่ควรลบโดยไม่ได้ตั้งใจ
+This tool does not scan question or answer
+templates, which is why you can’t place media references to fields in
+the template. If you need a static image or sound on every card, name it
+with a leading \_ (e.g., `_dog.jpg`) to tell Anki to ignore it when
+checking for media. If you delete media using the unused media check,
+Anki will move it into your operating system’s trash folder, so you can
+recover if you accidentally delete media that shouldn’t have been
+deleted.
 
-## การเพิ่มสื่อด้วยตนเอง
+## Manually Adding Media
 
-เมื่อคุณเพิ่มสื่อผ่านอินเทอร์เฟซของ Anki Anki จะดูแลให้แน่ใจว่าชื่อไฟล์ถูกเข้ารหัสในลักษณะที่ควรทำงานได้บนอุปกรณ์ต่างๆ ลบอักขระที่จะไม่ทำงานบนระบบปฏิบัติการบางระบบ และตัดทอนชื่อไฟล์ที่ยาวมาก
+When you add media via Anki's interface, Anki takes care of ensuring the
+filenames are encoded in a way that should work across different devices,
+removing characters that won't work on certain operating systems,
+and truncating very long filenames.
 
-หากคุณเพิ่มไฟล์ลงใน [โฟลเดอร์สื่อ](files.md#user-data) ของคุณด้วยตนเอง คุณควรใช้ Tools>Check Media ในภายหลัง เพื่อให้แน่ใจว่าชื่อไฟล์ถูกเข้ารหัสอย่างถูกต้อง หากคุณข้ามขั้นตอนนี้ ชื่อไฟล์ใดๆ ที่ไม่เข้ากันจะถูกข้ามไปเมื่อทำการซิงค์
+If you manually add files to your [media folder](files.md#user-data),
+you should use Tools&gt;Check Media afterwards, to ensure the filenames are
+encoded correctly. If you skip this step, any filenames that are not compatible
+will be skipped when syncing.
 
-Anki ไม่ติดตามลิงก์สัญลักษณ์ในโฟลเดอร์สื่อเมื่อทำการซิงค์ หากคุณใช้ symlinks ในการรวมแบบอักษร สไตล์ชีต หรือทรัพยากรอื่นๆ ไฟล์เหล่านี้อาจดูเหมือนทำงานได้บนเดสก์ท็อป แต่ล้มเหลวบนมือถือ เพื่อให้แน่ใจว่าไฟล์ซิงค์อย่างถูกต้อง ให้คัดลอกไฟล์จริงลงในโฟลเดอร์ collection.media แทนการใช้ symlinks
+Anki doesn’t follow symbolic links in the media folder when syncing. If you
+rely on symlinks for including fonts, stylesheets, or other resources, these files
+may appear to work on desktop but fail on mobile. To ensure files sync properly, copy
+the actual files into the collection.media folder instead of using symlinks.
 
-## รูปแบบที่รองรับ
+## Supported Formats
 
-Anki ใช้โปรแกรมที่เรียกว่า mpv (และ mplayer เป็นตัวสำรอง) เพื่อรองรับเสียงและวิดีโอ รองรับรูปแบบไฟล์ที่หลากหลาย แต่ไม่ใช่ทุกรูปแบบที่จะทำงานบน AnkiWeb และไคลเอนต์มือถือ เสียง MP3 และวิดีโอ MP4 ดูเหมือนจะเป็นรูปแบบที่รองรับกันอย่างแพร่หลายที่สุด
+Anki uses a program called mpv (and mplayer as a fallback) in order to support
+sounds and videos. A wide variety of file formats are supported, but not all of
+these formats will work on AnkiWeb and the mobile clients. MP3 audio and
+MP4 video seems to be the most universally supported.

@@ -1,3 +1,5 @@
-# การนำเข้า
+# Importing
 
-Anki สามารถนำเข้าไฟล์ข้อความ, เด็ค Anki ที่บรรจุไว้ซึ่งสร้างโดยฟีเจอร์ส่งออก, ไฟล์ Mnemosyne 2.0 .db และไฟล์ SuperMemo .xml ในการนำเข้าไฟล์ ให้คลิกเมนูไฟล์แล้วเลือก "นำเข้า"
+Anki can import text files, packaged Anki decks created by the export
+feature, Mnemosyne 2.0 .db files, and SuperMemo .xml files. To import a
+file, click the File menu and then "Import".

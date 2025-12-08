@@ -1,39 +1,73 @@
-# การมีส่วนร่วม
+# Contributing
 
 <!-- toc -->
 
-## การแชร์สำรับแบบสาธารณะ
+## Sharing Decks Publicly
 
-หากต้องการแชร์สำรับกับบุคคลทั่วไป ให้ [ซิงโครไนซ์](syncing.md) สำรับเหล่านั้นกับ AnkiWeb จากนั้นเข้าสู่ระบบ AnkiWeb แล้วคลิก "Share" จากเมนูถัดจากสำรับที่คุณต้องการแชร์
+To share decks with the general public, [synchronize](syncing.md) them
+with AnkiWeb, then log into AnkiWeb and click on "Share" from the menu
+next to the deck you wish to share.
 
-หากคุณเคยแชร์สำรับมาก่อน (รวมถึงเวอร์ชันก่อนหน้าของ Anki) คุณสามารถอัปเดตได้โดยคลิก "Share" ตามที่กล่าวไว้ข้างต้น การอัปเดตสำรับที่แชร์จะไม่รีเซ็ตจำนวนการดาวน์โหลดหรือการให้คะแนน คุณสามารถลบสำรับที่แชร์ที่คุณอัปโหลดได้โดยใช้ปุ่ม Delete บนหน้าของสำรับที่แชร์
+If you shared a deck previously (including with previous versions of
+Anki), you can update it by clicking "Share" as above. Updating a shared
+deck will not reset the download counts or ratings. You can delete a
+shared deck that you have uploaded using the Delete button on the shared
+deck's page.
 
-เมื่ออัปเดตสำรับ AnkiWeb คาดหวังว่าสำรับจะอยู่ในตำแหน่งเดิม หากคุณแชร์สำรับเมื่อมันถูกเรียกว่า "Korean Verbs" เป็นต้น แล้วเปลี่ยนชื่อเป็น "Korean::Korean Verbs" การแชร์ซ้ำจะไม่สามารถอัปเดตสำเนาที่มีอยู่ได้ หากคุณลืมชื่อเดิม คุณสามารถเดาได้โดยการดาวน์โหลดสำรับบน AnkiWeb และนำเข้า (File > Import) ในโปรไฟล์ใหม่ (File > Switch profile > Add) จากนั้นคุณสามารถคัดลอกชื่อที่แน่นอนของสำรับเมื่อถูกแชร์ครั้งแรก หากวิธีนี้ไม่ได้ผล โปรดติดต่อฝ่ายสนับสนุน
+When updating a deck, AnkiWeb expects the deck to be at the same
+location as before. If you shared a deck when it was called "Korean
+Verbs" for example, and then renamed it to "Korean::Korean Verbs",
+resharing will not be able to update the existing copy. If you have
+forgotten the original name, you can guess it by downloading the
+deck on AnkiWeb and importing it (File > Import) in a new profile
+(File > Switch profile > Add). Then you can copy the exact name of the
+deck when it was first shared. If this doesn't work, please contact
+support.
 
-เมื่อคุณอัปเดตสำรับที่แชร์ ผู้ใช้ที่ดาวน์โหลดสำรับไปก่อนหน้านี้จะไม่ได้รับการอัปเดตโดยอัตโนมัติ หากพวกเขาดาวน์โหลดสำรับอีกครั้งและนำเข้าใหม่ เนื้อหาที่เพิ่มเข้ามาใหม่จะถูกนำเข้าโดยไม่เปลี่ยนแปลงความคืบหน้าในการศึกษาที่มีอยู่ของพวกเขา โดยมีเงื่อนไขว่าทั้งคุณและผู้ใช้ไม่ได้เปลี่ยนแปลงประเภทโน้ตตั้งแต่การนำเข้าครั้งแรก
+When you update a shared deck, users who downloaded the deck previously
+will not automatically receive updates. If they download the deck again
+and re-import it, newly added material will be imported without altering
+their existing study progress, provided neither you nor the user has
+altered the note type since the first import.
 
-## การแชร์สำรับแบบส่วนตัว
+## Sharing Decks Privately
 
-หากคุณต้องการแชร์สำรับกับกลุ่มคนจำนวนจำกัด (เช่น กลุ่มศึกษาหรือชั้นเรียน) แทนที่จะเป็นสาธารณะ คุณสามารถทำได้โดยการแชร์นอก AnkiWeb
+If you’d like to share decks with a limited group of people (such as a
+study group or class) rather than the general public, you can do so by
+sharing them outside of AnkiWeb.
 
-หากต้องการแชร์สำรับแบบส่วนตัว ให้ไปที่เมนู File และเลือก Export เลือกสำรับเดียว (ไม่ใช่ "All Decks") และปิด "include scheduling information" ซึ่งจะสร้างไฟล์ .apkg ที่คุณสามารถแชร์กับผู้อื่นได้
+To share a deck privately, go to the File menu and choose Export. Select
+a single deck (not "All Decks"), and turn off "include scheduling
+information". This will produce an .apkg file which you can share with
+others.
 
-คุณสามารถแชร์ไฟล์ .apkg ได้โดยการส่งอีเมลให้ผู้อื่น วางไว้บนเว็บไซต์หรือโฟลเดอร์ที่แชร์ หรือใช้บริการแชร์ไฟล์ฟรี เช่น Dropbox หรือ Google Drive และส่งลิงก์ให้ผู้อื่น
+You can share the .apkg file by emailing it to people, placing it on a
+website or shared folder, or using a free file sharing service like
+Dropbox or Google Drive and sending people a link.
 
-ทั้งเวอร์ชันคอมพิวเตอร์และไคลเอนต์มือถือทำให้การนำเข้าจากไฟล์ apkg เป็นเรื่องง่ายเพียงแค่คลิกหรือแตะที่ไฟล์ อย่างไรก็ตาม AnkiWeb ไม่มีความสามารถในการนำเข้าไฟล์ apkg ดังนั้นผู้รับสำรับของคุณจะต้องมี Anki เวอร์ชันคอมพิวเตอร์หรือ Anki บนอุปกรณ์มือถือของพวกเขา
+Both the computer version and mobile clients make it easy to import from
+an apkg file simply by clicking or tapping on it. AnkiWeb does not have
+the ability to import apkg files however, so the recipients of your deck
+will need to have the computer version or Anki on their mobile device.
 
-เมื่อผู้ใช้นำเข้าไฟล์ .apkg การ์ดที่มีอยู่แล้วในคอลเลกชันของพวกเขาจะถูกละเว้นและการ์ดใหม่ใดๆ จะถูกเพิ่มเข้ามา ตราบใดที่พวกเขาใช้ประเภทโน้ตเดียวกัน การ์ดที่แก้ไขแล้วก็จะได้รับการอัปเดตด้วย เพื่อป้องกันการสูญหายของข้อมูล การ์ดที่ถูกลบในไฟล์ apkg ใหม่จะไม่ถูกลบในคอลเลกชันของผู้ใช้ ดังนั้นหากคุณต้องการลบการ์ดออกจากสำรับของผู้ใช้ไม่ว่าด้วยเหตุผลใดก็ตาม คุณจะต้องติดต่อพวกเขาเกี่ยวกับเรื่องนี้
+When a user imports an .apkg file, cards that already exist in their
+collection will be ignored and any new cards will be added. As long as
+they use the same note type, modified cards will also be updated. To
+prevent data loss, cards that have been deleted in the new apkg file
+will not be deleted in the user’s collection, so if you need to delete
+cards from users' decks for whatever reason, you will need to contact
+them about it.
 
-## การแชร์ส่วนเสริม
+## Sharing Add-ons
 
-โปรดดูที่ <https://addon-docs.ankiweb.net/sharing.html>
+Please see <https://addon-docs.ankiweb.net/sharing.html>
 
-## การแปล Anki
+## Translating Anki
 
-โปรดดูที่ <https://translating.ankiweb.net>
+Please see <https://translating.ankiweb.net>
 
-## การมีส่วนร่วมในโค้ด
+## Contributing Code
 
-ซอร์สโค้ดของ Anki มีอยู่ที่ <https://github.com/ankitects/anki>
+Anki's source code is available at <https://github.com/ankitects/anki>
 
-ก่อนที่จะมีส่วนร่วม โปรดดูที่ [contributing.md](https://github.com/ankitects/anki/blob/main/docs/contributing.md)
+Before contributing, please see [contributing.md](https://github.com/ankitects/anki/blob/main/docs/contributing.md).

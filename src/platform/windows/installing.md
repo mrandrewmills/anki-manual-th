@@ -1,57 +1,57 @@
-# การติดตั้งและอัปเกรด Anki บน Windows
+# Installing & Upgrading Anki on Windows
 
 <!-- toc -->
 
-## ข้อกำหนด
+## Requirements
 
-Anki รุ่นล่าสุดต้องการคอมพิวเตอร์ที่ใช้ Windows 10 หรือ 11 เวอร์ชัน 64 บิต
+Recent Anki releases require a computer running the 64 bit version of Windows
+10 or 11.
 
-- Anki รุ่นล่าสุดที่รองรับ Windows 7 และ 8.1 คือ Anki 2.1.49
-- Anki รุ่นล่าสุดที่รองรับ Windows 32 บิตคือ [Anki 2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35)
+- The last Anki release that supported Windows 7 and 8.1 was Anki 2.1.49.
+- The last Anki release that supported 32 bit Windows was [Anki 2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35).
 
-หากคุณใช้เครื่องเก่า คุณสามารถรับรุ่นเก่าได้จาก [หน้าเผยแพร่](https://github.com/ankitects/anki/releases)
+If you're on an old machine, you can obtain old releases from the [releases page](https://github.com/ankitects/anki/releases).
 
-## การติดตั้ง
+## Installing
 
-ในการติดตั้ง Anki:
+To install Anki:
 
-1. ดาวน์โหลด Anki จาก <https://apps.ankiweb.net>
-2. บันทึกโปรแกรมติดตั้งลงในเดสก์ท็อปหรือโฟลเดอร์ดาวน์โหลดของคุณ
-3. ดับเบิลคลิกที่โปรแกรมติดตั้งเพื่อเรียกใช้ หากคุณเห็นข้อความแสดงข้อผิดพลาด
-   โปรดดู [หน้าปัญหาการติดตั้ง](installation-issues.md)
-4. เมื่อติดตั้ง Anki แล้ว ให้ดับเบิลคลิกที่ไอคอนรูปดาวใหม่บน
-   เดสก์ท็อปของคุณเพื่อเริ่ม Anki
+1. Download Anki from <https://apps.ankiweb.net>.
+2. Save the installer to your desktop or downloads folder.
+3. Double-click on the installer to run it. If you see an error
+   message, please see the [installation issues page](installation-issues.md).
+4. Once Anki is installed, double-click on the new star icon on your
+   desktop to start Anki.
 
-## การอัปเกรด
+## Upgrading
 
-หากอัปเกรดจาก Anki 2.1.6+ ไม่จำเป็นต้องถอนการติดตั้งเวอร์ชันก่อนหน้า
-ก่อน สิ่งที่คุณต้องทำคือปิด Anki หากเปิดอยู่ จากนั้นทำตาม
-ขั้นตอนการติดตั้งข้างต้น การ์ดของคุณจะถูกเก็บรักษาไว้เมื่อคุณอัปเกรด
+If upgrading from Anki 2.1.6+, there is no need to uninstall the previous
+version first. All you need to do is close Anki if it is open, and then follow
+the installation steps above. Your cards will be preserved when you upgrade.
 
-หากอัปเกรดจาก Anki เวอร์ชันก่อน 2.1.6 หรือเปลี่ยนจากเวอร์ชันมาตรฐาน
-เป็นเวอร์ชันทางเลือกหรือในทางกลับกัน เราขอแนะนำให้ถอนการติดตั้งเวอร์ชันเก่า
-ก่อน ซึ่งจะลบข้อมูลโปรแกรมของ Anki แต่จะไม่ลบข้อมูลการ์ดของคุณ
+If upgrading from an Anki version before 2.1.6, or switching from the standard
+to the alternate version or vice versa, we recommend uninstalling the old
+version first, which will remove Anki's program data, but not delete your card
+data.
 
-หากคุณต้องการดาวน์เกรดเป็นเวอร์ชันก่อนหน้า โปรดตรวจสอบให้แน่ใจว่าคุณ
-[ดาวน์เกรดก่อน](http://changes.ankiweb.net)
+If you wish to downgrade to a previous version, please make sure you
+[downgrade first](http://changes.ankiweb.net).
 
-## ความเข้ากันได้ของส่วนเสริม
+## Add-on Compatibility
 
-ส่วนเสริมบางตัวอาจไม่ทำงานกับ Anki รุ่นล่าสุดเสมอไป หากคุณอัปเกรดเป็น
-Anki เวอร์ชันล่าสุดและพบว่าส่วนเสริมที่คุณขาดไม่ได้หยุดทำงาน
-คุณสามารถดาวน์โหลด Anki เวอร์ชันเก่าได้จาก [หน้าเผยแพร่](https://github.com/ankitects/anki/releases)
+Some add-ons may not always work with the latest Anki release. If you upgrade to
+the latest Anki version and find an add-on you cannot live without stops working,
+you can download older Anki versions from the [releases page](https://github.com/ankitects/anki/releases).
 
-## ปัญหา
+## Problems
 
-หากคุณพบปัญหาใด ๆ ในระหว่างการติดตั้งหรือเริ่ม Anki โปรดดู
-หน้าต่อไปนี้:
+If you encounter any issues when installing or starting Anki, please see the
+following pages:
+- [Installation Issues](installation-issues.md)
+- [Startup Issues](startup-issues.md)
+- [Display Issues](display-issues.md)
+- [Permission Problems](permission-problems.md)
 
-- [ปัญหาการติดตั้ง](installation-issues.md)
-- [ปัญหาการเริ่มต้นระบบ](startup-issues.md)
-- [ปัญหาการแสดงผล](display-issues.md)
-- [ปัญหาการอนุญาต](permission-problems.md)
-
-หากคุณพบปัญหาเกี่ยวกับอินเทอร์เฟซเมื่อใช้ Anki โปรดดูหน้าต่อไปนี้:
-
-- [ปัญหาการคัดลอกและวาง](copy-and-paste.md)
-- [ปัญหาขนาดตัวอักษร](text-size.md)
+If you encounter any interface issues when using Anki, please see the following pages:
+- [Copy and Paste Issues](copy-and-paste.md)
+- [Text Size Issues](text-size.md)

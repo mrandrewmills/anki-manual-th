@@ -1,42 +1,41 @@
-# การติดตั้งและอัปเกรด Anki บน macOS
+# Installing & Upgrading Anki on macOS
 
 <!-- toc -->
 
-## ข้อกำหนด
+## Requirements
 
-ข้อกำหนดเวอร์ชัน macOS อยู่ในหน้าดาวน์โหลด
+macOS version requirements are listed on the download page.
 
-หากคุณใช้เครื่องเก่า คุณสามารถรับเวอร์ชันเก่าได้จาก [หน้าเผยแพร่](https://github.com/ankitects/anki/releases) บิลด์ Qt5 บน 24.11 และก่อนหน้ารองรับ macOS 10.14 และใหม่กว่า หาก macOS ของคุณ
-อยู่ระหว่าง 10.10 ถึง 10.13 คุณจะต้องใช้ [Anki 2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35)
+If you're on an old machine, you can obtain the old version from the [releases page](https://github.com/ankitects/anki/releases). The Qt5 builds on 24.11 and earlier support macOS 10.14 and later. If your macOS
+is between 10.10 and 10.13, you'll need to use [Anki 2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35).
 
-## การติดตั้ง
+## Installing
 
-1. ดาวน์โหลด Anki จาก <https://apps.ankiweb.net>
-2. บันทึกไฟล์ลงในเดสก์ท็อปหรือโฟลเดอร์ดาวน์โหลดของคุณ
-3. เปิดไฟล์แล้วลาก Anki ไปยังโฟลเดอร์ Applications หรือเดสก์ท็อปของคุณ
-4. ดับเบิลคลิกที่ Anki ในตำแหน่งที่คุณวางไว้
+1. Download Anki from <https://apps.ankiweb.net>.
+2. Save the file to your desktop or downloads folder.
+3. Open it, and drag Anki to your Applications folder or desktop.
+4. Double-click on Anki in the location you placed it.
 
-## การอัปเกรด
+## Upgrading
 
-ในการอัปเกรด ให้ปิด Anki หากเปิดอยู่ จากนั้นทำตามขั้นตอนข้างต้น ลาก
-ไอคอน Anki ไปยังตำแหน่งเดียวกับที่คุณเคยเก็บไว้ และเมื่อได้รับแจ้ง
-ให้เขียนทับเวอร์ชันเก่า ข้อมูลบัตรของคุณจะถูกเก็บรักษาไว้
+To upgrade, close Anki if it is open, and then follow the steps above. Drag
+the Anki icon into the same location you previously stored it, and when prompted,
+overwrite the old version. Your card data will be preserved.
 
 ## Homebrew
 
-ผู้ใช้ [Homebrew](https://brew.sh/) สามารถติดตั้ง Anki โดยใช้
-`brew install --cask anki` ในแอปพลิเคชันเทอร์มินัลที่ต้องการ
+[Homebrew](https://brew.sh/) users can install Anki using
+`brew install --cask anki` in their preferred Terminal application.
 
-การอัปเกรดสามารถทำได้โดยใช้ `brew upgrade` และสำหรับการถอนการติดตั้ง: `brew uninstall --cask anki`
+Upgrading can be done using `brew upgrade`, and for uninstalling: `brew uninstall --cask anki`
 
-## ความเข้ากันได้ของส่วนเสริม
+## Add-on Compatibility
 
-ส่วนเสริมบางตัวอาจไม่ทำงานกับ Anki รุ่นล่าสุดเสมอไป หากคุณอัปเกรดเป็น
-Anki เวอร์ชันล่าสุดและพบว่าส่วนเสริมที่คุณขาดไม่ได้หยุดทำงาน
-คุณสามารถดาวน์โหลด Anki เวอร์ชันเก่าได้จาก [หน้าเผยแพร่](https://github.com/ankitects/anki/releases)
+Some add-ons may not always work with the latest Anki release. If you upgrade to
+the latest Anki version and find an add-on you cannot live without stops working,
+you can download older Anki versions from the [releases page](https://github.com/ankitects/anki/releases).
 
-## ปัญหา
+## Problems
 
-หากคุณพบปัญหาใด ๆ ในระหว่างการติดตั้งหรือเริ่ม Anki โปรดดู:
-
-- [ปัญหาการแสดงผล](display-issues.md)
+If you encounter any issues when installing or starting Anki, please see:
+- [Display Issues](display-issues.md)

@@ -1,72 +1,72 @@
-# การส่งออก
+# Exporting
 
 <!-- toc -->
 
-การส่งออกช่วยให้คุณสามารถบันทึกส่วนหนึ่งของคอลเลกชันของคุณเป็นไฟล์ข้อความหรือ
-Anki deck ที่ถูกแพ็คไว้ หากต้องการส่งออก ให้คลิกเมนู File และเลือก **Export**
+Exporting allows you to save part of your collection as a text file or
+packaged Anki deck. To export, click the File menu and choose **Export**.
 
-## ไฟล์ข้อความ
+## Text Files
 
-หากคุณเลือก "Notes in Plain Text" Anki จะเขียนเนื้อหาของ
-โน้ตลงในไฟล์ข้อความ แต่ละฟิลด์จะถูกคั่นด้วยแท็บ หากคุณแก้ไข
-ไฟล์ที่ได้และไม่แก้ไขฟิลด์แรก คุณสามารถ
-นำเข้าไฟล์นั้นกลับเข้าสู่ Anki ได้ในภายหลัง และ Anki จะอัปเดตโน้ตของคุณตาม
-การแก้ไขของคุณ โดยมีเงื่อนไขว่าคุณนำเข้ากลับไปยังประเภทโน้ตเดียวกัน
+If you choose "Notes in Plain Text", Anki will write the contents of the
+notes into a text file. Each field is separated by a tab. If you edit
+the resulting file and don't modify the first field, you can later
+import that file back into Anki and Anki will update your notes based on
+your edits, provided you import back into the same note type.
 
-หากคุณพบว่าจำเป็นต้องแก้ไขฟิลด์แรกด้วย คุณจะต้อง
-เปลี่ยนรูปแบบของประเภทโน้ตของคุณเพื่อให้ฟิลด์แรกเป็น
-หมายเลข ID แทนที่จะเป็นข้อความจริง (คุณสามารถติดตั้ง
-ส่วนเสริม [Add note id](https://ankiweb.net/shared/info/8897764)
-เพื่อให้ง่ายขึ้น)
+If you find yourself needing to edit the first field as well, you'll
+need to change the format of your note type so that the first field is
+an ID number rather than actual text. (You can install
+the [Add note id](https://ankiweb.net/shared/info/8897764)
+add-on to make this easier.)
 
-เพื่อให้การจัดรูปแบบยังคงอยู่เมื่อคุณนำเข้าข้อความกลับเข้ามา
-ข้อความจะถูกส่งออกพร้อมกับการจัดรูปแบบ HTML ทั้งหมดที่ฝังอยู่
+In order for formatting to be preserved when you import text back in,
+the text is exported with all the HTML formatting embedded in it.
 
 ## Packaged Decks
 
-"packaged deck" ประกอบด้วยการ์ด, โน้ต, ประเภทโน้ต และเสียงหรือ
-รูปภาพใดๆ ที่รวมอยู่ในไฟล์ที่ลงท้ายด้วย .apkg หรือ .colpkg คุณสามารถใช้
-packaged decks เพื่อถ่ายโอนการ์ดระหว่างบุคคล หรือเพื่อสำรองข้อมูลบางส่วน
-ของคอลเลกชันของคุณ
+A "packaged deck" consists of cards, notes, note types, and any sounds or
+images bundled up into a file ending with .apkg or .colpkg. You can use
+packaged decks to transfer cards between people, or for backing up parts
+of your collection.
 
-มี packaged decks สองประเภทที่แตกต่างกัน
+There are two different kinds of packaged decks.
 
 ### Collection (.colpkg)
 
-เมื่อคุณส่งออกเด็คทั้งหมดพร้อมกับการจัดตารางเวลาที่รวมอยู่ นี่เรียกว่า
-"collection package" Anki จะคัดลอกคอลเลกชันทั้งหมดของคุณลงในไฟล์
-ที่ลงท้ายด้วย .colpkg และวางไว้บนเดสก์ท็อปของคุณ collection package ใช้สำหรับ
-สำรองข้อมูลคอลเลกชันของคุณ หรือคัดลอกไปยังอุปกรณ์อื่น
+When you export all decks with scheduling included, this is called a
+"collection package". Anki will copy your entire collection into a file
+ending in .colpkg, and place it on your desktop. A collection package is
+used to back up your collection, or copy it to another device.
 
-collection packages ที่สร้างด้วย Anki เวอร์ชันก่อนหน้าเรียกว่า
-collection.apkg
+Collection packages created with previous versions of Anki were called
+collection.apkg.
 
-เมื่อไฟล์นี้ถูกนำเข้าในภายหลัง Anki จะลบการ์ดปัจจุบันทั้งหมด
-ในคอลเลกชัน และแทนที่คอลเลกชันด้วยรายการใน
-ไฟล์ สิ่งนี้มีประโยชน์สำหรับการคัดลอกคอลเลกชันของคุณไปมาระหว่าง
-อุปกรณ์
+When this file is later imported, Anki will delete all the current cards
+in the collection, and replace the collection with the items in the
+file. This is useful for copying your collection back and forth between
+devices.
 
-สื่อที่มีอยู่ในคอลเลกชันของคุณจะไม่ถูกลบเมื่อคุณนำเข้า
-collection package หากต้องการลบสื่อที่ไม่ได้ใช้ ให้ใช้ Tools&gt;Check Media
+Existing media in your collection is not deleted when you import a
+collection package. To delete unused media, use Tools&gt;Check Media.
 
-หากคุณเลือกรูปแบบ Anki 2.1.50+ Collection Package การนำเข้าและส่งออก
-จะเร็วขึ้น และไฟล์สื่อจะถูกบีบอัด แต่ไฟล์ .colpkg ที่ได้
-จะไม่สามารถอ่านได้โดย Anki client เวอร์ชันเก่า
+If you choose Anki 2.1.50+ Collection Package format, imports and exports
+will be faster, and media files will be compressed, but the resulting
+.colpkg file will not be readable by older Anki clients.
 
 ### Deck (.apkg)
 
-Deck packages มีเด็คเดียว (และเด็คย่อยใดๆ ที่อาจมี)
-พวกมันมีชื่อไฟล์ที่ลงท้ายด้วย .apkg แต่เป็นชื่อไฟล์อื่นที่ไม่ใช่
-collection.apkg เมื่อคุณนำเข้า deck package Anki จะเพิ่ม
-เนื้อหาลงในคอลเลกชันของคุณ แทนที่จะเขียนทับคอลเลกชันของคุณ
+Deck packages contain a single deck (and any child decks it may have).
+They have a filename ending with .apkg, but a filename other than
+collection.apkg. When you import a deck package, Anki will add the
+contents into your collection, rather than overwriting your collection.
 
-หากโน้ตบางส่วนใน deck package เคยถูกนำเข้ามาก่อน Anki
-จะเก็บเวอร์ชันที่มีเวลาแก้ไขล่าสุด ดังนั้นหากคุณ
-ดาวน์โหลดเด็คที่อัปเดตแล้ว การแก้ไขที่ทำในเวอร์ชันที่อัปเดต
-จะถูกทำในคอลเลกชันของคุณด้วย แต่หากคุณนำเข้า
-เด็คที่ไม่เปลี่ยนแปลงซ้ำหลังจากทำการแก้ไขในคอลเลกชันของคุณ
-การเปลี่ยนแปลงในคอลเลกชันของคุณจะยังคงอยู่
+If some notes in the deck package have previously been imported, Anki
+will keep the version with the most recent modification time. So if you
+download an updated deck, the edits that have been made in the updated
+version will be made in your collection as well, but if you re-import an
+unchanged deck after making edits in your collection, the changes in
+your collection will be kept.
 
-หากคุณเลือกที่จะไม่รวมข้อมูลการจัดตารางเวลา Anki จะถือว่า
-คุณกำลังแบ่งปันเด็คกับผู้อื่น และจะลบแท็กที่ทำเครื่องหมายไว้และ leech
-เพื่อให้พวกเขามีสำเนาที่สะอาดของมัน
+If you choose not to include scheduling information, Anki will assume
+that you are sharing the deck with other people, and will remove marked
+and leech tags so that they will have a clean copy of it.

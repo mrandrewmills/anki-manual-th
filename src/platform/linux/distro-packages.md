@@ -1,17 +1,22 @@
-# แพ็คเกจที่แจกจ่ายโดย Linux Distributions
+# Packages Distributed by Linux Distributions
 
-เราพบปัญหามากมายที่เกิดจาก Anki เวอร์ชันที่กำหนดเองซึ่งจัดจำหน่ายโดย Linux distributions:
+We have seen a lot of issues caused by the customized versions of Anki
+distributed by Linux distributions:
 
-- Anki ขึ้นอยู่กับไลบรารีของบุคคลที่สามเช่น Qt และ Linux distributions มักจะ
-  แทนที่ไลบรารีเหล่านั้นด้วยเวอร์ชันอื่นโดยไม่ได้ทดสอบผลกระทบ
-  ของการเปลี่ยนแปลงเหล่านั้น
-- บางครั้ง Anki เวอร์ชันที่พวกเขาแจกจ่ายนั้นเก่าเป็นปีหรือเป็นเวอร์ชัน
-  อัลฟ่า/เบต้าที่ไม่ได้มีไว้สำหรับรุ่นที่เสถียร Distributions มักจะ
-  ปิดการใช้งานการตรวจสอบการอัปเดตในตัวด้วยเพื่อป้องกันไม่ให้คุณได้รับการแจ้งเตือน
-  ของเวอร์ชันที่ใหม่กว่า
+- Anki depends on third-party libraries like Qt, and Linux distributions often
+  substitute different versions of those libraries, without testing the impact
+  of those changes.
+- Sometimes the version of Anki they distribute is years old, or is an
+  alpha/beta version not intended for stable release. Distributions will often
+  disable the built-in update check as well, to prevent you from being notified
+  of newer versions.
 
-บิลด์ที่คอมไพล์แล้วของ Anki มีให้ที่ <https://apps.ankiweb.net> ไลบรารีที่จำเป็นส่วนใหญ่จะรวมอยู่ด้วยและ Anki ได้รับการทดสอบแล้วว่าทำงานร่วมกับไลบรารีเวอร์ชันเหล่านี้ได้ หากคุณกำลังประสบปัญหากับเวอร์ชันของ distro ของคุณ
-สิ่งแรกที่คุณควรลองคือเปลี่ยนไปใช้เวอร์ชันแพ็คเกจล่าสุดที่เรามีให้
+Compiled builds of Anki are available on <https://apps.ankiweb.net>. Most of the
+necessary libraries are included, and Anki has been tested to work with these
+library versions. If you're experiencing issues with your distro's version, the
+first thing you should try is switching to the latest packaged version we
+provide.
 
-คุณสามารถใช้ Anki เวอร์ชันของ distro ของคุณต่อไปได้หากต้องการ
-แต่หากคุณประสบปัญหาใดๆคุณจะต้องรายงานปัญหาเหล่านั้นไปยังผู้ดูแลแพ็คเกจของ distribution ของคุณ
+You are welcome to continue using your distro's version of Anki if you prefer,
+but if you run into any issues, you will need to report them to your
+distribution's package maintainers.

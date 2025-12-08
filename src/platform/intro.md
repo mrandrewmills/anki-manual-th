@@ -1,9 +1,9 @@
-# หมายเหตุสำหรับแต่ละแพลตฟอร์ม
+# Platform Notes
 
-ส่วนนี้จะอธิบายวิธีการติดตั้ง Anki และปัญหาที่อาจเกิดขึ้นได้ โดยขึ้นอยู่กับระบบปฏิบัติการของคุณ:
+This section explains the way Anki is installed, and the possible problems you may encounter, depending on your OS:
 
 - [Windows](./windows/intro.md)
 - [macOS](./mac/intro.md)
 - [Linux](./linux/intro.md)
 
-หากคุณติดตั้ง Anki แล้ว คุณสามารถข้ามไปที่ส่วน [การเริ่มต้นใช้งาน](../getting-started.md) ได้เลย
+If you have already installed Anki, you can skip to the [Getting Started](../getting-started.md) section.

@@ -1,85 +1,86 @@
-# การสร้างการ์ด
+# Card Generation
 
 <!-- toc -->
 
-## การ์ดกลับด้าน
+## Reverse Cards
 
-คุณสามารถดู [วิดีโอเกี่ยวกับการกลับด้านการ์ด](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on) บน YouTube
+You can watch [a video about reversing cards](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on) on YouTube.
 
-หากคุณต้องการสร้างการ์ดที่ไปได้ทั้งสองทิศทาง (เช่น ทั้ง
-“ookii”→“ใหญ่” และ “ใหญ่”→“ookii”) คุณมีหลายทางเลือก วิธีที่ง่ายที่สุด
-คือเลือกประเภทโน้ตในตัว “พื้นฐาน (และการ์ดกลับด้าน)” ซึ่ง
-จะสร้างการ์ดสองใบ ใบหนึ่งในแต่ละทิศทาง
+If you want to create cards that go in both directions (e.g., both
+“ookii”→“big” and “big”→“ookii”), you have several options. The simplest
+is to select the “Basic (and reversed card)” built-in note type. This
+will generate two cards, one in each direction.
 
-หากคุณต้องการสร้างการ์ดกลับด้านสำหรับเนื้อหาบางส่วนของคุณเท่านั้น
-(บางทีคุณอาจต้องการใช้เวลาศึกษาการ์ดกลับด้านสำหรับเนื้อหาที่สำคัญที่สุดเท่านั้น
-หรือการ์ดบางใบของคุณไม่มีความหมายเมื่อกลับด้าน)
-คุณสามารถเลือกประเภทโน้ต “พื้นฐาน (การ์ดกลับด้านเสริม)” ประเภทโน้ตนี้
-จะสร้างการ์ดไปข้างหน้าเท่านั้นเมื่อคุณกรอกเฉพาะสองฟิลด์แรก
-หากคุณป้อนบางอย่างเพิ่มเติมในฟิลด์ “เพิ่มการ์ดกลับด้าน”
-(เช่น "y") Anki จะสร้างการ์ดกลับด้านด้วย เนื้อหาของ
-ฟิลด์นี้จะไม่แสดงบนการ์ด
+If you want to generate reverse cards for only some of your material
+(perhaps you only want to take the time to study reverses for the most
+important material, or some of your cards don’t make sense reversed),
+you can select the “Basic (optional reversed card)” note type. This note
+type generates a forward-only card when you fill in only the first two
+fields; if you additionally enter something in the “Add Reverse” field
+(like a "y"), Anki will generate a reverse card as well. The contents of
+this field will never be displayed on a card.
 
-## การสร้างและลบการ์ด
+## Card Generation & Deletion
 
-Anki จะไม่สร้างการ์ดที่มีด้านหน้าที่ว่างเปล่า ดังนั้นหาก “ฟิลด์ของฉัน”
-ว่างเปล่า และเทมเพลตด้านหน้าของการ์ดหนึ่งใบมีเพียงฟิลด์นั้น
-การ์ดจะไม่ถูกสร้างขึ้น
+Anki will not create cards with empty front sides. Thus if “My Field”
+was empty, and one card’s front template included only that field, the
+card would not be created.
 
-เมื่อคุณแก้ไขโน้ตที่เพิ่มไว้ก่อนหน้านี้ Anki จะสร้าง
-การ์ดพิเศษโดยอัตโนมัติหากก่อนหน้านี้ว่างเปล่าแต่ตอนนี้ไม่เป็นเช่นนั้นแล้ว อย่างไรก็ตาม หาก
-การแก้ไขของคุณทำให้การ์ดบางใบว่างเปล่าในขณะที่ก่อนหน้านี้ไม่เป็นเช่นนั้น
-Anki จะไม่ลบการ์ดเหล่านั้นทันที เนื่องจากอาจทำให้ข้อมูลสูญหายโดยไม่ตั้งใจ
-หากต้องการลบการ์ดที่ว่างเปล่า ให้ไปที่ เครื่องมือ → การ์ดว่าง ใน
-หน้าต่างหลัก คุณจะเห็นรายการการ์ดที่ว่างเปล่าและได้รับ
-ตัวเลือกให้ลบการ์ดเหล่านั้น
+When you edit a previously added note, Anki will automatically create
+extra cards if they were previously blank but no longer are. If your
+edits have made some cards blank when they previously were not, however,
+Anki will not delete them immediately, as that could lead to accidental
+data loss. To remove the empty cards, go to Tools → Empty Cards in the
+main window. You will be shown a list of empty cards and be given the
+option to delete them.
 
-เนื่องจากวิธีการทำงานของการสร้างการ์ด จึงไม่สามารถ
-ลบการ์ดแต่ละใบด้วยตนเองได้ เนื่องจากจะถูกสร้างขึ้นใหม่
-ในครั้งต่อไปที่แก้ไขโน้ต แต่คุณควรทำให้
-ฟิลด์การแทนที่แบบมีเงื่อนไขที่เกี่ยวข้องว่างเปล่า แล้วใช้ตัวเลือก การ์ดว่าง
+Because of the way that card generation works, it is not possible to
+manually delete individual cards, as they would just end up being recreated
+the next time the note was edited. Instead, you should make the
+relevant conditional replacement fields empty and then use the Empty
+Cards option.
 
-Anki ไม่พิจารณาฟิลด์พิเศษหรือข้อความที่ไม่ใช่ฟิลด์เพื่อวัตถุประสงค์
-ในการสร้างการ์ด ดังนั้นหากเทมเพลตด้านหน้าของคุณมีลักษณะดัง
-ต่อไปนี้ จะไม่มีการสร้างการ์ดหากประเทศว่างเปล่า:
+Anki does not consider special fields or non-field text for the purposes
+of card generation. Thus if your front template looked like the
+following, no card would be generated if Country was empty:
 
-    {{Country}} อยู่ที่ไหนบนแผนที่?
+    Where is {{Country}} on the map?
 
-## การสร้างการ์ดแบบเลือก
+## Selective Card Generation
 
-บางครั้งคุณอาจต้องการสร้างการ์ดพิเศษสำหรับเนื้อหาบางส่วนของคุณเท่านั้น
-เช่น การทดสอบความสามารถในการจำคำศัพท์ที่สำคัญที่สุด
-ของชุด คุณสามารถทำได้โดยเพิ่มฟิลด์พิเศษลงใน
-โน้ตของคุณ และเพิ่มข้อความบางอย่างลงไป (เช่น "1") ในโน้ตที่คุณต้องการ
-การ์ดพิเศษ จากนั้นในเทมเพลตการ์ด คุณสามารถทำให้การสร้างการ์ด
-ขึ้นอยู่กับว่าฟิลด์นั้นไม่ว่างเปล่า สำหรับข้อมูลเพิ่มเติมเกี่ยวกับ
-เรื่องนี้ โปรดดูส่วนการแทนที่แบบมีเงื่อนไขด้านล่าง
+Sometimes you may want to generate extra cards for only some of your
+material, such as testing your ability to recall the most important
+words of a set. You can accomplish this by adding an extra field to your
+note, and adding some text into it (such as "1") on the notes you want
+the extra card. Then in the card template, you can make the card’s
+creation depend on that field being non-empty. For more information on
+this, please see the conditional replacement section below.
 
-## การแทนที่แบบมีเงื่อนไข
+## Conditional Replacement
 
-เป็นไปได้ที่จะรวมข้อความ ฟิลด์ หรือ HTML บางอย่างในการ์ดของคุณ
-เฉพาะเมื่อฟิลด์ว่างเปล่าหรือไม่ว่างเปล่าเท่านั้น ตัวอย่าง:
+It is possible to include certain text, fields, or HTML on your cards
+only if a field is empty or not empty. An example:
 
-    ข้อความนี้จะแสดงเสมอ
+    This text is always shown.
 
     {{#FieldName}}
-        ข้อความนี้จะแสดงก็ต่อเมื่อ FieldName มีข้อความอยู่
+        This text is only shown if FieldName has text in it
     {{/FieldName}}
 
     {{^FieldName}}
-        ข้อความนี้จะแสดงก็ต่อเมื่อ FieldName ว่างเปล่า
+        This text is only shown if FieldName is empty
     {{/FieldName}}
 
-ตัวอย่างในชีวิตจริงคือการแสดงป้ายกำกับเฉพาะเมื่อฟิลด์ไม่ว่างเปล่า:
+A real life example is only showing a label if the field is not empty:
 
     {{#Tags}}
-        แท็ก: {{Tags}}
+        Tags: {{Tags}}
     {{/Tags}}
 
-หรือสมมติว่าคุณต้องการแสดงฟิลด์เฉพาะเป็นสีน้ำเงินที่ด้านหน้าของ
-การ์ดหากมีโน้ตเพิ่มเติมที่ด้านหลัง (บางทีความจริงที่ว่ามี
-โน้ตทำหน้าที่เป็นเครื่องเตือนใจว่าคุณควรใช้เวลาคิด
-เกี่ยวกับคำตอบมากขึ้น) คุณสามารถจัดรูปแบบฟิลด์ได้ดังนี้:
+Or say you want to display a specific field in blue on the front of your
+card if there are extra notes on the back (perhaps the fact that there
+are notes serves as a reminder that you should spend more time thinking
+about the answer). You can style the field as follows:
 
     {{#Notes}}
         <span style="color:blue;">
@@ -91,24 +92,25 @@ Anki ไม่พิจารณาฟิลด์พิเศษหรือข
         </span>
     {{/Notes}}
 
-คุณยังสามารถใช้การแทนที่แบบมีเงื่อนไขเพื่อควบคุมการสร้างการ์ดได้อีกด้วย
-ซึ่งใช้งานได้เนื่องจาก Anki จะไม่สร้าง
-การ์ดที่จะมีด้านหน้าที่ว่างเปล่า ตัวอย่างเช่น
-พิจารณาการ์ดที่มีสองฟิลด์ที่ด้านหน้า:
+You can also use conditional replacement to control which cards are
+generated. This works since Anki will not generate
+cards which would have a blank front side. For
+example, consider a card with two fields on the front:
 
     {{Expression}}
     {{Notes}}
 
-โดยปกติแล้ว การ์ดจะถูกสร้างขึ้นหากฟิลด์นิพจน์หรือโน้ต
-มีข้อความอยู่ หากคุณต้องการให้สร้างการ์ดก็ต่อเมื่อนิพจน์
-ไม่ว่างเปล่า คุณสามารถเปลี่ยนเทมเพลตเป็นดังนี้:
+Normally a card would be generated if either the expression or notes
+field had text in it. If you only wanted a card generated if expression
+was not empty, then you could change the template to this:
 
     {{#Expression}}
         {{Expression}}
         {{Notes}}
     {{/Expression}}
 
-และหากคุณต้องการให้ต้องมีทั้งสองฟิลด์ คุณสามารถใช้การแทนที่แบบมีเงื่อนไขสองครั้ง:
+And if you wanted to require both fields, you could use two conditional
+replacements:
 
     {{#Expression}}
         {{#Notes}}
@@ -117,51 +119,51 @@ Anki ไม่พิจารณาฟิลด์พิเศษหรือข
         {{/Notes}}
     {{/Expression}}
 
-โปรดทราบว่าสิ่งนี้จะใช้ได้ก็ต่อเมื่อคุณวาง
-โค้ดการแทนที่แบบมีเงื่อนไขไว้ที่ _ด้านหน้า_ ของการ์ดเท่านั้น หากคุณทำเช่นนี้
-ที่ด้านหลัง คุณจะจบลงด้วยการ์ดที่มีด้านหลังที่ว่างเปล่า
-ในทำนองเดียวกัน เนื่องจากสิ่งนี้ทำงานโดยการตรวจสอบว่าฟิลด์ด้านหน้าจะ
-ว่างเปล่าหรือไม่ สิ่งสำคัญคือต้องแน่ใจว่าคุณได้ครอบ "ทั้งหมด" ของด้านหน้าไว้ใน
-การแทนที่แบบมีเงื่อนไข ตัวอย่างเช่น สิ่งต่อไปนี้จะไม่ทำงาน
-ตามที่คาดไว้:
+Keep in mind that this only works when you place the
+conditional replacement code on the _front_ of the card; if you do this
+on the back, you will simply end up with cards with a blank back side.
+Similarly, since this works by checking if the front field would be
+empty, it is important to make sure you wrap the "entire" front side in
+the conditional replacement; for instance, the following would not work
+as expected:
 
     {{#Expression}}
         {{Expression}}
     {{/Expression}}
     {{Notes}}
 
-## ด้านหลังที่ว่างเปล่า
+## Blank Back Sides
 
-การสร้างการ์ดจะดูที่ด้านหน้าของการ์ดเท่านั้น ตัวอย่างเช่น หากคุณมี
-เทมเพลตด้านหน้า:
+Card generation only looks at the front side of the card. For example, if you have a
+front template:
 
     {{Field 1}}
 
-และเทมเพลตด้านหลัง:
+and a back template:
 
     {{Field 2}}
 
-จากนั้นการ์ดจะถูกสร้างขึ้นหากฟิลด์ 1 ไม่ว่างเปล่า หากฟิลด์ 2 ว่างเปล่า การ์ด
-จะยังคงถูกสร้างขึ้น และคุณจะได้รับด้านหลังที่ว่างเปล่า
+Then a card will be generated if Field 1 is non-empty. If Field 2 is empty, the card
+will still be generated, and you will get a blank back side.
 
-หากคุณต้องการหลีกเลี่ยงด้านหลังที่ว่างเปล่า คุณจะต้องวางฟิลด์ที่จำเป็น
-บนเทมเพลตด้านหน้าเป็นเงื่อนไข ดังนี้:
+If you wish to avoid a blank back side, you will need to place a required field
+on the front template as a conditional, like so:
 
     {{#Field 2}}
         {{Field 1}}
     {{/Field 2}}
 
-ซึ่งจะช่วยให้แน่ใจว่าการ์ดจะถูกสร้างขึ้นก็ต่อเมื่อทั้งฟิลด์ 2 และฟิลด์ 1 ไม่ว่างเปล่า
+This will ensure the card is generated only if both Field 2 and Field 1 are non-empty.
 
-## การเพิ่มโน้ตเปล่า
+## Adding Empty Notes
 
-เมื่อคุณเพิ่มโน้ตใหม่ใน Anki หาก
-เทมเพลตการ์ดและฟิลด์โน้ตรวมกันแล้วไม่สร้างการ์ดใดๆ การ์ดเปล่าจะถูก
-สร้างขึ้นโดยใช้เทมเพลตแรก ซึ่งช่วยให้คุณสามารถเพิ่มเนื้อหาได้แม้ว่าจะ
-ไม่สมบูรณ์ และแก้ไขหรือเทมเพลตในภายหลังเพื่อให้ถูกต้อง หากคุณไม่
-ต้องการเก็บโน้ตเปล่า คุณสามารถลบออกได้ด้วยฟังก์ชันการ์ดเปล่า
+When you add a new note in Anki, if the card
+templates and note fields combine to produce no cards, a blank card will be
+created using the first template. This allows you to add material even if it's
+incomplete, and modify it or the template later to make it valid. If you don't
+wish to keep an empty note, you can remove it with the Empty Cards function.
 
-## เทมเพลต Cloze
+## Cloze Templates
 
 Please see the [cloze deletion](../editing.md#cloze-deletion) section for background info.
 
@@ -182,7 +184,7 @@ Cloze deletion note types are generated differently:
 - For each separate number, a card will be generated.
 
 Because card generation functions differently for cloze deletion cards,
-{{cloze:…}} tags can not be used with a regular note type - they
+{{cloze:…​}} tags can not be used with a regular note type - they
 will only function properly when used with a cloze note type.
 
 Conditional generation provides a special field so you can check which

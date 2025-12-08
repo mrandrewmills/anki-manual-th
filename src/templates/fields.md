@@ -1,27 +1,27 @@
-# การแทนที่ฟิลด์
+# Field Replacements
 
 <!-- toc -->
 
-## การแทนที่พื้นฐาน
+## Basic Replacements
 
-เทมเพลตพื้นฐานที่สุดมีลักษณะดังนี้:
+The most basic template looks something like this:
 
     {{Front}}
 
-เมื่อคุณใส่ข้อความในวงเล็บปีกกา Anki จะค้นหาฟิลด์ตาม
-ชื่อนั้น และแทนที่ข้อความด้วยเนื้อหาจริงของฟิลด์
+When you place text within curly brackets, Anki looks for a field by
+that name, and replaces the text with the actual content of the field.
 
-ชื่อฟิลด์คำนึงถึงตัวพิมพ์ใหญ่-เล็ก หากคุณมีฟิลด์ชื่อ `Front`
-การเขียน `{{front}}` จะไม่ทำงานอย่างถูกต้อง
+Field names are case sensitive. If you have a field named `Front`,
+writing `{{front}}` will not work properly.
 
-เทมเพลตของคุณไม่จำกัดอยู่แค่รายการของฟิลด์ คุณยังสามารถรวม
-ข้อความตามอำเภอใจในเทมเพลตของคุณได้ ตัวอย่างเช่น หากคุณกำลังศึกษา
-เมืองหลวง และคุณได้สร้างประเภทบันทึกย่อที่มีฟิลด์ "Country"
-คุณอาจสร้างเทมเพลตด้านหน้าเช่นนี้:
+Your templates are not limited to a list of fields. You can also include
+arbitrary text on your templates. For example, if you’re studying
+capital cities, and you’ve created a note type with a “Country” field,
+you might create a front template like this:
 
-    เมืองหลวงของ {{Country}} คืออะไร?
+    What's the capital city of {{Country}}?
 
-เทมเพลตด้านหลังเริ่มต้นจะมีลักษณะดังนี้:
+The default back template will look something like this:
 
     {{FrontSide}}
 
@@ -29,308 +29,307 @@
 
     {{Back}}
 
-ซึ่งหมายความว่า “แสดงข้อความที่อยู่ด้านหน้า แล้วตามด้วยเส้นแบ่ง
-แล้วตามด้วยฟิลด์ Back”
+This means “show me the text that’s on the front side, then a divider
+line, and then the Back field”.
 
-ส่วน "id=answer" บอก Anki ว่าเส้นแบ่งระหว่าง
-คำถามและคำตอบอยู่ที่ไหน ซึ่งช่วยให้ Anki สามารถเลื่อนไปยัง
-จุดที่คำตอบเริ่มต้นได้โดยอัตโนมัติเมื่อคุณกด **แสดงคำตอบ** บนการ์ดที่ยาว
-(โดยเฉพาะอย่างยิ่งมีประโยชน์บนอุปกรณ์พกพาที่มีหน้าจอขนาดเล็ก) หากคุณไม่
-ต้องการเส้นแนวนอนที่จุดเริ่มต้นของคำตอบ คุณสามารถใช้
-องค์ประกอบ HTML อื่น เช่น ย่อหน้าหรือ div แทนได้
+The "id=answer" part tells Anki where the divider is between the
+question and the answer. This allows Anki to automatically scroll to the
+spot where the answer starts when you press **show answer** on a long card
+(especially useful on mobile devices with small screens). If you don’t
+want a horizontal line at the beginning of the answer, you can use
+another HTML element such as a paragraph or div instead.
 
-## การขึ้นบรรทัดใหม่
+## Newlines
 
-เทมเพลตการ์ดเหมือนกับหน้าเว็บ ซึ่งหมายความว่าต้องใช้คำสั่งพิเศษ
-ในการสร้างบรรทัดใหม่ ตัวอย่างเช่น หากคุณเขียนสิ่งต่อไปนี้ในเทมเพลต:
+Card templates are like web pages, which means a special command is required
+to create a new line. For example, if you wrote the following in the template:
 
-    หนึ่ง
-    สอง
+    one
+    two
 
-ในตัวอย่าง คุณจะเห็น:
+In the preview, you’d actually see:
 
-    หนึ่ง สอง
+    one two
 
-ในการเพิ่มบรรทัดใหม่ คุณต้องเพิ่มโค้ด &lt;br&gt; ที่ท้าย
-บรรทัด ดังนี้:
+To add a new line, you need to add a &lt;br&gt; code to the end of a
+line, like so:
 
-    หนึ่ง<br>
-    สอง
+    one<br>
+    two
 
-โค้ด br ย่อมาจาก "(line) br(eak)"
+The br code stands for "(line) br(eak)".
 
-สิ่งเดียวกันนี้ใช้กับฟิลด์ หากคุณต้องการแสดงสองฟิลด์ โดยแต่ละฟิลด์อยู่คนละ
-บรรทัด คุณจะใช้
+The same applies for fields. If you want to display two fields, one on
+each line, you would use
 
     {{Field 1}}<br>
     {{Field 2}}
 
-## การอ่านออกเสียงข้อความเป็นคำพูดสำหรับฟิลด์แต่ละฟิลด์
+## Text to Speech for individual fields
 
-คุณลักษณะนี้ต้องใช้ Anki 2.1.20, AnkiMobile 2.0.56 หรือ AnkiDroid 2.17
+This feature requires Anki 2.1.20, AnkiMobile 2.0.56 or AnkiDroid 2.17.
 
-เพื่อให้ Anki อ่านฟิลด์ Front ด้วยเสียงภาษาอังกฤษแบบสหรัฐอเมริกา คุณสามารถใส่
-สิ่งต่อไปนี้ในเทมเพลตการ์ดของคุณ:
+To have Anki read the Front field in a US English voice, you can place
+the following in your card template:
 
     {{tts en_US:Front}}
 
-บน Windows, macOS และ iOS Anki จะใช้เสียงในตัวของระบบปฏิบัติการ บน
-Linux ไม่มีเสียงในตัว แต่สามารถให้เสียงได้โดยส่วนเสริม
-เช่น [อันนี้](https://ankiweb.net/shared/info/391644525)
+On Windows, macOS, and iOS, Anki will use the OS’s built-in voices. On
+Linux, no voices are built in, but voices can be provided by add-ons,
+such as [this one](https://ankiweb.net/shared/info/391644525).
 
-หากต้องการดูรายการภาษา/เสียงทั้งหมดที่มี ให้ใส่
-สิ่งต่อไปนี้ในเทมเพลตการ์ดของคุณ:
+To see a list of all available languages/voices, place the following on
+your card template:
 
     {{tts-voices:}}
 
-หากมีเสียงหลายเสียงที่รองรับภาษาที่คุณเลือก คุณสามารถ
-ระบุเสียงที่ต้องการในรายการ และ Anki จะเลือก
-เสียงแรกที่มีอยู่ ตัวอย่างเช่น:
+If there are multiple voices that support your chosen language, you can
+specify desired voices in a list, and Anki will choose the first
+available voice. For example:
 
     {{tts ja_JP voices=Apple_Otoya,Microsoft_Haruka:Field}}
 
-สิ่งนี้จะใช้ Otoya เมื่ออยู่บนอุปกรณ์ Apple และ Haruka เมื่ออยู่บน
-พีซี Windows
+This would use Otoya when on an Apple device, and Haruka when on a
+Windows PC.
 
-การระบุความเร็วที่แตกต่างกันเป็นไปได้ในการใช้งาน TTS บางอย่าง:
+Specifying a different speed is possible in some TTS implementations:
 
     {{tts fr_FR speed=0.8:SomeField}}
 
-ทั้งความเร็วและเสียงเป็นทางเลือก แต่ต้องรวมภาษาด้วย
+Both speed and voices are optional, but the language must be included.
 
-บน Mac คุณสามารถปรับแต่งเสียงที่มีอยู่ได้:
+On a Mac, you can customize the available voices:
 
--   เปิดหน้าจอ System Preferences
+- Open the System Preferences screen.
 
--   คลิกที่ Accessibility
+- Click on Accessibility.
 
--   คลิกที่ Speech
+- Click on Speech.
 
--   คลิกที่เมนูแบบเลื่อนลงของ system voice แล้วเลือก Customize
+- Click on the system voice dropdown, and choose Customize.
 
-เสียงบางเสียงฟังดูดีกว่าเสียงอื่น ดังนั้นให้ทดลองเพื่อเลือกเสียง
-ที่คุณชอบ โปรดทราบว่าเสียง Siri สามารถใช้ได้โดยแอปของ Apple เท่านั้น
-เมื่อคุณติดตั้งเสียงใหม่แล้ว คุณจะต้องรีสตาร์ท Anki เพื่อให้
-เสียงใหม่พร้อมใช้งาน
+Some voices sound better than others, so experiment to choose the one
+you prefer. Please note that the Siri voice can only be used by Apple
+apps. Once you’ve installed new voices, you’ll need to restart Anki for
+the new voices to become available.
 
-บน Windows เสียงบางเสียงเช่น Cortana ไม่สามารถเลือกได้ เนื่องจาก Microsoft
-ไม่ได้ทำให้เสียงเหล่านั้นพร้อมใช้งานสำหรับแอปพลิเคชันอื่น
+On Windows, some voices like Cortana can not be selected, as Microsoft
+does not make those voices available to other applications.
 
-สำหรับประเภทบันทึกย่อแบบเติมคำในช่องว่าง คุณสามารถให้ Anki อ่านเฉพาะส่วนที่ถูกตัดออกได้
-โดยใช้ตัวกรอง `cloze-only` ดังนี้:
+On a cloze note type, you can make Anki read only the elided sections
+using the `cloze-only` filter, like so:
 
     {{tts en_US:cloze-only:Text}}
 
-ตัวกรอง cloze-only ได้รับการสนับสนุนใน Anki 2.1.29+, AnkiMobile 2.0.65+ และ AnkiDroid 2.17+
+The cloze-only filter is supported in Anki 2.1.29+, AnkiMobile 2.0.65+, and AnkiDroid 2.17+.
 
-## การอ่านออกเสียงข้อความเป็นคำพูดสำหรับหลายฟิลด์และข้อความคงที่
+## Text to Speech for multiple fields and static text
 
-คุณลักษณะนี้ต้องใช้ Anki 2.1.50+, AnkiMobile 2.0.84+ หรือ AnkiDroid 2.17+
+This feature requires Anki 2.1.50+, AnkiMobile 2.0.84+, or AnkiDroid 2.17+.
 
-หากคุณต้องการให้ TTS อ่านหลายฟิลด์หรือข้อความคงที่ที่รวมอยู่ในเทมเพลต คุณสามารถใช้สิ่งต่อไปนี้:
+If you want TTS to read multiple fields or static text included in the template, you can use the following:
 
 ```
-[anki:tts lang=en_US] ข้อความนี้ควรอ่าน นี่คือ {{Field1}} และ {{Field2}}[/anki:tts]
+[anki:tts lang=en_US] This text should be read. Here is {{Field1}} and {{Field2}}[/anki:tts]
 
-นี่คือข้อความอื่นบนเทมเพลต มันอยู่นอกแท็กดังนั้นจึงไม่ควรอ่าน
+This is other text on the template. It is outside of the tags so it should not be read.
 ```
 
-## ฟิลด์พิเศษ
+## Special Fields
 
-มีฟิลด์พิเศษบางอย่างที่คุณสามารถรวมไว้ในเทมเพลตของคุณได้:
+There are some special fields you can include in your templates:
 
-    แท็กของบันทึกย่อ: {{Tags}}
+    The note's tags: {{Tags}}
 
-    ประเภทของบันทึกย่อ: {{Type}}
+    The type of note: {{Type}}
 
-    สำรับของการ์ด: {{Deck}}
+    The card's deck: {{Deck}}
 
-    สำรับย่อยของการ์ด: {{Subdeck}}
+    The card's subdeck: {{Subdeck}}
 
-    ธงของการ์ด: {{CardFlag}}
+    The card's flag: {{CardFlag}}
 
-    ประเภทของการ์ด ("Forward" ฯลฯ): {{Card}}
+    The type of card ("Forward", etc): {{Card}}
 
-    เนื้อหาของเทมเพลตด้านหน้า
-    (ใช้ได้เฉพาะในเทมเพลตด้านหลัง): {{FrontSide}}
+    The content of the front template
+    (only valid in back template): {{FrontSide}}
 
-FrontSide จะไม่เล่นเสียงใดๆ ที่อยู่ด้านหน้าของการ์ดโดยอัตโนมัติ
-หากคุณต้องการให้เสียงเดียวกันเล่นโดยอัตโนมัติทั้ง
-ด้านหน้าและด้านหลังของการ์ด คุณจะต้องรวมฟิลด์เสียง
-ไว้ที่ด้านหลังด้วยตนเอง
+FrontSide will not automatically play any audio that was on the front side
+of the card. If you wish to have the same audio play automatically on both
+the front and back of the card, you’ll need to manually include the audio
+fields on the back as well.
 
-เช่นเดียวกับฟิลด์อื่นๆ ชื่อฟิลด์พิเศษจะคำนึงถึงตัวพิมพ์ใหญ่-เล็ก - คุณต้องใช้
-`{{Tags}}` แทนที่จะเป็น `{{tags}}` เป็นต้น
+As with other fields, special field names are case sensitive - you must use
+`{{Tags}}` rather than `{{tags}}` for example.
 
-## ฟิลด์คำใบ้
+## Hint Fields
 
-เป็นไปได้ที่จะเพิ่มฟิลด์ที่ด้านหน้าหรือด้านหลังของการ์ด แต่ซ่อนไว้
-จนกว่าคุณจะแสดงอย่างชัดเจน เราเรียกสิ่งนี้ว่า _ฟิลด์คำใบ้_ ก่อน
-เพิ่มคำใบ้ โปรดทราบว่ายิ่งคุณทำให้การตอบ
-คำถามใน Anki ง่ายขึ้นเท่าไหร่ คุณก็จะยิ่งจำคำถามนั้นได้น้อยลง
-เมื่อคุณเจอในชีวิตจริง โปรดอ่านเกี่ยวกับ
-"หลักการข้อมูลขั้นต่ำ" ที่
-<https://super-memory.com/articles/20rules.htm> ก่อนดำเนินการต่อ
+It’s possible to add a field to the front or back of a card, but make it
+hidden until you explicitly show it. We call this a _hint field_. Before
+adding a hint, please bear in mind that the easier you make it to answer
+a question in Anki, the less likely you are to remember that question
+when you encounter it in real life. Please have a read about the
+"minimum information principle" on
+<https://super-memory.com/articles/20rules.htm> before proceeding.
 
-ก่อนอื่น คุณจะต้องเพิ่มฟิลด์เพื่อเก็บคำใบ้ไว้หากคุณยังไม่ได้
-ทำ โปรดดูส่วน [ฟิลด์](../editing.md#customizing-fields) หากคุณไม่แน่ใจว่า
-จะทำอย่างไร
+First, you’ll need to add a field to store the hint in if you have not
+already. Please see the [fields](../editing.md#customizing-fields) section if you’re not sure how
+to do this.
 
-สมมติว่าคุณได้สร้างฟิลด์ชื่อ MyField คุณสามารถบอก Anki ให้
-รวมไว้ในการ์ดแต่ซ่อนไว้โดยค่าเริ่มต้นโดยเพิ่มสิ่งต่อไปนี้
-ลงในเทมเพลตของคุณ:
+Assuming you’ve created a field called MyField, you can tell Anki to
+include it on the card but hide it by default by adding the following to
+your template:
 
     {{hint:MyField}}
 
-สิ่งนี้จะแสดงลิงก์ที่มีข้อความว่า "แสดงคำใบ้" เมื่อคุณคลิก เนื้อหา
-ของฟิลด์จะแสดงบนการ์ด (หาก MyField ว่างเปล่า
-จะไม่มีอะไรแสดง)
+This will show a link labeled “show hint”; when you click it, the
+content of the field will be displayed on the card. (If MyField is
+empty, nothing will be shown.)
 
-หากคุณแสดงคำใบ้ในคำถามแล้วเปิดเผยคำตอบ
-คำใบ้จะถูกซ่อนอีกครั้ง หากคุณต้องการให้คำใบ้แสดง
-เสมอเมื่อแสดงคำตอบ คุณจะต้องลบ `{{FrontSide}}`
-ออกจากเทมเพลตด้านหลังและเพิ่มฟิลด์ที่คุณต้องการให้ปรากฏ
-ด้วยตนเอง
+If you show the hint on the question and then reveal the answer, the
+hint will be hidden again. If you want to have the hint always revealed
+when the answer is shown, you will need to remove `{{FrontSide}}` from
+your back template and manually add the fields you wish to appear.
 
-ขณะนี้ยังไม่สามารถใช้ฟิลด์คำใบ้สำหรับเสียงได้ — เสียง
-จะเล่นโดยไม่คำนึงว่าคุณได้คลิกที่ลิงก์คำใบ้หรือไม่
+It is not currently possible to use a hint field for audio — the audio
+will play regardless of whether you’ve clicked on the hint link.
 
-หากคุณต้องการปรับแต่งลักษณะที่ปรากฏหรือพฤติกรรม คุณจะต้อง
-ใช้ฟิลด์คำใบ้ด้วยตนเอง เราไม่สามารถให้การสนับสนุนใดๆ ในการ
-ทำเช่นนั้นได้ แต่โค้ดต่อไปนี้จะช่วยให้คุณเริ่มต้นได้:
+If you want to customize the appearance or behaviour, you’ll need to
+implement the hint field yourself. We can not provide any support for
+doing so, but the following code should get you started:
 
     {{#Back}}
     <a class=hint href="#"
     onclick="this.style.display='none';document.getElementById('hint4753594160').style.display='inline-block';return false;">
-    แสดงด้านหลัง</a><div id="hint4753594160" class=hint style="display: none">{{Back}}</div>
+    Show Back</a><div id="hint4753594160" class=hint style="display: none">{{Back}}</div>
     {{/Back}}
 
-## ลิงก์พจนานุกรม
+## Dictionary Links
 
-คุณยังสามารถใช้การแทนที่ฟิลด์เพื่อสร้างลิงก์พจนานุกรมได้ ลองนึกภาพ
-ว่าคุณกำลังเรียนภาษาและพจนานุกรมออนไลน์ที่คุณชื่นชอบช่วยให้
-คุณค้นหาข้อความโดยใช้ URL ของเว็บเช่น:
+You can also use field replacement to create dictionary links. Imagine
+you’re studying a language and your favourite online dictionary allows
+you to search for text using a web URL like:
 
     http://example.com/search?q=myword
 
-คุณสามารถเพิ่มลิงก์อัตโนมัติได้โดยทำดังต่อไปนี้ในเทมเพลตของคุณ:
+You could add an automatic link by doing the following in your template:
 
     {{Expression}}
 
-    <a href="http://example.com/search?q={{Expression}}">ตรวจสอบในพจนานุกรม</a>
+    <a href="http://example.com/search?q={{Expression}}">check in dictionary</a>
 
-เทมเพลตข้างต้นจะช่วยให้คุณสามารถค้นหานิพจน์ของแต่ละบันทึกย่อ
-ได้โดยการคลิกที่ลิงก์ขณะทบทวน อย่างไรก็ตาม มีข้อควรระวัง
-ดังนั้นโปรดดูส่วนถัดไป
+The template above would allow you to search for each note’s expression
+by clicking on the link while reviewing. There is a caveat however, so
+please see the next section.
 
-## การลบ HTML
+## HTML Stripping
 
-เช่นเดียวกับเทมเพลต ฟิลด์จะถูกจัดเก็บในรูปแบบ HTML ในตัวอย่างลิงก์พจนานุกรม
-ข้างต้น หากนิพจน์มีคำว่า "myword" โดยไม่มี
-การจัดรูปแบบใดๆ HTML ก็จะเป็นเหมือนเดิม: "myword" แต่เมื่อคุณ
-รวมการจัดรูปแบบในฟิลด์ของคุณ จะมีการรวม HTML เพิ่มเติม หาก "myword"
-เป็นตัวหนา ตัวอย่างเช่น HTML จริงจะเป็น
-"&lt;b&gt;myword&lt;/b&gt;"
+Like templates, fields are stored in HTML. In the dictionary link
+example above, if the expression contained the word "myword" without any
+formatting, then the HTML would be the same: "myword". But when you
+include formatting in your fields, extra HTML is included. If "myword"
+was bolded for example, the actual HTML would be
+"&lt;b&gt;myword&lt;/b&gt;".
 
-สิ่งนี้อาจสร้างปัญหาสำหรับสิ่งต่างๆ เช่น ลิงก์พจนานุกรม ใน
-ตัวอย่างข้างต้น ลิงก์พจนานุกรมจะกลายเป็น:
+This can present a problem for things like dictionary links. In the
+above example, the dictionary link would end up being:
 
-    <a href="http://example.com/search?q=<b>myword</b>">ตรวจสอบในพจนานุกรม</a>
+    <a href="http://example.com/search?q=<b>myword</b>">check in dictionary</a>
 
-อักขระเพิ่มเติมในลิงก์น่าจะทำให้
-ไซต์พจนานุกรมสับสน และคุณอาจไม่ได้รับการจับคู่ใดๆ
+The extra characters in the link would likely confuse the dictionary
+site, and you’re likely not to get any matches.
 
-เพื่อแก้ปัญหานี้ Anki มีความสามารถในการลบการจัดรูปแบบออกจากฟิลด์
-เมื่อถูกแทนที่ หากคุณนำหน้าชื่อฟิลด์ด้วย text: Anki จะ
-ไม่รวมการจัดรูปแบบใดๆ ดังนั้นลิงก์พจนานุกรมที่ทำงานได้แม้กับ
-ข้อความที่จัดรูปแบบจะเป็น:
+To solve this, Anki provides the ability to strip formatting from fields
+when they are replaced. If you prefix a field name with text:, Anki will
+not include any formatting. So a dictionary link that worked even with
+formatted text would be:
 
-    <a href="http://example.com/search?q={{text:Expression}}">ตรวจสอบในพจนานุกรม</a>
+    <a href="http://example.com/search?q={{text:Expression}}">check in dictionary</a>
 
-## ข้อความจากขวาไปซ้าย
+## Right To Left Text
 
-หากคุณใช้ภาษาที่อ่านจากขวาไปซ้าย คุณจะต้อง
-ปรับเทมเพลตดังนี้:
+If you’re using a language that reads from right to left, you’ll need
+to adjust the template like so:
 
     <div dir=rtl>{{FieldThatHasRTLTextInIt}}</div>
 
-## อักษรทับทิม (Ruby Characters)
+## Ruby Characters
 
-บางภาษาใช้คำอธิบายประกอบเหนือข้อความเพื่อแสดง
-การออกเสียงของอักขระ คำอธิบายประกอบเหล่านี้เรียกว่า
-[อักษรทับทิม](https://en.wikipedia.org/wiki/Ruby_character)
-ในภาษาญี่ปุ่น สิ่งเหล่านี้เรียกว่า [ฟุริงานะ](https://en.wikipedia.org/wiki/Furigana)
+Some languages commonly use annotations above the text to display the
+pronunciation of characters. These annotations are known as
+[ruby characters](https://en.wikipedia.org/wiki/Ruby_character).
+In Japanese, these are known as [furigana](https://en.wikipedia.org/wiki/Furigana).
 
-ใน Anki คุณสามารถแสดงอักษรทับทิมได้โดยใช้ไวยากรณ์ต่อไปนี้:
+In Anki, you can display ruby characters by using the following syntax:
 
     Text[Ruby]
 
-สมมติว่าข้อความข้างต้นเขียนอยู่ใน MyField โดยค่าเริ่มต้น หากคุณใช้
-`{{Myfield}}` ฟิลด์จะแสดงตามที่เป็นอยู่ เพื่อจัดตำแหน่ง
-อักษรทับทิมให้อยู่เหนือข้อความอย่างถูกต้อง ให้ใช้ตัวกรอง `furigana` ในเทมเพลต
-ดังนี้:
+Suppose the text above is written in MyField. By default, if you simply use
+`{{Myfield}}`, the field will be displayed as is. To properly position the
+ruby characters above the text, use the `furigana` filter in the templates
+like so:
 
     {{furigana:MyField}}
 
-นี่คือตัวอย่างบางส่วน:
+Here are some examples:
 
 <!-- prettier-ignore -->
-| ข้อความดิบ | ข้อความที่แสดงผล |
-| --- | --- |
-| `Text[Ruby]` | <ruby><rb>Text</rb><rt>Ruby</rt></ruby> |
-| `日本語[にほんご]` | <ruby><rb>日本語</rb><rt>にほんご</rt></ruby> |
-| `世[よ]の 中[なか]` | <ruby><rb>世</rb><rt>よ</rt></ruby>の<ruby><rb>中</rb><rt>なか</rt></ruby> |
-| `世[よ]の中[なか]` | <ruby><rb>世</rb><rt>よ</rt></ruby><ruby><rb>の中</rb><rt>なか</rt></ruby> _(ไม่ถูกต้อง!)_ |
+| Raw Text            | Rendered Text                                                                             |
+| ------------------- | ----------------------------------------------------------------------------------------- |
+| `Text[Ruby]`        | <ruby><rb>Text</rb><rt>Ruby</rt></ruby>                                                   |
+| `日本語[にほんご]`  | <ruby><rb>日本語</rb><rt>にほんご</rt></ruby>                                             |
+| `世[よ]の 中[なか]` | <ruby><rb>世</rb><rt>よ</rt></ruby>の<ruby><rb>中</rb><rt>なか</rt></ruby>                |
+| `世[よ]の中[なか]`  | <ruby><rb>世</rb><rt>よ</rt></ruby><ruby><rb>の中</rb><rt>なか</rt></ruby> _(incorrect!)_ |
 
-สังเกตว่าตัวอย่างที่สามมีช่องว่างก่อนอักขระ 中 ซึ่งจำเป็น
-เพื่อระบุว่าข้อความทับทิมใช้กับอักขระนั้นเท่านั้น
-หากไม่มีช่องว่าง ข้อความทับทิมจะถูกวางผิดตำแหน่งเหนืออักขระ の
-ดังที่แสดงในตัวอย่างที่สี่
+Notice how the third example has a space before the 中 character. This is
+necessary to specify that the ruby text applies only to that character.
+If there was no space, the ruby text will be misplaced above the の character,
+as shown in the fourth example.
 
-### ตัวกรองอักษรทับทิมเพิ่มเติม
+### Additional Ruby Character Filters
 
-นอกเหนือจากตัวกรอง `furigana` แล้ว คุณยังสามารถแสดงเฉพาะบางส่วน
-ของข้อความทับทิมได้ด้วยตัวกรอง `kana` และ `kanji` ตัวกรอง `kana` จะ
-แสดงเฉพาะข้อความทับทิม ในขณะที่ตัวกรอง `kanji` จะลบข้อความทับทิม
-ทั้งหมด
+In addition to the `furigana` filter, you can also only show certain parts
+of the ruby text, with the `kana` and `kanji` filters. The `kana` filter will
+only show the ruby text, while the `kanji` filter removes the ruby text
+entirely.
 
 <!-- prettier-ignore -->
-| ข้อความดิบ | ตัวกรองฟิลด์ | ข้อความที่แสดงผล |
-| --- | --- | --- |
+| Raw Text           | Field Filter           | Rendered Text                                 |
+| ------------------ | ---------------------- | --------------------------------------------- |
 | `日本語[にほんご]` | `{{furigana:MyField}}` | <ruby><rb>日本語</rb><rt>にほんご</rt></ruby> |
-| `日本語[にほんご]` | `{{kana:MyField}}` | にほんご |
-| `日本語[にほんご]` | `{{kanji:MyField}}` | 日本語 |
+| `日本語[にほんご]` | `{{kana:MyField}}`     | にほんご                                      |
+| `日本語[にほんご]` | `{{kanji:MyField}}`    | 日本語                                        |
 
-ชื่อเหล่านี้ก็ยืมมาจากภาษาญี่ปุ่นเช่นกัน
-คำว่า [คานะ](https://en.wikipedia.org/wiki/Kana) หมายถึงระบบสัทศาสตร์
-ที่ใช้อธิบายวิธีการออกเสียงคำ ในขณะที่คำว่า
-[คันจิ](https://en.wikipedia.org/wiki/Kanji) หมายถึงอักษรจีน
+These names are, again, borrowed from Japanese.
+The term [kana](https://en.wikipedia.org/wiki/Kana) represents the phonetic
+system used to describe how words are pronounced, whereas the term
+[kanji](https://en.wikipedia.org/wiki/Kanji) represents its Chinese characters.
 
-## สื่อและ LaTeX
+## Media & LaTeX
 
-Anki ไม่ได้สแกนเทมเพลตเพื่อหาการอ้างอิงสื่อ เนื่องจากทำได้ช้า
-ซึ่งมีผลต่อการรวมสื่อในเทมเพลต
+Anki does not scan templates for media references, because it is slow to
+do so. This has implications for including media on the template.
 
-### เสียง/ภาพนิ่ง
+### Static Sounds/Images
 
-หากคุณต้องการรวมรูปภาพหรือเสียงในการ์ดของคุณที่เหมือนกัน
-สำหรับทุกการ์ด (เช่น โลโก้บริษัทที่ด้านบนของแต่ละการ์ด):
+If you wish to include images or sounds on your cards that are the same
+for every card (e.g. a company logo at the top of each card):
 
-1.  เปลี่ยนชื่อไฟล์เพื่อให้ขึ้นต้นด้วยขีดล่าง เช่น "\_logo.jpg"
-    ขีดล่างจะบอก Anki ว่าไฟล์นั้นถูกใช้โดยเทมเพลตและ
-    ควรส่งออกเมื่อแชร์สำรับ
+1. Rename the file so it starts with an underscore, e.g "\_logo.jpg".
+   The underscore tells Anki that the file is used by the template and
+   it should be exported when sharing the deck.
 
-2.  เพิ่มการอ้างอิงถึงสื่อในเทมเพลตด้านหน้าหรือด้านหลังของคุณ เช่น:
+2. Add a reference to the media on your front or back template, like:
 
 <!-- -->
 
     <img src="_logo.jpg">
 
-### การอ้างอิงฟิลด์
+### Field References
 
-ไม่รองรับการอ้างอิงสื่อไปยังฟิลด์ อาจแสดงหรือไม่แสดง
-ระหว่างการทบทวน และจะไม่ทำงานเมื่อตรวจสอบหาสื่อที่ไม่ได้ใช้
-การนำเข้า/ส่งออก และอื่นๆ ตัวอย่างที่จะไม่ทำงาน:
+Media references to fields are not supported. They may or may not display
+during review, and will not work when checking for unused media,
+importing/exporting, and so on. Examples that won’t work:
 
     <img src="{{Expression}}.jpg">
 
@@ -338,19 +337,19 @@ Anki ไม่ได้สแกนเทมเพลตเพื่อหาก
 
     [latex]{{Field 1}}[/latex]
 
-ให้คุณรวมการอ้างอิงสื่อในฟิลด์แทน โปรด
-ดูส่วน [การนำเข้า](../importing/text-files.md#importing-media) สำหรับข้อมูลเพิ่มเติม
+Instead, you should include the media references in the field. Please
+see the [importing section](../importing/text-files.md#importing-media) for more information.
 
-## การตรวจสอบคำตอบของคุณ
+## Checking Your Answer
 
-คุณสามารถดู [วิดีโอเกี่ยวกับคุณลักษณะนี้](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on) ได้บน
-YouTube
+You can watch [a video about this feature](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on) on
+YouTube.
 
-วิธีที่ง่ายที่สุดในการตรวจสอบคำตอบของคุณคือการคลิก "พื้นฐาน" ที่ด้านบน
-ซ้ายของหน้าจอเพิ่มการ์ด และเลือก "พื้นฐาน (พิมพ์คำตอบ)"
+The easiest way to check your answer is to click "Basic" at the top
+left of the card adding screen, and select "Basic (type in the answer)".
 
-หากคุณได้ดาวน์โหลดสำรับที่แชร์และต้องการพิมพ์คำตอบ
-ด้วย คุณสามารถแก้ไขเทมเพลตการ์ดได้ หากมีเทมเพลตเช่น:
+If you have downloaded a shared deck and would like to type in the answer
+with it, you can modify its card template. If it has a template like:
 
     {{Native Word}}
 
@@ -360,69 +359,70 @@ YouTube
 
     {{Foreign Word}}
 
-ในการพิมพ์คำภาษาต่างประเทศและตรวจสอบว่าคุณถูกต้องหรือไม่ คุณต้อง
-แก้ไขเทมเพลตด้านหน้าของคุณเพื่อให้มีลักษณะดังนี้:
+To type in the foreign word and check if you are correct, you need to
+edit your front template so that it looks like this:
 
     {{Native Word}}
     {{type:Foreign Word}}
 
-ที่นี่ เราได้เพิ่ม `type:` ไว้ข้างหน้าฟิลด์ที่เราต้องการ
-เปรียบเทียบ เนื่องจาก FrontSide อยู่ด้านหลังของการ์ด กล่องข้อความประเภทคำตอบ
-จะปรากฏที่ด้านหลังด้วย
+Here, we have added `type:` in front of the field we want to
+compare. Since FrontSide is on the back of the card, the type answer box
+will appear on the back as well.
 
-เมื่อทบทวน Anki จะแสดงกล่องข้อความที่คุณสามารถพิมพ์
-คำตอบได้ และเมื่อกด <kbd>Enter</kbd> หรือแสดงคำตอบ Anki จะแสดงให้คุณเห็น
-ว่าส่วนไหนที่คุณตอบถูกและส่วนไหนที่คุณตอบผิด ขนาด
-แบบอักษรของกล่องข้อความจะเป็นขนาดที่คุณกำหนดค่าไว้สำหรับฟิลด์นั้น (ผ่าน
-ปุ่ม "ฟิลด์" เมื่อแก้ไข)
+When reviewing, Anki will display a text box where you can type in the
+answer, and upon hitting <kbd>Enter</kbd> or showing the answer, Anki will show you
+which parts you got right and which parts you got wrong. The text box’s
+font size will be the size you configured for that field (via the
+“Fields” button when editing).
 
-โปรดทราบว่ากล่องคำตอบประเภทไม่ปรากฏในกล่องโต้ตอบแสดงตัวอย่างหรือใน AnkiWeb
+Note that the type answer boxes don't appear in the preview dialog or in AnkiWeb.
 
-คุณลักษณะนี้ไม่ได้เปลี่ยนวิธีการตอบการ์ด ดังนั้นจึงยังคง
-ขึ้นอยู่กับคุณที่จะตัดสินใจว่าคุณจำได้ดีเพียงใดหรือไม่
+This feature does not change how the cards are answered, so it’s still
+up to you to decide how well you remembered or not.
 
-สามารถใช้การเปรียบเทียบการพิมพ์ได้เพียงครั้งเดียวในการ์ด หากคุณเพิ่ม
-ข้อความข้างต้นหลายครั้ง จะไม่ทำงาน นอกจากนี้ยังรองรับเพียง
-บรรทัดเดียว ดังนั้นจึงไม่มีประโยชน์สำหรับการเปรียบเทียบกับฟิลด์ที่
-ประกอบด้วยหลายบรรทัด
+Only one typing comparison can be used on a card. If you add the above
+text multiple times, it will not work. It also only supports a single
+line, so it is not useful for comparing against a field that is
+comprised of multiple lines.
 
-Anki ใช้แบบอักษรที่มีความกว้างเท่ากันสำหรับการเปรียบเทียบคำตอบเพื่อให้
-ส่วน "ที่ให้ไว้" และ "ที่ถูกต้อง" ตรงกัน หากคุณต้องการแทนที่
-แบบอักษรสำหรับการเปรียบเทียบคำตอบ คุณสามารถใส่สิ่งต่อไปนี้ที่ด้านล่าง
-ของส่วนการจัดรูปแบบของคุณ:
+Anki uses a monospaced font for the answer comparison so that the
+“provided” and “correct” sections line up. If you wish to override the
+font for the answer comparison, you can put the following at the bottom
+of your styling section:
 
     code#typeans { font-family: "myfontname"; }
 
-ซึ่งจะมีผลต่อ HTML ต่อไปนี้สำหรับการเปรียบเทียบคำตอบ:
+Which will affect the following HTML for the answer comparison:
 
     <code id=typeans>...</code>
 
-ผู้ใช้ขั้นสูงสามารถแทนที่สีประเภทคำตอบเริ่มต้นได้ด้วยคลาส css "typeGood", "typeBad" และ "typeMissed" AnkiMobile รองรับ
-"typeGood" และ "typeBad" แต่ไม่รองรับ "typeMissed"
+Advanced users can override the default type-answer colors with the css
+classes "typeGood", "typeBad" and "typeMissed". AnkiMobile supports
+"typeGood" and "typeBad", but not "typeMissed".
 
-หากคุณต้องการแทนที่ขนาดของกล่องพิมพ์และไม่ต้องการ
-เปลี่ยนแบบอักษรในกล่องโต้ตอบฟิลด์ คุณสามารถแทนที่
-สไตล์อินไลน์เริ่มต้นโดยใช้ `!important` ดังนี้:
+If you wish to override the size of the typing box and don’t want to
+change the font in the Fields dialog, you can override the default
+inline style using `!important`, like so:
 
     #typeans { font-size: 50px !important; }
 
-นอกจากนี้ยังสามารถพิมพ์คำตอบสำหรับการ์ดลบคำในช่องว่างได้อีกด้วย
-ในการทำเช่นนี้ ให้เพิ่ม `{{type:cloze:Text}}` ทั้งในเทมเพลตด้านหน้าและด้านหลัง
-เพื่อให้ด้านหลังมีลักษณะดังนี้:
+It is also possible to type in the answer for cloze deletion cards. To
+do this, add `{{type:cloze:Text}}` to both the front and back
+template, so the back looks something like this:
 
     {{cloze:Text}}
     {{type:cloze:Text}}
     {{Extra}}
 
 
-หากมีหลายส่วนที่ถูกตัดออก คุณสามารถแยกคำตอบใน
-กล่องข้อความด้วยเครื่องหมายจุลภาคได้
+If there are multiple sections elided, you can separate the answers in
+the text box with a comma.
 
-### ไม่สนใจเครื่องหมายกำกับเสียง
+### Ignoring Diacritics
 
-หากคุณไม่ต้องการให้ Anki เปรียบเทียบเครื่องหมายกำกับเสียงบนอักขระในอินพุตที่คุณพิมพ์กับคำตอบที่ถูกต้อง คุณสามารถทำได้โดยใช้ `type:nc` ในฟิลด์ของคุณ
+If you don't want Anki to compare accents on characters in your typed input with the correct answer, you can do so by using `type:nc` in your fields.
 
     {{type:nc:Front}}
 
-สิ่งนี้ทำให้แน่ใจว่าความแตกต่างของเครื่องหมายกำกับเสียงจะไม่ถูกทำเครื่องหมายว่าไม่ถูกต้องโดย Anki
-ตัวอย่างเช่น `بطيخ` จะถูกปฏิบัติต่อเหมือนกับ `بَطِّيخ` หรือ `elite` จะถูกปฏิบัติต่อเหมือนกับ `élite`
+This makes sure a difference in accents isn't marked as incorrect by Anki. 
+For example, `بطيخ` would be treated the same as `بَطِّيخ` or `elite` would be treated same as `élite`.

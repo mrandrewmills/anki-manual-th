@@ -1,488 +1,488 @@
-# การค้นหา
+# Searching
 
 <!-- toc -->
 
-หน้าจอเรียกดูของ Anki และคุณสมบัติสำรับที่กรองแล้วใช้วิธีการทั่วไป
-ในการค้นหาการ์ด/บันทึกย่อที่ต้องการ วิธีการนี้ยังสามารถใช้เพื่อปรับขอบเขตของการปรับให้เหมาะสมของ FSRS ได้อีกด้วย
+Anki's Browse screen and the Filtered Deck feature use a common method
+of searching for specific cards/notes. This method can also be used to adjust the scope of FSRS optimization. 
 
-## การค้นหาอย่างง่าย
+## Simple searches
 
-เมื่อคุณพิมพ์ข้อความลงในช่องค้นหา Anki จะค้นหาบันทึกย่อที่ตรงกัน
-และแสดงการ์ดของบันทึกย่อนั้น Anki จะค้นหาในทุกฟิลด์ของบันทึกย่อ แต่
-จะไม่ค้นหาแท็ก (ดู [ภายหลังในส่วนนี้](#tags-decks-cards-and-notes) เพื่อค้นหาแท็ก) ตัวอย่างบางส่วน:
+When you type some text into the search box, Anki finds matching notes
+and displays their cards. Anki searches in all fields of the notes, but
+does not search for tags (see [later in this section](#tags-decks-cards-and-notes) to search for tags). Some examples:
 
-`dog`
-ค้นหา "dog" - จะตรงกับคำว่า "doggy" และ "underdog" ด้วย
+`dog`\
+searches for "dog" - will match words like "doggy" and "underdog" too.
 
-`dog cat`
-ค้นหาบันทึกย่อที่มีทั้ง "dog" และ "cat" อยู่ในนั้น เช่น "raining
-cats and dogs"
+`dog cat`\
+finds notes that have both "dog" and "cat" on them, such as "raining
+cats and dogs".
 
-`dog or cat`
-ค้นหาบันทึกย่อที่มี "dog" หรือ "cat"
+`dog or cat`\
+finds notes with either "dog" or "cat".
 
-`dog (cat or mouse)`
-ค้นหาบันทึกย่อที่มี "dog" และ "cat" หรือ "dog" และ "mouse"
+`dog (cat or mouse)`\
+finds notes with "dog" and "cat", or "dog" and "mouse".
 
-`-cat`
-ค้นหาบันทึกย่อที่ไม่มี "cat"
+`-cat`\
+finds notes without "cat".
 
-`-cat -mouse`
-ค้นหาบันทึกย่อที่ไม่มีทั้ง "cat" และ "mouse"
+`-cat -mouse`\
+finds notes with neither "cat" nor "mouse".
 
-`-(cat or mouse)`
-เหมือนกับข้างบน
+`-(cat or mouse)`\
+same as the above.
 
-`"a dog"`
-ค้นหาบันทึกย่อที่มีลำดับอักขระ "a dog" ตรงๆ อยู่ในนั้น เช่น
-"atta dog" แต่ไม่ใช่ "dog a" หรือ "adog"
+`"a dog"`\
+finds notes with the exact sequence of characters "a dog" in them, such
+as "atta dog", but not "dog a" or "adog".
 
-`-"a dog"`
-ค้นหาบันทึกย่อที่ไม่มีลำดับอักขระ "a dog" ตรงๆ อยู่ในนั้น
+`-"a dog"`\
+finds notes without the exact sequence of characters "a dog" in them.
 
-`d_g`
-ค้นหาบันทึกย่อที่มี d, &lt;อักขระหนึ่งตัว&gt;, g เช่น dog, dig, dug และอื่นๆ
+`d_g`\
+finds notes with d, &lt;one character&gt;, g, like dog, dig, dug, and so on.
 
-`d*g`
-ค้นหาบันทึกย่อที่มี d, &lt;ศูนย์ตัวอักษรขึ้นไป&gt;, g เช่น dg, dog, dung
-เป็นต้น
+`d*g`\
+finds notes with d, &lt;zero or more characters&gt;, g, like dg, dog, dung,
+etc.
 
-`w:dog`
-ค้นหาคำว่า "dog" ซึ่งตรงข้ามกับลำดับของอักขระ - จะตรงกับ "dog" แต่ไม่ใช่ "doggy"
-หรือ "underdog" ต้องใช้ Anki 2.1.24+, AnkiMobile 2.1.61+ หรือ AnkiDroid 2.17+ โปรดทราบว่า
-การเปลี่ยนแปลงการจัดรูปแบบอาจถูกตีความว่าเป็นขอบเขตของคำ เช่น การค้นหา
-`w:exam` จะตรงกับ **exam**ple เนื่องจากส่วน "exam" ของ example อยู่ในรูปแบบตัวหนา
+`w:dog`\
+searches for the word "dog" as opposed to a sequence of characters - will match "dog", but not "doggy"
+or "underdog". Requires Anki 2.1.24+, AnkiMobile 2.1.61+, or AnkiDroid 2.17+. Note that
+formatting changes may be interpreted as word boundaries, e.g. searching
+for `w:exam` will match **exam**ple, as the "exam" part of example is in bold format.
 
-`w:dog*`
-จะตรงกับ "dog" และ "doggy" แต่ไม่ใช่ "underdog"
+`w:dog*`\
+will match "dog" and "doggy", but not "underdog".
 
-`w:*dog`
-จะตรงกับ "dog" และ "underdog" แต่ไม่ใช่ "doggy"
+`w:*dog`\
+will match "dog" and "underdog", but not "doggy".
 
-สิ่งที่ควรทราบจากข้างต้น:
+Things to note from the above:
 
--   คำค้นหาจะถูกคั่นด้วยช่องว่าง
+- Search terms are separated by spaces.
 
--   เมื่อมีคำค้นหาหลายคำ Anki จะค้นหาบันทึกย่อที่
-    ตรงกับคำค้นหาทั้งหมด - จะมีการใส่ `and` โดยนัยระหว่างแต่ละ
-    คำค้นหา ใน Anki 2.1.24+, AnkiMobile 2.0.60+ และ AnkiDroid 2.17+ คุณสามารถระบุ
-    อย่างชัดเจนได้หากต้องการ (`dog and cat` เหมือนกับ `dog cat`) แต่
-    Anki เวอร์ชันเก่าจะถือว่า `and` เป็นเพียงคำอื่นที่จะค้นหา
+- When multiple search terms are provided, Anki looks for notes that
+  match all of the terms - an implicit `and` is inserted between each
+  term. On Anki 2.1.24+, AnkiMobile 2.0.60+, and AnkiDroid 2.17+ you can be explicit
+  if you like (`dog and cat` is the same as `dog cat`), but older
+  Anki versions will treat `and` as just another word to search for.
 
--   คุณสามารถใช้ `or` หากคุณต้องการให้ตรงกับคำค้นหาเพียงคำเดียว
+- You can use `or` if you only need one of the terms to match.
 
--   คุณสามารถใส่เครื่องหมายลบ (`-`) นำหน้าคำค้นหาเพื่อค้นหาบันทึกย่อที่ไม่
-    ตรงกับคำค้นหานั้นได้
+- You can prepend a minus sign (`-`) to a term to find notes that don’t
+  match the term.
 
--   คุณสามารถจัดกลุ่มคำค้นหาโดยใส่วงเล็บล้อมรอบได้ ดังใน
-    ตัวอย่าง `dog (cat or mouse)` สิ่งนี้จะมีความสำคัญเมื่อ
-    รวมการค้นหา OR และ AND เข้าด้วยกัน — ในตัวอย่าง ด้วย
-    วงเล็บ จะตรงกับ "dog cat" หรือ "dog mouse" ในขณะที่
-    ไม่มีวงเล็บ จะตรงกับ "dog and cat" หรือ "mouse"
+- You can group search terms by placing them in parentheses, as in the
+  `dog (cat or mouse)` example. This becomes important when
+  combining OR and AND searches — in the example, with the
+  parentheses, it matches either "dog cat" or "dog mouse", whereas
+  without them it would match either "dog and cat" or "mouse".
 
--   Anki สามารถค้นหาภายในการจัดรูปแบบใน [ฟิลด์จัดเรียง](editing.md#customizing-fields) ที่คุณกำหนดค่าไว้เท่านั้น ตัวอย่างเช่น หากคุณเพิ่ม
-    "**exa**mple" ลงในฟิลด์ใดฟิลด์หนึ่งของคุณ โดยให้ส่วน "exa" เป็นตัวหนา สิ่งนี้จะไม่ถูกจับคู่เมื่อ
-    ค้นหา `example` เว้นแต่ฟิลด์นั้นจะเป็นฟิลด์จัดเรียง หาก
-    คำไม่ได้จัดรูปแบบ หรือการจัดรูปแบบไม่เปลี่ยนแปลงกลาง
-    คำ Anki จะสามารถค้นหาได้ในทุกฟิลด์
+- Anki is only able to search within formatting in the [sort field](editing.md#customizing-fields) you’ve configured. For example, if you add
+  "**exa**mple" to one of your fields, with the "exa" part in bold, this will not be matched when
+  searching for `example` unless that field is the sort field. If a
+  word is not formatted, or the formatting does not change in the
+  middle of the word, then Anki will be able to find it in any field.
 
--   การค้นหามาตรฐานไม่คำนึงถึงตัวพิมพ์ใหญ่-เล็กสำหรับอักขระละติน - a-z จะ
-    ตรงกับ A-Z และในทางกลับกัน อักขระอื่นๆ เช่น ซีริลลิกจะคำนึงถึงตัวพิมพ์ใหญ่-เล็ก
-    ในการค้นหามาตรฐาน แต่สามารถทำให้ไม่คำนึงถึงตัวพิมพ์ใหญ่-เล็กได้โดยการค้นหาที่ขอบเขตของคำ
-    หรือนิพจน์ทั่วไป (`w:`, `re:`) 
+- Standard searches are case insensitive for Latin characters - a-z will
+  match A-Z, and vice versa. Other characters such as Cyrillic are case sensitive
+  in a standard search, but can be made case insensitive by searching on a word
+  boundary or regular expression (`w:`, `re:`).
 
-## การจำกัดเฉพาะฟิลด์
+## Limiting to a field
 
-คุณยังสามารถขอให้ Anki จับคู่เฉพาะในกรณีที่ฟิลด์ใดฟิลด์หนึ่งมีข้อความ
-บางอย่างอยู่ ซึ่งแตกต่างจากตัวอย่างการค้นหาก่อนหน้านี้ การค้นหาในฟิลด์ต้องการการจับคู่ที่ตรงกันทุกประการ
-โดยค่าเริ่มต้น
+You can also ask Anki to match only if a particular field contains some
+text. Unlike the previous search examples, searching in fields requires an exact
+match by default.
 
-`front:dog`
-ค้นหาบันทึกย่อที่มีฟิลด์ Front เป็น "dog" ทุกประการ ฟิลด์ที่ระบุว่า "a
-dog" จะไม่ตรงกัน
+`front:dog`\
+finds notes with a Front field of exactly "dog". A field that says "a
+dog" will not match.
 
-`"animal front:a dog"`
-ค้นหาบันทึกย่อที่ฟิลด์ "Animal Front" เป็น "a dog" ทุกประการ เครื่องหมายคำพูดคู่
-จำเป็นต้องมี: ดู [ภายหลังในส่วนนี้](#matching-special-characters)
+`"animal front:a dog"`\
+finds notes where the "Animal Front" field is exactly "a dog". The double quotes are
+mandatory: see [later in this section](#matching-special-characters).
 
-`front:*dog*`
-ค้นหาบันทึกย่อที่ฟิลด์ Front มีคำว่า dog อยู่ที่ใดที่หนึ่ง
+`front:*dog*`\
+finds notes where the Front field contains dog somewhere.
 
-`front:`
-ค้นหาบันทึกย่อที่มีฟิลด์ Front ว่างเปล่า
+`front:`\
+finds notes that have an empty Front field.
 
-`front:_*`
-ค้นหาบันทึกย่อที่มีฟิลด์ Front ไม่ว่างเปล่า
+`front:_*`\
+finds notes that have a non-empty Front field.
 
-`front:*`
-ค้นหาบันทึกย่อที่มีฟิลด์ Front ไม่ว่าจะว่างเปล่าหรือไม่ก็ตาม
+`front:*`\
+finds notes that have a Front field, empty or not.
 
-`fr*:text`
-ค้นหาบันทึกย่อในฟิลด์ที่ขึ้นต้นด้วย "fr" ต้องใช้ Anki 2.1.24+, AnkiMobile 2.1.60+ หรือ AnkiDroid 2.17+
+`fr*:text`\
+finds notes in a field starting with "fr". Requires Anki 2.1.24+, AnkiMobile 2.1.60+, or AnkiDroid 2.17+.
 
-## แท็ก, สำรับ, การ์ด และบันทึกย่อ
+## Tags, decks, cards and notes
 
-`tag:animal`
-ค้นหาบันทึกย่อที่มีแท็ก "animal" หรือแท็กย่อยเช่น "animal::mammal"
+`tag:animal`\
+finds notes with the tag "animal", or subtags like "animal::mammal".
 
-`tag:none`
-ค้นหาบันทึกย่อที่ไม่มีแท็ก
+`tag:none`\
+finds notes with no tags.
 
-`tag:ani*`
-ค้นหาบันทึกย่อที่มีแท็กขึ้นต้นด้วย "ani"
+`tag:ani*`\
+finds notes with tags starting with "ani".
 
-`deck:french`
-ค้นหาการ์ดในสำรับระดับบนสุดที่ชื่อ "French" หรือสำรับย่อยเช่น "French::Words" จะไม่ตรงกับสำรับย่อยที่มีชื่อนั้น เช่น "Languages::French"
+`deck:french`\
+find cards in a top-level deck called "French", or its subdecks like "French::Words". It will not match subdecks with that name, such as "Languages::French".
 
-`deck:french::words`
-ค้นหาการ์ดในสำรับย่อย "French::Words"
+`deck:french::words`\
+find cards in the "French::Words" subdeck.
 
-`deck:french -deck:french::*`
-ค้นหาการ์ดใน "French" แต่ไม่ใช่ในสำรับย่อย
+`deck:french -deck:french::*`\
+finds cards in "French", but not its subdecks.
 
-`deck:"french words"`
-ค้นหาเมื่อชื่อสำรับมีช่องว่าง
+`deck:"french words"`\
+searching when the deck name has a space.
 
-`"deck:french words"`
-เหมือนกับข้างบน
+`"deck:french words"`\
+same as earlier.
 
-`deck:filtered`
-เฉพาะสำรับที่กรองแล้ว
+`deck:filtered`\
+filtered decks only.
 
-`-deck:filtered`
-เฉพาะสำรับปกติ
+`-deck:filtered`\
+normal decks only.
 
-`preset:"Default"`
-การ์ดในสำรับทั้งหมดที่ใช้ค่าที่ตั้งไว้ล่วงหน้าของตัวเลือกสำรับ "Default"
-ต้องใช้ Anki 23.10+, AnkiMobile 23.10+ หรือ AnkiDroid 2.17+
+`preset:"Default"`\
+cards in all decks that use the "Default" deck options preset.
+Requires Anki 23.10+, AnkiMobile 23.10+ or AnkiDroid 2.17+.
 
-`card:forward`
-ค้นหาการ์ดที่สร้างโดยประเภทการ์ดชื่อ "Forward"
+`card:forward`\
+finds cards created by a card type named "Forward".
 
-`card:1`
-ค้นหาการ์ดตามหมายเลขประเภทการ์ด เช่น เพื่อค้นหาการลบคำในช่องว่างที่สอง
-สำหรับบันทึกย่อ คุณจะใช้ `card:2`
+`card:1`\
+searches for cards by card type number, e.g. to find the second cloze
+deletion for a note, you’d use `card:2`
 
-`note:basic`
-ค้นหาการ์ดที่สร้างด้วยประเภทบันทึกย่อชื่อ "Basic"
+`note:basic`\
+searches for cards created with a note type named "Basic".
 
-## ไม่สนใจเครื่องหมายกำกับเสียง/อักขระผสม
+## Ignoring accents/combining characters
 
-ต้องใช้ Anki 2.1.24+, AnkiMobile 2.0.60+ หรือ AnkiDroid 2.17+
+Requires Anki 2.1.24+, AnkiMobile 2.0.60+ or AnkiDroid 2.17+.
 
-คุณสามารถใช้ `nc:` (nc ย่อมาจาก "no combining") เพื่อให้ Anki ไม่สนใจอักขระผสม ตัวอย่างเช่น:
+You can use `nc:` (nc stands for "no combining") to make Anki ignore combining characters. For example:
 
-`nc:uber`
-ตรงกับบันทึกย่อที่มี "uber", "über", "Über" และอื่นๆ
+`nc:uber`\
+matches notes with "uber", "über", "Über" and so on.
 
-`nc:は`
-ตรงกับ "は", "ば" และ "ぱ"
+`nc:は`\
+matches "は", "ば", and "ぱ".
 
-การค้นหาที่ไม่สนใจอักขระผสมจะช้ากว่าการค้นหาปกติ
+Searches that ignore combining characters are slower than regular searches.
 
-## นิพจน์ทั่วไป (Regular expressions)
+## Regular expressions
 
-Anki 2.1.24+, AnkiMobile 2.0.60+ และ AnkiDroid 2.17+ รองรับการค้นหาในบันทึกย่อด้วย "นิพจน์ทั่วไป"
-ซึ่งเป็นวิธีการค้นหาในข้อความที่เป็นมาตรฐานและมีประสิทธิภาพ
+Anki 2.1.24+, AnkiMobile 2.0.60+ and AnkiDroid 2.17+ support searching in notes with "regular expressions",
+a standard and powerful way of searching in text.
 
-เริ่มต้นการค้นหาด้วย `re:` เพื่อค้นหาโดยใช้นิพจน์ทั่วไป เพื่อให้ง่ายขึ้น Anki จะ
-ปฏิบัติต่อสิ่งต่อไปนี้เป็น [ข้อมูลดิบ](#raw-input) ดังนั้นโปรดคำนึงถึงกฎที่ระบุไว้ที่นั่น
+Start a search with `re:` to search using regular expressions. To make things easier, Anki will
+treat the following as [raw input](#raw-input), so bear in mind the rules listed there.
 
-ตัวอย่างบางส่วน:
+Some examples:
 
-`"re:(some|another).*thing"`
-ค้นหาบันทึกย่อที่มี "some" หรือ "another" อยู่ในนั้น ตามด้วยอักขระ 0 ตัวขึ้นไป แล้วตามด้วย "thing"
+`"re:(some|another).*thing"`\
+finds notes that have "some" or "another" on them, followed by 0 or more characters, and then "thing".
 
-`re:\d{3}`
-ค้นหาบันทึกย่อที่มีตัวเลข 3 ตัวเรียงกัน
+`re:\d{3}`\
+finds notes that have 3 digits in a row.
 
-นิพจน์ทั่วไปยังสามารถจำกัดเฉพาะฟิลด์ที่ต้องการได้อีกด้วย โปรดทราบว่าซึ่งแตกต่างจากการค้นหาปกติ
-ในฟิลด์ นิพจน์ทั่วไปในฟิลด์ไม่จำเป็นต้องตรงกันทุกประการ:
+Regular expressions can also be limited to a specific field. Please note that unlike the normal searches
+in a specific field, regular expressions in fields don't require an exact match:
 
-`front:re:[a-c]1`
-ตรงกับ a1, B1 หรือ c1 ทั้งตัวพิมพ์ใหญ่และตัวพิมพ์เล็กที่ปรากฏที่ใดก็ได้ในฟิลด์ "Front"
+`front:re:[a-c]1`\
+matches uppercase or lowercase a1, B1 or c1 that occurs anywhere in the "Front" field.
 
-`front:re:^[a-c]1$`
-เหมือนกับตัวอย่างก่อนหน้า แต่จะไม่ตรงกันหากมีข้อความอื่นใดอยู่ก่อนหรือหลัง a1/b1/c1
+`front:re:^[a-c]1$`\
+same as the previous example, but will not match if any other text falls before or after a1/b1/c1.
 
-Anki 2.1.50+ รองรับนิพจน์ทั่วไปสำหรับแท็ก:
+Anki 2.1.50+ supports regular expressions for tags:
 
-`tag:re:^parent$`
-ค้นหาบันทึกย่อที่มีแท็ก "parent" ตรงๆ โดยไม่คำนึงถึงแท็กลูกใดๆ เช่น "parent::child"
+`tag:re:^parent$`\
+finds notes with the exact tag "parent", disregarding any child tags like "parent::child".
 
-`"tag:re:lesson-(1[7-9]|2[0-5])"`
-ค้นหาบันทึกย่อที่มีแท็ก "lesson-17" ถึง "lesson-25"
+`"tag:re:lesson-(1[7-9]|2[0-5])"`\
+finds notes with tags "lesson-17" through "lesson-25".
 
-สำหรับข้อมูลเพิ่มเติมเกี่ยวกับนิพจน์ทั่วไป โปรดดู [เว็บไซต์นี้](<https://regexone.com/lesson/introduction_abcs>)
+For more information on regular expressions, see [this website](<https://regexone.com/lesson/introduction_abcs>).
 
-สิ่งที่ควรทราบ:
+Some things to be aware of:
 
--   การค้นหาไม่คำนึงถึงตัวพิมพ์ใหญ่-เล็กโดยค่าเริ่มต้น ใช้ `(?-i)` ที่จุดเริ่มต้นเพื่อเปิดใช้งานการคำนึงถึงตัวพิมพ์ใหญ่-เล็ก
--   ข้อความบางอย่างเช่นช่องว่างและการขึ้นบรรทัดใหม่อาจแสดงแตกต่างกันใน HTML - คุณสามารถ
-    ใช้ตัวแก้ไข HTML ในหน้าจอแก้ไขเพื่อดูเนื้อหา HTML พื้นฐาน
--   สำหรับรายละเอียดเฉพาะของการสนับสนุน regex ของ Anki โปรดดู [เอกสารประกอบ regex crate](<https://docs.rs/regex/1.3.9/regex/#syntax>)
+- The search is case-insensitive by default; use `(?-i)` at the start to turn on case sensitivity.
+- Some text like spaces and newlines may be represented differently in HTML - you can
+  use the HTML editor in the editing screen to see the underlying HTML contents.
+- For the specifics of Anki's regex support, see the [regex crate documentation](<https://docs.rs/regex/1.3.9/regex/#syntax>).
 
-## สถานะการ์ด
+## Card state
 
-`is:due`
-การ์ดทบทวนและการ์ดที่กำลังเรียนรู้ที่รอการศึกษา
+`is:due`\
+review cards and learning cards waiting to be studied.
 
-`is:new`
-การ์ดใหม่
+`is:new`\
+new cards.
 
-`is:learn`
-การ์ดที่กำลังเรียนรู้
+`is:learn`\
+cards in learning.
 
-`is:review`
-การทบทวน (ทั้งที่ครบกำหนดและยังไม่ครบกำหนด) และการ์ดที่ลืม
+`is:review`\
+reviews (both due and not due) and lapsed cards.
 
-`is:suspended`
-การ์ดที่ถูก [ระงับโดยอัตโนมัติ](leeches.md) หรือด้วยตนเอง
+`is:suspended`\
+cards that have been [automatically](leeches.md) or manually suspended.
 
-`is:buried`
-การ์ดที่ถูก [ฝังโดยอัตโนมัติ](studying.md#siblings-and-burying) หรือ
-ด้วยตนเอง
+`is:buried`\
+cards that have been either [automatically](studying.md#siblings-and-burying) or
+manually buried.
 
-`is:buried-sibling`
-การ์ดที่ถูกฝังโดยอัตโนมัติ
+`is:buried-sibling`\
+cards that have been buried automatically.
 
-`is:buried-manually`
-การ์ดที่ถูกฝังด้วยตนเอง
+`is:buried-manually`\
+cards that have been manually buried.
 
-การ์ดที่ [ลืม](deck-options.md#lapses) จะอยู่ในหมวดหมู่ก่อนหน้าหลายหมวดหมู่ ดังนั้นจึงอาจ
-เป็นประโยชน์ที่จะรวมคำค้นหาต่างๆ เพื่อให้ได้ผลลัพธ์ที่แม่นยำยิ่งขึ้น:
+Cards that have [lapsed](deck-options.md#lapses) fall into several of the previous categories, so it may
+be useful to combine different search terms to get more precise results:
 
-`is:learn is:review`
-การ์ดที่ลืมและกำลังรอการเรียนรู้ซ้ำ
+`is:learn is:review`\
+cards that have lapsed and are awaiting relearning.
 
-`-is:learn is:review`
-การ์ดทบทวน ไม่รวมการ์ดที่ลืม
+`-is:learn is:review`\
+review cards, not including lapsed cards.
 
-`is:learn -is:review`
-การ์ดที่กำลังเรียนรู้เป็นครั้งแรก
+`is:learn -is:review`\
+cards that are in learning for the first time.
 
-## ธง
+## Flags
 
-`flag:0`
-การ์ดที่ไม่มีธง
+`flag:0`\
+cards without a flag.
 
-`flag:1`
-การ์ดที่มีธงสีแดง
+`flag:1`\
+cards with a red flag.
 
-`flag:2`
-การ์ดที่มีธงสีส้ม
+`flag:2`\
+cards with an orange flag.
 
-`flag:3`
-การ์ดที่มีธงสีเขียว
+`flag:3`\
+cards with a green flag.
 
-`flag:4`
-การ์ดที่มีธงสีน้ำเงิน
+`flag:4`\
+cards with a blue flag.
 
-`flag:5`
-การ์ดที่มีธงสีชมพู
+`flag:5`\
+cards with a pink flag.
 
-`flag:6`
-การ์ดที่มีธงสีเทอร์ควอยซ์
+`flag:6`\
+cards with a turquoise flag.
 
-`flag:7`
-การ์ดที่มีธงสีม่วง
+`flag:7`\
+cards with a purple flag.
 
-## คุณสมบัติการ์ด
+## Card properties
 
-`prop:ivl>=10`
-การ์ดที่มีช่วงเวลา 10 วันขึ้นไป
+`prop:ivl>=10`\
+cards with interval of 10 days or more.
 
-`prop:due=1`
-การ์ดที่ครบกำหนดพรุ่งนี้
+`prop:due=1`\
+cards due tomorrow.
 
-`prop:due=-1`
-การ์ดที่ครบกำหนดเมื่อวานนี้และยังไม่ได้ตอบ
+`prop:due=-1`\
+cards due yesterday that haven’t been answered yet.
 
-`prop:due>=1`
-การ์ดทั้งหมดที่ครบกำหนดในอนาคต รวมถึงพรุ่งนี้
+`prop:due>=1`\
+all cards due in the future, including tomorrow.
 
-`prop:due<=-1`
-การ์ดที่ค้างชำระทั้งหมด
+`prop:due<=-1`\
+all overdue cards.
 
-`prop:due>=-1 prop:due<=1`
-การ์ดที่ครบกำหนดเมื่อวานนี้ วันนี้ และพรุ่งนี้
+`prop:due>=-1 prop:due<=1`\
+cards due yesterday, today and tomorrow.
 
-`prop:reps<10`
-การ์ดที่ตอบน้อยกว่า 10 ครั้ง
+`prop:reps<10`\
+cards that have been answered less than 10 times.
 
-`prop:lapses>3`
-การ์ดที่ลืมมากกว่า 3 ครั้ง
+`prop:lapses>3`\
+cards that have lapsed more than 3 times.
 
-`prop:ease!=2.5`
-การ์ดที่ง่ายกว่าหรือยากกว่าความง่ายเริ่มต้น
+`prop:ease!=2.5`\
+cards easier or harder than default ease.
 
-`prop:pos<=100`
-การ์ดใหม่ที่มีตำแหน่งในคิวน้อยกว่าหรือเท่ากับ 100
+`prop:pos<=100`\
+new cards with a position in the queue less than or equal to 100.
 
-การค้นหาต่อไปนี้ต้องใช้ Anki 23.10+ และเปิดใช้งาน FSRS:
+The following searches require Anki 23.10+ and FSRS enabled:
 
-`prop:s>21`
-การ์ดที่มีความเสถียรมากกว่า 21 วัน
+`prop:s>21`\
+cards with stability greater than 21 days.
 
-`prop:d>0.3`
-การ์ดที่มีความยากมากกว่า 0.3
+`prop:d>0.3`\
+cards with difficulty greater than 0.3.
 
-`prop:r<0.9`
-การ์ดที่มีความสามารถในการดึงข้อมูลน้อยกว่า 0.9
+`prop:r<0.9`\
+cards with retrievability less than 0.9.
 
-## เหตุการณ์ล่าสุด
+## Recent Events
 
-### เพิ่มเมื่อ
+### Added
 
-`added:1`
-การ์ดที่เพิ่มในวันนี้
+`added:1`\
+cards added today.
 
-`added:7`
-การ์ดที่เพิ่มใน 7 วันที่ผ่านมา
+`added:7`\
+cards added in the last 7 days.
 
-การตรวจสอบจะทำกับเวลาสร้างการ์ดแทนที่จะเป็นเวลาสร้างบันทึกย่อ
-ดังนั้นการ์ดที่สร้างขึ้นภายในกรอบเวลาจะถูกรวมอยู่ด้วย
-แม้ว่าบันทึกย่อของพวกเขาจะถูกเพิ่มเมื่อนานมาแล้วก็ตาม
+The check is made against card creation time rather than note creation
+time, so cards that were generated within the time frame will be
+included even if their notes were added a long time ago.
 
-### แก้ไขเมื่อ
+### Edited
 
-`edited:n`
-การ์ดที่ข้อความบันทึกย่อถูกเพิ่ม/แก้ไขใน n วันที่ผ่านมา
+`edited:n`\
+cards where the note text was added/edited in the last n days.
 
-ต้องใช้ Anki 2.1.28+ หรือ AnkiMobile 2.0.64+
+This requires Anki 2.1.28+ or AnkiMobile 2.0.64+.
 
-### ตอบเมื่อ
+### Answered
 
-`rated:1`
-การ์ดที่ตอบในวันนี้
+`rated:1`\
+cards answered today.
 
-`rated:1:2`
-การ์ดที่ตอบว่า ยาก (2) ในวันนี้
+`rated:1:2`\
+cards answered Hard (2) today.
 
-`rated:7:1`
-การ์ดที่ตอบว่า อีกครั้ง (1) ใน 7 วันที่ผ่านมา
+`rated:7:1`\
+cards answered Again (1) in the last 7 days.
 
-`rated:31:4`
-การ์ดที่ตอบว่า ง่าย (4) ใน 31 วันที่ผ่านมา
+`rated:31:4`\
+cards answered Easy (4) in the last 31 days.
 
-Anki 2.1.39+ รองรับการค้นหาการให้คะแนนเกิน 31 วัน
+Anki 2.1.39+ supports rating searches over 31 days.
 
-โปรดทราบว่า ในการค้นหาการ์ดที่ตอบในวันใดวันหนึ่ง `rated:n -rated:(n-1)` อาจไม่ทำงานทุกครั้ง ให้ใช้สิ่งต่อไปนี้แทน:
+Note that, to search for cards answered at a particular day, `rated:n -rated:(n-1)` might not work every time. Use the following instead:
 
-`prop:rated=0`
-การ์ดที่ตอบในวันนี้
+`prop:rated=0`\
+cards answered today.
 
-`prop:rated=-1`
-การ์ดที่ตอบเมื่อหนึ่งวันที่แล้ว
+`prop:rated=-1`\
+cards answered one day ago.
 
-`prop:rated=-7`
-การ์ดที่ตอบเมื่อ 7 วันที่แล้ว
+`prop:rated=-7`\
+cards answered 7 days ago.
 
-### ตอบครั้งแรก
+### First Answered
 
-ต้องใช้ Anki 2.1.45+
+Requires Anki 2.1.45+.
 
-`introduced:1`
-การ์ดที่ตอบเป็นครั้งแรกในวันนี้
+`introduced:1`\
+cards answered for the first time today.
 
-`introduced:365`
-การ์ดที่ตอบเป็นครั้งแรกภายใน 365 วันที่ผ่านมา
+`introduced:365`\
+cards answered for the first time within the last 365 days.
 
-## การจับคู่อักขระพิเศษ
+## Matching special characters
 
-หากคุณใช้เวอร์ชันก่อนหน้า Anki 2.1.36 การค้นหาต่อไปนี้อาจไม่ทำงาน
+If you're using a version earlier than Anki 2.1.36 the following searches may not work.
 
-ดังที่แสดงในส่วนก่อนหน้า อักขระบางตัวเช่น `*`, `_` และ `"` มี
-ความหมายพิเศษในการค้นหา หากคุณต้องการค้นหาอักขระเหล่านั้นในการค้นหา
-คุณต้องบอก Anki ไม่ให้ปฏิบัติต่อมันเป็นพิเศษ ซึ่งเรียกว่า "การหลีกเลี่ยงอักขระ" และทำได้โดยหลักโดยใช้เครื่องหมายคำพูดคู่และแบ็กสแลช
+As shown in the previous section, some characters like `*`, `_` and `"` have a
+special meaning in search. If you need to locate those characters in a search,
+you need to tell Anki not to treat them specially. This is called "escaping a character" and is primarily done by using double quotes and backslashes.
 
--   _ช่องว่าง_
-    หากต้องการจับคู่สิ่งที่รวมช่องว่าง ให้ล้อม `"คำค้นหาทั้งหมด"` ด้วยเครื่องหมายคำพูดคู่
-    หากเป็นการค้นหาแบบโคลอน คุณยังมีตัวเลือกที่จะใส่เครื่องหมายคำพูดเฉพาะ
-    `ส่วน:"หลังเครื่องหมายโคลอน"`
+- _Space_\
+  To match something that includes spaces, enclose the `"entire term"` in double
+  quotes. If it is a colon search, you also have the option to only quote the
+  `part:"after the colon"`.
 
--   `And`/`Or`
-    หากต้องการค้นหาคำเหล่านี้ ให้ล้อมรอบด้วยเครื่องหมายคำพูดคู่ ตัวอย่างเช่น `dog "and" cat` ค้นหา "dog", "cat" และคำว่า "and"
-    หากคุณล้อมรอบคำค้นหาทั้งหมดด้วยเครื่องหมายคำพูดเหมือนในตัวอย่างก่อนหน้า คุณไม่จำเป็นต้องหลีกเลี่ยง `and` หรือ `or`
+- `And`/`Or`\
+  To search for these words, wrap them with double quotes. For example, `dog "and" cat` searches for "dog", "cat" and the word "and".
+  If you wrap the entire search term with quotes like in the previous example, you do not need to escape `and` or `or`.
 
--   `"`, `*` และ `_`
-    เพิ่มแบ็กสแลชก่อนอักขระเหล่านี้เพื่อปฏิบัติต่อมันตามตัวอักษร ตัวอย่างเช่น
-    `_` จะตรงกับอักขระใดๆ ก็ได้ แต่ `\_` จะตรงกับขีดล่างจริงๆ เท่านั้น
+- `"`, `*` and `_`\
+  Add a backslash before these characters to treat them literally. For example,
+  `_` will match any single character, but `\_` matches only an actual underscore.
 
--   `\`
-    เนื่องจากแบ็กสแลชใช้เพื่อลบความหมายพิเศษของอักขระอื่น
-    มันจึงถูกปฏิบัติเป็นพิเศษด้วย หากคุณต้องการค้นหาแบ็กสแลชจริงๆ
-    ให้ใช้ `\\` แทน `\`
+- `\`\
+  Because a backslash is used to remove the special meaning from other characters,
+  it too is treated specially. If you need to search for an actual backslash,
+  use `\\` instead of `\`.
 
--   `(` และ `)`
-    คุณสามารถค้นหาวงเล็บได้โดยการล้อมรอบคำค้นหาทั้งหมดด้วยเครื่องหมายคำพูด
-    โดยใช้แบ็กสแลช หรือทั้งสองอย่างพร้อมกัน ตัวอย่างเช่น `"(text)"`, `\(text\)` และ
-    `"\(text\)"` เป็นการค้นหาที่เทียบเท่ากันทั้งหมด และค้นหา `(text)`
+- `(` and `)`\
+  You can search for parentheses by enclosing the entire term in quotes,
+   by using a backslash, or both at the same time. For example, `"(text)"`, `\(text\)` and
+  `"\(text\)"` are all equivalent searches, and search for `(text)`.
 
--   `-`
-    การเริ่มต้นคำค้นหาด้วย `-` มักจะกลับด้าน: `-dog` ตรงกับทุกอย่าง
-    ยกเว้น dog ตัวอย่างเช่น หากคุณต้องการรวมขีดกลางจริงๆ
-    คุณสามารถใช้แบ็กสแลช หรือรวมข้อความไว้ในเครื่องหมายคำพูดได้ ตัวอย่างเช่น
-    `\-free` หรือ `"-free"` จะตรงกับ "guilt-free" และ "cruelty-free"
+- `-`\
+  Starting a search term with `-` usually inverts it: `-dog` matches everything
+  except dog for example. If you instead wish to include an actual hyphen,
+  you can either use a backslash, or include the text in quotes. For example,
+  `\-free` or `"-free"` will match "guilt-free" and "cruelty-free".
 
--   `:`
-    เครื่องหมายโคลอนต้องถูกหลีกเลี่ยงโดยใช้แบ็กสแลช เว้นแต่จะนำหน้าด้วยเครื่องหมายโคลอนอื่นที่ไม่ได้หลีกเลี่ยง
-    ตัวอย่างเช่น `w:3:30` ค้นหา "3:30" ที่ขอบเขตของคำและไม่ต้องการให้คุณใช้แบ็กสแลช
-    อย่างไรก็ตาม หากคุณไม่ได้ใช้การค้นหาแบบโคลอน เครื่องหมายโคลอนจะต้องถูกหลีกเลี่ยงเช่นนี้: `3\:30`
+- `:`\
+  Colons have to be escaped using backslashes unless they are preceded by another, unescaped colon.
+  For example, `w:3:30` searches for "3:30" on word boundary and doesn't require you to use a backslash.
+  However, if you don't use a colon search, the colons need to be escaped like this: `3\:30`.
 
--   `&`, `<`, และ `>`
-    `&`, `<`, และ `>` ถูกปฏิบัติต่อเป็น HTML เมื่อค้นหาใน Anki และด้วยเหตุนี้ การค้นหา
-    ที่มีอักขระเหล่านี้จึงไม่ทำงานตามที่คาดไว้ อย่างไรก็ตาม คุณสามารถค้นหาได้โดยใช้
-    ชื่อเอนทิตี HTML ที่สอดคล้องกัน (`&amp;` สำหรับ `&`, `&lt;` สำหรับ `<`, และ `&gt;` สำหรับ `>`) 
-    ตัวอย่างเช่น การค้นหา `&amp;text` จะค้นหาบันทึกย่อที่มี `&text` ในฟิลด์
+- `&`, `<`, and `>`\
+  `&`, `<`, and `>` are treated as HTML when searching in Anki, and as such, searches
+  containing them don't work as expected. However, you can search for them by using their
+  corresponding HTML entity names (`&amp;` for `&`, `&lt;` for `<`, and `&gt;` for `>`).
+  For example, searching `&amp;text` searches for a note with `&text` in a field.
 
-### ข้อมูลดิบ (Raw input)
+### Raw input
 
-ข้อความที่นำหน้าด้วยคีย์เวิร์ดบางคำ (เช่น `re:`) จะถูกปฏิบัติต่อเป็นข้อมูลดิบ นั่นคือ
-อักขระที่ระบุไว้ข้างต้นส่วนใหญ่จะสูญเสียความหมายพิเศษไป ในบริบทดังกล่าว ต้องการเพียง
-การหลีกเลี่ยงขั้นต่ำเพื่อป้องกันความคลุมเครือ:
+Text preceded by certain keywords (like `re:`) will be treated as raw input. That is,
+the characters listed above largely lose their special meaning. In such a context, only
+a minimum of escaping is required to prevent ambiguity:
 
--   เครื่องหมายคำพูดคู่ (`"`) ต้องถูกหลีกเลี่ยง
+- Double quotes (`"`) must be escaped.
 
--   ช่องว่างและวงเล็บที่ไม่ได้หลีกเลี่ยงต้องการให้คำค้นหาอยู่ในเครื่องหมายคำพูด
+- Spaces and unescaped parentheses require the search term to be quoted.
 
--   คำค้นหาต้องไม่ลงท้ายด้วยจำนวนคี่ของแบ็กสแลช
+- The search term must not end in an odd number of backslashes.
 
-## รหัสวัตถุ
+## Object IDs
 
-`nid:123`
-บันทึกย่อที่มีรหัสบันทึกย่อ 123
+`nid:123`\
+the note with note id 123.
 
-`cid:123,456,789`
-การ์ดทั้งหมดที่มีรหัสการ์ด 123, 456 หรือ 789
+`cid:123,456,789`\
+all cards with card ids 123, 456, or 789.
 
-รหัสบันทึกย่อและการ์ดสามารถพบได้ในกล่องโต้ตอบ [ข้อมูลการ์ด](stats.md) ใน
-เบราว์เซอร์ การค้นหาเหล่านี้อาจเป็นประโยชน์เมื่อทำการพัฒนา
-ส่วนเสริมหรือทำงานอย่างใกล้ชิดกับฐานข้อมูล
+Note and card IDs can be found in the [card info](stats.md) dialog in the
+browser. These searches may also be helpful when doing add-on
+development or otherwise working closely with the database.
 
-## ข้อมูลที่กำหนดเอง
+## Custom Data
 
-Anki อนุญาตให้จัดเก็บข้อมูลที่กำหนดเองจำนวนเล็กน้อยบนการ์ด ซึ่งช่วยให้
-สามารถใช้งานในกรณีขั้นสูง เช่น ตัวจัดตารางเวลาที่กำหนดเอง หนึ่งในการประยุกต์ใช้
-ที่น่าสังเกตของคุณลักษณะนี้คือในการใช้งาน FSRS รุ่นก่อนหน้า ใน Anki 23.10+ มี
-บางวิธีในการค้นหา:
+Anki allows small amounts of custom data to be stored on cards, enabling
+advanced use cases such as custom schedulers. One of the notable applications
+of this feature was in earlier implementations of FSRS. In Anki 23.10+, there
+are some ways to search it:
 
-`has-cd:v`
-การ์ดที่มีคุณสมบัติ `v` ในข้อมูลที่กำหนดเอง
+`has-cd:v`\
+cards having the property `v` in custom data.
 
-`prop:cdn:d>5`
-การ์ดที่มีค่า `d` ในข้อมูลที่กำหนดเอง (โดยปกติหมายถึงความยากใน FSRS) มากกว่า 5
+`prop:cdn:d>5`\
+cards with the value of `d` in custom data (usually refers to difficulty in FSRS) greater than 5.
 
-`prop:cds:v=reschedule`
-การ์ดที่มีสตริง `v` ในข้อมูลที่กำหนดเองเท่ากับ `reschedule`
+`prop:cds:v=reschedule`\
+cards with the string `v` in custom data equal to `reschedule`.
 
-## การค้นหาอื่นๆ
+## Other Searches
 
-`prop:due=1 is:learn`
-การ์ดเรียนรู้ระหว่างวันที่ครบกำหนดพรุ่งนี้
+`prop:due=1 is:learn`\
+interday learning cards due for tomorrow.
 
-`prop:due=0 is:learn -introduced:1`
-การ์ดเรียนรู้ระหว่างวันที่ครบกำหนดวันนี้
+`prop:due=0 is:learn -introduced:1`\
+interday learning cards due today.
 
-`prop:resched=0`
-การ์ดที่จัดตารางเวลาใหม่ในวันนี้ ไม่ว่าจะใช้ **ตั้งวันครบกำหนด** หรือ **จัดตารางการ์ดใหม่เมื่อมีการเปลี่ยนแปลง**
+`prop:resched=0`\
+cards rescheduled today, either using **Set due date** or **Reschedule cards on change**.

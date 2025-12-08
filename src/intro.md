@@ -1,23 +1,24 @@
-# บทนำ
+# Introduction
 
-## ไคลเอนต์มือถือ
+## Mobile Clients
 
-นี่คือคู่มือสำหรับ Anki เวอร์ชันคอมพิวเตอร์ มีคู่มือแยกต่างหากสำหรับไคลเอนต์มือถือ:
+This is the manual for the computer version of Anki. Separate manuals are available for the mobile clients:
 
-- [คู่มือ AnkiDroid](https://docs.ankidroid.org/) (Android)
-- [คู่มือ AnkiMobile](https://docs.ankimobile.net/) (iPhone/iPad)
+- [AnkiDroid Manual](https://docs.ankidroid.org/) (Android)
+- [AnkiMobile Manual](https://docs.ankimobile.net/) (iPhone/iPad)
 
-## เริ่มต้นอย่างรวดเร็ว
+## Quickstart
 
-รีบใช่ไหม? ไปที่ [เริ่มต้นใช้งาน](getting-started.md) ได้เลย
+In a hurry? Jump straight to [Getting Started](getting-started.md).
 
-## ขอความช่วยเหลือ
+## Getting Help
 
-กำลังมองหาความช่วยเหลืออยู่ใช่ไหม? โปรดดูที่ [ขอความช่วยเหลือ](./getting-help.md)
+Looking for help? Please see [Getting Help](./getting-help.md).
 
-## การแปล
+## Translations
 
-อาสาสมัครได้ช่วยแปลคู่มือนี้ การแปลอาจไม่ได้รับการอัปเดตอยู่เสมอ
+Volunteers have contributed translations of this manual. The
+translations may not always be up to date.
 
 - [Bahasa Indonesia](https://web.archive.org/web/20250228144632/https://apps.ankiweb.net/docs/manual.id.html)
 - [Deutsch](https://web.archive.org/web/20240413080739/https://www.dennisproksch.de/anki)
@@ -33,10 +34,11 @@
 - [日本語](http://wikiwiki.jp/rage2050/)
 - [简体中文](https://open-spaced-repetition.github.io/anki-manual-zh-CN/)
 
-หากคุณต้องการช่วยแปลคู่มือเป็นภาษาอื่น โปรดดูที่ [เอกสารการแปล](https://translating.ankiweb.net/anki/manual.html)
+If you would like to help translate the manual into a different language,
+please see the [translation docs](https://translating.ankiweb.net/anki/manual.html).
 
-## เอกสารเก่า
+## Legacy Documentation
 
-ไม่ได้ใช้ Anki เวอร์ชันล่าสุดใช่ไหม? ค้นหาเอกสารเก่าของคู่มือนี้ได้ที่ [Internet Archive](https://web.archive.org/web/20240829022941/https://docs.ankiweb.net/)
+Not on the latest version of Anki? Find archives of this manual at the [Internet Archive](https://web.archive.org/web/20240829022941/https://docs.ankiweb.net/).
 
-สำหรับข้อมูลเกี่ยวกับเวอร์ชันตัวจัดตารางเวลาเก่า โปรดดู [คำถามที่พบบ่อยนี้](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)
+For information on old scheduler versions, see [this FAQ](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html).

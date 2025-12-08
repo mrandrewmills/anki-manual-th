@@ -1,8 +1,8 @@
-# วิธีการป้อนข้อมูลบน Linux
+# Input Methods on Linux
 
 ## Fcitx
 
-บิลด์มาตรฐานของ Anki รองรับ fcitx แต่อาจไม่ทำงานบน
-ทุก distribution หากคุณไม่สามารถใช้ fcitx ได้ คุณอาจต้องการเรียกใช้
-Anki จาก [Python wheels](https://betas.ankiweb.net/#via-pypipip)
-แทน
+The standard Anki build includes fcitx support, but it may not work on
+all distributions. If you are unable to use fcitx, you may want to run
+Anki from [Python wheels](https://betas.ankiweb.net/#via-pypipip)
+instead.

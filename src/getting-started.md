@@ -1,309 +1,310 @@
-# การเริ่มต้นใช้งาน
+# Getting Started
 
 <!-- toc -->
 
-## การติดตั้งและอัปเกรด
+## Installing & Upgrading
 
-ระบบนิเวศของ Anki ประกอบด้วย Anki, AnkiMobile, AnkiDroid และ AnkiWeb
-ซึ่งทั้งหมดเชื่อมโยงจาก [เว็บไซต์อย่างเป็นทางการ](https://apps.ankiweb.net) ของเรา
+The Anki ecosystem is made up of Anki, AnkiMobile, AnkiDroid, and AnkiWeb, all
+of which are linked from our [official website](https://apps.ankiweb.net).
 
-สำหรับคำแนะนำเกี่ยวกับวิธีการติดตั้งและอัปเกรด Anki สำหรับคอมพิวเตอร์ของคุณ โปรด
-อ่านลิงก์ด้านล่าง:
+For instructions on how to install and upgrade Anki for your computer, please
+read the links below:
 
--   [Windows](./platform/windows/installing.md)
--   [Mac](./platform/mac/installing.md)
--   [Linux](./platform/linux/installing.md)
+- [Windows](./platform/windows/installing.md)
+- [Mac](./platform/mac/installing.md)
+- [Linux](./platform/linux/installing.md)
 
-## วิดีโอ
+## Videos
 
-สำหรับวิธีที่รวดเร็วในการเริ่มต้นใช้งาน Anki โปรดดูวิดีโอแนะนำ
-เหล่านี้ บางวิดีโอสร้างด้วย Anki เวอร์ชันก่อนหน้า แต่แนวคิด
-ยังคงเหมือนเดิม
+For a quick way to dive into Anki, have a look at these intro
+videos. Some were made with a previous Anki version, but the concepts
+are the same.
 
--   [สำรับที่แชร์และพื้นฐานการทบทวน](http://www.youtube.com/watch?v=QS2G-k2hQyg&yt:cc=on)
+- [Shared Decks and Review Basics](http://www.youtube.com/watch?v=QS2G-k2hQyg&yt:cc=on)
 
--   [การซิงโครไนซ์](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on)
+- [Syncing](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on)
 
--   [การสลับลำดับการ์ด](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)
+- [Switching Card Order](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)
 
--   [การจัดรูปแบบการ์ด](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)
+- [Styling Cards](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)
 
--   [การพิมพ์คำตอบ](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)
+- [Typing in the Answer](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)
 
-## แนวคิดหลัก
+## Key Concepts
 
-### การ์ด
+### Cards
 
-คู่ของคำถามและคำตอบเรียกว่า _การ์ด_ ซึ่งคล้ายกับบัตรคำกระดาษ
-ที่มีคำถามอยู่ด้านหน้าและคำตอบอยู่ด้านหลัง อย่างไรก็ตาม ใน
-Anki การ์ดไม่ได้ดูเหมือนการ์ดจริง และเมื่อคุณ
-แสดงคำตอบ คำถามจะยังคงมองเห็นได้โดยค่าเริ่มต้น ตัวอย่างเช่น หาก
-คุณกำลังเรียนวิชาเคมีพื้นฐาน คุณอาจเห็นคำถามเช่น:
+A question and answer pair is called a _card_. It's similar to a paper
+flashcard with a question on the front and answer on the back. However, in
+Anki, a card doesn't look like a physical card, and when you
+show the answer the question remains visible by default. For example, if
+you're studying basic chemistry, you might see a question like:
 
-    Q: สัญลักษณ์ทางเคมีของออกซิเจน?
+    Q: Chemical symbol for oxygen?
 
-หลังจากตัดสินใจว่าคำตอบคือ O คุณคลิกปุ่ม
-**แสดงคำตอบ** และ Anki จะแสดงให้คุณเห็น:
+After deciding the answer is O, you click the
+**Show Answer** button, and Anki shows you:
 
-    Q: สัญลักษณ์ทางเคมีของออกซิเจน?
+    Q: Chemical symbol for oxygen?
     A: O
 
-หลังจากยืนยันว่าคุณตอบถูก คุณบอก Anki ว่าคุณ
-จำคำตอบได้ดีเพียงใด และ Anki จะเลือกเวลาที่จะแสดงการ์ดให้คุณอีกครั้ง ตัวอย่างเช่น Anki อาจตัดสินใจแสดงการ์ดให้คุณอีกครั้งใน 3 วัน ในกรณีนี้ เราจะกล่าวว่าการ์ดมีช่วงเวลา 3 วัน
+After confirming that you are correct, you tell Anki how well you
+remembered the answer, and Anki will choose when to show you the card again. For example, Anki might decide to show you the card again in 3 days. In this case, we say the card now has a 3 day interval.
 
-#### สถานะการ์ด
+#### Card States
 
 <div id="types-of-cards" />
 
--   **ใหม่:** การ์ดที่คุณดาวน์โหลดหรือสร้างขึ้นเอง แต่ไม่เคยเรียนมาก่อน
+- **New:** Cards that you have downloaded or created yourself, but have never studied before.
 
--   **กำลังเรียนรู้:** การ์ดที่เพิ่งเห็นเป็นครั้งแรก และยังอยู่ในระหว่างการเรียนรู้
+- **Learning:** Cards that were seen for the first time recently, and are still being learned.
 
--   **ทบทวน:** การ์ดที่คุณเรียนจบแล้ว การ์ดเหล่านี้จะแสดงอีกครั้งหลังจากที่การหน่วงเวลา (ช่วงเวลา) ผ่านไปแล้ว
-    การ์ดทบทวนมีสองประเภท:
-    -   **อายุน้อย:** การ์ดอายุน้อยคือการ์ดที่มีช่วงเวลาน้อยกว่า 21 วัน
-    -   **โตเต็มที่:** การ์ดโตเต็มที่คือการ์ดที่มีช่วงเวลา 21 วันหรือมากกว่า
+- **Review:** Cards that you have finished learning. These cards will be shown again after their delay (interval) has elapsed.
+  There are two types of review cards:
+  - **Young:** A young card is one that has an interval of less than 21 days.
+  - **Mature:** A mature card is one that has an interval of 21 days or greater.
 
--   **เรียนรู้ซ้ำ:** การ์ดที่คุณลืมในขั้นตอนการทบทวน การ์ดเหล่านี้จะกลับสู่สถานะเรียนรู้ซ้ำเพื่อเรียนรู้อีกครั้ง
+- **Relearn:** Cards that you forgot in the review stage. These cards are returned to the relearning state to be learned again.
 
-### สำรับ
+### Decks
 
-_สำรับ_ คือกลุ่มของการ์ด คุณสามารถวางการ์ดในสำรับต่างๆ เพื่อ
-เรียนส่วนต่างๆ ของคอลเล็กชันการ์ดของคุณแทนที่จะเรียนทุกอย่าง
-พร้อมกัน แต่ละสำรับสามารถมีการตั้งค่าที่แตกต่างกันได้ เช่น จำนวนการ์ดใหม่
-ที่จะแสดงในแต่ละวัน หรือระยะเวลาที่จะรอก่อนที่การ์ดจะแสดงอีกครั้ง
+A _deck_ is a group of cards. You can place cards in different decks to
+study parts of your card collection instead of studying everything at
+once. Each deck can have different settings, such as how many new cards
+to show each day, or how long to wait until cards are shown again.
 
-สำรับสามารถบรรจุสำรับอื่นได้ ซึ่งช่วยให้คุณสามารถจัดระเบียบสำรับเป็น
-โครงสร้างต้นไม้ได้ Anki ใช้เครื่องหมายทวิภาคคู่ ("::") เพื่อแสดงระดับต่างๆ ภายในโครงสร้างต้นไม้ของสำรับ ตัวอย่างเช่น สำรับที่ชื่อว่า
-"Chinese::Hanzi" หมายถึงสำรับ "Hanzi" ซึ่งเป็นส่วนหนึ่งของสำรับ "Chinese"
-หากคุณเลือก "Hanzi" เฉพาะการ์ด Hanzi เท่านั้นที่จะแสดง หาก
-คุณเลือก "Chinese" การ์ดภาษาจีนทั้งหมดจะแสดง รวมถึงการ์ด Hanzi ด้วย
+Decks can contain other decks, which allows you to organize decks into a
+tree. Anki uses double colons ("::") to show different levels within the deck tree. For example, a deck called
+"Chinese::Hanzi" refers to a "Hanzi" deck, which is part of a "Chinese"
+deck. If you select "Hanzi", then only the Hanzi cards will be shown; if
+you select "Chinese", then all the Chinese cards will be shown, including the Hanzi cards.
 
-ในการวางสำรับภายในโครงสร้างต้นไม้ คุณสามารถตั้งชื่อโดยใช้เครื่องหมายทวิภาคคู่ระหว่าง
-แต่ละระดับ หรือลากและวางภายในรายการสำรับได้ สำรับที่
-ถูกวางไว้ในสำรับอื่นมักเรียกว่า "สำรับย่อย" และสำรับระดับบนสุดเรียกว่า "สำรับหลัก"
+To place decks within a tree, you can either name them with double colons between
+each level, or drag and drop them within the deck list. Decks that have
+been placed inside another deck are often called "subdecks", and top-level decks are called "parent decks".
 
-Anki เริ่มต้นด้วยสำรับที่ชื่อว่า "ค่าเริ่มต้น"; การ์ดใดๆ ที่
-แยกออกจากสำรับอื่นจะไปอยู่ที่นี่ Anki จะซ่อน
-สำรับค่าเริ่มต้นหากไม่มีการ์ดและคุณได้เพิ่มสำรับอื่นแล้ว
-หรือคุณอาจเปลี่ยนชื่อสำรับนี้และใช้สำหรับการ์ดอื่นๆ ได้
+Anki starts with a deck called "Default"; any cards which have somehow
+become separated from other decks will go here. Anki will hide the
+default deck if it contains no cards and you have added other decks.
+Alternatively, you may rename this deck and use it for other cards.
 
-สำรับในรายการสำรับจะเรียงตามตัวอักษร ซึ่งอาจส่งผลให้
-ลำดับน่าประหลาดใจหากชื่อสำรับของคุณมีตัวเลข ตัวอย่างเช่น "สำรับของฉัน 10" จะมาก่อน "สำรับของฉัน 9" เนื่องจาก 1 มาก่อน 9 หากคุณต้องการให้ "สำรับของฉัน 9" ปรากฏก่อนหน้านี้ คุณสามารถเปลี่ยนชื่อเป็น "สำรับของฉัน 09" ซึ่งจะปรากฏก่อน "สำรับของฉัน 10"
+Decks in the deck list are sorted alphabetically. This can result in
+a surprising order if your deck names contain numbers. For example, "My Deck 10"
+will come before "My Deck 9", as 1 comes before 9. If you want "My deck 9" to appear earlier, you can rename it to "My deck 09", which appears before "My deck 10".
 
-สำรับเหมาะที่สุดสำหรับใช้เก็บการ์ดประเภทกว้างๆ แทนที่จะเป็น
-หัวข้อเฉพาะ เช่น "คำกริยาเกี่ยวกับอาหาร" หรือ "บทเรียนที่ 1" สำหรับข้อมูลเพิ่มเติม
-เกี่ยวกับเรื่องนี้ โปรดดูส่วน [การใช้สำรับอย่างเหมาะสม](editing.md#using-decks-appropriately)
+Decks are best used to hold broad categories of cards, rather than
+specific topics such as "food verbs" or "lesson 1". For more information about
+this, please see the [using decks appropriately](editing.md#using-decks-appropriately) section.
 
-สำหรับข้อมูลเกี่ยวกับลำดับของสำรับส่งผลต่อลำดับการเรียนการ์ดอย่างไร
-โปรดดูส่วน [ลำดับการแสดงผล](studying.md#display-order)
+For information on how the order of decks affects the order cards are studied in,
+please see the [display order](studying.md#display-order) section.
 
-### บันทึกย่อและฟิลด์
+### Notes & Fields
 
-เมื่อทำบัตรคำศัพท์ มักเป็นที่ต้องการที่จะสร้างการ์ดมากกว่าหนึ่งใบ
-ที่เกี่ยวข้องกับข้อมูลเดียวกัน ตัวอย่างเช่น หากคุณกำลังเรียน
-ภาษาฝรั่งเศส และคุณเรียนรู้ว่าคำว่า _bonjour_ หมายถึง สวัสดี คุณอาจ
-ต้องการสร้างการ์ดหนึ่งใบที่แสดง "bonjour" และขอให้คุณ
-จำ "สวัสดี" และอีกการ์ดหนึ่งที่แสดง "สวัสดี" และขอให้คุณ
-จำ "bonjour" การ์ดหนึ่งใบกำลังทดสอบความสามารถในการจดจำ
-คำภาษาฝรั่งเศส และอีกการ์ดหนึ่งกำลังทดสอบความสามารถในการผลิตคำ
+When making flashcards, it’s often desirable to make more than one card
+that relates to the same information. For example, if you’re learning
+French, and you learn that the word _bonjour_ means hello, you may
+wish to create one card that shows you "bonjour" and asks you to
+remember "hello", and another card that shows you "hello" and asks you
+to remember "bonjour". One card is testing your ability to recognize the
+French word, and the other card is testing your ability to produce it.
 
-เมื่อใช้บัตรคำศัพท์กระดาษ ตัวเลือกเดียวของคุณในกรณีนี้คือการเขียน
-ข้อมูลสองครั้ง ครั้งละหนึ่งใบสำหรับแต่ละการ์ด โปรแกรมบัตรคำศัพท์
-บางโปรแกรมช่วยให้ชีวิตง่ายขึ้นโดยมีคุณสมบัติในการพลิกด้านหน้าและ
-ด้านหลัง ซึ่งเป็นการปรับปรุงจากสถานการณ์กระดาษ แต่มี
-ข้อเสียที่สำคัญสองประการ:
+When using paper flashcards, your only option in this case is to write
+out the information twice, once for each card. Some flashcard
+programs make life easier by providing a feature to flip the front and
+back sides. This is an improvement over the paper situation, but there
+are two major downsides:
 
--   เนื่องจากโปรแกรมดังกล่าวไม่ได้ติดตามประสิทธิภาพการจดจำ
-    และการผลิตของคุณแยกจากกัน การ์ดจึงมักจะไม่แสดงให้คุณเห็นใน
-    เวลาที่เหมาะสมที่สุด ซึ่งหมายความว่าคุณจะลืมมากกว่าที่คุณต้องการ หรือคุณ
-    เรียนมากกว่าที่จำเป็น
+- Because such programs don’t track your performance of recognition
+  and production separately, cards will tend not to be shown to you at
+  the optimum time, meaning you forget more than you’d like, or you
+  study more than is necessary.
 
--   การย้อนกลับคำถามและคำตอบใช้ได้เฉพาะเมื่อคุณต้องการ
-    เนื้อหาเดียวกันทุกประการในแต่ละด้าน ซึ่งหมายความว่าไม่สามารถ
-    แสดงข้อมูลเพิ่มเติมที่ด้านหลังของแต่ละการ์ดได้ ตัวอย่างเช่น
+- Reversing the question and answer only works when you want exactly
+  the same content on each side. This means it’s not possible to
+  display extra info on the back of each card for example.
 
-Anki แก้ปัญหาเหล่านี้โดยให้คุณสามารถแบ่งเนื้อหาของ
-การ์ดออกเป็นส่วนๆ ของข้อมูลได้ จากนั้นคุณสามารถบอก Anki
-ได้ว่าคุณต้องการข้อมูลส่วนใดในแต่ละการ์ด และ Anki จะดูแล
-การสร้างการ์ดให้คุณ และอัปเดตหากคุณทำการ
-แก้ไขใดๆ ในอนาคต
+Anki solves these problems by allowing you to split the content of your
+cards up into separate pieces of information. You can then tell Anki
+which pieces of information you want on each card, and Anki takes care of creating the cards for you, and updating them if you make any
+edits in the future.
 
-ลองนึกภาพว่าเราต้องการเรียนคำศัพท์ภาษาฝรั่งเศส และเราต้องการรวมหมายเลขหน้าตำราเรียน
-ไว้ที่ด้านหลังของการ์ดแต่ละใบ เราต้องการให้การ์ดของเรามีลักษณะดังนี้:
+Imagine we want to study French vocabulary, and we want to include a textbook
+page number on the back of each card. We want our cards to look like
+this:
 
     Q: Bonjour
-    A: สวัสดี
-       หน้า #12
+    A: Hello
+       Page #12
 
-และสิ่งนี้:
+And this:
 
-    Q: สวัสดี
+    Q: Hello
     A: Bonjour
-       หน้า #12
+       Page #12
 
-ในการ์ดทั้งสองใบ เรามีข้อมูลที่เกี่ยวข้องกันสามชิ้น: คำภาษาฝรั่งเศส
-ความหมายภาษาอังกฤษ และหมายเลขหน้า หากเรารวมเข้าด้วยกัน
-ก็จะมีลักษณะดังนี้:
+In both cards, we have the same three related pieces of information: a French
+word, an English meaning, and a page number. If we put them together,
+they’d look like this:
 
-    ภาษาฝรั่งเศส: Bonjour
-    ภาษาอังกฤษ: สวัสดี
-    หน้า: 12
+    French: Bonjour
+    English: Hello
+    Page: 12
 
-ใน Anki การรวบรวมข้อมูลที่เกี่ยวข้องกันนี้เรียกว่า _บันทึกย่อ_ และข้อมูลแต่ละชิ้นจะอยู่ใน _ฟิลด์_ ในตัวอย่างนี้ บันทึกย่อ
-มีสามฟิลด์: "ภาษาฝรั่งเศส", "ภาษาอังกฤษ" และ "หน้า"
+In Anki, this collection of related information is called a _note_ and each piece of information is contained in a _field_. In this example, the note
+has three fields: "French", "English", and "Page".
 
-หากต้องการเพิ่มและแก้ไขฟิลด์ ให้คลิกปุ่ม **ฟิลด์...** ขณะเพิ่มหรือ
-แก้ไขบันทึกย่อ สำหรับข้อมูลเพิ่มเติมเกี่ยวกับฟิลด์ โปรดดู
-ส่วน [การปรับแต่งฟิลด์](editing.md#customizing-fields)
+To add and edit fields, click the **Fields...** button while adding or
+editing notes. For more information on fields, please see the
+[Customizing Fields](editing.md#customizing-fields) section.
 
-### ประเภทการ์ด
+### Card Types
 
-เพื่อให้ Anki สร้างการ์ดตามบันทึกย่อของเรา เราต้องให้
-พิมพ์เขียวที่ระบุว่าฟิลด์ใดควรแสดงที่ด้านหน้าหรือ
-ด้านหลังของการ์ดแต่ละใบ พิมพ์เขียวนี้เรียกว่า _ประเภทการ์ด_ แต่ละประเภทของ
-บันทึกย่อสามารถมีประเภทการ์ดได้อย่างน้อยหนึ่งประเภท เมื่อคุณเพิ่มบันทึกย่อ Anki จะ
-สร้างการ์ดหนึ่งใบสำหรับแต่ละประเภทการ์ด
+In order for Anki to create cards based on our notes, we need to give it
+a blueprint that says which fields should be displayed on the front or
+back of each card. This blueprint is called a _card type_. Each type of
+note can have one or more card types; when you add a note, Anki will
+create one card for each card type.
 
-ประเภทการ์ดทั้งหมดมี _เทมเพลต_ สองแบบ แบบหนึ่งสำหรับคำถามและอีกแบบหนึ่งสำหรับ
-คำตอบ ในตัวอย่างภาษาฝรั่งเศสก่อนหน้านี้ เราต้องการให้ด้านหลังของการ์ดจดจำของเรา
-มีลักษณะดังนี้:
+All card types have two _templates_, one for the question and one for the
+answer. In the previous French example, we wanted the back of our recognition card to
+look like this:
 
     Q: Bonjour
-    A: สวัสดี
-       หน้า #12
+    A: Hello
+       Page #12
 
-ในการทำเช่นนี้ เราสามารถตั้งค่าเทมเพลตคำตอบเป็น:
+To do this, we can set the answer template to:
 
     Q: {{French}}
     A: {{English}}<br>
-       หน้า #{{Page}}
+       Page #{{Page}}
 
-ในเทมเพลตการ์ด ชื่อฟิลด์จะอยู่ในวงเล็บปีกกาสองชั้น เช่น `{{French}}` หรือ `{{English}}` Anki จะแทนที่สิ่งเหล่านั้นด้วยข้อความจริงที่ฟิลด์มีอยู่ ซึ่งเรียกว่า ["การแทนที่ฟิลด์"](templates/fields.md) ข้อความที่ไม่อยู่ในวงเล็บปีกกาสองชั้นจะปรากฏเหมือนกันในแต่ละการ์ด ตัวอย่างเช่น เราไม่จำเป็นต้องเพิ่ม "หน้า #" ในทุกบันทึกย่อ เพราะเทมเพลตจะเพิ่มให้โดยอัตโนมัติในทุกการ์ด แท็ก `<br>` เป็น
-รหัสพิเศษที่บอกให้ Anki ย้ายไปบรรทัดถัดไป สำหรับรายละเอียด โปรดดูส่วน [เทมเพลต](templates/intro.md)
+In card templates, field names are wrapped in double curly brackets, like `{{French}}` or `{{English}}`. Anki replaces those with the actual text the fields contain. This is called a ["Field replacement"](templates/fields.md). Text not wrapped in double curly brackets appears the same on each card. For example, we won't need to add "Page \#" on every note because the template will add it automatically to every card. The `<br>` tag is
+a special code that tells Anki to move to the next line. For details, see the [templates](templates/intro.md) section.
 
-เทมเพลตของการ์ดผลิตผลก็จะทำงานในลักษณะเดียวกัน:
+The production card's templates will also work in a similar way:
 
     Q: {{English}}
     A: {{French}}<br>
-       หน้า #{{Page}}
+       Page #{{Page}}
 
-หลังจากสร้างประเภทการ์ดแล้ว ทุกครั้งที่คุณเพิ่มบันทึกย่อใหม่ การ์ด
-จะถูกสร้างขึ้นตามประเภทการ์ดนั้น ประเภทการ์ดทำให้ง่ายต่อการรักษา
-ความสอดคล้องของรูปแบบการ์ดของคุณ และสามารถลด
-ความพยายามในการเพิ่มข้อมูลได้อย่างมาก นอกจากนี้ยังหมายความว่า Anki สามารถ
-รับรองได้ว่าการ์ดที่เกี่ยวข้องกันจะไม่ปรากฏใกล้กันเกินไป และ
-ช่วยให้คุณสามารถแก้ไขข้อผิดพลาดในการพิมพ์หรือข้อผิดพลาดทางข้อเท็จจริงเพียงครั้งเดียวและให้
-การ์ดที่เกี่ยวข้องทั้งหมดอัปเดตพร้อมกัน
+After a card type has been created, every time you add a new note, a card
+will be created based on that card type. Card types make it easy to keep
+the formatting of your cards consistent and can greatly reduce the
+amount of effort involved in adding information. They also mean Anki can
+ensure related cards don't appear too close to each other, and they
+allow you to fix a typing mistake or factual error once and have all the
+related cards update at once.
 
-หากต้องการเพิ่มและแก้ไขประเภทการ์ด ให้คลิกปุ่ม **การ์ด...** ขณะเพิ่มหรือ
-แก้ไขบันทึกย่อ สำหรับข้อมูลเพิ่มเติมเกี่ยวกับประเภทการ์ด โปรดดูส่วน [การ์ดและเทมเพลต](templates/intro.md)
+To add and edit card types, click the **Cards...** button while adding or
+editing notes. For more information on card types, please see the [Cards and Templates](templates/intro.md) section.
 
-### ประเภทบันทึกย่อ
+### Note Types
 
-Anki ช่วยให้คุณสามารถสร้างบันทึกย่อประเภทต่างๆ สำหรับเนื้อหาที่แตกต่างกันได้
-แต่ละประเภทของบันทึกย่อมีชุดฟิลด์และประเภทการ์ดของตัวเอง
-เป็นความคิดที่ดีที่จะสร้างประเภทบันทึกย่อแยกต่างหากสำหรับแต่ละหัวข้อกว้างๆ
-ที่คุณกำลังศึกษา ในตัวอย่างภาษาฝรั่งเศสก่อนหน้านี้ เราอาจสร้าง
-ประเภทบันทึกย่อที่เรียกว่า "ภาษาฝรั่งเศส" สำหรับสิ่งนั้น หากเราต้องการเรียนรู้เมืองหลวง
-เราสามารถสร้างประเภทบันทึกย่อสำหรับสิ่งนั้นได้เช่นกัน โดยมีฟิลด์ต่างๆ เช่น
-"ประเทศ" และ "เมืองหลวง"
+Anki allows you to create different types of notes for different
+material. Each type of note has its own set of fields and card types.
+It's a good idea to create a separate note type for each broad topic
+you're studying. In the previous French example, we might create a note
+type called "French" for that. If we wanted to learn capital cities, we
+could create a note type for that as well, with fields such as
+"Country" and "Capital City".
 
-Anki มาพร้อมกับประเภทบันทึกย่อมาตรฐานบางอย่างรวมอยู่ด้วย
-ประเภทบันทึกย่อเหล่านี้มีไว้เพื่อให้ Anki ใช้งานง่ายขึ้นสำหรับ
-ผู้ใช้ใหม่ แต่ในระยะยาว ขอแนะนำให้คุณสร้าง
-ประเภทบันทึกย่อของคุณเองโดยเฉพาะสำหรับเนื้อหาที่คุณกำลังเรียนรู้ ประเภทบันทึกย่อมาตรฐานคือ:
+Anki comes with some standard
+note types included. These note types are provided to make Anki easier for
+new users, but in the long run it's recommended you create your own note
+types specifically for the content you are learning. The standard note types are:
 
--   **พื้นฐาน**
-    มีฟิลด์ "ด้านหน้า" และ "ด้านหลัง" และจะสร้างการ์ดหนึ่งใบ ข้อความที่คุณป้อนใน
-    "ด้านหน้า" จะปรากฏที่ด้านหน้าของการ์ด และข้อความที่คุณป้อนใน "ด้านหลัง"
-    จะปรากฏที่ด้านหลังของการ์ด
+- **Basic**\
+  Has "Front" and "Back" fields, and will create one card. Text you enter in
+  "Front" will appear on the front of the card, and text you enter in "Back"
+  will appear on the back of the card.
 
--   **พื้นฐาน (และการ์ดกลับด้าน)**
-    เหมือนกับ "พื้นฐาน" แต่สร้างการ์ดสองใบสำหรับข้อความที่คุณป้อน:
-    หน้า→หลัง และ หลัง→หน้า
+- **Basic (and reversed card)**\
+  Like "Basic", but creates two cards for the text you enter:
+  front→back and back→front.
 
--   **พื้นฐาน (การ์ดกลับด้านเสริม)**
-    เหมือนกับ "พื้นฐาน" แต่มีฟิลด์ที่สามชื่อว่า "เพิ่มการกลับด้าน" หากคุณป้อนข้อความใดๆ ลงใน
-    ฟิลด์นั้น การ์ดกลับด้าน (หลัง→หน้า) จะถูกสร้างขึ้นด้วย สำหรับรายละเอียด โปรดดูส่วน [การ์ดและเทมเพลต](templates/intro.md)
+- **Basic (optional reversed card)**\
+  Like "Basic", but has a third field called "Add Reverse". If you enter any text into
+  that field, a reversed card (back→front) will also be created. For details, see the [Cards and Templates](templates/intro.md) section.
 
--   **พื้นฐาน (พิมพ์คำตอบ)**
-    โดยพื้นฐานแล้วคือ "พื้นฐาน" พร้อมกล่องข้อเท็จจริงเพิ่มเติมที่ด้านหน้าซึ่งคุณ
-    สามารถพิมพ์คำตอบของคุณได้ เมื่อคุณเปิดเผยด้านหลัง Anki จะแสดงให้คุณเห็นความแตกต่างระหว่างอินพุตของคุณกับคำตอบจริง สำหรับรายละเอียด โปรดดู
-    ส่วน [การตรวจสอบคำตอบของคุณ](templates/fields.md#checking-your-answer)
+- **Basic (type in the answer)**\
+  This is essentially "Basic", with an extra text box on the front where you
+  can type your answer in. When you reveal the back, Anki will show you any differences between your input and the actual answer. For details, see the
+  [Checking Your Answer](templates/fields.md#checking-your-answer) section.
 
--   **เติมคำในช่องว่าง (Cloze)**
-    ประเภทบันทึกย่อที่ให้คุณสามารถเลือกข้อความและเปลี่ยนเป็น
-    การลบคำในช่องว่าง (เช่น "มนุษย์ลงจอดบนดวงจันทร์ใน [...]" → "มนุษย์ลงจอดบน
-    ดวงจันทร์ในปี 1969") สำหรับรายละเอียด โปรดดูส่วน [การลบคำในช่องว่าง](editing.md#cloze-deletion)
+- **Cloze**\
+  A note type that allows you to select text and turn it into a cloze
+  deletion (e.g. "Humans landed on the moon in \[…​\]" → "Humans landed on the
+  moon in 1969"). For details, see the [cloze deletion](editing.md#cloze-deletion) section.
 
--   **การบดบังรูปภาพ (Image Occlusion)**
-    เหมือนกับประเภทบันทึกย่อแบบเติมคำในช่องว่าง แต่ทำงานกับรูปภาพแทนข้อความ
-    ซึ่งมีประโยชน์อย่างยิ่งเมื่อศึกษาเนื้อหาที่ต้องอาศัยรูปภาพอย่างมาก
-    เช่น กายวิภาคศาสตร์และภูมิศาสตร์ สำหรับรายละเอียด โปรดดูส่วน [การบดบังรูปภาพ](editing.md#image-occlusion)
-    ของคู่มือ
+- **Image Occlusion**\
+  Like the cloze note type, but it works with images instead of text,
+  which is especially useful when studying material that heavily relies on images,
+  such as anatomy and geography. For details, please see the [Image Occlusion](editing.md#image-occlusion)
+  section of the manual.
 
-หากต้องการเพิ่มประเภทบันทึกย่อของคุณเองและแก้ไขประเภทที่มีอยู่ คุณสามารถใช้ **เครื่องมือ > จัดการประเภทบันทึกย่อ**
-จากหน้าต่างหลักของ Anki ได้
+To add your own note types and modify existing ones, you can use **Tools > Manage Note Types**
+from the main Anki window.
 
-บันทึกย่อและประเภทบันทึกย่อเป็นเรื่องปกติสำหรับคอลเล็กชันทั้งหมดของคุณแทนที่จะ
-จำกัดอยู่แค่สำรับเดียว ซึ่งหมายความว่าคุณสามารถใช้
-ประเภทบันทึกย่อที่แตกต่างกันในสำรับเดียว หรือมีการ์ดที่สร้างจาก
-บันทึกย่อเดียวกันใส่ในสำรับที่แตกต่างกันได้ เมื่อคุณเพิ่มบันทึกย่อโดยใช้
-หน้าต่างเพิ่ม คุณสามารถเลือกประเภทบันทึกย่อที่จะใช้และสำรับที่จะใช้ได้
-และตัวเลือกเหล่านี้เป็นอิสระจากกันโดยสิ้นเชิง คุณยังสามารถ
-[เปลี่ยนประเภทบันทึกย่อของบันทึกย่อ](browsing.md#notes) หลังจากที่คุณสร้างขึ้นแล้วได้อีกด้วย
+Notes and note types are common to your whole collection rather than
+limited to an individual deck. This means you can use different
+note types in a single deck, or have cards generated from the
+same note put into different decks. When you add notes using the
+Add window, you can select what note type to use and what deck to use,
+and these choices are completely independent of each other. You can also
+[change the note type of notes](browsing.md#notes) after you've already created them.
 
-### คอลเล็กชัน
+### Collection
 
-_คอลเล็กชัน_ ของคุณคือเนื้อหาทั้งหมดที่จัดเก็บไว้ใน Anki: การ์ดของคุณ
-บันทึกย่อ สำรับ ประเภทบันทึกย่อ ตัวเลือกสำรับ และอื่นๆ
+Your _collection_ is all the material stored in Anki: your cards,
+notes, decks, note types, deck options, and so on.
 
-## สำรับที่แชร์
+## Shared Decks
 
-คุณสามารถดูวิดีโอเกี่ยวกับ [สำรับที่แชร์และพื้นฐานการทบทวน](http://www.youtube.com/watch?v=QS2G-k2hQyg&yt:cc=on) บน YouTube ได้
+You can watch a video about [Shared Decks and Review Basics](http://www.youtube.com/watch?v=QS2G-k2hQyg&yt:cc=on) on YouTube.
 
-วิธีที่ง่ายที่สุดในการเริ่มต้นใช้งาน Anki คือการดาวน์โหลดสำรับการ์ด
-ที่คนอื่นแชร์ไว้:
+The easiest way to get started with Anki is to download a deck of cards
+someone else has shared:
 
-1.  คลิกปุ่ม **รับที่แชร์** ที่ด้านล่างของรายการสำรับ
+1. Click the **Get Shared** button at the bottom of the deck list.
 
-2.  เมื่อคุณพบสำรับที่คุณสนใจแล้ว ให้คลิกปุ่ม **ดาวน์โหลด**
-    เพื่อดาวน์โหลดแพ็กเกจสำรับ
+2. When you've found a deck you're interested in, click the **Download**
+   button to download a deck package.
 
-3.  ดับเบิลคลิกที่แพ็กเกจที่ดาวน์โหลดมาเพื่อนำเข้าสู่ Anki หรือไปที่
-    **ไฟล์ > นำเข้า**
+3. Double-click the downloaded package to import it into Anki, or go to
+   **File > Import**.
 
-หมายเหตุ: ขณะนี้ยังไม่สามารถเพิ่มสำรับที่แชร์
-โดยตรงไปยังบัญชี AnkiWeb ของคุณได้ คุณต้องนำเข้าสู่
-แอปเดสก์ท็อป, AnkiMobile หรือ AnkiDroid ก่อน จากนั้น [ซิงโครไนซ์](./syncing.md) เพื่ออัปโหลดสำรับไปยัง AnkiWeb
+Note: It’s not currently possible to add shared decks
+directly to your AnkiWeb account. You need to first import them to the
+desktop app, AnkiMobile, or AnkiDroid, then [synchronize](./syncing.md) to upload the decks to AnkiWeb.
 
-การสร้างสำรับของคุณเองเป็นวิธีที่มีประสิทธิภาพที่สุดในการเรียนรู้
-วิชาที่ซับซ้อน วิชาต่างๆ เช่น ภาษาและวิทยาศาสตร์ไม่สามารถเข้าใจได้
-เพียงแค่การท่องจำข้อเท็จจริง — คุณต้องมีคำอธิบายและบริบทเพื่อ
-เรียนรู้อย่างมีประสิทธิภาพ นอกจากนี้ การป้อนข้อมูลด้วยตนเอง
-ยังบังคับให้คุณต้องตัดสินใจว่าประเด็นสำคัญคืออะไร ซึ่งนำไปสู่
-ความเข้าใจที่ดีขึ้น
+Creating your own deck is the most effective way to learn a complex
+subject. Subjects like languages and the sciences can’t be understood
+simply by memorizing facts — you need explanation and context to
+learn them effectively. Furthermore, inputting the information yourself
+forces you to decide what the key points are, leading to a better
+understanding.
 
-หากคุณเป็นผู้เรียนภาษา คุณอาจอยากจะดาวน์โหลด
-รายการคำศัพท์และการแปลที่ยาวเหยียด แต่นี่จะไม่สอน
-ภาษาให้คุณมากไปกว่าการท่องจำสมการทางวิทยาศาสตร์ที่จะสอน
-ฟิสิกส์ดาราศาสตร์ให้คุณได้ หากต้องการเรียนรู้อย่างถูกต้อง คุณอาจต้องใช้ตำราเรียน ครู หรือ
-การสัมผัสกับประโยคในชีวิตจริง
+If you are a language learner, you may be tempted to download a long
+list of words and their translations, but this won’t teach you a
+language any more than memorizing scientific equations will teach you
+astrophysics. To learn properly, you might need textbooks, teachers, or
+exposure to real-world sentences.
 
-    อย่าเรียนถ้าคุณไม่เข้าใจ
+    Do not learn if you do not understand.
     --SuperMemo
 
-สำรับที่แชร์ส่วนใหญ่สร้างขึ้นโดยผู้ที่กำลังเรียนรู้เนื้อหา
-นอก Anki เช่น จากตำราเรียน ชั้นเรียน ทีวี ฯลฯ พวกเขาเลือก
-ประเด็นที่น่าสนใจจากสิ่งที่เรียนรู้และใส่ลงใน Anki พวกเขา
-อาจไม่ได้พยายามเพิ่มข้อมูลพื้นหลังหรือคำอธิบายลงใน
-การ์ด เพราะพวกเขาเข้าใจเนื้อหาอยู่แล้ว ดังนั้นเมื่อมีคนอื่น
-ดาวน์โหลดสำรับของพวกเขาและพยายามใช้ อาจพบว่ามัน
-ยากมากเนื่องจากขาดข้อมูลพื้นหลังและคำอธิบาย
+Most shared decks are created by people who are learning material
+outside Anki, such as from textbooks, classes, TV, etc. They select the
+interesting points from what they learn and put them into Anki. They
+might not make any effort to add background information or explanations to the
+cards, because they already understand the material. So when someone
+else downloads their deck and tries to use it, they might find it very
+difficult as the background information and explanations are missing.
 
-นั่นไม่ได้หมายความว่าสำรับที่แชร์ไม่มีประโยชน์ หากคุณกำลังเรียนตำราเรียน ABC และ
-มีคนแชร์สำรับความคิดจาก ABC นั่นเป็นวิธีที่ยอดเยี่ยมในการประหยัด
-เวลา และสำหรับวิชาง่ายๆ ที่โดยพื้นฐานแล้วเป็นรายการข้อเท็จจริง
-เช่น ชื่อเมืองหลวงหรือธงชาติ คุณอาจไม่ต้องการ
-เนื้อหาภายนอกใดๆ อย่างไรก็ตาม สำหรับวิชาที่ซับซ้อน สำรับที่แชร์ควรใช้เป็น _ส่วนเสริม_ ของเนื้อหาภายนอก ไม่ใช่ _สิ่งทดแทน_
+That is not to say shared decks are useless. If you’re studying textbook ABC and
+someone has shared a deck of ideas from ABC, that’s a great way to save
+some time. And for simple subjects that are basically a list of facts,
+such as capital city names or country flags, you probably don’t need any
+external material. However, for complex subjects, shared decks should be used as a _supplement_ to external material, not as a _replacement_ for it.

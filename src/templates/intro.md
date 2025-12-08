@@ -1,54 +1,54 @@
-# เทมเพลตการ์ด
+# Card Templates
 
-เทมเพลตการ์ดบอก Anki ว่าฟิลด์ใดควรปรากฏที่ด้านหน้าและด้านหลังของการ์ดของคุณ
-และควบคุมว่าจะสร้างการ์ดใดเมื่อฟิลด์บางฟิลด์มีข้อความอยู่
-โดยการปรับเทมเพลตการ์ดของคุณ คุณสามารถเปลี่ยนการออกแบบและสไตล์ของ
-การ์ดจำนวนมากของคุณได้ในคราวเดียว
+Card templates tell Anki which fields should appear on the front and back of your card,
+and control which cards will be generated when certain fields have text in them.
+By adjusting your card templates, you can alter the design and styling of many of your
+cards at once.
 
-เทมเพลตการ์ดครอบคลุมอยู่ในวิดีโอแนะนำบางส่วน:
+Card templates are covered in some of the intro videos:
 
-- [การสลับลำดับการ์ด](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)
+- [Switching Card Order](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)
 
-- [การจัดรูปแบบการ์ด](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)
+- [Styling Cards](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)
 
-- [การพิมพ์คำตอบ](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)
+- [Typing in the Answer](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)
 
-## หน้าจอเทมเพลต
+## The Templates Screen
 
-คุณสามารถแก้ไขเทมเพลตการ์ดได้โดยคลิกปุ่ม **การ์ด...** ภายใน
-หน้าจอแก้ไข
+You can modify card templates by clicking the **Cards...** button inside the
+editing screen.
 
 
-คุณสามารถสลับระหว่าง **เทมเพลตด้านหน้า**, **เทมเพลตด้านหลัง** และ **การจัดรูปแบบ** ด้วย <kbd>Ctrl</kbd>+<kbd>1</kbd>, <kbd>Ctrl</kbd>+<kbd>2</kbd> และ <kbd>Ctrl</kbd>+<kbd>3</kbd>
+You can switch between **Front template**, **Back template** and **Styling** with <kbd>Ctrl</kbd>+<kbd>1</kbd>, <kbd>Ctrl</kbd>+<kbd>2</kbd>, and <kbd>Ctrl</kbd>+<kbd>3</kbd>.
 
-ใน Anki เทมเพลตจะเขียนด้วย HTML ซึ่งเป็นภาษาที่ใช้เขียน
-หน้าเว็บ ส่วนการจัดรูปแบบคือ CSS ซึ่งเป็นภาษาที่
-ใช้สำหรับจัดรูปแบบหน้าเว็บ
+In Anki, templates are written in HTML, which is the language that web
+pages are written in. The styling section is CSS, which is the language
+used for styling web pages.
 
-ทางด้านขวาคือการแสดงตัวอย่างด้านหน้าและด้านหลังของ
-การ์ดที่เลือกในปัจจุบัน หากคุณเปิดหน้าต่างขณะเพิ่มโน้ต การแสดงตัวอย่าง
-จะขึ้นอยู่กับข้อความที่คุณพิมพ์ในหน้าต่างเพิ่มโน้ต หาก
-คุณเปิดหน้าต่างขณะแก้ไขโน้ต การแสดงตัวอย่างจะขึ้นอยู่กับ
-เนื้อหาของโน้ตนั้น หากคุณเปิดหน้าต่างจาก เครื่องมือ → จัดการ
-ประเภทโน้ต Anki จะแสดงชื่อของแต่ละฟิลด์ในวงเล็บแทน
-เนื้อหา
+On the right is a preview of the front and back of the currently
+selected card. If you opened the window while adding notes, the preview
+will be based on the text you had typed into the Add Notes window. If
+you opened the window while editing a note, the preview will be based on
+the content of that note. If you opened the window from Tools → Manage
+Note Types, Anki will display each field’s name in parentheses in place
+of content.
 
-ที่ด้านบนขวาของหน้าต่างคือปุ่มตัวเลือกที่ให้
-ตัวเลือกในการเปลี่ยนชื่อหรือจัดลำดับการ์ดใหม่ รวมถึงสอง
-ตัวเลือกต่อไปนี้:
+At the top right of the window is an Options button that gives you
+options to rename or reorder the cards, as well as the following two
+options:
 
-- ตัวเลือก **แทนที่สำรับ** ช่วยให้คุณสามารถเปลี่ยนสำรับที่การ์ด
-  ที่สร้างจากประเภทการ์ดปัจจุบันจะถูกวางลงไป โดย
-  ค่าเริ่มต้น การ์ดจะถูกวางลงในสำรับที่คุณให้ไว้ในหน้าต่างเพิ่มโน้ต
-  หากคุณตั้งค่าสำรับที่นี่ ประเภทการ์ดนั้นจะถูกวางลงใน
-  สำรับที่คุณระบุ แทนที่จะเป็นสำรับที่ระบุไว้ในหน้าต่างเพิ่มโน้ต
-  ซึ่งอาจมีประโยชน์หากคุณต้องการแยกการ์ดออกเป็น
-  สำรับต่างๆ (ตัวอย่างเช่น เมื่อเรียนภาษา เพื่อใส่
-  การ์ดที่ต้องผลิตในสำรับหนึ่งและการ์ดที่ต้องจดจำในอีกสำรับหนึ่ง) คุณ
-  สามารถตรวจสอบว่าการ์ดกำลังจะไปที่สำรับใดโดยเลือก
-  แทนที่สำรับอีกครั้ง
+- The **Deck Override** option allows you to change the deck that cards
+  generated from the current card type will be placed into. By
+  default, cards are placed into the deck you provide in the Add Notes
+  window. If you set a deck here, that card type will be placed into
+  the deck you specified, instead of the deck listed in the Add Notes
+  window. This can be useful if you want to separate cards into
+  different decks (for instance, when studying a language, to put
+  production cards in one deck and recognition cards in another). You
+  can check which deck the cards are currently going to by choosing
+  Deck Override again.
 
-- ตัวเลือก **ลักษณะที่ปรากฏของเบราว์เซอร์** ช่วยให้คุณสามารถตั้งค่าเทมเพลตที่แตกต่างกัน (อาจ
-  ง่ายกว่า) สำหรับการแสดงผลในคอลัมน์คำถามและคำตอบ
-  ของเบราว์เซอร์ โปรดดู [ลักษณะที่ปรากฏของเบราว์เซอร์](styling.md#browser-appearance) สำหรับข้อมูล
-  เพิ่มเติม
+- The **Browser Appearance** option allows you to set different (perhaps
+  simplified) templates for display in the Question and Answer columns
+  of the browser; see [browser appearance](styling.md#browser-appearance) for more
+  information.

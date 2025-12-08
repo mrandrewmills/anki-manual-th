@@ -1,12 +1,11 @@
 # Windows
 
-## การติดตั้งและอัปเกรด Anki บน Windows
+## Installing & Upgrading Anki on Windows
 
-สำหรับคำแนะนำเกี่ยวกับวิธีการติดตั้งหรืออัปเกรด Anki บน Windows โปรดดู:
+For instructions on how to install or upgrade Anki on Windows, please see:
+- [Install & Upgrade](installing.md)
 
-- [ติดตั้งและอัปเกรด](installing.md)
+## Problems
 
-## ปัญหา
-
-หากคุณพบปัญหาใด ๆ ในระหว่างการติดตั้งหรือเริ่ม Anki โปรดดู
-หัวข้อย่อยในสารบัญ
+If you encounter any issues when installing or starting Anki, please see the
+subsections in the table of contents.

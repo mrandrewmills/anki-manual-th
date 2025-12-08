@@ -1,26 +1,26 @@
-# ส่วนเสริม
+# Add-ons
 
-ความสามารถของ Anki สามารถขยายได้ด้วยส่วนเสริม ส่วนเสริมสามารถให้
-คุณสมบัติต่างๆ เช่น การสนับสนุนเพิ่มเติมสำหรับภาษาเฉพาะ การควบคุมพิเศษ
-เกี่ยวกับการจัดตารางเวลา และอื่นๆ
+Anki's capabilities can be extended with add-ons. Add-ons can provide
+features like extra support for specific languages, extra control over
+scheduling, and so on.
 
-หากต้องการเรียกดูรายการส่วนเสริมที่มีอยู่ ให้เลือก **เครื่องมือ > ส่วนเสริม** จากนั้นคลิกที่ **รับส่วนเสริม**
-หรือเปิด [ankiweb.net/shared/addons](https://ankiweb.net/shared/addons) ในเว็บเบราว์เซอร์
+To browse the list of available add-ons, select **Tools > Add-ons**, then click on **Get Add-ons**.
+Alternatively, open [ankiweb.net/shared/addons](https://ankiweb.net/shared/addons) in a web browser.
 
-หากคุณดาวน์โหลดส่วนเสริมที่ทำงานไม่ถูกต้อง หรือหากคุณ
-ทำผิดพลาดโดยไม่ตั้งใจขณะแก้ไขส่วนเสริม คุณสามารถใช้
-ตัวเลือก **ลบ** ในเมนูเพื่อลบออกได้
+If you have downloaded an add-on that is not working properly, or if you
+accidentally made a mistake when editing an add-on, you can use the
+**Delete** option in the menu to remove it.
 
-ส่วนเสริมใช้และแก้ไขส่วนต่างๆ ของโค้ดเบสของ Anki ตามอำเภอใจ ดังนั้นในบางกรณี
-การอัปเดต Anki อาจทำลายความเข้ากันได้กับส่วนเสริมรุ่นเก่า หาก
-ส่วนเสริมตัวใดตัวหนึ่งของคุณหยุดทำงานหลังจากอัปเดต Anki โปรดพิจารณา
-รายงานปัญหาไปยังผู้เขียนส่วนเสริม หากคุณต้องพึ่งพาส่วนเสริมนี้
-คุณจะต้องใช้ Anki เวอร์ชันเก่าต่อไปจนกว่าส่วนเสริมจะได้รับ
-การอัปเดต
+Add-ons use and modify arbitrary parts of Anki’s codebase, so in some
+cases, updating Anki can break the compatibility with older add-ons. If
+one of your add-ons stops working after updating Anki, please consider
+reporting the issue to the add-on author. If you rely on this add-on,
+you will need to keep using an older Anki version until the add-on gets
+an update.
 
-มีปุ่ม **ติดต่อผู้เขียน** ในหน้าส่วนเสริมส่วนใหญ่บน AnkiWeb
-และผู้เขียนหลายคนใส่ที่อยู่อีเมลของตนไว้ในส่วนเสริม ดังนั้นหากคุณ
-ต้องการติดต่อกับผู้เขียน การแก้ไขส่วนเสริมและดูที่
-ด้านบนของไฟล์อาจช่วยได้
+There is a **Contact Author** button on most add-ons pages on AnkiWeb,
+and many authors include their email address in the add-on, so if you
+need to get in touch with the author, editing the add-on and looking at
+the top of the file may help.
 
-หากต้องการเรียนรู้วิธีเขียนส่วนเสริมของคุณเอง โปรดดูที่ [คู่มือการเขียนส่วนเสริม](https://addon-docs.ankiweb.net)
+To learn how to write your own add-ons, please see the [add-on writing guide](https://addon-docs.ankiweb.net).

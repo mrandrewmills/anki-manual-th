@@ -1,3 +1,3 @@
-# คำถามที่พบบ่อย
+# Frequently Asked Questions
 
-โปรดดูที่ <https://faqs.ankiweb.net>
+Please see <https://faqs.ankiweb.net>

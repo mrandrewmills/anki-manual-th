@@ -1,67 +1,83 @@
-# การสำรองข้อมูล
+# Backups
 
 <!-- toc -->
 
-## การสำรองข้อมูลอัตโนมัติ
+## Automatic backups
 
-Anki จะสร้างการสำรองข้อมูลการ์ดของคุณโดยอัตโนมัติ ซึ่งรวมถึงข้อความในบัตรและข้อมูลการจัดตารางเวลา แต่ไม่รวมไฟล์เสียงหรือภาพ
+Anki will create automatic backups of your card data. These include the text
+on your cards and your scheduling information, but do not include sounds or
+image files.
 
-การสำรองข้อมูลอัตโนมัติสามารถใช้ในการกู้คืนจากความผิดพลาดได้ แต่คุณไม่ควรพึ่งพาเพียงอย่างเดียว เนื่องจากถูกเก็บไว้ในอุปกรณ์ของคุณ จึงไม่สามารถปกป้องข้อมูลได้หากอุปกรณ์เสียหรือถูกขโมย เราขอแนะนำให้คุณใช้ร่วมกับ
-[การสำรองข้อมูลด้วยตนเอง](#การสำรองข้อมูล-colpkg-ด้วยตนเอง)
+Automatic backups can be useful to recover from mistakes, but you should not
+rely solely on them. Because they are stored on your local device, they will not
+protect you if your device breaks or is stolen. We recommend you combine them with
+[manual backups](#manual-colpkg-backups).
 
-### การกู้คืน
+### Restoring
 
-ในการกู้คืนจากการสำรองข้อมูลอัตโนมัติ:
+To restore from an automatic backup:
 
-- เปิด Anki แล้วเลือก สลับโปรไฟล์ (Switch Profile) จากเมนู ไฟล์ (File)
-- คลิกปุ่ม "เปิดการสำรองข้อมูล" (Open Backup)
-- เลือกไฟล์สำรองที่คุณต้องการกู้คืน
+- Open Anki, and choose Switch Profile from the File menu.
+- Click on the "Open Backup" button.
+- Select the backup you wish to restore from.
 
 ```admonish warning
-เมื่อกู้คืนจากการสำรองข้อมูล การเปลี่ยนแปลงใด ๆ หลังจากที่ไฟล์สำรองถูกสร้างขึ้นจะสูญหาย
+When restoring from a backup, any changes made since the backup was created will be lost.
 ```
 
-Anki จะปิดการซิงค์และการสำรองข้อมูลอัตโนมัติเมื่อคุณกู้คืนจากไฟล์สำรอง หลังจากที่คุณแน่ใจว่าได้กู้คืนไฟล์ที่ถูกต้องแล้ว ให้ปิดและเปิด Anki ใหม่อีกครั้งเพื่อกลับสู่สถานะปกติ
+Anki disables automatic syncing and backups when you restore from a backup. Once you're
+happy that you've restored the correct backup, close and re-open Anki to return to normal.
 
-### การสร้าง
+### Creating
 
-Anki จะสร้างไฟล์สำรองตามช่วงเวลา คุณสามารถกำหนดช่วงเวลาได้ที่หน้าจอ
-[การตั้งค่า](preferences.md) โดยค่าเริ่มต้นคือทุก 30 นาที
+Backups are created periodically. You can configure the time between backups
+in the [preferences](preferences.md) screen. The default is 30 minutes.
 
-การกระทำบางอย่างจะทำให้เกิดการสำรองข้อมูลทันที แม้ว่าจะยังไม่ถึงช่วงเวลาที่กำหนดไว้:
+Certain operations will trigger a backup, even if the configured time has not
+elapsed yet:
 
-- การซิงค์แบบดาวน์โหลดทางเดียว
-- การนำเข้าไฟล์ .colpkg โดยใช้ ไฟล์ > นำเข้า (File > Import)
-- เครื่องมือ > ตรวจสอบฐานข้อมูล (Tools > Check Database)
+- A one-way sync download
+- Importing a .colpkg file using File>Import
+- Tools>Check Database
 
-หลังจากที่ไฟล์สำรองมีอายุ 2 วัน Anki จะเริ่มลบไฟล์สำรองเก่าบางรายการ คุณสามารถควบคุมจำนวนไฟล์สำรองรายวัน รายสัปดาห์ และรายเดือนที่คุณต้องการเก็บไว้ได้
+After backups are two days old, Anki will start removing some of the older ones.
+You can control how many daily, weekly and monthly backups you'd like to keep.
 
-ไฟล์สำรองที่สร้างด้วย Anki เวอร์ชัน 2.1.50 จะไม่สามารถนำเข้าในเวอร์ชันเก่าได้
+Backups created with 2.1.50 will not be importable into older Anki versions.
 
-## การสำรองข้อมูล colpkg ด้วยตนเอง
+## Manual colpkg backups
 
-### การกู้คืน
+### Restoring
 
-คุณสามารถกู้คืนจากไฟล์สำรองด้วยตนเองโดยใช้ ไฟล์ > นำเข้า (File > Import)
+You can restore from a manual backup by using File>Import.
 
-### การสร้าง
+### Creating
 
-ใน Anki เวอร์ชัน 2.1.50 ขึ้นไป คุณสามารถใช้คำสั่ง ไฟล์ > สร้างการสำรองข้อมูล (File > Create Backup) เพื่อเรียกการสำรองข้อมูลทันที วิธีนี้ทำงานเหมือนกับการสำรองข้อมูลอัตโนมัติ และไม่รวมไฟล์มีเดีย
+In Anki 2.1.50+, you can use File>Create Backup to trigger an immediate backup. This
+functions like regular automatic backups, and does not include media files.
 
-หากคุณต้องการสร้างการสำรองข้อมูลที่รวมไฟล์เสียงและรูปภาพ:
+To create a backup that includes your sounds and images:
 
-- เลือก ส่งออก (Export) จากเมนู ไฟล์
-- ตรวจสอบให้แน่ใจว่าเลือก "Anki collection package (.colpkg)"
-- เปิดใช้งานตัวเลือก "รวมมีเดีย" (include media)
+- Select Export from the File menu.
+- Ensure "Anki collection package (.colpkg)" is selected.
+- Enable the "include media" option.
 
-ระบบจะสร้างไฟล์ .colpkg ที่รวมการ์ดทั้งหมดและไฟล์เสียง/ภาพที่ใช้ เราแนะนำให้คุณเก็บไฟล์นี้ไว้ในที่ปลอดภัย เช่น อุปกรณ์อื่น หรือบริการจัดเก็บข้อมูลบนคลาวด์ เช่น Dropbox หรือ Google Drive
+This will create a .colpkg file that contains all of your cards and any sounds/images they
+use. We recommend you store the file somewhere safe, like a different device, or a cloud-based
+file storage service like Dropbox or Google Drive.
 
 ## AnkiWeb
 
-[การซิงค์](./syncing.md) ข้อมูลของคุณกับ AnkiWeb จะช่วยป้องกันข้อมูลสูญหายเมื่ออุปกรณ์ถูกขโมยหรือเสีย หากคุณต้องการกู้คืนข้อมูลจาก AnkiWeb
-คุณสามารถใช้การซิงค์ทางเดียวในหน้าการตั้งค่า หรือซิงค์จากอุปกรณ์ใหม่ แล้วเลือก "ดาวน์โหลด" (Download)
+[Synchronising](./syncing.md) your collection with AnkiWeb provides some level of protection
+against your device being lost or stolen. If you need to restore your collection from AnkiWeb,
+you can force a one-way sync in the preferences screen, or sync from a new device, and then choose
+"Download".
 
-## บันทึกการลบ
+## Deletion log
 
-Anki จะบันทึกบัตรที่ถูกลบไว้ในไฟล์ชื่อ deleted.txt ภายในโฟลเดอร์โปรไฟล์ของคุณ ข้อมูลนี้อยู่ในรูปแบบข้อความที่สามารถอ่านได้โดยใช้
-ไฟล์ > นำเข้า (File > Import) แต่โปรดทราบว่าการนำเข้ารองรับเพียงประเภทบัตรเดียวเท่านั้น ดังนั้นหากคุณลบบัตรจากหลายประเภท คุณจะต้องแยกไฟล์ออกเป็นหลายไฟล์ตามประเภทก่อน
+Anki logs deleted notes to a text file called deleted.txt in your
+profile folder. These notes are in a text format that can be read by
+File&gt;Import, though please note the import feature only supports a
+single note type at one time, so if you have deleted notes from
+different note types, you'll need to split the file into separate files
+for each note type first.
