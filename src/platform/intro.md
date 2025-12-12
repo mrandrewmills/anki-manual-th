@@ -1,9 +1,9 @@
-# Platform Notes
+# প্ল্যাটফর্ম নোটস
 
-This section explains the way Anki is installed, and the possible problems you may encounter, depending on your OS:
+এই বিভাগে Anki কীভাবে ইনস্টল করা হয় এবং আপনার OS এর উপর নির্ভর করে আপনি যে সম্ভাব্য সমস্যার সম্মুখীন হতে পারেন তা ব্যাখ্যা করা হয়েছে:
 
 - [Windows](./windows/intro.md)
 - [macOS](./mac/intro.md)
 - [Linux](./linux/intro.md)
 
-If you have already installed Anki, you can skip to the [Getting Started](../getting-started.md) section.
+আপনি যদি ইতিমধ্যেই Anki ইনস্টল করে থাকেন, তাহলে আপনি [Getting Started](../getting-started.md) বিভাগে যেতে পারেন।
