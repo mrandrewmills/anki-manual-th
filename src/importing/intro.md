@@ -1,5 +1,5 @@
-# Importing
+# আমদানি
 
-Anki can import text files, packaged Anki decks created by the export
-feature, Mnemosyne 2.0 .db files, and SuperMemo .xml files. To import a
-file, click the File menu and then "Import".
+আনকি টেক্সট ফাইল, এক্সপোর্ট
+ফিচার দ্বারা তৈরি প্যাকেজড আনকি ডেক, Mnemosyne 2.0 .db ফাইল এবং SuperMemo .xml ফাইল আমদানি করতে পারে। একটি
+ফাইল আমদানি করতে, ফাইল মেনুতে ক্লিক করুন এবং তারপর "আমদানি করুন" এ ক্লিক করুন।

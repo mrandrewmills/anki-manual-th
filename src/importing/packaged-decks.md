@@ -1,53 +1,53 @@
-# Packaged Decks
+# প্যাকেজড ডেক
 
 <!-- toc -->
 
-Anki packages (.apkg files) enable you to import decks, notes, note types, and cards from
-other users. They are commonly shared on [AnkiWeb](https://ankiweb.net/shared/decks).
+আনকি প্যাকেজ (.apkg ফাইল) আপনাকে অন্যান্য ব্যবহারকারীদের কাছ থেকে ডেক, নোট, নোটের ধরণ এবং কার্ড আমদানি করতে সক্ষম করে। এগুলি সাধারণত [আনকিওয়েব] (https://ankiweb.net/shared/decks) এ শেয়ার করা হয়।
 
-## Scheduling
+## সময়সূচী
 
-Anki packages may also contain scheduling information, which is useful if you want to
-transfer decks between devices or profiles. However, when importing
-a deck shared by someone else, you typically do not want to adopt their card intervals
-or review history.
+আনকি প্যাকেজগুলিতে সময়সূচী সম্পর্কিত তথ্যও থাকতে পারে, যা আপনি যদি
+ডিভাইস বা প্রোফাইলের মধ্যে ডেক স্থানান্তর করতে চান তবে কার্যকর। তবে,
+অন্য কারো দ্বারা ভাগ করা ডেক আমদানি করার সময়, আপনি সাধারণত তাদের কার্ডের ব্যবধান গ্রহণ করতে চান না
+অথবা পর্যালোচনা ইতিহাস গ্রহণ করতে চান না।
 
-If you encounter imported cards with unexpectedly large intervals, the deck author may
-accidentally have included their scheduling information. You can use the
-[Set Due Date feature](../browsing.md#cards) to reset the imported cards. On Anki
-23.10 and later, you can remove any scheduling information during the import process
-by leaving the "Import any learning progress" option unselected. This will also remove
-any "leech" or "marked" tags from the imported cards.
+যদি আপনি অপ্রত্যাশিতভাবে বড় ব্যবধান সহ আমদানি করা কার্ডগুলির মুখোমুখি হন, তাহলে ডেক লেখক
+দুর্ঘটনাক্রমে তাদের সময়সূচী সম্পর্কিত তথ্য অন্তর্ভুক্ত করে থাকতে পারেন। আপনি আমদানি করা কার্ডগুলি পুনরায় সেট করতে
+[সেট ডিউ ডেট বৈশিষ্ট্য](../browsing.md#cards) ব্যবহার করতে পারেন। আনকি
+২৩.১০ এবং পরবর্তী সংস্করণে, আপনি আমদানি প্রক্রিয়া চলাকালীন যেকোনো সময়সূচী সম্পর্কিত তথ্য অপসারণ করতে পারেন
+"যেকোন শেখার অগ্রগতি আমদানি করুন" বিকল্পটি অনির্বাচিত রেখে। এটি আমদানি করা কার্ডগুলি থেকে যেকোনো "জোঁক" বা "চিহ্নিত" ট্যাগও সরিয়ে ফেলবে।
 
-## Updating
+## আপডেট করা হচ্ছে
 
-When you import an .apkg file, Anki will identify any notes in it that are
-already in your collection due to a previous import. If the notes in the file
-are newer than your local copy, the notes will be updated with the contents of
-the file by default.
+যখন আপনি একটি .apkg ফাইল আমদানি করবেন, তখন Anki এর মধ্যে থাকা যেকোনো নোট সনাক্ত করবে যা
+পূর্ববর্তী আমদানির কারণে ইতিমধ্যেই আপনার সংগ্রহে রয়েছে। যদি ফাইলের নোটগুলি
+আপনার স্থানীয় কপির চেয়ে নতুন হয়, তাহলে নোটগুলি
+ফাইলের বিষয়বস্তু সহ
+ডিফল্টরূপে আপডেট করা হবে।
 
-This updating process is generally not possible if the note type is changed (e.g. if either
-you or the deck author do things like add an extra field to the note type).
-You will still be able to import any missing notes from the file, but
-notes you have imported previously will not be updated if the deck author
-has made changes.
+নোটের ধরণ পরিবর্তন করা হলে (যেমন, যদি আপনি বা ডেক লেখক নোটের ধরণে একটি অতিরিক্ত ক্ষেত্র যোগ করার মতো কাজ করেন) এই আপডেট প্রক্রিয়াটি সাধারণত সম্ভব হয় না।
 
-### Anki 23.10 and Later
+আপনি এখনও ফাইল থেকে যেকোনো অনুপস্থিত নোট আমদানি করতে সক্ষম হবেন, তবে
+ডেক লেখক
+পরিবর্তন করলে আপনার পূর্বে আমদানি করা নোটগুলি আপডেট করা হবে না।
 
-Anki 23.10 introduced more flexibility: You can choose to unconditionally
-update notes and note types, always overwriting your modifications,
-or, on the other hand, never update existing objects.
+### Anki 23.10 এবং পরবর্তী
 
-Also, if both you and the deck author modified the same note type, you can now decide to
-_merge_ the two versions. This will preserve all templates and fields contained in
-either one, but will require a full sync, and may mark other existing notes as modified.
+Anki 23.10 আরও নমনীয়তা চালু করেছে: আপনি নিঃশর্তভাবে
+নোট এবং নোটের ধরণ আপডেট করতে পারেন, সর্বদা আপনার পরিবর্তনগুলি ওভাররাইট করতে পারেন,
+অথবা, অন্যদিকে, বিদ্যমান বস্তুগুলি কখনই আপডেট করবেন না।
 
-#### Note to Deck Authors
+এছাড়াও, যদি আপনি এবং ডেক লেখক উভয়েই একই নোট টাইপ পরিবর্তন করে থাকেন, তাহলে এখন আপনি দুটি সংস্করণকে _মার্জ_ করার সিদ্ধান্ত নিতে পারেন। এটি
+যে কোনও একটিতে থাকা সমস্ত টেমপ্লেট এবং ক্ষেত্র সংরক্ষণ করবে, তবে একটি সম্পূর্ণ সিঙ্কের প্রয়োজন হবে এবং অন্যান্য বিদ্যমান নোটগুলিকে পরিবর্তিত হিসাবে চিহ্নিত করতে পারে।
 
-Merging relies on template and field ids, which were introduced in Anki 2.1.67.
-If a template or field lacks an id, because it has been created with an earlier
-release, Anki attempts to find an equivalent by comparing names.
+#### ডেক লেখকদের জন্য নোট
 
-See this [this add-on](https://ankiweb.net/shared/info/2063785767) for why it is
-advantageous to share note types with field and template ids, and how to add them to
-existing ones.
+মার্জিং টেমপ্লেট এবং ফিল্ড আইডির উপর নির্ভর করে, যা Anki 2.1.67 এ চালু করা হয়েছিল।
+
+যদি কোনও টেমপ্লেট বা ফিল্ডে কোনও আইডি না থাকে, কারণ এটি পূর্ববর্তী
+রিলিজের সাথে তৈরি করা হয়েছে, তাহলে Anki নাম তুলনা করে একটি সমতুল্য খুঁজে বের করার চেষ্টা করে।
+
+ফিল্ড এবং টেমপ্লেট আইডির সাথে নোট টাইপ শেয়ার করা কেন
+সুবিধাজনক এবং কীভাবে সেগুলিকে
+বিদ্যমান
+আইডিগুলিতে যুক্ত করবেন তা জানতে এই [এই অ্যাড-অন] (https://ankiweb.net/shared/info/2063785767) দেখুন।
