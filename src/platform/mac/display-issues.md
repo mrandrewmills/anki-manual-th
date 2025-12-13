@@ -1,32 +1,29 @@
-# Display Issues on macOS
+# macOS-এ ডিসপ্লে সংক্রান্ত সমস্যা
 
 <!-- toc -->
 
-## Change the Video Driver
+## ভিডিও ড্রাইভার পরিবর্তন করুন
 
-### Changing the Driver From the Preferences Screen
-If you're experiencing display issues or crashes in Anki 23.10+, you can try
-changing the video driver in the preferences screen by navigating to **Anki →
-Preferences** and then selecting the driver from the dropdown menu. After that it
-is necessary to restart Anki.
+### প্রেফারেন্স স্ক্রিন থেকে ড্রাইভার পরিবর্তন করা
 
-### Changing the Driver From Terminal.app
-Older Anki versions did not provide an option in the preferences, but allowed
-you to adjust the driver by opening Terminal.app, then pasting the following and hit <kbd>Enter</kbd>:
+আপনি যদি Anki 23.10+ সংস্করণে ডিসপ্লে সংক্রান্ত সমস্যা বা ক্র্যাশের সম্মুখীন হন, তাহলে আপনি **Anki → Preferences**-এ গিয়ে প্রেফারেন্স স্ক্রিনে ভিডিও ড্রাইভার পরিবর্তন করার চেষ্টা করতে পারেন এবং তারপর ড্রপডাউন মেনু থেকে ড্রাইভারটি নির্বাচন করতে পারেন। এরপর Anki রিস্টার্ট করা আবশ্যক।
+
+### Terminal.app থেকে ড্রাইভার পরিবর্তন করা
+
+Anki-র পুরোনো সংস্করণগুলিতে প্রেফারেন্সে এই বিকল্পটি ছিল না, তবে আপনি Terminal.app খুলে নিম্নলিখিত কমান্ডটি পেস্ট করে এবং <kbd>Enter</kbd> চাপার মাধ্যমে ড্রাইভারটি পরিবর্তন করতে পারতেন:
 
 ```
 echo software > ~/Library/Application\ Support/Anki2/gldriver6
 ```
 
-It will not print anything. You can then start Anki again.
+এটি কোনো আউটপুট দেখাবে না। এরপর আপনি আবার Anki চালু করতে পারেন।
 
-If you wish to switch back to the default, change `software` to `auto`, or
-remove that file.
+আপনি যদি ডিফল্ট সেটিংসে ফিরে যেতে চান, তাহলে `software`-কে `auto`-তে পরিবর্তন করুন, অথবা ফাইলটি মুছে ফেলুন।
 
-## eGPUs
+## eGPU
 
-If you experience blank screens when using an external graphics card on a Mac, you can <kbd>Ctrl</kbd>-click on the Anki app, click **Get Info**, and enable the **prefer eGPU** option.
+আপনি যদি ম্যাক-এ একটি এক্সটার্নাল গ্রাফিক্স কার্ড ব্যবহার করার সময় ফাঁকা স্ক্রিন দেখতে পান, তাহলে আপনি Anki অ্যাপের উপর <kbd>Ctrl</kbd>-ক্লিক করে, **Get Info**-তে ক্লিক করে এবং **prefer eGPU** অপশনটি চালু করতে পারেন।
 
-## Monitors with Different Resolutions
+## বিভিন্ন রেজোলিউশনের মনিটর
 
-Please see [this forum post](https://forums.ankiweb.net/t/mac-known-issues-wording-suggestion/7331).
+অনুগ্রহ করে [এই ফোরাম পোস্টটি](https://forums.ankiweb.net/t/mac-known-issues-wording-suggestion/7331) দেখুন।

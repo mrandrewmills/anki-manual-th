@@ -1,41 +1,36 @@
-# Installing & Upgrading Anki on macOS
+# macOS-এ Anki ইনস্টল এবং আপগ্রেড করা
 
 <!-- toc -->
 
-## Requirements
+## প্রয়োজনীয়তা
 
-macOS version requirements are listed on the download page.
+macOS সংস্করণের প্রয়োজনীয়তা ডাউনলোড পৃষ্ঠায় তালিকাভুক্ত করা আছে।
 
-If you're on an old machine, you can obtain the old version from the [releases page](https://github.com/ankitects/anki/releases). The Qt5 builds on 24.11 and earlier support macOS 10.14 and later. If your macOS
-is between 10.10 and 10.13, you'll need to use [Anki 2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35).
+আপনি যদি একটি পুরোনো মেশিন ব্যবহার করেন, তাহলে আপনি [রিলিজ পৃষ্ঠা](https://github.com/ankitects/anki/releases) থেকে পুরোনো সংস্করণটি পেতে পারেন। 24.11 এবং তার আগের সংস্করণগুলির Qt5 বিল্ডগুলি macOS 10.14 এবং পরবর্তী সংস্করণগুলিকে সমর্থন করে। যদি আপনার macOS 10.10 থেকে 10.13-এর মধ্যে হয়, তাহলে আপনাকে [Anki 2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35) ব্যবহার করতে হবে।
 
-## Installing
+## ইনস্টল করা
 
-1. Download Anki from <https://apps.ankiweb.net>.
-2. Save the file to your desktop or downloads folder.
-3. Open it, and drag Anki to your Applications folder or desktop.
-4. Double-click on Anki in the location you placed it.
+1. <https://apps.ankiweb.net> থেকে Anki ডাউনলোড করুন।
+2. ফাইলটি আপনার ডেস্কটপ বা ডাউনলোডস ফোল্ডারে সেভ করুন।
+3. এটি খুলুন এবং Anki-কে আপনার Applications ফোল্ডার বা ডেস্কটপে টেনে আনুন।
+4. আপনি যেখানে Anki রেখেছেন, সেখানে সেটির উপর ডাবল-ক্লিক করুন।
 
-## Upgrading
+## আপগ্রেড করা
 
-To upgrade, close Anki if it is open, and then follow the steps above. Drag
-the Anki icon into the same location you previously stored it, and when prompted,
-overwrite the old version. Your card data will be preserved.
+আপগ্রেড করার জন্য, Anki খোলা থাকলে সেটি বন্ধ করুন এবং তারপর উপরের ধাপগুলো অনুসরণ করুন। Anki আইকনটি আপনি পূর্বে যেখানে রেখেছিলেন, সেই একই স্থানে টেনে আনুন এবং যখন জিজ্ঞাসা করা হবে, তখন পুরোনো সংস্করণটি ওভাররাইট করুন। আপনার কার্ডের ডেটা সংরক্ষিত থাকবে।
 
 ## Homebrew
 
-[Homebrew](https://brew.sh/) users can install Anki using
-`brew install --cask anki` in their preferred Terminal application.
+[Homebrew](https://brew.sh/) ব্যবহারকারীরা তাদের পছন্দের টার্মিনাল অ্যাপ্লিকেশনে `brew install --cask anki` কমান্ড ব্যবহার করে Anki ইনস্টল করতে পারেন।
 
-Upgrading can be done using `brew upgrade`, and for uninstalling: `brew uninstall --cask anki`
+`brew upgrade` ব্যবহার করে আপগ্রেড করা যেতে পারে এবং আনইনস্টল করার জন্য: `brew uninstall --cask anki`
 
-## Add-on Compatibility
+## অ্যাড-অন সামঞ্জস্যতা
 
-Some add-ons may not always work with the latest Anki release. If you upgrade to
-the latest Anki version and find an add-on you cannot live without stops working,
-you can download older Anki versions from the [releases page](https://github.com/ankitects/anki/releases).
+কিছু অ্যাড-অন সব সময় Anki-এর সর্বশেষ সংস্করণের সাথে কাজ নাও করতে পারে। আপনি যদি Anki-এর সর্বশেষ সংস্করণে আপগ্রেড করার পর দেখেন যে আপনার অপরিহার্য কোনো অ্যাড-অন কাজ করা বন্ধ করে দিয়েছে, তাহলে আপনি [রিলিজ পৃষ্ঠা](https://github.com/ankitects/anki/releases) থেকে Anki-এর পুরোনো সংস্করণ ডাউনলোড করতে পারেন।
 
-## Problems
+## সমস্যা
 
-If you encounter any issues when installing or starting Anki, please see:
-- [Display Issues](display-issues.md)
+Anki ইনস্টল বা চালু করার সময় আপনি যদি কোনো সমস্যার সম্মুখীন হন, তাহলে অনুগ্রহ করে দেখুন:
+
+- [ডিসপ্লে সংক্রান্ত সমস্যা](display-issues.md)
