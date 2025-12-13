@@ -1,35 +1,30 @@
-# Installing & Upgrading Anki on Linux
+# লিনাক্সে অ্যাঙ্কি ইনস্টল এবং আপগ্রেড করা
 
 <!-- toc -->
 
-## Requirements
+## প্রয়োজনীয়তা
 
-The packaged version requires a recent 64 bit Intel/AMD Linux with glibc 2.36+, and common
-libraries like libwayland-client and systemd. If you are on a different
-architecture (e.g ARM/AArch64), or a barebones Linux distro, you will not be able to use the
-packaged version, but you may be able to use the [Python wheels](https://betas.ankiweb.net/#via-pypipip)
-instead.
+প্যাকেজ করা সংস্করণটির জন্য একটি সাম্প্রতিক ৬৪-বিট ইন্টেল/এএমডি লিনাক্স প্রয়োজন, যেখানে glibc 2.36+ এবং libwayland-client ও systemd-এর মতো সাধারণ লাইব্রেরিগুলো ইনস্টল থাকতে হবে। আপনি যদি ভিন্ন আর্কিটেকচারে (যেমন ARM/AArch64) বা একটি বেয়ারবোনস লিনাক্স ডিস্ট্রো ব্যবহার করেন, তাহলে আপনি প্যাকেজ করা সংস্করণটি ব্যবহার করতে পারবেন না, তবে এর পরিবর্তে আপনি [পাইথন হুইলস](https://betas.ankiweb.net/#via-pypipip) ব্যবহার করতে পারেন।
 
-Debian and derivatives, such as Ubuntu and [Chromebooks with Linux enabled](https://support.google.com/chromebook/answer/9145439?), please use the following before
-installing:
+ডেবিয়ান এবং এর ডেরিভেটিভস, যেমন উবুন্টু এবং [লিনাক্স সক্ষম করা ক্রোমবুক](https://support.google.com/chromebook/answer/9145439?)-এর জন্য, ইনস্টল করার আগে অনুগ্রহ করে নিম্নলিখিত কমান্ডটি ব্যবহার করুন:
 
 ```shell
 sudo apt install libxcb-xinerama0 libxcb-cursor0 libnss3
 ```
 
-If Anki fails to start after installing, you may be [missing other libraries](./missing-libraries.md).
+ইনস্টল করার পর যদি অ্যাঙ্কি চালু হতে ব্যর্থ হয়, তাহলে আপনার [অন্যান্য লাইব্রেরি অনুপস্থিত থাকতে পারে](./missing-libraries.md)।
 
-If you're on Ubuntu 24.04 and Anki won't start, please see [this thread](https://forums.ankiweb.net/t/issues-running-on-ubuntu-24-04/40974).
+আপনি যদি উবুন্টু ২৪.০৪ ব্যবহার করেন এবং অ্যাঙ্কি চালু না হয়, তাহলে অনুগ্রহ করে [এই থ্রেডটি](https://forums.ankiweb.net/t/issues-running-on-ubuntu-24-04/40974) দেখুন।
 
-Anki's build system only supports glibc, so musl-based distros are not currently supported.
+অ্যাঙ্কির বিল্ড সিস্টেম শুধুমাত্র glibc সমর্থন করে, তাই musl-ভিত্তিক ডিস্ট্রো বর্তমানে সমর্থিত নয়।
 
-## Installing
+## ইনস্টল করা
 
-To install Anki:
+অ্যাঙ্কি ইনস্টল করতে:
 
-1. Download Anki from <https://apps.ankiweb.net> to your Downloads folder.
-2. If zstd is not already installed on your system, you'll need to install it (e.g `sudo apt install zstd`).
-3. Open a terminal and run the following commands, replacing the filename as appropriate.
+১. <https://apps.ankiweb.net> থেকে অ্যাঙ্কি ডাউনলোড করে আপনার ডাউনলোডস ফোল্ডারে রাখুন।
+২. যদি আপনার সিস্টেমে zstd আগে থেকে ইনস্টল করা না থাকে, তাহলে আপনাকে এটি ইনস্টল করতে হবে (যেমন `sudo apt install zstd`)।
+৩. একটি টার্মিনাল খুলে নিম্নলিখিত কমান্ডগুলো চালান, এবং ফাইলের নামটি প্রয়োজন অনুযায়ী পরিবর্তন করুন।
 
 ```shell
 tar xaf Downloads/anki-2XXX-linux-qt6.tar.zst
@@ -37,68 +32,54 @@ cd anki-2XXX-linux-qt6
 sudo ./install.sh
 ```
 
-On some Linux systems, you may need to use `tar xaf --use-compress-program=unzstd`.
+কিছু লিনাক্স সিস্টেমে, আপনাকে `tar xaf --use-compress-program=unzstd` ব্যবহার করতে হতে পারে।
 
-4. You can then start Anki by typing `anki` and hitting <kbd>Enter</kbd>. If you encounter
-   any issues, please see the links on the left.
+৪. এরপর আপনি `anki` টাইপ করে <kbd>Enter</kbd> চাপার মাধ্যমে অ্যাঙ্কি চালু করতে পারবেন। আপনি যদি কোনো সমস্যার সম্মুখীন হন, অনুগ্রহ করে বাম দিকের লিঙ্কগুলো দেখুন।
 
-## Upgrading
+## আপগ্রেড করা
 
-If you were running Anki from a .deb/.rpm/etc in the past, please make
-sure to remove the system version before installing the package
-provided here.
+আপনি যদি অতীতে একটি .deb/.rpm/ইত্যাদি থেকে Anki চালাতেন, তাহলে এখানে দেওয়া প্যাকেজটি ইনস্টল করার আগে সিস্টেমের সংস্করণটি সরিয়ে ফেলেছেন কিনা তা নিশ্চিত করুন।
 
-If you're upgrading from a previous package, simply repeat the
-installation steps to upgrade to the latest version. Your user data
-will be preserved.
+আপনি যদি পূর্ববর্তী কোনো প্যাকেজ থেকে আপগ্রেড করেন, তাহলে সর্বশেষ সংস্করণে আপগ্রেড করার জন্য কেবল ইনস্টলেশনের ধাপগুলো পুনরাবৃত্তি করুন। আপনার ব্যবহারকারীর ডেটা সংরক্ষিত থাকবে।
 
-If you wish to downgrade to a previous version, please make sure you
-[downgrade first](http://changes.ankiweb.net).
+আপনি যদি পূর্ববর্তী কোনো সংস্করণে ফিরে যেতে চান, তাহলে অনুগ্রহ করে নিশ্চিত করুন যে আপনি [প্রথমে ডাউনগ্রেড করেছেন](http://changes.ankiweb.net)।
 
-## Add-on Compatibility
+## অ্যাড-অন সামঞ্জস্যতা
 
-Some add-ons may not always work with the latest Anki release. If you upgrade to
-the latest Anki version and find an add-on you cannot live without stops working,
-you can download older Anki versions from the [releases page](https://github.com/ankitects/anki/releases).
+কিছু অ্যাড-অন সব সময় Anki-এর সর্বশেষ সংস্করণের সাথে কাজ নাও করতে পারে। আপনি যদি Anki-এর সর্বশেষ সংস্করণে আপগ্রেড করেন এবং দেখেন যে আপনার অপরিহার্য কোনো অ্যাড-অন কাজ করা বন্ধ করে দিয়েছে, তাহলে আপনি [রিলিজ পৃষ্ঠা](https://github.com/ankitects/anki/releases) থেকে Anki-এর পুরোনো সংস্করণ ডাউনলোড করতে পারেন।
 
-## System Qt versions
+## সিস্টেমের Qt সংস্করণ
 
-Anki's launcher uses the official PyQt builds by default. This makes it easier to
-install Anki on distros that don't have the relevant Python/Qt versions, but means that
-you may not have access certain Qt features provided by your Linux distro, such as certain
-Qt themes, support for the FCITX input method, etc.
+Anki-এর লঞ্চার ডিফল্টরূপে অফিসিয়াল PyQt বিল্ড ব্যবহার করে। এটি এমন ডিস্ট্রোতে Anki ইনস্টল করা সহজ করে তোলে যেখানে প্রাসঙ্গিক Python/Qt সংস্করণ নেই, কিন্তু এর মানে হলো আপনি আপনার লিনাক্স ডিস্ট্রো দ্বারা প্রদত্ত নির্দিষ্ট কিছু Qt ফিচার, যেমন নির্দিষ্ট Qt থিম, FCITX ইনপুট পদ্ধতির জন্য সমর্থন ইত্যাদি ব্যবহার করতে পারবেন না।
 
-If your Linux distro provides up-to-date Anki packages, you may find using them easiest.
+যদি আপনার লিনাক্স ডিস্ট্রো আপ-টু-ডেট Anki প্যাকেজ সরবরাহ করে, তবে সেগুলো ব্যবহার করা আপনার জন্য সবচেয়ে সহজ হতে পারে।
 
-If it doesn't, advanced users may wish to combine Anki's launcher with their system's Qt version.
-To do this, your system needs to have a Python version Anki supports (soon to be 3.11+),
-and suitable PyQt libraries (6.2+).
+যদি তা না করে, তবে উন্নত ব্যবহারকারীরা Anki-এর লঞ্চারকে তাদের সিস্টেমের Qt সংস্করণের সাথে একত্রিত করতে চাইতে পারেন। এটি করার জন্য, আপনার সিস্টেমে Anki দ্বারা সমর্থিত একটি Python সংস্করণ (শীঘ্রই 3.11+) এবং উপযুক্ত PyQt লাইব্রেরি (6.2+) থাকতে হবে।
 
-WARNING: This is an experimental feature, and your system's Qt may fix some bugs while
-introducing others.
+সতর্কতা: এটি একটি পরীক্ষামূলক বৈশিষ্ট্য, এবং আপনার সিস্টেমের Qt কিছু বাগ ঠিক করলেও অন্য কিছু বাগ তৈরি করতে পারে।
 
-1. Install Python and the relevant PyQt packages. On Ubuntu:
+১. Python এবং প্রাসঙ্গিক PyQt প্যাকেজ ইনস্টল করুন। উবুন্টুতে:
 
-   > sudo apt install python3-pyqt6.qtwebengine
+> sudo apt install python3-pyqt6.qtwebengine
 
-1. If you previously used the launcher, `rm -rf ~/.local/share/AnkiProgramFiles`.
+২. আপনি যদি আগে লঞ্চারটি ব্যবহার করে থাকেন, তাহলে `rm -rf ~/.local/share/AnkiProgramFiles` কমান্ডটি চালান।
 
-1. Untar the launcher, and cd to its folder.
+৩. লঞ্চারটি আনটার করুন এবং এর ফোল্ডারে যান।
 
-1. Run `touch system_qt` to create a system_qt file in that folder.
+৪. সেই ফোল্ডারে একটি system_qt ফাইল তৈরি করতে `touch system_qt` কমান্ডটি চালান।
 
-1. Install Anki via ./anki or ./install.sh. In the list of installed packages,
-   you should not see any mention of PyQt6.
+৫. `./anki` বা `./install.sh` এর মাধ্যমে Anki ইনস্টল করুন। ইনস্টল করা প্যাকেজগুলোর তালিকায়,
+আপনি PyQt6-এর কোনো উল্লেখ দেখতে পাবেন না।
 
-## Problems
+## সমস্যাসমূহ
 
-If you encounter any issues when installing or starting Anki, please see the
-following pages:
+Anki ইনস্টল বা চালু করার সময় যদি কোনো সমস্যার সম্মুখীন হন, তাহলে অনুগ্রহ করে
+নিম্নলিখিত পৃষ্ঠাগুলো দেখুন:
 
-- [Missing Libraries](missing-libraries.md)
-- [Display Issues](display-issues.md)
-- [Blank Main Window](blank-window.md)
-- [Linux Distro Packages](distro-packages.md)
-- [Incorrect GTK Theme](gtk-theme.md)
-- [Wayland](wayland.md)
-- [Input Methods](input-methods.md)
+- [হারিয়ে যাওয়া লাইব্রেরি](missing-libraries.md)
+- [ডিসপ্লে সংক্রান্ত সমস্যা](display-issues.md)
+- [ফাঁকা প্রধান উইন্ডো](blank-window.md)
+- [লিনাক্স ডিস্ট্রোর প্যাকেজ](distro-packages.md)
+- [ভুল GTK থিম](gtk-theme.md)
+- [ওয়েল্যান্ড](wayland.md)
+- [ইনপুট পদ্ধতি](input-methods.md)

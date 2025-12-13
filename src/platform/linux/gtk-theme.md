@@ -1,6 +1,6 @@
-# Anki not picking up GTK theme on Gnome/Linux
+# জিনোম/লিনাক্সে অ্যাঙ্কি GTK থিম শনাক্ত করতে পারছে না
 
-You can work around this issue by explicitly telling Anki what the GTK theme is. Run the following commands in a terminal:
+আপনি অ্যাঙ্কিকে স্পষ্টভাবে GTK থিম কোনটি তা জানিয়ে দিয়ে এই সমস্যাটি সমাধান করতে পারেন। একটি টার্মিনালে নিম্নলিখিত কমান্ডগুলো চালান:
 
 ```shell
 theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
@@ -8,4 +8,4 @@ echo "gtk-theme-name=$theme" >> ~/.gtkrc-2.0
 echo "export GTK2_RC_FILES=$HOME/.gtkrc-2.0" >> ~/.profile
 ```
 
-Then log out and log back into your computer, and Anki should pick up the GTK theme.
+এরপর আপনার কম্পিউটার থেকে লগ আউট করে আবার লগ ইন করুন, এবং অ্যাঙ্কি GTK থিমটি শনাক্ত করতে পারবে।

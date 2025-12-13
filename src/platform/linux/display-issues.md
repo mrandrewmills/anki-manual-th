@@ -1,17 +1,19 @@
-## Display Issues on Linux
+## লিনাক্সে ডিসপ্লে সংক্রান্ত সমস্যা
 
-Hardware acceleration defaults to on. If you experience blank screens
-or display issues, you can try enabling software rendering.
+হার্ডওয়্যার অ্যাক্সিলারেশন ডিফল্টভাবে চালু থাকে। আপনি যদি খালি স্ক্রিন বা
+ডিসপ্লে সংক্রান্ত সমস্যার সম্মুখীন হন, তাহলে আপনি সফটওয়্যার রেন্ডারিং চালু করার চেষ্টা করতে পারেন।
 
-### Changing the Driver From the Preferences Screen
-In Anki 23.10+, you can change the graphics driver from preferences screen by
-navigating to **Tools → Preferences** and then selecting the driver from the
-dropdown menu.
+### প্রেফারেন্সেস স্ক্রিন থেকে ড্রাইভার পরিবর্তন করা
 
-### Changing the Driver From the Terminal
+Anki 23.10 বা তার পরবর্তী সংস্করণগুলিতে, আপনি **Tools → Preferences**-এ গিয়ে
+এবং তারপর ড্রপডাউন মেনু থেকে ড্রাইভারটি নির্বাচন করে প্রেফারেন্সেস স্ক্রিন থেকে
+গ্রাফিক্স ড্রাইভার পরিবর্তন করতে পারেন।
+
+### টার্মিনাল থেকে ড্রাইভার পরিবর্তন করা
+
 ```
 echo software > ~/.local/share/Anki2/gldriver6
 ```
 
-If you wish to switch back to the default, change `software` to `auto`, or
-remove that file.
+আপনি যদি ডিফল্টে ফিরে যেতে চান, তাহলে `software`-কে `auto`-তে পরিবর্তন করুন, অথবা
+ওই ফাইলটি মুছে ফেলুন।

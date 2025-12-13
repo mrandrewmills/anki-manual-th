@@ -1,22 +1,10 @@
-# Packages Distributed by Linux Distributions
+# লিনাক্স ডিস্ট্রিবিউশন দ্বারা বিতরণ করা প্যাকেজ
 
-We have seen a lot of issues caused by the customized versions of Anki
-distributed by Linux distributions:
+আমরা লিনাক্স ডিস্ট্রিবিউশন দ্বারা বিতরণ করা Anki-এর কাস্টমাইজড সংস্করণগুলির কারণে সৃষ্ট অনেক সমস্যা দেখেছি:
 
-- Anki depends on third-party libraries like Qt, and Linux distributions often
-  substitute different versions of those libraries, without testing the impact
-  of those changes.
-- Sometimes the version of Anki they distribute is years old, or is an
-  alpha/beta version not intended for stable release. Distributions will often
-  disable the built-in update check as well, to prevent you from being notified
-  of newer versions.
+- Anki Qt-এর মতো থার্ড-পার্টি লাইব্রেরির উপর নির্ভরশীল, এবং লিনাক্স ডিস্ট্রিবিউশনগুলো প্রায়শই সেই লাইব্রেরিগুলোর ভিন্ন সংস্করণ ব্যবহার করে, কিন্তু এই পরিবর্তনের প্রভাব পরীক্ষা করে দেখে না।
+- কখনও কখনও তারা যে Anki সংস্করণটি বিতরণ করে তা বহু বছরের পুরানো হয়, অথবা এটি একটি আলফা/বিটা সংস্করণ যা স্থিতিশীল রিলিজের জন্য তৈরি নয়। ডিস্ট্রিবিউশনগুলো প্রায়শই বিল্ট-ইন আপডেট চেকও নিষ্ক্রিয় করে দেয়, যাতে আপনি নতুন সংস্করণ সম্পর্কে অবহিত না হন।
 
-Compiled builds of Anki are available on <https://apps.ankiweb.net>. Most of the
-necessary libraries are included, and Anki has been tested to work with these
-library versions. If you're experiencing issues with your distro's version, the
-first thing you should try is switching to the latest packaged version we
-provide.
+Anki-এর কম্পাইল করা বিল্ড <https://apps.ankiweb.net> -এ উপলব্ধ। প্রয়োজনীয় বেশিরভাগ লাইব্রেরি এতে অন্তর্ভুক্ত থাকে এবং এই লাইব্রেরি সংস্করণগুলির সাথে Anki কাজ করার জন্য পরীক্ষিত। আপনি যদি আপনার ডিস্ট্রোর সংস্করণে কোনো সমস্যার সম্মুখীন হন, তবে আপনার প্রথম কাজ হবে আমাদের সরবরাহ করা সর্বশেষ প্যাকেজ করা সংস্করণটিতে স্যুইচ করা।
 
-You are welcome to continue using your distro's version of Anki if you prefer,
-but if you run into any issues, you will need to report them to your
-distribution's package maintainers.
+আপনি চাইলে আপনার ডিস্ট্রোর Anki সংস্করণটি ব্যবহার চালিয়ে যেতে পারেন, তবে যদি কোনো সমস্যার সম্মুখীন হন, তাহলে আপনাকে আপনার ডিস্ট্রিবিউশনের প্যাকেজ রক্ষণাবেক্ষণকারীদের কাছে তা রিপোর্ট করতে হবে।

@@ -1,14 +1,11 @@
-# Missing Libraries
+# অনুপস্থিত লাইব্রেরি
 
-If Anki fails to start, please run it from a terminal with `anki`. If it says a
-library is missing, please install it and try again.
+যদি Anki চালু হতে ব্যর্থ হয়, অনুগ্রহ করে টার্মিনাল থেকে `anki` কমান্ড দিয়ে এটি চালান। যদি এটি কোনো লাইব্রেরি অনুপস্থিত থাকার কথা বলে, তবে সেটি ইনস্টল করুন এবং আবার চেষ্টা করুন।
 
-If it complains about no platform being available, please start Anki with the
-following command line, which should reveal a missing library:
+যদি এটি কোনো প্ল্যাটফর্ম উপলব্ধ না থাকার বিষয়ে অভিযোগ করে, তবে অনুগ্রহ করে নিম্নলিখিত কমান্ড লাইনটি ব্যবহার করে Anki চালু করুন, যা একটি অনুপস্থিত লাইব্রেরি শনাক্ত করতে সাহায্য করবে:
 
 ```shell
 QT_DEBUG_PLUGINS=1 anki
 ```
 
-After installing the library with apt-get or similar, repeat the process. You
-may need to do this a few times before all required libraries are installed.
+apt-get বা অনুরূপ কোনো প্যাকেজ ম্যানেজার দিয়ে লাইব্রেরিটি ইনস্টল করার পর, প্রক্রিয়াটি পুনরাবৃত্তি করুন। সমস্ত প্রয়োজনীয় লাইব্রেরি ইনস্টল না হওয়া পর্যন্ত আপনাকে কয়েকবার এই কাজটি করতে হতে পারে।
