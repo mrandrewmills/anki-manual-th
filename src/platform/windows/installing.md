@@ -1,57 +1,45 @@
-# Installing & Upgrading Anki on Windows
+# উইন্ডোজে Anki ইনস্টল এবং আপগ্রেড করা
 
 <!-- toc -->
 
-## Requirements
+## প্রয়োজনীয়তা
 
-Recent Anki releases require a computer running the 64 bit version of Windows
-10 or 11.
+Anki-এর সাম্প্রতিক সংস্করণগুলোর জন্য উইন্ডোজ ১০ বা ১১-এর ৬৪-বিট সংস্করণ চালিত একটি কম্পিউটার প্রয়োজন।
 
-- The last Anki release that supported Windows 7 and 8.1 was Anki 2.1.49.
-- The last Anki release that supported 32 bit Windows was [Anki 2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35).
+- Anki-এর সর্বশেষ যে সংস্করণটি উইন্ডোজ ৭ এবং ৮.১ সমর্থন করত, সেটি ছিল Anki 2.1.49।
+- Anki-এর সর্বশেষ যে সংস্করণটি ৩২-বিট উইন্ডোজ সমর্থন করত, সেটি ছিল [Anki 2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35)।
 
-If you're on an old machine, you can obtain old releases from the [releases page](https://github.com/ankitects/anki/releases).
+আপনি যদি একটি পুরোনো কম্পিউটার ব্যবহার করেন, তাহলে আপনি [রিলিজ পেজ](https://github.com/ankitects/anki/releases) থেকে পুরোনো সংস্করণগুলো ডাউনলোড করতে পারেন।
 
-## Installing
+## ইনস্টল করা
 
-To install Anki:
+Anki ইনস্টল করতে:
 
-1. Download Anki from <https://apps.ankiweb.net>.
-2. Save the installer to your desktop or downloads folder.
-3. Double-click on the installer to run it. If you see an error
-   message, please see the [installation issues page](installation-issues.md).
-4. Once Anki is installed, double-click on the new star icon on your
-   desktop to start Anki.
+১. <https://apps.ankiweb.net> থেকে Anki ডাউনলোড করুন।
+২. ইনস্টলারটি আপনার ডেস্কটপ বা ডাউনলোডস ফোল্ডারে সেভ করুন।
+৩. এটি চালানোর জন্য ইনস্টলারটিতে ডাবল-ক্লিক করুন। যদি কোনো ত্রুটির বার্তা দেখেন, তাহলে অনুগ্রহ করে [ইনস্টলেশন সমস্যা পেজটি](installation-issues.md) দেখুন।
+৪. Anki ইনস্টল হয়ে গেলে, Anki শুরু করার জন্য আপনার ডেস্কটপে থাকা নতুন তারার আইকনটিতে ডাবল-ক্লিক করুন।
 
-## Upgrading
+## আপগ্রেড করা
 
-If upgrading from Anki 2.1.6+, there is no need to uninstall the previous
-version first. All you need to do is close Anki if it is open, and then follow
-the installation steps above. Your cards will be preserved when you upgrade.
+আপনি যদি Anki 2.1.6+ থেকে আপগ্রেড করেন, তাহলে প্রথমে আগের সংস্করণটি আনইনস্টল করার প্রয়োজন নেই। আপনাকে শুধু Anki খোলা থাকলে সেটি বন্ধ করতে হবে এবং তারপর উপরের ইনস্টলেশনের ধাপগুলো অনুসরণ করতে হবে। আপগ্রেড করার সময় আপনার কার্ডগুলো সংরক্ষিত থাকবে।
 
-If upgrading from an Anki version before 2.1.6, or switching from the standard
-to the alternate version or vice versa, we recommend uninstalling the old
-version first, which will remove Anki's program data, but not delete your card
-data.
+আপনি যদি Anki 2.1.6-এর আগের কোনো সংস্করণ থেকে আপগ্রেড করেন, অথবা স্ট্যান্ডার্ড সংস্করণ থেকে অল্টারনেট সংস্করণে বা এর বিপরীতে পরিবর্তন করেন, তাহলে আমরা প্রথমে পুরোনো সংস্করণটি আনইনস্টল করার পরামর্শ দিই। এটি Anki-এর প্রোগ্রাম ডেটা সরিয়ে ফেলবে, কিন্তু আপনার কার্ডের ডেটা মুছে ফেলবে না।
 
-If you wish to downgrade to a previous version, please make sure you
-[downgrade first](http://changes.ankiweb.net).
+আপনি যদি আগের কোনো সংস্করণে ফিরে যেতে চান, তাহলে অনুগ্রহ করে নিশ্চিত করুন যে আপনি [প্রথমে ডাউনগ্রেড করছেন](http://changes.ankiweb.net)।
 
-## Add-on Compatibility
+## অ্যাড-অন সামঞ্জস্যতা
 
-Some add-ons may not always work with the latest Anki release. If you upgrade to
-the latest Anki version and find an add-on you cannot live without stops working,
-you can download older Anki versions from the [releases page](https://github.com/ankitects/anki/releases).
+কিছু অ্যাড-অন হয়তো সব সময় Anki-এর সর্বশেষ সংস্করণের সাথে কাজ নাও করতে পারে। আপনি যদি Anki-এর সর্বশেষ সংস্করণে আপগ্রেড করার পর দেখেন যে আপনার অপরিহার্য কোনো অ্যাড-অন কাজ করা বন্ধ করে দিয়েছে, তাহলে আপনি [রিলিজ পেজ](https://github.com/ankitects/anki/releases) থেকে Anki-এর পুরোনো সংস্করণগুলো ডাউনলোড করতে পারেন। ## সমস্যাসমূহ
 
-## Problems
+Anki ইনস্টল বা চালু করার সময় যদি কোনো সমস্যার সম্মুখীন হন, তাহলে অনুগ্রহ করে নিম্নলিখিত পৃষ্ঠাগুলো দেখুন:
 
-If you encounter any issues when installing or starting Anki, please see the
-following pages:
-- [Installation Issues](installation-issues.md)
-- [Startup Issues](startup-issues.md)
-- [Display Issues](display-issues.md)
-- [Permission Problems](permission-problems.md)
+- [ইনস্টলেশন সমস্যা](installation-issues.md)
+- [চালু করার সমস্যা](startup-issues.md)
+- [ডিসপ্লে সমস্যা](display-issues.md)
+- [অনুমতি সংক্রান্ত সমস্যা](permission-problems.md)
 
-If you encounter any interface issues when using Anki, please see the following pages:
-- [Copy and Paste Issues](copy-and-paste.md)
-- [Text Size Issues](text-size.md)
+Anki ব্যবহার করার সময় যদি কোনো ইন্টারফেস সংক্রান্ত সমস্যার সম্মুখীন হন, তাহলে অনুগ্রহ করে নিম্নলিখিত পৃষ্ঠাগুলো দেখুন:
+
+- [কপি এবং পেস্ট সমস্যা](copy-and-paste.md)
+- [টেক্সট সাইজের সমস্যা](text-size.md)

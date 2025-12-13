@@ -1,42 +1,33 @@
-# Windows Display Issues
+# উইন্ডোজ ডিসপ্লে সমস্যা
 
 <!-- toc -->
 
-On Windows, there are three ways of content being displayed on screen. The
-default is _software_, which is slower, but the most compatible. There are two
-other options that are faster: _OpenGL_ and _ANGLE_. They are faster, but they
-may not work, or may cause display issues such as missing menubars, blank
-windows, and so on. Which one works best will depend on your computer.
+উইন্ডোজে, স্ক্রিনে কন্টেন্ট প্রদর্শনের তিনটি উপায় রয়েছে। ডিফল্ট হলো _সফটওয়্যার_, যা ধীরগতির, কিন্তু সবচেয়ে বেশি সামঞ্জস্যপূর্ণ। আরও দুটি বিকল্প আছে যা দ্রুততর: _OpenGL_ এবং _ANGLE_। এগুলো দ্রুততর হলেও, কাজ নাও করতে পারে, অথবা মেনুবার না থাকা, ফাঁকা উইন্ডো ইত্যাদির মতো ডিসপ্লে সমস্যা তৈরি করতে পারে। কোনটি সবচেয়ে ভালো কাজ করবে তা আপনার কম্পিউটারের উপর নির্ভর করবে।
 
+## প্রেফারেন্স স্ক্রিন থেকে ড্রাইভার পরিবর্তন করা
 
-## Changing the Driver From the Preferences Screen
-In Anki 23.10+, you can change the graphics driver from preferences screen by
-navigating to **Tools → Preferences** and then selecting the driver from the
-dropdown menu.
+Anki 23.10+ সংস্করণে, আপনি **Tools → Preferences**-এ গিয়ে প্রেফারেন্স স্ক্রিন থেকে গ্রাফিক্স ড্রাইভার পরিবর্তন করতে পারেন এবং তারপর ড্রপডাউন মেনু থেকে ড্রাইভারটি নির্বাচন করতে পারেন।
 
+## কমান্ড লাইন থেকে ড্রাইভার পরিবর্তন করা
 
-## Changing the Driver From the Command Line
-If you run into display issues, you can try switching to software mode via cmd:
+আপনি যদি ডিসপ্লে সমস্যার সম্মুখীন হন, তাহলে আপনি কমান্ড প্রম্পটের মাধ্যমে সফটওয়্যার মোডে পরিবর্তন করার চেষ্টা করতে পারেন:
 
 ```bat
 echo software > %APPDATA%\Anki2\gldriver6
 ```
 
-Or you can do it via PowerShell:
+অথবা আপনি পাওয়ারশেলের মাধ্যমে এটি করতে পারেন:
 
 ```powershell
 echo software > $env:APPDATA\Anki2\gldriver6
 ```
 
-It will not print anything. You can then start Anki again.
+এটি কিছু প্রিন্ট করবে না। এরপর আপনি Anki আবার চালু করতে পারেন।
 
-To revert to the default behaviour, change `software` to `auto`, or delete that file.
+ডিফল্ট অবস্থায় ফিরে যেতে, `software`-কে `auto`-তে পরিবর্তন করুন, অথবা ফাইলটি মুছে ফেলুন।
 
-## Full Screen
+## ফুল স্ক্রিন
 
-Anki 2.1.50+ comes with a full screen mode, but due to various issues, it had to
-be disabled while `OpenGL` is used. Turning on software rendering as described
-above will allow the full screen option to be used, though please bear in mind
-that rendering performance may suffer.
+Anki 2.1.50+ সংস্করণে একটি ফুল স্ক্রিন মোড রয়েছে, কিন্তু বিভিন্ন সমস্যার কারণে, `OpenGL` ব্যবহার করার সময় এটি নিষ্ক্রিয় করতে হয়েছিল। উপরে বর্ণিত পদ্ধতি অনুযায়ী সফটওয়্যার রেন্ডারিং চালু করলে ফুল স্ক্রিন বিকল্পটি ব্যবহার করা যাবে, তবে অনুগ্রহ করে মনে রাখবেন যে এতে রেন্ডারিং পারফরম্যান্সের অবনতি হতে পারে।
 
-In Anki 23.10+, full screen mode is supported with the default Direct3D driver.
+Anki 23.10+ সংস্করণে, ডিফল্ট Direct3D ড্রাইভারের সাথে ফুল স্ক্রিন মোড সমর্থিত।

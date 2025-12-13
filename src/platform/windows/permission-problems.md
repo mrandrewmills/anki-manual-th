@@ -1,33 +1,33 @@
-# Windows permission problems
+# উইন্ডোজ পারমিশনের সমস্যা
 
 <!-- toc -->
 
-## Permission Problems
+## পারমিশনের সমস্যা
 
-If you receive "access denied" messages, some of Anki's files may be set to read only mode, meaning Anki is not able to write to them.
+আপনি যদি "অ্যাক্সেস ডিনাইড" বার্তা পান, তাহলে Anki-এর কিছু ফাইল রিড-অনলি মোডে সেট করা থাকতে পারে, যার মানে Anki সেগুলোতে লিখতে পারছে না।
 
-To fix the problem, you can do the following:
+সমস্যাটি সমাধান করতে, আপনি নিম্নলিখিত পদক্ষেপগুলো করতে পারেন:
 
-- in the search area of the start bar, type `cmd.exe` and hit <kbd>Enter</kbd>
-- in the window that opens, type the following and hit <kbd>Enter</kbd> to see your username:
+- স্টার্ট বারের সার্চ এরিয়াতে `cmd.exe` টাইপ করুন এবং <kbd>Enter</kbd> চাপুন।
+- যে উইন্ডোটি খুলবে, সেখানে আপনার ইউজারনেম দেখার জন্য নিম্নলিখিত কমান্ডটি টাইপ করুন এবং <kbd>Enter</kbd> চাপুন:
 
 whoami
 
-- type the following, hitting <kbd>Enter</kbd> after each line, and replacing ____ (and keeping the :F part) with your username from the previous command
+- নিম্নলিখিত কমান্ডগুলো টাইপ করুন, প্রতিটি লাইনের পরে <kbd>Enter</kbd> চাপুন, এবং \_\_\_\_ (এবং :F অংশটি রেখে) আগের কমান্ড থেকে পাওয়া আপনার ইউজারনেম দিয়ে প্রতিস্থাপন করুন:
 
 cd %APPDATA%
 
-icacls Anki2 /grant ____:F /t
+icacls Anki2 /grant \_\_\_\_:F /t
 
-That command should fix the permissions on Anki's data folder, and you should now be able to start the program.
+এই কমান্ডটি Anki-এর ডেটা ফোল্ডারের পারমিশন ঠিক করে দেবে, এবং এখন আপনি প্রোগ্রামটি চালু করতে পারবেন।
 
-## Antivirus/Firewall/Anti-Malware
+## অ্যান্টিভাইরাস/ফায়ারওয়াল/অ্যান্টি-ম্যালওয়্যার
 
-Some users have experienced "permission denied" or "readonly" errors that were caused by security software installed on their machine. You may need to add an exception for Anki, or try temporarily disabling the software to rule it out as the cause. Some users have reported that simply turning off their software did not fix the problem, and they either had to add an exception for Anki or uninstall the software.
+কিছু ব্যবহারকারী "পারমিশন ডিনাইড" বা "রিড-অনলি" ত্রুটির সম্মুখীন হয়েছেন, যা তাদের মেশিনে ইনস্টল করা সিকিউরিটি সফটওয়্যারের কারণে হয়েছিল। আপনাকে Anki-এর জন্য একটি ব্যতিক্রম (exception) যোগ করতে হতে পারে, অথবা কারণটি নিশ্চিত করার জন্য সাময়িকভাবে সফটওয়্যারটি নিষ্ক্রিয় করার চেষ্টা করতে পারেন। কিছু ব্যবহারকারী জানিয়েছেন যে শুধুমাত্র তাদের সফটওয়্যারটি বন্ধ করলেই সমস্যার সমাধান হয়নি, এবং তাদের হয় Anki-এর জন্য একটি ব্যতিক্রম যোগ করতে হয়েছে অথবা সফটওয়্যারটি আনইনস্টল করতে হয়েছে।
 
-## Debugging Permission Problems
+## পারমিশনের সমস্যা ডিবাগ করা
 
-If problems persist after you've ruled out Antivirus and related programs, have performed the steps above to fix permissions, and don't use OneDrive, please run the following commands in `cmd.exe`, pressing <kbd>Enter</kbd> after each one.
+অ্যান্টিভাইরাস এবং সম্পর্কিত প্রোগ্রামগুলো সমস্যাটির কারণ নয় বলে নিশ্চিত হওয়ার পরেও, উপরের পারমিশন ঠিক করার ধাপগুলো অনুসরণ করার পরেও এবং আপনি OneDrive ব্যবহার না করা সত্ত্বেও যদি সমস্যা থেকে যায়, তাহলে অনুগ্রহ করে `cmd.exe`-তে নিম্নলিখিত কমান্ডগুলো চালান, এবং প্রতিটির পরে <kbd>Enter</kbd> চাপুন।
 
 whoami
 
@@ -35,4 +35,4 @@ cd %APPDATA%
 
 icacls Anki2 /t
 
-Then please copy & paste or screenshot what you see, and post it to us in a support ticket.
+তারপর অনুগ্রহ করে আপনি যা দেখতে পাচ্ছেন তা কপি ও পেস্ট করুন বা স্ক্রিনশট নিন এবং একটি সাপোর্ট টিকিটের মাধ্যমে আমাদের কাছে পাঠান।

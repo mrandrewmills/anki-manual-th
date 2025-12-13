@@ -1,11 +1,11 @@
-# Windows
+# উইন্ডোজ
 
-## Installing & Upgrading Anki on Windows
+## উইন্ডোজে অ্যানকি ইনস্টল ও আপগ্রেড করা
 
-For instructions on how to install or upgrade Anki on Windows, please see:
-- [Install & Upgrade](installing.md)
+উইন্ডোজে অ্যানকি ইনস্টল বা আপগ্রেড করার নির্দেশাবলীর জন্য, অনুগ্রহ করে দেখুন:
 
-## Problems
+- [ইনস্টল ও আপগ্রেড](installing.md)
 
-If you encounter any issues when installing or starting Anki, please see the
-subsections in the table of contents.
+## সমস্যা
+
+অ্যানকি ইনস্টল বা চালু করার সময় যদি কোনো সমস্যার সম্মুখীন হন, তাহলে অনুগ্রহ করে সূচিপত্রের উপবিভাগগুলো দেখুন।

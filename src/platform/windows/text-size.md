@@ -1,21 +1,17 @@
-# Text Size
+# টেক্সট সাইজ
 
-If you find the text is the wrong size, there are two environment
-variables you can try:
+যদি আপনি মনে করেন টেক্সটের সাইজ ভুল, তাহলে আপনি দুটি পরিবেশ ভেরিয়েবল চেষ্টা করতে পারেন:
 
-- ANKI_NOHIGHDPI=1 will turn off some of Qt’s high dpi support
+- ANKI_NOHIGHDPI=1 Qt-এর কিছু হাই-ডিপিআই সাপোর্ট বন্ধ করে দেবে
 
-- ANKI_WEBSCALE=1 will alter the scale of Anki’s web views (like the
-  deck list, study screen, etc), while leaving interface elements like
-  the menu bar alone. Replace 1 with the desired scale, such as 1.5 or
-  0.75.
+- ANKI_WEBSCALE=1 Anki-এর ওয়েব ভিউ-এর স্কেল (যেমন ডেক তালিকা, স্টাডি স্ক্রীন ইত্যাদি) পরিবর্তন করবে, যখন মেনু বার-এর মতো ইন্টারফেস উপাদানগুলো অপরিবর্তিত রাখবে। 1-এর পরিবর্তে আপনার পছন্দের স্কেল, যেমন 1.5 বা 0.75, ব্যবহার করুন।
 
-On Windows you can add these to a batch file to make it easier to start
-Anki. For example, create a file called startanki.bat on your desktop
-with the following text:
+Windows-এ Anki চালু করা সহজ করতে আপনি এগুলো একটি ব্যাচ ফাইলে যোগ করতে পারেন। উদাহরণস্বরূপ, আপনার ডেস্কটপে startanki.bat নামে একটি ফাইল তৈরি করুন
+নিম্নলিখিত টেক্সট দিয়ে:
 
     set ANKI_WEBSCALE=0.75
     start "Anki" "%LocalAppData%\Programs\Anki\anki.exe"
 
-After saving, you can double click on the file to start Anki with that
-setting.
+সঞ্চয় করার পর, আপনি সেই সেটিং দিয়ে Anki চালু করতে ফাইলটিতে ডাবল ক্লিক করতে পারেন।
+
+Translated with DeepL.com (free version)

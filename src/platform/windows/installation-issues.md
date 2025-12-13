@@ -1,16 +1,15 @@
-# Windows installation issues
+# উইন্ডোজ ইনস্টলেশন সমস্যা
 
-Some error messages you may encounter when installing Anki:
+Anki ইনস্টল করার সময় আপনি কিছু ত্রুটি বার্তা দেখতে পারেন:
 
 <!-- toc -->
 
-Please also see [startup issues](./startup-issues.md).
+অনুগ্রহ করে [স্টার্টআপ সমস্যা](./startup-issues.md)গুলোও দেখুন।
 
-## "Error opening file for writing"
+## "ফাইলটি লেখার জন্য খোলার সময় ত্রুটি"
 
-If closing Anki and your browser does not help, please try restarting your
-computer, then running the installer again.
+যদি Anki এবং আপনার ব্রাউজার বন্ধ করার পরেও সমস্যার সমাধান না হয়, তাহলে অনুগ্রহ করে আপনার কম্পিউটারটি রিস্টার্ট করে আবার ইনস্টলারটি চালানোর চেষ্টা করুন।
 
-## Antivirus issues
+## অ্যান্টিভাইরাস সংক্রান্ত সমস্যা
 
-Antivirus programs may sometimes report a [false positive](https://faqs.ankiweb.net/my-antivirus-program-says-anki-is-infected.html).
+অ্যান্টিভাইরাস প্রোগ্রামগুলো মাঝে মাঝে [ভুলবশত ভাইরাস শনাক্ত](https://faqs.ankiweb.net/my-antivirus-program-says-anki-is-infected.html) করতে পারে।

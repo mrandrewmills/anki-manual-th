@@ -1,6 +1,3 @@
-# Copy and paste issues
+# কপি এবং পেস্ট সংক্রান্ত সমস্যা
 
-If you are experiencing problems with copying and pasting, please check if you
-are running other programs on your computer that monitor the clipboard, such as
-dictionary programs, clipboard managers or clipping tools. The toolkit Anki uses
-can have trouble when such programs are running.
+আপনি যদি কপি এবং পেস্ট করতে সমস্যা অনুভব করেন, তাহলে অনুগ্রহ করে পরীক্ষা করে দেখুন যে আপনার কম্পিউটারে ক্লিপবোর্ড পর্যবেক্ষণকারী অন্য কোনো প্রোগ্রাম চলছে কিনা, যেমন অভিধান প্রোগ্রাম, ক্লিপবোর্ড ম্যানেজার বা ক্লিপিং টুল। অ্যানকি যে টুলকিটটি ব্যবহার করে, এই ধরনের প্রোগ্রাম চললে সেটিতে সমস্যা হতে পারে।

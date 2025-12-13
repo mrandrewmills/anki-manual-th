@@ -1,20 +1,19 @@
-# Windows startup issues
+# উইন্ডোজ স্টার্টআপ সমস্যা
 
 <!-- toc -->
 
-## No error, but app does not appear
+## কোনো ত্রুটি নেই, কিন্তু অ্যাপটি দেখা যাচ্ছে না
 
-If you start Anki and it fails to appear, without
-any error message, you can try the following:
+আপনি যদি Anki চালু করেন এবং কোনো ত্রুটি বার্তা ছাড়াই এটি খুলতে ব্যর্থ হয়, তাহলে আপনি নিম্নলিখিতগুলো চেষ্টা করতে পারেন:
 
-- Disconnect multiple/external displays.
-- Install the [latest Anki version](https://apps.ankiweb.net/).
-- Adjust [your decimal separator](https://forums.ankiweb.net/t/windows-update-broke-anki/1822/75), if it is not a period.
-- Install the old [2.1.35-alternate build](https://github.com/ankitects/anki/releases/tag/2.1.35) of Anki.
+- একাধিক/বাহ্যিক ডিসপ্লে সংযোগ বিচ্ছিন্ন করুন।
+- [Anki-এর সর্বশেষ সংস্করণ](https://apps.ankiweb.net/) ইনস্টল করুন।
+- আপনার দশমিক বিভাজক যদি পিরিয়ড না হয়, তবে [তা সামঞ্জস্য করুন](https://forums.ankiweb.net/t/windows-update-broke-anki/1822/75)।
+- Anki-এর পুরোনো [2.1.35-alternate বিল্ড](https://github.com/ankitects/anki/releases/tag/2.1.35) ইনস্টল করুন।
 
-## Windows updates
+## উইন্ডোজ আপডেট
 
-When starting Anki, you may receive a message like the following:
+Anki চালু করার সময়, আপনি নিম্নলিখিতগুলির মতো একটি বার্তা পেতে পারেন:
 
 - _Error loading Python DLL_
 - _The program can't start because api-ms-win.... is missing_
@@ -22,70 +21,52 @@ When starting Anki, you may receive a message like the following:
 - _Failed to execute script pyi_rth_multiprocessing_
 - _Failed to execute script pyi_rth_win32comgenpy_
 
-These errors are usually because your computer is missing a Windows update
-or Windows library.
+এই ত্রুটিগুলি সাধারণত এই কারণে ঘটে যে আপনার কম্পিউটারে একটি উইন্ডোজ আপডেট বা উইন্ডোজ লাইব্রেরি অনুপস্থিত।
 
-Please open Windows update, and ensure your system has all updates installed.
-If any needed to be installed, please restart your device after installing.
+অনুগ্রহ করে উইন্ডোজ আপডেট খুলুন এবং নিশ্চিত করুন যে আপনার সিস্টেমে সমস্ত আপডেট ইনস্টল করা আছে।
+যদি কোনো আপডেট ইনস্টল করার প্রয়োজন হয়, তবে ইনস্টল করার পরে আপনার ডিভাইসটি রিস্টার্ট করুন।
 
-## Windows 7/8
+## উইন্ডোজ ৭/৮
 
-On Windows 7/8, you may need to manually install extra updates. Please try:
+উইন্ডোজ ৭/৮-এ, আপনাকে ম্যানুয়ালি অতিরিক্ত আপডেট ইনস্টল করার প্রয়োজন হতে পারে। অনুগ্রহ করে চেষ্টা করুন:
 
 - <https://www.microsoft.com/en-us/download/details.aspx?id=48234>
 - <https://aka.ms/vs/15/release/vc_redist.x64.exe>
 - <http://www.catalog.update.microsoft.com/Search.aspx?q=kb4474419>
 - <http://www.catalog.update.microsoft.com/Search.aspx?q=kb4490628>
 
-## Video driver issues
+## ভিডিও ড্রাইভার সমস্যা
 
-Please see [display issues](./display-issues.md).
+অনুগ্রহ করে [ডিসপ্লে সমস্যা](./display-issues.md) দেখুন। ## একাধিক ডিসপ্লে
 
-## Multiple displays
+আপনি যদি _LoadLibrary failed with error 126_ এই ত্রুটিটি পান, তবে এটি সম্ভবত এই কারণে হচ্ছে যে, যে টুলকিটের উপর ভিত্তি করে Anki তৈরি হয়েছে, সেটি [একাধিক ডিসপ্লে](https://forums.ankiweb.net/t/error-126-on-open-anki-desktop/13967) ব্যবহারের ক্ষেত্রে সমস্যায় পড়ছে।
 
-If you get a _LoadLibrary failed with error 126_, this may be caused by the
-toolkit Anki is built on having trouble with [multiple displays](https://forums.ankiweb.net/t/error-126-on-open-anki-desktop/13967).
+## অ্যান্টিভাইরাস/ফায়ারওয়াল সফটওয়্যার
 
-## Antivirus/firewall software
+আপনার কম্পিউটারের থার্ড-পার্টি সফটওয়্যার Anki লোড হতে বাধা দিতে পারে। এটি সাহায্য করে কিনা তা দেখার জন্য আপনি Anki-এর জন্য একটি ব্যতিক্রম যোগ করার চেষ্টা করতে পারেন, অথবা সাময়িকভাবে আপনার অ্যান্টিভাইরাস/ফায়ারওয়াল নিষ্ক্রিয় করতে পারেন।
 
-Third-party software on your machine may prevent Anki from loading. You can
-try adding an exception for Anki, or temporarily disabling your antivirus/firewall
-to see if it helps.
+## অ্যাডমিন অ্যাক্সেস
 
-## Admin access
+কিছু ব্যবহারকারী জানিয়েছেন যে, Anki আইকনে রাইট-ক্লিক করে "Run as administrator" নির্বাচন না করা পর্যন্ত তাদের জন্য Anki চলেনি। Anki তার সমস্ত ডেটা আপনার ইউজার ফোল্ডারে সংরক্ষণ করে এবং এর জন্য অ্যাডমিনিস্ট্রেটর প্রিভিলেজের প্রয়োজন হওয়ার কথা নয়, তবে আপনি যদি অন্যান্য সব উপায় চেষ্টা করে থাকেন, তবে এটিও চেষ্টা করে দেখতে পারেন।
 
-Some users have reported that Anki did not run for them until they right-clicked
-on the Anki icon and chose "Run as administrator". Anki stores all of its data in
-your user folder, and should not need administrator privileges, but it's something
-you can try if you've exhausted other options.
+## আপডেট করার পর একাধিক Anki ইনস্টলেশন থাকা
 
-## Multiple Anki installations present after updating
+যদি আপডেট প্রক্রিয়ার পরে আপনার কম্পিউটারে Anki-এর একাধিক ইনস্টলেশন থেকে যায় (যেমন `C:\Program Files\Anki` এবং `C:\Program Files (x86)\Anki`-এর মধ্যে), তবে সেগুলো অকার্যকর অবস্থায় থাকতে পারে এবং Anki কোনো ত্রুটি বার্তা না দেখিয়েই চালু হতে অস্বীকার করতে পারে।
 
-If the update process leaves you with multiple Anki installs (such as within
-`C:\Program Files\Anki` and `C:\Program Files (x86)\Anki`), they may be left in a
-non-working state, and Anki may refuse to start without showing an error message.
+আপনার কম্পিউটার থেকে Anki-এর সমস্ত কপি আনইনস্টল করার চেষ্টা করুন। এটি করার জন্য, Windows Settings > Apps & features (বা Apps > Installed apps)-এ গিয়ে সেগুলো খুঁজুন এবং আনইনস্টল করুন, অথবা প্রতিটি Anki প্রোগ্রাম ফোল্ডারে `uninstall.exe` চালান। এরপর, Anki আবার ইনস্টল করুন।
 
-Try uninstalling all copies of Anki from your computer. To do this, find them in Windows Settings > Apps & features (or Apps > Installed apps) and uninstall, or run `uninstall.exe` in each Anki program
-folder. Afterward, install Anki again.
+## ডিবাগিং
 
-## Debugging
-
-Starting Anki from a terminal may reveal a bit more information about some
-errors. After installing the latest Anki version and ensuring all Windows
-updates are installed, instead of running Anki directly, press the <kbd>Windows</kbd> key (or open the Start menu), type `cmd`, and launch Command Prompt. When the terminal window opens, paste the following command, and press <kbd>Enter</kbd>. (The path will be different if Anki is installed in a location that is not the default.)
+একটি টার্মিনাল থেকে Anki চালু করলে কিছু ত্রুটি সম্পর্কে আরও কিছু তথ্য জানা যেতে পারে। Anki-এর সর্বশেষ সংস্করণ ইনস্টল করার পরে এবং সমস্ত Windows আপডেট ইনস্টল করা আছে কিনা তা নিশ্চিত করার পর, সরাসরি Anki চালু না করে, <kbd>Windows</kbd> কী চাপুন (বা স্টার্ট মেনু খুলুন), `cmd` টাইপ করুন এবং কমান্ড প্রম্পট চালু করুন। যখন টার্মিনাল উইন্ডোটি খুলবে, তখন নিম্নলিখিত কমান্ডটি পেস্ট করুন এবং <kbd>Enter</kbd> চাপুন। (যদি Anki ডিফল্ট অবস্থান ছাড়া অন্য কোনো স্থানে ইনস্টল করা থাকে, তবে পাথটি ভিন্ন হবে।)
 
 ```
 %LocalAppData%\Programs\Anki\anki-console.bat
 ```
 
-Presumably Anki will fail to open like before, but the output in the terminal window may reveal something about
-what is causing the problem.
+সম্ভবত Anki আগের মতোই খুলতে ব্যর্থ হবে, কিন্তু টার্মিনাল উইন্ডোর আউটপুট থেকে সমস্যাটির কারণ সম্পর্কে কিছু জানা যেতে পারে। ## অন্য সব উপায় ব্যর্থ হলে
 
-## If all else fails
+উপরের সমাধানগুলো চেষ্টা করার পরেও যদি আপনি Anki চালু করতে না পারেন, তাহলে আপনার জন্য আরও দুটি বিকল্প রয়েছে:
 
-If you are unable to start Anki after trying the above workarounds, you have
-two remaining options:
-
-- You can try [running from Python](https://faqs.ankiweb.net/running-from-python.html).
-- You can try an older Anki version built with an older toolkit, such as
-  [2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35), or [2.1.15](https://github.com/ankitects/anki/releases/tag/2.1.15).
+- আপনি [পাইথন থেকে চালানোর চেষ্টা করতে পারেন](https://faqs.ankiweb.net/running-from-python.html)।
+- আপনি একটি পুরোনো টুলকিট দিয়ে তৈরি Anki-এর পুরোনো কোনো সংস্করণ চেষ্টা করতে পারেন, যেমন
+  [2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35), অথবা [2.1.15](https://github.com/ankitects/anki/releases/tag/2.1.15)।
