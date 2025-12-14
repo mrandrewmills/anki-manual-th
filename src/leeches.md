@@ -1,55 +1,25 @@
-# Leeches
+# লিচ
 
 <!-- toc -->
 
-Leeches are cards that you keep forgetting. Because they require so
-many reviews, they take up a lot more of your time, compared to other cards.
+লিচ হল এমন কার্ড যা আপনি বারবার ভুলে যান। যেহেতু তাদের অনেক পর্যালোচনার প্রয়োজন হয়, তাই অন্যান্য কার্ডের তুলনায় তারা আপনার অনেক বেশি সময় নেয়।
 
-Anki can help you identify leeches. Each time a review card "lapses" (is 
-failed while it is in review mode), a counter increases. When this counter
-reaches 8, Anki tags the note as a leech and suspends the card. The 
-threshold, and whether to suspend or not, can be adjusted in the
-[deck options](deck-options.md).
+আঙ্কি আপনাকে লিচ সনাক্ত করতে সাহায্য করতে পারে। প্রতিটি রিভিউ কার্ড "ল্যাপস" (রিভিউ মোডে থাকাকালীন ব্যর্থ হয়) হওয়ার সময় একটি কাউন্টার বৃদ্ধি পায়। যখন এই কাউন্টার 8 এ পৌঁছায়, তখন আঙ্কি নোটটিকে একটি লিচ হিসাবে ট্যাগ করে এবং কার্ডটি স্থগিত করে। থ্রেশহোল্ড এবং স্থগিত করা হবে কিনা তা [ডেক অপশন](deck-options.md) এ সামঞ্জস্য করা যেতে পারে।
 
-If you keep failing that card, Anki will continue to alert you about the 
-leech periodically. These warnings occur at half the initial leech 
-threshold. For example, if you set the warning at 8 lapses, future 
-warnings will happen every 4 lapses (at 12, 16, and so on).
+আপনি যদি সেই কার্ডটি বারবার ব্যর্থ হতে থাকেন, আঙ্কি আপনাকে পর্যায়ক্রমে লিচ সম্পর্কে সতর্ক করতে থাকবে। এই সতর্কতাগুলি প্রাথমিক লিচ থ্রেশহোল্ডের অর্ধেক সময়ে ঘটে। উদাহরণস্বরূপ, যদি আপনি 8টি ল্যাপসে সতর্কতা সেট করেন, তাহলে ভবিষ্যতের সতর্কতাগুলি প্রতি 4টি ল্যাপসে (12, 16 ইত্যাদি) ঘটবে।
 
-Once a leech is found, there are several ways to handle it.
+একবার একটি লিচ খুঁজে পাওয়া গেলে, এটি মোকাবেলা করার বিভিন্ন উপায় রয়েছে।
 
-## Editing
+## সম্পাদনা
 
-The most efficient method to deal with leeches is to change how the
-information is presented. Maybe your cards have too much information, or 
-you’re trying to memorize something without fully understanding it. Often, 
-it helps to follow the [20 rules of formulating 
-knowledge](https://supermemo.guru/wiki/20_rules_of_knowledge_formulation),
-proposed by Dr Piotr Wozniak, the creator of SuperMemo. Some cards can 
-benefit from a mnemonic. Even some well-written cards may need a boost in 
-coherence, e.g. by adding cards for related concepts. However, it takes a 
-lot of experience to know how to formulate the material properly, break it 
-down into smallest possible components, and use mnemonic techniques.
+লিচ মোকাবেলা করার সবচেয়ে কার্যকর পদ্ধতি হল তথ্যের উপস্থাপনা পরিবর্তন করা। সম্ভবত আপনার কার্ডগুলিতে খুব বেশি তথ্য রয়েছে, অথবা আপনি পুরোপুরি না বুঝেই কিছু মুখস্থ করার চেষ্টা করছেন। প্রায়শই, ডঃ পিওটর ওজনিয়াক, সুপারমেমো-এর স্রষ্টা দ্বারা প্রস্তাবিত [জ্ঞান গঠনের 20টি নিয়ম](https://supermemo.guru/wiki/20_rules_of_knowledge_formulation) অনুসরণ করা সাহায্য করে। কিছু কার্ড একটি স্মৃতিসহায়ক থেকে উপকৃত হতে পারে। এমনকি কিছু সু-লিখিত কার্ডেও সঙ্গতি বাড়ানোর প্রয়োজন হতে পারে, যেমন সম্পর্কিত ধারণাগুলির জন্য কার্ড যোগ করে। তবে, উপাদানটি সঠিকভাবে কীভাবে তৈরি করতে হয়, এটিকে ক্ষুদ্রতম সম্ভাব্য উপাদানগুলিতে ভেঙে ফেলতে হয় এবং স্মৃতিসহায়ক কৌশল ব্যবহার করতে হয় তা জানার জন্য অনেক অভিজ্ঞতার প্রয়োজন।
 
-## Deleting
+## মুছে ফেলা
 
-If the material you’re struggling with isn't important enough to justify 
-the time spent, you can simply delete the card. By selectively deleting
-difficult and obscure items, you can spend more time learning other 
-material, making studying more enjoyable. If you think the card might be 
-useful for future reference, you can leave it suspended.
+আপনি যে উপাদানটির সাথে সংগ্রাম করছেন তা যদি ব্যয় করা সময়কে ন্যায্যতা দেওয়ার জন্য যথেষ্ট গুরুত্বপূর্ণ না হয়, তাহলে আপনি কেবল কার্ডটি মুছে ফেলতে পারেন। কঠিন এবং অস্পষ্ট আইটেমগুলি বেছে বেছে মুছে ফেলার মাধ্যমে, আপনি অন্যান্য উপাদান শিখতে বেশি সময় ব্যয় করতে পারেন, যা অধ্যয়নকে আরও উপভোগ্য করে তোলে। আপনি যদি মনে করেন যে কার্ডটি ভবিষ্যতের রেফারেন্সের জন্য কার্যকর হতে পারে, তাহলে আপনি এটি স্থগিত করে রাখতে পারেন।
 
-## Waiting
+## অপেক্ষা করা
 
-Some leeches are caused by "interference". For example, an English
-learner may have recently learned the words "disappoint" and "disappear".
-As they look similar, the learner may find themselves confusing the two
-when trying to answer. In such situations, it’s often helpful to
-concentrate on one idea at a time. Once that idea is firmly ingrained in 
-your mind, you can then start learning the other idea. So, in these
-situations, you might want to leave one of the words suspended until you
-have learned the other one well, and then unsuspend it.
+কিছু লিচ "হস্তক্ষেপ" দ্বারা সৃষ্ট হয়। উদাহরণস্বরূপ, একজন ইংরেজি শিখর সম্প্রতি "disappoint" এবং "disappear" শব্দগুলি শিখে থাকতে পারেন। যেহেতু তারা দেখতে একই রকম, তাই শিখর উত্তর দেওয়ার চেষ্টা করার সময় দুটিকে গুলিয়ে ফেলতে পারেন। এই ধরনের পরিস্থিতিতে, একবারে একটি ধারণার উপর মনোযোগ দেওয়া প্রায়শই সহায়ক। একবার সেই ধারণাটি আপনার মনে দৃঢ়ভাবে গেঁথে গেলে, আপনি তখন অন্য ধারণাটি শিখতে শুরু করতে পারেন। সুতরাং, এই পরিস্থিতিতে, আপনি একটি শব্দ স্থগিত করে রাখতে চাইতে পারেন যতক্ষণ না আপনি অন্যটি ভালভাবে শিখেছেন, এবং তারপর এটি স্থগিত অবস্থা থেকে সরিয়ে দিতে পারেন।
 
-For a more detailed discussion, you can refer to the article "[Dealing 
-with Leeches](https://controlaltbackspace.org/leech/)", written by Soren 
-Bjornstad.
+আরও বিস্তারিত আলোচনার জন্য, আপনি সোরেন বিয়র্নস্টাড দ্বারা লিখিত "[লিচ মোকাবেলা](https://controlaltbackspace.org/leech/)" নিবন্ধটি উল্লেখ করতে পারেন।

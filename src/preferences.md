@@ -1,160 +1,148 @@
-# Preferences
+# পছন্দ
 
 <!-- toc -->
 
-The preferences are available from the **Tools** menu on Windows/Linux, or
-the **Anki** menu on a Mac.
+পছন্দগুলি উইন্ডোজ/লিনাক্সে **টুলস** মেনু থেকে, অথবা ম্যাক-এ **আঙ্কি** মেনু থেকে উপলব্ধ।
 
-## Appearance
+## চেহারা
 
-### General
+### সাধারণ
 
-**Language**\
-Change your display language. You can help to improve translations [here](https://translating.ankiweb.net/)
+**ভাষা**
+আপনার প্রদর্শনের ভাষা পরিবর্তন করুন। আপনি [এখানে](https://translating.ankiweb.net/) অনুবাদ উন্নত করতে সাহায্য করতে পারেন।
 
-### User Interface
+### ব্যবহারকারী ইন্টারফেস
 
-**Theme**\
-Dark (night) mode will make Anki's interface dark, and will cause cards to be shown as white text on a
-black background. Some card templates may need to be modified to work
-properly with this option enabled - please see [night mode styling](templates/styling.md#night-mode) for more information.
+**থিম**
+ডার্ক (নাইট) মোড আঙ্কির ইন্টারফেসকে অন্ধকার করে তুলবে, এবং কার্ডগুলিকে কালো পটভূমিতে সাদা টেক্সট হিসাবে দেখানো হবে। এই বিকল্পটি সক্ষম করে সঠিকভাবে কাজ করার জন্য কিছু কার্ড টেমপ্লেট পরিবর্তন করার প্রয়োজন হতে পারে - আরও তথ্যের জন্য অনুগ্রহ করে [নাইট মোড স্টাইলিং](templates/styling.md#night-mode) দেখুন।
 
-From 2.1.50+ there is an option to switch to day or night mode automatically.
+2.1.50+ থেকে স্বয়ংক্রিয়ভাবে দিন বা রাতের মোডে স্যুইচ করার একটি বিকল্প রয়েছে।
 
-**User interface size**\
-If you find that the interface elements are too small for you, you can
-try to increase this setting.
+**ব্যবহারকারী ইন্টারফেসের আকার**
+যদি আপনি দেখেন যে ইন্টারফেসের উপাদানগুলি আপনার জন্য খুব ছোট, আপনি এই সেটিংটি বাড়ানোর চেষ্টা করতে পারেন।
 
-**Reset Window Sizes**\
-This will reset all window sizes and locations to the default settings.
+**উইন্ডোর আকার রিসেট করুন**
+এটি সমস্ত উইন্ডোর আকার এবং অবস্থান ডিফল্ট সেটিংসে রিসেট করবে।
 
-**Video driver**\
-Anki's libraries need a video driver to draw content on the screen.
-Due to different hardware and software configurations, the driver that
-works best on your machine may vary. Software tends to be slower, but will
-work on some systems where the other options do not.
+**ভিডিও ড্রাইভার**
+আঙ্কির লাইব্রেরিগুলির স্ক্রিনে বিষয়বস্তু আঁকার জন্য একটি ভিডিও ড্রাইভার প্রয়োজন। বিভিন্ন হার্ডওয়্যার এবং সফ্টওয়্যার কনফিগারেশনের কারণে, আপনার মেশিনে সবচেয়ে ভাল কাজ করে এমন ড্রাইভারটি ভিন্ন হতে পারে। সফ্টওয়্যার ধীর হতে থাকে, তবে কিছু সিস্টেমে কাজ করবে যেখানে অন্যান্য বিকল্পগুলি কাজ করে না।
 
-Note: If you're on Windows, please check [this page](./platform/windows/display-issues.md) as well.
+দ্রষ্টব্য: আপনি যদি উইন্ডোজে থাকেন, তাহলে অনুগ্রহ করে [এই পৃষ্ঠাটি](./platform/windows/display-issues.md)ও দেখুন।
 
-### Distractions
+### বিক্ষেপ
 
-These options allow you to remove some unnecessary elements from the screen during reviews. You can:
+এই বিকল্পগুলি আপনাকে পর্যালোচনার সময় স্ক্রিন থেকে কিছু অপ্রয়োজনীয় উপাদান সরানোর অনুমতি দেয়। আপনি পারেন:
 
-- Hide the top and bottom bar during reviews.
-- Enable the "minimalist" mode, making the interface more compact/less fancy.
-- Reduce motion, to disable some transitions/animations.
-- Switching between native styling and the Anki theme (only on Mac/Linux).
+- পর্যালোচনার সময় উপরের এবং নীচের বারটি লুকান।
+- "মিনিমালিস্ট" মোড সক্ষম করুন, ইন্টারফেসটিকে আরও কম্প্যাক্ট/কম অভিনব করে তোলে।
+- কিছু ট্রানজিশন/অ্যানিমেশন নিষ্ক্রিয় করতে গতি হ্রাস করুন।
+- নেটিভ স্টাইলিং এবং আঙ্কি থিমের মধ্যে স্যুইচিং (শুধুমাত্র ম্যাক/লিনাক্সে)।
 
-## Review
+## পর্যালোচনা
 
-### Scheduler
+### সময়সূচী
 
-**Next day starts at**\
-Controls when Anki should start showing the next day’s cards. The default
-setting of 4AM ensures that if you’re studying around midnight, you won’t have
-two days' worth of cards shown to you in one session. If you stay up very late
-or wake up very early, you may want to adjust this to a time you’re usually
-sleeping. Note that the start of the next day is relative to your current time zone.
-Also note that any cards that cross a day boundary [will appear at the start of
-the day they are scheduled for](./deck-options.md#day-boundaries), just like review cards do.
+**পরের দিন শুরু হয়**
+আঙ্কিকে কখন পরের দিনের কার্ডগুলি দেখানো শুরু করা উচিত তা নিয়ন্ত্রণ করে। ডিফল্ট
+সেটিং 4AM নিশ্চিত করে যে আপনি যদি মধ্যরাতের কাছাকাছি অধ্যয়ন করেন, তাহলে আপনাকে
+এক সেশনে দুই দিনের কার্ড দেখানো হবে না। আপনি যদি খুব দেরি করে জেগে থাকেন
+বা খুব তাড়াতাড়ি ঘুম থেকে ওঠেন, তবে আপনি এটি এমন একটি সময়ে সামঞ্জস্য করতে চাইতে পারেন যখন আপনি সাধারণত
+ঘুমাচ্ছেন। মনে রাখবেন যে পরের দিনের শুরু আপনার বর্তমান সময় অঞ্চলের সাথে আপেক্ষিক।
+এছাড়াও মনে রাখবেন যে যে কোনও কার্ড যা একটি দিনের সীমা অতিক্রম করে [তারা যে দিনের জন্য নির্ধারিত হয়েছে তার শুরুতে
+প্রদর্শিত হবে](./deck-options.md#day-boundaries), ঠিক যেমন রিভিউ কার্ডগুলি করে।
 
-**Learn ahead limit**\
-Tells Anki how to behave when there is nothing left to study in the current deck
-but cards in learning. The default setting of 20 minutes tells Anki that cards
-should be shown early if they have a delay of less than 20 minutes and there’s
-nothing else to do. If you set this to 0, Anki will always wait the full delay,
-showing the congratulations screen until the remaining cards are ready to be
-reviewed.
+**আগে শেখার সীমা**
+বর্তমান ডেকে অধ্যয়ন করার জন্য আর কিছু না থাকলেও শেখার কার্ড থাকলে আঙ্কিকে কীভাবে আচরণ করতে হবে তা বলে। 20 মিনিটের ডিফল্ট সেটিং আঙ্কিকে বলে যে কার্ডগুলি
+20 মিনিটের কম বিলম্ব থাকলে এবং আর কিছু করার না থাকলে তাড়াতাড়ি দেখানো উচিত।
+আপনি যদি এটি 0 তে সেট করেন, আঙ্কি সর্বদা পুরো বিলম্বের জন্য অপেক্ষা করবে,
+বাকি কার্ডগুলি পর্যালোচনার জন্য প্রস্তুত না হওয়া পর্যন্ত অভিনন্দন স্ক্রিনটি দেখাবে।
 
-**Timebox time limit**\
-Timeboxing is a technique to help you focus by dividing a longer activity (such
-as a 30 minute study session) into smaller blocks. If you set the timebox time
-limit to a non-zero number of minutes, Anki will periodically show you how many
-cards you’ve managed to study during the prescribed time limit.
+**টাইমবক্স সময়সীমা**
+টাইমবক্সিং হল একটি কৌশল যা আপনাকে একটি দীর্ঘ কার্যকলাপকে (যেমন
+30 মিনিটের অধ্যয়ন সেশন) ছোট ছোট ব্লকে বিভক্ত করে মনোযোগ কেন্দ্রীভূত করতে সাহায্য করে।
+আপনি যদি টাইমবক্স সময়সীমা একটি অ-শূন্য মিনিটে সেট করেন, তবে আঙ্কি
+পর্যায়ক্রমে আপনাকে দেখাবে যে আপনি নির্ধারিত সময়সীমার মধ্যে কতগুলি কার্ড অধ্যয়ন করতে পেরেছেন।
 
-### Review
+### পর্যালোচনা
 
-**Show play buttons on cards with audio**\
-Whether a clickable (re)play button will be shown in the study screen
-for cards with audio.
+**অডিও সহ কার্ডগুলিতে প্লে বোতাম দেখান**
+অধ্যয়ন স্ক্রিনে অডিও সহ কার্ডগুলির জন্য একটি ক্লিকযোগ্য (পুনরায়) প্লে বোতাম দেখানো হবে কিনা।
 
-**Interrupt current audio when answering**\
-Whether a currently playing audio file should be stopped when answering
-a card.
+**উত্তর দেওয়ার সময় বর্তমান অডিও বিঘ্নিত করুন**
+একটি কার্ডের উত্তর দেওয়ার সময় একটি বর্তমানে চলমান অডিও ফাইল বন্ধ করা উচিত কিনা।
 
-**Show remaining card count**\
-Disable this option to hide the card count at the bottom of the screen.
+**বাকি কার্ডের সংখ্যা দেখান**
+স্ক্রিনের নীচে কার্ডের সংখ্যা লুকাতে এই বিকল্পটি নিষ্ক্রিয় করুন।
 
-**Show next review time above answer buttons**\
-Useful to know how far in the future your cards are being pushed.
+**উত্তর বোতামগুলির উপরে পরবর্তী পর্যালোচনার সময় দেখান**
+আপনার কার্ডগুলি ভবিষ্যতে কতটা দূরে ঠেলে দেওয়া হচ্ছে তা জানার জন্য সহায়ক।
 
-**Spacebar (or enter) also answers card**\
-Defines whether a press on <kbd>Space</kbd> or <kbd>Enter</kbd> answers cards.
+**স্পেসবার (বা এন্টার) কার্ডের উত্তরও দেয়**
+<kbd>স্পেস</kbd> বা <kbd>এন্টার</kbd> চাপলে কার্ডের উত্তর দেওয়া হবে কিনা তা নির্ধারণ করে।
 
-## Editing
+## সম্পাদনা
 
-### Editing
+### সম্পাদনা
 
-**Paste clipboard images as PNG**\
-By default Anki pastes images on the clipboard as JPG files, to save disk space.
-You can use the option to paste as PNG images instead. PNG images support
-transparent backgrounds and are lossless, but they usually result in much larger
-file sizes.
+**ক্লিপবোর্ড চিত্রগুলিকে PNG হিসাবে পেস্ট করুন**
+ডিফল্টরূপে আঙ্কি ক্লিপবোর্ডে থাকা চিত্রগুলিকে JPG ফাইল হিসাবে পেস্ট করে, ডিস্কের স্থান বাঁচাতে।
+আপনি পরিবর্তে PNG চিত্র হিসাবে পেস্ট করার জন্য বিকল্পটি ব্যবহার করতে পারেন। PNG চিত্রগুলি
+স্বচ্ছ পটভূমি সমর্থন করে এবং ক্ষতিহীন, তবে তারা সাধারণত অনেক বড়
+ফাইল আকারের কারণ হয়।
 
-**Paste without Shift strips formatting**\
-By default, formatting like bold and colors are kept when pasting,
-unless the <kbd>Shift</kbd> key is held down. This option reverses the behaviour.
+**শিফট ছাড়া পেস্ট করলে ফরম্যাটিং মুছে যায়**
+ডিফল্টরূপে, বোল্ড এবং রঙের মতো ফরম্যাটিং পেস্ট করার সময় রাখা হয়,
+যদি না <kbd>শিফট</kbd> কী চেপে ধরা হয়। এই বিকল্পটি আচরণকে বিপরীত করে।
 
-**Default deck**\
-Controls how note types and decks interact. The default option **When adding, default
-to current deck** means that Anki saves the last-used note type for each deck and
-selects it again the next time you choose the deck (and, in addition, will
-start with the current deck selected when choosing **Add** from anywhere). The other
-option, **Change deck depending on note type**, saves the last-used deck for each
-note type (and opens the add window to the last-used note type when you choose
-**Add**). This may be more convenient if you always use a single note type for each
-deck.
+**ডিফল্ট ডেক**
+নোটের প্রকার এবং ডেক কীভাবে ইন্টারঅ্যাক্ট করে তা নিয়ন্ত্রণ করে। ডিফল্ট বিকল্প **যোগ করার সময়,
+বর্তমান ডেকে ডিফল্ট** মানে হল যে আঙ্কি প্রতিটি ডেকের জন্য শেষ ব্যবহৃত নোটের প্রকারটি সংরক্ষণ করে এবং
+পরের বার আপনি ডেকটি নির্বাচন করার সময় এটি আবার নির্বাচন করে (এবং, উপরন্তু,
+যেকোনো জায়গা থেকে **যোগ করুন** নির্বাচন করার সময় বর্তমান ডেক দিয়ে শুরু করবে)। অন্য
+বিকল্প, **নোটের প্রকারের উপর নির্ভর করে ডেক পরিবর্তন করুন**, প্রতিটি
+নোটের প্রকারের জন্য শেষ ব্যবহৃত ডেকটি সংরক্ষণ করে (এবং আপনি যখন **যোগ করুন** নির্বাচন করেন তখন শেষ ব্যবহৃত নোটের প্রকারে যোগ উইন্ডোটি খোলে)।
+এটি আরও সুবিধাজনক হতে পারে যদি আপনি সর্বদা প্রতিটি ডেকের জন্য একটি একক নোটের প্রকার ব্যবহার করেন।
 
-The last used deck/note type is updated when you add a card. If you change the deck
-and close the add window without adding a card, it won't be saved.
+আপনি একটি কার্ড যোগ করার সময় শেষ ব্যবহৃত ডেক/নোটের প্রকারটি আপডেট করা হয়। যদি আপনি ডেক পরিবর্তন করেন
+এবং একটি কার্ড যোগ না করে যোগ উইন্ডোটি বন্ধ করেন, তবে এটি সংরক্ষণ করা হবে না।
 
-### Browsing
+### ব্রাউজিং
 
-**Default search text**\
-Allows you to customize the starting search text in the browser (eg, to start
-with "deck:current").
+**ডিফল্ট অনুসন্ধান পাঠ্য**
+আপনাকে ব্রাউজারে শুরুর অনুসন্ধান পাঠ্য কাস্টমাইজ করার অনুমতি দেয় (যেমন,
+"deck:current" দিয়ে শুরু করতে)।
 
-**Ignore accents in search (slower)**\
-When enabled, simple text searches automatically [ignore accents](./searching.md#ignoring-accentscombining-characters).
+**অনুসন্ধানে অ্যাকসেন্ট উপেক্ষা করুন (ধীর)**
+যখন সক্ষম করা হয়, তখন সাধারণ পাঠ্য অনুসন্ধানগুলি স্বয়ংক্রিয়ভাবে [অ্যাকসেন্ট উপেক্ষা করে](./searching.md#ignoring-accentscombining-characters)।
 
-## Syncing
+## সিঙ্কিং
 
-This tab contains options related to syncing with AnkiWeb.
+এই ট্যাবটিতে আঙ্কিওয়েবের সাথে সিঙ্ক করার সম্পর্কিত বিকল্প রয়েছে।
 
-### Synchronisation
+### সিঙ্ক্রোনাইজেশন
 
-**Synchronize audio and images too**\
-When enabled, media will also be synced with AnkiWeb.
+**অডিও এবং চিত্রগুলিও সিঙ্ক্রোনাইজ করুন**
+যখন সক্ষম করা হয়, তখন মিডিয়াও আঙ্কিওয়েবের সাথে সিঙ্ক করা হবে।
 
-**Automatically sync on profile open/close**\
-Disable this if you don't want an automatic sync with AnkiWeb when opening / closing a [profile](./profiles.md).
+**প্রোফাইল খোলা/বন্ধ করার সময় স্বয়ংক্রিয়ভাবে সিঙ্ক করুন**
+আপনি যদি একটি [প্রোফাইল](./profiles.md) খোলার / বন্ধ করার সময় আঙ্কিওয়েবের সাথে স্বয়ংক্রিয় সিঙ্ক না চান তবে এটি নিষ্ক্রিয় করুন।
 
-**Periodically sync media**
+**পর্যায়ক্রমে মিডিয়া সিঙ্ক করুন**
 
-**On next sync, force changes in one direction**\
-When this option is enabled, the next sync will
-ask you whether you wish to upload or download. This is useful if
-you have made some changes accidentally, and wish to overwrite them
-with an older version that is on AnkiWeb.
+**পরবর্তী সিঙ্কে, এক দিকে পরিবর্তন জোর করুন**
+যখন এই বিকল্পটি সক্ষম করা হয়, তখন পরবর্তী সিঙ্ক আপনাকে
+জিজ্ঞাসা করবে যে আপনি আপলোড করতে চান নাকি ডাউনলোড করতে চান। এটি সহায়ক যদি
+আপনি ঘটনাক্রমে কিছু পরিবর্তন করে থাকেন এবং সেগুলিকে
+আঙ্কিওয়েবে থাকা একটি পুরানো সংস্করণ দিয়ে ওভাররাইট করতে চান।
 
-### AnkiWeb Account
+### আঙ্কিওয়েব অ্যাকাউন্ট
 
-When logged in, clicking on **Log Out** will log you out.
+লগ ইন থাকা অবস্থায়, **লগ আউট** এ ক্লিক করলে আপনি লগ আউট হয়ে যাবেন।
 
-### Self-hosted Sync Server
+### স্ব-হোস্টেড সিঙ্ক সার্ভার
 
-For info on the custom sync server option, see [this section](./sync-server.md).
+কাস্টম সিঙ্ক সার্ভার বিকল্প সম্পর্কে তথ্যের জন্য, [এই বিভাগটি](./sync-server.md) দেখুন।
 
-## Backups
+## ব্যাকআপ
 
-Please see [this](backups.md#automatic-backups) section of the manual.
+অনুগ্রহ করে ম্যানুয়ালের [এই](backups.md#automatic-backups) বিভাগটি দেখুন।

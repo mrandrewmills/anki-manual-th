@@ -1,177 +1,144 @@
-# Self-Hosted Sync Server
+# সেলফ-হোস্টেড সিঙ্ক সার্ভার
 
-Advanced users who cannot or do not wish to use AnkiWeb can use a self-hosted
-sync server instead.
+যেসব উন্নত ব্যবহারকারী AnkiWeb ব্যবহার করতে পারেন না বা করতে চান না, তারা এর পরিবর্তে একটি সেলফ-হোস্টেড সিঙ্ক সার্ভার ব্যবহার করতে পারেন।
 
-Things to be aware of:
+কিছু বিষয় মনে রাখবেন:
 
-- This is an advanced feature, targeted at users who are comfortable with
-  networking and the command line. If you use this, the expectation is you
-  can resolve any setup/network/firewall issues you run into yourself, and
-  use of this is entirely at your own risk.
-- Newer clients may depend on changes to the sync protocol, so syncing may
-  stop working if you update your Anki clients without also updating the server.
-- Third-party sync servers also exist. No testing is done against them, and
-  they tend to take time to catch up when the sync protocol changes, so they
-  are not recommended.
-- The messages inside Anki will use the term "AnkiWeb" even if a custom server
-  has been configured, (e.g. "Cannot connect to AnkiWeb" when your server is down).
+- এটি একটি উন্নত ফিচার, যা নেটওয়ার্কিং এবং কমান্ড লাইন ব্যবহারে স্বচ্ছন্দ ব্যবহারকারীদের জন্য তৈরি। আপনি যদি এটি ব্যবহার করেন, তবে আশা করা হয় যে আপনি নিজে থেকেই যেকোনো সেটআপ/নেটওয়ার্ক/ফায়ারওয়াল সমস্যা সমাধান করতে পারবেন এবং এর ব্যবহার সম্পূর্ণ আপনার নিজের ঝুঁকিতে হবে।
+- নতুন ক্লায়েন্টগুলো সিঙ্ক প্রোটোকলের পরিবর্তনের উপর নির্ভরশীল হতে পারে, তাই আপনি যদি সার্ভার আপডেট না করেই আপনার Anki ক্লায়েন্ট আপডেট করেন, তাহলে সিঙ্কিং কাজ করা বন্ধ করে দিতে পারে।
+- তৃতীয় পক্ষের সিঙ্ক সার্ভারও রয়েছে। সেগুলোর সাথে কোনো পরীক্ষা করা হয় না, এবং সিঙ্ক প্রোটোকল পরিবর্তিত হলে সেগুলো আপডেট হতে সময় নেয়, তাই সেগুলো সুপারিশ করা হয় না।
+- একটি কাস্টম সার্ভার কনফিগার করা হলেও Anki-এর ভেতরের বার্তাগুলোতে "AnkiWeb" শব্দটি ব্যবহার করা হবে (যেমন, আপনার সার্ভার ডাউন থাকলে "AnkiWeb-এর সাথে সংযোগ করা যাচ্ছে না")।
 
-## Installing/Running
+## ইনস্টল/চালানো
 
-There are various ways you can install and run the server. You can use either:
+আপনি বিভিন্ন উপায়ে সার্ভারটি ইনস্টল এবং চালাতে পারেন। আপনি নিম্নলিখিত যেকোনো একটি ব্যবহার করতে পারেন:
 
-- the sync server bundled with the desktop version of Anki
-- a separate minimal sync server that doesn't include Anki's GUI dependencies. Python and Rust implementations are available.
+- Anki-এর ডেস্কটপ সংস্করণের সাথে বান্ডেল করা সিঙ্ক সার্ভার
+- একটি আলাদা মিনিমাল সিঙ্ক সার্ভার যাতে Anki-এর GUI নির্ভরতা অন্তর্ভুক্ত নেই। পাইথন এবং রাস্ট ইমপ্লিমেন্টেশন উপলব্ধ আছে।
 
-### From a Packaged Build
+### একটি প্যাকেজড বিল্ড থেকে
 
-This uses the sync server built into the desktop version of Anki as of version 2.1.57+.
+এটি সংস্করণ 2.1.57+ থেকে Anki-এর ডেস্কটপ সংস্করণে বিল্ট-ইন সিঙ্ক সার্ভারটি ব্যবহার করে।
 
-On Windows in a cmd.exe session:
+Windows-এ একটি cmd.exe সেশনে:
 
 ```
 set SYNC_USER1=user:pass
 "\Program Files\anki\anki-console" --syncserver
 ```
 
-Or MacOS, in Terminal.app:
+অথবা MacOS-এ, Terminal.app-এ:
 
 ```
 SYNC_USER1=user:pass /Applications/Anki.app/Contents/MacOS/launcher --syncserver
 ```
 
-Replace 'launcher' with 'anki' for old packaged builds prior to 25.07.
+২৫.০৭-এর আগের পুরোনো প্যাকেজড বিল্ডের জন্য 'launcher'-এর পরিবর্তে 'anki' ব্যবহার করুন।
 
-Or Linux:
+অথবা Linux-এ:
 
 ```
 SYNC_USER1=user:pass anki --syncserver
 ```
 
-### With Pip
+### Pip ব্যবহার করে
 
-To avoid downloading desktop Anki's GUI dependencies, you can run a standalone Anki sync server using a Python package downloaded from PyPI instead.
-Make sure you have Python 3.9+ installed.
-
-```
+ডেস্কটপ Anki-এর GUI নির্ভরতা ডাউনলোড এড়াতে, আপনি PyPI থেকে ডাউনলোড করা একটি পাইথন প্যাকেজ ব্যবহার করে একটি স্বতন্ত্র Anki সিঙ্ক সার্ভার চালাতে পারেন।
+নিশ্চিত করুন যে আপনার সিস্টেমে Python 3.9+ ইনস্টল করা আছে। ```
 python3 -m venv ~/syncserver
 ~/syncserver/bin/pip install anki
 SYNC_USER1=user:pass ~/syncserver/bin/python -m anki.syncserver
-```
-
-### With Cargo
-
-From Anki 2.1.66+, you can alternatively build a Rust implementation of the standalone sync server using the below command.
-Make sure you have Rustup installed.
 
 ```
+
+### কার্গো ব্যবহার করে
+
+Anki 2.1.66+ সংস্করণ থেকে, আপনি নিচের কমান্ডটি ব্যবহার করে স্ট্যান্ডঅ্যালোন সিঙ্ক সার্ভারের একটি রাস্ট ইমপ্লিমেন্টেশন বিল্ড করতে পারেন।
+নিশ্চিত করুন যে আপনার সিস্টেমে Rustup ইনস্টল করা আছে।
+
+```
+
 cargo install --locked --git https://github.com/ankitects/anki.git --tag 25.02.5 anki-sync-server
-```
-
-Replace 25.02.5 with whatever the latest Anki version is.
-
-Protobuf (protoc) will need to be installed.
-
-After building, you can run it with:
 
 ```
+
+25.02.5 এর জায়গায় Anki-এর সর্বশেষ সংস্করণটি ব্যবহার করুন।
+
+Protobuf (protoc) ইনস্টল করা থাকতে হবে।
+
+বিল্ড করার পর, আপনি এটি এভাবে চালাতে পারেন:
+
+```
+
 SYNC_USER1=user:pass anki-sync-server
-```
-
-### From a source checkout
-
-If you've cloned the Anki repo from GitHub, you can install from there:
 
 ```
+
+### সোর্স চেকআউট থেকে
+
+আপনি যদি গিটহাব থেকে Anki রিপোজিটরিটি ক্লোন করে থাকেন, তাহলে সেখান থেকে ইনস্টল করতে পারেন:
+
+```
+
 ./ninja extract:protoc ftl_repo
 cargo install --path rslib/sync
+
 ```
 
-### With Docker
+### ডকার ব্যবহার করে
 
-You can find a user-contributed Dockerfile and some instructions
-[here](https://github.com/ankitects/anki/tree/main/docs/syncserver).
+আপনি একজন ব্যবহারকারীর তৈরি করা একটি Dockerfile এবং কিছু নির্দেশাবলী
+[এখানে](https://github.com/ankitects/anki/tree/main/docs/syncserver) খুঁজে পেতে পারেন।
 
-## Multiple Users
+## একাধিক ব্যবহারকারী
 
-`SYNC_USER1` declares the first user and password, and must be set.
-You can optionally declare `SYNC_USER2`, `SYNC_USER3` and so on, if you
-wish to set up multiple accounts.
+`SYNC_USER1` প্রথম ব্যবহারকারী এবং পাসওয়ার্ড ঘোষণা করে এবং এটি অবশ্যই সেট করতে হবে।
+আপনি চাইলে একাধিক অ্যাকাউন্ট সেট আপ করার জন্য ঐচ্ছিকভাবে `SYNC_USER2`, `SYNC_USER3` ইত্যাদি ঘোষণা করতে পারেন।
 
-## Hashed Passwords
+## হ্যাশ করা পাসওয়ার্ড
 
-Advanced users may wish to use hashed passwords instead of plain text
-passwords. If you wish to do this, you'll need to use a separate tool (such as
-[this one](https://git.sr.ht/~laalsaas/pbkdf2-password-hash)) to generate a
-password hash. You can then tell the server to expect hashed passwords by
-setting the env var PASSWORDS_HASHED to 1 (or any other value).
+উন্নত ব্যবহারকারীরা প্লেইন টেক্সট পাসওয়ার্ডের পরিবর্তে হ্যাশ করা পাসওয়ার্ড ব্যবহার করতে চাইতে পারেন। আপনি যদি এটি করতে চান, তাহলে আপনাকে একটি পাসওয়ার্ড হ্যাশ তৈরি করার জন্য একটি আলাদা টুল (যেমন [এটি](https://git.sr.ht/~laalsaas/pbkdf2-password-hash)) ব্যবহার করতে হবে। এরপর আপনি এনভায়রনমেন্ট ভেরিয়েবল PASSWORDS_HASHED-কে 1 (বা অন্য কোনো মান) সেট করে সার্ভারকে হ্যাশ করা পাসওয়ার্ড ব্যবহার করার নির্দেশ দিতে পারেন।
 
-When hashed passwords are used, SYNC_USER variables are expected to be in
-username:password_hash format, where password_hash is a hash of the password in
-the PHC Format.
+যখন হ্যাশ করা পাসওয়ার্ড ব্যবহার করা হয়, তখন SYNC_USER ভেরিয়েবলগুলো username:password_hash ফরম্যাটে থাকার কথা, যেখানে password_hash হলো PHC ফরম্যাটে পাসওয়ার্ডের একটি হ্যাশ। ## স্টোরেজ লোকেশন
 
-## Storage Location
+সার্ভারকে আপনার কালেকশন এবং মিডিয়ার একটি কপি একটি ফোল্ডারে সংরক্ষণ করতে হবে।
+ডিফল্টরূপে এটি ~/.syncserver; আপনি একটি `SYNC_BASE` এনভায়রনমেন্ট ভেরিয়েবল সংজ্ঞায়িত করে এটি পরিবর্তন করতে পারেন।
 
-The server needs to store a copy of your collection and media in a folder.
-By default it is ~/.syncserver; you can change this by defining
-a `SYNC_BASE` environment variable.
+- এটি আপনার সাধারণ Anki ডেটা ফোল্ডারের মতো একই লোকেশন হতে পারবে না, কারণ
+সার্ভার এবং ক্লায়েন্টকে আলাদা কপি সংরক্ষণ করতে হবে।
+- আপনাকে আপনার ডেটা সার্ভারে সিঙ্ক করতে হবে, ম্যানুয়ালি ফাইলগুলো সার্ভার ফোল্ডারে কপি করা যাবে না।
 
-- This must not be the same location as your normal Anki data folder, as the
-  server and client must store separate copies.
-- You must sync your data to the server, not manually copy files into the
-  server folder.
+## পাবলিক অ্যাক্সেস
 
-## Public Access
+সার্ভার একটি এনক্রিপশনবিহীন HTTP সংযোগে শোনে, তাই এটিকে সরাসরি ইন্টারনেটে উন্মুক্ত করা ভালো ধারণা নয়। আপনি হয় ব্যবহার আপনার লোকাল নেটওয়ার্কে সীমাবদ্ধ রাখতে চাইবেন, অথবা সার্ভারের সামনে কোনো ধরনের এনক্রিপশন ব্যবহার করতে চাইবেন, যেমন একটি VPN (Tailscale ব্যবহার করা সহজ বলে মনে হয়), বা একটি HTTPS রিভার্স প্রক্সি।
 
-The server listens on an unencrypted HTTP connection, so it's not a good
-idea to expose it directly to the internet. You'll want to either restrict
-usage to your local network, or place some form of encryption in front of
-the server, such as a VPN (Tailscale is apparently easy), or a HTTPS
-reverse proxy.
+আপনি সার্ভার যে হোস্ট এবং পোর্টে বাইন্ড করবে তা পরিবর্তন করার জন্য `SYNC_HOST` এবং `SYNC_PORT` সংজ্ঞায়িত করতে পারেন।
 
-You can define `SYNC_HOST` and `SYNC_PORT` to change the host and port
-that the server binds to.
+## ক্লায়েন্ট সেটআপ
 
-## Client Setup
+আপনাকে আপনার কম্পিউটারের নেটওয়ার্ক আইপি ঠিকানা নির্ধারণ করতে হবে, এবং তারপর আপনার প্রতিটি Anki ক্লায়েন্টকে সেই ঠিকানায় নির্দেশ করতে হবে, যেমন `http://192.168.1.200:8080/`। ইউআরএলটি প্রেফারেন্সে কনফিগার করা যেতে পারে।
 
-You'll need to determine your computer's network IP address, and then
-point each of your Anki clients to the address, e.g something like
-`http://192.168.1.200:8080/`. The URL can be configured in the preferences.
+আপনি যদি AnkiMobile ব্যবহার করেন এবং আপনার লোকাল নেটওয়ার্কে একটি সার্ভারের সাথে সংযোগ করতে না পারেন, তাহলে অনুগ্রহ করে iOS সেটিংসে যান, নিচের দিকে Anki খুঁজে বের করুন এবং "Allow Anki to access local network" অপশনটি একবার বন্ধ করে আবার চালু করুন।
 
-If you're using AnkiMobile and are unable to connect to a server on your local
-network, please go into the iOS settings, locate Anki near the bottom, and
-toggle "Allow Anki to access local network" off and then on again.
+পুরানো ডেস্কটপ ক্লায়েন্টগুলোর জন্য আপনাকে `SYNC_ENDPOINT` এবং
+`SYNC_ENDPOINT_MEDIA` সংজ্ঞায়িত করতে হতো। যদি একটি পুরানো ক্লায়েন্ট ব্যবহার করেন, তাহলে আপনাকে এটি এভাবে দিতে হবে।g.
+`http://192.168.1.200:8080/sync/` এবং `http://192.168.1.200:8080/msync/`
+যথাক্রমে। 2.16-এর আগের AnkiDroid ক্লায়েন্টগুলির জন্য এই দুটি এন্ডপয়েন্টের জন্য আলাদা কনফিগারেশনের প্রয়োজন হয়।
 
-Older desktop clients required you to define `SYNC_ENDPOINT` and
-`SYNC_ENDPOINT_MEDIA`. If using an older client, you'd put it as e.g.
-`http://192.168.1.200:8080/sync/` and `http://192.168.1.200:8080/msync/`
-respectively. AnkiDroid clients before 2.16 require separate configuration for
-the two endpoints.
+## রিভার্স প্রক্সি
 
-## Reverse Proxies
+যদি HTTPS অ্যাক্সেস প্রদানের জন্য একটি রিভার্স প্রক্সি ব্যবহার করেন (যেমন nginx), এবং একটি সাবপাথে বাইন্ড করেন
+(যেমন `http://example.com/custom/` -> `http://localhost:8080/`), তাহলে Anki কনফিগার করার সময় আপনাকে অবশ্যই শেষে একটি স্ল্যাশ (trailing slash) অন্তর্ভুক্ত করতে হবে। আপনি যদি `http://example.com/custom` দেন, তবে এটি কাজ করবে না।
 
-If using a reverse proxy to provide HTTPS access (e.g. nginx), and binding to a subpath
-(e.g. `http://example.com/custom/` -> `http://localhost:8080/`), you must make sure to
-include a trailing slash when configuring Anki. If you put `http://example.com/custom`
-instead, it will not work.
+iOS-এ TLS 1.3 সমর্থিত নয়, তাই আপনার রিভার্স প্রক্সিতে TLS 1.2 এনাবল করা থাকতে হবে, অন্যথায় আপনি "error code -9836" পাবেন।
 
-On iOS, TLS 1.3 is not supported, so your reverse proxy will need to have TLS 1.2
-enabled, or you'll get an "error code -9836".
+## বড় রিকোয়েস্ট
 
-## Large Requests
+আপলোডের উপর স্ট্যান্ডার্ড AnkiWeb সীমা ডিফল্টভাবে প্রয়োগ করা হয়। আপনি চাইলে সীমা বাড়ানোর জন্য `MAX_SYNC_PAYLOAD_MEGS`-এর মান ১০০-এর বেশি সেট করতে পারেন। মনে রাখবেন যে আপনি যদি একটি রিভার্স প্রক্সি ব্যবহার করেন, তবে আপনাকে সেখানেও সীমাটি সামঞ্জস্য করতে হতে পারে।
 
-The standard AnkiWeb limit on uploads is applied by default. You can optionally
-set `MAX_SYNC_PAYLOAD_MEGS` to something greater than 100 if you wish to
-increase the limit. Bear in mind that if you're using a reverse proxy, you may
-need to adjust the limit there as well.
+## পরিবর্তনে অবদান রাখা
 
-## Contributing Changes
+যেহেতু এই সার্ভারটি Anki-এর সাথে বান্ডেল করা থাকে, তাই সরলতা একটি ডিজাইন লক্ষ্য - এটি ব্যক্তিগত/পারিবারিক ব্যবহারের জন্য তৈরি, এবং যে সমস্ত পুল রিকোয়েস্ট (PR) REST API বা এক্সটার্নাল ডেটাবেসের মতো জিনিস যোগ করে, সেগুলো এই মুহূর্তে গৃহীত হওয়ার সম্ভাবনা কম। যদি কোনো সন্দেহ থাকে, তবে একটি পুল রিকোয়েস্ট নিয়ে কাজ শুরু করার আগে অনুগ্রহ করে যোগাযোগ করুন।
 
-Because this server is bundled with Anki, simplicity is a design goal - it is
-targeted at individual/family use, and PRs that add things like a REST API or
-external databases are unlikely to be accepted at this time. If in doubt, please
-reach out before starting work on a PR.
-
-If you're looking for an existing API solution, the AnkiConnect add-on may
-meet your needs.
+আপনি যদি একটি বিদ্যমান API সমাধানের সন্ধান করেন, তবে AnkiConnect অ্যাড-অনটি আপনার প্রয়োজন মেটাতে পারে।
+```

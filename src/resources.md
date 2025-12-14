@@ -1,3 +1,3 @@
-# Resources
+# সম্পদ
 
-You can find guides, templates, custom schedulers and other resources in [this resource list](https://forums.ankiweb.net/t/collection-of-anki-resources/60044).
+আপনি [এই সম্পদ তালিকা](https://forums.ankiweb.net/t/collection-of-anki-resources/60044) তে নির্দেশিকা, টেমপ্লেট, কাস্টম সময়সূচী এবং অন্যান্য সম্পদ খুঁজে পেতে পারেন।

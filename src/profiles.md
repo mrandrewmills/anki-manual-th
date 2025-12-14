@@ -1,33 +1,27 @@
-# Profiles
+# প্রোফাইল
 
-If more than one person wants to use Anki on your computer, you can set
-up a separate profile for each user. Each user profile has their own
-collection, and own program settings. Add-ons are shared across profiles.
-Profiles are configured by going to the File menu and choosing "Switch Profile".
+যদি আপনার কম্পিউটারে একাধিক ব্যক্তি আঙ্কি ব্যবহার করতে চান, তাহলে আপনি
+প্রতিটি ব্যবহারকারীর জন্য একটি পৃথক প্রোফাইল সেট আপ করতে পারেন। প্রতিটি ব্যবহারকারী প্রোফাইলের নিজস্ব
+সংগ্রহ এবং নিজস্ব প্রোগ্রাম সেটিংস থাকে। অ্যাড-অনগুলি প্রোফাইল জুড়ে শেয়ার করা হয়।
+ফাইল মেনুতে গিয়ে "প্রোফাইল স্যুইচ করুন" নির্বাচন করে প্রোফাইলগুলি কনফিগার করা হয়।
 
-**Only a single profile can be synced to an AnkiWeb account.**
-If you have different users on your computer, each user will
-need to set up a separate AnkiWeb account for their profile. If you attempt
-to link two or more profiles to the same AnkiWeb account, you will overwrite
-the data from one profile with the data from the other.
+**একটি একক প্রোফাইল শুধুমাত্র একটি আঙ্কিওয়েব অ্যাকাউন্টের সাথে সিঙ্ক করা যেতে পারে।**
+যদি আপনার কম্পিউটারে বিভিন্ন ব্যবহারকারী থাকেন, তাহলে প্রতিটি ব্যবহারকারীকে তাদের প্রোফাইলের জন্য একটি পৃথক আঙ্কিওয়েব অ্যাকাউন্ট সেট আপ করতে হবে। যদি আপনি একই আঙ্কিওয়েব অ্যাকাউন্টের সাথে দুটি বা তার বেশি প্রোফাইল লিঙ্ক করার চেষ্টা করেন, তাহলে আপনি একটি প্রোফাইলের ডেটা অন্যটির ডেটা দিয়ে ওভাররাইট করবেন।
 
-Profiles are primarily intended to be used by different people, and are not
-recommended for splitting up your own content.
-If you have created multiple profiles for yourself, the best option is to
-merge them into a single profile. You can do so by exporting one deck from
-profile A, and then importing it into profile B, repeating for any other decks
-in profile A, until everything is in profile B.
+প্রোফাইলগুলি প্রাথমিকভাবে বিভিন্ন লোকের দ্বারা ব্যবহারের উদ্দেশ্যে তৈরি করা হয়েছে, এবং
+আপনার নিজস্ব বিষয়বস্তু বিভক্ত করার জন্য সুপারিশ করা হয় না।
+যদি আপনি নিজের জন্য একাধিক প্রোফাইল তৈরি করে থাকেন, তবে সেরা বিকল্পটি হল
+সেগুলিকে একটি একক প্রোফাইলে মার্জ করা। আপনি প্রোফাইল A থেকে একটি ডেক এক্সপোর্ট করে,
+এবং তারপর এটি প্রোফাইল B তে ইম্পোর্ট করে এটি করতে পারেন, প্রোফাইল A এর অন্যান্য ডেকের জন্য পুনরাবৃত্তি করে,
+যতক্ষণ না সবকিছু প্রোফাইল B তে থাকে।
 
-AnkiDroid does not support profiles.
+আঙ্কিড্রয়েড প্রোফাইল সমর্থন করে না।
 
-## Profiles window
+## প্রোফাইল উইন্ডো
 
-From the Profiles window (accessible via File>Switch Profile from the main window), you can:
+প্রোফাইল উইন্ডো থেকে (মূল উইন্ডো থেকে ফাইল > প্রোফাইল স্যুইচ করুন এর মাধ্যমে অ্যাক্সেসযোগ্য), আপনি করতে পারেন:
 
-- Open / Add / Rename / Delete user profiles.
-- Quit the program.
-- Restore an [automatic backup.](./backups.md)
-- Downgrade your collection, which is necessary if you want to open it with
-  an earlier Anki release. If you skip this step, you may get an error message
-  when opening your collection in an older Anki version, and you will need to
-  return to this version, downgrade, then try again.
+- ব্যবহারকারীর প্রোফাইল খুলুন / যোগ করুন / নাম পরিবর্তন করুন / মুছুন।
+- প্রোগ্রাম বন্ধ করুন।
+- একটি [স্বয়ংক্রিয় ব্যাকআপ](backups.md) পুনরুদ্ধার করুন।
+- আপনার সংগ্রহ ডাউনগ্রেড করুন, যা প্রয়োজনীয় যদি আপনি এটি একটি পুরানো আঙ্কি রিলিজ দিয়ে খুলতে চান। আপনি যদি এই ধাপটি এড়িয়ে যান, তাহলে আপনি একটি পুরানো আঙ্কি সংস্করণে আপনার সংগ্রহ খোলার সময় একটি ত্রুটি বার্তা পেতে পারেন, এবং আপনাকে এই সংস্করণে ফিরে আসতে হবে, ডাউনগ্রেড করতে হবে, তারপর আবার চেষ্টা করতে হবে।

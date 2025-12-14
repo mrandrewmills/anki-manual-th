@@ -1,77 +1,50 @@
-# Troubleshooting
+# সমস্যা সমাধান
 
-If you encounter a problem with Anki, please try the following steps in order:
+আপনি যদি Anki-তে কোনো সমস্যার সম্মুখীন হন, তাহলে অনুগ্রহ করে নিচের ধাপগুলো একে একে অনুসরণ করুন:
 
-### 1. Restart Anki
+### ১. Anki রিস্টার্ট করুন
 
-Please close Anki, then start it again.
+অনুগ্রহ করে Anki বন্ধ করুন, তারপর এটি আবার চালু করুন।
 
-If you are unable to close Anki because of an error message, you can either
-terminate Anki using your task manager, or restart your computer. Anki saves
-periodically, so you should not lose more than a few minutes of work in most
-circumstances.
+যদি কোনো ত্রুটির বার্তার কারণে আপনি Anki বন্ধ করতে না পারেন, তাহলে আপনি আপনার টাস্ক ম্যানেজার ব্যবহার করে Anki বন্ধ করতে পারেন, অথবা আপনার কম্পিউটার রিস্টার্ট করতে পারেন। Anki পর্যায়ক্রমে ডেটা সেভ করে, তাই বেশিরভাগ ক্ষেত্রে আপনার কয়েক মিনিটের বেশি কাজ হারানোর কথা নয়।
 
-If the problem does not occur again, you can skip the following steps.
+যদি সমস্যাটি আবার দেখা না দেয়, তাহলে আপনি নিচের ধাপগুলো এড়িয়ে যেতে পারেন।
 
-### 2. Check add-ons
+### ২. অ্যাড-অনগুলো পরীক্ষা করুন
 
-Please close Anki, then open it in safe mode by holding down the
-<kbd>Shift</kbd> key while starting Anki. Keep holding <kbd>Shift</kbd> down
-until the on-screen message informs you that Anki has started in safe mode.
-If you're on Linux and that didn't work, run 'anki --safemode'.
+অনুগ্রহ করে Anki বন্ধ করুন, তারপর Anki চালু করার সময় <kbd>Shift</kbd> কী চেপে ধরে রেখে এটিকে সেফ মোডে খুলুন। স্ক্রিনে বার্তা না আসা পর্যন্ত <kbd>Shift</kbd> কী চেপে ধরে রাখুন, যা আপনাকে জানাবে যে Anki সেফ মোডে চালু হয়েছে। আপনি যদি লিনাক্স ব্যবহার করেন এবং এটি কাজ না করে, তাহলে 'anki --safemode' কমান্ডটি চালান।
 
-If the problem goes away, that indicates an add-on is causing the problem.
-Remove any add-ons you don't need, and disable half of the others. If the
-problem continues, try the other half. Repeat the process until you've figured
-out which add-on is causing the problem. Then please report the issue to the
-add-on author, using the Copy Debug Info button, and pasting that into the
-report.
+যদি সমস্যাটি চলে যায়, তাহলে বুঝতে হবে কোনো একটি অ্যাড-অন সমস্যার কারণ। আপনার প্রয়োজন নেই এমন যেকোনো অ্যাড-অন সরিয়ে ফেলুন এবং বাকিগুলোর অর্ধেক নিষ্ক্রিয় করুন। যদি সমস্যাটি চলতে থাকে, তবে অন্য অর্ধেক চেষ্টা করুন। কোন অ্যাড-অনটি সমস্যার কারণ তা খুঁজে না পাওয়া পর্যন্ত এই প্রক্রিয়াটি পুনরাবৃত্তি করুন। তারপর অনুগ্রহ করে 'Copy Debug Info' বাটনটি ব্যবহার করে অ্যাড-অনটির নির্মাতাকে সমস্যাটি জানান এবং সেই তথ্য রিপোর্টের সাথে পেস্ট করুন।
 
-### 3. Check your Anki version
+### ৩. আপনার Anki সংস্করণ পরীক্ষা করুন
 
-You can find the version you're using in the **Help → About** or **Anki →
-About** menu. If the version you're using is not the latest version published on
-<https://apps.ankiweb.net>, please close Anki, install the latest version, and
-then start Anki again to see if the problem has gone away.
+আপনি যে সংস্করণটি ব্যবহার করছেন তা **Help → About** বা **Anki → About** মেনুতে খুঁজে পেতে পারেন। আপনি যে সংস্করণটি ব্যবহার করছেন তা যদি <https://apps.ankiweb.net> ওয়েবসাইটে প্রকাশিত সর্বশেষ সংস্করণ না হয়, তাহলে অনুগ্রহ করে Anki বন্ধ করুন, সর্বশেষ সংস্করণটি ইনস্টল করুন এবং তারপর Anki আবার চালু করে দেখুন সমস্যাটি চলে গেছে কিনা।
 
-If you're using Linux, please make sure you can reproduce the error using the
-packaged version on the Anki website, as distros often distribute [broken versions](platform/linux/distro-packages.md).
+আপনি যদি লিনাক্স ব্যবহার করেন, তাহলে অনুগ্রহ করে নিশ্চিত করুন যে আপনি Anki ওয়েবসাইটের প্যাকেজ করা সংস্করণটি ব্যবহার করে ত্রুটিটি পুনরায় তৈরি করতে পারছেন, কারণ ডিস্ট্রোরা প্রায়শই [ত্রুটিপূর্ণ সংস্করণ](platform/linux/distro-packages.md) বিতরণ করে।
 
-### 4. Check your database
+### ৪. আপনার ডেটাবেস পরীক্ষা করুন
 
-After restarting Anki, please try the **Tools → Check Database** menu item to
-make sure your collection doesn't have any problems.
+Anki রিস্টার্ট করার পর, আপনার সংগ্রহে কোনো সমস্যা নেই তা নিশ্চিত করতে অনুগ্রহ করে **Tools → Check Database** মেনু আইটেমটি ব্যবহার করে দেখুন।
 
-### 5. Restart your computer
+### ৫. আপনার কম্পিউটার রিস্টার্ট করুন
 
-Sometimes restarting your computer may help.
+কখনও কখনও আপনার কম্পিউটার রিস্টার্ট করলে সমস্যা সমাধান হতে পারে। ### ৬. ভিডিও ড্রাইভার পরিবর্তন করুন
 
-### 6. Change the Video Driver
+ক্র্যাশ এবং ডিসপ্লে সংক্রান্ত সমস্যা ভিডিও ড্রাইভারের কারণে হতে পারে। একটি ভিন্ন ভিডিও ড্রাইভার ব্যবহার করলে সাহায্য হতে পারে। নিশ্চিত করুন যে আপনি সমস্ত ড্রাইভার বিকল্প চেষ্টা করেছেন এবং প্রতিটি পরিবর্তনের পরে Anki রিস্টার্ট করেছেন।
 
-Crashes and display issues can be caused by the video driver. Changing to a
-different video driver may help. Make sure you try all the driver options and
-restart Anki after each change.
+আপনি যদি Anki সংস্করণ 23.10 বা তার উপরের সংস্করণ ব্যবহার করেন, তবে সবচেয়ে সহজ উপায় হলো **Tools → Preferences** (অথবা আপনি Mac ব্যবহার করলে **Anki → Preferences**) খুলে ড্রপডাউন মেনু থেকে ড্রাইভার পরিবর্তন করা।
 
-If you're using Anki version 23.10 or above, the easiest way is to open
-**Tools → Preferences** (or **Anki → Preferences** if you're on a Mac) and
-change the driver from the dropdown menu.
+আপনি যদি Anki-এর পুরোনো সংস্করণ ব্যবহার করেন বা কোনো কারণে প্রেফারেন্সেস অ্যাক্সেস করতে না পারেন, তাহলে আপনি এর পরিবর্তে কমান্ড-লাইন নির্দেশাবলী ব্যবহার করতে পারেন এবং ম্যানুয়ালি gldriver ফাইলটি পরিবর্তন করতে পারেন:
 
-If you are on an older Anki version or if you cannot access the preferences for
-some reason, you can use the command-line instructions instead and manually
-change the gldriver file:
+- [উইন্ডোজ](https://docs.ankiweb.net/platform/windows/display-issues.html)
+- [ম্যাক](https://docs.ankiweb.net/platform/mac/display-issues.html)
+- [লিনাক্স](https://docs.ankiweb.net/platform/linux/display-issues.html)
 
-- [Windows](https://docs.ankiweb.net/platform/windows/display-issues.html)
-- [Mac](https://docs.ankiweb.net/platform/mac/display-issues.html)
-- [Linux](https://docs.ankiweb.net/platform/linux/display-issues.html)
+### ৭. উইন্ডোর আকার রিসেট করুন
 
-### 7. Reset window sizes
+কখনও কখনও Anki শুরু করার ঠিক পরেই প্রেফারেন্সেস স্ক্রিনে **reset window sizes** বোতামটি চাপলে সাহায্য হতে পারে।
 
-Sometimes pressing **reset window sizes** button in the preferences screen
-immediately after starting Anki will help.
+### ৮. যদি সমস্যাটি থেকেই যায়
 
-### 8. If the problem remains
-
-If you've confirmed you are using the latest Anki version, and are still
-receiving errors even with add-ons disabled,
-please [report the problem](./getting-help.md), including the next error you
-receive in your post.
+আপনি যদি নিশ্চিত হন যে আপনি Anki-এর সর্বশেষ সংস্করণ ব্যবহার করছেন, এবং অ্যাড-অন নিষ্ক্রিয় করা সত্ত্বেও এখনও ত্রুটি পাচ্ছেন,
+তাহলে অনুগ্রহ করে [সমস্যাটি রিপোর্ট করুন](./getting-help.md), এবং আপনার পোস্টে আপনি পরবর্তী যে ত্রুটিটি পাবেন তা উল্লেখ করুন।

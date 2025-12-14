@@ -1,290 +1,225 @@
-# Card Info, Graphs and Statistics
+# কার্ডের তথ্য, গ্রাফ এবং পরিসংখ্যান
 
 <!-- toc -->
 
-## Card Info
+## কার্ডের তথ্য
 
-You can display information about a card by using the Cards&gt;Info menu item,
-by right-clicking on the card and then selecting **Info**, or by pressing
-<kbd>I</kbd> on the study screen.
+আপনি কার্ডস > তথ্য মেনু আইটেম ব্যবহার করে, কার্ডে ডান-ক্লিক করে এবং তারপর **তথ্য** নির্বাচন করে, অথবা অধ্যয়ন স্ক্রিনে <kbd>I</kbd> চেপে একটি কার্ড সম্পর্কে তথ্য প্রদর্শন করতে পারেন।
 
-![Card Info](media/card_info.png)
+![কার্ডের তথ্য](media/card_info.png)
 
-A few notes:
+কিছু নোট:
 
-**Position**\
-It shows the order the card will appear
-in relative to other new cards. The position can be changed in the
-browser. Once a card has been studied, the position is not used, unless
-the card is manually reset to new again.
+**অবস্থান**
+এটি দেখায় যে কার্ডটি অন্যান্য নতুন কার্ডের সাথে আপেক্ষিকভাবে কোন ক্রমে প্রদর্শিত হবে। অবস্থান ব্রাউজারে পরিবর্তন করা যেতে পারে। একবার একটি কার্ড অধ্যয়ন করা হলে, কার্ডটি ম্যানুয়ালি আবার নতুনতে রিসেট না করা পর্যন্ত অবস্থানটি ব্যবহার করা হয় না।
 
-**Interval**\
-The delay from one review to the next. Times are abbreviated; "0s, 1m,
-3h, 4d, 5mo, 6y" refers to seconds, minutes, hours, days, months and
-years respectively.
+**ব্যবধান**
+এক পর্যালোচনা থেকে পরবর্তী পর্যালোচনার মধ্যে বিলম্ব। সময় সংক্ষেপে লেখা হয়েছে; "0s, 1m,
+3h, 4d, 5mo, 6y" যথাক্রমে সেকেন্ড, মিনিট, ঘন্টা, দিন, মাস এবং
+বছরকে বোঝায়।
 
-**Ease**\
-The approximate amount the interval will grow when you answer a review
-card with the "Good" button.
+**সহজতা**
+আপনি "গুড" বোতাম দিয়ে একটি রিভিউ কার্ডের উত্তর দিলে ব্যবধানটি আনুমানিক কতটা বাড়বে।
 
-The bottom section shows the review history for the card. Rating denotes
-the button (1 = Again, 4 = Easy). When cards are manually rescheduled using
-the "reset" or "set due date" actions, the type will be listed as Manual
-and the rating as 0.
+নীচের বিভাগটি কার্ডের জন্য পর্যালোচনার ইতিহাস দেখায়। রেটিং বোতামটিকে বোঝায় (1 = আবার, 4 = সহজ)। যখন কার্ডগুলি ম্যানুয়ালি "রিসেট" বা "নির্ধারিত তারিখ সেট করুন" ক্রিয়া ব্যবহার করে পুনরায় সময়সূচী করা হয়, তখন প্রকারটি ম্যানুয়াল এবং রেটিং 0 হিসাবে তালিকাভুক্ত হবে।
 
-## Statistics
+## পরিসংখ্যান
 
-The statistics window is accessed by clicking on **Stats** button at the
-top of the main window, or by pressing <kbd>T</kbd>.
+পরিসংখ্যান উইন্ডোটি মূল উইন্ডোর শীর্ষে **পরিসংখ্যান** বোতামে ক্লিক করে, অথবা <kbd>T</kbd> চেপে অ্যাক্সেস করা হয়।
 
-![Statistics screen](media/Statistics.png)
+![পরিসংখ্যান স্ক্রিন](media/Statistics.png)
 
-## Selecting Decks / Collection
+## ডেক / সংগ্রহ নির্বাচন করা
 
-### Deck
+### ডেক
 
-By default, the statistics window will show statistics from the currently selected deck and any
-subdecks it may contain, but you can select any deck from your collection by typing its name in the
-text box at the top of the screen or (from Anki 2.1.61), by using the deck selector at the bottom.
+ডিফল্টরূপে, পরিসংখ্যান উইন্ডোটি বর্তমানে নির্বাচিত ডেক এবং এটিতে থাকতে পারে এমন যেকোনো
+সাবডেক থেকে পরিসংখ্যান দেখাবে, তবে আপনি স্ক্রিনের শীর্ষে এর নাম টাইপ করে
+(বা আঙ্কি 2.1.61 থেকে) নীচের ডেক নির্বাচক ব্যবহার করে আপনার সংগ্রহ থেকে
+যেকোনো ডেক নির্বাচন করতে পারেন।
 
-### Collection
+### সংগ্রহ
 
-If you select this checkbox, statistics will be shown for your entire collection. You can also display graphs
-for arbitrary searches by adding filters in the search box at the top (2.1.28+).
+যদি আপনি এই চেকবক্সটি নির্বাচন করেন, তাহলে আপনার পুরো সংগ্রহের জন্য পরিসংখ্যান দেখানো হবে। আপনি উপরের অনুসন্ধান বাক্সে ফিল্টার যোগ করে যেকোনো অনুসন্ধানের জন্য গ্রাফও প্রদর্শন করতে পারেন (2.1.28+)।
 
-### History
+### ইতিহাস
 
-By default, Anki shows you statistics for the last 12 months.
-You can change this to all history scope or deck life scope at the top. (The
-"today" section at the top remains of course unaffected by this selection.)
+ডিফল্টরূপে, আঙ্কি আপনাকে গত 12 মাসের পরিসংখ্যান দেখায়।
+আপনি এটি শীর্ষে সমস্ত ইতিহাস স্কোপ বা ডেক লাইফ স্কোপে পরিবর্তন করতে পারেন। (স্ক্রিনের শীর্ষে "আজ" বিভাগটি অবশ্যই এই নির্বাচন দ্বারা প্রভাবিত হয় না।)
 
-### More
+### আরও
 
-- Clicking on "Save PDF" at the bottom will save a PDF document of the statistics to a file
-  on your desktop to make it easy to share your statistics with others.
+-   নীচে "পিডিএফ সংরক্ষণ করুন" এ ক্লিক করলে পরিসংখ্যানের একটি পিডিএফ ডকুমেন্ট আপনার ডেস্কটপে একটি ফাইলে সংরক্ষিত হবে যাতে অন্যদের সাথে আপনার পরিসংখ্যান শেয়ার করা সহজ হয়।
 
-- When you delete notes, their review history is maintained in Anki. It
-  will not be included when looking at statistics for a specific deck (as
-  Anki has no way of knowing which deck the deleted cards belonged to),
-  but will be included when you look at statistics for the whole
-  collection.
+-   যখন আপনি নোটগুলি মুছে ফেলেন, তখন তাদের পর্যালোচনার ইতিহাস আঙ্কিতে বজায় থাকে।
+    একটি নির্দিষ্ট ডেকের জন্য পরিসংখ্যান দেখার সময় এটি অন্তর্ভুক্ত করা হবে না (কারণ
+    আঙ্কি জানে না যে মুছে ফেলা কার্ডগুলি কোন ডেকের অন্তর্গত ছিল), তবে আপনি যখন পুরো সংগ্রহের জন্য পরিসংখ্যান দেখেন তখন এটি অন্তর্ভুক্ত করা হবে।
 
-- Anki 2.1.28+ introduced redesigned graphs. The old graphs are still
-  accessible with a <kbd>Shift</kbd>-click on the Stats button.
+-   আঙ্কি 2.1.28+ নতুন ডিজাইনের গ্রাফ চালু করেছে। পুরানো গ্রাফগুলি এখনও
+    পরিসংখ্যান বোতামে <kbd>Shift</kbd>-ক্লিক করে অ্যাক্সেস করা যায়।
 
-## Today
+## আজ
 
-At the top of the statistics window is a brief list of textual
-statistics about the reviews that you have completed today. A “review”
-in this context is "one answering of a card", so a card might count as
-multiple reviews if it needed to be seen multiple times, and a learning
-card answered also counts as a “review.” A couple of the stats whose
-meaning may not be immediately obvious:
+পরিসংখ্যান উইন্ডোর শীর্ষে আজ আপনি সম্পন্ন করা রিভিউ সম্পর্কে একটি সংক্ষিপ্ত পাঠ্য পরিসংখ্যান তালিকা রয়েছে। এই প্রসঙ্গে একটি "রিভিউ" হল "একটি কার্ডের একটি উত্তর", তাই একটি কার্ড একাধিকবার দেখা প্রয়োজন হলে একাধিক রিভিউ হিসাবে গণ্য হতে পারে, এবং একটি শেখার কার্ডের উত্তরও একটি "রিভিউ" হিসাবে গণ্য হয়। কিছু পরিসংখ্যান যার অর্থ তাৎক্ষণিকভাবে স্পষ্ট নাও হতে পারে:
 
-### Again Count
-This is the number of reviews that you have failed (i.e., pressed Again
-on). The correct percentage listed afterwards is the number of cards you
-did "not" fail divided by the total number of cards you studied.
+### আবার গণনা
+এটি আপনার ব্যর্থ হওয়া রিভিউয়ের সংখ্যা (অর্থাৎ, আবার চেপেছেন)। পরবর্তীতে তালিকাভুক্ত সঠিক শতাংশ হল আপনার ব্যর্থ না হওয়া কার্ডের সংখ্যা মোট অধ্যয়িত কার্ডের সংখ্যা দ্বারা ভাগ করা।
 
-### Learn, Review, Relearn, Filtered
-The number of reviews that were learning cards, review cards, relearning
-cards, or studied in a filtered deck when not due.
+### শিখুন, পর্যালোচনা, পুনরায় শিখুন, ফিল্টার করা
+শেখার কার্ড, রিভিউ কার্ড, পুনরায় শেখার কার্ড, বা একটি ফিল্টার করা ডেকে অধ্যয়ন করা হলে বকেয়া না থাকা অবস্থায় পর্যালোচনার সংখ্যা।
 
-The stats for the current day are not a good overall indicator of your
-learning progress; everyone has bad days and good days, and seeing that
-you got a lower percentage correct on a particular day should not be
-cause for concern. The remainder of the stats, which take longer periods
-of time into account, will give more useful information if you wish to
-try to change your study habits or scheduling settings based on your
-performance.
+বর্তমান দিনের পরিসংখ্যান আপনার শেখার অগ্রগতির একটি ভাল সামগ্রিক সূচক নয়; সবারই খারাপ দিন এবং ভাল দিন থাকে, এবং একটি নির্দিষ্ট দিনে আপনি কম শতাংশ সঠিক পেয়েছেন তা উদ্বেগের কারণ হওয়া উচিত নয়। বাকি পরিসংখ্যানগুলি, যা দীর্ঘ সময়কাল বিবেচনা করে, আপনি যদি আপনার অধ্যয়ন অভ্যাস বা সময়সূচী সেটিংস পরিবর্তন করার চেষ্টা করেন তবে আরও দরকারী তথ্য দেবে।
 
-The “today” statistics are unaffected by the time period selected at the
-bottom of the window.
+"আজ" এর পরিসংখ্যান উইন্ডোর নীচে নির্বাচিত সময়কাল দ্বারা প্রভাবিত হয় না।
 
-## The Graphs
+## গ্রাফ
 
-### Future Due
-This graph shows an estimated number of reviews that will be due on a
-given day in the future if you learn no new cards and fail no cards. The
-bars and the left axis show the number of cards due on each day if you
-study all cards each day, while the gray shaded region and the right axis show
-the number of cards due on that day if you don’t study at all until then.
-Note that the forecast graph does not count reviews that are currently
-overdue, so if you have a large backlog, the overdue cards will not be
-displayed.
+### ভবিষ্যতের বকেয়া
+এই গ্রাফটি দেখায় যে আপনি যদি নতুন কার্ড না শিখেন এবং কোনো কার্ডে ব্যর্থ না হন তবে ভবিষ্যতে একটি নির্দিষ্ট দিনে কতগুলি রিভিউ বকেয়া থাকবে তার একটি অনুমান। বারগুলি এবং বাম অক্ষটি দেখায় যে আপনি যদি প্রতিদিন সমস্ত কার্ড অধ্যয়ন করেন তবে প্রতিটি দিনে কতগুলি কার্ড বকেয়া থাকবে, যখন ধূসর শেডের অঞ্চল এবং ডান অক্ষটি দেখায় যে আপনি যদি ততক্ষণ পর্যন্ত মোটেও অধ্যয়ন না করেন তবে সেই দিনে কতগুলি কার্ড বকেয়া থাকবে। মনে রাখবেন যে পূর্বাভাস গ্রাফ বর্তমানে বকেয়া রিভিউগুলি গণনা করে না, তাই যদি আপনার একটি বড় ব্যাকলগ থাকে, তবে বকেয়া কার্ডগুলি প্রদর্শিত হবে না।
 
-Daily load is an estimate of the average number of cards to be reviewed daily.
-If you don't have a backlog, daily load should be approximately equal to
-your number of due cards.
+দৈনিক লোড হল প্রতিদিন পর্যালোচনা করার জন্য কার্ডের গড় সংখ্যার একটি অনুমান।
+যদি আপনার কোনও ব্যাকলগ না থাকে, তাহলে দৈনিক লোড আপনার বকেয়া কার্ডের সংখ্যার প্রায় সমান হওয়া উচিত।
 
-It is calculated as follows:
+এটি নিম্নলিখিতভাবে গণনা করা হয়:
 
-$$
-\frac{1}{I_1} + \frac{1}{I_2} + \frac{1}{I_3} + \dots + \frac{1}{I_n}
+$$ 
+\frac{1}{I_1} + \frac{1}{I_2} + \frac{1}{I_3} + \dots + \frac{1}{I_n} 
 $$
 
-Here, \\(I_n\\) is the interval of
-the n-th card. If the interval is less than one day, the summation term is 1. This
-prevents cards with short intervals from unrealistically skewing the value of daily load.
+এখানে, \(I_n\) হল n-তম কার্ডের ব্যবধান। যদি ব্যবধানটি এক দিনের কম হয়, তাহলে যোগফল পদটি 1 হয়। এটি
+স্বল্প ব্যবধানের কার্ডগুলিকে বাস্তবিকভাবে দৈনিক লোডের মানকেSkew হতে বাধা দেয়।
 
-Example: you have a card with an interval of 10 days and a card with an interval of 50 days.
-Daily load = \\(\frac{1}{10} + \frac{1}{50} = 0.12\\), meaning that, _on average_, you will have 0.12 due cards per day.
+উদাহরণ: আপনার একটি কার্ডের ব্যবধান 10 দিন এবং একটি কার্ডের ব্যবধান 50 দিন।
+দৈনিক লোড = \(\frac{1}{10} + \frac{1}{50} = 0.12\), যার অর্থ হল, _গড়ে_, আপনার প্রতিদিন 0.12টি বকেয়া কার্ড থাকবে।
 
-### Calendar
-This graph shows past card review activity. Hovering the mouse over a specific item
-allows you to view the number of revisions made that day. Click on a day of the
-week to make that the starting day.
+### ক্যালেন্ডার
+এই গ্রাফটি অতীতের কার্ড পর্যালোচনার কার্যকলাপ দেখায়। একটি নির্দিষ্ট আইটেমের উপর মাউস হোভার করলে
+আপনি সেই দিনে করা সংশোধনের সংখ্যা দেখতে পারবেন। সপ্তাহটিকে শুরুর দিন করতে একটি দিনে ক্লিক করুন।
 
-### Reviews
-This graph counts the number of card reviews you have done. The bars may
-correspond to days, weeks, or months, depending on the time period
-you’ve selected at the bottom of the screen. The differently colored
-blocks show how many of the cards you answered on each day were
-[mature](getting-started.md#card-states), young, relearning, or learning cards.
-There is also a separate group for cards answered in a filtered/cram
-deck while they were not due. The gray shaded region and the right axis show
-the cumulative total for each type of review as time progresses across the
-graph (so at 0 days, it would display the number for the entire time
-period displayed on the graph).
+### রিভিউ
+এই গ্রাফটি আপনি সম্পন্ন করা কার্ড পর্যালোচনার সংখ্যা গণনা করে। বারগুলি
+স্ক্রিনের নীচে নির্বাচিত সময়কালের উপর নির্ভর করে দিন, সপ্তাহ বা মাসের সাথে
+মিলতে পারে। ভিন্ন রঙের ব্লকগুলি দেখায় যে প্রতিটি দিনে আপনি উত্তর দিয়েছেন এমন কতগুলি কার্ড
+[পরিপক্ক](getting-started.md#card-states), তরুণ, পুনরায় শেখার বা শেখার কার্ড ছিল।
+ফিল্টার করা/ক্র্যাম ডেকের মধ্যে যখন বকেয়া ছিল না তখন উত্তর দেওয়া কার্ডগুলির জন্য একটি পৃথক গ্রুপও রয়েছে। ধূসর শেডের অঞ্চল এবং ডান অক্ষটি গ্রাফ জুড়ে সময় বাড়ার সাথে সাথে প্রতিটি প্রকারের পর্যালোচনার ক্রমবর্ধমান মোট দেখায় (সুতরাং 0 দিনে, এটি গ্রাফে প্রদর্শিত পুরো সময়কালের জন্য সংখ্যাটি প্রদর্শন করবে)।
 
-### Card Counts
-This pie chart shows what percentage of your deck or collection consists
-of mature, unseen, young/learn, and suspended cards. If you wish to
-calculate a more precise percentage, the key shows the exact number of
-cards in each section, and the total number of cards is displayed to the
-side.
+### কার্ডের সংখ্যা
+এই পাই চার্টটি দেখায় যে আপনার ডেক বা সংগ্রহের কত শতাংশ
+পরিপক্ক, অদেখা, তরুণ/শেখা এবং স্থগিত কার্ড নিয়ে গঠিত। আপনি যদি
+আরও সুনির্দিষ্ট শতাংশ গণনা করতে চান, তাহলে কী প্রতিটি বিভাগে কার্ডের
+সঠিক সংখ্যা দেখায়, এবং মোট কার্ডের সংখ্যা পাশে প্রদর্শিত হয়।
 
-### Review Time
-This graph works exactly like Review Count, except that it deals with
-the amount of time you spent on each card rather than the number of
-cards answered.
+### পর্যালোচনার সময়
+এই গ্রাফটি রিভিউ কাউন্টের মতোই কাজ করে, তবে এটি উত্তর দেওয়া কার্ডের সংখ্যার
+পরিবর্তে প্রতিটি কার্ডে আপনি ব্যয় করা সময় নিয়ে কাজ করে।
 
-### Review Intervals
-This graph displays the number of cards that have a given interval (the
-delay between two reviews). The gray shaded region and the right axis tell you
-what percentage of your cards have an interval of less than or equal to the
-time below that point. The time scope has a different effect on this
-graph than other graphs: rather than changing which cards or period of
-studying is included, it limits how far out the intervals are displayed
-to (so 14-month intervals are not displayed at all on a 1-year graph).
+### পর্যালোচনার ব্যবধান
+এই গ্রাফটি একটি নির্দিষ্ট ব্যবধান সহ কার্ডের সংখ্যা প্রদর্শন করে (দুটি পর্যালোচনার
+মধ্যে বিলম্ব)। ধূসর শেডের অঞ্চল এবং ডান অক্ষটি আপনাকে বলে
+যে আপনার কত শতাংশ কার্ডের ব্যবধান সেই বিন্দুর নীচে বা সমান।
+সময়কাল এই গ্রাফে অন্যান্য গ্রাফের চেয়ে ভিন্ন প্রভাব ফেলে:
+কোন কার্ড বা অধ্যয়নের সময়কাল অন্তর্ভুক্ত করা হয়েছে তা পরিবর্তন করার পরিবর্তে,
+এটি ব্যবধানগুলি কতদূর প্রদর্শিত হয় তা সীমাবদ্ধ করে (তাই 14 মাসের ব্যবধানগুলি 1 বছরের গ্রাফে মোটেও প্রদর্শিত হয় না)।
 
-### Card Ease
-This graph shows the number of cards that have a specific ease factor.
-Average ease of the selected deck / collection is also displayed here.
+### কার্ডের সহজতা
+এই গ্রাফটি একটি নির্দিষ্ট সহজতা ফ্যাক্টর সহ কার্ডের সংখ্যা দেখায়।
+নির্বাচিত ডেক / সংগ্রহের গড় সহজতাও এখানে প্রদর্শিত হয়।
 
-### Card Stability
-Only shown if FSRS is enabled. Stability is defined as the amount of time required
-for the probability of recall to decrease from 100% to 90%.
+### কার্ডের স্থিতিশীলতা
+শুধুমাত্র FSRS সক্ষম করা থাকলে দেখানো হয়। স্থিতিশীলতা হল মনে রাখার সম্ভাবনা 100% থেকে 90% এ হ্রাস পেতে প্রয়োজনীয় সময় হিসাবে সংজ্ঞায়িত।
 
-### Card Difficulty
-Only shown if FSRS is enabled. Difficulty determines how quickly a card's interval grows
-after each review.
+### কার্ডের কঠিনতা
+শুধুমাত্র FSRS সক্ষম করা থাকলে দেখানো হয়। কঠিনতা নির্ধারণ করে যে প্রতিটি পর্যালোচনার পরে একটি কার্ডের ব্যবধান কতটা দ্রুত বৃদ্ধি পায়।
 
-### Card Retrievability
-Only shown if FSRS is enabled. "Retrievability" is synonymous with "probability of recall".
+### কার্ডের পুনরুদ্ধারযোগ্যতা
+শুধুমাত্র FSRS সক্ষম করা থাকলে দেখানো হয়। "পুনরুদ্ধারযোগ্যতা" "মনে রাখার সম্ভাবনা" এর প্রতিশব্দ।
 
-Estimated total knowledge is the total number of cards you are likely to currently remember,
-calculated by multiplying average retrievability by the number of cards that have been
-reviewed at least once.
+অনুমানিত মোট জ্ঞান হল আপনি বর্তমানে মনে রাখতে পারেন এমন কার্ডের মোট সংখ্যা,
+যা গড় পুনরুদ্ধারযোগ্যতাকে অন্তত একবার পর্যালোচনা করা কার্ডের সংখ্যা দ্বারা গুণ করে গণনা করা হয়।
 
-### Hourly Breakdown
-This graph shows the percentage of total reviews you have passed during given
-hours.
-1. x-axis (bottom): Time of day (at given hour).
-2. y-axis (right): Amount of cards studied.
-3. secondary y-axis (left): Success rate in percent.
+### ঘন্টাভিত্তিক বিভাজন
+এই গ্রাফটি প্রদত্ত ঘন্টাগুলিতে আপনি উত্তীর্ণ হওয়া মোট রিভিউয়ের শতাংশ দেখায়।
+1. x-অক্ষ (নীচে): দিনের সময় (নির্দিষ্ট ঘন্টায়)।
+2. y-অক্ষ (ডান): অধ্যয়িত কার্ডের পরিমাণ।
+3. সেকেন্ডারি y-অক্ষ (বাম): শতাংশে সাফল্যের হার।
 
-The blue bars thus show you the number of reviews you’ve made at that hour (so
-that you know how significant the results are). The gray shaded region shows
-the percentage of the total reviews you have passed (i.e., not pressed _Again_
-on) at that hour.
+নীল বারগুলি এইভাবে আপনাকে দেখায় যে আপনি সেই ঘন্টায় কতগুলি রিভিউ করেছেন (যাতে
+আপনি ফলাফলগুলি কতটা গুরুত্বপূর্ণ তা জানতে পারেন)। ধূসর শেডের অঞ্চল দেখায়
+যে আপনি সেই ঘন্টায় উত্তীর্ণ হওয়া মোট রিভিউয়ের শতাংশ (অর্থাৎ, _আবার_
+চাপেননি)।
 
-### Answer Buttons
-This graph shows how many times you’ve chosen the Again, Hard, Good, or
-Easy button while studying learning/new, young, and
-[mature](getting-started.md#card-states) cards. Anki also displays the percentage
-of correct reviews for each type of card.
+### উত্তর বোতাম
+এই গ্রাফটি দেখায় যে শেখা/নতুন, তরুণ এবং [পরিপক্ক](getting-started.md#card-states) কার্ড অধ্যয়ন করার সময় আপনি কতবার আবার, কঠিন, ভাল বা সহজ বোতামটি বেছে নিয়েছেন। আঙ্কি প্রতিটি ধরণের কার্ডের জন্য সঠিক রিভিউয়ের শতাংশও প্রদর্শন করে।
 
 
-### True Retention Table
+### প্রকৃত ধারণ টেবিল
 
-This table shows your retention across different cards and different time frames.
-A card is defined as "mature" if its interval is ≥21 days. Only one review per day - the first one - counts.
-Again counts as "Fail"; Hard, Good, and Easy count as "Pass".
-This table can be used to check how well [Anki's spaced repetition algorithm](https://faqs.ankiweb.net/what-spaced-repetition-algorithm.html) is working for you.
+এই টেবিলটি বিভিন্ন কার্ড এবং বিভিন্ন সময়কালে আপনার ধারণ দেখায়।
+একটি কার্ডকে "পরিপক্ক" হিসাবে সংজ্ঞায়িত করা হয় যদি তার ব্যবধান ≥21 দিন হয়। প্রতিদিন শুধুমাত্র একটি রিভিউ - প্রথমটি - গণনা করা হয়।
+আবার "ব্যর্থ" হিসাবে গণনা করা হয়; কঠিন, ভাল এবং সহজ "পাস" হিসাবে গণনা করা হয়।
+এই টেবিলটি আপনার জন্য [আঙ্কির ব্যবধানযুক্ত পুনরাবৃত্তি অ্যালগরিদম](https://faqs.ankiweb.net/what-spaced-repetition-algorithm.html) কতটা ভাল কাজ করছে তা পরীক্ষা করতে ব্যবহার করা যেতে পারে।
 
-If you are using FSRS, your true retention is expected to be close to your [desired retention](deck-options.md#desired-retention).
-Please keep in mind that data for a single day is noisy, so it's better to look at monthly data. If your true retention doesn't match your desired retention very well, here are some general recommendations:
+আপনি যদি FSRS ব্যবহার করেন, তাহলে আপনার প্রকৃত ধারণ আপনার [কাঙ্ক্ষিত ধারণ](deck-options.md#desired-retention) এর কাছাকাছি হবে বলে আশা করা হয়।
+দয়া করে মনে রাখবেন যে একটি একক দিনের ডেটা কোলাহলপূর্ণ, তাই মাসিক ডেটা দেখা ভাল। যদি আপনার প্রকৃত ধারণ আপনার কাঙ্ক্ষিত ধারণের সাথে খুব ভালভাবে না মেলে, তবে এখানে কিছু সাধারণ সুপারিশ রয়েছে:
 
-1) Optimize your FSRS parameters.
-2) Use different presets with their own parameters for different material.
-3) Suspend/reformulate [leeches](leeches.md).
-4) Make sure you are [using the answer buttons as intended](studying.md#answer-buttons).
+1) আপনার FSRS প্যারামিটার অপ্টিমাইজ করুন।
+2) বিভিন্ন উপাদানের জন্য তাদের নিজস্ব প্যারামিটার সহ বিভিন্ন প্রিসেট ব্যবহার করুন।
+3) [লিচগুলি](leeches.md) স্থগিত/পুনর্গঠন করুন।
+4) নিশ্চিত করুন যে আপনি [উত্তর বোতামগুলি উদ্দেশ্য অনুযায়ী ব্যবহার করছেন](studying.md#answer-buttons)।
 
+## ম্যানুয়াল বিশ্লেষণ
 
-## Manual Analysis
+আঙ্কি যা সরবরাহ করে তা ছাড়া আপনার পরিসংখ্যান থেকে তথ্য পেতে যদি আপনি আগ্রহী হন,
+তবে সরাসরি ডেটা অ্যাক্সেস করা সম্ভব। জড়িত জটিলতার কারণে, এটি এমন কিছু নয়
+যার জন্য আমরা কোনো সমর্থন সরবরাহ করতে পারি।
 
-If you’re interested in getting information from your statistics other
-than what Anki provides, it is possible to access the data directly.
-Because of the complexity involved, this is not something we can provide
-any support for.
+একটি বিকল্প হল [একটি অ্যাড-অন লেখা](addons.md) যা পরিসংখ্যান উইন্ডোতে আরেকটি গ্রাফ বা
+আরও বিস্তারিত যোগ করে। আঙ্কিওয়েবে ইতিমধ্যেই এই ধরণের বেশ কয়েকটি অ্যাড-অন রয়েছে,
+যা আপনি এটি কীভাবে কাজ করে তা বোঝার জন্য দেখতে পারেন।
 
-One option is to [write an add-on](addons.md) that adds another graph or
-more details to the statistics window. There are several add-ons of this
-sort on AnkiWeb already, which you can look at to get an idea of how it
-works.
+একটি আরও শক্তিশালী এবং আরও জটিল বিকল্প হল আঙ্কির ডেটাবেস থেকে সরাসরি রিভিউ লগ
+তথ্য নিষ্কাশন করা এবং একটি বাহ্যিক প্রোগ্রামে এটি বিশ্লেষণ করা। আঙ্কি একটি ডেটাবেস
+ফরম্যাট ব্যবহার করে যার নাম SQLite। SQLite ডেটাবেসের সাথে কাজ করার জন্য অনেক সরঞ্জাম
+উপলভ্য; শুরু করার জন্য সবচেয়ে সহজ একটি হল [SQLite ব্রাউজার](http://sqlitebrowser.org/),
+যা আপনাকে ডেটাবেসের চারপাশে দেখতে এবং অন্যান্য প্রোগ্রামে আমদানির জন্য টেবিলগুলির একটি CSV সংস্করণ
+এক্সপোর্ট করার অনুমতি দেবে।
 
-A more powerful and more complex option is to extract the review log
-information directly from Anki’s database and analyze it in an external
-program. Anki uses a database format called SQLite. There are many tools
-available for working with SQLite databases; one of the easiest to start
-with is called [SQLite Browser](http://sqlitebrowser.org/), which will
-allow you to look around the database as well as export a CSV version of
-tables for import into another program.
+পরিসংখ্যানের জন্য সবচেয়ে গুরুত্বপূর্ণ টেবিলটি হল "revlog" টেবিল, যা
+আপনি পরিচালনা করা প্রতিটি পর্যালোচনার জন্য একটি এন্ট্রি সংরক্ষণ করে। কলামগুলি নিম্নরূপ:
 
-The most important table for statistics is the "revlog" table, which
-stores an entry for each review that you conduct. The columns are as
-follows:
+**id**
+পর্যালোচনাটি কখন পরিচালিত হয়েছিল, 1 জানুয়ারী, 1970 UTC মধ্যরাত থেকে অতিক্রান্ত মিলিসেকেন্ডের সংখ্যা হিসাবে।
+(এটি কখনও কখনও "ইউনিক্স যুগ সময়" হিসাবে পরিচিত, বিশেষ করে যখন সরাসরি সেকেন্ডে মিলিসেকেন্ডের পরিবর্তে থাকে।)
 
-**id**\
-The time at which the review was conducted, as the number of
-milliseconds that had passed since midnight UTC on January 1, 1970.
-(This is sometimes known as "Unix epoch time", especially when in
-straight seconds instead of milliseconds.)
+**cid**
+পর্যালোচনা করা কার্ডের আইডি। আপনি "cards" টেবিলের আইডি ক্ষেত্রে এই মানটি দেখতে পারেন
+কার্ড সম্পর্কে আরও তথ্য পেতে, যদিও মনে রাখবেন যে রিভিউ লগ এন্ট্রি রেকর্ড করার সময়
+এবং আপনি যখন এটি দেখছেন তার মধ্যে কার্ডটি পরিবর্তিত হতে পারে। এটি কার্ডের তৈরির সময়ের
+মিলিসেকেন্ড টাইমস্ট্যাম্পও।
 
-**cid**\
-The ID of the card that was reviewed. You can look up this value in the
-id field of the "cards" table to get more information about the card,
-although note that the card could have changed between when the revlog
-entry was recorded and when you are looking it up. It is also the
-millisecond timestamp of the card’s creation time.
+**usn**
+এই কলামটি রিভিউয়ের সিঙ্ক অবস্থা ট্র্যাক রাখতে ব্যবহৃত হয় এবং বিশ্লেষণের জন্য
+কোনো দরকারী তথ্য সরবরাহ করে না।
 
-**usn**\
-This column is used to keep track of the sync state of reviews and
-provides no useful information for analysis.
+**ease**
+পর্যালোচনার শেষে আপনি কোন বোতামটি চাপলেন (1 = আবার, 4 = সহজ)।
 
-**ease**\
-Which button you pressed at the end of the review (1 for Again, 4 for
-Easy).
+**ivl**
+পর্যালোচনার পরে কার্ডটি যে নতুন ব্যবধানে ঠেলে দেওয়া হয়েছিল। ধনাত্মক মানগুলি দিনে থাকে;
+ঋণাত্মক মানগুলি সেকেন্ডে থাকে (শেখার কার্ডগুলির জন্য)।
 
-**ivl**\
-The new interval that the card was pushed to after the review. Positive
-values are in days; negative values are in seconds (for learning cards).
+**lastIvl**
+পর্যালোচনার আগে কার্ডটির যে ব্যবধান ছিল। প্রথমবারের মতো প্রবর্তন করা কার্ডগুলির
+শেষ ব্যবধান আবার বিলম্বের সমান।
 
-**lastIvl**\
-The interval the card had before the review. Cards introduced for the
-first time have a last interval equal to the Again delay.
+**factor**
+পারমিল (হাজার ভাগে) কার্ডের নতুন সহজতা ফ্যাক্টর। যদি সহজতা ফ্যাক্টর 2500 হয়,
+তাহলে পরের বার আপনি গুড চাপলে কার্ডের ব্যবধান 2.5 গুণ দ্বারা গুণিত হবে।
 
-**factor**\
-The new ease factor of the card in permille (parts per thousand). If the
-ease factor is 2500, the card’s interval will be multiplied by 2.5 the
-next time you press Good.
+**time**
+আপনি সহজ বোতাম নির্বাচন করার আগে কার্ডের প্রশ্ন এবং উত্তর উভয় দিকে ব্যয় করা সময়
+(মিলিসেকেন্ডে)।
 
-**time**\
-The amount of time (in milliseconds) you spent on the question and
-answer sides of the card before selecting an ease button.
-
-**type**\
-This is 0 for learning cards, 1 for review cards, 2 for relearning cards,
-and 3 for early "cram" cards (cards being studied in a filtered deck when they
-are not due).
+**type**
+এটি শেখার কার্ডগুলির জন্য 0, রিভিউ কার্ডগুলির জন্য 1, পুনরায় শেখার কার্ডগুলির জন্য 2,
+এবং প্রাথমিক "ক্র্যাম" কার্ডগুলির জন্য 3 (একটি ফিল্টার করা ডেকে অধ্যয়ন করা কার্ডগুলি যখন বকেয়া নয়)।

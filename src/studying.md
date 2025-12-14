@@ -1,246 +1,153 @@
-# Studying
+# অধ্যয়ন
 
 <!-- toc -->
 
-When you have found a deck you like or entered some notes in, it’s time
-to start studying.
+আপনি যখন আপনার পছন্দের একটি ডেক খুঁজে পান বা কিছু নোট প্রবেশ করান, তখন অধ্যয়নের সময় এসেছে।
 
-## Decks
+## ডেক
 
-Study in Anki is limited to the currently selected deck as well as any
-subdecks it contains.
+আঙ্কিতে অধ্যয়ন বর্তমানে নির্বাচিত ডেক এবং এটিতে থাকা যেকোনো সাবডেকের মধ্যে সীমাবদ্ধ।
 
-On the decks screen, your decks and subdecks will be displayed in a list. [New, Learn, and Due (To Review)](getting-started.md#card-states)
-cards for that day will be also displayed here.
+ডেক স্ক্রিনে, আপনার ডেক এবং সাবডেকগুলি একটি তালিকায় প্রদর্শিত হবে। সেই দিনের জন্য [নতুন, শিখুন এবং বকেয়া (পর্যালোচনা করতে)](getting-started.md#card-states) কার্ডগুলিও এখানে প্রদর্শিত হবে।
 
 ![](media/decks_screen.png)
 
-When you click on a deck, it will become the "current deck", and Anki
-will change to the study screen. You can return to the deck list at any time by clicking on “Decks” at
-the top of the main window. (You can also use the Study
-Deck action in the menu to select a new deck from the keyboard, or you
-can press the <kbd>S</kbd> key to study the currently selected deck.)
+আপনি যখন একটি ডেকে ক্লিক করেন, তখন সেটি "বর্তমান ডেক" হয়ে উঠবে এবং আঙ্কি অধ্যয়ন স্ক্রিনে পরিবর্তিত হবে। আপনি মূল উইন্ডোর শীর্ষে "ডেকস" এ ক্লিক করে যেকোনো সময় ডেক তালিকায় ফিরে যেতে পারেন। (আপনি কীবোর্ড থেকে একটি নতুন ডেক নির্বাচন করতে মেনুতে অধ্যয়ন ডেক ক্রিয়াও ব্যবহার করতে পারেন, অথবা আপনি বর্তমানে নির্বাচিত ডেকটি অধ্যয়ন করতে <kbd>S</kbd> কী চাপতে পারেন।)
 
-You can click the gears button to the right of a deck to rename or
-delete the deck, change its [options](deck-options.md), or [export](exporting.md) it.
+আপনি একটি ডেকের ডানদিকে গিয়ার বোতামে ক্লিক করে ডেকের নাম পরিবর্তন বা মুছতে, এর [অপশন](deck-options.md) পরিবর্তন করতে বা এটি [এক্সপোর্ট](exporting.md) করতে পারেন।
 
-## Study Overview
+## অধ্যয়ন ওভারভিউ
 
-After clicking on a deck to study, you’ll see a screen that shows you
-how many cards are due today. This is called the "deck overview" screen:
+অধ্যয়নের জন্য একটি ডেকে ক্লিক করার পরে, আপনি একটি স্ক্রিন দেখতে পাবেন যা আপনাকে দেখাবে যে আজ কতগুলি কার্ড বকেয়া রয়েছে। এটিকে "ডেক ওভারভিউ" স্ক্রিন বলা হয়:
 
 ![](media/study_overview.png)
 
-The cards are split into [three types](getting-started.md#card-states): New, Learning, and To Review.
-If you have [Bury siblings](#siblings-and-burying) activated in your deck options, you
-may see how many cards will be buried in grey:
+কার্ডগুলি [তিন প্রকারে](getting-started.md#card-states) বিভক্ত: নতুন, শেখা এবং পর্যালোচনা করতে।
+যদি আপনার ডেক অপশনে [সহোদর পোঁতা](#siblings-and-burying) সক্রিয় থাকে, তাহলে আপনি ধূসর রঙে কতগুলি কার্ড পোঁতা হবে তা দেখতে পাবেন:
 
 ![](media/study_overview_buried_cards.png)
 
-To start a study session, click the **Study Now** button. Anki will
-proceed to show you cards until the cards to be shown for the day have
-run out.
+একটি অধ্যয়ন সেশন শুরু করতে, **এখনই অধ্যয়ন করুন** বোতামে ক্লিক করুন। আঙ্কি আপনাকে কার্ড দেখাতে থাকবে যতক্ষণ না সেই দিনের জন্য দেখানো কার্ডগুলি শেষ না হয়।
 
-While studying, you can return to the overview by pressing the <kbd>S</kbd> key
-on your keyboard.
+অধ্যয়ন করার সময়, আপনি আপনার কীবোর্ডে <kbd>S</kbd> কী চেপে ওভারভিউতে ফিরে যেতে পারেন।
 
-## Questions
+## প্রশ্ন
 
-When a card is shown, only the question is shown at first. After
-thinking about the answer, either click the **Show Answer** button, or
-press the <kbd>Space</kbd>. The answer will then be shown. It’s okay if it takes
-you a little while to recall the answer, but as a general rule if you
-can’t answer within about 10 seconds, it’s probably better to move on
-and show the answer than keep struggling to remember.
+একটি কার্ড দেখানো হলে, প্রথমে কেবল প্রশ্নটি দেখানো হয়। উত্তর সম্পর্কে চিন্তা করার পরে, **উত্তর দেখান** বোতামে ক্লিক করুন, অথবা <kbd>স্পেস</kbd> চাপুন। তারপর উত্তরটি দেখানো হবে। এটা ঠিক আছে যদি উত্তরটি মনে করতে আপনার কিছুটা সময় লাগে, তবে একটি সাধারণ নিয়ম হিসাবে যদি আপনি প্রায় 10 সেকেন্ডের মধ্যে উত্তর দিতে না পারেন, তবে সম্ভবত লড়াই চালিয়ে যাওয়ার চেয়ে এগিয়ে গিয়ে উত্তরটি দেখানো ভাল।
 
-## Answer Buttons
+## উত্তর বোতাম
 
-After the answer is shown, compare the answer you thought of
-with the answer that is shown and select any of the following buttons.
+উত্তরটি দেখানো হলে, আপনার ভাবা উত্তরটি দেখানো উত্তরের সাথে তুলনা করুন এবং নিম্নলিখিত বোতামগুলির মধ্যে যেকোনো একটি নির্বাচন করুন।
 
-- **Again**: Select this when your answer is incorrect or when you couldn't recall the answer. If your answer is partially correct, you should be strict with yourself: if it counts as a fail in a real-life context outside of Anki, then it counts as a fail in Anki as well. You'll typically use this button about 5-20% of the time.
+-   **আবার**: আপনার উত্তর ভুল হলে বা উত্তর মনে করতে না পারলে এটি নির্বাচন করুন। যদি আপনার উত্তর আংশিকভাবে সঠিক হয়, তাহলে আপনার নিজের প্রতি কঠোর হওয়া উচিত: যদি এটি আঙ্কির বাইরে বাস্তব জীবনের প্রেক্ষাপটে ব্যর্থ হিসাবে গণ্য হয়, তাহলে আঙ্কিতেও এটি ব্যর্থ হিসাবে গণ্য হবে। আপনি সাধারণত এটি 5-20% সময় ব্যবহার করবেন।
 
-  Keyboard Shortcut: <kbd>1</kbd>
+    কীবোর্ড শর্টকাট: <kbd>1</kbd>
 
-- **Hard**: Select this button when your answer is correct, but you had doubts about it or it took a long time to recall.
+-   **কঠিন**: আপনার উত্তর সঠিক হলেও, আপনার মনে সন্দেহ ছিল বা মনে করতে দীর্ঘ সময় লেগেছিল এমন ক্ষেত্রে এই বোতামটি নির্বাচন করুন।
 
-  Keyboard Shortcut: <kbd>2</kbd>
+    কীবোর্ড শর্টকাট: <kbd>2</kbd>
 
-- **Good**: Select this when your answer is correct, but it took some mental effort to recall it. When Anki is used properly, this should be the most commonly used button. You'll typically use this button about 80-95% of the time.
+-   **ভাল**: আপনার উত্তর সঠিক হলেও, মনে করতে কিছুটা মানসিক প্রচেষ্টা লেগেছিল এমন ক্ষেত্রে এটি নির্বাচন করুন। আঙ্কি সঠিকভাবে ব্যবহার করা হলে, এটি সর্বাধিক ব্যবহৃত বোতাম হওয়া উচিত। আপনি সাধারণত এটি 80-95% সময় ব্যবহার করবেন।
 
-  Keyboard Shortcut: <kbd>3</kbd>, <kbd>Space</kbd>, <kbd>Enter</kbd>
+    কীবোর্ড শর্টকাট: <kbd>3</kbd>, <kbd>স্পেস</kbd>, <kbd>এন্টার</kbd>
 
-- **Easy**: Select this if your answer is correct and it took no mental effort to recall it.
+-   **সহজ**: আপনার উত্তর সঠিক হলে এবং মনে করতে কোনো মানসিক প্রচেষ্টা না লাগলে এটি নির্বাচন করুন।
 
-  Keyboard Shortcut: <kbd>4</kbd>
+    কীবোর্ড শর্টকাট: <kbd>4</kbd>
 
-If you find it hard to use four answer buttons, you can also use only **Again** and **Good** buttons. Use **Again** for incorrect answers and use **Good** for correct answers.
+যদি আপনার চারটি উত্তর বোতাম ব্যবহার করা কঠিন মনে হয়, তাহলে আপনি কেবল **আবার** এবং **ভাল** বোতাম ব্যবহার করতে পারেন। ভুল উত্তরের জন্য **আবার** এবং সঠিক উত্তরের জন্য **ভাল** ব্যবহার করুন।
 
-Each answer button shows the next time a card will be reviewed again if you select that button. To learn about the settings that control the next review intervals, see the topics [Learning Steps](deck-options.html#learning-steps), [Lapses](deck-options.md#lapses), [FSRS](deck-options.html#fsrs) and [Advanced](deck-options.md#advanced) in the Deck Options section.
+প্রতিটি উত্তর বোতাম দেখায় যে আপনি যদি সেই বোতামটি নির্বাচন করেন তবে একটি কার্ড আবার কখন পর্যালোচনা করা হবে। পরবর্তী পর্যালোচনার ব্যবধান নিয়ন্ত্রণ করে এমন সেটিংস সম্পর্কে জানতে, ডেক অপশন বিভাগের [শেখার ধাপ](deck-options.html#learning-steps), [ল্যাপস](deck-options.md#lapses), [FSRS](deck-options.html#fsrs) এবং [অ্যাডভান্সড](deck-options.md#advanced) বিষয়গুলি দেখুন।
 
-## Fuzz Factor
+## ফাজ ফ্যাক্টর
 
-When you select an answer button on a review card, Anki also applies a small amount of random “fuzz”
-to prevent cards that were introduced at the same time and given the same ratings
-from sticking together and always coming up for review on the same day.
+আপনি যখন একটি রিভিউ কার্ডে একটি উত্তর বোতাম নির্বাচন করেন, আঙ্কি একটি ছোট পরিমাণ এলোমেলো "ফাজ" প্রয়োগ করে যাতে একই সময়ে প্রবর্তন করা এবং একই রেটিং দেওয়া কার্ডগুলি একসাথে আটকে না যায় এবং সর্বদা একই দিনে পর্যালোচনার জন্য না আসে।
 
-Learning cards are also given up to 5 minutes of extra delay so that they
-don’t always appear in the same order, but answer buttons won't reflect that. It
-is not possible to turn this feature off.
+শেখার কার্ডগুলিকে 5 মিনিট পর্যন্ত অতিরিক্ত বিলম্ব দেওয়া হয় যাতে তারা সর্বদা একই ক্রমে প্রদর্শিত না হয়, তবে উত্তর বোতামগুলি তা প্রতিফলিত করবে না। এই বৈশিষ্ট্যটি বন্ধ করা সম্ভব নয়।
 
-## Editing and More
+## সম্পাদনা এবং আরও অনেক কিছু
 
-You can click the **Edit** button in the bottom left to edit the current
-note. When you finish editing, you’ll be returned to study. The editing
-screen works very similarly to the [add notes](editing.md) screen.
+বর্তমান নোটটি সম্পাদনা করতে আপনি নীচের বাম দিকে **সম্পাদনা** বোতামে ক্লিক করতে পারেন। সম্পাদনা শেষ হলে, আপনাকে অধ্যয়ন পৃষ্ঠায় ফিরিয়ে আনা হবে। সম্পাদনা স্ক্রিনটি [নোট যোগ](editing.md) স্ক্রিনের মতো একইভাবে কাজ করে।
 
-At the bottom right of the study screen is a button labeled **More**.
-This button provides some other operations you can do on the current
-card or note:
+অধ্যয়ন স্ক্রিনের নীচের ডানদিকে **আরও** লেবেলযুক্ত একটি বোতাম রয়েছে।
+এই বোতামটি বর্তমান কার্ড বা নোটের উপর আপনি করতে পারেন এমন কিছু অন্যান্য অপারেশন সরবরাহ করে:
 
-- [**Flag Card**](editing.md#using-flags): Adds a colored marker to the card, or toggles it off. Flags will appear during
-  study, and you can search for flagged cards in the Browse screen. This is useful
-  when you want to take some action on the card at a later date, such as looking
-  up a word when you get home. If you're using Anki 2.1.45+, you can also rename flags
-  from the [browser](browsing.md).
+-   [**কার্ড ফ্ল্যাগ করুন**](editing.md#using-flags): কার্ডে একটি রঙিন মার্কার যোগ করে, অথবা এটি বন্ধ করে। ফ্ল্যাগগুলি অধ্যয়নের সময় প্রদর্শিত হবে, এবং আপনি ব্রাউজ স্ক্রিনে ফ্ল্যাগ করা কার্ডগুলি অনুসন্ধান করতে পারেন। এটি সহায়ক যখন আপনি পরে কার্ডে কিছু পদক্ষেপ নিতে চান, যেমন বাড়ি ফিরে একটি শব্দ খুঁজতে। আপনি যদি আঙ্কি 2.1.45+ ব্যবহার করেন, তাহলে আপনি [ব্রাউজার](browsing.md) থেকে ফ্ল্যাগগুলির নাম পরিবর্তন করতে পারেন।
 
-- **Bury Card / Note**: Hides a card or all of the note’s cards from review until the next day.
-  (If you want to unbury cards before then, you can click the “unbury”
-  button on the [deck overview](studying.md#study-overview) screen.) This is useful if
-  you cannot answer the card at the moment or you want to come back to it
-  another time. Burying can also [happen automatically](studying.md#siblings-and-burying) for
-  cards of the same note.
+-   **কার্ড/নোট পোঁতা**: একটি কার্ড বা নোটের সমস্ত কার্ডকে পরের দিন পর্যন্ত পর্যালোচনা থেকে লুকায়।
+    (যদি আপনি তার আগে কার্ডগুলি উন্মোচন করতে চান, তাহলে আপনি [ডেক ওভারভিউ](studying.md#study-overview) স্ক্রিনের "আনবুরি" বোতামে ক্লিক করতে পারেন।) এটি সহায়ক যদি
+    আপনি এই মুহূর্তে কার্ডটির উত্তর দিতে না পারেন বা অন্য সময় এটিতে ফিরে আসতে চান। পোঁতা স্বয়ংক্রিয়ভাবেও ঘটতে পারে একই নোটের কার্ডগুলির জন্য।
 
-- **Reset card**: Moves the current card to [the end of the new queue](browsing.md#cards).
+-   **কার্ড রিসেট করুন**: বর্তমান কার্ডটিকে [নতুন সারির শেষে](browsing.md#cards) সরিয়ে দেয়।
 
-  The "Restore original position" option allows you to reset the card back to its original position when you reset it.
+    "আসল অবস্থান পুনরুদ্ধার করুন" বিকল্পটি আপনাকে একটি কার্ড রিসেট করার সময় সেটিকে তার আসল অবস্থানে ফিরিয়ে আনতে দেয়।
 
-  The "Reset repetition and lapse count" option, if enabled, will set the review and failure counters
-  for the card back to zero. It does not remove the review history that is shown at the bottom of the
-  card info screen.
+    "পুনরাবৃত্তি এবং ল্যাপস গণনা রিসেট করুন" বিকল্পটি, যদি সক্ষম করা হয়, তবে কার্ডের জন্য পর্যালোচনা এবং ব্যর্থতার কাউন্টারগুলি শূন্যে সেট করবে। এটি কার্ডের তথ্য স্ক্রিনের নীচে প্রদর্শিত পর্যালোচনা ইতিহাস মুছে ফেলে না।
 
-- **Set Due Date**: Puts cards in the review queue, and [makes them due on a certain date.](browsing.md#cards)
+-   **নির্ধারিত তারিখ সেট করুন**: কার্ডগুলিকে পর্যালোচনা সারিতে রাখে, এবং [সেগুলিকে একটি নির্দিষ্ট তারিখে বকেয়া করে তোলে](browsing.md#cards)।
 
-- **Suspend Card / Note**: Hides a card or all of the note’s cards from review until they are
-  manually unsuspended (by clicking the suspend button in the browser).
-  This is useful if you want to avoid reviewing the note for some time,
-  but don’t want to delete it.
+-   **কার্ড/নোট স্থগিত করুন**: একটি কার্ড বা নোটের সমস্ত কার্ডকে পর্যালোচনা থেকে লুকায় যতক্ষণ না সেগুলিকে ম্যানুয়ালি স্থগিত অবস্থা থেকে সরানো হয় (ব্রাউজারে স্থগিত বোতামে ক্লিক করে)।
+    এটি সহায়ক যদি আপনি কিছু সময়ের জন্য নোটটি পর্যালোচনা করা এড়াতে চান,
+    কিন্তু এটি মুছতে না চান।
 
-- **Options**: Edit the [options](deck-options.md) for the current deck.
+-   **অপশন**: বর্তমান ডেকের [অপশন](deck-options.md) সম্পাদনা করুন।
 
-- **Card Info**: Displays [statistical information](stats.md#card-info) about the card.
+-   **কার্ডের তথ্য**: কার্ড সম্পর্কে [পরিসংখ্যানগত তথ্য](stats.md#card-info) প্রদর্শন করে।
 
-- **Previous Card Info**: Displays [statistical information](stats.md#card-info) about the previous card.
+-   **পূর্ববর্তী কার্ডের তথ্য**: পূর্ববর্তী কার্ড সম্পর্কে [পরিসংখ্যানগত তথ্য](stats.md#card-info) প্রদর্শন করে।
 
-- [**Mark Note**](editing.md#the-marked-tag): Adds a “marked” tag to the current note, so it can be easily found in the
-  browser. This is similar to flagging individual cards, but works with a tag
-  instead, so if the note has multiple cards, all cards will appear in a search
-  for the marked tag. Most users will want to use flags instead.
+-   [**নোট চিহ্নিত করুন**](editing.md#the-marked-tag): বর্তমান নোটে একটি "চিহ্নিত" ট্যাগ যোগ করে, যাতে এটি ব্রাউজারে সহজেই খুঁজে পাওয়া যায়। এটি ব্যক্তিগত কার্ড ফ্ল্যাগ করার মতো, তবে একটি ট্যাগ ব্যবহার করে কাজ করে, তাই যদি নোটে একাধিক কার্ড থাকে, তবে সমস্ত কার্ড চিহ্নিত ট্যাগের জন্য অনুসন্ধানে প্রদর্শিত হবে। বেশিরভাগ ব্যবহারকারী পরিবর্তে ফ্ল্যাগ ব্যবহার করতে চাইবেন।
 
-- **Create Copy**: Opens a [duplicate](browsing.md#finding-duplicates) of the current
-  note in the editor, which can be slightly modified to easily obtain variations of your cards.
-  By default, the duplicate card will be created in the same deck as the original.
+-   **অনুলিপি তৈরি করুন**: সম্পাদকে বর্তমান নোটের একটি [নকল](browsing.md#finding-duplicates) খোলে, যা আপনার কার্ডগুলির বিভিন্নতা সহজে পেতে সামান্য পরিবর্তন করা যেতে পারে।
+    ডিফল্টরূপে, নকল কার্ডটি মূলের মতো একই ডেকে তৈরি করা হবে।
 
-- **Delete Note**: Deletes the note and all of its cards.
+-   **নোট মুছুন**: নোট এবং এর সমস্ত কার্ড মুছে ফেলে।
 
-- **Replay Audio**: If the card has audio on the front or back, play it again.
+-   **অডিও পুনরায় চালান**: যদি কার্ডের সামনে বা পিছনে অডিও থাকে, তবে এটি আবার চালান।
 
-- **Pause Audio**: Pauses the audio if it is playing.
+-   **অডিও থামান**: যদি অডিও বাজতে থাকে তবে এটি থামান।
 
-- **Audio -5s / +5s**: Jump backwards / forward 5 seconds in the currently playing audio.
+-   **অডিও -5s / +5s**: বর্তমানে বাজানো অডিওতে 5 সেকেন্ড পিছনে / 5 সেকেন্ড এগিয়ে যান।
 
-- **Record Own Voice**: Record from your microphone for the purposes of checking your
-  pronunciation. This recording is temporary and will go away when you
-  move to the next card. If you want to add audio to a card permanently,
-  you can do that in the edit window.
+-   **নিজের ভয়েস রেকর্ড করুন**: আপনার উচ্চারণ পরীক্ষা করার উদ্দেশ্যে আপনার মাইক্রোফোন থেকে রেকর্ড করুন। এই রেকর্ডিংটি অস্থায়ী এবং আপনি পরবর্তী কার্ডে গেলে এটি চলে যাবে। আপনি যদি স্থায়ীভাবে একটি কার্ডে অডিও যোগ করতে চান, তাহলে আপনি সম্পাদনা উইন্ডোতে তা করতে পারেন।
 
-- **Replay Own Voice**: Replay the previous recording of your voice (presumably after showing
-  the answer).
+-   **নিজের ভয়েস পুনরায় চালান**: আপনার ভয়েসের পূর্ববর্তী রেকর্ডিং পুনরায় চালান (সম্ভবত উত্তর দেখানোর পরে)।
 
-## Display Order
+## প্রদর্শনের ক্রম
 
-Studying will show cards from the selected deck and any decks it
-contains. Thus, if you select your “French” deck, the subdecks
-“French::Vocab” and “French::My Textbook::Lesson 1” will be shown as
-well.
+অধ্যয়ন নির্বাচিত ডেক এবং এটিতে থাকা যেকোনো ডেক থেকে কার্ডগুলি দেখাবে।
+সুতরাং, যদি আপনি আপনার "ফরাসি" ডেক নির্বাচন করেন, তবে "ফরাসি::শব্দ" এবং "ফরাসি::আমার পাঠ্যপুস্তক::পাঠ 1" সাবডেকগুলিও দেখানো হবে।
 
-By default, for new cards, Anki gathers cards from the decks in
-alphabetical order. So in the above example, you would get cards first
-from “French”, then “My Textbook”, and finally “Vocab”. You can use this
-to control the order cards appear in, placing high priority cards in
-decks that appear higher in the list. When computers sort text
-alphabetically, the “-” character comes before alphabetical characters,
-and “\~” comes after them. So you could call the deck “-Vocab” to make
-them appear first, and you could call the other deck “\~My Textbook” to
-force it to appear after everything else.
+ডিফল্টরূপে, নতুন কার্ডগুলির জন্য, আঙ্কি বর্ণানুক্রমিকভাবে ডেকগুলি থেকে কার্ড সংগ্রহ করে। সুতরাং উপরের উদাহরণে, আপনি প্রথমে "ফরাসি" থেকে কার্ড পাবেন, তারপর "আমার পাঠ্যপুস্তক", এবং অবশেষে "শব্দ"। আপনি তালিকাটিতে উচ্চতর প্রদর্শিত ডেকগুলিতে উচ্চ অগ্রাধিকার কার্ড রেখে কার্ডগুলি প্রদর্শিত হওয়ার ক্রম নিয়ন্ত্রণ করতে এটি ব্যবহার করতে পারেন। কম্পিউটারগুলি যখন পাঠ্য বর্ণানুক্রমিকভাবে সাজায়, তখন "-" অক্ষরটি বর্ণানুক্রমিক অক্ষরগুলির আগে আসে, এবং "~" তাদের পরে আসে। সুতরাং আপনি ডেকটিকে "-শব্দ" বলতে পারেন যাতে সেগুলি প্রথমে প্রদর্শিত হয়, এবং আপনি অন্য ডেকটিকে "~আমার পাঠ্যপুস্তক" বলতে পারেন যাতে এটি অন্য সবকিছুর পরে প্রদর্শিত হয়।
 
-New cards and reviews are gathered separately, and Anki won’t wait until
-both queues are empty before moving on to the next deck, so it’s
-possible you’ll be exposed to new cards from one deck while seeing
-reviews from another deck, or vice versa. If you don’t want this, click
-directly on the deck you want to study instead of one of the parent
-decks.
+নতুন কার্ড এবং রিভিউগুলি আলাদাভাবে সংগ্রহ করা হয়, এবং আঙ্কি উভয় সারি খালি না হওয়া পর্যন্ত পরবর্তী ডেকে যাবে না, তাই এমন হতে পারে যে আপনি একটি ডেক থেকে নতুন কার্ড দেখছেন যখন অন্য ডেক থেকে রিভিউ দেখছেন, বা এর বিপরীত। যদি আপনি এটি না চান, তাহলে প্যারেন্ট ডেকগুলির মধ্যে একটিতে ক্লিক না করে আপনি যে ডেকটি অধ্যয়ন করতে চান তাতে সরাসরি ক্লিক করুন।
 
-Since cards in learning are somewhat time-critical, they are fetched
-from all decks at once and shown in the order they are due.
+শেখার কার্ডগুলি কিছুটা সময়-সংবেদনশীল হওয়ায়, সেগুলি সমস্ত ডেক থেকে একবারে আনা হয় এবং সেগুলির বকেয়া ক্রমে দেখানো হয়।
 
-To control the order cards appear in, see [Display Order](./deck-options.md#display-order). For more fine-grained ordering of new cards, you
-can change the order in the [browser](browsing.md).
+কার্ডগুলি প্রদর্শিত হওয়ার ক্রম নিয়ন্ত্রণ করতে, [প্রদর্শন ক্রম](./deck-options.md#display-order) দেখুন। নতুন কার্ডগুলির আরও সূক্ষ্ম-দানাযুক্ত বিন্যাসের জন্য, আপনি [ব্রাউজার](browsing.md) এ ক্রম পরিবর্তন করতে পারেন।
 
-## Siblings and Burying
+## সহোদর এবং পোঁতা
 
-Recall from [the basics](getting-started.md) that Anki can create more than one
-card for each thing you input, such as a front→back card and a
-back→front card, or two different cloze deletions from the same text.
-These related cards are called "siblings".
+[মৌলিক](getting-started.md) থেকে মনে রাখবেন যে আঙ্কি আপনার প্রবেশ করা প্রতিটি জিনিসের জন্য একাধিক কার্ড তৈরি করতে পারে, যেমন একটি ফ্রন্ট→ব্যাক কার্ড এবং একটি ব্যাক→ফ্রন্ট কার্ড, অথবা একই টেক্সট থেকে দুটি ভিন্ন ক্লোজ ডিলিশন। এই সম্পর্কিত কার্ডগুলিকে "সহোদর" বলা হয়।
 
-When you answer a card that has siblings, Anki can prevent the card’s
-siblings from being shown in the same session by automatically "burying"
-them. Buried cards are hidden from review until the clock rolls over to
-a new day or you manually unbury them using the “Unbury” button that’s
-visible at the bottom of the [deck overview](studying.md#study-overview) screen. Anki
-will bury siblings even if the siblings are not in the same deck (for
-instance, if you use the [deck override](templates/intro.md) feature).
+আপনি যখন সহোদর থাকা একটি কার্ডের উত্তর দেন, আঙ্কি স্বয়ংক্রিয়ভাবে সেগুলিকে "পোঁতা" করে একই সেশনে কার্ডের সহোদরদের দেখানো থেকে বিরত রাখতে পারে। পোঁতা কার্ডগুলি পরের দিন পর্যন্ত বা আপনি ম্যানুয়ালি [ডেক ওভারভিউ](studying.md#study-overview) স্ক্রিনের "আনবুরি" বোতাম ব্যবহার করে সেগুলিকে উন্মোচন না করা পর্যন্ত রিভিউ থেকে লুকানো থাকে। আঙ্কি সহোদরদের পোঁতা করবে এমনকি যদি সহোদররা একই ডেকে না থাকে (উদাহরণস্বরূপ, যদি আপনি [ডেক ওভাররাইড](templates/intro.md) বৈশিষ্ট্যটি ব্যবহার করেন)।
 
-You can enable burying from the [deck options](deck-options.md) screen -
-there are separate settings for new cards and reviews.
+আপনি [ডেক অপশন](deck-options.md) স্ক্রিন থেকে পোঁতা সক্ষম করতে পারেন - নতুন কার্ড এবং রিভিউয়ের জন্য পৃথক সেটিংস রয়েছে।
 
-Anki will only bury siblings that are new or review cards. It will not
-hide cards in learning, as time is of the essence for those cards. On
-the other hand, when you study a learning card, any new/review siblings
-will be buried.
+আঙ্কি কেবলমাত্র নতুন বা রিভিউ কার্ডগুলি পোঁতা করবে। এটি শেখার মধ্যে থাকা কার্ডগুলি লুকাবে না, কারণ সেই কার্ডগুলির জন্য সময় অত্যন্ত গুরুত্বপূর্ণ। অন্যদিকে, আপনি যখন একটি শেখার কার্ড অধ্যয়ন করেন, তখন যেকোনো নতুন/রিভিউ সহোদর পোঁতা হবে।
 
-Also note that a card cannot be buried and suspended at the same time. Suspending a
-buried card will unbury it. Suspended cards can't be buried.
+এছাড়াও মনে রাখবেন যে একটি কার্ড একই সাথে পোঁতা এবং স্থগিত করা যায় না। একটি পোঁতা কার্ড স্থগিত করলে সেটি উন্মোচিত হবে। স্থগিত কার্ড পোঁতা করা যায় না।
 
-## Keyboard Shortcuts
+## কীবোর্ড শর্টকাট
 
-Most of the common operations in Anki have keyboard shortcuts. Most of
-them are discoverable in the interface: menu items list their shortcuts
-next to them, and hovering the mouse cursor over a button will generally
-show its shortcut in a tooltip.
+আঙ্কির বেশিরভাগ সাধারণ অপারেশনে কীবোর্ড শর্টকাট রয়েছে। সেগুলির বেশিরভাগই ইন্টারফেসে খুঁজে পাওয়া যায়: মেনু আইটেমগুলি তাদের শর্টকাটগুলি তাদের পাশে তালিকাভুক্ত করে, এবং একটি বোতামের উপর মাউস কার্সার ঘোরালে সাধারণত একটি টুলটিপে এর শর্টকাট দেখানো হবে।
 
-When studying, either <kbd>Space</kbd> or <kbd>Enter</kbd> will show the answer. When the
-answer is shown, you can use <kbd>Space</kbd> or <kbd>Enter</kbd> to select the Good button.
-You can use the <kbd>1</kbd>-<kbd>4</kbd> keys to select a specific ease button. Many people
-find it convenient to answer most cards with <kbd>Space</kbd> and keep one finger
-on <kbd>1</kbd> for when they forget.
+অধ্যয়ন করার সময়, <kbd>স্পেস</kbd> বা <kbd>এন্টার</kbd> উত্তর দেখাবে। উত্তর দেখানো হলে, আপনি গুড বোতাম নির্বাচন করতে <kbd>স্পেস</kbd> বা <kbd>এন্টার</kbd> ব্যবহার করতে পারেন। আপনি <kbd>1</kbd>-<kbd>4</kbd> কীগুলি ব্যবহার করে একটি নির্দিষ্ট সহজ বোতাম নির্বাচন করতে পারেন। অনেকে <kbd>স্পেস</kbd> দিয়ে বেশিরভাগ কার্ডের উত্তর দেওয়া এবং যখন তারা ভুলে যায় তখন <kbd>1</kbd> এ একটি আঙুল রাখার জন্য সুবিধাজনক মনে করেন।
 
-The "Study Deck" item in the Tools menu allows you to quickly switch to
-a deck with the keyboard. You can trigger it with the <kbd>/</kbd> key. When
-opened, it will display all of your decks and show a filter area at the
-top. As you type characters, Anki will display only decks matching the
-characters you type. You can add a space to separate multiple search
-terms, and Anki will show only decks that match all the terms. So “ja 1”
-or “on1 ja” would both match a deck called “Japanese::Lesson1”.
+টুলস মেনুতে "অধ্যয়ন ডেক" আইটেমটি আপনাকে কীবোর্ড দিয়ে দ্রুত একটি ডেকে স্যুইচ করার অনুমতি দেয়। আপনি <kbd>/</kbd> কী দিয়ে এটি ট্রিগার করতে পারেন। খোলা হলে, এটি আপনার সমস্ত ডেক প্রদর্শন করবে এবং শীর্ষে একটি ফিল্টার এলাকা দেখাবে। আপনি অক্ষর টাইপ করার সাথে সাথে, আঙ্কি কেবল আপনার টাইপ করা অক্ষরের সাথে মিলে যাওয়া ডেকগুলি প্রদর্শন করবে। আপনি একাধিক অনুসন্ধান পদ পৃথক করতে একটি স্পেস যোগ করতে পারেন, এবং আঙ্কি কেবল সমস্ত পদগুলির সাথে মিলে যাওয়া ডেকগুলি দেখাবে। সুতরাং "ja 1" বা "on1 ja" উভয়ই "Japanese::Lesson1" নামক একটি ডেকের সাথে মিলবে।
 
-## Falling Behind
+## পিছিয়ে পড়া
 
-When you fall behind in your reviews, Anki by default prioritizes cards that have
-been waiting the longest. This ordering ensures that no cards will
-be left waiting indefinitely, but it means that if you introduce new
-cards, their reviews won’t appear until you’ve gotten through your
-backlog.
+আপনি যখন আপনার রিভিউতে পিছিয়ে পড়েন, তখন আঙ্কি ডিফল্টরূপে সবচেয়ে দীর্ঘ সময় ধরে অপেক্ষা করা কার্ডগুলিকে অগ্রাধিকার দেয়। এই সাজানোটি নিশ্চিত করে যে কোনও কার্ড অনির্দিষ্টকালের জন্য অপেক্ষা করবে না, তবে এর অর্থ হল আপনি যদি নতুন কার্ড প্রবর্তন করেন, তবে আপনার ব্যাকলগ শেষ না হওয়া পর্যন্ত তাদের রিভিউগুলি প্রদর্শিত হবে না।
 
-When you answer cards that have been waiting for a while, Anki factors
-in that delay when determining the next time a card should be shown. This means if you are returning to Anki after a long break, you don't have to start anew and can just start back from where you left.
+আপনি যখন কিছু সময় ধরে অপেক্ষা করা কার্ডগুলির উত্তর দেন, আঙ্কি পরবর্তী সময়ে একটি কার্ড কখন দেখানো উচিত তা নির্ধারণ করার সময় সেই বিলম্বকে বিবেচনা করে। এর অর্থ হল আপনি যদি দীর্ঘ বিরতির পরে আঙ্কিতে ফিরে আসেন, তবে আপনাকে নতুন করে শুরু করতে হবে না এবং আপনি যেখানে ছেড়েছিলেন সেখান থেকে আবার শুরু করতে পারেন।

@@ -1,240 +1,242 @@
-# Syncing with AnkiWeb
+# আঙ্কিওয়েবের সাথে সিঙ্কিং
 
 <!-- toc -->
 
-AnkiWeb is a service that allows you to keep your collection
-synchronized across multiple devices, and to study online. Please sign
-up for a [free account](https://ankiweb.net/) before following the steps
-below.
+আঙ্কিওয়েব একটি পরিষেবা যা আপনাকে আপনার সংগ্রহকে
+একাধিক ডিভাইসে সিঙ্ক্রোনাইজ রাখতে এবং অনলাইনে অধ্যয়ন করতে দেয়। দয়া করে
+নীচের পদক্ষেপগুলি অনুসরণ করার আগে একটি [বিনামূল্যে অ্যাকাউন্ট](https://ankiweb.net/) এর জন্য সাইন আপ করুন।
 
-## Intro Videos
+## পরিচিতিমূলক ভিডিও
 
-For a quick introduction to syncing, please check out the
-[syncing intro videos](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on).
+সিঙ্কিং সম্পর্কে দ্রুত পরিচিতির জন্য, দয়া করে
+[সিঙ্কিং পরিচিতিমূলক ভিডিওগুলি](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on) দেখুন।
 
-## Setup
+## সেটআপ
 
-To start syncing your collection across devices, click the sync button
-(the top right one on the [main screen](studying.md#decks), or press <kbd>Y</kbd> on your keyboard.
-You’ll be prompted for your AnkiWeb ID and password, which you created
-in the signup process.
+একাধিক ডিভাইসে আপনার সংগ্রহ সিঙ্কিং শুরু করতে, সিঙ্ক বোতামে ক্লিক করুন
+( [মূল স্ক্রিনে](studying.md#decks) উপরের ডানদিকে, অথবা আপনার কীবোর্ডে <kbd>Y</kbd> চাপুন)।
+আপনাকে আপনার আঙ্কিওয়েব আইডি এবং পাসওয়ার্ডের জন্য অনুরোধ করা হবে, যা আপনি
+সাইনআপ প্রক্রিয়াতে তৈরি করেছেন।
 
-When you synchronize your collection for the first time, Anki will ask
-you if you want to upload or download. If you have cards on your
-computer and your AnkiWeb account is empty, choose **Upload** to send your
-data to AnkiWeb. If you have cards on AnkiWeb from another device, and
-no cards on your computer, choose **Download** to replace the empty local
-collection with the cards that are on AnkiWeb. If you have different
-cards on both devices, [more work is required](#merging-conflicts) to
-avoid losing data.
+আপনি যখন প্রথমবার আপনার সংগ্রহ সিঙ্ক্রোনাইজ করেন, আঙ্কি আপনাকে জিজ্ঞাসা করবে
+আপনি আপলোড করতে চান নাকি ডাউনলোড করতে চান। যদি আপনার কম্পিউটারে কার্ড থাকে
+এবং আপনার আঙ্কিওয়েব অ্যাকাউন্ট খালি থাকে, তাহলে আপনার ডেটা আঙ্কিওয়েবে পাঠাতে **আপলোড**
+নির্বাচন করুন। যদি আপনার অন্য ডিভাইস থেকে আঙ্কিওয়েবে কার্ড থাকে এবং
+আপনার কম্পিউটারে কোনো কার্ড না থাকে, তাহলে খালি স্থানীয় সংগ্রহকে
+আঙ্কিওয়েবে থাকা কার্ডগুলি দিয়ে প্রতিস্থাপন করতে **ডাউনলোড** নির্বাচন করুন।
+যদি আপনার উভয় ডিভাইসে ভিন্ন কার্ড থাকে, তাহলে ডেটা হারানোর
+ঝুঁকি এড়াতে [আরও কাজ প্রয়োজন](#merging-conflicts) তো
+এড়াতে।
 
-Once the initial one-way sync is completed, Anki will be able to merge
-changes from multiple locations with a few exceptions.
+একবার প্রাথমিক একমুখী সিঙ্ক সম্পন্ন হলে, আঙ্কি কিছু ব্যতিক্রম ছাড়া
+একাধিক অবস্থান থেকে পরিবর্তনগুলি মার্জ করতে সক্ষম হবে।
 
-If you have multiple people using Anki on one machine and have created a
-profile for each user, each user will need to create their own AnkiWeb
-account to sync with. If you attempt to synchronize multiple profiles
-with a single AnkiWeb account, you will lose data.
+যদি আপনার একটি মেশিনে একাধিক ব্যক্তি আঙ্কি ব্যবহার করেন এবং প্রতিটি ব্যবহারকারীর জন্য একটি
+প্রোফাইল তৈরি করে থাকেন, তবে প্রতিটি ব্যবহারকারীকে তাদের নিজস্ব আঙ্কিওয়েব
+অ্যাকাউন্ট তৈরি করতে হবে সিঙ্ক করার জন্য। যদি আপনি একটি একক আঙ্কিওয়েব অ্যাকাউন্টের
+সাথে একাধিক প্রোফাইল সিঙ্ক্রোনাইজ করার চেষ্টা করেন, তাহলে আপনি ডেটা হারাবেন।
 
-## Automatic Syncing
+## স্বয়ংক্রিয় সিঙ্কিং
 
-Once syncing is enabled, Anki will automatically sync each time your
-collection is closed or opened. If you would prefer to synchronize
-manually, you can disable automatic syncing in Anki’s [preferences.](preferences.md#syncing)
+একবার সিঙ্কিং সক্ষম হলে, আপনার সংগ্রহ বন্ধ বা খোলা হলে আঙ্কি স্বয়ংক্রিয়ভাবে সিঙ্ক হবে। আপনি যদি ম্যানুয়ালি সিঙ্ক্রোনাইজ করতে পছন্দ করেন, তাহলে আপনি আঙ্কির [পছন্দগুলিতে](preferences.md#syncing) স্বয়ংক্রিয় সিঙ্কিং নিষ্ক্রিয় করতে পারেন।
 
-## Button Color
+## বোতামের রঙ
 
-The sync button will change to blue when a normal sync is required,
-and red when a full sync is required.
+যখন একটি স্বাভাবিক সিঙ্ক প্রয়োজন হয় তখন সিঙ্ক বোতামটি নীল রঙে পরিবর্তিত হবে,
+এবং যখন একটি পূর্ণ সিঙ্ক প্রয়োজন হয় তখন লাল রঙে পরিবর্তিত হবে।
 
-## Media
+## মিডিয়া
 
-You can watch a [related video](https://www.youtube.com/watch?v=phP9GGG-PxY) on this topic.
+আপনি এই বিষয়ে একটি [সম্পর্কিত ভিডিও](https://www.youtube.com/watch?v=phP9GGG-PxY) দেখতে পারেন।
 
-Anki will synchronize any sounds and images used by your notes. It will
-notice when media has been added, removed or replaced in your [media folder](files.md#user-data), but
-will not notice if you have made edits to existing files. To get your edits synced, you
-need to add, remove or replace a file as well.
+আঙ্কি আপনার নোটগুলিতে ব্যবহৃত যেকোনো সাউন্ড এবং ছবি সিঙ্ক্রোনাইজ করবে। এটি
+লক্ষ্য করবে যখন আপনার [মিডিয়া ফোল্ডারে](files.md#user-data) মিডিয়া যোগ, সরানো বা প্রতিস্থাপন করা হয়েছে,
+তবে আপনি যদি বিদ্যমান ফাইলগুলি সম্পাদনা করে থাকেন তবে তা লক্ষ্য করবে না। আপনার সম্পাদনাগুলি
+সিঙ্ক করতে, আপনাকে একটি ফাইল যোগ, সরাতে বা প্রতিস্থাপন করতে হবে।
 
-One-way syncs (where you're prompted to upload or download) have no influence over how media
-syncs - media changes are always merged.
+একমুখী সিঙ্ক (যেখানে আপনাকে আপলোড বা ডাউনলোড করার জন্য অনুরোধ করা হয়) মিডিয়া
+কীভাবে সিঙ্ক করে তার উপর কোনো প্রভাব ফেলে না - মিডিয়া পরিবর্তনগুলি সর্বদা মার্জ করা হয়।
 
-To prevent accidental data loss, deletions will only sync to other devices if they are made after
-media is fully in sync. If you delete files before your device is fully in sync, and the deleted
-files are already on AnkiWeb, they will be downloaded the next time you sync.
+দুর্ঘটনাক্রমে ডেটা হারানো প্রতিরোধ করতে, মুছে ফেলাগুলি শুধুমাত্র অন্যান্য ডিভাইসে সিঙ্ক হবে যদি সেগুলি
+মিডিয়া সম্পূর্ণরূপে সিঙ্কে থাকার পরে করা হয়। যদি আপনার ডিভাইস সম্পূর্ণরূপে সিঙ্কে
+থাকার আগে আপনি ফাইলগুলি মুছে ফেলেন এবং মুছে ফেলা ফাইলগুলি ইতিমধ্যেই আঙ্কিওয়েবে থাকে,
+তবে পরের বার আপনি সিঙ্ক করার সময় সেগুলি ডাউনলোড করা হবে।
 
-If you have accidentally deleted media files, and want to restore them, open the preferences
-and log out. The next time you sync, Anki will restore any deleted files, if they are available
-on AnkiWeb still.
+যদি আপনি ভুলবশত মিডিয়া ফাইলগুলি মুছে ফেলে থাকেন এবং সেগুলিকে পুনরুদ্ধার করতে চান,
+তবে পছন্দগুলি খুলুন এবং লগ আউট করুন। পরের বার আপনি সিঙ্ক করার সময়, আঙ্কি
+মুছে ফেলা ফাইলগুলি পুনরুদ্ধার করবে, যদি সেগুলি এখনও আঙ্কিওয়েবে উপলব্ধ থাকে।
 
-If you’re running Anki off a [USB flash drive](files.md#running-from-a-flash-drive), you should use an NTFS
-file system, as Anki may not be able to detect media changes on a FAT32
-filesystem.
+যদি আপনি একটি [USB ফ্ল্যাশ ড্রাইভ](files.md#running-from-a-flash-drive) থেকে আঙ্কি চালাচ্ছেন,
+তবে আপনার একটি NTFS ফাইল সিস্টেম ব্যবহার করা উচিত, কারণ আঙ্কি FAT32
+ফাইল সিস্টেমে মিডিয়া পরিবর্তনগুলি সনাক্ত করতে সক্ষম নাও হতে পারে।
 
-## Conflicts
+## দ্বন্দ্ব
 
-You can watch a [related video](https://www.youtube.com/watch?v=UEAcpfMQnjo) on this topic.
+আপনি এই বিষয়ে একটি [সম্পর্কিত ভিডিও](https://www.youtube.com/watch?v=UEAcpfMQnjo) দেখতে পারেন।
 
-Under normal circumstances, reviews and note edits can be merged, so if
-you review or edit on two different devices before syncing, Anki will
-preserve your changes from both locations. If the same card has been
-reviewed in two different locations, both reviews will be marked in the
-revision history, and the card will be kept in the state it was when it
-was most recently answered.
+সাধারণ পরিস্থিতিতে, রিভিউ এবং নোট সম্পাদনাগুলি মার্জ করা যেতে পারে, তাই যদি
+আপনি সিঙ্ক করার আগে দুটি ভিন্ন ডিভাইসে রিভিউ বা সম্পাদনা করেন, তবে আঙ্কি
+উভয় অবস্থান থেকে আপনার পরিবর্তনগুলি সংরক্ষণ করবে। যদি একই কার্ড দুটি
+ভিন্ন অবস্থানে পর্যালোচনা করা হয়ে থাকে, উভয় রিভিউই সংশোধন ইতিহাসে
+চিহ্নিত করা হবে, এবং কার্ডটি তার সর্বশেষ উত্তর দেওয়ার সময় যে অবস্থায় ছিল
+সেই অবস্থায় রাখা হবে।
 
-There are certain changes that Anki is unable to merge. These mainly
-relate to the format of notes: things like adding a new field, or
-removing a card template. When you perform an operation that can’t be
-merged, Anki will warn you, and give you the option of aborting the
-operation. If you choose to continue, you’ll be asked to choose whether
-to keep the local copy or the copy on AnkiWeb when your collection is
-next synchronized.
+কিছু পরিবর্তন আছে যা আঙ্কি মার্জ করতে অক্ষম। এগুলি প্রধানত নোটের
+ফরম্যাটের সাথে সম্পর্কিত: নতুন ক্ষেত্র যোগ করা, বা কার্ড টেমপ্লেট
+সরানোর মতো বিষয়গুলি। আপনি যখন একটি অপারেশন করেন যা মার্জ করা যায় না,
+আঙ্কি আপনাকে সতর্ক করবে এবং অপারেশনটি বাতিল করার বিকল্প দেবে।
+যদি আপনি চালিয়ে যাওয়ার সিদ্ধান্ত নেন, তাহলে আপনার সংগ্রহ পরবর্তী
+সিঙ্ক্রোনাইজ করার সময় স্থানীয় কপি নাকি আঙ্কিওয়েবে থাকা কপি রাখতে চান
+তা আপনাকে চয়ন করতে বলা হবে।
 
-If certain problems are detected while syncing, Anki forces a
+যদি সিঙ্ক করার সময় কিছু সমস্যা সনাক্ত করা হয়, আঙ্কি একটি
+একমুখী সিঙ্ক জোর করে। আপনি যদি এটি ধারাবাহিকভাবে ঘটতে দেখেন, দয়া করে
+আমাদের [সাপোর্ট সাইটে](https://forums.ankiweb.net) পোস্ট করুন।
 
-one-way sync. If you find this consistently happening, please post on our
-[support site](https://forums.ankiweb.net).
+যখন একটি একমুখী সিঙ্ক প্রয়োজন হয়, তখন আপনাকে চয়ন করতে হবে যে আপনি
+আপনার স্থানীয় ডিভাইসে সংগ্রহটি রাখতে চান নাকি আঙ্কিওয়েবে সংগ্রহটি রাখতে চান।
+যদি উভয় প্রান্তে পরিবর্তন করা হয়ে থাকে, তবে শুধুমাত্র এক প্রান্তের পরিবর্তনগুলি
+সংরক্ষণ করা যেতে পারে।
 
-When a one-way sync is required, you need to choose whether you wish to
-keep the collection on your local device, or the collection on AnkiWeb.
-If changes have been made on both ends, only changes on one end can be
-preserved.
+যদি আপনি **আপলোড** নির্বাচন করেন, তবে আপনার স্থানীয় ডিভাইসের বিষয়বস্তু আঙ্কিওয়েবে
+পাঠানো হবে। তারপরে আপনাকে আপনার অন্যান্য ডিভাইস সিঙ্ক করতে হবে এবং সেই বিষয়বস্তুর
+একটি কপি পেতে **ডাউনলোড** নির্বাচন করতে হবে।
 
-If you choose **Upload**, the content on your local device will be sent to
-AnkiWeb. You then need to sync your other devices, and choose **Download**
-to have them grab a copy of that content.
+যদি আপনি **ডাউনলোড** নির্বাচন করেন, তবে এটি আপনার করা যেকোনো স্থানীয় পরিবর্তনকে
+আঙ্কিওয়েবে থাকা ডেটা দিয়ে প্রতিস্থাপন করবে।
 
-If you choose **Download**, it will replace any local changes you’ve made
-with the data that is on AnkiWeb.
+একবার সমস্ত ডিভাইস সিঙ্কে থাকলে, ভবিষ্যতের সিঙ্কগুলি উভয় প্রান্ত থেকে
+পরিবর্তনগুলি মার্জ করার স্বাভাবিক আচরণে ফিরে আসবে।
 
-Once all devices are in sync, future syncs will return to the normal
-behaviour of merging changes from both ends.
+আপনি যদি একটি পূর্ণ আপলোড বা ডাউনলোড জোর করতে চান (উদাহরণস্বরূপ, কারণ আপনি
+ভুলবশত এক দিকে একটি ডেক মুছে ফেলেছিলেন এবং সেটির মুছে ফেলা সিঙ্ক্রোনাইজ না করে
+ডেকটি পুনরুদ্ধার করতে চান), তাহলে আপনি **টুলস > পছন্দ > নেটওয়ার্ক** এ "পরবর্তী সিঙ্কে,
+এক দিকে পরিবর্তন জোর করুন" বক্সটি চেক করতে পারেন, তারপর স্বাভাবিকভাবে সিঙ্ক করুন।
+(আপনাকে কোন দিকটি ব্যবহার করতে চান তা চয়ন করার বিকল্প দেওয়া হবে।)
 
-If you wish to force a full upload or download (for example, because you
-accidentally deleted a deck on one side and want to restore the deck
-rather than having its deletion synchronized), you can check the "On
-next sync, force changes in one direction" box in
-**Tools &gt; Preferences &gt; Network**, then sync as usual. (You’ll be given
-the option to choose which side you want to use.)
+একমুখী সিঙ্ক জোর করা শুধুমাত্র কার্ড সিঙ্কিংকে প্রভাবিত করে - মিডিয়া স্বাভাবিকভাবে সিঙ্ক হয়।
+আপনি যদি আঙ্কিওয়েব থেকে সরাতে চান এমন ফাইল থাকে, তবে দয়া করে নিশ্চিত করুন যে আপনার
+ক্লায়েন্ট প্রথমে সম্পূর্ণরূপে সিঙ্কে আছে। সিঙ্কিং আপ টু ডেট হওয়ার পরে,
+আপনি যে কোনও ফাইল মুছে ফেলেন (উদাহরণস্বরূপ **চেক মিডিয়া** ফাংশন ব্যবহার করে)
+পরের সিঙ্কে আঙ্কিওয়েব থেকে মুছে ফেলা হবে।
 
-Forcing a one way sync only affects card syncing - media is synced as
-normal. If you have files that you want to remove from AnkiWeb, please
-ensure your client is fully in sync first. After syncing is up to date,
-any files you remove (e.g. via the **Check Media** function) will be removed
-from AnkiWeb on the following sync.
+## দ্বন্দ্ব মার্জ করা
 
-## Merging Conflicts
+যেহেতু [প্রথম সিঙ্ক](#setup) শুধুমাত্র এক দিকে পরিবর্তন সিঙ্ক করতে পারে,
+আপনি সিঙ্কিং সেটআপ করার আগে যদি বিভিন্ন ডিভাইসে বা প্রোফাইলে ভিন্ন
+বিষয়বস্তু যোগ করে থাকেন, তাহলে একটি ডিভাইসের বিষয়বস্তু হারিয়ে যাবে যদি
+আপনি এটিকে অন্য ডিভাইসের বিষয়বস্তু দিয়ে ওভাররাইট করেন। কিছু কাজ করে,
+ম্যানুয়ালি ডেটা একটি একক সংগ্রহে মার্জ করা সম্ভব।
 
-Because the [first sync](#setup) can only sync changes in one
-direction, if you have added different content to different devices or
-profiles before setting syncing up, content on one device will be lost
-if you overwrite it with the content from the other device. With some
-work, it is possible to manually merge data into a single collection.
+কিছু ভুল হলে প্রতিটি ডিভাইস/প্রোফাইলে একটি ব্যাকআপ নিয়ে শুরু করুন।
+কম্পিউটার সংস্করণের সাহায্যে আপনি **ফাইল > এক্সপোর্ট** ব্যবহার করে
+"সমস্ত ডেক" সময়সূচী তথ্য এবং মিডিয়া ফাইল সহ এক্সপোর্ট করতে পারেন এবং
+ফাইলটি নিরাপদ কোথাও সংরক্ষণ করতে পারেন। আঙ্কি মোবাইলে, ডেক তালিকার স্ক্রিনে
+যোগ/এক্সপোর্ট বোতাম আপনাকে মিডিয়া সহ সমস্ত ডেক এক্সপোর্ট করতে দেবে।
 
-Start by taking a backup on each device/profile, in case something goes
-wrong. With the computer version you can use **File &gt; Export** to export
-"all decks" with scheduling information and media files included, and
-save the file somewhere safe. In AnkiMobile, the Add/Export button on
-the decks list screen will let you export all decks with media.
+এরপরে, যদি আপনার ডিভাইসগুলির মধ্যে একটি মোবাইল ডিভাইস হয়, তাহলে প্রথমে
+সেটি সিঙ্ক্রোনাইজ করুন। যদি কোনো দ্বন্দ্ব থাকে, তাহলে আপনার মোবাইল
+ডিভাইস থেকে ডেটা দিয়ে আঙ্কিওয়েবে থাকা যেকোনো বিদ্যমান ডেটা ওভাররাইট করতে
+**আপলোড** নির্বাচন করুন। যদি উভয় ডিভাইস/প্রোফাইল আপনার কম্পিউটারে থাকে,
+তাহলে সবচেয়ে বেশি ডেক সহ ডিভাইস/প্রোফাইলটি প্রথমে সিঙ্ক্রোনাইজ করুন।
 
-Next, if one of your devices is a mobile device, synchronize it first.
-If there’s a conflict, choose **Upload** to overwrite any existing data on
-AnkiWeb with the data from your mobile device. If both devices/profiles
-are on your computer, synchronize the device/profile with the most
-number of decks first.
+এখন অন্য ডিভাইস/প্রোফাইলে ফিরে যান। যদি স্বয়ংক্রিয় সিঙ্কিং সক্ষম থাকে,
+তবে আপলোড বা ডাউনলোড করতে চান কিনা জিজ্ঞাসা করে একটি বার্তা পপ আপ হতে পারে।
+বাতিল বোতামে ক্লিক করুন - আমরা এখনও সিঙ্ক করতে চাই না।
 
-Now return to the other device/profile. If automatic syncing is enabled,
-a message may pop up asking if you want to upload or download. Click the
-cancel button - we don’t want to sync yet.
+একবার আপনি ডেক তালিকাটি দেখছেন, প্রথম ডেকের পাশের গিয়ার আইকনে ক্লিক করুন
+এবং **এক্সপোর্ট** নির্বাচন করুন। সময়সূচী তথ্য এবং মিডিয়া সহ বিষয়বস্তু
+এক্সপোর্ট করুন এবং `.apkg` ফাইলটি কোথাও সংরক্ষণ করুন। এখন আপনাকে
+প্রতিটি শীর্ষ-স্তরের ডেকের জন্য এটি পুনরাবৃত্তি করতে হবে।
 
-Once you’re looking at the deck list, click the cog icon next to the
-first deck, and choose **Export**. Export the content with scheduling
-information and media included, and save the `.apkg` file somewhere. Now
-you’ll need to repeat this for each top-level deck.
+একবার সমস্ত শীর্ষ-স্তরের ডেক এক্সপোর্ট করা হলে, উপরের ডানদিকে সিঙ্ক
+বোতামে ক্লিক করুন এবং **ডাউনলোড** নির্বাচন করুন, যা আপনার স্থানীয়
+বিষয়বস্তুকে আপনার অন্য ডিভাইস থেকে সিঙ্ক করা বিষয়বস্তু দিয়ে ওভাররাইট করবে।
 
-Once all top-level decks have been exported, click the sync button at
-the top right, and choose **Download**, which will overwrite the local
-content with the content you synced from your other device.
+আপনি এখন **ফাইল > ইম্পোর্ট** ব্যবহার করে আপনার আগে এক্সপোর্ট করা `.apkg` ফাইলগুলি
+ইম্পোর্ট করতে পারেন, যা এক্সপোর্ট করা বিষয়বস্তুকে বিদ্যমান
+বিষয়বস্তুর সাথে মার্জ করবে, যাতে সবকিছু এক জায়গায় থাকবে।
 
-You can now use **File &gt; Import** to import the `.apkg` files you exported
-earlier, which will merge the exported content with the existing
-content, so everything will be in one place.
+## আঙ্কিওয়েব ডেটা মুছে ফেলা
 
-## AnkiWeb Data Deletion
+আঙ্কিওয়েব একটি বিনামূল্যে পরিষেবা হওয়ায়, খরচ কমাতে আমাদের পর্যায়ক্রমে
+ব্যবহৃত অ্যাকাউন্ট ডেটা মুছে ফেলতে হয়। আপনি যদি গত 6 মাসে আপনার অ্যাকাউন্ট
+অ্যাক্সেস না করে থাকেন বা সিঙ্ক না করে থাকেন, তবে আপনার অ্যাকাউন্টের ডেটা
+মুছে ফেলা হতে পারে।
 
-As AnkiWeb is a free service, we need to periodically delete unused account data
-to keep costs down. If you haven't accessed your account or synced in the last 6 months,
-the data on your account might get deleted.
+### কী মুছে ফেলা হয়
 
-### What Gets Deleted
+শুধুমাত্র আঙ্কিওয়েবে সংরক্ষিত আপনার ডেটা মুছে ফেলা হয়। আপনার অ্যাকাউন্টটি
+নিজেই থাকবে এবং আবার ব্যবহার করা যাবে।
 
-Only your data stored on AnkiWeb is deleted. Your account itself will remain and can be used again.
+আপনার কম্পিউটার, ফোন বা ট্যাবলেটে সংরক্ষিত আপনার যেকোনো কার্ড সেই ডিভাইসগুলিতে থাকবে। আপনার অ্যাকাউন্ট থেকে শেয়ার করা আইটেমগুলি, ডেক এবং অ্যাড-অন সহ, আঙ্কিওয়েবেও থাকবে।
 
-Any cards you have stored on your computer, phone or tablet will remain on those devices. Items shared from your account, including decks and add-ons will also remain on AnkiWeb.
+### আঙ্কিওয়েবে ফিরে আসা
 
-### Returning to AnkiWeb
+একবার আপনার ডেকের ডেটা মেয়াদোত্তীর্ণ হয়ে গেলে, আঙ্কিওয়েব থেকে আপনার ডেটা পুনরুদ্ধার করা আমাদের পক্ষে সম্ভব নয়, তবে আপনার কাছে একটি স্থানীয় কপি বা একটি [ব্যাকআপ](./backups.md) থাকলে আপনি এটি পুনরুদ্ধার করতে পারবেন।
 
-Once your deck data has expired, it is not possible for us to recover your data from AnkiWeb,
-but you may be able to recover it if you have a local copy or a [backup](./backups.md).
+### ডেটা মুছে ফেলা এড়ানো
 
-### Avoiding Data Deletion
+প্রতিবার আপনি ankiweb.net ভিজিট করলে, বা আঙ্কি, আঙ্কি মোবাইল বা আঙ্কিড্রয়েডে
+সিঙ্ক্রোনাইজেশন বৈশিষ্ট্য ব্যবহার করলে, আপনার অ্যাকাউন্ট স্বয়ংক্রিয়ভাবে
+সক্রিয় হিসাবে চিহ্নিত হবে।
 
-Each time you visit ankiweb.net, or use the synchronization feature in Anki, AnkiMobile or AnkiDroid,
-your account will automatically be marked as active.
+যদি আপনার অ্যাকাউন্ট 6 মাস বা তার বেশি সময় ধরে নিষ্ক্রিয় থাকে এবং আপনি
+এক সপ্তাহ বা তার বেশি সময় ধরে পরিষেবাটি ব্যবহার করে থাকেন, তাহলে আমরা আপনাকে
+একটি ইমেল পাঠাবো যা আপনাকে জানাবে যে মুছে ফেলা পেন্ডিং রয়েছে।
+যদি আপনি আপনার অ্যাকাউন্ট সক্রিয় রাখতে চান, দয়া করে ankiweb.net এ লগ ইন করুন
+এবং একটি কার্ড অধ্যয়ন করুন, অথবা 30 দিনের মধ্যে আপনার একটি ডিভাইস সিঙ্ক করুন।
 
-If your account has been inactive for 6 months or more, and you used the service for a week or longer,
-we will send you an email notifying you that deletion is pending.
-If you'd like to keep your account active, please log in to ankiweb.net
-and study a card, or sync one of your devices within 30 days.
+## ফায়ারওয়াল
 
-## Firewalls
+আঙ্কিকে সিঙ্ক করার জন্য আউটবাউন্ড HTTPS সংযোগ তৈরি করতে সক্ষম হতে হবে।
+এটি ankiweb.net, sync.ankiweb.net, sync2.ankiweb.net, ইত্যাদির সাথে
+সংযোগ করতে সক্ষম হতে হবে। এই ডোমেনগুলি সময়ের সাথে পরিবর্তিত হতে পারে,
+এবং তারা নির্দেশ করে এমন আইপি ঠিকানাগুলিও পরিবর্তিত হতে পারে,
+তাই ভবিষ্যতে ফায়ারওয়াল নিয়মগুলি আপডেট করার প্রয়োজনীয়তা কমাতে আমরা
+\*.ankiweb.net এ ওয়াইল্ডকার্ড অ্যাক্সেসের অনুমতি দেওয়ার পরামর্শ দিই।
 
-Anki needs to be able to make outbound HTTPS connections to sync. It must be
-able to connect to ankiweb.net, sync.ankiweb.net, sync2.ankiweb.net, and so on.
-These domains may change over time, and the IP addresses they point to may also
-change, so we recommend you allow wildcard access to \*.ankiweb.net to reduce
-the chance of the firewall rules needing to be updated in the future.
+যদি আপনার মেশিনে একটি ফায়ারওয়াল থাকে, তাহলে আপনার আঙ্কির জন্য একটি ব্যতিক্রম যোগ করা উচিত।
+আপনি যদি একটি কর্মস্থল বা স্কুল নেটওয়ার্কে থাকেন, তাহলে সহায়তার জন্য আপনার
+নেটওয়ার্ক প্রশাসকের সাথে যোগাযোগ করুন - এটি এমন কিছু নয় যা আমরা আপনাকে সাহায্য
+করতে পারি।
 
-If you have a firewall on your machine, you should add an exception for
-Anki. If you are on a work or school network, please contact your
-network administrator for assistance - it is not something we can help
-you with.
+## প্রক্সি
 
-## Proxies
+আপনার ইন্টারনেট অ্যাক্সেস করার জন্য যদি একটি প্রক্সি প্রয়োজন হয়, আঙ্কি উইন্ডোজ বা
+macOS এ থাকলে স্বয়ংক্রিয়ভাবে আপনার সিস্টেম প্রক্সি সেটিংস গ্রহণ করবে,
+এবং আপনি অন্য প্ল্যাটফর্মে থাকলে HTTP_PROXY এনভায়রনমেন্ট ভেরিয়েবলকে সম্মান করবে।
 
-If you need a proxy to access the internet, Anki should automatically
-pick up your system proxy settings if you’re on Windows or macOS, and
-will honour the HTTP_PROXY environment variable if you’re on another
-platform.
+আঙ্কি শুধুমাত্র আপনার সিস্টেম সেটিংস গ্রহণ করতে সক্ষম হবে যদি একটি প্রক্সি
+ম্যানুয়ালি কনফিগার করা হয়, এবং একটি পাসওয়ার্ডের প্রয়োজন হয় না। যদি আপনার সিস্টেম
+স্বয়ংক্রিয় প্রক্সি সেটআপ ব্যবহার করে, অথবা একটি প্রক্সি ব্যবহার করে যার জন্য একটি
+ব্যবহারকারীর নাম এবং পাসওয়ার্ডের প্রয়োজন হয়, তাহলে আপনাকে ম্যানুয়ালি আঙ্কিকে
+প্রক্সি কনফিগারেশন জানাতে হবে।
 
-Anki will only be able to pick up your system settings if a proxy is
-manually configured, and does not require a password. If your system
-uses automatic proxy setup, or uses a proxy that requires a username and
-password, you will need to manually tell Anki the proxy configuration.
-
-To tell Anki your proxy settings, define a HTTPS_PROXY environment
-variable that points to the proxy server. It will look like:
+আঙ্কিকে আপনার প্রক্সি সেটিংস জানাতে, একটি HTTPS_PROXY এনভায়রনমেন্ট ভেরিয়েবল সংজ্ঞায়িত করুন
+যা প্রক্সি সার্ভারকে নির্দেশ করে। এটি এমন দেখাবে:
 
     http://user:pass@proxy.company.com:8080
 
-If your username or password contains an @ (e.g `user@workdomain.com`),
-you need to change it to %40, like so:
+যদি আপনার ব্যবহারকারীর নাম বা পাসওয়ার্ডে একটি @ থাকে (যেমন `user@workdomain.com`),
+তবে আপনাকে এটিকে %40 তে পরিবর্তন করতে হবে, যেমন:
 
     http://user%40workdomain.com:pass@proxy.company.com:8080
 
-Anki 2.0 expects to find HTTP_PROXY instead of HTTPS_PROXY.
+আঙ্কি 2.0 HTTPS_PROXY এর পরিবর্তে HTTP_PROXY খুঁজে পাওয়ার আশা করে।
 
-To set environment variables on Windows, please see
+উইন্ডোজে পরিবেশ ভেরিয়েবল সেট করার জন্য, দয়া করে দেখুন
 <https://www.google.com/search?q=windows+set+environmental+variable>
 
-If you’re on a Mac, please see
+যদি আপনি একটি ম্যাকে থাকেন, দয়া করে দেখুন
 <http://stackoverflow.com/questions/135688/setting-environment-variables-in-os-x>
 
-Heavily locked down networks that intercept secure connections and
-present their own certificates may cause Anki to throw up SSL
-errors. In such environments, you may be able to work around the errors using [this add-on](https://ankiweb.net/shared/info/1332261690).
+নিরাপদ সংযোগগুলি আটকানো এবং তাদের নিজস্ব সার্টিফিকেট উপস্থাপন করে এমন
+কঠোরভাবে লক করা নেটওয়ার্কগুলি আঙ্কিকে SSL ত্রুটি দেখাতে পারে।
+এই ধরনের পরিবেশে, আপনি [এই অ্যাড-অনটি](https://ankiweb.net/shared/info/1332261690)
+ব্যবহার করে ত্রুটিগুলি অতিক্রম করতে সক্ষম হতে পারেন।
 
-An alternative solution is to install a local proxy server, and point
-that proxy server at your normal proxy server. You can then tell Anki to
-use the local proxy, which will redirect requests to the proxy you
-normally use.
+একটি বিকল্প সমাধান হল একটি স্থানীয় প্রক্সি সার্ভার ইনস্টল করা, এবং
+সেই প্রক্সি সার্ভারটিকে আপনার স্বাভাবিক প্রক্সি সার্ভারে নির্দেশ করা। আপনি তখন আঙ্কিকে
+স্থানীয় প্রক্সি ব্যবহার করতে বলতে পারেন, যা আপনার সাধারণত ব্যবহৃত প্রক্সিতে অনুরোধগুলি
+পুনর্নির্দেশ করবে।

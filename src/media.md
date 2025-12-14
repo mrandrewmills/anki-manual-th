@@ -1,63 +1,38 @@
-# Media
+# মিডিয়া
 
-Anki stores the sounds and images used in your notes in a folder next to
-the collection. For more on the folder location, please see the [file locations](files.md#user-data) section. When you add media within Anki, either by
-using the paperclip icon in the [editor](editing.md) or by pasting it into
-a field, Anki will copy it from its original location into the media
-folder. This makes it easy to back up your collection’s media or move it
-to another computer.
+আঙ্কি আপনার নোটগুলিতে ব্যবহৃত সাউন্ড এবং ছবিগুলি সংগ্রহের পাশের একটি ফোল্ডারে সংরক্ষণ করে। ফোল্ডারের অবস্থান সম্পর্কে আরও জানতে, অনুগ্রহ করে [ফাইল অবস্থান](files.md#user-data) বিভাগটি দেখুন। আপনি যখন আঙ্কির মধ্যে মিডিয়া যোগ করেন, হয় [সম্পাদকে](editing.md) পেপারক্লিপ আইকন ব্যবহার করে অথবা এটিকে একটি ক্ষেত্রে পেস্ট করে, আঙ্কি এটিকে তার আসল অবস্থান থেকে মিডিয়া ফোল্ডারে অনুলিপি করবে। এটি আপনার সংগ্রহের মিডিয়া ব্যাকআপ করা বা অন্য কম্পিউটারে স্থানান্তর করা সহজ করে তোলে।
 
-If your media filenames contain spaces or other special characters such
-as percentage signs, the way the filenames appear in the HTML editor will
-differ from the way the filenames appear on disk. For example, a file called
-`hello 100%.jpg` will appear as `hello%20100%25.jpg` in the HTML editor.
-Internally, Anki still uses the original filenames, so if you would like to
-[search](searching.md) for the file or modify the filename with [Find&Replace](browsing.md#find-and-replace), you will
-need to use the name as it appears on disk, not as it appears in the
-HTML editor. Exporting to a text file is another way to see the underlying
-representation.
+যদি আপনার মিডিয়ার ফাইলের নামগুলিতে স্পেস বা অন্যান্য বিশেষ অক্ষর থাকে যেমন শতাংশ চিহ্ন, HTML সম্পাদকে ফাইলের নামগুলি যেভাবে প্রদর্শিত হবে তা ডিস্কে ফাইলের নামগুলি যেভাবে প্রদর্শিত হবে তার থেকে ভিন্ন হবে। উদাহরণস্বরূপ, `hello 100%.jpg` নামক একটি ফাইল HTML সম্পাদকে `hello%20100%25.jpg` হিসাবে প্রদর্শিত হবে।
+অভ্যন্তরীণভাবে, আঙ্কি এখনও আসল ফাইলের নামগুলি ব্যবহার করে, তাই যদি আপনি [অনুসন্ধান](searching.md) করতে চান বা [খুঁজুন এবং প্রতিস্থাপন](browsing.md#find-and-replace) দিয়ে ফাইলের নাম পরিবর্তন করতে চান, তবে আপনাকে ডিস্কে যেভাবে নামটি প্রদর্শিত হয় সেটি ব্যবহার করতে হবে, HTML সম্পাদকে যেভাবে প্রদর্শিত হয় সেটি নয়। একটি টেক্সট ফাইলে এক্সপোর্ট করা অন্তর্নিহিত উপস্থাপনা দেখার আরেকটি উপায়।
 
-## Checking Media
+## মিডিয়া পরীক্ষা করা
 
-You can use the Tools&gt;Check Media menu option to scan your notes and
-media folder. It will generate a report of files in the media folder
-that are not used by any notes, and media referenced in notes but
-missing from your media folder. It also allows you:
+আপনি আপনার নোট এবং মিডিয়া ফোল্ডার স্ক্যান করতে টুলস > চেক মিডিয়া মেনু অপশনটি ব্যবহার করতে পারেন। এটি মিডিয়া ফোল্ডারে থাকা ফাইলগুলির একটি প্রতিবেদন তৈরি করবে যা কোনও নোট দ্বারা ব্যবহৃত হয় না, এবং নোটগুলিতে রেফারেন্স করা মিডিয়া কিন্তু আপনার মিডিয়া ফোল্ডার থেকে অনুপস্থিত। এটি আপনাকে নিম্নলিখিতগুলি করার অনুমতি দেয়:
 
-- To delete unused media files.
-- To tag notes that refer to missing media files.
-- To empty your trash folder.
-- To restore the deleted files back to your media folder.
+- অব্যবহৃত মিডিয়া ফাইলগুলি মুছে ফেলা।
+- অনুপস্থিত মিডিয়া ফাইলগুলি উল্লেখ করে এমন নোটগুলি ট্যাগ করা।
+- আপনার ট্র্যাশ ফোল্ডার খালি করা।
+- মুছে ফেলা ফাইলগুলি আপনার মিডিয়া ফোল্ডারে পুনরুদ্ধার করা।
 
-This tool does not scan question or answer
-templates, which is why you can’t place media references to fields in
-the template. If you need a static image or sound on every card, name it
-with a leading \_ (e.g., `_dog.jpg`) to tell Anki to ignore it when
-checking for media. If you delete media using the unused media check,
-Anki will move it into your operating system’s trash folder, so you can
-recover if you accidentally delete media that shouldn’t have been
-deleted.
+এই টুলটি প্রশ্ন বা উত্তর টেমপ্লেট স্ক্যান করে না, এই কারণেই আপনি টেমপ্লেটে ক্ষেত্রগুলিতে মিডিয়া রেফারেন্স রাখতে পারবেন না। যদি আপনার প্রতিটি কার্ডে একটি স্ট্যাটিক ছবি বা সাউন্ডের প্রয়োজন হয়, তবে এটি একটি অগ্রণী \_ (যেমন `_dog.jpg`) দিয়ে নামকরণ করুন যাতে আঙ্কি মিডিয়া পরীক্ষা করার সময় এটি উপেক্ষা করে। যদি আপনি অব্যবহৃত মিডিয়া চেক ব্যবহার করে মিডিয়া মুছে ফেলেন, আঙ্কি এটিকে আপনার অপারেটিং সিস্টেমের ট্র্যাশ ফোল্ডারে নিয়ে যাবে, যাতে আপনি ভুলবশত মুছে ফেলা মিডিয়া পুনরুদ্ধার করতে পারেন যা মুছে ফেলা উচিত ছিল না।
 
-## Manually Adding Media
+## ম্যানুয়ালি মিডিয়া যোগ করা
 
-When you add media via Anki's interface, Anki takes care of ensuring the
-filenames are encoded in a way that should work across different devices,
-removing characters that won't work on certain operating systems,
-and truncating very long filenames.
+আপনি যখন আঙ্কির ইন্টারফেসের মাধ্যমে মিডিয়া যোগ করেন, আঙ্কি নিশ্চিত করে যে ফাইলের নামগুলি এমনভাবে এনকোড করা হয়েছে যা বিভিন্ন ডিভাইসে কাজ করা উচিত, নির্দিষ্ট অপারেটিং সিস্টেমে কাজ করবে না এমন অক্ষরগুলি সরিয়ে দেয়, এবং খুব দীর্ঘ ফাইলের নামগুলি ছোট করে।
 
-If you manually add files to your [media folder](files.md#user-data),
-you should use Tools&gt;Check Media afterwards, to ensure the filenames are
-encoded correctly. If you skip this step, any filenames that are not compatible
-will be skipped when syncing.
+যদি আপনি ম্যানুয়ালি আপনার [মিডিয়া ফোল্ডারে](files.md#user-data) ফাইল যোগ করেন,
+তবে আপনাকে পরে টুলস > চেক মিডিয়া ব্যবহার করা উচিত, যাতে ফাইলের নামগুলি
+সঠিকভাবে এনকোড করা হয়েছে তা নিশ্চিত করা যায়। যদি আপনি এই ধাপটি এড়িয়ে যান, তাহলে
+সিঙ্ক করার সময় যে কোনও ফাইলের নাম যা সামঞ্জস্যপূর্ণ নয় তা এড়িয়ে যাওয়া হবে।
 
-Anki doesn’t follow symbolic links in the media folder when syncing. If you
-rely on symlinks for including fonts, stylesheets, or other resources, these files
-may appear to work on desktop but fail on mobile. To ensure files sync properly, copy
-the actual files into the collection.media folder instead of using symlinks.
+আঙ্কি সিঙ্ক করার সময় মিডিয়া ফোল্ডারে সিম্বোলিক লিঙ্কগুলি অনুসরণ করে না।
+যদি আপনি ফন্ট, স্টাইলশীট বা অন্যান্য সংস্থান অন্তর্ভুক্ত করার জন্য সিমলিঙ্কগুলির উপর নির্ভর করেন,
+তবে এই ফাইলগুলি ডেস্কটপে কাজ করছে বলে মনে হতে পারে তবে মোবাইলে ব্যর্থ হবে।
+ফাইলগুলি সঠিকভাবে সিঙ্ক হয় তা নিশ্চিত করতে, সিমলিঙ্ক ব্যবহার না করে আসল ফাইলগুলি
+collection.media ফোল্ডারে অনুলিপি করুন।
 
-## Supported Formats
+## সমর্থিত ফরম্যাট
 
-Anki uses a program called mpv (and mplayer as a fallback) in order to support
-sounds and videos. A wide variety of file formats are supported, but not all of
-these formats will work on AnkiWeb and the mobile clients. MP3 audio and
-MP4 video seems to be the most universally supported.
+আঙ্কি সাউন্ড এবং ভিডিও সমর্থন করার জন্য mpv (এবং ফলব্যাক হিসাবে mplayer) নামক একটি প্রোগ্রাম ব্যবহার করে।
+বিভিন্ন ধরণের ফাইল ফরম্যাট সমর্থিত, তবে এই সমস্ত ফরম্যাট আঙ্কিওয়েব এবং মোবাইল ক্লায়েন্টগুলিতে কাজ করবে না।
+MP3 অডিও এবং MP4 ভিডিও সবচেয়ে সার্বজনীনভাবে সমর্থিত বলে মনে হয়।

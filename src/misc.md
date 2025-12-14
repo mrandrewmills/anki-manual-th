@@ -1,48 +1,47 @@
-# Miscellanea
+# বিবিধ
 
 <!-- toc -->
 
-## Menu Shortcuts
+## মেনু শর্টকাট
 
-On Windows/Linux you can hold down the <kbd>Alt</kbd> key and press a highlighted
-letter to activate a particular menu.
+উইন্ডোজ/লিনাক্সে আপনি <kbd>Alt</kbd> কী চেপে ধরে একটি হাইলাইট করা
+অক্ষর টিপে একটি নির্দিষ্ট মেনু সক্রিয় করতে পারেন।
 
-Although macOS doesn’t support this feature, it does allow you instead to assign
-shortcuts to specific menu items. Please see
+যদিও macOS এই বৈশিষ্ট্যটি সমর্থন করে না, তবে এটি পরিবর্তে আপনাকে
+নির্দিষ্ট মেনু আইটেমগুলিতে শর্টকাট অ্যাসাইন করার অনুমতি দেয়। আরও তথ্যের জন্য
+অনুগ্রহ করে দেখুন:
 <https://support.apple.com/en-au/guide/mac-help/mchlp2271/mac>
-for more information.
 
-## Debug Console
+## ডিবাগ কনসোল
 
-Sometimes you may be asked to use the debug console to change a setting
-or check something. Unless asked to enter text in the "debug console",
-you will probably not need this. Advanced users may like to read more
-about it in the [add-on writing guide](https://addon-docs.ankiweb.net/debugging.html#debug-console).
+কখনও কখনও আপনাকে একটি সেটিং পরিবর্তন করতে বা কিছু পরীক্ষা করতে
+ডিবাগ কনসোল ব্যবহার করতে বলা হতে পারে। "ডিবাগ কনসোল" এ টেক্সট প্রবেশ করতে বলা না
+হলে, আপনার সম্ভবত এর প্রয়োজন হবে না। উন্নত ব্যবহারকারীরা
+[অ্যাড-অন লেখার নির্দেশিকা](https://addon-docs.ankiweb.net/debugging.html#debug-console) তে
+এ সম্পর্কে আরও পড়তে চাইতে পারেন।
 
-When asked to enter text into the "debug console", please start Anki,
-and in the main window, press
+"ডিবাগ কনসোল" এ টেক্সট প্রবেশ করতে বলা হলে, দয়া করে আঙ্কি শুরু করুন,
+এবং মূল উইন্ডোতে চাপুন:
 
 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>;</kbd>
 
-(the control key, shift key, and semi-colon key at the same time)
+(কন্ট্রোল কী, শিফট কী এবং সেমিকোলন কী একই সময়ে)
 
-On a Mac, press
+ম্যাক-এ, চাপুন:
 
 <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>;</kbd>
 
-(the command key, shift key, and semi-colon key at the same time)
+(কমান্ড কী, শিফট কী এবং সেমিকোলন কী একই সময়ে)
 
-On some non-English keyboards, you may need to press <kbd>:</kbd> or <kbd>+</kbd> instead
-of <kbd>;</kbd>.
+কিছু অ-ইংরেজি কীবোর্ডে, আপনাকে <kbd>;</kbd> এর পরিবর্তে <kbd>:</kbd> বা <kbd>+</kbd> চাপতে হতে পারে।
 
-In the window that has popped up, please paste the text you were asked
-to paste in the top section. When you’ve done so, please press
-<kbd>Ctrl</kbd>+<kbd>Return</kbd> (On Mac, <kbd>Command</kbd>+<kbd>Return</kbd>), and some text should appear in
-the bottom section. If you’ve been asked to paste the resulting output,
-please copy it from the bottom area, and paste it back to the support
-person.
+যে উইন্ডোটি পপ আপ হয়েছে, সেখানে আপনাকে যে টেক্সটটি পেস্ট করতে বলা হয়েছিল সেটি
+উপরের অংশে পেস্ট করুন। যখন আপনি এটি করে ফেলবেন, দয়া করে
+<kbd>Ctrl</kbd>+<kbd>Return</kbd> (ম্যাক-এ, <kbd>Command</kbd>+<kbd>Return</kbd>) চাপুন, এবং
+নীচের অংশে কিছু টেক্সট প্রদর্শিত হবে। যদি আপনাকে ফলাফল আউটপুট পেস্ট করতে বলা
+হয়ে থাকে, দয়া করে এটি নীচের এলাকা থেকে কপি করুন, এবং সাপোর্ট ব্যক্তিকে ফেরত
+পেস্ট করুন।
 
-If you press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Return</kbd> instead of just <kbd>Ctrl</kbd>+<kbd>Return</kbd>, Anki will
-try to print the result rather than doing what you asked it to. If you
-are getting unexpected errors, please make sure you’re not holding down
-the <kbd>Shift</kbd> key.
+যদি আপনি কেবল <kbd>Ctrl</kbd>+<kbd>Return</kbd> এর পরিবর্তে <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Return</kbd> চাপেন,
+আঙ্কি আপনার যা করতে বলেছেন তা না করে ফলাফল প্রিন্ট করার চেষ্টা করবে। যদি আপনি
+অপ্রত্যাশিত ত্রুটি পান, দয়া করে নিশ্চিত করুন যে আপনি <kbd>Shift</kbd> কী চেপে ধরে নেই।

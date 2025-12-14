@@ -1,488 +1,442 @@
-# Searching
+# অনুসন্ধান
 
 <!-- toc -->
 
-Anki's Browse screen and the Filtered Deck feature use a common method
-of searching for specific cards/notes. This method can also be used to adjust the scope of FSRS optimization. 
+আঙ্কির ব্রাউজ স্ক্রিন এবং ফিল্টার করা ডেক বৈশিষ্ট্যটি নির্দিষ্ট কার্ড/নোট অনুসন্ধানের জন্য একটি সাধারণ পদ্ধতি ব্যবহার করে। এই পদ্ধতিটি FSRS অপ্টিমাইজেশনের সুযোগ সামঞ্জস্য করতেও ব্যবহার করা যেতে পারে।
 
-## Simple searches
+## সাধারণ অনুসন্ধান
 
-When you type some text into the search box, Anki finds matching notes
-and displays their cards. Anki searches in all fields of the notes, but
-does not search for tags (see [later in this section](#tags-decks-cards-and-notes) to search for tags). Some examples:
+আপনি যখন অনুসন্ধান বাক্সে কিছু টেক্সট টাইপ করেন, তখন আঙ্কি মিলে যাওয়া নোটগুলি খুঁজে পায়
+এবং তাদের কার্ডগুলি প্রদর্শন করে। আঙ্কি নোটগুলির সমস্ত ক্ষেত্রে অনুসন্ধান করে, তবে
+ট্যাগগুলির জন্য অনুসন্ধান করে না (ট্যাগগুলির জন্য অনুসন্ধান করতে [এই বিভাগের পরে](#tags-decks-cards-and-notes) দেখুন)। কিছু উদাহরণ:
 
-`dog`\
-searches for "dog" - will match words like "doggy" and "underdog" too.
+`dog`
+"dog" এর জন্য অনুসন্ধান করে - "doggy" এবং "underdog" এর মতো শব্দগুলির সাথেও মিলবে।
 
-`dog cat`\
-finds notes that have both "dog" and "cat" on them, such as "raining
-cats and dogs".
+`dog cat`
+"dog" এবং "cat" উভয়ই আছে এমন নোটগুলি খুঁজে পায়, যেমন "raining cats and dogs"।
 
-`dog or cat`\
-finds notes with either "dog" or "cat".
+`dog or cat`
+"dog" বা "cat" আছে এমন নোটগুলি খুঁজে পায়।
 
-`dog (cat or mouse)`\
-finds notes with "dog" and "cat", or "dog" and "mouse".
+`dog (cat or mouse)`
+"dog" এবং "cat" আছে এমন নোটগুলি খুঁজে পায়, অথবা "dog" এবং "mouse" আছে এমন নোটগুলি খুঁজে পায়।
 
-`-cat`\
-finds notes without "cat".
+`-cat`
+"cat" নেই এমন নোটগুলি খুঁজে পায়।
 
-`-cat -mouse`\
-finds notes with neither "cat" nor "mouse".
+`-cat -mouse`
+"cat" বা "mouse" নেই এমন নোটগুলি খুঁজে পায়।
 
-`-(cat or mouse)`\
-same as the above.
+`-(cat or mouse)`
+উপরের মতো একই।
 
-`"a dog"`\
-finds notes with the exact sequence of characters "a dog" in them, such
-as "atta dog", but not "dog a" or "adog".
+`"a dog"`
+"a dog" এর সঠিক অক্ষর ক্রম আছে এমন নোটগুলি খুঁজে পায়, যেমন "atta dog", কিন্তু "dog a" বা "adog" নয়।
 
-`-"a dog"`\
-finds notes without the exact sequence of characters "a dog" in them.
+`-"a dog"`
+"a dog" এর সঠিক অক্ষর ক্রম নেই এমন নোটগুলি খুঁজে পায়।
 
-`d_g`\
-finds notes with d, &lt;one character&gt;, g, like dog, dig, dug, and so on.
+`d_g`
+d, <এক অক্ষর>, g আছে এমন নোটগুলি খুঁজে পায়, যেমন dog, dig, dug, ইত্যাদি।
 
-`d*g`\
-finds notes with d, &lt;zero or more characters&gt;, g, like dg, dog, dung,
-etc.
+`d*g`
+d, <শূন্য বা একাধিক অক্ষর>, g আছে এমন নোটগুলি খুঁজে পায়, যেমন dg, dog, dung, ইত্যাদি।
 
-`w:dog`\
-searches for the word "dog" as opposed to a sequence of characters - will match "dog", but not "doggy"
-or "underdog". Requires Anki 2.1.24+, AnkiMobile 2.1.61+, or AnkiDroid 2.17+. Note that
-formatting changes may be interpreted as word boundaries, e.g. searching
-for `w:exam` will match **exam**ple, as the "exam" part of example is in bold format.
+`w:dog`
+অক্ষর ক্রমের পরিবর্তে "dog" শব্দটির জন্য অনুসন্ধান করে - "dog" এর সাথে মিলবে, কিন্তু "doggy" বা "underdog" এর সাথে নয়। আঙ্কি 2.1.24+, আঙ্কি মোবাইল 2.1.61+, বা আঙ্কিড্রয়েড 2.17+ প্রয়োজন। মনে রাখবেন যে ফরম্যাটিং পরিবর্তনগুলি শব্দ সীমানা হিসাবে ব্যাখ্যা করা হতে পারে, যেমন `w:exam` এর জন্য অনুসন্ধান করলে **example** এর সাথে মিলবে, কারণ example এর "exam" অংশটি বোল্ড ফরম্যাটে আছে।
 
-`w:dog*`\
-will match "dog" and "doggy", but not "underdog".
+`w:dog*`
+"dog" এবং "doggy" এর সাথে মিলবে, কিন্তু "underdog" এর সাথে নয়।
 
-`w:*dog`\
-will match "dog" and "underdog", but not "doggy".
+`w:*dog`
+"dog" এবং "underdog" এর সাথে মিলবে, কিন্তু "doggy" এর সাথে নয়।
 
-Things to note from the above:
+উপরের থেকে কিছু বিষয় লক্ষ্যণীয়:
 
-- Search terms are separated by spaces.
+- অনুসন্ধান পদগুলি স্পেস দ্বারা পৃথক করা হয়।
 
-- When multiple search terms are provided, Anki looks for notes that
-  match all of the terms - an implicit `and` is inserted between each
-  term. On Anki 2.1.24+, AnkiMobile 2.0.60+, and AnkiDroid 2.17+ you can be explicit
-  if you like (`dog and cat` is the same as `dog cat`), but older
-  Anki versions will treat `and` as just another word to search for.
+- যখন একাধিক অনুসন্ধান পদ সরবরাহ করা হয়, আঙ্কি এমন নোটগুলি খুঁজে পায় যা
+  সমস্ত পদের সাথে মেলে - প্রতিটি পদের মধ্যে একটি অন্তর্নিহিত `and`
+  সন্নিবেশ করা হয়। আঙ্কি 2.1.24+, আঙ্কি মোবাইল 2.0.60+, এবং আঙ্কিড্রয়েড 2.17+ এ আপনি
+  যদি চান তবে সুনির্দিষ্ট হতে পারেন (`dog and cat` হল `dog cat` এর মতোই), তবে আঙ্কির পুরানো সংস্করণগুলি `and` কে অনুসন্ধানের জন্য আরও একটি শব্দ হিসাবে বিবেচনা করবে।
 
-- You can use `or` if you only need one of the terms to match.
+- আপনি `or` ব্যবহার করতে পারেন যদি আপনার কেবল একটি পদের সাথে মিল প্রয়োজন হয়।
 
-- You can prepend a minus sign (`-`) to a term to find notes that don’t
-  match the term.
+- আপনি একটি পদকে মাইনাস চিহ্ন (`-`) দিয়ে উপসর্গ হিসাবে ব্যবহার করতে পারেন যাতে সেই
+  পদের সাথে মেলে না এমন নোটগুলি খুঁজে পাওয়া যায়।
 
-- You can group search terms by placing them in parentheses, as in the
-  `dog (cat or mouse)` example. This becomes important when
-  combining OR and AND searches — in the example, with the
-  parentheses, it matches either "dog cat" or "dog mouse", whereas
-  without them it would match either "dog and cat" or "mouse".
+- আপনি অনুসন্ধান পদগুলি বন্ধনীতে রেখে গোষ্ঠীভুক্ত করতে পারেন, যেমন
+  `dog (cat or mouse)` উদাহরণে। OR এবং AND অনুসন্ধানগুলি একত্রিত করার সময় এটি গুরুত্বপূর্ণ হয়ে ওঠে - উদাহরণে, বন্ধনী সহ, এটি "dog cat" বা "dog mouse" এর সাথে মেলে, যখন সেগুলি ছাড়া এটি "dog and cat" বা "mouse" এর সাথে মিলবে।
 
-- Anki is only able to search within formatting in the [sort field](editing.md#customizing-fields) you’ve configured. For example, if you add
-  "**exa**mple" to one of your fields, with the "exa" part in bold, this will not be matched when
-  searching for `example` unless that field is the sort field. If a
-  word is not formatted, or the formatting does not change in the
-  middle of the word, then Anki will be able to find it in any field.
+- আঙ্কি কেবলমাত্র আপনার কনফিগার করা [সাজানোর ক্ষেত্রে](editing.md#customizing-fields) ফরম্যাটিংয়ের মধ্যে অনুসন্ধান করতে সক্ষম। উদাহরণস্বরূপ, যদি আপনি আপনার একটি ক্ষেত্রে "**exa**mple" যোগ করেন, "exa" অংশটি বোল্ড ফরম্যাটে, তাহলে `example` এর জন্য অনুসন্ধান করার সময় এটি মিলবে না যদি না সেই ক্ষেত্রটি সাজানোর ক্ষেত্র হয়। যদি একটি শব্দ ফরম্যাট করা না হয়, অথবা ফরম্যাটিং শব্দের মাঝখানে পরিবর্তন না হয়, তাহলে আঙ্কি এটি যেকোনো ক্ষেত্রে খুঁজে পেতে সক্ষম হবে।
 
-- Standard searches are case insensitive for Latin characters - a-z will
-  match A-Z, and vice versa. Other characters such as Cyrillic are case sensitive
-  in a standard search, but can be made case insensitive by searching on a word
-  boundary or regular expression (`w:`, `re:`).
+- স্ট্যান্ডার্ড অনুসন্ধানগুলি ল্যাটিন অক্ষরগুলির জন্য কেস ইনসেনসিটিভ - a-z A-Z এর সাথে মিলবে, এবং এর বিপরীত। সিরিলিকের মতো অন্যান্য অক্ষরগুলি একটি স্ট্যান্ডার্ড অনুসন্ধানে কেস সেনসিটিভ, তবে শব্দ সীমানা বা রেগুলার এক্সপ্রেশন (`w:`, `re:`) এর উপর অনুসন্ধান করে কেস ইনসেনসিটিভ করা যেতে পারে।
 
-## Limiting to a field
+## একটি ক্ষেত্রের মধ্যে সীমাবদ্ধ করা
 
-You can also ask Anki to match only if a particular field contains some
-text. Unlike the previous search examples, searching in fields requires an exact
-match by default.
+আপনি আঙ্কিকে একটি নির্দিষ্ট ক্ষেত্র কিছু টেক্সট ধারণ করলে তবেই মেলাতে বলতে পারেন।
+পূর্ববর্তী অনুসন্ধান উদাহরণগুলির বিপরীতে, ক্ষেত্রগুলিতে অনুসন্ধান ডিফল্টরূপে একটি সঠিক মিলের প্রয়োজন।
 
-`front:dog`\
-finds notes with a Front field of exactly "dog". A field that says "a
-dog" will not match.
+`front:dog`
+"dog" এর সাথে হুবহু মিলে যাওয়া ফ্রন্ট ক্ষেত্র সহ নোটগুলি খুঁজে পায়। "a dog" লেখা একটি ক্ষেত্র মিলবে না।
 
-`"animal front:a dog"`\
-finds notes where the "Animal Front" field is exactly "a dog". The double quotes are
-mandatory: see [later in this section](#matching-special-characters).
+`"animal front:a dog"`
+"Animal Front" ক্ষেত্রটি হুবহু "a dog" এমন নোটগুলি খুঁজে পায়। ডাবল কোট বাধ্যতামূলক:
+[এই বিভাগের পরে](#matching-special-characters) বিশেষ অক্ষর মেলানো দেখুন।
 
-`front:*dog*`\
-finds notes where the Front field contains dog somewhere.
+`front:dog*`
+"Front" ক্ষেত্রটিতে কোথাও "dog" আছে এমন নোটগুলি খুঁজে পায়।
 
-`front:`\
-finds notes that have an empty Front field.
+`front:`
+একটি খালি ফ্রন্ট ক্ষেত্র আছে এমন নোটগুলি খুঁজে পায়।
 
-`front:_*`\
-finds notes that have a non-empty Front field.
+`front:_*
+একটি অ-খালি ফ্রন্ট ক্ষেত্র আছে এমন নোটগুলি খুঁজে পায়।
 
-`front:*`\
-finds notes that have a Front field, empty or not.
+`front:*
+একটি ফ্রন্ট ক্ষেত্র আছে এমন নোটগুলি খুঁজে পায়, খালি হোক বা না হোক।
 
-`fr*:text`\
-finds notes in a field starting with "fr". Requires Anki 2.1.24+, AnkiMobile 2.1.60+, or AnkiDroid 2.17+.
+`fr*:text`
+"fr" দিয়ে শুরু হওয়া একটি ক্ষেত্রে নোটগুলি খুঁজে পায়। আঙ্কি 2.1.24+, আঙ্কি মোবাইল 2.1.60+, বা আঙ্কিড্রয়েড 2.17+ প্রয়োজন।
 
-## Tags, decks, cards and notes
+## ট্যাগ, ডেক, কার্ড এবং নোট
 
-`tag:animal`\
-finds notes with the tag "animal", or subtags like "animal::mammal".
+`tag:animal`
+"animal" ট্যাগ সহ নোটগুলি খুঁজে পায়, অথবা "animal::mammal" এর মতো সাবট্যাগগুলিও।
 
-`tag:none`\
-finds notes with no tags.
+`tag:none`
+কোনো ট্যাগ নেই এমন নোটগুলি খুঁজে পায়।
 
-`tag:ani*`\
-finds notes with tags starting with "ani".
+`tag:ani*`
+"ani" দিয়ে শুরু হওয়া ট্যাগ সহ নোটগুলি খুঁজে পায়।
 
-`deck:french`\
-find cards in a top-level deck called "French", or its subdecks like "French::Words". It will not match subdecks with that name, such as "Languages::French".
+`deck:french`
+"French" নামক একটি শীর্ষ-স্তরের ডেকে কার্ডগুলি খুঁজে পায়, অথবা "French::Words" এর মতো এর সাবডেকগুলিতে। এটি সেই নামের সাবডেকগুলির সাথে মিলবে না, যেমন "Languages::French"।
 
-`deck:french::words`\
-find cards in the "French::Words" subdeck.
+`deck:french::words`
+"French::Words" সাবডেকে কার্ডগুলি খুঁজে পায়।
 
-`deck:french -deck:french::*`\
-finds cards in "French", but not its subdecks.
+`deck:french -deck:french::*`
+"French" এ কার্ডগুলি খুঁজে পায়, তবে এর সাবডেকগুলিতে নয়।
 
-`deck:"french words"`\
-searching when the deck name has a space.
+`deck:"french words"`
+ডেকের নামে স্পেস থাকলে অনুসন্ধান।
 
-`"deck:french words"`\
-same as earlier.
+`"deck:french words"`
+আগের মতো একই।
 
-`deck:filtered`\
-filtered decks only.
+`deck:filtered`
+শুধুমাত্র ফিল্টার করা ডেক।
 
-`-deck:filtered`\
-normal decks only.
+`-deck:filtered`
+শুধুমাত্র সাধারণ ডেক।
 
-`preset:"Default"`\
-cards in all decks that use the "Default" deck options preset.
-Requires Anki 23.10+, AnkiMobile 23.10+ or AnkiDroid 2.17+.
+`preset:"Default"`
+"Default" ডেক অপশন প্রিসেট ব্যবহার করে এমন সমস্ত ডেকের কার্ড।
+আঙ্কি 23.10+, আঙ্কি মোবাইল 23.10+ বা আঙ্কিড্রয়েড 2.17+ প্রয়োজন।
 
-`card:forward`\
-finds cards created by a card type named "Forward".
+`card:forward`
+"Forward" নামক একটি কার্ডের ধরন দ্বারা তৈরি কার্ডগুলি খুঁজে পায়।
 
-`card:1`\
-searches for cards by card type number, e.g. to find the second cloze
-deletion for a note, you’d use `card:2`
+`card:1`
+কার্ডের ধরন নম্বর দ্বারা কার্ড অনুসন্ধান করে, যেমন একটি নোটের দ্বিতীয় ক্লোজ
+ডিলিশন খুঁজে পেতে, আপনি `card:2` ব্যবহার করবেন।
 
-`note:basic`\
-searches for cards created with a note type named "Basic".
+`note:basic`
+"Basic" নামক একটি নোটের ধরন দিয়ে তৈরি কার্ডগুলি অনুসন্ধান করে।
 
-## Ignoring accents/combining characters
+## অ্যাক্সেন্ট/কম্বাইনিং অক্ষর উপেক্ষা করা
 
-Requires Anki 2.1.24+, AnkiMobile 2.0.60+ or AnkiDroid 2.17+.
+আঙ্কি 2.1.24+, আঙ্কি মোবাইল 2.0.60+ বা আঙ্কিড্রয়েড 2.17+ প্রয়োজন।
 
-You can use `nc:` (nc stands for "no combining") to make Anki ignore combining characters. For example:
+আপনি `nc:` ("নো কম্বাইনিং" এর জন্য) ব্যবহার করে আঙ্কিকে কম্বাইনিং অক্ষরগুলি উপেক্ষা করতে বলতে পারেন। উদাহরণস্বরূপ:
 
-`nc:uber`\
-matches notes with "uber", "über", "Über" and so on.
+`nc:uber`
+"uber", "über", "Über" ইত্যাদিসহ নোটগুলির সাথে মিলে যায়।
 
-`nc:は`\
-matches "は", "ば", and "ぱ".
+`nc:は`
+"は", "ば", এবং "ぱ" এর সাথে মিলে যায়।
 
-Searches that ignore combining characters are slower than regular searches.
+কম্বাইনিং অক্ষর উপেক্ষা করা অনুসন্ধানগুলি নিয়মিত অনুসন্ধানগুলির চেয়ে ধীর।
 
-## Regular expressions
+## রেগুলার এক্সপ্রেশন
 
-Anki 2.1.24+, AnkiMobile 2.0.60+ and AnkiDroid 2.17+ support searching in notes with "regular expressions",
-a standard and powerful way of searching in text.
+আঙ্কি 2.1.24+, আঙ্কি মোবাইল 2.0.60+ এবং আঙ্কিড্রয়েড 2.17+ "রেগুলার এক্সপ্রেশন" সহ নোটগুলিতে অনুসন্ধান সমর্থন করে,
+টেক্সটে অনুসন্ধানের একটি মানক এবং শক্তিশালী উপায়।
 
-Start a search with `re:` to search using regular expressions. To make things easier, Anki will
-treat the following as [raw input](#raw-input), so bear in mind the rules listed there.
+রেগুলার এক্সপ্রেশন ব্যবহার করে অনুসন্ধান করতে `re:` দিয়ে একটি অনুসন্ধান শুরু করুন। জিনিসগুলি সহজ করার জন্য, আঙ্কি নিম্নলিখিতগুলিকে [কাঁচা ইনপুট](#raw-input) হিসাবে বিবেচনা করবে, তাই সেখানে তালিকাভুক্ত নিয়মগুলি মনে রাখবেন।
 
-Some examples:
+কিছু উদাহরণ:
 
-`"re:(some|another).*thing"`\
-finds notes that have "some" or "another" on them, followed by 0 or more characters, and then "thing".
+`"re:(some|another).*thing"`
+"some" বা "another" আছে এমন নোটগুলি খুঁজে পায়, তারপরে 0 বা তার বেশি অক্ষর, এবং তারপরে "thing"।
 
-`re:\d{3}`\
-finds notes that have 3 digits in a row.
+`re:\d{3}`
+টানা 3টি অঙ্ক আছে এমন নোটগুলি খুঁজে পায়।
 
-Regular expressions can also be limited to a specific field. Please note that unlike the normal searches
-in a specific field, regular expressions in fields don't require an exact match:
+রেগুলার এক্সপ্রেশনগুলি একটি নির্দিষ্ট ক্ষেত্রেও সীমাবদ্ধ করা যেতে পারে। দয়া করে মনে রাখবেন যে একটি নির্দিষ্ট ক্ষেত্রে সাধারণ অনুসন্ধানগুলির বিপরীতে, ক্ষেত্রগুলিতে রেগুলার এক্সপ্রেশনগুলির একটি সঠিক মিলের প্রয়োজন হয় না:
 
-`front:re:[a-c]1`\
-matches uppercase or lowercase a1, B1 or c1 that occurs anywhere in the "Front" field.
+`front:re:[a-c]1`
+"ফ্রন্ট" ক্ষেত্রে কোথাও উপস্থিত আপারকেস বা লোয়ারকেস a1, B1 বা c1 এর সাথে মিলে যায়।
 
-`front:re:^[a-c]1$`\
-same as the previous example, but will not match if any other text falls before or after a1/b1/c1.
+`front:re:^[a-c]1$`
+পূর্ববর্তী উদাহরণের মতো একই, তবে a1/b1/c1 এর আগে বা পরে অন্য কোনো টেক্সট থাকলে মিলবে না।
 
-Anki 2.1.50+ supports regular expressions for tags:
+আঙ্কি 2.1.50+ ট্যাগগুলির জন্য রেগুলার এক্সপ্রেশন সমর্থন করে:
 
-`tag:re:^parent$`\
-finds notes with the exact tag "parent", disregarding any child tags like "parent::child".
+`tag:re:^parent$`
+"parent" এর মতো সঠিক ট্যাগ সহ নোটগুলি খুঁজে পায়, "parent::child" এর মতো কোনো চাইল্ড ট্যাগ উপেক্ষা করে।
 
-`"tag:re:lesson-(1[7-9]|2[0-5])"`\
-finds notes with tags "lesson-17" through "lesson-25".
+`"tag:re:lesson-(1[7-9]|2[0-5])"`
+"lesson-17" থেকে "lesson-25" ট্যাগ সহ নোটগুলি খুঁজে পায়।
 
-For more information on regular expressions, see [this website](<https://regexone.com/lesson/introduction_abcs>).
+রেগুলার এক্সপ্রেশন সম্পর্কে আরও তথ্যের জন্য, [এই ওয়েবসাইট](<https://regexone.com/lesson/introduction_abcs>) দেখুন।
 
-Some things to be aware of:
+কিছু বিষয় সম্পর্কে সচেতন থাকতে হবে:
 
-- The search is case-insensitive by default; use `(?-i)` at the start to turn on case sensitivity.
-- Some text like spaces and newlines may be represented differently in HTML - you can
-  use the HTML editor in the editing screen to see the underlying HTML contents.
-- For the specifics of Anki's regex support, see the [regex crate documentation](<https://docs.rs/regex/1.3.9/regex/#syntax>).
+- অনুসন্ধান ডিফল্টরূপে কেস-ইনসেনসিটিভ; কেস সেনসিটিভিটি চালু করতে শুরুতে `(?-i)` ব্যবহার করুন।
+- স্পেস এবং নিউলাইনের মতো কিছু টেক্সট HTML এ ভিন্নভাবে উপস্থাপন করা যেতে পারে - আপনি অন্তর্নিহিত HTML বিষয়বস্তু দেখতে সম্পাদনা স্ক্রিনে HTML সম্পাদক ব্যবহার করতে পারেন।
+- আঙ্কির রেগুলার এক্সপ্রেশন সমর্থনের নির্দিষ্টকরণের জন্য, [regex ক্র্যাট ডকুমেন্টেশন](<https://docs.rs/regex/1.3.9/regex/#syntax>) দেখুন।
 
-## Card state
+## কার্ডের অবস্থা
 
-`is:due`\
-review cards and learning cards waiting to be studied.
+`is:due`
+পর্যালোচনা কার্ড এবং শেখার কার্ডগুলি অধ্যয়নের অপেক্ষায় রয়েছে।
 
-`is:new`\
-new cards.
+`is:new`
+নতুন কার্ড।
 
-`is:learn`\
-cards in learning.
+`is:learn`
+শেখার মধ্যে থাকা কার্ড।
 
-`is:review`\
-reviews (both due and not due) and lapsed cards.
+`is:review`
+পর্যালোচনা (বকেয়া এবং অ-বকেয়া উভয়ই) এবং ল্যাপস করা কার্ড।
 
-`is:suspended`\
-cards that have been [automatically](leeches.md) or manually suspended.
+`is:suspended`
+[স্বয়ংক্রিয়ভাবে](leeches.md) বা ম্যানুয়ালি স্থগিত করা কার্ড।
 
-`is:buried`\
-cards that have been either [automatically](studying.md#siblings-and-burying) or
-manually buried.
+`is:buried`
+[স্বয়ংক্রিয়ভাবে](studying.md#siblings-and-burying) বা ম্যানুয়ালি চাপা দেওয়া কার্ড।
 
-`is:buried-sibling`\
-cards that have been buried automatically.
+`is:buried-sibling`
+স্বয়ংক্রিয়ভাবে চাপা দেওয়া কার্ড।
 
-`is:buried-manually`\
-cards that have been manually buried.
+`is:buried-manually`
+ম্যানুয়ালি চাপা দেওয়া কার্ড।
 
-Cards that have [lapsed](deck-options.md#lapses) fall into several of the previous categories, so it may
-be useful to combine different search terms to get more precise results:
+যে কার্ডগুলি [ল্যাপস](deck-options.md#lapses) হয়েছে সেগুলি পূর্ববর্তী কয়েকটি বিভাগে পড়ে, তাই আরও সুনির্দিষ্ট ফলাফল পেতে বিভিন্ন অনুসন্ধান পদ একত্রিত করা সহায়ক হতে পারে:
 
-`is:learn is:review`\
-cards that have lapsed and are awaiting relearning.
+`is:learn is:review`
+ল্যাপস হয়েছে এবং পুনরায় শেখার অপেক্ষায় থাকা কার্ড।
 
-`-is:learn is:review`\
-review cards, not including lapsed cards.
+`-is:learn is:review`
+পর্যালোচনা কার্ড, ল্যাপস করা কার্ড অন্তর্ভুক্ত নয়।
 
-`is:learn -is:review`\
-cards that are in learning for the first time.
+`is:learn -is:review`
+প্রথমবারের মতো শেখার মধ্যে থাকা কার্ড।
 
-## Flags
+## পতাকা
 
-`flag:0`\
-cards without a flag.
+`flag:0`
+কোনো পতাকা নেই এমন কার্ড।
 
-`flag:1`\
-cards with a red flag.
+`flag:1`
+লাল পতাকা সহ কার্ড।
 
-`flag:2`\
-cards with an orange flag.
+`flag:2`
+কমলা পতাকা সহ কার্ড।
 
-`flag:3`\
-cards with a green flag.
+`flag:3`
+সবুজ পতাকা সহ কার্ড।
 
-`flag:4`\
-cards with a blue flag.
+`flag:4`
+নীল পতাকা সহ কার্ড।
 
-`flag:5`\
-cards with a pink flag.
+`flag:5`
+গোলাপি পতাকা সহ কার্ড।
 
-`flag:6`\
-cards with a turquoise flag.
+`flag:6`
+ফিরোজা পতাকা সহ কার্ড।
 
-`flag:7`\
-cards with a purple flag.
+`flag:7`
+বেগুনি পতাকা সহ কার্ড।
 
-## Card properties
+## কার্ডের বৈশিষ্ট্য
 
-`prop:ivl>=10`\
-cards with interval of 10 days or more.
+`prop:ivl>=10`
+10 দিন বা তার বেশি ব্যবধান সহ কার্ড।
 
-`prop:due=1`\
-cards due tomorrow.
+`prop:due=1`
+আগামীকাল বকেয়া কার্ড।
 
-`prop:due=-1`\
-cards due yesterday that haven’t been answered yet.
+`prop:due=-1`
+গতকাল বকেয়া কার্ড যা এখনও উত্তর দেওয়া হয়নি।
 
-`prop:due>=1`\
-all cards due in the future, including tomorrow.
+`prop:due>=1`
+ভবিষ্যতে বকেয়া সমস্ত কার্ড, আগামীকাল সহ।
 
-`prop:due<=-1`\
-all overdue cards.
+`prop:due<=-1`
+সমস্ত বকেয়া কার্ড।
 
-`prop:due>=-1 prop:due<=1`\
-cards due yesterday, today and tomorrow.
+`prop:due>=-1 prop:due<=1`
+গতকাল, আজ এবং আগামীকাল বকেয়া কার্ড।
 
-`prop:reps<10`\
-cards that have been answered less than 10 times.
+`prop:reps<10`
+10 বারের কম উত্তর দেওয়া কার্ড।
 
-`prop:lapses>3`\
-cards that have lapsed more than 3 times.
+`prop:lapses>3`
+3 বারের বেশি ল্যাপস করা কার্ড।
 
-`prop:ease!=2.5`\
-cards easier or harder than default ease.
+`prop:ease!=2.5`
+ডিফল্ট সহজতার চেয়ে সহজ বা কঠিন কার্ড।
 
-`prop:pos<=100`\
-new cards with a position in the queue less than or equal to 100.
+`prop:pos<=100`
+সারিটিতে 100 বা তার কম অবস্থানে নতুন কার্ড।
 
-The following searches require Anki 23.10+ and FSRS enabled:
+নিম্নলিখিত অনুসন্ধানগুলির জন্য আঙ্কি 23.10+ এবং FSRS সক্ষম করা প্রয়োজন:
 
-`prop:s>21`\
-cards with stability greater than 21 days.
+`prop:s>21`
+21 দিনের বেশি স্থিতিশীলতা সহ কার্ড।
 
-`prop:d>0.3`\
-cards with difficulty greater than 0.3.
+`prop:d>0.3`
+0.3 এর বেশি কঠিনতা সহ কার্ড।
 
-`prop:r<0.9`\
-cards with retrievability less than 0.9.
+`prop:r<0.9`
+0.9 এর কম পুনরুদ্ধারযোগ্যতা সহ কার্ড।
 
-## Recent Events
+## সাম্প্রতিক ঘটনা
 
-### Added
+### যোগ করা হয়েছে
 
-`added:1`\
-cards added today.
+`added:1`
+আজ যোগ করা কার্ড।
 
-`added:7`\
-cards added in the last 7 days.
+`added:7`
+গত 7 দিনে যোগ করা কার্ড।
 
-The check is made against card creation time rather than note creation
-time, so cards that were generated within the time frame will be
-included even if their notes were added a long time ago.
+নোট তৈরির সময়ের পরিবর্তে কার্ড তৈরির সময়ের বিরুদ্ধে চেক করা হয়, তাই সময়সীমার মধ্যে তৈরি করা কার্ডগুলি অন্তর্ভুক্ত করা হবে এমনকি যদি তাদের নোটগুলি অনেক আগে যোগ করা হয়ে থাকে।
 
-### Edited
+### সম্পাদিত
 
-`edited:n`\
-cards where the note text was added/edited in the last n days.
+`edited:n`
+গত n দিনে নোটের টেক্সট যোগ/সম্পাদনা করা কার্ড।
 
-This requires Anki 2.1.28+ or AnkiMobile 2.0.64+.
+আঙ্কি 2.1.28+ বা আঙ্কি মোবাইল 2.0.64+ প্রয়োজন।
 
-### Answered
+### উত্তর দেওয়া হয়েছে
 
-`rated:1`\
-cards answered today.
+`rated:1`
+আজ উত্তর দেওয়া কার্ড।
 
-`rated:1:2`\
-cards answered Hard (2) today.
+`rated:1:2`
+আজ হার্ড (2) উত্তর দেওয়া কার্ড।
 
-`rated:7:1`\
-cards answered Again (1) in the last 7 days.
+`rated:7:1`
+গত 7 দিনে আবার (1) উত্তর দেওয়া কার্ড।
 
-`rated:31:4`\
-cards answered Easy (4) in the last 31 days.
+`rated:31:4`
+গত 31 দিনে সহজ (4) উত্তর দেওয়া কার্ড।
 
-Anki 2.1.39+ supports rating searches over 31 days.
+আঙ্কি 2.1.39+ 31 দিনের বেশি রেটিং অনুসন্ধান সমর্থন করে।
 
-Note that, to search for cards answered at a particular day, `rated:n -rated:(n-1)` might not work every time. Use the following instead:
+মনে রাখবেন যে, একটি নির্দিষ্ট দিনে উত্তর দেওয়া কার্ডগুলি অনুসন্ধান করতে,
+`rated:n -rated:(n-1)` প্রতিবার কাজ নাও করতে পারে। এর পরিবর্তে নিম্নলিখিতটি ব্যবহার করুন:
 
-`prop:rated=0`\
-cards answered today.
+`prop:rated=0`
+আজ উত্তর দেওয়া কার্ড।
 
-`prop:rated=-1`\
-cards answered one day ago.
+`prop:rated=-1`
+এক দিন আগে উত্তর দেওয়া কার্ড।
 
-`prop:rated=-7`\
-cards answered 7 days ago.
+`prop:rated=-7`
+7 দিন আগে উত্তর দেওয়া কার্ড।
 
-### First Answered
+### প্রথম উত্তর দেওয়া হয়েছে
 
-Requires Anki 2.1.45+.
+আঙ্কি 2.1.45+ প্রয়োজন।
 
-`introduced:1`\
-cards answered for the first time today.
+`introduced:1`
+আজ প্রথমবারের মতো উত্তর দেওয়া কার্ড।
 
-`introduced:365`\
-cards answered for the first time within the last 365 days.
+`introduced:365`
+গত 365 দিনের মধ্যে প্রথমবারের মতো উত্তর দেওয়া কার্ড।
 
-## Matching special characters
+## বিশেষ অক্ষর মেলানো
 
-If you're using a version earlier than Anki 2.1.36 the following searches may not work.
+আপনি যদি আঙ্কি 2.1.36 এর আগের সংস্করণ ব্যবহার করেন তবে নিম্নলিখিত অনুসন্ধানগুলি কাজ নাও করতে পারে।
 
-As shown in the previous section, some characters like `*`, `_` and `"` have a
-special meaning in search. If you need to locate those characters in a search,
-you need to tell Anki not to treat them specially. This is called "escaping a character" and is primarily done by using double quotes and backslashes.
+পূর্ববর্তী বিভাগে দেখানো হয়েছে, `*`, `_` এবং `"` এর মতো কিছু অক্ষরের অনুসন্ধানে একটি বিশেষ অর্থ রয়েছে। যদি আপনাকে অনুসন্ধানে সেই অক্ষরগুলি খুঁজে বের করতে হয়, তাহলে আপনাকে আঙ্কিকে বলতে হবে যে সেগুলিকে বিশেষ হিসাবে বিবেচনা না করতে। এটিকে "একটি অক্ষর এস্কেপ করা" বলা হয় এবং এটি প্রাথমিকভাবে ডাবল কোট এবং ব্যাকস্ল্যাশ ব্যবহার করে করা হয়।
 
-- _Space_\
-  To match something that includes spaces, enclose the `"entire term"` in double
-  quotes. If it is a colon search, you also have the option to only quote the
-  `part:"after the colon"`.
+-   _স্পেস_
+    স্পেস সহ কিছু মেলাতে, `"পুরো পদটিকে"` ডাবল কোটের মধ্যে আবদ্ধ করুন। যদি এটি একটি কোলন অনুসন্ধান হয়, তবে আপনার কাছে শুধুমাত্র `part:"colon এর পরে"` উদ্ধৃত করার বিকল্পও রয়েছে।
 
-- `And`/`Or`\
-  To search for these words, wrap them with double quotes. For example, `dog "and" cat` searches for "dog", "cat" and the word "and".
-  If you wrap the entire search term with quotes like in the previous example, you do not need to escape `and` or `or`.
+-   `And`/`Or`
+    এই শব্দগুলি অনুসন্ধান করতে, সেগুলিকে ডাবল কোট দিয়ে মোড়ানো করুন। উদাহরণস্বরূপ, `dog "and" cat` "dog", "cat" এবং "and" শব্দটির জন্য অনুসন্ধান করে।
+    যদি আপনি পূর্ববর্তী উদাহরণের মতো সম্পূর্ণ অনুসন্ধান পদটি কোট দিয়ে মোড়ানো করেন, তাহলে আপনাকে `and` বা `or` এস্কেপ করার প্রয়োজন নেই।
 
-- `"`, `*` and `_`\
-  Add a backslash before these characters to treat them literally. For example,
-  `_` will match any single character, but `\_` matches only an actual underscore.
+-   `"`, `*` এবং `_`
+    এগুলিকে আক্ষরিকভাবে বিবেচনা করতে এই অক্ষরগুলির আগে একটি ব্যাকস্ল্যাশ যোগ করুন। উদাহরণস্বরূপ,
+    `_` যেকোনো একক অক্ষরের সাথে মিলবে, তবে `\_` শুধুমাত্র একটি আসল আন্ডারস্কোরের সাথে মিলবে।
 
-- `\`\
-  Because a backslash is used to remove the special meaning from other characters,
-  it too is treated specially. If you need to search for an actual backslash,
-  use `\\` instead of `\`.
+-   `\`
+    যেহেতু একটি ব্যাকস্ল্যাশ অন্যান্য অক্ষর থেকে বিশেষ অর্থ সরাতে ব্যবহৃত হয়, এটিও বিশেষ হিসাবে বিবেচিত হয়। যদি আপনাকে একটি আসল ব্যাকস্ল্যাশ অনুসন্ধান করতে হয়, `\` এর পরিবর্তে `\\` ব্যবহার করুন।
 
-- `(` and `)`\
-  You can search for parentheses by enclosing the entire term in quotes,
-   by using a backslash, or both at the same time. For example, `"(text)"`, `\(text\)` and
-  `"\(text\)"` are all equivalent searches, and search for `(text)`.
+-   `(` এবং `)`
+    আপনি পুরো পদটি কোট দিয়ে আবদ্ধ করে, একটি ব্যাকস্ল্যাশ ব্যবহার করে, অথবা উভয়ই একই সময়ে ব্যবহার করে বন্ধনী অনুসন্ধান করতে পারেন। উদাহরণস্বরূপ, `"(text)"`, `\(text\)` এবং `"\(text\)"` সবগুলিই সমতুল্য অনুসন্ধান, এবং `(text)` এর জন্য অনুসন্ধান করে।
 
-- `-`\
-  Starting a search term with `-` usually inverts it: `-dog` matches everything
-  except dog for example. If you instead wish to include an actual hyphen,
-  you can either use a backslash, or include the text in quotes. For example,
-  `\-free` or `"-free"` will match "guilt-free" and "cruelty-free".
+-   `-`
+    একটি অনুসন্ধান পদ `-` দিয়ে শুরু করলে সাধারণত এটি উল্টে যায়: `-dog` উদাহরণস্বরূপ dog ছাড়া সবকিছু মেলায়। আপনি যদি পরিবর্তে একটি আসল হাইফেন অন্তর্ভুক্ত করতে চান, তবে আপনি একটি ব্যাকস্ল্যাশ ব্যবহার করতে পারেন, অথবা টেক্সটটি কোট দিয়ে আবদ্ধ করতে পারেন। উদাহরণস্বরূপ, `\-free` বা `"-free"` "guilt-free" এবং "cruelty-free" এর সাথে মিলবে।
 
-- `:`\
-  Colons have to be escaped using backslashes unless they are preceded by another, unescaped colon.
-  For example, `w:3:30` searches for "3:30" on word boundary and doesn't require you to use a backslash.
-  However, if you don't use a colon search, the colons need to be escaped like this: `3\:30`.
+-   `:`
+    কোলনগুলিকে ব্যাকস্ল্যাশ ব্যবহার করে এস্কেপ করতে হবে যদি না তাদের আগে অন্য একটি, অ-এস্কেপ করা কোলন থাকে। উদাহরণস্বরূপ, `w:3:30` শব্দ সীমানায় "3:30" এর জন্য অনুসন্ধান করে এবং আপনাকে ব্যাকস্ল্যাশ ব্যবহার করার প্রয়োজন হয় না। তবে, যদি আপনি কোলন অনুসন্ধান ব্যবহার না করেন, তবে কোলনগুলিকে এভাবে এস্কেপ করতে হবে: `3\:30`।
 
-- `&`, `<`, and `>`\
-  `&`, `<`, and `>` are treated as HTML when searching in Anki, and as such, searches
-  containing them don't work as expected. However, you can search for them by using their
-  corresponding HTML entity names (`&amp;` for `&`, `&lt;` for `<`, and `&gt;` for `>`).
-  For example, searching `&amp;text` searches for a note with `&text` in a field.
+-   `&`, `<`, এবং `>`
+    আঙ্কিতে অনুসন্ধান করার সময় `&`, `<`, এবং `>` HTML হিসাবে বিবেচিত হয় এবং এইভাবে, সেগুলি ধারণ করা অনুসন্ধানগুলি প্রত্যাশিতভাবে কাজ করে না। তবে, আপনি তাদের সংশ্লিস্ট HTML সত্তা নামগুলি (`&amp;` এর জন্য `&`, `&lt;` এর জন্য `<`, এবং `&gt;` এর জন্য `>`) ব্যবহার করে অনুসন্ধান করতে পারেন। উদাহরণস্বরূপ, `&amp;text` অনুসন্ধান করলে একটি ক্ষেত্রে `&text` সহ একটি নোট অনুসন্ধান করে।
 
-### Raw input
+### কাঁচা ইনপুট
 
-Text preceded by certain keywords (like `re:`) will be treated as raw input. That is,
-the characters listed above largely lose their special meaning. In such a context, only
-a minimum of escaping is required to prevent ambiguity:
+নির্দিষ্ট কীওয়ার্ড দ্বারা পূর্বে থাকা টেক্সট (যেমন `re:`) কাঁচা ইনপুট হিসাবে বিবেচিত হবে। অর্থাৎ, উপরে তালিকাভুক্ত অক্ষরগুলি মূলত তাদের বিশেষ অর্থ হারাবে। এই ধরনের প্রসঙ্গে, শুধুমাত্র অস্পষ্টতা প্রতিরোধ করার জন্য সর্বনিম্ন এস্কেপিং প্রয়োজন:
 
-- Double quotes (`"`) must be escaped.
+-   ডাবল কোট (`"`) এস্কেপ করতে হবে।
 
-- Spaces and unescaped parentheses require the search term to be quoted.
+-   স্পেস এবং অ-এস্কেপ করা বন্ধনীগুলির জন্য অনুসন্ধান পদটিকে কোট করতে হবে।
 
-- The search term must not end in an odd number of backslashes.
+-   অনুসন্ধান পদটি বিজোড় সংখ্যক ব্যাকস্ল্যাশ দিয়ে শেষ হবে না।
 
-## Object IDs
+## অবজেক্ট আইডি
 
-`nid:123`\
-the note with note id 123.
+`nid:123`
+নোট আইডি 123 সহ নোট।
 
-`cid:123,456,789`\
-all cards with card ids 123, 456, or 789.
+`cid:123,456,789`
+কার্ড আইডি 123, 456, বা 789 সহ সমস্ত কার্ড।
 
-Note and card IDs can be found in the [card info](stats.md) dialog in the
-browser. These searches may also be helpful when doing add-on
-development or otherwise working closely with the database.
+নোট এবং কার্ড আইডিগুলি ব্রাউজারে [কার্ড তথ্য](stats.md) ডায়ালগে পাওয়া যাবে। এই অনুসন্ধানগুলি অ্যাড-অন ডেভেলপমেন্ট করার সময় বা অন্যথায় ডেটাবেসের সাথে ঘনিষ্ঠভাবে কাজ করার সময়ও সহায়ক হতে পারে।
 
-## Custom Data
+## কাস্টম ডেটা
 
-Anki allows small amounts of custom data to be stored on cards, enabling
-advanced use cases such as custom schedulers. One of the notable applications
-of this feature was in earlier implementations of FSRS. In Anki 23.10+, there
-are some ways to search it:
+আঙ্কি কার্ডগুলিতে অল্প পরিমাণে কাস্টম ডেটা সংরক্ষণ করার অনুমতি দেয়,
+যা কাস্টম শিডিউলারের মতো উন্নত ব্যবহারের ক্ষেত্রে সক্ষম করে। এই বৈশিষ্ট্যের
+উল্লেখযোগ্য অ্যাপ্লিকেশনগুলির মধ্যে একটি ছিল FSRS এর পূর্ববর্তী বাস্তবায়নে।
+আঙ্কি 23.10+ এ, এটি অনুসন্ধান করার কিছু উপায় রয়েছে:
 
-`has-cd:v`\
-cards having the property `v` in custom data.
+`has-cd:v`
+কাস্টম ডেটাতে `v` বৈশিষ্ট্য সহ কার্ড।
 
-`prop:cdn:d>5`\
-cards with the value of `d` in custom data (usually refers to difficulty in FSRS) greater than 5.
+`prop:cdn:d>5`
+কাস্টম ডেটাতে `d` এর মান (সাধারণত FSRS এ কঠিনতা বোঝায়) 5 এর বেশি কার্ড।
 
-`prop:cds:v=reschedule`\
-cards with the string `v` in custom data equal to `reschedule`.
+`prop:cds:v=reschedule`
+কাস্টম ডেটাতে `v` স্ট্রিং "reschedule" এর সমান কার্ড।
 
-## Other Searches
+## অন্যান্য অনুসন্ধান
 
-`prop:due=1 is:learn`\
-interday learning cards due for tomorrow.
+`prop:due=1 is:learn`
+আগামীকালের জন্য বকেয়া আন্তঃদিন শেখার কার্ড।
 
-`prop:due=0 is:learn -introduced:1`\
-interday learning cards due today.
+`prop:due=0 is:learn -introduced:1`
+আজকের জন্য বকেয়া আন্তঃদিন শেখার কার্ড।
 
-`prop:resched=0`\
-cards rescheduled today, either using **Set due date** or **Reschedule cards on change**.
+`prop:resched=0`
+আজ পুনরায় সময়সূচী করা কার্ড, হয় **নির্ধারিত তারিখ সেট করুন** বা **পরিবর্তনে কার্ডগুলি পুনরায় সময়সূচী করুন** ব্যবহার করে।
