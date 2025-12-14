@@ -1,26 +1,14 @@
-# Add-ons
+# অ্যাড-অন
 
-Anki's capabilities can be extended with add-ons. Add-ons can provide
-features like extra support for specific languages, extra control over
-scheduling, and so on.
+অ্যাড-অন ব্যবহার করে আঙ্কির ক্ষমতা বাড়ানো যায়। অ্যাড-অনগুলি নির্দিষ্ট ভাষার জন্য অতিরিক্ত সমর্থন, সময়সূচীর উপর অতিরিক্ত নিয়ন্ত্রণ, ইত্যাদি বৈশিষ্ট্য সরবরাহ করতে পারে।
 
-To browse the list of available add-ons, select **Tools > Add-ons**, then click on **Get Add-ons**.
-Alternatively, open [ankiweb.net/shared/addons](https://ankiweb.net/shared/addons) in a web browser.
+উপলব্ধ অ্যাড-অনগুলির তালিকা ব্রাউজ করতে, **Tools > Add-ons** নির্বাচন করুন, তারপর **Get Add-ons** এ ক্লিক করুন।
+বিকল্পভাবে, একটি ওয়েব ব্রাউজারে [ankiweb.net/shared/addons](https://ankiweb.net/shared/addons) খুলুন।
 
-If you have downloaded an add-on that is not working properly, or if you
-accidentally made a mistake when editing an add-on, you can use the
-**Delete** option in the menu to remove it.
+আপনি যদি এমন একটি অ্যাড-অন ডাউনলোড করে থাকেন যা সঠিকভাবে কাজ করছে না, অথবা যদি আপনি ভুলবশত একটি অ্যাড-অন সম্পাদনা করার সময় কোনো ভুল করে থাকেন, তাহলে আপনি মেনুতে থাকা **Delete** বিকল্পটি ব্যবহার করে তা মুছে ফেলতে পারেন।
 
-Add-ons use and modify arbitrary parts of Anki’s codebase, so in some
-cases, updating Anki can break the compatibility with older add-ons. If
-one of your add-ons stops working after updating Anki, please consider
-reporting the issue to the add-on author. If you rely on this add-on,
-you will need to keep using an older Anki version until the add-on gets
-an update.
+অ্যাড-অনগুলি আঙ্কির কোডবেসের বিভিন্ন অংশ ব্যবহার এবং পরিবর্তন করে, তাই কিছু ক্ষেত্রে, আঙ্কি আপডেট করা পুরোনো অ্যাড-অনগুলির সাথে সামঞ্জস্যতা নষ্ট করতে পারে। যদি আঙ্কি আপডেট করার পরে আপনার কোনো অ্যাড-অন কাজ করা বন্ধ করে দেয়, তাহলে অনুগ্রহ করে অ্যাড-অন লেখককে সমস্যাটি জানানোর কথা বিবেচনা করুন। আপনি যদি এই অ্যাড-অনের উপর নির্ভর করেন, তাহলে অ্যাড-অনটি আপডেট না হওয়া পর্যন্ত আপনাকে একটি পুরোনো আঙ্কি সংস্করণ ব্যবহার করতে হবে।
 
-There is a **Contact Author** button on most add-ons pages on AnkiWeb,
-and many authors include their email address in the add-on, so if you
-need to get in touch with the author, editing the add-on and looking at
-the top of the file may help.
+AnkiWeb-এর বেশিরভাগ অ্যাড-অন পৃষ্ঠায় একটি **Contact Author** বোতাম থাকে এবং অনেক লেখক তাদের ইমেল ঠিকানা অ্যাড-অনে অন্তর্ভুক্ত করেন, তাই যদি আপনাকে লেখকের সাথে যোগাযোগ করতে হয়, তাহলে অ্যাড-অনটি সম্পাদনা করা এবং ফাইলের উপরের দিকে তাকানো সহায়ক হতে পারে।
 
-To learn how to write your own add-ons, please see the [add-on writing guide](https://addon-docs.ankiweb.net).
+কিভাবে আপনার নিজের অ্যাড-অন লিখতে হয় তা জানতে, অনুগ্রহ করে [অ্যাড-অন লেখার নির্দেশিকা](https://addon-docs.ankiweb.net) দেখুন।

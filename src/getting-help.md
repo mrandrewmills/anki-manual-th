@@ -1,67 +1,55 @@
-# Getting help
+# সাহায্য পাচ্ছেন
 
-## Asking good questions
+## ভালো প্রশ্ন জিজ্ঞাসা করা
 
-With the exception of AnkiMobile, Anki and its support are provided free of
-charge, by people who generously volunteer their time. Please bear this in mind
-when posting - if you are rude and demanding, or have made no effort to solve
-the problem on your own, people are less likely to want to help you.
+আঙ্কি মোবাইল ছাড়া, আঙ্কি এবং এর সমর্থন বিনামূল্যে সরবরাহ করা হয়, যারা উদারভাবে তাদের সময় স্বেচ্ছাসেবক করেন তাদের দ্বারা। পোস্ট করার সময় দয়া করে এটি মনে রাখবেন - যদি আপনি রূঢ় এবং দাবিদার হন, অথবা নিজের সমস্যা সমাধানের জন্য কোনো প্রচেষ্টা না করে থাকেন, তবে লোকেরা আপনাকে সাহায্য করতে কম আগ্রহী হবে।
 
-Please start by trying to resolve the issue on your own:
+দয়া করে নিজের সমস্যা সমাধানের চেষ্টা করে শুরু করুন:
 
-- Read the [getting started](./getting-started.md) section
-  of the manual, and check out the intro videos.
-- If you've encountered a bug, please follow [these steps](./troubleshooting.md).
-- Use the search button on this page to search frequently asked questions.
-- Use the search button in the manual.
-- Use the search button on the forums.
-- Google the issue.
+- ম্যানুয়ালের [শুরু করা](./getting-started.md) বিভাগটি পড়ুন, এবং পরিচিতিমূলক ভিডিওগুলি দেখুন।
+- যদি আপনি একটি বাগ-এর মুখোমুখি হন, তবে অনুগ্রহ করে [এই পদক্ষেপগুলি](./troubleshooting.md) অনুসরণ করুন।
+- প্রায়শই জিজ্ঞাসিত প্রশ্নগুলি অনুসন্ধান করতে এই পৃষ্ঠার অনুসন্ধান বোতামটি ব্যবহার করুন।
+- ম্যানুয়ালে অনুসন্ধান বোতামটি ব্যবহার করুন।
+- ফোরামে অনুসন্ধান বোতামটি ব্যবহার করুন।
+- গুগল-এ সমস্যাটি অনুসন্ধান করুন।
 
-If you have tried the above and are still stuck, it's time to ask for help.
-When writing a post, please explain the problem you are having clearly, and in detail.
+যদি আপনি উপরেরগুলি চেষ্টা করে থাকেন এবং এখনও আটকে থাকেন, তবে সাহায্যের জন্য জিজ্ঞাসা করার সময় এসেছে। একটি পোস্ট লেখার সময়, দয়া করে আপনার সমস্যাটি স্পষ্টভাবে এবং বিস্তারিতভাবে ব্যাখ্যা করুন।
 
-Please avoid vague questions like:
+দয়া করে অস্পষ্ট প্রশ্নগুলি এড়িয়ে চলুন যেমন:
 
-> "My Anki doesn't work, what should I do?"
+> "আমার আঙ্কি কাজ করছে না, আমার কী করা উচিত?"
 
-Instead, please provide as much detail as you can. For example:
+পরিবর্তে, দয়া করে যতটা সম্ভব বিস্তারিত তথ্য সরবরাহ করুন। উদাহরণস্বরূপ:
 
-> "When I double-click on the Anki icon, an error message pops up. I tried
-> searching for the error on Google, but couldn't find anything useful. I have
-> copied and pasted the error message to the bottom of my post. I followed the
-> steps on the "When problems occur" page, but the error message does not go
-> away. What should I do?"
+> "যখন আমি আঙ্কি আইকনে ডাবল-ক্লিক করি, তখন একটি ত্রুটি বার্তা পপ আপ হয়। আমি
+> গুগল-এ ত্রুটিটি অনুসন্ধান করার চেষ্টা করেছি, কিন্তু কোনো দরকারী কিছু খুঁজে পাইনি। আমি
+> ত্রুটি বার্তাটি আমার পোস্টের নীচে কপি এবং পেস্ট করেছি। আমি "যখন সমস্যা হয়"
+> পৃষ্ঠার পদক্ষেপগুলি অনুসরণ করেছি, কিন্তু ত্রুটি বার্তাটি চলে যাচ্ছে না। আমার কী করা উচিত?"
 
-This is a much better question. It tells us:
+এটি একটি অনেক ভালো প্রশ্ন। এটি আমাদের বলে:
 
-- What you have tried.
-- What steps you are taking when the problem happens.
-- What problems/errors you are getting when things go wrong.
+- আপনি কী চেষ্টা করেছেন।
+- সমস্যাটি ঘটলে আপনি কী পদক্ষেপ নিচ্ছেন।
+- জিনিসগুলি ভুল হলে আপনি কী সমস্যা/ত্রুটি পাচ্ছেন।
 
-Knowing these things makes it much easier to answer your question.
+এই জিনিসগুলি জানা আপনার প্রশ্নের উত্তর দেওয়া অনেক সহজ করে তোলে।
 
-The user forums use a different login to AnkiWeb, so please create an
-account there if it's your first time.
+ব্যবহারকারী ফোরামগুলি আঙ্কিওয়েব-এর থেকে ভিন্ন লগইন ব্যবহার করে, তাই যদি এটি আপনার প্রথমবার হয় তবে দয়া করে সেখানে একটি অ্যাকাউন্ট তৈরি করুন।
 
-## Anki Desktop (the computer version) and AnkiWeb
+## আঙ্কি ডেস্কটপ (কম্পিউটার সংস্করণ) এবং আঙ্কিওয়েব
 
-After reading the above section, please post on the
-[user forums](https://forums.ankiweb.net) for assistance.
+উপরের বিভাগটি পড়ার পর, সাহায্যের জন্য [ব্যবহারকারী ফোরাম](https://forums.ankiweb.net) এ পোস্ট করুন।
 
-The user forums use a different login to AnkiWeb, so please create an
-account there if it's your first time.
+ব্যবহারকারী ফোরামগুলি আঙ্কিওয়েব-এর থেকে ভিন্ন লগইন ব্যবহার করে, তাই যদি এটি আপনার প্রথমবার হয় তবে দয়া করে সেখানে একটি অ্যাকাউন্ট তৈরি করুন।
 
-## AnkiDroid (Android devices)
+## আঙ্কিড্রয়েড (অ্যান্ড্রয়েড ডিভাইস)
 
-Please see [AnkiDroid's support page](https://docs.ankidroid.org/help.html).
+অনুগ্রহ করে [আঙ্কিড্রয়েড-এর সমর্থন পৃষ্ঠা](https://docs.ankidroid.org/help.html) দেখুন।
 
-## AnkiMobile (iPhone/iPad)
+## আঙ্কি মোবাইল (আইফোন/আইপ্যাড)
 
-Please see [AnkiMobile's support page](https://docs.ankimobile.net/support.html).
+অনুগ্রহ করে [আঙ্কি মোবাইল-এর সমর্থন পৃষ্ঠা](https://docs.ankimobile.net/support.html) দেখুন।
 
-## Private questions
+## ব্যক্তিগত প্রশ্নাবলী
 
-For security reports and business enquiries, you can post a private ticket
-[here](https://anki.tenderapp.com/discussions/private). If you have a question
-about Anki, AnkiWeb or AnkiDroid, please use the [user forums](https://forums.ankiweb.net)
-instead.
+নিরাপত্তা প্রতিবেদন এবং ব্যবসায়িক জিজ্ঞাসার জন্য, আপনি [এখানে](https://anki.tenderapp.com/discussions/private) একটি ব্যক্তিগত টিকিট পোস্ট করতে পারেন। আপনার যদি আঙ্কি, আঙ্কিওয়েব বা আঙ্কিড্রয়েড সম্পর্কে কোনো প্রশ্ন থাকে, তবে পরিবর্তে [ব্যবহারকারী ফোরাম](https://forums.ankiweb.net) ব্যবহার করুন।

@@ -1,310 +1,285 @@
-# Getting Started
+# শুরু করা
 
 <!-- toc -->
 
-## Installing & Upgrading
+## ইনস্টল এবং আপগ্রেড করা
 
-The Anki ecosystem is made up of Anki, AnkiMobile, AnkiDroid, and AnkiWeb, all
-of which are linked from our [official website](https://apps.ankiweb.net).
+আঙ্কি ইকোসিস্টেম আঙ্কি, আঙ্কি মোবাইল, আঙ্কিড্রয়েড এবং আঙ্কিওয়েব নিয়ে গঠিত, যার সবগুলিই আমাদের [অফিসিয়াল ওয়েবসাইট](https://apps.ankiweb.net) থেকে লিঙ্ক করা আছে।
 
-For instructions on how to install and upgrade Anki for your computer, please
-read the links below:
+আপনার কম্পিউটারের জন্য আঙ্কি ইনস্টল এবং আপগ্রেড করার নির্দেশাবলীর জন্য, অনুগ্রহ করে নীচের লিঙ্কগুলি পড়ুন:
 
-- [Windows](./platform/windows/installing.md)
-- [Mac](./platform/mac/installing.md)
-- [Linux](./platform/linux/installing.md)
+- [উইন্ডোজ](./platform/windows/installing.md)
+- [ম্যাক](./platform/mac/installing.md)
+- [লিনাক্স](./platform/linux/installing.md)
 
-## Videos
+## ভিডিও
 
-For a quick way to dive into Anki, have a look at these intro
-videos. Some were made with a previous Anki version, but the concepts
-are the same.
+আঙ্কি-তে দ্রুত প্রবেশ করার জন্য, এই পরিচিতিমূলক ভিডিওগুলি দেখুন। কিছু পূর্ববর্তী আঙ্কি সংস্করণ দিয়ে তৈরি করা হয়েছিল, তবে ধারণাগুলি একই।
 
-- [Shared Decks and Review Basics](http://www.youtube.com/watch?v=QS2G-k2hQyg&yt:cc=on)
+- [শেয়ার করা ডেক এবং রিভিউ বেসিক](http://www.youtube.com/watch?v=QS2G-k2hQyg&yt:cc=on)
 
-- [Syncing](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on)
+- [সিঙ্কিং](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on)
 
-- [Switching Card Order](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)
+- [কার্ড অর্ডার পরিবর্তন করা](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)
 
-- [Styling Cards](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)
+- [কার্ড স্টাইলিং](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)
 
-- [Typing in the Answer](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)
+- [উত্তর টাইপ করা](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)
 
-## Key Concepts
+## মূল ধারণা
 
-### Cards
+### কার্ড
 
-A question and answer pair is called a _card_. It's similar to a paper
-flashcard with a question on the front and answer on the back. However, in
-Anki, a card doesn't look like a physical card, and when you
-show the answer the question remains visible by default. For example, if
-you're studying basic chemistry, you might see a question like:
+একটি প্রশ্ন এবং উত্তরের জুটিকে _কার্ড_ বলা হয়। এটি কাগজের ফ্ল্যাশকার্ডের মতো, যার সামনে একটি প্রশ্ন এবং পিছনে উত্তর থাকে। তবে, আঙ্কিতে, একটি কার্ড শারীরিক কার্ডের মতো দেখায় না, এবং আপনি যখন উত্তরটি দেখান তখন প্রশ্নটি ডিফল্টরূপে দৃশ্যমান থাকে। উদাহরণস্বরূপ, আপনি যদি মৌলিক রসায়ন অধ্যয়ন করেন, তাহলে আপনি এমন একটি প্রশ্ন দেখতে পারেন:
 
-    Q: Chemical symbol for oxygen?
+    প্রশ্ন: অক্সিজেনের রাসায়নিক প্রতীক?
 
-After deciding the answer is O, you click the
-**Show Answer** button, and Anki shows you:
+উত্তর O বলে সিদ্ধান্ত নেওয়ার পর, আপনি **উত্তর দেখান** বোতামে ক্লিক করেন, এবং আঙ্কি আপনাকে দেখায়:
 
-    Q: Chemical symbol for oxygen?
-    A: O
+    প্রশ্ন: অক্সিজেনের রাসায়নিক প্রতীক?
+    উ: O
 
-After confirming that you are correct, you tell Anki how well you
-remembered the answer, and Anki will choose when to show you the card again. For example, Anki might decide to show you the card again in 3 days. In this case, we say the card now has a 3 day interval.
+আপনি সঠিক কিনা তা নিশ্চিত করার পর, আপনি আঙ্কিকে জানান যে আপনি উত্তরটি কতটা ভাল মনে রেখেছেন, এবং আঙ্কি আপনাকে কার্ডটি আবার কখন দেখাতে হবে তা চয়ন করবে। উদাহরণস্বরূপ, আঙ্কি আপনাকে 3 দিন পরে আবার কার্ডটি দেখাতে সিদ্ধান্ত নিতে পারে। এই ক্ষেত্রে, আমরা বলি কার্ডটির এখন 3 দিনের ব্যবধান রয়েছে।
 
-#### Card States
+#### কার্ডের অবস্থা
 
 <div id="types-of-cards" />
 
-- **New:** Cards that you have downloaded or created yourself, but have never studied before.
+-   **নতুন:** কার্ড যা আপনি ডাউনলোড করেছেন বা নিজে তৈরি করেছেন, তবে এর আগে কখনও অধ্যয়ন করেননি।
 
-- **Learning:** Cards that were seen for the first time recently, and are still being learned.
+-   **শেখার:** কার্ড যা সম্প্রতি প্রথমবারের মতো দেখা হয়েছে, এবং এখনও শেখা হচ্ছে।
 
-- **Review:** Cards that you have finished learning. These cards will be shown again after their delay (interval) has elapsed.
-  There are two types of review cards:
-  - **Young:** A young card is one that has an interval of less than 21 days.
-  - **Mature:** A mature card is one that has an interval of 21 days or greater.
+-   **পর্যালোচনা:** কার্ড যা আপনি শেখা শেষ করেছেন। এই কার্ডগুলি তাদের বিলম্ব (ব্যবধান) শেষ হওয়ার পরে আবার দেখানো হবে।
+    পর্যালোচনা কার্ড দুই প্রকারের হয়:
+    -   **তরুণ:** একটি তরুণ কার্ড হল যার ব্যবধান 21 দিনের কম।
+    -   **পরিপক্ক:** একটি পরিপক্ক কার্ড হল যার ব্যবধান 21 দিন বা তার বেশি।
 
-- **Relearn:** Cards that you forgot in the review stage. These cards are returned to the relearning state to be learned again.
+-   **পুনরায় শেখা:** কার্ড যা আপনি পর্যালোচনার পর্যায়ে ভুলে গেছেন। এই কার্ডগুলি আবার শেখার জন্য পুনরায় শেখার অবস্থায় ফিরিয়ে আনা হয়।
 
-### Decks
+### ডেক
 
-A _deck_ is a group of cards. You can place cards in different decks to
-study parts of your card collection instead of studying everything at
-once. Each deck can have different settings, such as how many new cards
-to show each day, or how long to wait until cards are shown again.
+একটি _ডেক_ হল কার্ডগুলির একটি গ্রুপ। আপনি বিভিন্ন ডেকে কার্ড রাখতে পারেন
+একবারে সব অধ্যয়ন না করে আপনার কার্ড সংগ্রহের অংশগুলি অধ্যয়ন করতে।
+প্রতিটি ডেকের বিভিন্ন সেটিংস থাকতে পারে, যেমন প্রতিদিন কতগুলি নতুন কার্ড
+দেখানো হবে, বা কার্ডগুলি আবার দেখানোর জন্য কতক্ষণ অপেক্ষা করতে হবে।
 
-Decks can contain other decks, which allows you to organize decks into a
-tree. Anki uses double colons ("::") to show different levels within the deck tree. For example, a deck called
-"Chinese::Hanzi" refers to a "Hanzi" deck, which is part of a "Chinese"
-deck. If you select "Hanzi", then only the Hanzi cards will be shown; if
-you select "Chinese", then all the Chinese cards will be shown, including the Hanzi cards.
+ডেকগুলিতে অন্যান্য ডেক থাকতে পারে, যা আপনাকে ডেকগুলিকে একটি
+ট্রি-তে সংগঠিত করার অনুমতি দেয়। আঙ্কি ডেকের ট্রি-এর মধ্যে বিভিন্ন স্তর দেখানোর জন্য
+ডাবল কোলন ("::") ব্যবহার করে। উদাহরণস্বরূপ, "চাইনিজ::হানজি" নামক একটি ডেক একটি "হানজি"
+ডেককে বোঝায়, যা একটি "চাইনিজ" ডেকের অংশ। যদি আপনি "হানজি" নির্বাচন করেন,
+তাহলে শুধুমাত্র হানজি কার্ডগুলি দেখানো হবে; যদি আপনি "চাইনিজ" নির্বাচন করেন,
+তাহলে সমস্ত চাইনিজ কার্ডগুলি দেখানো হবে, হানজি কার্ড সহ।
 
-To place decks within a tree, you can either name them with double colons between
-each level, or drag and drop them within the deck list. Decks that have
-been placed inside another deck are often called "subdecks", and top-level decks are called "parent decks".
+ডেকগুলিকে একটি ট্রি-এর মধ্যে রাখতে, আপনি হয় প্রতিটি স্তরের মধ্যে ডাবল কোলন সহ
+তাদের নামকরণ করতে পারেন, অথবা ডেক তালিকার মধ্যে তাদের টেনে আনতে পারেন।
+অন্য ডেকের মধ্যে রাখা ডেকগুলিকে প্রায়শই "সাবডেক" বলা হয়, এবং
+শীর্ষ-স্তরের ডেকগুলিকে "প্যারেন্ট ডেক" বলা হয়।
 
-Anki starts with a deck called "Default"; any cards which have somehow
-become separated from other decks will go here. Anki will hide the
-default deck if it contains no cards and you have added other decks.
-Alternatively, you may rename this deck and use it for other cards.
+আঙ্কি "ডিফল্ট" নামক একটি ডেক দিয়ে শুরু হয়; যে কোনও কার্ড যা কোনওভাবে
+অন্য ডেক থেকে বিচ্ছিন্ন হয়ে গেছে তা এখানে যাবে। আঙ্কি ডিফল্ট ডেকটি লুকিয়ে রাখবে
+যদি এতে কোনও কার্ড না থাকে এবং আপনি অন্যান্য ডেক যোগ করে থাকেন।
+বিকল্পভাবে, আপনি এই ডেকের নাম পরিবর্তন করতে পারেন এবং এটি অন্যান্য কার্ডের জন্য
+ব্যবহার করতে পারেন।
 
-Decks in the deck list are sorted alphabetically. This can result in
-a surprising order if your deck names contain numbers. For example, "My Deck 10"
-will come before "My Deck 9", as 1 comes before 9. If you want "My deck 9" to appear earlier, you can rename it to "My deck 09", which appears before "My deck 10".
+ডেক তালিকার ডেকগুলি বর্ণানুক্রমিকভাবে সাজানো হয়। যদি আপনার ডেকের নামে
+সংখ্যা থাকে তবে এটি একটি আশ্চর্যজনক ক্রম তৈরি করতে পারে। উদাহরণস্বরূপ, "মাই ডেক 10"
+"মাই ডেক 9" এর আগে আসবে, কারণ 1, 9 এর আগে আসে। যদি আপনি "মাই ডেক 9" আগে
+দেখাতে চান, তাহলে আপনি এর নাম পরিবর্তন করে "মাই ডেক 09" রাখতে পারেন, যা
+"মাই ডেক 10" এর আগে প্রদর্শিত হবে।
 
-Decks are best used to hold broad categories of cards, rather than
-specific topics such as "food verbs" or "lesson 1". For more information about
-this, please see the [using decks appropriately](editing.md#using-decks-appropriately) section.
+ডেকগুলি নির্দিষ্ট বিষয় যেমন "খাদ্য ক্রিয়া" বা "পাঠ 1" এর পরিবর্তে
+কার্ডগুলির বিস্তৃত বিভাগগুলি ধারণ করার জন্য সবচেয়ে ভাল ব্যবহৃত হয়।
+এই বিষয়ে আরও তথ্যের জন্য, অনুগ্রহ করে [ডেকগুলি সঠিকভাবে ব্যবহার করা](editing.md#using-decks-appropriately) বিভাগটি দেখুন।
 
-For information on how the order of decks affects the order cards are studied in,
-please see the [display order](studying.md#display-order) section.
+ডেকগুলির ক্রম কার্ডগুলি অধ্যয়নের ক্রমকে কীভাবে প্রভাবিত করে সে সম্পর্কে তথ্যের জন্য,
+অনুগ্রহ করে [প্রদর্শন ক্রম](studying.md#display-order) বিভাগটি দেখুন।
 
-### Notes & Fields
+### নোট এবং ক্ষেত্র
 
-When making flashcards, it’s often desirable to make more than one card
-that relates to the same information. For example, if you’re learning
-French, and you learn that the word _bonjour_ means hello, you may
-wish to create one card that shows you "bonjour" and asks you to
-remember "hello", and another card that shows you "hello" and asks you
-to remember "bonjour". One card is testing your ability to recognize the
-French word, and the other card is testing your ability to produce it.
+ফ্ল্যাশকার্ড তৈরি করার সময়, প্রায়শই একই তথ্য সম্পর্কিত একাধিক কার্ড তৈরি করা
+কাম্য। উদাহরণস্বরূপ, আপনি যদি ফরাসি শিখছেন এবং আপনি জানেন যে _bonjour_ শব্দের
+অর্থ হ্যালো, তাহলে আপনি একটি কার্ড তৈরি করতে চাইতে পারেন যা আপনাকে "bonjour" দেখায়
+এবং "হ্যালো" মনে রাখতে বলে, এবং অন্য একটি কার্ড যা আপনাকে "হ্যালো" দেখায় এবং
+"bonjour" মনে রাখতে বলে। একটি কার্ড ফরাসি শব্দ চিনতে আপনার ক্ষমতা পরীক্ষা করছে, 
+এবং অন্য কার্ডটি এটি তৈরি করার আপনার ক্ষমতা পরীক্ষা করছে।
 
-When using paper flashcards, your only option in this case is to write
-out the information twice, once for each card. Some flashcard
-programs make life easier by providing a feature to flip the front and
-back sides. This is an improvement over the paper situation, but there
-are two major downsides:
+কাগজের ফ্ল্যাশকার্ড ব্যবহার করার সময়, এই ক্ষেত্রে আপনার একমাত্র বিকল্প হল
+তথ্যটি দুবার লেখা, প্রতিটি কার্ডের জন্য একবার। কিছু ফ্ল্যাশকার্ড
+প্রোগ্রাম সামনে এবং পিছনের দিকগুলি উল্টানোর একটি বৈশিষ্ট্য সরবরাহ করে জীবনকে
+সহজ করে তোলে। এটি কাগজের পরিস্থিতির তুলনায় একটি উন্নতি, তবে দুটি প্রধান
+অসুবিধা রয়েছে:
 
-- Because such programs don’t track your performance of recognition
-  and production separately, cards will tend not to be shown to you at
-  the optimum time, meaning you forget more than you’d like, or you
-  study more than is necessary.
+- যেহেতু এই ধরনের প্রোগ্রামগুলি আপনার স্বীকৃতি এবং উত্পাদনের কর্মক্ষমতা আলাদাভাবে ট্র্যাক করে না, তাই কার্ডগুলি আপনাকে সর্বোত্তম সময়ে দেখানো হবে না, যার অর্থ আপনি যতটা চান তার চেয়ে বেশি ভুলে যান, অথবা আপনি প্রয়োজনের চেয়ে বেশি অধ্যয়ন করেন।
 
-- Reversing the question and answer only works when you want exactly
-  the same content on each side. This means it’s not possible to
-  display extra info on the back of each card for example.
+- প্রশ্ন এবং উত্তর বিপরীত করা তখনই কাজ করে যখন আপনি প্রতিটি দিকে
+  ঠিক একই বিষয়বস্তু চান। এর অর্থ হল প্রতিটি কার্ডের পিছনে অতিরিক্ত তথ্য
+  প্রদর্শন করা সম্ভব নয়।
 
-Anki solves these problems by allowing you to split the content of your
-cards up into separate pieces of information. You can then tell Anki
-which pieces of information you want on each card, and Anki takes care of creating the cards for you, and updating them if you make any
-edits in the future.
+আঙ্কি আপনার কার্ডগুলির বিষয়বস্তুকে পৃথক তথ্যের টুকরাগুলিতে বিভক্ত করার
+অনুমতি দিয়ে এই সমস্যা সমাধান করে। তারপরে আপনি আঙ্কিকে বলতে পারেন
+প্রতিটি কার্ডে আপনি কোন তথ্যের টুকরা চান, এবং আঙ্কি আপনার জন্য কার্ডগুলি তৈরি
+করার এবং ভবিষ্যতে আপনি কোনও সম্পাদনা করলে সেগুলিকে আপডেট করার যত্ন নেয়।
 
-Imagine we want to study French vocabulary, and we want to include a textbook
-page number on the back of each card. We want our cards to look like
-this:
+কল্পনা করুন আমরা ফরাসি শব্দভান্ডার অধ্যয়ন করতে চাই, এবং আমরা প্রতিটি কার্ডের
+পিছনে একটি পাঠ্যপুস্তকের পৃষ্ঠা নম্বর অন্তর্ভুক্ত করতে চাই। আমরা চাই আমাদের
+কার্ডগুলি এমন দেখাক:
 
-    Q: Bonjour
-    A: Hello
-       Page #12
+    প্রশ্ন: বনজুর
+    উ: হ্যালো
+       পৃষ্ঠা #12
 
-And this:
+এবং এমন:
 
-    Q: Hello
-    A: Bonjour
-       Page #12
+    প্রশ্ন: হ্যালো
+    উ: বনজুর
+       পৃষ্ঠা #12
 
-In both cards, we have the same three related pieces of information: a French
-word, an English meaning, and a page number. If we put them together,
-they’d look like this:
+উভয় কার্ডে, আমাদের কাছে একই তিনটি সম্পর্কিত তথ্য রয়েছে: একটি ফরাসি
+শব্দ, একটি ইংরেজি অর্থ এবং একটি পৃষ্ঠা নম্বর। যদি আমরা সেগুলিকে একসাথে
+রাখি, তাহলে তারা এমন দেখাবে:
 
-    French: Bonjour
-    English: Hello
-    Page: 12
+    ফরাসি: বনজুর
+    ইংরেজি: হ্যালো
+    পৃষ্ঠা: 12
 
-In Anki, this collection of related information is called a _note_ and each piece of information is contained in a _field_. In this example, the note
-has three fields: "French", "English", and "Page".
+আঙ্কিতে, সম্পর্কিত তথ্যের এই সংগ্রহকে একটি _নোট_ বলা হয় এবং তথ্যের প্রতিটি
+টুকরা একটি _ক্ষেত্রে_ থাকে। এই উদাহরণে, নোটটিতে তিনটি ক্ষেত্র রয়েছে:
+"ফরাসি", "ইংরেজি", এবং "পৃষ্ঠা"।
 
-To add and edit fields, click the **Fields...** button while adding or
-editing notes. For more information on fields, please see the
-[Customizing Fields](editing.md#customizing-fields) section.
+ক্ষেত্রগুলি যোগ এবং সম্পাদনা করতে, নোট যোগ বা সম্পাদনা করার সময় **ক্ষেত্র...** বোতামে ক্লিক করুন। ক্ষেত্রগুলি সম্পর্কে আরও তথ্যের জন্য, অনুগ্রহ করে
+[ক্ষেত্রগুলি কাস্টমাইজ করা](editing.md#customizing-fields) বিভাগটি দেখুন।
 
-### Card Types
+### কার্ডের ধরন
 
-In order for Anki to create cards based on our notes, we need to give it
-a blueprint that says which fields should be displayed on the front or
-back of each card. This blueprint is called a _card type_. Each type of
-note can have one or more card types; when you add a note, Anki will
-create one card for each card type.
+আমাদের নোটগুলির উপর ভিত্তি করে আঙ্কি কার্ড তৈরি করার জন্য, আমাদের এটিকে
+একটি ব্লুপ্রিন্ট দিতে হবে যা বলে যে প্রতিটি কার্ডের সামনে বা
+পিছনে কোন ক্ষেত্রগুলি প্রদর্শিত হবে। এই ব্লুপ্রিন্টটিকে একটি _কার্ডের ধরন_ বলা হয়।
+প্রতিটি নোটের ধরনের এক বা একাধিক কার্ডের ধরন থাকতে পারে; যখন আপনি একটি নোট যোগ করেন,
+আঙ্কি প্রতিটি কার্ডের ধরনের জন্য একটি কার্ড তৈরি করবে।
 
-All card types have two _templates_, one for the question and one for the
-answer. In the previous French example, we wanted the back of our recognition card to
-look like this:
+সমস্ত কার্ডের ধরনের দুটি _টেম্পলেট_ থাকে, একটি প্রশ্নের জন্য এবং একটি উত্তরের জন্য।
+পূর্ববর্তী ফরাসি উদাহরণে, আমরা আমাদের স্বীকৃতি কার্ডের পিছনে এমনটি
+দেখতে চেয়েছিলাম:
 
-    Q: Bonjour
-    A: Hello
-       Page #12
+    প্রশ্ন: বনজুর
+    উ: হ্যালো
+       পৃষ্ঠা #12
 
-To do this, we can set the answer template to:
+এটি করার জন্য, আমরা উত্তরের টেম্পলেটটি সেট করতে পারি:
 
-    Q: {{French}}
-    A: {{English}}<br>
-       Page #{{Page}}
+    প্রশ্ন: {{ফরাসি}}
+    উ: {{ইংরেজি}}<br>
+       পৃষ্ঠা #{{পৃষ্ঠা}}
 
-In card templates, field names are wrapped in double curly brackets, like `{{French}}` or `{{English}}`. Anki replaces those with the actual text the fields contain. This is called a ["Field replacement"](templates/fields.md). Text not wrapped in double curly brackets appears the same on each card. For example, we won't need to add "Page \#" on every note because the template will add it automatically to every card. The `<br>` tag is
-a special code that tells Anki to move to the next line. For details, see the [templates](templates/intro.md) section.
+কার্ড টেমপ্লেটগুলিতে, ক্ষেত্রের নামগুলি ডাবল কার্লি ব্র্যাকেটে মোড়ানো থাকে, যেমন `{{ফরাসি}}` বা `{{ইংরেজি}}`। আঙ্কি সেগুলিকে ক্ষেত্রগুলিতে থাকা আসল টেক্সট দিয়ে প্রতিস্থাপন করে। এটিকে ["ক্ষেত্র প্রতিস্থাপন"](templates/fields.md) বলা হয়। ডাবল কার্লি ব্র্যাকেটে মোড়ানো নয় এমন টেক্সট প্রতিটি কার্ডে একই রকম প্রদর্শিত হয়। উদাহরণস্বরূপ, প্রতিটি নোটে "পৃষ্ঠা #" যোগ করার প্রয়োজন হবে না কারণ টেম্পলেটটি স্বয়ংক্রিয়ভাবে প্রতিটি কার্ডে এটি যোগ করবে। `<br>` ট্যাগটি
+একটি বিশেষ কোড যা আঙ্কিকে পরবর্তী লাইনে যেতে বলে। বিস্তারিত জানার জন্য, [টেম্পলেট](templates/intro.md) বিভাগটি দেখুন।
 
-The production card's templates will also work in a similar way:
+উৎপাদন কার্ডের টেমপ্লেটগুলিও একই রকম কাজ করবে:
 
-    Q: {{English}}
-    A: {{French}}<br>
-       Page #{{Page}}
+    প্রশ্ন: {{ইংরেজি}}
+    উ: {{ফরাসি}}<br>
+       পৃষ্ঠা #{{পৃষ্ঠা}}
 
-After a card type has been created, every time you add a new note, a card
-will be created based on that card type. Card types make it easy to keep
-the formatting of your cards consistent and can greatly reduce the
-amount of effort involved in adding information. They also mean Anki can
-ensure related cards don't appear too close to each other, and they
-allow you to fix a typing mistake or factual error once and have all the
-related cards update at once.
+একটি কার্ডের ধরন তৈরি হওয়ার পরে, প্রতিবার আপনি একটি নতুন নোট যোগ করলে, সেই কার্ডের ধরনের উপর ভিত্তি করে একটি কার্ড তৈরি হবে। কার্ডের ধরনগুলি আপনার কার্ডগুলির ফরম্যাটিংকে ধারাবাহিক রাখতে সহজ করে তোলে এবং তথ্য যোগ করার জন্য প্রয়োজনীয় প্রচেষ্টার পরিমাণকে ব্যাপকভাবে হ্রাস করতে পারে। এর অর্থ হল আঙ্কি নিশ্চিত করতে পারে যে সম্পর্কিত কার্ডগুলি একে অপরের খুব কাছাকাছি প্রদর্শিত হবে না, এবং তারা আপনাকে একটি টাইপিং ভুল বা তথ্যের ভুল একবার ঠিক করতে এবং সমস্ত সম্পর্কিত কার্ড একবারে আপডেট করতে দেয়।
 
-To add and edit card types, click the **Cards...** button while adding or
-editing notes. For more information on card types, please see the [Cards and Templates](templates/intro.md) section.
+কার্ডের ধরন যোগ এবং সম্পাদনা করতে, নোট যোগ বা সম্পাদনা করার সময় **কার্ডস...** বোতামে ক্লিক করুন। কার্ডের ধরন সম্পর্কে আরও তথ্যের জন্য, অনুগ্রহ করে [কার্ডস এবং টেমপ্লেট](templates/intro.md) বিভাগটি দেখুন।
 
-### Note Types
+### নোটের প্রকার
 
-Anki allows you to create different types of notes for different
-material. Each type of note has its own set of fields and card types.
-It's a good idea to create a separate note type for each broad topic
-you're studying. In the previous French example, we might create a note
-type called "French" for that. If we wanted to learn capital cities, we
-could create a note type for that as well, with fields such as
-"Country" and "Capital City".
+আঙ্কি আপনাকে বিভিন্ন উপাদানের জন্য বিভিন্ন প্রকারের নোট তৈরি করার অনুমতি দেয়।
+প্রতিটি নোটের প্রকারের নিজস্ব ক্ষেত্র এবং কার্ডের প্রকারের সেট থাকে।
+আপনি যে বিস্তৃত বিষয় অধ্যয়ন করছেন তার জন্য একটি পৃথক নোটের প্রকার তৈরি করা একটি ভাল ধারণা।
+পূর্ববর্তী ফরাসি উদাহরণে, আমরা এর জন্য "ফরাসি" নামক একটি নোটের প্রকার তৈরি করতে পারি।
+যদি আমরা রাজধানীর শহরগুলি শিখতে চাই, তবে আমরা এর জন্য একটি নোটের প্রকারও তৈরি করতে পারি,
+যেমন "দেশ" এবং "রাজধানীর শহর" এর মতো ক্ষেত্র সহ।
 
-Anki comes with some standard
-note types included. These note types are provided to make Anki easier for
-new users, but in the long run it's recommended you create your own note
-types specifically for the content you are learning. The standard note types are:
+আঙ্কি কিছু স্ট্যান্ডার্ড নোটের প্রকার সহ আসে। এই নোটের প্রকারগুলি নতুন
+ব্যবহারকারীদের জন্য আঙ্কি সহজ করার জন্য সরবরাহ করা হয়েছে, তবে দীর্ঘ মেয়াদে
+আপনি যে বিষয়বস্তু শিখছেন তার জন্য নির্দিষ্ট নিজস্ব নোটের প্রকার তৈরি করার পরামর্শ দেওয়া হয়।
+স্ট্যান্ডার্ড নোটের প্রকারগুলি হল:
 
-- **Basic**\
-  Has "Front" and "Back" fields, and will create one card. Text you enter in
-  "Front" will appear on the front of the card, and text you enter in "Back"
-  will appear on the back of the card.
+-   **মৌলিক**
+    "ফ্রন্ট" এবং "ব্যাক" ক্ষেত্র রয়েছে, এবং একটি কার্ড তৈরি করবে। "ফ্রন্ট" এ আপনি যে টেক্সটটি প্রবেশ করাবেন তা কার্ডের সামনে প্রদর্শিত হবে, এবং "ব্যাক" এ আপনি যে টেক্সটটি প্রবেশ করাবেন তা কার্ডের পিছনে প্রদর্শিত হবে।
 
-- **Basic (and reversed card)**\
-  Like "Basic", but creates two cards for the text you enter:
-  front→back and back→front.
+-   **মৌলিক (এবং বিপরীত কার্ড)**
+    "মৌলিক" এর মতো, তবে আপনি যে টেক্সটটি প্রবেশ করাবেন তার জন্য দুটি কার্ড তৈরি করে:
+    ফ্রন্ট→ব্যাক এবং ব্যাক→ফ্রন্ট।
 
-- **Basic (optional reversed card)**\
-  Like "Basic", but has a third field called "Add Reverse". If you enter any text into
-  that field, a reversed card (back→front) will also be created. For details, see the [Cards and Templates](templates/intro.md) section.
+-   **মৌলিক (ঐচ্ছিক বিপরীত কার্ড)**
+    "মৌলিক" এর মতো, তবে "অ্যাড রিভার্স" নামক একটি তৃতীয় ক্ষেত্র রয়েছে। আপনি যদি সেই ক্ষেত্রে কোনো টেক্সট প্রবেশ করান, তাহলে একটি বিপরীত কার্ড (ব্যাক→ফ্রন্ট)ও তৈরি হবে। বিস্তারিত জানার জন্য, [কার্ডস এবং টেমপ্লেট](templates/intro.md) বিভাগটি দেখুন।
 
-- **Basic (type in the answer)**\
-  This is essentially "Basic", with an extra text box on the front where you
-  can type your answer in. When you reveal the back, Anki will show you any differences between your input and the actual answer. For details, see the
-  [Checking Your Answer](templates/fields.md#checking-your-answer) section.
+-   **মৌলিক (উত্তর টাইপ করুন)**
+    এটি মূলত "মৌলিক", সামনে একটি অতিরিক্ত টেক্সট বক্স সহ যেখানে আপনি
+    আপনার উত্তর টাইপ করতে পারেন। আপনি যখন পিছনটি প্রকাশ করেন, আঙ্কি আপনার ইনপুট এবং আসল উত্তরের মধ্যে
+    যেকোনো পার্থক্য আপনাকে দেখাবে। বিস্তারিত জানার জন্য,
+    [আপনার উত্তর পরীক্ষা করা](templates/fields.md#checking-your-answer) বিভাগটি দেখুন।
 
-- **Cloze**\
-  A note type that allows you to select text and turn it into a cloze
-  deletion (e.g. "Humans landed on the moon in \[…​\]" → "Humans landed on the
-  moon in 1969"). For details, see the [cloze deletion](editing.md#cloze-deletion) section.
+-   **ক্লোজ**
+    একটি নোটের ধরন যা আপনাকে টেক্সট নির্বাচন করতে এবং এটিকে একটি ক্লোজ ডিলিশনে রূপান্তর করতে দেয়
+    (যেমন "মানুষ 1913 সালে চাঁদে অবতরণ করেছিল।" → "মানুষ [...] সালে চাঁদে অবতরণ করেছিল।"
+    → "মানুষ 1969 সালে চাঁদে অবতরণ করেছিল।")। বিস্তারিত জানার জন্য,
+    [ক্লোজ ডিলিশন](editing.md#cloze-deletion) বিভাগটি দেখুন।
 
-- **Image Occlusion**\
-  Like the cloze note type, but it works with images instead of text,
-  which is especially useful when studying material that heavily relies on images,
-  such as anatomy and geography. For details, please see the [Image Occlusion](editing.md#image-occlusion)
-  section of the manual.
+-   **চিত্র আবৃতকরণ**
+    ক্লোজ নোটের ধরনের মতো, তবে এটি টেক্সটের পরিবর্তে চিত্রগুলির সাথে কাজ করে,
+    যা বিশেষত শারীরবিদ্যা এবং ভূগোলের মতো চিত্রগুলির উপর ব্যাপকভাবে নির্ভরশীল উপাদান অধ্যয়ন করার সময় সহায়ক।
+    বিস্তারিত জানার জন্য, অনুগ্রহ করে ম্যানুয়ালের [চিত্র আবৃতকরণ](editing.md#image-occlusion) বিভাগটি দেখুন।
 
-To add your own note types and modify existing ones, you can use **Tools > Manage Note Types**
-from the main Anki window.
+আপনার নিজস্ব নোটের প্রকার যোগ করতে এবং বিদ্যমানগুলি পরিবর্তন করতে, আপনি মূল আঙ্কি উইন্ডো থেকে **সরঞ্জাম > নোটের প্রকার পরিচালনা করুন** ব্যবহার করতে পারেন।
 
-Notes and note types are common to your whole collection rather than
-limited to an individual deck. This means you can use different
-note types in a single deck, or have cards generated from the
-same note put into different decks. When you add notes using the
-Add window, you can select what note type to use and what deck to use,
-and these choices are completely independent of each other. You can also
-[change the note type of notes](browsing.md#notes) after you've already created them.
+নোট এবং নোটের প্রকারগুলি আপনার পুরো সংগ্রহের জন্য সাধারণ এবং
+একটি ব্যক্তিগত ডেকের মধ্যে সীমাবদ্ধ নয়। এর অর্থ হল আপনি একটি একক ডেকে
+বিভিন্ন নোটের প্রকার ব্যবহার করতে পারেন, অথবা
+একই নোট থেকে উৎপন্ন কার্ডগুলি বিভিন্ন ডেকে রাখতে পারেন।
+আপনি যখন যোগ উইন্ডো ব্যবহার করে নোট যোগ করেন, তখন আপনি কোন নোটের প্রকার
+ব্যবহার করবেন এবং কোন ডেক ব্যবহার করবেন তা নির্বাচন করতে পারেন,
+এবং এই পছন্দগুলি একে অপরের থেকে সম্পূর্ণ স্বাধীন। আপনি
+কার্ডগুলি তৈরি করার পরেও [নোটের প্রকার পরিবর্তন করতে পারেন](browsing.md#notes)।
 
-### Collection
+### সংগ্রহ
 
-Your _collection_ is all the material stored in Anki: your cards,
-notes, decks, note types, deck options, and so on.
+আপনার _সংগ্রহ_ হল আঙ্কিতে সংরক্ষিত সমস্ত উপাদান: আপনার কার্ড,
+নোট, ডেক, নোটের প্রকার, ডেকের অপশন এবং আরও অনেক কিছু।
 
-## Shared Decks
+## শেয়ার করা ডেক
 
-You can watch a video about [Shared Decks and Review Basics](http://www.youtube.com/watch?v=QS2G-k2hQyg&yt:cc=on) on YouTube.
+আপনি ইউটিউবে [শেয়ার করা ডেক এবং রিভিউ বেসিক](http://www.youtube.com/watch?v=QS2G-k2hQyg&yt:cc=on) সম্পর্কে একটি ভিডিও দেখতে পারেন।
 
-The easiest way to get started with Anki is to download a deck of cards
-someone else has shared:
+আঙ্কি দিয়ে শুরু করার সবচেয়ে সহজ উপায় হল অন্য কেউ শেয়ার করেছেন এমন কার্ডগুলির একটি ডেক ডাউনলোড করা:
 
-1. Click the **Get Shared** button at the bottom of the deck list.
+1.  ডেক তালিকার নীচে **শেয়ার করা পান** বোতামে ক্লিক করুন।
 
-2. When you've found a deck you're interested in, click the **Download**
-   button to download a deck package.
+2.  আপনি যে ডেকে আগ্রহী, তার একটি ডেক প্যাকেজ ডাউনলোড করতে **ডাউনলোড**
+    বোতামে ক্লিক করুন।
 
-3. Double-click the downloaded package to import it into Anki, or go to
-   **File > Import**.
+3.  ডাউনলোড করা প্যাকেজটি আঙ্কি-তে আমদানি করতে ডাবল-ক্লিক করুন, অথবা
+    **ফাইল > আমদানি** এ যান।
 
-Note: It’s not currently possible to add shared decks
-directly to your AnkiWeb account. You need to first import them to the
-desktop app, AnkiMobile, or AnkiDroid, then [synchronize](./syncing.md) to upload the decks to AnkiWeb.
+দ্রষ্টব্য: বর্তমানে সরাসরি আপনার আঙ্কিওয়েব অ্যাকাউন্টে শেয়ার করা ডেক যোগ করা সম্ভব নয়।
+আপনাকে প্রথমে সেগুলি ডেস্কটপ অ্যাপ, আঙ্কি মোবাইল, বা আঙ্কিড্রয়েডে আমদানি করতে হবে,
+তারপর আঙ্কিওয়েবে ডেকগুলি আপলোড করতে [সিঙ্ক্রোনাইজ করুন](./syncing.md)।
 
-Creating your own deck is the most effective way to learn a complex
-subject. Subjects like languages and the sciences can’t be understood
-simply by memorizing facts — you need explanation and context to
-learn them effectively. Furthermore, inputting the information yourself
-forces you to decide what the key points are, leading to a better
-understanding.
+আপনার নিজস্ব ডেক তৈরি করা একটি জটিল বিষয় শেখার সবচেয়ে কার্যকর উপায়।
+ভাষা এবং বিজ্ঞানের মতো বিষয়গুলি কেবল তথ্য মুখস্থ করে বোঝা যায় না —
+সেগুলি কার্যকরভাবে শেখার জন্য আপনার ব্যাখ্যা এবং প্রসঙ্গের প্রয়োজন।
+তাছাড়া, তথ্য নিজে প্রবেশ করালে আপনাকে মূল বিষয়গুলি কী তা সিদ্ধান্ত নিতে বাধ্য করে,
+যা আরও ভাল বোঝার দিকে পরিচালিত করে।
 
-If you are a language learner, you may be tempted to download a long
-list of words and their translations, but this won’t teach you a
-language any more than memorizing scientific equations will teach you
-astrophysics. To learn properly, you might need textbooks, teachers, or
-exposure to real-world sentences.
+যদি আপনি একজন ভাষা শিখছেন, তবে আপনি শব্দের একটি দীর্ঘ তালিকা এবং তাদের অনুবাদ ডাউনলোড করতে প্রলুব্ধ হতে পারেন, তবে এটি আপনাকে ভাষা শেখাবে না যেমন বৈজ্ঞানিক সমীকরণ মুখস্থ করলে আপনাকে জ্যোতির্বিজ্ঞান শেখাবে না। সঠিকভাবে শেখার জন্য, আপনার পাঠ্যপুস্তক, শিক্ষক বা বাস্তব বিশ্বের বাক্যগুলির সংস্পর্শের প্রয়োজন হতে পারে।
 
-    Do not learn if you do not understand.
-    --SuperMemo
+    যদি না বোঝেন, শিখবেন না।
+    --সুপারমেমো
 
-Most shared decks are created by people who are learning material
-outside Anki, such as from textbooks, classes, TV, etc. They select the
-interesting points from what they learn and put them into Anki. They
-might not make any effort to add background information or explanations to the
-cards, because they already understand the material. So when someone
-else downloads their deck and tries to use it, they might find it very
-difficult as the background information and explanations are missing.
+বেশিরভাগ শেয়ার করা ডেক এমন লোকেরা তৈরি করে যারা আঙ্কির বাইরে উপাদান শিখছে,
+যেমন পাঠ্যপুস্তক, ক্লাস, টিভি ইত্যাদি থেকে। তারা যা শেখে তার আকর্ষণীয় বিষয়গুলি
+নির্বাচন করে এবং সেগুলি আঙ্কিতে রাখে। তারা কার্ডগুলিতে পটভূমি তথ্য বা ব্যাখ্যা
+যোগ করার কোনো প্রচেষ্টা নাও করতে পারে, কারণ তারা ইতিমধ্যে উপাদানটি বোঝে।
+সুতরাং যখন অন্য কেউ তাদের ডেক ডাউনলোড করে এবং এটি ব্যবহার করার চেষ্টা করে, তখন তারা
+এটি খুব কঠিন মনে করতে পারে কারণ পটভূমি তথ্য এবং ব্যাখ্যা অনুপস্থিত।
 
-That is not to say shared decks are useless. If you’re studying textbook ABC and
-someone has shared a deck of ideas from ABC, that’s a great way to save
-some time. And for simple subjects that are basically a list of facts,
-such as capital city names or country flags, you probably don’t need any
-external material. However, for complex subjects, shared decks should be used as a _supplement_ to external material, not as a _replacement_ for it.
+এর অর্থ এই নয় যে শেয়ার করা ডেকগুলি অকেজো। যদি আপনি পাঠ্যপুস্তক ABC অধ্যয়ন করছেন এবং
+কেউ ABC থেকে ধারণাগুলির একটি ডেক শেয়ার করেছে, তবে এটি কিছু সময় বাঁচানোর একটি দুর্দান্ত উপায়।
+এবং সাধারণ বিষয়গুলির জন্য যা মূলত তথ্যের একটি তালিকা, যেমন রাজধানীর শহরের নাম বা দেশের পতাকা,
+আপনার সম্ভবত কোনও বাহ্যিক উপাদানের প্রয়োজন নেই। তবে, জটিল বিষয়গুলির জন্য, 
+শেয়ার করা ডেকগুলি বাহ্যিক উপাদানের _পরিপূরক_ হিসাবে ব্যবহার করা উচিত,
+এর _প্রতিস্থাপন_ হিসাবে নয়।

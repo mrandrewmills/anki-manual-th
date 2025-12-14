@@ -1,252 +1,230 @@
-# Filtered Decks & Cramming
+# ফিল্টার করা ডেক এবং ক্র্যামিং
 
 <!-- toc -->
 
-When you study a regular deck in Anki, only a limited number of cards
-are shown: the cards Anki thinks you are about to forget, and a daily
-limit of new cards. This is generally useful, as it ensures you don't
-spend more time studying than necessary. But sometimes it can be useful
-to step outside of these normal limits, such as when you need to review
-for a test, focus on particular material, and so on. To make this
-possible, Anki provides a different type of deck called a "filtered
-deck".
+আপনি যখন আঙ্কিতে একটি নিয়মিত ডেক অধ্যয়ন করেন, তখন শুধুমাত্র সীমিত সংখ্যক কার্ড
+দেখানো হয়: আঙ্কি মনে করে যে আপনি ভুলে যেতে চলেছেন এমন কার্ডগুলি এবং নতুন কার্ডের একটি দৈনিক
+সীমা। এটি সাধারণত সহায়ক, কারণ এটি নিশ্চিত করে যে আপনি প্রয়োজনের চেয়ে বেশি সময়
+অধ্যয়নে ব্যয় করবেন না। তবে কখনও কখনও এই স্বাভাবিক সীমাগুলির বাইরে যাওয়া সহায়ক হতে পারে,
+যেমন যখন আপনাকে একটি পরীক্ষার জন্য পর্যালোচনা করতে হবে, নির্দিষ্ট উপাদানে মনোযোগ দিতে হবে, ইত্যাদি।
+এটি সম্ভব করার জন্য, আঙ্কি একটি ভিন্ন ধরণের ডেক সরবরাহ করে যা "ফিল্টার করা ডেক" নামে পরিচিত।
 
-Filtered decks offer a lot of possibilities. They can be used for
-previewing cards, cramming cards before a test, studying particular
-tags, catching up on a backlog with a particular sort order, reviewing
-ahead of schedule, going over the day's failed cards, and more.
+ফিল্টার করা ডেক অনেক সম্ভাবনা সরবরাহ করে। এগুলি কার্ডগুলির পূর্বরূপ দেখার জন্য,
+একটি পরীক্ষার আগে কার্ডগুলি ক্র্যাম করার জন্য, নির্দিষ্ট ট্যাগগুলি অধ্যয়ন করার জন্য,
+একটি নির্দিষ্ট সাজানোর ক্রম সহ একটি ব্যাকলগ ধরার জন্য, সময়সূচীর আগে পর্যালোচনা করার জন্য,
+দিনের ব্যর্থ কার্ডগুলি আবার দেখার জন্য এবং আরও অনেক কিছুর জন্য ব্যবহার করা যেতে পারে।
 
-## Custom Study
+## কাস্টম অধ্যয়ন
 
-The easiest way to create a filtered deck is with the Custom Study
-button, which appears at the bottom of the screen when you click on a
-deck. It offers some convenient preset filters for common tasks like reviewing
-the cards that you have failed that day. It will create a filtered deck called
-"Custom Study Session" and automatically open it for you.
+একটি ফিল্টার করা ডেক তৈরি করার সবচেয়ে সহজ উপায় হল কাস্টম অধ্যয়ন
+বোতামটি ব্যবহার করা, যা আপনি একটি ডেকে ক্লিক করলে স্ক্রিনের নীচে প্রদর্শিত হয়।
+এটি সাধারণ কাজগুলির জন্য কিছু সুবিধাজনক প্রিসেট ফিল্টার সরবরাহ করে যেমন আপনি সেই দিন
+ব্যর্থ হয়েছেন এমন কার্ডগুলি পর্যালোচনা করা। এটি "কাস্টম অধ্যয়ন সেশন" নামক একটি ফিল্টার করা ডেক তৈরি করবে
+এবং স্বয়ংক্রিয়ভাবে এটি আপনার জন্য খুলবে।
 
-If an existing "Custom Study Session" deck exists, it will be emptied
-before a new one is created. If you wish to keep a custom study deck,
-you can rename it from the deck list.
+যদি একটি বিদ্যমান "কাস্টম অধ্যয়ন সেশন" ডেক বিদ্যমান থাকে, তবে একটি নতুন তৈরি করার আগে
+এটি খালি করা হবে। যদি আপনি একটি কাস্টম অধ্যয়ন ডেক রাখতে চান, তবে আপনি ডেক তালিকা থেকে
+এর নাম পরিবর্তন করতে পারেন।
 
-Here is a summary of each of the options:
+এখানে প্রতিটি বিকল্পের একটি সংক্ষিপ্ত বিবরণ দেওয়া হলো:
 
-**Increase today's new card limit**\
-Add more new cards to the deck you are currently studying. Note that
-unlike other options, this does "not" create a new filtered deck, it
-modifies the existing deck.
+**আজকের নতুন কার্ডের সীমা বাড়ান**
+আপনি বর্তমানে যে ডেকটি অধ্যয়ন করছেন তাতে আরও নতুন কার্ড যোগ করুন। মনে রাখবেন যে
+অন্যান্য বিকল্পগুলির মতো এটি একটি নতুন ফিল্টার করা ডেক তৈরি করে না, এটি
+বিদ্যমান ডেকটি পরিবর্তন করে।
 
-**Increase today's review card limit**\
-If not all reviews due today were shown because of the daily review limit,
-this option allows you to show more of them. As with the new cards
-option, this modifies the existing deck.
+**আজকের রিভিউ কার্ডের সীমা বাড়ান**
+যদি দৈনিক রিভিউ সীমার কারণে আজ বাকি থাকা সমস্ত রিভিউ দেখানো না হয়,
+তবে এই বিকল্পটি আপনাকে তাদের মধ্যে আরও দেখাতে দেয়। নতুন কার্ডের বিকল্পের মতো,
+এটি বিদ্যমান ডেকটি পরিবর্তন করে।
 
-**Review forgotten cards**\
-Show all the cards, for which you've answered Again (1) within the number of days
-you specify.
+**ভুলে যাওয়া কার্ডগুলি পর্যালোচনা করুন**
+আপনি নির্দিষ্ট সংখ্যক দিনের মধ্যে Again (1) উত্তর দিয়েছেন এমন সমস্ত কার্ড দেখান।
 
-**Review ahead**\
-Show cards that will be due in the near future (the number of days you
-specify). This is useful for working through some of your older cards
-before a vacation, but it will not help with cards you have learned
-recently. Please see the [reviewing ahead](#reviewing-ahead) section
-below for more info.
+**আগে পর্যালোচনা করুন**
+শীঘ্রই বাকি থাকা কার্ডগুলি দেখান (আপনি নির্দিষ্ট সংখ্যক দিন)।
+এটি ছুটির আগে আপনার কিছু পুরানো কার্ডগুলির মাধ্যমে কাজ করার জন্য সহায়ক, তবে এটি
+আপনি সম্প্রতি শিখেছেন এমন কার্ডগুলির সাথে সাহায্য করবে না। আরও তথ্যের জন্য
+নীচের [আগে পর্যালোচনা করা](#reviewing-ahead) বিভাগটি দেখুন।
 
-**Preview new cards**\
-Show cards that you have recently added, without converting them to
-review cards as they are answered.
+**নতুন কার্ডগুলির পূর্বরূপ দেখুন**
+আপনি সম্প্রতি যোগ করেছেন এমন কার্ডগুলি দেখান, উত্তর দেওয়ার সময় সেগুলিকে
+রিভিউ কার্ডে রূপান্তর না করেই।
 
-**Study by card state or tag**\
-Select a certain number of cards from the current deck to study. You can
-choose to select new cards only, due cards only, or all cards; after you
-click "Choose Tags", you can also limit the selected cards by tags. If
-you wish to see all the cards in the deck (for instance, to study before
-a big test), you can set the number of cards to more than the number of
-cards in the deck.
+**কার্ডের অবস্থা বা ট্যাগ দ্বারা অধ্যয়ন করুন**
+বর্তমান ডেক থেকে অধ্যয়ন করার জন্য নির্দিষ্ট সংখ্যক কার্ড নির্বাচন করুন। আপনি
+কেবল নতুন কার্ড, কেবল বাকি কার্ড, বা সমস্ত কার্ড নির্বাচন করতে পারেন; "ট্যাগ নির্বাচন করুন"
+ক্লিক করার পরে, আপনি ট্যাগ দ্বারা নির্বাচিত কার্ডগুলিও সীমাবদ্ধ করতে পারেন।
+যদি আপনি ডেকের সমস্ত কার্ড দেখতে চান (উদাহরণস্বরূপ, একটি বড় পরীক্ষার আগে অধ্যয়ন করতে),
+তবে আপনি কার্ডের সংখ্যা ডেকের কার্ডের সংখ্যার চেয়ে বেশি সেট করতে পারেন।
 
-## Home Decks
+## হোম ডেক
 
-When a card is moved to a filtered deck, it retains a link to the deck,
-from which it came. That previous deck is said to be the card's "home
-deck".
+যখন একটি কার্ড একটি ফিল্টার করা ডেকে সরানো হয়, তখন এটি সেই ডেকটির সাথে একটি লিঙ্ক
+ধরে রাখে, যেখান থেকে এটি এসেছিল। সেই পূর্ববর্তী ডেকটিকে কার্ডের "হোম ডেক" বলা হয়।
 
-Cards automatically return to their home deck after they are studied in
-the filtered deck. This can be after a single review, or after multiple
-reviews, depending on your settings.
+ফিল্টার করা ডেকে অধ্যয়ন করার পরে কার্ডগুলি স্বয়ংক্রিয়ভাবে তাদের হোম ডেকে ফিরে আসে।
+এটি একটি একক রিভিউর পরে হতে পারে, অথবা আপনার সেটিংসের উপর নির্ভর করে একাধিক রিভিউর
+পরেও হতে পারে।
 
-It is also possible to move all cards back to their home decks at once:
+একবারে সমস্ত কার্ড তাদের হোম ডেকে ফিরিয়ে আনাও সম্ভব:
 
-- The "Empty" button in the study overview moves all cards in the
-  filtered deck back to their home deck, but does not delete the empty
-  filtered deck. This can be useful if you want to fill it again later
-  (using the Rebuild button).
+- অধ্যয়নের ওভারভিউতে "খালি করুন" বোতামটি ফিল্টার করা ডেকের সমস্ত কার্ডকে
+  তাদের হোম ডেকে ফিরিয়ে দেয়, তবে খালি ফিল্টার করা ডেকটি মুছে ফেলে না।
+  এটি সহায়ক হতে পারে যদি আপনি পরে এটি আবার পূরণ করতে চান (পুনর্গঠন বোতামটি ব্যবহার করে)।
 
-- Deleting a filtered deck does the same thing as "Empty" does, but
-  also removes the emptied deck from the deck list. No cards are
-  deleted when you delete a filtered deck.
+- একটি ফিল্টার করা ডেক মুছে ফেলা "খালি করুন" এর মতোই কাজ করে, তবে
+  খালি করা ডেকটিকে ডেক তালিকা থেকে সরিয়ে দেয়। আপনি যখন একটি ফিল্টার করা ডেক মুছে ফেলেন তখন
+  কোনো কার্ড মুছে ফেলা হয় না।
 
-## Creating Manually
+## ম্যানুয়ালি তৈরি করা
 
-Advanced users can create filtered decks with arbitrary search strings
-(or "filters"),
-instead of relying on the preset filters. To create a filtered deck manually,
-choose Create Filtered Deck from the Tools menu.
+উন্নত ব্যবহারকারীরা প্রিসেট ফিল্টারগুলির উপর নির্ভর না করে
+ঐচ্ছিক অনুসন্ধান স্ট্রিং (বা "ফিল্টার") সহ ফিল্টার করা ডেক তৈরি করতে পারেন।
+ম্যানুয়ালি একটি ফিল্টার করা ডেক তৈরি করতে, টুলস মেনু থেকে ফিল্টার করা ডেক তৈরি করুন
+নির্বাচন করুন।
 
-When you click the Build button, Anki finds cards that match the
-settings you specified, and temporarily moves them from their existing
-decks into your new filtered deck for study.
+আপনি যখন বিল্ড বোতামে ক্লিক করেন, আঙ্কি আপনার নির্দিষ্ট করা সেটিংসের সাথে
+মিলে যাওয়া কার্ডগুলি খুঁজে বের করে এবং সাময়িকভাবে সেগুলিকে তাদের বিদ্যমান
+ডেক থেকে আপনার নতুন ফিল্টার করা ডেকে অধ্যয়নের জন্য সরিয়ে দেয়।
 
-If you wish to fetch cards again using the same filter options (for
-instance, if you want to study all cards with a particular tag every
-day), you can use the Rebuild button at the bottom of the deck's
-overview screen.
+আপনি যদি একই ফিল্টার বিকল্পগুলি ব্যবহার করে কার্ডগুলি আবার আনতে চান (উদাহরণস্বরূপ,
+যদি আপনি প্রতিদিন একটি নির্দিষ্ট ট্যাগ সহ সমস্ত কার্ড অধ্যয়ন করতে চান), তবে
+আপনি ডেকের ওভারভিউ স্ক্রিনের নীচে পুনর্গঠন বোতামটি ব্যবহার করতে পারেন।
 
-The **search** area controls what cards Anki will gather. All of the
-searches possible in the browser are also possible for filtered decks,
-such as limiting to tags, finding cards forgotten a certain number of
-times, and so on. Please see the [searching](searching.md) section of the
-manual for more information on the different possibilities.
+**অনুসন্ধান** এলাকাটি নিয়ন্ত্রণ করে যে আঙ্কি কোন কার্ডগুলি সংগ্রহ করবে।
+ব্রাউজারে সম্ভব সমস্ত অনুসন্ধান ফিল্টার করা ডেকগুলির জন্যও সম্ভব, যেমন
+ট্যাগগুলিতে সীমাবদ্ধ করা, নির্দিষ্ট সংখ্যক বার ভুলে যাওয়া কার্ডগুলি খুঁজে বের করা,
+ইত্যাদি। বিভিন্ন সম্ভাবনা সম্পর্কে আরও তথ্যের জন্য ম্যানুয়ালের
+[অনুসন্ধান](searching.md) বিভাগটি দেখুন।
 
-Filtered decks cannot pull in cards that are suspended, buried, or already in a
-different filtered deck. For this reason, a search in the
-browser may reveal cards that do not end up in the filtered deck.
+ফিল্টার করা ডেকগুলি স্থগিত, চাপা বা ইতিমধ্যে একটি ভিন্ন ফিল্টার করা ডেকে থাকা কার্ডগুলি টানতে পারে না। এই কারণে, ব্রাউজারে একটি অনুসন্ধানে এমন কার্ডগুলি প্রকাশ পেতে পারে যা ফিল্টার করা ডেকে শেষ হয় না।
 
-The **limit** option controls how many cards will be gathered into the
-deck. The order you select controls both the order cards are gathered
-in, and the order they will be reviewed in. If you select "most lapses"
-and a limit of 20 for example, then Anki will show you only the 20 most
-lapsed cards.
+**সীমা** বিকল্পটি নিয়ন্ত্রণ করে যে কতগুলি কার্ড ডেকের মধ্যে সংগ্রহ করা হবে।
+আপনি যে ক্রমটি নির্বাচন করেন তা কার্ডগুলি যে ক্রমে সংগ্রহ করা হবে এবং
+যে ক্রমে সেগুলি পর্যালোচনা করা হবে উভয়কেই নিয়ন্ত্রণ করে। উদাহরণস্বরূপ, যদি আপনি "সর্বাধিক ভুল"
+এবং 20 এর সীমা নির্বাচন করেন, তবে আঙ্কি আপনাকে শুধুমাত্র 20টি সর্বাধিক ভুল কার্ড দেখাবে।
 
-The **enable second filter** option allows you to create a filtered deck
-comprised of two different searches, so that you can, for example, include
-due cards with one order, and a smaller amount of new cards with a different order.
+**দ্বিতীয় ফিল্টার সক্ষম করুন** বিকল্পটি আপনাকে দুটি ভিন্ন অনুসন্ধান নিয়ে গঠিত একটি ফিল্টার করা ডেক তৈরি করতে দেয়, যাতে আপনি, উদাহরণস্বরূপ, একটি ক্রম সহ বাকি কার্ডগুলি এবং একটি ভিন্ন ক্রম সহ কম সংখ্যক নতুন কার্ড অন্তর্ভুক্ত করতে পারেন।
 
-## Order
+## ক্রম
 
-The "cards selected by" option controls the order that cards will appear
-in. If the maximum number of cards you select is lower than the number
-of cards that match the filter criteria, Anki will exclude the cards at
-the end of this sorted list first.
+"কার্ড দ্বারা নির্বাচিত" বিকল্পটি কার্ডগুলি যে ক্রমে প্রদর্শিত হবে তা নিয়ন্ত্রণ করে।
+যদি আপনি যে সর্বাধিক সংখ্যক কার্ড নির্বাচন করেন তা ফিল্টার মানদণ্ডের সাথে মিলে যাওয়া
+কার্ডের সংখ্যার চেয়ে কম হয়, তাহলে আঙ্কি এই সাজানো তালিকার শেষের কার্ডগুলি
+প্রথমে বাদ দেবে।
 
-**Oldest seen first**\
-Display those cards first, that you haven't seen in reviews for the longest
-time.
+**সবচেয়ে পুরোনো দেখা হয়েছে প্রথমে**
+যে কার্ডগুলি আপনি সবচেয়ে দীর্ঘ সময় ধরে পর্যালোচনাতে দেখেননি সেগুলি প্রথমে প্রদর্শন করুন।
 
-**Random**\
-Randomize the order of all cards that match the filter criteria (use no
-set order).
+**এলোমেলো**
+ফিল্টার মানদণ্ডের সাথে মিলে যাওয়া সমস্ত কার্ডের ক্রম এলোমেলো করুন (কোনও নির্দিষ্ট ক্রম ব্যবহার করবেন না)।
 
-**Increasing intervals**\
-Display cards that have the smallest interval first.
+**ক্রমবর্ধমান ব্যবধান**
+সবচেয়ে ছোট ব্যবধান সহ কার্ডগুলি প্রথমে প্রদর্শন করুন।
 
-**Decreasing intervals**\
-Display cards that have the largest interval first.
+**হ্রাসমান ব্যবধান**
+সবচেয়ে বড় ব্যবধান সহ কার্ডগুলি প্রথমে প্রদর্শন করুন।
 
-**Most lapses**\
-Display those cards first, that you have failed the most times.
+**সর্বাধিক ভুল**
+যে কার্ডগুলি আপনি সবচেয়ে বেশি বার ব্যর্থ হয়েছেন সেগুলি প্রথমে প্রদর্শন করুন।
 
-**Order added**\
-Display cards that you added first (i.e. those cards that have the earliest
-creation date).
+**যোগ করার ক্রম**
+যে কার্ডগুলি আপনি প্রথমে যোগ করেছেন (অর্থাৎ যে কার্ডগুলির সবচেয়ে পুরোনো
+তৈরির তারিখ আছে) সেগুলি প্রদর্শন করুন।
 
-**Order due**\
-Display cards with the earliest due date first.
+**বকেয়া ক্রম**
+সবচেয়ে পুরোনো বকেয়া তারিখ সহ কার্ডগুলি প্রথমে প্রদর্শন করুন।
 
-**Latest added first**\
-Display cards that you have most recently added to the deck first.
-(This is the opposite of "Order added".)
+**সর্বশেষ যোগ করা হয়েছে প্রথমে**
+আপনি সম্প্রতি ডেকে যোগ করেছেন এমন কার্ডগুলি প্রথমে প্রদর্শন করুন।
+(এটি "যোগ করার ক্রম" এর বিপরীত।)
 
-**Relative overdueness**\
-Display cards that you're most likely to have forgotten first. This is useful if
-you have a large backlog that may take some time to get through, and you want to
-reduce the chances of forgetting more cards.
+**আপেক্ষিক বিলম্বেতা**
+যে কার্ডগুলি আপনি সম্ভবত প্রথমে ভুলে গেছেন সেগুলি প্রদর্শন করুন। এটি সহায়ক যদি
+আপনার কাছে একটি বড় ব্যাকলগ থাকে যা পার হতে কিছু সময় লাগতে পারে, এবং আপনি
+আরও কার্ড ভুলে যাওয়ার সম্ভাবনা কমাতে চান।
 
-When using the SM-2 algorithm, overdueness is determined by comparing how
-overdue cards are, and how long their interval is. For example, a card with a
-current interval of 5 days that is overdue by 2 days, will display before a card
-with a current interval of 10 days that is overdue by 3 days.
+SM-2 অ্যালগরিদম ব্যবহার করার সময়, বিলম্বেতা নির্ভর করে কার্ডগুলি কতটা
+বকেয়া, এবং তাদের ব্যবধান কত। উদাহরণস্বরূপ, একটি কার্ড যার বর্তমান
+ব্যবধান 5 দিন এবং 2 দিন বকেয়া, সেটি একটি কার্ডের আগে প্রদর্শিত হবে
+যার বর্তমান ব্যবধান 10 দিন এবং 3 দিন বকেয়া।
 
-When using FSRS, overdueness is calculated based on on each card's retrievability,
-and the desired retention in the deck preset.
+FSRS ব্যবহার করার সময়, বিলম্বেতা প্রতিটি কার্ডের পুনরুদ্ধারযোগ্যতা এবং ডেকের প্রিসেটে কাঙ্ক্ষিত ধারণের উপর ভিত্তি করে গণনা করা হয়।
 
-## Steps & Returning
+## ধাপ এবং ফেরত
 
-By default, Anki will use the steps of a card’s home deck. If a new card
-would normally be reviewed twice when being learned, the same thing will
-happen when you study it in a filtered deck.
-To learn about how (re)learning steps work, see [Deck Options](deck-options.md#learning-steps) section.
+ডিফল্টরূপে, আঙ্কি একটি কার্ডের হোম ডেকের ধাপগুলি ব্যবহার করবে। যদি একটি নতুন কার্ড
+সাধারণত শেখার সময় দুবার পর্যালোচনা করা হয়, তবে ফিল্টার করা ডেকে অধ্যয়ন করার সময়ও
+একই ঘটনা ঘটবে।
+(পুনরায়) শেখার ধাপগুলি কীভাবে কাজ করে তা জানতে, [ডেক অপশন](deck-options.md#learning-steps) বিভাগটি দেখুন।
 
-Cards return to their home deck when (re)learning is complete. Thus if
-you have 3 learning steps, a new card will return to its home deck upon
-three presses of "Good" or a single press of "Easy".
+(পুনরায়) শেখা সম্পূর্ণ হলে কার্ডগুলি তাদের হোম ডেকে ফিরে আসে। সুতরাং যদি
+আপনার 3টি শেখার ধাপ থাকে, তবে একটি নতুন কার্ড "গুড" তিনবার চাপার পরে বা
+"ইজি" একবার চাপার পরে তার হোম ডেকে ফিরে আসবে।
 
-Filtered decks with rescheduling disabled show 4 buttons. The **Again**, **Hard**, and **Good** buttons have configurable delays. The **Easy** button removes cards from the filtered deck.
+পুনরায় সময়সূচী অক্ষম করা ফিল্টার করা ডেকগুলিতে 4টি বোতাম দেখানো হয়। **আবার**, **কঠিন**, এবং **গুড** বোতামগুলিতে কনফিগারযোগ্য বিলম্ব রয়েছে। **ইজি** বোতামটি ফিল্টার করা ডেক থেকে কার্ডগুলি সরিয়ে দেয়।
 
-## Due Reviews
+## বকেয়া রিভিউ
 
-If the filtered deck includes cards that were due for review, they will
-be shown like they would have been in their original deck: they appear
-in the review card count at the bottom of the screen, and there are four
-choices for how well you remembered. Upon a correct answer, the card
-will be moved back to its home deck, and its next delay adjusted using
-the home deck's settings. If you forget the card, it will be shown
-according to the relearning steps defined in the home deck.
+যদি ফিল্টার করা ডেকে রিভিউয়ের জন্য বকেয়া কার্ডগুলি অন্তর্ভুক্ত থাকে, তবে সেগুলি
+তাদের আসল ডেকে যেভাবে দেখানো হত সেভাবেই দেখানো হবে: সেগুলি স্ক্রিনের নীচে
+রিভিউ কার্ডের সংখ্যায় প্রদর্শিত হবে, এবং আপনি কতটা ভাল মনে রেখেছেন তার জন্য চারটি
+বিকল্প রয়েছে। একটি সঠিক উত্তরের উপর, কার্ডটি তার হোম ডেকে ফিরিয়ে আনা হবে,
+এবং তার পরবর্তী বিলম্ব হোম ডেকের সেটিংস ব্যবহার করে সামঞ্জস্য করা হবে।
+যদি আপনি কার্ডটি ভুলে যান, তবে এটি হোম ডেকের সংজ্ঞায়িত পুনরায় শেখার ধাপগুলি অনুসারে দেখানো হবে।
 
-## Reviewing Ahead
+## আগে পর্যালোচনা করা
 
-If your search included cards that are not due, Anki will show the
-reviews ahead of time.
+যদি আপনার অনুসন্ধানে যে কার্ডগুলি বকেয়া নয় সেগুলি অন্তর্ভুক্ত থাকে, তাহলে আঙ্কি
+সময়সূচীর আগে রিভিউগুলি দেখাবে।
 
-Anki uses a special algorithm for these reviews that takes into account
-how early you are reviewing. If the cards were almost due to be shown,
-they will be given a new delay similar to what they would have received
-if you had reviewed them on time. If the cards are reviewed soon after
-they were scheduled however, their new delay will be similar to their
-previous delay. This calculation works on a sliding scale.
+আঙ্কি এই রিভিউগুলির জন্য একটি বিশেষ অ্যালগরিদম ব্যবহার করে যা আপনি কত তাড়াতাড়ি
+পর্যালোচনা করছেন তা বিবেচনা করে। যদি কার্ডগুলি প্রায় দেখানো হওয়ার কথা ছিল, তবে সেগুলিকে একটি নতুন বিলম্ব দেওয়া হবে যা তারা সময়মতো পর্যালোচনা করা হলে
+পেত তার অনুরূপ। তবে যদি কার্ডগুলি সময়সূচীর অল্প সময়ের মধ্যেই পর্যালোচনা করা হয়, তবে তাদের নতুন বিলম্ব তাদের পূর্ববর্তী বিলম্বের অনুরূপ হবে। এই গণনাটি একটি
+স্লাইডিং স্কেলে কাজ করে।
 
-Because reviewing a card shortly after it is scheduled has little impact
-on scheduling (e.g. a card due tomorrow with a one day interval will
-remain due tomorrow if reviewed early), **the "review ahead" custom
-study setting is not appropriate for repeated use**. If used to go
-through a week's worth of cards before a trip, the mature cards will be
-rescheduled into the future and the new cards will remain at small
-intervals, because you don't know them well enough for them to be
-rescheduled further. If you review ahead again the next day, all you'll
-end up doing is going through those same new cards again, to little
-benefit.
+যেহেতু সময়সূচীর অল্প সময়ের মধ্যেই একটি কার্ড পর্যালোচনা করলে সময়সূচীতে খুব কম প্রভাব ফেলে
+(যেমন এক দিনের ব্যবধান সহ আগামীকাল বকেয়া একটি কার্ড যদি তাড়াতাড়ি পর্যালোচনা করা হয় তবে
+আগামীকালই বকেয়া থাকবে), তাই **"আগে পর্যালোচনা করুন" কাস্টম অধ্যয়নের সেটিংটি
+পুনরাবৃত্তিমূলক ব্যবহারের জন্য উপযুক্ত নয়**। যদি এটি একটি ভ্রমণের আগে এক সপ্তাহের
+কার্ডগুলির মাধ্যমে যেতে ব্যবহার করা হয়, তবে পরিপক্ক কার্ডগুলি ভবিষ্যতে
+পুনরায় সময়সূচী করা হবে এবং নতুন কার্ডগুলি ছোট ব্যবধানে থাকবে, কারণ আপনি সেগুলিকে
+আরও দূরে পুনরায় সময়সূচী করার জন্য যথেষ্ট ভাল জানেন না। যদি আপনি পরের দিন আবার
+আগে পর্যালোচনা করেন, তাহলে আপনি যা করবেন তা হল সেই একই নতুন কার্ডগুলি আবার দেখা,
+খুব কম উপকারিতা সহ।
 
-## Rescheduling
+## পুনরায় সময়সূচী
 
-By default, Anki will return cards to their home decks with altered scheduling,
-based on your performance in the filtered deck. 
+ডিফল্টরূপে, আঙ্কি আপনার ফিল্টার করা ডেকে আপনার পারফরম্যান্সের
+উপর ভিত্তি করে পরিবর্তিত সময়সূচী সহ কার্ডগুলি তাদের হোম ডেকে ফিরিয়ে দেবে।
 
-To change this behaviour, turn off **Reschedule
-cards based on my answers**. When this is turned off, cards are shown in a simple "preview mode", and
-when they are returned to their original deck, they are returned exactly as they started.
+এই আচরণ পরিবর্তন করতে, **আমার উত্তরগুলির উপর ভিত্তি করে কার্ডগুলি পুনরায় সময়সূচী করুন** বন্ধ করুন।
+যখন এটি বন্ধ করা হয়, তখন কার্ডগুলি একটি সাধারণ "পূর্বরূপ মোডে" দেখানো হয়, এবং
+যখন সেগুলিকে তাদের আসল ডেকে ফিরিয়ে আনা হয়, তখন সেগুলিকে তারা যেমন শুরু করেছিল ঠিক তেমনই ফিরিয়ে দেওয়া হয়।
 
-## Catching Up
+## ধরা পড়া
 
-Filtered decks can be useful for catching up when you've fallen behind
-in your reviews. One Anki user describes the way they use the filtered
-decks to catch up as follows:
+যখন আপনি আপনার রিভিউতে পিছিয়ে পড়েন তখন ফিল্টার করা ডেকগুলি ধরা পড়ার জন্য সহায়ক হতে পারে।
+একজন আঙ্কি ব্যবহারকারী ফিল্টার করা ডেকগুলি কীভাবে ব্যবহার করেন তা নিম্নরূপ বর্ণনা করেছেন:
 
-    I did this for a backlog of 800 cards with filtered subdecks. Worked
-    very well for me.
+    আমি এটি ফিল্টার করা সাবডেক সহ 800টি কার্ডের একটি ব্যাকলগের জন্য করেছি। আমার জন্য খুব ভাল কাজ করেছে।
 
-    Just Due filter with: "is:due prop:due>-7"
+    শুধুমাত্র বাকি ফিল্টার সহ: "is:due prop:due>-7"
 
-    Over Due filter with: "is:due prop:due<=-7"
+    বকেয়া ফিল্টার সহ: "is:due prop:due<=-7"
 
-    The Just Due deck will then contain cards that became due in the past
-    week. That's the deck you should study every day as it gets the cards
-    that become due regularly. With this you can study as if there weren't
-    any backlog.
+    তারপর শুধুমাত্র বাকি ডেকটিতে গত সপ্তাহে বাকি থাকা কার্ডগুলি থাকবে।
+    এটি সেই ডেক যা আপনাকে প্রতিদিন অধ্যয়ন করা উচিত কারণ এটি নিয়মিতভাবে বাকি
+    থাকা কার্ডগুলি পায়। এর মাধ্যমে আপনি এমনভাবে অধ্যয়ন করতে পারবেন যেন কোনও ব্যাকলগ
+    নেই।
 
-    The Over Due deck will contain your backlog — cards which you didn't
-    study in time. You can study them the same way you would study new
-    cards. They go back into the regular cards, so the number of overdue
-    will never grow as long as you keep your Just Due deck in check.
+    বকেয়া ডেকটিতে আপনার ব্যাকলগ থাকবে — যে কার্ডগুলি আপনি সময়মতো অধ্যয়ন করেননি।
+    আপনি নতুন কার্ডগুলির মতো একইভাবে সেগুলিকে অধ্যয়ন করতে পারেন। তারা নিয়মিত কার্ডগুলিতে
+    ফিরে যায়, তাই যতক্ষণ আপনি আপনার শুধুমাত্র বাকি ডেকটি নিয়ন্ত্রণে রাখবেন ততক্ষণ
+    বকেয়ার সংখ্যা বাড়বে না।
 
-    How long it takes depends on how many overdue cards you study each day
-    in addition to the ones that become due regularly. You can still motor
-    through them when you feel like it - or you can do a specific number per
-    day like you would for new cards. Up to you.
+    কতক্ষণ লাগে তা নির্ভর করে আপনি নিয়মিতভাবে বাকি থাকা কার্ডগুলির অতিরিক্ত
+    প্রতিদিন কতগুলি বকেয়া কার্ড অধ্যয়ন করেন তার উপর। আপনি যখন এটি চান তখন
+    আপনি সেগুলির মাধ্যমে কাজ চালিয়ে যেতে পারেন - অথবা আপনি নতুন কার্ডগুলির মতো
+    প্রতিদিন একটি নির্দিষ্ট সংখ্যক করতে পারেন। এটি আপনার উপর নির্ভর করে।

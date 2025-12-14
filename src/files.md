@@ -1,320 +1,292 @@
-# Managing Files and Your Collection
+# ফাইল এবং আপনার সংগ্রহ পরিচালনা
 
 <!-- toc -->
 
-## Checking Your Collection
+## আপনার সংগ্রহ পরীক্ষা করা
 
-It is a good idea to occasionally check your collection file for
-problems. You can do this via the Tools&gt;Check Database menu item.
-Checking the database ensures the file has not been corrupted, rebuilds some
-internal structures, and optimizes the file.
+সমস্যাগুলির জন্য আপনার সংগ্রহ ফাইলটি মাঝে মাঝে পরীক্ষা করা একটি ভাল ধারণা। আপনি টুলস > চেক ডেটাবেস মেনু আইটেমের মাধ্যমে এটি করতে পারেন।
+ডেটাবেস পরীক্ষা করা নিশ্চিত করে যে ফাইলটি দূষিত হয়নি, কিছু অভ্যন্তরীণ কাঠামো পুনর্নির্মাণ করে এবং ফাইলটিকে অপ্টিমাইজ করে।
 
-When you check the database, your tag list is also rebuilt. When you
-delete individual decks or cards, Anki does not update the list of used
-tags, as it's inefficient to do so. If you want to clear old tags out
-from the list that are no longer in use, checking your database is the
-way to do it.
+যখন আপনি ডেটাবেস পরীক্ষা করেন, তখন আপনার ট্যাগের তালিকাও পুনর্গঠিত হয়। যখন আপনি
+পৃথক ডেক বা কার্ড মুছে ফেলেন, তখন আঙ্কি ব্যবহৃত ট্যাগের তালিকা আপডেট করে না, কারণ এটি করা অদক্ষ। যদি আপনি পুরানো ট্যাগগুলি তালিকা থেকে মুছে ফেলতে চান যা আর ব্যবহার করা হচ্ছে না, তাহলে আপনার ডেটাবেস পরীক্ষা করা হল এটি করার উপায়।
 
-Please note that Anki will automatically optimize your collection once
-every 2 weeks. This optimization ensures the collection performs well,
-but it does not check for errors or rebuild the tag list when
-automatically optimizing.
+দয়া করে মনে রাখবেন যে আঙ্কি প্রতি 2 সপ্তাহে স্বয়ংক্রিয়ভাবে আপনার সংগ্রহ অপ্টিমাইজ করবে। এই অপ্টিমাইজেশন নিশ্চিত করে যে সংগ্রহটি ভালভাবে কাজ করে, তবে এটি স্বয়ংক্রিয়ভাবে অপ্টিমাইজ করার সময় ত্রুটি পরীক্ষা করে না বা ট্যাগের তালিকা পুনর্নির্মাণ করে না।
 
 <a id="file-locations"></a>
 
-## User Data
+## ব্যবহারকারীর ডেটা
 
-On **Windows**, the latest Anki versions store your collection files in your
-appdata folder. You can access it by opening the file manager, and
-typing `%APPDATA%\Anki2` in the location field. Older versions of Anki
-stored your Anki files in a folder called `Anki` in your `Documents`
-folder.
+**উইন্ডোজ** এ, আঙ্কির সর্বশেষ সংস্করণগুলি আপনার সংগ্রহ ফাইলগুলি আপনার
+অ্যাপডাটা ফোল্ডারে সংরক্ষণ করে। আপনি ফাইল ম্যানেজার খুলে এবং
+লোকেশন ফিল্ডে `%APPDATA%\Anki2` টাইপ করে এটি অ্যাক্সেস করতে পারেন। আঙ্কির পুরানো সংস্করণগুলি
+আপনার আঙ্কি ফাইলগুলি আপনার `Documents` ফোল্ডারে `Anki` নামক একটি ফোল্ডারে সংরক্ষণ করত।
 
-On **Mac** computers, recent Anki versions store all user data in the
-`~/Library/Application Support/Anki2` folder. The Library folder is
-hidden by default, but can be revealed in Finder by holding down the
-option key while clicking on the Go menu. If you're on an older Anki
-version, your Anki files will be in your `Documents/Anki` folder.
+**ম্যাক** কম্পিউটারে, সাম্প্রতিক আঙ্কি সংস্করণগুলি সমস্ত ব্যবহারকারীর ডেটা
+`~/Library/Application Support/Anki2` ফোল্ডারে সংরক্ষণ করে। লাইব্রেরি ফোল্ডারটি
+ডিফল্টরূপে লুকানো থাকে, তবে গো মেনুতে ক্লিক করার সময় অপশন কী চেপে ধরে ফাইন্ডারে
+প্রকাশ করা যেতে পারে। আপনি যদি একটি পুরানো আঙ্কি সংস্করণ ব্যবহার করেন, তাহলে আপনার আঙ্কি ফাইলগুলি আপনার `Documents/Anki` ফোল্ডারে থাকবে।
 
-On **Linux**, recent Anki versions store your user data in
-`~/.local/share/Anki2`, or `$XDG_DATA_HOME/Anki2` if you have set a
-custom data path. If you are using a third-party **Flatpak** build,
-your files will be in `~/.var/app/net.ankiweb.Anki/data/Anki2/`.
-Older versions of Anki stored your files in
-`~/Documents/Anki` or `~/Anki`.
+**লিনাক্স** এ, সাম্প্রতিক আঙ্কি সংস্করণগুলি আপনার ব্যবহারকারীর ডেটা
+`~/.local/share/Anki2` এ, অথবা `$XDG_DATA_HOME/Anki2` এ সংরক্ষণ করে যদি আপনি একটি
+কাস্টম ডেটা পাথ সেট করে থাকেন। আপনি যদি একটি তৃতীয় পক্ষের **ফ্ল্যাটপ্যাক** বিল্ড
+ব্যবহার করেন, তাহলে আপনার ফাইলগুলি `~/.var/app/net.ankiweb.Anki/data/Anki2/` এ থাকবে।
+আঙ্কির পুরানো সংস্করণগুলি আপনার ফাইলগুলি
+`~/Documents/Anki` বা `~/Anki` এ সংরক্ষণ করত।
 
-Within the Anki folder, the program-level and profile-level preferences
-are stored in a file called `prefs.db`.
+আঙ্কি ফোল্ডারের মধ্যে, প্রোগ্রাম-স্তরের এবং প্রোফাইল-স্তরের পছন্দগুলি
+`prefs.db` নামক একটি ফাইলে সংরক্ষিত থাকে।
 
-There is also a separate folder for each profile. The folder contains:
+প্রতিটি প্রোফাইলের জন্য একটি পৃথক ফোল্ডারও রয়েছে। ফোল্ডারটিতে রয়েছে:
 
-- Your notes, decks, cards and so on in a file called `collection.anki2`
+- আপনার নোট, ডেক, কার্ড এবং আরও অনেক কিছু `collection.anki2` নামক একটি ফাইলে
 
-- Your audio and images in a `collection.media` folder
+- আপনার অডিও এবং ছবিগুলি একটি `collection.media` ফোল্ডারে
 
-- A backups folder
+- একটি ব্যাকআপ ফোল্ডার
 
-- Some system files
+- কিছু সিস্টেম ফাইল
 
-You should never copy or move your collection while Anki is open. Doing
-so could cause your collection to become corrupt. Please do not move or
-modify the other files in the folder either.
+আঙ্কি খোলা থাকাকালীন আপনার সংগ্রহটি অনুলিপি বা সরিয়ে ফেলা উচিত নয়। এটি করলে
+আপনার সংগ্রহ দূষিত হতে পারে। দয়া করে ফোল্ডারের অন্যান্য ফাইলগুলিও সরাবেন না বা
+পরিবর্তন করবেন না।
 
-## Program Files
+## প্রোগ্রাম ফাইল
 
-Anki's launcher is installed in the following locations by default:
+আঙ্কির লঞ্চার ডিফল্টরূপে নিম্নলিখিত স্থানগুলিতে ইনস্টল করা হয়:
 
-- Windows: `%LOCALAPPDATA%\Programs\Anki`
+- উইন্ডোজ: `%LOCALAPPDATA%\Programs\Anki`
 - macOS: `/Applications/Anki.app`
-- Linux: `/usr/local/share/anki`
+- লিনাক্স: `/usr/local/share/anki`
 
-When you install/update Anki with the launcher, it downloads support
-files and places them in the following locations:
+আপনি যখন লঞ্চার দিয়ে আঙ্কি ইনস্টল/আপডেট করেন, তখন এটি সমর্থন
+ফাইলগুলি ডাউনলোড করে এবং নিম্নলিখিত স্থানগুলিতে রাখে:
 
-- Windows: `%LOCALAPPDATA%\AnkiProgramFiles`
+- উইন্ডোজ: `%LOCALAPPDATA%\AnkiProgramFiles`
 - macOS: `~/Library/Application Support/AnkiProgramFiles`
-- Linux: `~/.local/share/AnkiProgramFiles`
+- লিনাক্স: `~/.local/share/AnkiProgramFiles`
 
-Removing that folder will cause the launcher to behave like a fresh install.
+সেই ফোল্ডারটি সরিয়ে ফেললে লঞ্চারটি নতুন ইনস্টলের মতো আচরণ করবে।
 
-The `AnkiProgramFiles` contains all the files needed to run Anki aside from
-the launcher. You can copy it to a different folder or system, and start
-Anki from the new location by opening `AnkiProgramFiles/.venv/bin/anki` (or
-`AnkiProgramFiles\.venv\scripts\anki` on Windows). If placed in the standard location on a new computer, the launcher will also be able to re-use the existing files, provided the files were copied with modification times preserved.
+`AnkiProgramFiles` এ লঞ্চার ছাড়া আঙ্কি চালানোর জন্য প্রয়োজনীয় সমস্ত ফাইল থাকে।
+আপনি এটি একটি ভিন্ন ফোল্ডার বা সিস্টেমে অনুলিপি করতে পারেন এবং
+`AnkiProgramFiles/.venv/bin/anki` (বা উইন্ডোজে `AnkiProgramFiles\.venv\scripts\anki`) খুলে
+নতুন অবস্থান থেকে আঙ্কি শুরু করতে পারেন। নতুন কম্পিউটারে স্ট্যান্ডার্ড অবস্থানে
+রাখলে, ফাইলগুলি পরিবর্তন করার সময় সংরক্ষিত থাকলে লঞ্চারটি বিদ্যমান ফাইলগুলিও
+পুনরায় ব্যবহার করতে সক্ষম হবে।
 
-See the flash drive section below for more.
+আরও তথ্যের জন্য নীচে ফ্ল্যাশ ড্রাইভ বিভাগটি দেখুন।
 
-## Startup Options
+## স্টার্টআপ অপশন
 
-If you have made a destructive change on one computer and have an
-undamaged copy on another computer, you may wish to start Anki without
-syncing in order to use the full sync option without first downloading
-the changes. Similarly, if you are experiencing problems with Anki, you
-might need to (or might be instructed to) disable add-ons temporarily to
-see if one might be causing the problem. To do both of these things at the same time, you can
-open Anki in safe mode by holding down the <kbd>Shift</kbd> key while starting Anki. Keep holding <kbd>Shift</kbd> down until the on-screen message informs you that Anki has started in safe mode. If you're on Linux and that didn't work, run 'anki --safemode'.
+যদি আপনি একটি কম্পিউটারে একটি বিধ্বংসী পরিবর্তন করে থাকেন এবং
+অন্য কম্পিউটারে একটি অক্ষত অনুলিপি থাকে, তাহলে আপনি পরিবর্তনগুলি প্রথমে ডাউনলোড না করে
+সম্পূর্ণ সিঙ্ক বিকল্পটি ব্যবহার করার জন্য সিঙ্ক না করে আঙ্কি শুরু করতে চাইতে পারেন।
+একইভাবে, যদি আপনি আঙ্কি নিয়ে সমস্যা অনুভব করেন, তাহলে আপনাকে হয়তো সাময়িকভাবে
+অ্যাড-অনগুলি অক্ষম করতে হতে পারে (বা নির্দেশ দেওয়া হতে পারে)
+দেখতে যে কোনও একটি সমস্যা সৃষ্টি করছে কিনা। এই দুটি কাজ একই সাথে করার জন্য,
+আপনি আঙ্কি শুরু করার সময় <kbd>Shift</kbd> কী চেপে ধরে রেখে
+আঙ্কি সেফ মোডে খুলতে পারেন। আঙ্কি সেফ মোডে শুরু হয়েছে বলে অন-স্ক্রিন বার্তাটি
+না আসা পর্যন্ত <kbd>Shift</kbd> চেপে ধরে রাখুন। আপনি যদি লিনাক্সে থাকেন এবং এটি কাজ না করে, তাহলে 'anki --safemode' চালান।
 
-It is possible to specify a custom folder location during startup. This
-is an advanced feature that is primarily intended to be used with
-portable installations, and we recommend you use the default location in
-most circumstances.
+স্টার্টআপের সময় একটি কাস্টম ফোল্ডার অবস্থান নির্দিষ্ট করা সম্ভব। এটি
+একটি উন্নত বৈশিষ্ট্য যা প্রাথমিকভাবে পোর্টেবল ইনস্টলেশনগুলির সাথে
+ব্যবহার করার উদ্দেশ্যে, এবং আমরা আপনাকে বেশিরভাগ পরিস্থিতিতে ডিফল্ট অবস্থান
+ব্যবহার করার পরামর্শ দিই।
 
-The syntax to specify an alternate folder is as follows:
+একটি বিকল্প ফোল্ডার নির্দিষ্ট করার সিনট্যাক্সটি নিম্নরূপ:
 
     anki -b /path/to/anki/folder
 
-- If you have multiple profiles, you can pass -p &lt;name&gt; to load
-  a specific profile.
-- If you pass -p some-fake-name, Anki will show the profile screen on startup.
-  If no profile is provided, the last-used profile is loaded.
+- যদি আপনার একাধিক প্রোফাইল থাকে, তাহলে আপনি একটি নির্দিষ্ট প্রোফাইল লোড করতে -p <name> পাস করতে পারেন।
+- যদি আপনি -p some-fake-name পাস করেন, তাহলে আঙ্কি স্টার্টআপে প্রোফাইল স্ক্রিন দেখাবে।
+  যদি কোনো প্রোফাইল সরবরাহ না করা হয়, তাহলে শেষ ব্যবহৃত প্রোফাইল লোড করা হয়।
 
-- To change the interface language, use -l &lt;iso 639-1 language
-  code&gt;, such as "-l ja" for Japanese.
+- ইন্টারফেস ভাষা পরিবর্তন করতে, -l <iso 639-1 ভাষা কোড> ব্যবহার করুন,
+  যেমন জাপানিদের জন্য "-l ja"।
 
-If you always want to use a custom folder location, you can modify your
-shortcut to Anki. On Windows, right-click on the shortcut, choose
-Properties, select the Shortcut tab, and add "-b
-\\path\\to\\data\\folder" after the path to the program, which should
-leave you with something like
+যদি আপনি সর্বদা একটি কাস্টম ফোল্ডার অবস্থান ব্যবহার করতে চান, তাহলে আপনি আপনার
+আঙ্কির শর্টকাটটি পরিবর্তন করতে পারেন। উইন্ডোজে, শর্টকাটের উপর ডান-ক্লিক করুন,
+প্রপার্টিজ নির্বাচন করুন, শর্টকাট ট্যাব নির্বাচন করুন এবং প্রোগ্রামটির পাথের পরে
+"-b \\path\\to\\data\\folder" যোগ করুন, যা আপনাকে এমন কিছুতে নিয়ে যাবে:
 
     "C:\Program Files\Anki\anki.exe" -b "C:\AnkiDataFolder"
 
-You can also use this technique with the -l option to easily use Anki in
-different languages.
+আপনি বিভিন্ন ভাষায় আঙ্কি সহজে ব্যবহার করার জন্য -l অপশন সহ এই কৌশলটি ব্যবহার করতে পারেন।
 
-On Windows, you should use a backslash (\\) not a forward slash (/).
+উইন্ডোজে, আপনাকে একটি ব্যাকস্ল্যাশ (\\) ব্যবহার করতে হবে, ফরোয়ার্ড স্ল্যাশ (/) নয়।
 
-On a Mac there is no easy way to alter the behaviour when clicking on
-the Anki icon, but it is possible to start Anki with a custom base
-folder from a terminal:
+ম্যাকে আঙ্কি আইকনে ক্লিক করার সময় আচরণ পরিবর্তন করার কোনো সহজ উপায় নেই,
+তবে একটি টার্মিনাল থেকে একটি কাস্টম বেস ফোল্ডার সহ আঙ্কি শুরু করা সম্ভব:
 
     open /Applications/Anki.app --args -b ~/myankifolder
 
-Alternatively, you can define the environment variable "ANKI_BASE".
-On Windows, you can define the environment variable with:
+বিকল্পভাবে, আপনি "ANKI_BASE" পরিবেশ ভেরিয়েবল সংজ্ঞায়িত করতে পারেন।
+উইন্ডোজে, আপনি নিম্নলিখিতভাবে পরিবেশ ভেরিয়েবল সংজ্ঞায়িত করতে পারেন:
 
     set "ANKI_BASE=C:/path/to/AnkiDataFolder"
 
-On Linux and macOS, you can use:
+লিনাক্স এবং macOS এ, আপনি ব্যবহার করতে পারেন:
 
     export ANKI_BASE="/path/to/AnkiDataFolder"
 
-## DropBox and File Syncing
+## ড্রপবক্স এবং ফাইল সিঙ্কিং
 
-We do not recommend you sync your Anki folder directly with a
-third-party synchronization service, as it can lead to database
-corruption when files are synced while in use.
+আমরা আপনাকে আপনার আঙ্কি ফোল্ডারটি সরাসরি একটি
+তৃতীয় পক্ষের সিঙ্ক্রোনাইজেশন পরিষেবার সাথে সিঙ্ক করার পরামর্শ দিই না, কারণ এটি
+ফাইলগুলি ব্যবহার করার সময় সিঙ্ক করা হলে ডেটাবেস দূষিত হতে পারে।
 
-If you just want to synchronize your media, you can link external
-folders into services like DropBox. Please see [DropboxWiki: Sync
-Folders Outside Dropbox (archive.org)][dropboxwiki-sync-other]
-for more info.
+যদি আপনি কেবল আপনার মিডিয়া সিঙ্ক্রোনাইজ করতে চান, তাহলে আপনি ড্রপবক্সের মতো
+পরিষেবাগুলিতে বাহ্যিক ফোল্ডারগুলি লিঙ্ক করতে পারেন। আরও তথ্যের জন্য অনুগ্রহ করে
+[ড্রপবক্সউইকি: ড্রপবক্সের বাইরে ফোল্ডার সিঙ্ক করুন (archive.org)][dropboxwiki-sync-other] দেখুন।
 
 [dropboxwiki-sync-other]: http://web.archive.org/web/20180919153730/http://www.dropboxwiki.com/tips-and-tricks/sync-other-folders
 
-If you wish to keep your collection in sync as well, it is strongly
-recommended that you create a script that copies your files from your
-synced folder to a local folder, launches Anki, and then copies the
-files back when Anki is closed. This will ensure that the files are
-never synchronized while they are open.
+যদি আপনি আপনার সংগ্রহও সিঙ্কে রাখতে চান, তবে দৃঢ়ভাবে সুপারিশ করা হয় যে আপনি একটি স্ক্রিপ্ট তৈরি করুন যা আপনার ফাইলগুলি আপনার সিঙ্ক করা ফোল্ডার থেকে একটি স্থানীয় ফোল্ডারে কপি করে, আঙ্কি চালু করে, এবং তারপর আঙ্কি বন্ধ হলে ফাইলগুলি আবার কপি করে। এটি নিশ্চিত করবে যে ফাইলগুলি খোলা থাকাকালীন কখনও সিঙ্ক্রোনাইজ করা হবে না।
 
-## Network Filesystems
+## নেটওয়ার্ক ফাইলসিস্টেম
 
-We strongly recommend you have Anki store your files on a local hard
-disk, as network filesystems can lead to database corruption. If a
-network filesystem is your only option, regular use of Tools&gt;Check
-Database to detect corruption is recommended.
+আমরা দৃঢ়ভাবে সুপারিশ করি যে আপনি আঙ্কি আপনার ফাইলগুলি একটি স্থানীয় হার্ডডিস্কে সংরক্ষণ করুন, কারণ নেটওয়ার্ক ফাইলসিস্টেম ডেটাবেস দূষিত করতে পারে। যদি একটি নেটওয়ার্ক ফাইলসিস্টেমই আপনার একমাত্র বিকল্প হয়, তবে দুর্নীতি সনাক্ত করতে টুলস>চেক ডেটাবেস এর নিয়মিত ব্যবহার সুপারিশ করা হয়।
 
-## Running from a Flash Drive
+## ফ্ল্যাশ ড্রাইভ থেকে চালানো
 
-On Windows, Anki can be installed on a USB / flash drive and run as a
-portable application. The following example assumes your USB drive is
-drive E; adjust as necessary.
+উইন্ডোজে, আঙ্কি একটি USB / ফ্ল্যাশ ড্রাইভে ইনস্টল করা যেতে পারে এবং একটি পোর্টেবল অ্যাপ্লিকেশন হিসাবে চালানো যেতে পারে। নিম্নলিখিত উদাহরণটি ধরে নেয় যে আপনার USB ড্রাইভটি ড্রাইভ E; প্রয়োজন অনুযায়ী সামঞ্জস্য করুন।
 
-WARNING: The drive letter must be the same on all devices. If you set this up for drive E,
-it won't work for a flash drive mapped to drive D for example.
+সতর্কতা: ড্রাইভ লেটারটি সমস্ত ডিভাইসে একই হতে হবে। যদি আপনি এটি ড্রাইভ E এর জন্য সেট করেন,
+তবে এটি ড্রাইভ D এ ম্যাপ করা ফ্ল্যাশ ড্রাইভের জন্য কাজ করবে না।
 
-WARNING: Media syncing with AnkiWeb may not work if your flash drive is formatted
-as FAT32. Please format the drive as NTFS to ensure media syncs
-correctly.
+সতর্কতা: আপনার ফ্ল্যাশ ড্রাইভ FAT32 হিসাবে ফর্ম্যাট করা থাকলে আঙ্কিওয়েবের সাথে মিডিয়া সিঙ্কিং কাজ নাও করতে পারে। মিডিয়া সঠিকভাবে সিঙ্ক হয় তা নিশ্চিত করতে দয়া করে ড্রাইভটিকে NTFS হিসাবে ফর্ম্যাট করুন।
 
-1. Download the latest Anki launcher, and install it in a custom location:
-   `E:\Anki\Launcher`. Not `E:\Anki\Launcher\Anki`.
-2. When the launcher appears, close it without installing.
-3. Put the following in a file `E:\Anki\Anki.bat`:
+1.  সর্বশেষ আঙ্কি লঞ্চার ডাউনলোড করুন এবং এটি একটি কাস্টম অবস্থানে ইনস্টল করুন:
+    `E:\Anki\Launcher`। `E:\Anki\Launcher\Anki` নয়।
+2.  লঞ্চারটি প্রদর্শিত হলে, ইনস্টল না করে এটি বন্ধ করুন।
+3.  নিম্নলিখিতগুলি একটি ফাইল `E:\Anki\Anki.bat` এ রাখুন:
 
-```bat
-@echo off
-echo Starting Anki...
-set USB_ROOT=%~dp0
-set ANKI_LAUNCHER_VENV_ROOT=%USB_ROOT%\AnkiProgramFiles
-set ANKI_LAUNCHER=%USB_ROOT%\Launcher\anki
-set ANKI_BASE=%USB_ROOT%\AnkiData
-start /b %ANKI_LAUNCHER%
-```
+    ```bat
+    @echo off
+    echo Starting Anki...
+    set USB_ROOT=%~dp0
+    set ANKI_LAUNCHER_VENV_ROOT=%USB_ROOT%\AnkiProgramFiles
+    set ANKI_LAUNCHER=%USB_ROOT%\Launcher\anki
+    set ANKI_BASE=%USB_ROOT%\AnkiData
+    start /b %ANKI_LAUNCHER%
+    ```
 
-4. Double-click on the .bat file you created, and install Anki as normal.
-5. You can now double-click on the .bat file to run Anki from other machines.
+4.  আপনি তৈরি করা .bat ফাইলটিতে ডাবল-ক্লিক করুন এবং স্বাভাবিকভাবে আঙ্কি ইনস্টল করুন।
+5.  আপনি এখন অন্যান্য মেশিন থেকে আঙ্কি চালানোর জন্য .bat ফাইলটিতে ডাবল-ক্লিক করতে পারেন।
 
-Tools>Upgrade/Downgrade will continue to function, but only when your machine
-has access to the internet.
+টুলস>আপগ্রেড/ডাউনগ্রেড কাজ চালিয়ে যাবে, তবে শুধুমাত্র যখন আপনার মেশিনে ইন্টারনেটে অ্যাক্সেস থাকবে।
 
-## Backups
+## ব্যাকআপ
 
-Please see [this section](./backups.md).
+অনুগ্রহ করে [এই বিভাগটি](./backups.md) দেখুন।
 
-## Inaccessible Harddisk
+## অ্যাক্সেসযোগ্য নয় এমন হার্ডডিস্ক
 
-If Anki can't write to files in the [Anki folder](#user-data), a message
-will be displayed on startup saying that Anki can't write to the
-harddisk, and Anki will close. If you're unsure how to fix the
-permissions, please contact someone near you who is knowledgeable about
-computers and can help you out.
+যদি আঙ্কি [আঙ্কি ফোল্ডারে](#user-data) ফাইলগুলিতে লিখতে না পারে, তবে স্টার্টআপে একটি বার্তা প্রদর্শিত হবে যে আঙ্কি হার্ডডিস্কে লিখতে পারছে না, এবং আঙ্কি বন্ধ হয়ে যাবে। আপনি যদি অনুমতিগুলি কীভাবে ঠিক করবেন তা নিশ্চিত না হন, তাহলে অনুগ্রহ করে আপনার কাছাকাছি এমন কারও সাথে যোগাযোগ করুন যিনি কম্পিউটার সম্পর্কে জ্ঞানী এবং আপনাকে সাহায্য করতে পারেন।
 
-## Permissions of Temp Folder
+## টেম্প ফোল্ডারের অনুমতি
 
-Anki uses the system's temporary folder to store temporary data. If the
-permissions of this folder have been changed from the default settings
-by a rogue app or buggy antivirus app, Anki will not function properly.
+আঙ্কি অস্থায়ী ডেটা সংরক্ষণের জন্য সিস্টেমের অস্থায়ী ফোল্ডার ব্যবহার করে। যদি
+একটি দূষিত অ্যাপ বা বাগি অ্যান্টিভাইরাস অ্যাপ দ্বারা এই ফোল্ডারের অনুমতিগুলি
+ডিফল্ট সেটিংস থেকে পরিবর্তন করা হয়, তাহলে আঙ্কি সঠিকভাবে কাজ করবে না।
 
-If you're on a Windows 7 machine, the general steps to fix the problem
-are listed below. As this is somewhat complicated, please ask someone
-knowledgeable about Windows if you are not sure.
+যদি আপনি একটি উইন্ডোজ 7 মেশিনে থাকেন, তাহলে সমস্যাটি ঠিক করার সাধারণ পদক্ষেপগুলি
+নীচে তালিকাভুক্ত করা হয়েছে। যেহেতু এটি কিছুটা জটিল, যদি আপনি নিশ্চিত না হন তবে
+দয়া করে উইন্ডোজ সম্পর্কে জ্ঞানী কাউকে জিজ্ঞাসা করুন।
 
-1. Click on the start bar, and type in %temp% (including the percents),
-   then hit <kbd>Enter</kbd>.
+1.  স্টার্ট বারে ক্লিক করুন, এবং `%temp%` (শতাংশ সহ) টাইপ করুন,
+    তারপর <kbd>Enter</kbd> চাপুন।
 
-2. Go up one folder, and locate the temp folder. Right click on it, and
-   choose Properties.
+2.  এক ফোল্ডার উপরে যান, এবং টেম্প ফোল্ডারটি খুঁজুন। এর উপর ডান-ক্লিক করুন, এবং
+    প্রপার্টিজ নির্বাচন করুন।
 
-3. In the security tab, click on Advanced.
+3.  সিকিউরিটি ট্যাবে, অ্যাডভান্সড এ ক্লিক করুন।
 
-4. Click on the Owner tab. If you're not listed as the owner, click the
-   button to take ownership.
+4.  ওনার ট্যাবে ক্লিক করুন। যদি আপনি মালিক হিসাবে তালিকাভুক্ত না হন, তাহলে মালিকানা নিতে
+    বোতামটিতে ক্লিক করুন।
 
-5. On the permissions tab, ensure that you have full control. On a
-   default W7 install the control will actually be inherited from
-   c:\\users\\your-username.
+5.  পারমিশন ট্যাবে, নিশ্চিত করুন যে আপনার সম্পূর্ণ নিয়ন্ত্রণ আছে। একটি
+    ডিফল্ট W7 ইনস্টলেশনে নিয়ন্ত্রণটি আসলে
+    c:\users\your-username থেকে উত্তরাধিকার সূত্রে প্রাপ্ত হবে।
 
-## Corrupt Collections
+## দূষিত সংগ্রহ
 
-Anki uses a file format that is robust against program and computer
-crashes, but it's still possible for your collection to become corrupt
-if the files are modified while Anki is open, stored on a network drive,
-or corrupted by a bug.
+আঙ্কি একটি ফাইল ফরম্যাট ব্যবহার করে যা প্রোগ্রাম এবং কম্পিউটার
+ক্র্যাশের বিরুদ্ধে শক্তিশালী, তবে ফাইলগুলি আঙ্কি খোলা থাকাকালীন
+পরিবর্তন করা হলে, একটি নেটওয়ার্ক ড্রাইভে সংরক্ষণ করা হলে, বা একটি বাগ দ্বারা
+দূষিত হলে আপনার সংগ্রহটি দূষিত হতে পারে।
 
-When you run Tools&gt;Check Database, you will receive a message if Anki
-detects the file has been corrupted. **The best way to recover from this
-is to restore from the most recent [automatic backup](#backups)**, but
-if your backup is too old, then you can attempt to repair the corruption
-instead.
+যখন আপনি টুলস > চেক ডেটাবেস চালান, তখন আঙ্কি যদি ফাইলটি দূষিত হয়েছে
+সনাক্ত করে তবে আপনি একটি বার্তা পাবেন। **এটি থেকে পুনরুদ্ধার করার সেরা উপায় হল
+সবচেয়ে সাম্প্রতিক [স্বয়ংক্রিয় ব্যাকআপ](#backups) থেকে পুনরুদ্ধার করা**, তবে
+যদি আপনার ব্যাকআপ খুব পুরানো হয়, তাহলে আপনি দুর্নীতির মেরামত করার চেষ্টা করতে পারেন
+পরিবর্তে।
 
-On Linux, make sure sqlite3 is installed. On a Mac, it should be
-installed already. On Windows, download
-<http://www.sqlite.org/sqlite-3_6_23.zip>.
+লিনাক্সে, নিশ্চিত করুন sqlite3 ইনস্টল করা আছে। ম্যাক-এ, এটি
+ইতিমধ্যে ইনস্টল করা উচিত। উইন্ডোজে, <http://www.sqlite.org/sqlite-3_6_23.zip> ডাউনলোড করুন।
 
-Next, create a backup of your collection.anki2 file, in case something
-goes wrong with the steps below.
+এরপরে, আপনার collection.anki2 ফাইলটির একটি ব্যাকআপ তৈরি করুন, যদি
+নীচের পদক্ষেপগুলির সাথে কিছু ভুল হয়।
 
-### Linux/macOS
+### লিনাক্স/macOS
 
-Open a terminal, change to the folder your collection is located in, and
-type:
+একটি টার্মিনাল খুলুন, আপনার সংগ্রহ যে ফোল্ডারে অবস্থিত সেখানে যান এবং
+টাইপ করুন:
 
     sqlite3 collection.anki2 .dump > dump.txt
 
-Open the resulting dump.txt file in a text editor, and look at the final
-line. If it reads "rollback;", change it to "commit;"
+ফলস্বরূপ dump.txt ফাইলটি একটি টেক্সট এডিটরে খুলুন এবং শেষ লাইনটি দেখুন।
+যদি এটি "rollback;" পড়ে, তবে এটিকে "commit;" এ পরিবর্তন করুন।
 
-Then run the following in a terminal:
+তারপর একটি টার্মিনালে নিম্নলিখিতটি চালান:
 
     cat dump.txt | sqlite3 temp.file
 
-Make sure you use temp.file - do not put collection.anki2 on the right,
-or you will blank out the file. When you're done, proceed to the final
-step.
+নিশ্চিত করুন যে আপনি temp.file ব্যবহার করেছেন - ডানদিকে collection.anki2 রাখবেন না,
+অথবা আপনি ফাইলটি ফাঁকা করে দেবেন। যখন আপনার কাজ শেষ হবে, তখন চূড়ান্ত
+ধাপে এগিয়ে যান।
 
-### Windows
+### উইন্ডোজ
 
-Copy the `sqlite3.exe` program and your deck to your desktop. Then go to
-**Start&gt;Run** and type in `cmd.exe`.
+`sqlite3.exe` প্রোগ্রাম এবং আপনার ডেক আপনার ডেস্কটপে কপি করুন। তারপর
+**স্টার্ট > রান** এ যান এবং `cmd.exe` টাইপ করুন।
 
-If you're on a recent Windows, the command prompt may not start on your
-desktop. If you don't see desktop displayed in the command prompt, type
-something like the following, replacing "administrator" with your login
-name.
+আপনি যদি একটি সাম্প্রতিক উইন্ডোজে থাকেন, তাহলে কমান্ড প্রম্পট আপনার
+ডেস্কটপে শুরু নাও হতে পারে। যদি আপনি কমান্ড প্রম্পটে ডেস্কটপ প্রদর্শিত না
+দেখেন, তাহলে নিম্নলিখিতগুলির মতো কিছু টাইপ করুন, "administrator" কে আপনার লগইন
+নাম দিয়ে প্রতিস্থাপন করুন।
 
-    cd C:\Users\Administrator\Desktop
+    cd C:\Users\Administrator\Administrator\Desktop
 
-Then type:
+তারপর টাইপ করুন:
 
     sqlite3 collection.anki2 .dump > dump.txt
 
-Open the resulting dump.txt file in a text editor, and look at the final
-line. If it reads "rollback;", change it to "commit;"
+ফলস্বরূপ dump.txt ফাইলটি একটি টেক্সট এডিটরে খুলুন এবং শেষ লাইনটি দেখুন।
+যদি এটি "rollback;" পড়ে, তবে এটিকে "commit;" এ পরিবর্তন করুন।
 
-Then run the following in a terminal:
+তারপর একটি টার্মিনালে নিম্নলিখিতটি চালান:
 
     type dump.txt | sqlite3 temp.file
 
-Make sure you use temp.file - do not put collection.anki2 on the right,
-or you will blank out the file. When you're done, proceed to the final
-step.
+নিশ্চিত করুন যে আপনি temp.file ব্যবহার করেছেন - ডানদিকে collection.anki2 রাখবেন না,
+অথবা আপনি ফাইলটি ফাঁকা করে দেবেন। যখন আপনার কাজ শেষ হবে, তখন চূড়ান্ত
+ধাপে এগিয়ে যান।
 
-### Final Step
+### চূড়ান্ত পদক্ষেপ
 
-Check that you didn't get an error message, and that temp.file is not
-empty. The procedure optimizes the collection in the process, so it's
-normal for the new file to be somewhat smaller than the old one.
+নিশ্চিত করুন যে আপনি কোনও ত্রুটি বার্তা পাননি এবং temp.file খালি নয়।
+এই প্রক্রিয়াটি সংগ্রহটিকে অপ্টিমাইজ করে, তাই নতুন ফাইলটি পুরানো ফাইলটির
+চেয়ে কিছুটা ছোট হওয়া স্বাভাবিক।
 
-When you've confirmed the file is not empty:
+যখন আপনি নিশ্চিত হয়েছেন যে ফাইলটি খালি নয়:
 
-- rename the original collection.anki2 file to something else
+- মূল collection.anki2 ফাইলটির নাম পরিবর্তন করুন
 
-- rename temp.file to collection.anki2
+- temp.file এর নাম collection.anki2 তে পরিবর্তন করুন
 
-- move collection.anki2 back into your collection folder, overwriting
-  the old version
+- collection.anki2 কে আপনার সংগ্রহ ফোল্ডারে ফিরিয়ে আনুন,
+  পুরানো সংস্করণটি ওভাররাইট করে
 
-- start Anki and go to Tools&gt;Check Database to make sure the
-  collection has been successfully restored.
+- আঙ্কি শুরু করুন এবং টুলস > চেক ডেটাবেস এ যান যাতে নিশ্চিত হন যে
+  সংগ্রহটি সফলভাবে পুনরুদ্ধার করা হয়েছে।

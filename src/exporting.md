@@ -1,72 +1,70 @@
-# Exporting
+# এক্সপোর্ট করা
 
 <!-- toc -->
 
-Exporting allows you to save part of your collection as a text file or
-packaged Anki deck. To export, click the File menu and choose **Export**.
+এক্সপোর্ট করার মাধ্যমে আপনি আপনার সংগ্রহের কিছু অংশ একটি টেক্সট ফাইল বা
+প্যাকেজড আঙ্কি ডেক হিসাবে সংরক্ষণ করতে পারেন। এক্সপোর্ট করতে, ফাইল মেনুতে ক্লিক করুন এবং **এক্সপোর্ট** নির্বাচন করুন।
 
-## Text Files
+## টেক্সট ফাইল
 
-If you choose "Notes in Plain Text", Anki will write the contents of the
-notes into a text file. Each field is separated by a tab. If you edit
-the resulting file and don't modify the first field, you can later
-import that file back into Anki and Anki will update your notes based on
-your edits, provided you import back into the same note type.
+যদি আপনি "নোটস ইন প্লেইন টেক্সট" নির্বাচন করেন, আঙ্কি নোটগুলির বিষয়বস্তু একটি
+টেক্সট ফাইলে লিখবে। প্রতিটি ক্ষেত্র একটি ট্যাব দ্বারা পৃথক করা হয়। আপনি যদি
+ফলস্বরূপ ফাইলটি সম্পাদনা করেন এবং প্রথম ক্ষেত্রটি পরিবর্তন না করেন, তাহলে আপনি
+পরে সেই ফাইলটি আঙ্কি-তে আবার ইম্পোর্ট করতে পারবেন এবং আঙ্কি আপনার সম্পাদিত
+নোটগুলি আপডেট করবে, যদি আপনি একই নোটের ধরনের মধ্যে ইম্পোর্ট করেন।
 
-If you find yourself needing to edit the first field as well, you'll
-need to change the format of your note type so that the first field is
-an ID number rather than actual text. (You can install
-the [Add note id](https://ankiweb.net/shared/info/8897764)
-add-on to make this easier.)
+আপনি যদি প্রথম ক্ষেত্রটিও সম্পাদনা করার প্রয়োজন মনে করেন, তাহলে আপনাকে আপনার নোটের
+ধরনের ফরম্যাট পরিবর্তন করতে হবে যাতে প্রথম ক্ষেত্রটি আসল টেক্সটের পরিবর্তে একটি আইডি
+নম্বর হয়। (এটি সহজ করার জন্য আপনি [অ্যাড নোট আইডি](https://ankiweb.net/shared/info/8897764)
+অ্যাড-অন ইনস্টল করতে পারেন।)
 
-In order for formatting to be preserved when you import text back in,
-the text is exported with all the HTML formatting embedded in it.
+আপনি যখন টেক্সট ইম্পোর্ট করেন তখন ফরম্যাটিং সংরক্ষিত থাকে তা নিশ্চিত করার জন্য,
+টেক্সটটি HTML ফরম্যাটিং সহ এক্সপোর্ট করা হয়।
 
-## Packaged Decks
+## প্যাকেজড ডেক
 
-A "packaged deck" consists of cards, notes, note types, and any sounds or
-images bundled up into a file ending with .apkg or .colpkg. You can use
-packaged decks to transfer cards between people, or for backing up parts
-of your collection.
+একটি "প্যাকেজড ডেক" কার্ড, নোট, নোটের ধরন এবং যেকোনো সাউন্ড বা
+ছবি নিয়ে গঠিত যা .apkg বা .colpkg দিয়ে শেষ হয় এমন একটি ফাইলে বান্ডিল করা হয়। আপনি
+প্যাকেজড ডেকগুলি ব্যবহার করে মানুষজনের মধ্যে কার্ড স্থানান্তর করতে পারেন, অথবা আপনার
+সংগ্রহের কিছু অংশের ব্যাকআপের জন্য।
 
-There are two different kinds of packaged decks.
+প্যাকেজড ডেক দুই প্রকারের হয়।
 
-### Collection (.colpkg)
+### সংগ্রহ (.colpkg)
 
-When you export all decks with scheduling included, this is called a
-"collection package". Anki will copy your entire collection into a file
-ending in .colpkg, and place it on your desktop. A collection package is
-used to back up your collection, or copy it to another device.
+যখন আপনি সময়সূচী সহ সমস্ত ডেক এক্সপোর্ট করেন, তখন এটিকে
+"সংগ্রহ প্যাকেজ" বলা হয়। আঙ্কি আপনার সম্পূর্ণ সংগ্রহটি .colpkg দিয়ে শেষ হয়
+এমন একটি ফাইলে কপি করবে এবং এটি আপনার ডেস্কটপে রাখবে। একটি সংগ্রহ প্যাকেজ আপনার
+সংগ্রহের ব্যাকআপ নিতে বা অন্য ডিভাইসে কপি করতে ব্যবহৃত হয়।
 
-Collection packages created with previous versions of Anki were called
-collection.apkg.
+আঙ্কির পূর্ববর্তী সংস্করণগুলির সাথে তৈরি সংগ্রহ প্যাকেজগুলিকে
+collection.apkg বলা হত।
 
-When this file is later imported, Anki will delete all the current cards
-in the collection, and replace the collection with the items in the
-file. This is useful for copying your collection back and forth between
-devices.
+যখন এই ফাইলটি পরে ইম্পোর্ট করা হয়, তখন আঙ্কি সংগ্রহে থাকা সমস্ত বর্তমান কার্ড
+মুছে ফেলবে এবং ফাইলটিতে থাকা আইটেমগুলি দিয়ে সংগ্রহটি প্রতিস্থাপন করবে।
+এটি ডিভাইসগুলির মধ্যে আপনার সংগ্রহ কপি করার জন্য সহায়ক।
 
-Existing media in your collection is not deleted when you import a
-collection package. To delete unused media, use Tools&gt;Check Media.
+আপনার সংগ্রহে বিদ্যমান মিডিয়া একটি সংগ্রহ প্যাকেজ ইম্পোর্ট করার সময় মুছে ফেলা হয় না।
+ব্যবহৃত মিডিয়া মুছে ফেলার জন্য, টুলস>চেক মিডিয়া ব্যবহার করুন।
 
-If you choose Anki 2.1.50+ Collection Package format, imports and exports
-will be faster, and media files will be compressed, but the resulting
-.colpkg file will not be readable by older Anki clients.
+যদি আপনি আঙ্কি 2.1.50+ সংগ্রহ প্যাকেজ ফরম্যাট নির্বাচন করেন, তাহলে ইম্পোর্ট এবং এক্সপোর্ট
+দ্রুততর হবে এবং মিডিয়া ফাইলগুলি সংকুচিত হবে, তবে ফলস্বরূপ .colpkg ফাইলটি
+পুরোনো আঙ্কি ক্লায়েন্ট দ্বারা পড়া যাবে না।
 
-### Deck (.apkg)
+### ডেক (.apkg)
 
-Deck packages contain a single deck (and any child decks it may have).
-They have a filename ending with .apkg, but a filename other than
-collection.apkg. When you import a deck package, Anki will add the
-contents into your collection, rather than overwriting your collection.
+ডেক প্যাকেজগুলিতে একটি একক ডেক (এবং এর যেকোনো চাইল্ড ডেক) থাকে।
+এগুলির ফাইলের নাম .apkg দিয়ে শেষ হয়, তবে collection.apkg ছাড়া অন্য কোনো ফাইলের নাম।
+আপনি যখন একটি ডেক প্যাকেজ ইম্পোর্ট করেন, তখন আঙ্কি আপনার সংগ্রহটি ওভাররাইট না করে
+বিষয়বস্তু আপনার সংগ্রহে যোগ করবে।
 
-If some notes in the deck package have previously been imported, Anki
-will keep the version with the most recent modification time. So if you
-download an updated deck, the edits that have been made in the updated
-version will be made in your collection as well, but if you re-import an
-unchanged deck after making edits in your collection, the changes in
-your collection will be kept.
+যদি ডেক প্যাকেজের কিছু নোট পূর্বে ইম্পোর্ট করা হয়ে থাকে, তাহলে আঙ্কি
+সবচেয়ে সাম্প্রতিক পরিবর্তনের সময় সহ সংস্করণটি রাখবে। সুতরাং আপনি যদি
+একটি আপডেট করা ডেক ডাউনলোড করেন, তবে আপডেট করা সংস্করণে করা সম্পাদনাগুলি
+আপনার সংগ্রহেও করা হবে, তবে আপনি যদি আপনার সংগ্রহে সম্পাদনা করার পরে
+একটি অপরিবর্তিত ডেক পুনরায় ইম্পোর্ট করেন, তাহলে আপনার সংগ্রহের পরিবর্তনগুলি
+রাখা হবে।
 
-If you choose not to include scheduling information, Anki will assume
-that you are sharing the deck with other people, and will remove marked
-and leech tags so that they will have a clean copy of it.
+যদি আপনি সময়সূচী তথ্য অন্তর্ভুক্ত না করার সিদ্ধান্ত নেন, তাহলে আঙ্কি
+ধরে নেবে যে আপনি অন্য মানুষের সাথে ডেকটি শেয়ার করছেন এবং চিহ্নিত
+এবং লিচ ট্যাগগুলি সরিয়ে দেবে যাতে তাদের একটি পরিষ্কার কপি থাকে।

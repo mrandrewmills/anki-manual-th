@@ -1,3 +1,3 @@
-# Frequently Asked Questions
+# প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী
 
-Please see <https://faqs.ankiweb.net>
+অনুগ্রহ করে দেখুন <https://faqs.ankiweb.net>

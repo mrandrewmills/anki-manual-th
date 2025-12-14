@@ -1,83 +1,72 @@
-# Backups
+# ব্যাকআপ
 
 <!-- toc -->
 
-## Automatic backups
+## স্বয়ংক্রিয় ব্যাকআপ
 
-Anki will create automatic backups of your card data. These include the text
-on your cards and your scheduling information, but do not include sounds or
-image files.
+আঙ্কি আপনার কার্ড ডেটার স্বয়ংক্রিয় ব্যাকআপ তৈরি করবে। এর মধ্যে আপনার কার্ডের টেক্সট
+এবং আপনার সময়সূচী সংক্রান্ত তথ্য অন্তর্ভুক্ত থাকে, তবে সাউন্ড বা
+ছবি ফাইল অন্তর্ভুক্ত থাকে না।
 
-Automatic backups can be useful to recover from mistakes, but you should not
-rely solely on them. Because they are stored on your local device, they will not
-protect you if your device breaks or is stolen. We recommend you combine them with
-[manual backups](#manual-colpkg-backups).
+স্বয়ংক্রিয় ব্যাকআপ ভুল থেকে পুনরুদ্ধার করতে সহায়ক হতে পারে, তবে আপনার কেবল সেগুলির উপর
+নির্ভর করা উচিত নয়। যেহেতু এগুলি আপনার স্থানীয় ডিভাইসে সংরক্ষিত থাকে, তাই আপনার ডিভাইস ভেঙে গেলে বা চুরি হয়ে গেলে
+এগুলি আপনাকে রক্ষা করবে না। আমরা আপনাকে এগুলি [ম্যানুয়াল ব্যাকআপ](#manual-colpkg-backups)-এর সাথে একত্রিত করার পরামর্শ দিই।
 
-### Restoring
+### পুনরুদ্ধার
 
-To restore from an automatic backup:
+একটি স্বয়ংক্রিয় ব্যাকআপ থেকে পুনরুদ্ধার করতে:
 
-- Open Anki, and choose Switch Profile from the File menu.
-- Click on the "Open Backup" button.
-- Select the backup you wish to restore from.
+- আঙ্কি খুলুন, এবং ফাইল মেনু থেকে প্রোফাইল স্যুইচ (Switch Profile) নির্বাচন করুন।
+- "ব্যাকআপ খুলুন" (Open Backup) বোতামে ক্লিক করুন।
+- আপনি যে ব্যাকআপ থেকে পুনরুদ্ধার করতে চান তা নির্বাচন করুন।
 
 ```admonish warning
-When restoring from a backup, any changes made since the backup was created will be lost.
+একটি ব্যাকআপ থেকে পুনরুদ্ধার করার সময়, ব্যাকআপ তৈরি হওয়ার পর থেকে করা যেকোনো পরিবর্তন হারিয়ে যাবে।
 ```
 
-Anki disables automatic syncing and backups when you restore from a backup. Once you're
-happy that you've restored the correct backup, close and re-open Anki to return to normal.
+যখন আপনি একটি ব্যাকআপ থেকে পুনরুদ্ধার করেন তখন আঙ্কি স্বয়ংক্রিয় সিঙ্কিং এবং ব্যাকআপ অক্ষম করে। আপনি সঠিক ব্যাকআপ পুনরুদ্ধার করেছেন বলে নিশ্চিত হওয়ার পর, স্বাভাবিক অবস্থায় ফিরে আসার জন্য আঙ্কি বন্ধ করুন এবং পুনরায় খুলুন।
 
-### Creating
+### তৈরি করা
 
-Backups are created periodically. You can configure the time between backups
-in the [preferences](preferences.md) screen. The default is 30 minutes.
+ব্যাকআপ পর্যায়ক্রমে তৈরি করা হয়। আপনি [পছন্দ](preferences.md) স্ক্রিনে ব্যাকআপের মধ্যে সময় কনফিগার করতে পারেন। ডিফল্ট সময় 30 মিনিট।
 
-Certain operations will trigger a backup, even if the configured time has not
-elapsed yet:
+নির্দিষ্ট কিছু অপারেশন ব্যাকআপ ট্রিগার করবে, এমনকি যদি কনফিগার করা সময় এখনও
+অতিবাহিত না হয়:
 
-- A one-way sync download
-- Importing a .colpkg file using File>Import
-- Tools>Check Database
+- একমুখী সিঙ্ক ডাউনলোড
+- ফাইল>ইম্পোর্ট ব্যবহার করে একটি .colpkg ফাইল ইম্পোর্ট করা
+- টুলস>চেক ডেটাবেস
 
-After backups are two days old, Anki will start removing some of the older ones.
-You can control how many daily, weekly and monthly backups you'd like to keep.
+ব্যাকআপগুলি দুই দিন পুরনো হয়ে গেলে, আঙ্কি কিছু পুরোনো ব্যাকআপ সরাতে শুরু করবে।
+আপনি কতগুলি দৈনিক, সাপ্তাহিক এবং মাসিক ব্যাকআপ রাখতে চান তা নিয়ন্ত্রণ করতে পারেন।
 
-Backups created with 2.1.50 will not be importable into older Anki versions.
+ব্যাকআপগুলি 2.1.50 দিয়ে তৈরি ব্যাকআপগুলি পুরোনো আঙ্কি সংস্করণগুলিতে ইম্পোর্ট করা যাবে না।
 
-## Manual colpkg backups
+## ম্যানুয়াল colpkg ব্যাকআপ
 
-### Restoring
+### পুনরুদ্ধার
 
-You can restore from a manual backup by using File>Import.
+আপনি ফাইল>ইম্পোর্ট ব্যবহার করে একটি ম্যানুয়াল ব্যাকআপ থেকে পুনরুদ্ধার করতে পারেন।
 
-### Creating
+### তৈরি করা
 
-In Anki 2.1.50+, you can use File>Create Backup to trigger an immediate backup. This
-functions like regular automatic backups, and does not include media files.
+আঙ্কি 2.1.50+ সংস্করণে, আপনি একটি তাৎক্ষণিক ব্যাকআপ ট্রিগার করতে ফাইল>ব্যাকআপ তৈরি করুন (File>Create Backup) ব্যবহার করতে পারেন। এটি
+নিয়মিত স্বয়ংক্রিয় ব্যাকআপের মতো কাজ করে এবং এতে মিডিয়া ফাইল অন্তর্ভুক্ত থাকে না।
 
-To create a backup that includes your sounds and images:
+আপনার সাউন্ড এবং ছবি অন্তর্ভুক্ত একটি ব্যাকআপ তৈরি করতে:
 
-- Select Export from the File menu.
-- Ensure "Anki collection package (.colpkg)" is selected.
-- Enable the "include media" option.
+- ফাইল মেনু থেকে এক্সপোর্ট (Export) নির্বাচন করুন।
+- নিশ্চিত করুন যে "আঙ্কি কালেকশন প্যাকেজ (.colpkg)" নির্বাচিত আছে।
+- "মিডিয়া অন্তর্ভুক্ত করুন" (include media) বিকল্পটি সক্ষম করুন।
 
-This will create a .colpkg file that contains all of your cards and any sounds/images they
-use. We recommend you store the file somewhere safe, like a different device, or a cloud-based
-file storage service like Dropbox or Google Drive.
+এটি একটি .colpkg ফাইল তৈরি করবে যাতে আপনার সমস্ত কার্ড এবং সেগুলিতে ব্যবহৃত যেকোনো সাউন্ড/ছবি
+থাকবে। আমরা আপনাকে ফাইলটি নিরাপদ কোথাও সংরক্ষণ করার পরামর্শ দিই, যেমন একটি ভিন্ন ডিভাইস, অথবা ড্রপবক্স বা গুগল ড্রাইভের মতো একটি ক্লাউড-ভিত্তিক
+ফাইল স্টোরেজ পরিষেবা।
 
-## AnkiWeb
+## আঙ্কিওয়েব
 
-[Synchronising](./syncing.md) your collection with AnkiWeb provides some level of protection
-against your device being lost or stolen. If you need to restore your collection from AnkiWeb,
-you can force a one-way sync in the preferences screen, or sync from a new device, and then choose
-"Download".
+আঙ্কিওয়েবের সাথে আপনার সংগ্রহ [সিঙ্ক্রোনাইজ করা](./syncing.md) আপনার ডিভাইস হারিয়ে যাওয়া বা চুরি হওয়ার বিরুদ্ধে কিছু স্তরের সুরক্ষা প্রদান করে। যদি আপনাকে আঙ্কিওয়েব থেকে আপনার সংগ্রহ পুনরুদ্ধার করতে হয়, তবে আপনি পছন্দ স্ক্রিনে একমুখী সিঙ্ক জোর করতে পারেন, অথবা একটি নতুন ডিভাইস থেকে সিঙ্ক করতে পারেন, এবং তারপর "ডাউনলোড" (Download) নির্বাচন করুন।
 
-## Deletion log
+## মুছে ফেলার লগ
 
-Anki logs deleted notes to a text file called deleted.txt in your
-profile folder. These notes are in a text format that can be read by
-File&gt;Import, though please note the import feature only supports a
-single note type at one time, so if you have deleted notes from
-different note types, you'll need to split the file into separate files
-for each note type first.
+আঙ্কি মুছে ফেলা নোটগুলি আপনার প্রোফাইল ফোল্ডারে deleted.txt নামক একটি টেক্সট ফাইলে লগ করে। এই নোটগুলি একটি টেক্সট ফরম্যাটে থাকে যা ফাইল>ইম্পোর্ট দ্বারা পড়া যায়, তবে দয়া করে মনে রাখবেন যে ইম্পোর্ট ফিচারটি একবারে শুধুমাত্র একটি নোট টাইপ সমর্থন করে, তাই যদি আপনি বিভিন্ন নোট টাইপ থেকে নোট মুছে থাকেন, তাহলে আপনাকে প্রতিটি নোট টাইপের জন্য ফাইলটিকে পৃথক ফাইলগুলিতে বিভক্ত করতে হবে।

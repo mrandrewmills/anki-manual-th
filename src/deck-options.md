@@ -1,656 +1,569 @@
-# Deck Options
+# ডেক অপশন
 
 <!-- toc -->
 
-Deck options primarily control the way Anki schedules cards. It is recommended
-that you spend a few weeks with the defaults to get a feel for how Anki works
-before you start adjusting the options. Please make sure you understand the options
-before changing them, as mistakes can reduce Anki's effectiveness.
+ডেক অপশনগুলি প্রাথমিকভাবে আঙ্কি কার্ডগুলির সময়সূচী নিয়ন্ত্রণ করে। অপশনগুলি সামঞ্জস্য করার আগে আঙ্কি কীভাবে কাজ করে তার একটি ধারণা পেতে ডিফল্টগুলি নিয়ে কয়েক সপ্তাহ কাজ করার পরামর্শ দেওয়া হয়। দয়া করে নিশ্চিত করুন যে আপনি অপশনগুলি পরিবর্তন করার আগে সেগুলি বুঝেছেন, কারণ ভুল আঙ্কির কার্যকারিতা হ্রাস করতে পারে।
 
-On your computer, do any of the following to open deck options:
+আপনার কম্পিউটারে, ডেক অপশন খুলতে নিম্নলিখিতগুলির মধ্যে যেকোনো একটি করুন:
 
-- Click the gear icon on the Decks screen.
-- Select a deck on the Decks screen, and then click **Options**
-  at the bottom of the screen.
-- Click **More > Options** while in review mode.
-- Press <kbd>O</kbd> while in review mode.
+- ডেকস স্ক্রিনে গিয়ার আইকনে ক্লিক করুন।
+- ডেকস স্ক্রিনে একটি ডেক নির্বাচন করুন, এবং তারপর স্ক্রিনের নীচে **অপশন** এ ক্লিক করুন।
+- রিভিউ মোডে থাকাকালীন **আরও > অপশন** এ ক্লিক করুন।
+- রিভিউ মোডে থাকাকালীন <kbd>O</kbd> চাপুন।
 
-Here are some community posts about deck options that have been contributed in the past:
+এখানে ডেক অপশন সম্পর্কে কিছু কমিউনিটি পোস্ট রয়েছে যা অতীতে অবদান রাখা হয়েছে:
 
-- [Deck Options Explained](https://forums.ankiweb.net/t/deck-options-explained/213)
-- [Deck Options in a Mental Map](https://forums.ankiweb.net/t/deck-options-in-a-mental-map/15757)
+- [ডেক অপশন ব্যাখ্যা করা হয়েছে](https://forums.ankiweb.net/t/deck-options-explained/213)
+- [একটি মানসিক মানচিত্রে ডেক অপশন](https://forums.ankiweb.net/t/deck-options-in-a-mental-map/15757)
 
-## Presets
+## প্রিসেট
 
-Anki allows you to share options between different decks, to make
-it easier to update options in many decks at once. To do this, options are
-grouped into _presets_. If you change an option in a preset, the change is applied to all decks that use the same preset. All newly created decks use the "Default" preset.
+আঙ্কি আপনাকে বিভিন্ন ডেকের মধ্যে অপশনগুলি শেয়ার করার অনুমতি দেয়, যাতে
+একবারে অনেক ডেকের অপশন আপডেট করা সহজ হয়। এটি করার জন্য, অপশনগুলি _প্রিসেট_ এ
+গ্রুপ করা হয়। যদি আপনি একটি প্রিসেটে একটি অপশন পরিবর্তন করেন, তাহলে পরিবর্তনটি সেই সমস্ত ডেকের উপর প্রয়োগ করা হয় যা একই প্রিসেট ব্যবহার করে। সমস্ত নতুন তৈরি করা ডেক "ডিফল্ট" প্রিসেট ব্যবহার করে।
 
-To change the options in one deck but not other decks, click the
-arrow icon in the top right of the Deck Options window. You can do the following:
+একটি ডেকে অপশন পরিবর্তন করতে কিন্তু অন্য ডেকে নয়, ডেক অপশন উইন্ডোর উপরের ডানদিকে তীর আইকনে ক্লিক করুন। আপনি নিম্নলিখিতগুলি করতে পারেন:
 
-- **Save**: Save all modifications you've made in deck options.
-- **Add Preset**: Add a new preset for this deck, with the default options.
-- **Clone**: Clone your current preset, which is useful if you
-  want to modify some of the options but keep the rest as they are.
-- **Rename**: Change the name of the current preset.
-- **Delete**: Delete the current preset. This will make your next sync
-  a [one-way sync](./syncing.md#conflicts).
-- **Save to All Subdecks**: Like **Save**, but also assigns the selected preset to all
-  subdecks of the currently selected deck.
+- **সেভ করুন**: ডেক অপশনগুলিতে আপনি যে সমস্ত পরিবর্তন করেছেন তা সেভ করুন।
+- **প্রিসেট যোগ করুন**: ডিফল্ট অপশন সহ এই ডেকের জন্য একটি নতুন প্রিসেট যোগ করুন।
+- **ক্লোন করুন**: আপনার বর্তমান প্রিসেট ক্লোন করুন, যা সহায়ক যদি আপনি কিছু অপশন পরিবর্তন করতে চান কিন্তু বাকিগুলি যেমন আছে তেমন রাখতে চান।
+- **পুনর্নামকরণ করুন**: বর্তমান প্রিসেটের নাম পরিবর্তন করুন।
+- **মুছুন**: বর্তমান প্রিসেট মুছুন। এটি আপনার পরবর্তী সিঙ্ককে একটি [একমুখী সিঙ্ক](./syncing.md#conflicts) করে তুলবে।
+- **সমস্ত সাবডেকে সেভ করুন**: **সেভ** এর মতো, তবে বর্তমানে নির্বাচিত ডেকের সমস্ত সাবডেকে নির্বাচিত প্রিসেটও অ্যাসাইন করে।
 
-Deck options are not retroactive. For example, if you change an option that
-controls the delay after failing a card, cards that you failed before
-changing this option will still have the old delay, not the new one.
+ডেক অপশনগুলি পূর্ববর্তী নয়। উদাহরণস্বরূপ, যদি আপনি একটি কার্ড ব্যর্থ হওয়ার পরে বিলম্ব নিয়ন্ত্রণ করে এমন একটি অপশন পরিবর্তন করেন, তাহলে এই অপশনটি পরিবর্তন করার আগে আপনি যে কার্ডগুলি ব্যর্থ হয়েছিলেন সেগুলিতে এখনও পুরোনো বিলম্ব থাকবে, নতুনটি নয়।
 
-## Subdecks
+## সাবডেক
 
-If your deck has subdecks, and you wish one or more of them to have different settings from the parent deck, you can assign those subdecks to separate presets.
-When Anki shows a card, it will check which subdeck the card is in, and use the options
-for that deck. There are two exceptions:
+যদি আপনার ডেকে সাবডেক থাকে, এবং আপনি চান যে তাদের মধ্যে এক বা একাধিক ডেকের প্যারেন্ট ডেক থেকে ভিন্ন সেটিং থাকে, তাহলে আপনি সেই সাবডেকগুলিকে আলাদা প্রিসেটে অ্যাসাইন করতে পারেন।
+যখন আঙ্কি একটি কার্ড দেখায়, তখন এটি কার্ডটি কোন সাবডেকে আছে তা পরীক্ষা করবে এবং সেই ডেকের জন্য অপশনগুলি ব্যবহার করবে। দুটি ব্যতিক্রম আছে:
 
-- The **New cards/day** and **Maximum reviews/day** [limits](#daily-limits) of a subdeck affect the number of cards that can be gathered from that subdeck. But the total number of cards you see during your study session is controlled by the limits of the deck you select to study.
-- The [display order](#display-order) options are taken from the
-  deck you select to study, not the deck of the current card.
+- একটি সাবডেক-এর **প্রতিদিন নতুন কার্ড** এবং **সর্বাধিক রিভিউ/দিন** [সীমা](#daily-limits) সেই সাবডেক থেকে সংগৃহীত কার্ডের সংখ্যাকে প্রভাবিত করে। কিন্তু আপনার অধ্যয়ন সেশনের সময় আপনি যে মোট কার্ডগুলি দেখেন তা আপনি অধ্যয়নের জন্য নির্বাচিত ডেকের সীমা দ্বারা নিয়ন্ত্রিত হয়।
+- [ডিসপ্লে অর্ডার](#display-order) অপশনগুলি আপনি অধ্যয়নের জন্য নির্বাচিত ডেক থেকে নেওয়া হয়, বর্তমান কার্ডের ডেক থেকে নয়।
 
-For example, let's say you have this collection:
+উদাহরণস্বরূপ, ধরা যাক আপনার এই সংগ্রহটি রয়েছে:
 
-    - Deck A (Preset 1)
-      - Deck A::Subdeck B (Preset 2)
+    - ডেক A (প্রিসেট 1)
+      - ডেক A::সাবডেক B (প্রিসেট 2)
 
-Preset 1 and Preset 2 are identical, with two exceptions:
+প্রিসেট 1 এবং প্রিসেট 2 অভিন্ন, দুটি ব্যতিক্রম ছাড়া:
 
-- Preset 1:
-  - **Learning steps**: `1m 10m`
-  - **New/review order**: `Mix with reviews`
-- Preset 2:
-  - **Learning steps**: `20m 2h`
-  - **New/review order**: `Show after reviews`
+- প্রিসেট 1:
+  - **শেখার পদক্ষেপ**: `1m 10m`
+  - **নতুন/রিভিউ অর্ডার**: `রিভিউর সাথে মেশান`
+- প্রিসেট 2:
+  - **শেখার পদক্ষেপ**: `20m 2h`
+  - **নতুন/রিভিউ অর্ডার**: `রিভিউর পরে দেখান`
 
-If you choose to study Subdeck B:
+যদি আপনি সাবডেক B অধ্যয়ন করতে নির্বাচন করেন:
 
-- Learning steps for all new cards will be `20m 2h` (Preset 2 applies).
-- All new cards will be shown after reviews (Preset 2 applies).
+- সাবডেক B-এর সমস্ত নতুন কার্ডের জন্য শেখার পদক্ষেপ হবে `20m 2h` (প্রিসেট 2 প্রযোজ্য)।
+- সমস্ত নতুন কার্ড রিভিউর পরে দেখানো হবে (প্রিসেট 2 প্রযোজ্য)।
 
-If you choose to study Deck A:
+যদি আপনি ডেক A অধ্যয়ন করতে নির্বাচন করেন:
 
-- Learning steps for new cards in Deck A will be `1m 10m` (Preset 1 applies).
-- Learning steps for new cards in Subdeck B will be `20m 2h` (Preset 2 applies).
-- All new cards will be mixed with reviews (Preset 1 applies).
+- ডেক A-এর নতুন কার্ডের জন্য শেখার পদক্ষেপ হবে `1m 10m` (প্রিসেট 1 প্রযোজ্য)।
+- সাবডেক B-এর নতুন কার্ডের জন্য শেখার পদক্ষেপ হবে `20m 2h` (প্রিসেট 2 প্রযোজ্য)।
+- সমস্ত নতুন কার্ড রিভিউর সাথে মিশ্রিত করা হবে (প্রিসেট 1 প্রযোজ্য)।
 
-## Daily Limits
+## দৈনিক সীমা
 
-### New Cards/Day
+### প্রতিদিন নতুন কার্ড
 
-This option controls how many new cards can be introduced each day you open the program. If you
-study fewer than the limit, or miss a day, the next day the counts will be back
-to their original setting: you won't be given more cards than your limit allows.
+এই অপশনটি প্রোগ্রাম খোলার প্রতিটি দিনে কতগুলি নতুন কার্ড প্রবর্তন করা যেতে পারে তা নিয়ন্ত্রণ করে। যদি আপনি সীমার চেয়ে কম অধ্যয়ন করেন, অথবা একটি দিন বাদ দেন, তাহলে পরের দিন গণনাগুলি তাদের আসল সেটিংসে ফিরে আসবে: আপনার সীমা অনুমোদিত সংখ্যার চেয়ে বেশি কার্ড আপনাকে দেওয়া হবে না।
 
-When studying a deck that has subdecks inside it, the limits set on each subdeck control the maximum number of cards drawn from that particular deck. The selected deck's limits control the total number of cards that will be shown.
+যখন একটি ডেকের মধ্যে সাবডেক থাকে এবং আপনি সেই ডেকটি অধ্যয়ন করেন, তখন প্রতিটি সাবডেকে সেট করা সীমা সেই নির্দিষ্ট ডেক থেকে টানা কার্ডের সর্বাধিক সংখ্যা নিয়ন্ত্রণ করে। নির্বাচিত ডেকের সীমাগুলি দেখানো মোট কার্ডের সংখ্যা নিয়ন্ত্রণ করে।
 
-For earlier versions, see [this FAQ page](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html).
+পূর্ববর্তী সংস্করণগুলির জন্য, [এই FAQ পৃষ্ঠাটি](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html) দেখুন।
 
-Studying new cards will temporarily increase the number of reviews you need to
-do a day, as newly-learned material needs to be repeated a number of times
-before the delay between repetitions can increase appreciably. If you are
-consistently learning 20 new cards a day, you can expect your daily reviews to
-be roughly about 200 cards/day. You can decrease the reviews required by
-introducing fewer new cards each day until your review burden decreases. More than one Anki user has excitedly studied
-hundreds of new cards over their first few days of using the program, and then has
-become overwhelmed by the reviews required.
+নতুন কার্ড অধ্যয়ন করলে আপনার প্রতিদিনের রিভিউর সংখ্যা সাময়িকভাবে বৃদ্ধি পাবে, কারণ নতুন শেখা উপাদানগুলিকে বেশ কয়েকবার পুনরাবৃত্তি করার প্রয়োজন হয় যতক্ষণ না পুনরাবৃত্তির মধ্যে বিলম্ব উল্লেখযোগ্যভাবে বৃদ্ধি পায়। যদি আপনি প্রতিদিন নিয়মিত 20টি নতুন কার্ড শিখতে থাকেন, তাহলে আপনার প্রতিদিনের রিভিউ প্রায় 200 কার্ড/দিন হবে বলে আশা করা যায়। আপনি প্রতিদিন কম নতুন কার্ড প্রবর্তন করে প্রয়োজনীয় রিভিউ কমাতে পারেন যতক্ষণ না আপনার রিভিউর বোঝা কমে যায়। একাধিক আঙ্কি ব্যবহারকারী প্রোগ্রামটি ব্যবহার করার প্রথম কয়েক দিনের মধ্যে শত শত নতুন কার্ড উত্তেজিতভাবে অধ্যয়ন করেছেন এবং তারপরে প্রয়োজনীয় রিভিউগুলির দ্বারা অভিভূত হয়ে পড়েছেন।
 
-### Maximum Reviews/Day
+### প্রতিদিন সর্বাধিক রিভিউ
 
-Allows you to set an upper limit on the number of review cards to show each day.
-When this limit is reached, Anki will not show any more review cards for the
-day, even if there are more waiting. If you study consistently, this setting can
-help to smooth out occasional peaks in due card counts, and can save you from a
-heart attack when returning to Anki after taking a week off. When reviews have been
-hidden due to this option, a message will appear in the congratulations screen,
-suggesting you consider increasing the limit if you have time.
+প্রতিদিন প্রদর্শিত রিভিউ কার্ডের সংখ্যার উপর একটি উচ্চ সীমা সেট করার অনুমতি দেয়।
+যখন এই সীমা পৌঁছে যায়, তখন আঙ্কি সেই দিনের জন্য আর কোনো রিভিউ কার্ড দেখাবে না,
+এমনকি আরও কার্ড অপেক্ষা করলেও। যদি আপনি নিয়মিত অধ্যয়ন করেন, এই সেটিংটি
+বকেয়া কার্ডের সংখ্যায় মাঝে মাঝে শীর্ষে ওঠা কমাতে সাহায্য করতে পারে, এবং
+এক সপ্তাহ ছুটি নেওয়ার পর আঙ্কি-তে ফিরে আসার সময় আপনাকে হার্ট অ্যাটাক থেকে বাঁচাতে পারে। যখন এই বিকল্পের কারণে রিভিউগুলি লুকানো হয়, তখন অভিনন্দন স্ক্রিনে একটি বার্তা প্রদর্শিত হবে,
+আপনি যদি সময় পান তাহলে সীমা বাড়ানোর কথা বিবেচনা করার পরামর্শ দেওয়া হবে।
 
-When studying a deck that has subdecks inside it, the review limit behaves similarly to the new card limit.
+যখন একটি ডেকের মধ্যে সাবডেক থাকে এবং আপনি সেই ডেকটি অধ্যয়ন করেন, তখন রিভিউ সীমা নতুন কার্ড সীমার মতোই আচরণ করে।
 
-Anki includes any learning cards that have [crossed the day boundary](./preferences.md#scheduler) (interday learning cards) in the review count,
-so those learning cards will be subject to the review limit.
+আঙ্কি যে কোনো শেখার কার্ডকে অন্তর্ভুক্ত করে যা [দিনের সীমা অতিক্রম করেছে](./preferences.md#scheduler) (আন্তঃদিন শেখার কার্ড) রিভিউ গণনায়,
+তাই সেই শেখার কার্ডগুলি রিভিউ সীমার অধীন হবে।
 
-### Per-Deck Daily Limits
+### প্রতি-ডেক দৈনিক সীমা
 
-It is possible to use the same preset for different decks, with customized limits for each of them. This eliminates the need to create cloned presets just for that purpose, and makes it easier to set custom limits on subdecks.
+বিভিন্ন ডেকের জন্য একই প্রিসেট ব্যবহার করা সম্ভব, প্রতিটি ডেকের জন্য কাস্টমাইজড সীমা সহ। এটি শুধুমাত্র সেই উদ্দেশ্যে ক্লোন করা প্রিসেট তৈরি করার প্রয়োজনীয়তা দূর করে এবং সাবডেকগুলিতে কাস্টম সীমা সেট করা সহজ করে।
 
-Anki provides three options for daily limits:
+আঙ্কি দৈনিক সীমার জন্য তিনটি বিকল্প সরবরাহ করে:
 
-- **Preset**: applies to all the decks using a preset.
-- **This deck**: specific to a particular deck.
-- **Today only**: specific to a particular deck, and temporary.
+-   **প্রিসেট**: একটি প্রিসেট ব্যবহার করা সমস্ত ডেকের উপর প্রযোজ্য।
+-   **এই ডেক**: একটি নির্দিষ্ট ডেকের জন্য নির্দিষ্ট।
+-   **শুধুমাত্র আজ**: একটি নির্দিষ্ট ডেকের জন্য নির্দিষ্ট, এবং অস্থায়ী।
 
-### New Cards Ignore Review Limit
+### নতুন কার্ড রিভিউ সীমা উপেক্ষা করুন
 
-By default, the review limit also applies to new cards, and no new cards will be shown when the review limit has been reached. If this option is enabled, new cards will be shown regardless of the review limit.
+ডিফল্টরূপে, রিভিউ সীমা নতুন কার্ডগুলির ক্ষেত্রেও প্রযোজ্য, এবং রিভিউ সীমা পৌঁছে গেলে কোনো নতুন কার্ড দেখানো হবে না। যদি এই বিকল্পটি সক্ষম করা হয়, তাহলে রিভিউ সীমা নির্বিশেষে নতুন কার্ড দেখানো হবে।
 
-If you have a backlog of overdue review cards, it is recommended that you stop introducing new cards until you
-catch up with that backlog. Continuing to introduce new cards when you're already behind can
-make the backlog worse.
+যদি আপনার কাছে বকেয়া রিভিউ কার্ডের একটি ব্যাকলগ থাকে, তবে সেই ব্যাকলগটির সাথে তাল মেলাতে না পারা পর্যন্ত নতুন কার্ড প্রবর্তন বন্ধ করার পরামর্শ দেওয়া হয়। যখন আপনি ইতিমধ্যে পিছিয়ে আছেন তখন নতুন কার্ড প্রবর্তন চালিয়ে গেলে ব্যাকলগটি আরও খারাপ হতে পারে।
 
-### Limits Start From Top
+### সীমা উপর থেকে শুরু
 
-By default, the daily limits of a higher-level deck do not apply if you select one of its subdecks. A parent deck can have a new card limit of 10 cards/day and its subdecks can have a new card limit of 20 cards/day. The limits set on the parent deck do not affect the number of new cards you can study from its subdeck.
+ডিফল্টরূপে, যদি আপনি একটি সাবডেক নির্বাচন করেন তবে একটি উচ্চ-স্তরের ডেকের দৈনিক সীমা প্রযোজ্য হয় না। একটি প্যারেন্ট ডেকের প্রতিদিন 10টি কার্ডের নতুন কার্ড সীমা থাকতে পারে এবং তার সাবডেকগুলির প্রতিদিন 20টি কার্ডের নতুন কার্ড সীমা থাকতে পারে। প্যারেন্ট ডেকের উপর সেট করা সীমাগুলি তার সাবডেক থেকে আপনি কতগুলি নতুন কার্ড অধ্যয়ন করতে পারবেন তার সংখ্যাকে প্রভাবিত করে না।
 
-When this option is enabled, the limits set on higher-level decks also apply to their subdecks when a subdeck is selected. In the previous example, you will be able to study only 10 new cards from the subdecks instead of 20 new cards.
+যখন এই বিকল্পটি সক্ষম করা হয়, তখন যখন একটি সাবডেক নির্বাচন করা হয় তখন উচ্চ-স্তরের ডেকের উপর সেট করা সীমাগুলিও তার সাবডেকগুলিতে প্রযোজ্য হয়। পূর্ববর্তী উদাহরণে, আপনি 20টি নতুন কার্ডের পরিবর্তে সাবডেক থেকে শুধুমাত্র 10টি নতুন কার্ড অধ্যয়ন করতে পারবেন।
 
-This option can be useful if you wish to study individual subdecks, while enforcing a total limit on cards in all the subdecks.
+এই বিকল্পটি সহায়ক হতে পারে যদি আপনি ব্যক্তিগত সাবডেকগুলি অধ্যয়ন করতে চান, একই সাথে সমস্ত সাবডেকে কার্ডের উপর একটি মোট সীমা প্রয়োগ করতে চান।
 
-## New Cards
+## নতুন কার্ড
 
-The options here only affect new cards and
-[learning cards](getting-started.md#card-states). Once a card
-has graduated (that is, gone through all the learning steps), the options in this section no longer apply to the card.
+এখানে অপশনগুলি শুধুমাত্র নতুন কার্ড এবং [শেখার কার্ড](getting-started.md#card-states) প্রভাবিত করে। একবার একটি কার্ড স্নাতক হলে (অর্থাৎ, সমস্ত শেখার ধাপ পেরিয়ে গেলে), এই বিভাগের অপশনগুলি আর কার্ডের উপর প্রযোজ্য হয় না।
 
-### Learning Steps
+### শেখার ধাপ
 
-Controls the number of learning repetitions, and the delay
-between them. One or more delays, separated by spaces must be entered.
-Each time you click **Good** during review, the card moves to the next step. Each time you click **Again**, the card goes back to the first step.
+শেখার পুনরাবৃত্তির সংখ্যা এবং তাদের মধ্যে বিলম্ব নিয়ন্ত্রণ করে। একটি বা একাধিক বিলম্ব, স্থান দ্বারা পৃথক করে প্রবেশ করাতে হবে।
+রিভিউয়ের সময় আপনি যখনই **গুড** ক্লিক করেন, কার্ডটি পরবর্তী ধাপে চলে যায়। আপনি যখনই **আবার** ক্লিক করেন, কার্ডটি প্রথম ধাপে ফিরে যায়।
 
-For example, let's say that your learning steps are `1m 10m 1d`.
+উদাহরণস্বরূপ, ধরুন আপনার শেখার ধাপগুলি `1m 10m 1d`।
 
-- When you click **Again**, the card goes through the first step, and is shown
-  again 1 minute later.
-- When you click **Good** on a new card or after the 1 minute step, it moves
-  to the next step, and is shown again in 10 minutes.
-- When you click **Good** on a card after the 10 minute step, it is delayed
-  until the next day.
-- When you click **Good** on the card the next day, it graduates and
-  becomes a review card. The card is shown again after the delay configured by the
-  _graduating interval_.
+- যখন আপনি **আবার** ক্লিক করেন, কার্ডটি প্রথম ধাপের মধ্য দিয়ে যায় এবং 1 মিনিট পরে আবার দেখানো হয়।
+- যখন আপনি একটি নতুন কার্ডে বা 1 মিনিটের ধাপের পরে **গুড** ক্লিক করেন, তখন এটি পরবর্তী ধাপে চলে যায় এবং 10 মিনিট পরে আবার দেখানো হয়।
+- যখন আপনি 10 মিনিটের ধাপের পরে একটি কার্ডে **গুড** ক্লিক করেন, তখন এটি পরের দিন পর্যন্ত বিলম্বিত হয়।
+- যখন আপনি পরের দিন কার্ডে **গুড** ক্লিক করেন, তখন এটি স্নাতক হয় এবং একটি রিভিউ কার্ডে পরিণত হয়। কার্ডটি _স্নাতক ব্যবধান_ দ্বারা কনফিগার করা বিলম্বের পরে আবার দেখানো হয়।
 
-The **Hard** button works differently depending on which step you're on.
+**হার্ড** বোতামটি আপনি যে ধাপে আছেন তার উপর নির্ভর করে ভিন্নভাবে কাজ করে।
 
-- When you're on the first step, the **Hard** button shows a delay of `6m`. The `6m` delay is the average of first two steps: `1m` and `10m`.
-  - Exception: When there's only one learning step, the **Hard** button shows a delay 1.5 times that step. This delay is at most 1 day longer than the learning step.
-- When you're on any other step, the **Hard** button repeats that step.
+- যখন আপনি প্রথম ধাপে থাকেন, **হার্ড** বোতামটি `6m` এর বিলম্ব দেখায়। `6m` বিলম্ব হল প্রথম দুটি ধাপের গড়: `1m` এবং `10m`।
+  - ব্যতিক্রম: যখন শুধুমাত্র একটি শেখার ধাপ থাকে, তখন **হার্ড** বোতামটি সেই ধাপের 1.5 গুণ বিলম্ব দেখায়। এই বিলম্বটি সর্বাধিক 1 দিন শেখার ধাপের চেয়ে বেশি।
+- যখন আপনি অন্য কোনো ধাপে থাকেন, **হার্ড** বোতামটি সেই ধাপটি পুনরাবৃত্তি করে।
 
-If there’s nothing else to study, Anki will show learning cards up to 20 minutes
-early by default. To turn this off or change the amount of time to look ahead, see [Preferences](preferences.md).
+যদি অধ্যয়ন করার আর কিছু না থাকে, আঙ্কি ডিফল্টরূপে 20 মিনিট আগে শেখার কার্ডগুলি দেখাবে। এটি বন্ধ করতে বা এগিয়ে দেখার সময় পরিবর্তন করতে, [পছন্দ](preferences.md) দেখুন।
 
-#### Day Boundaries
+#### দিনের সীমা
 
-Anki treats small steps and steps that [cross a day boundary](./preferences.md#review) differently.
-With small steps, the cards are shown as soon as the delay has passed,
-in preference to review cards and new cards. This is done so that
-you can answer the card as closely to your requested delay as possible.
-In contrast, if the step crosses a day boundary, the delay is automatically converted to days. For example, if the next day starts after 5 hours and the delay is 6 hours, Anki converts the delay to 1 day.
+আঙ্কি ছোট ধাপ এবং যে ধাপগুলি [দিনের সীমা অতিক্রম করে](./preferences.md#review) সেগুলি ভিন্নভাবে আচরণ করে।
+ছোট ধাপগুলির সাথে, কার্ডগুলি বিলম্ব শেষ হওয়ার সাথে সাথেই দেখানো হয়,
+রিভিউ কার্ড এবং নতুন কার্ডগুলির চেয়ে অগ্রাধিকার দিয়ে। এটি করা হয় যাতে
+আপনি আপনার অনুরোধ করা বিলম্বের যতটা সম্ভব কাছাকাছি কার্ডের উত্তর দিতে পারেন।
+বিপরীতে, যদি ধাপটি একটি দিনের সীমা অতিক্রম করে, তাহলে বিলম্ব স্বয়ংক্রিয়ভাবে দিনে রূপান্তরিত হয়। উদাহরণস্বরূপ, যদি পরের দিন 5 ঘন্টা পরে শুরু হয় এবং বিলম্ব 6 ঘন্টা হয়, আঙ্কি বিলম্বকে 1 দিনে রূপান্তরিত করে।
 
-### Graduating Interval
+### স্নাতক ব্যবধান
 
-The number of days to wait before showing a card again, after the Good button is used on the final learning step. This means that it is the first interval
-after the learning card graduates. Please see the example
-from [earlier in this section](deck-options.md#learning-steps).
+চূড়ান্ত শেখার ধাপে গুড বোতাম ব্যবহার করার পরে, একটি কার্ড আবার দেখানোর আগে কত দিন অপেক্ষা করতে হবে। এর অর্থ হল এটি শেখার কার্ড স্নাতক হওয়ার পরে প্রথম ব্যবধান। দয়া করে [এই বিভাগের আগের উদাহরণটি](deck-options.md#learning-steps) দেখুন।
 
-### Easy Interval
+### সহজ ব্যবধান
 
-The number of days to wait before showing a card again, after the Easy button is used on it.
+ইজি বোতাম ব্যবহার করার পরে, একটি কার্ড আবার দেখানোর আগে কত দিন অপেক্ষা করতে হবে।
 
-The **Easy** button turns learning cards into a review cards regardless of which step you're on,
-and assigns them the delay you have configured in this option. Easy interval should always be at least
-as long as the graduating interval, and typically a few days longer.
+**ইজি** বোতামটি আপনি যে ধাপে থাকুন না কেন শেখার কার্ডগুলিকে রিভিউ কার্ডে পরিণত করে
+এবং তাদের এই অপশনে কনফিগার করা বিলম্ব অ্যাসাইন করে। সহজ ব্যবধান সবসময় স্নাতক ব্যবধানের সমান বা তার চেয়ে বেশি হওয়া উচিত এবং সাধারণত কয়েক দিন বেশি হওয়া উচিত।
 
-### Insertion Order
+### সন্নিবেশ ক্রম
 
-Controls whether Anki should add new cards into the deck randomly, or sequentially.
-When you change this option, Anki will re-sort the decks in the current preset.
+আঙ্কি নতুন কার্ডগুলিকে ডেকে র্যান্ডমলি যুক্ত করবে নাকি ক্রমানুসারে যুক্ত করবে তা নিয়ন্ত্রণ করে।
+আপনি যখন এই অপশনটি পরিবর্তন করেন, তখন আঙ্কি বর্তমান প্রিসেটে ডেকগুলিকে পুনরায় সাজিয়ে দেবে।
 
-On recent Anki versions, you should leave this option set to `Sequential`, and adjust the [display order](deck-options.md#display-order) instead.
+সাম্প্রতিক আঙ্কি সংস্করণগুলিতে, আপনার এই অপশনটি `Sequential` এ সেট করে রাখা উচিত এবং তার পরিবর্তে [ডিসপ্লে অর্ডার](deck-options.md#display-order) সামঞ্জস্য করা উচিত।
 
-## Lapses
+## ভুল
 
-When you click **Again** on a review card, it is called a _lapse_. The options listed here affect such lapsed cards.
+যখন আপনি একটি রিভিউ কার্ডে **আবার** ক্লিক করেন, তখন এটিকে _ভুল_ বলা হয়। এখানে তালিকাভুক্ত অপশনগুলি এমন ভুল কার্ডগুলিকে প্রভাবিত করে।
 
-### Relearning Steps
+### পুনরায় শেখার ধাপ
 
-The same as learning steps, but for lapsed cards. When you fail a review card
-(press **Again**), the card goes through _relearning steps_, before it becomes a review card again.
+শেখার ধাপগুলির মতোই, তবে ভুল কার্ডগুলির জন্য। যখন আপনি একটি রিভিউ কার্ডে ব্যর্থ হন
+(**আবার** চাপুন), তখন কার্ডটি _পুনরায় শেখার ধাপগুলির_ মধ্য দিয়ে যায়, আবার একটি রিভিউ কার্ডে পরিণত হওয়ার আগে।
 
-If you leave the steps blank, the card will skip relearning, and will be assigned
-a new interval of 1 day by default.
+যদি আপনি ধাপগুলি ফাঁকা রাখেন, কার্ডটি পুনরায় শেখা বাদ দেবে, এবং ডিফল্টরূপে 1 দিনের একটি নতুন ব্যবধান অ্যাসাইন করা হবে।
 
-### Minimum Interval
+### সর্বনিম্ন ব্যবধান
 
-Specifies a minimum number of days a card should wait after it finishes relearning.
-The default is one day, meaning once relearning is finished, it will be shown again
-the next day.
+একটি কার্ড পুনরায় শেখা শেষ করার পরে সর্বনিম্ন কত দিন অপেক্ষা করা উচিত তা নির্দিষ্ট করে।
+ডিফল্ট হল একদিন, যার অর্থ পুনরায় শেখা শেষ হওয়ার পরে, এটি পরের দিন আবার দেখানো হবে।
 
-### Leeches
+### লিচ
 
-Control the way Anki handles leeches. For details, see the [leeches](leeches.md)
-section.
+আঙ্কি কীভাবে লিচগুলি পরিচালনা করে তা নিয়ন্ত্রণ করুন। বিস্তারিত জানার জন্য, [লিচ](leeches.md)
+বিভাগটি দেখুন।
 
-## Display Order
+## প্রদর্শনের ক্রম
 
-The options in this section are taken from the deck you select to study, not
-the deck of the currently displayed card.
+এই বিভাগের বিকল্পগুলি আপনি অধ্যয়নের জন্য নির্বাচিত ডেক থেকে নেওয়া হয়,
+বর্তমানে প্রদর্শিত কার্ডের ডেক থেকে নয়।
 
-Some further information about display order is available in the [studying section](studying.md#display-order).
+প্রদর্শনের ক্রম সম্পর্কে আরও কিছু তথ্য [অধ্যয়ন বিভাগে](studying.md#display-order) উপলব্ধ।
 
-### New Card Gather Order
+### নতুন কার্ড সংগ্রহের ক্রম
 
-Controls how Anki gathers new cards from a deck. The options are:
+একটি ডেক থেকে আঙ্কি কীভাবে নতুন কার্ড সংগ্রহ করে তা নিয়ন্ত্রণ করে। বিকল্পগুলি হল:
 
-- **Deck**: Gathers cards from each subdeck in order, starting from the top. Cards from
-  each subdeck are gathered in ascending position. If the daily limit of the selected
-  deck is reached, gathering may stop before all subdecks have been checked. This
-  order is fastest in large collections, and allows you to prioritize subdecks that
-  are closer to the top.
+-   **ডেক**: প্রতিটি সাবডেক থেকে কার্ডগুলি ক্রমানুসারে সংগ্রহ করে, উপর থেকে শুরু করে। প্রতিটি সাবডেক থেকে কার্ডগুলি ক্রমবর্ধমান অবস্থানে সংগ্রহ করা হয়। যদি নির্বাচিত ডেকের দৈনিক সীমা পৌঁছে যায়, তবে সমস্ত সাবডেক পরীক্ষা করার আগেই সংগ্রহ বন্ধ হয়ে যেতে পারে। এটি বড় সংগ্রহগুলিতে দ্রুততম এবং আপনাকে উপরের দিকের সাবডেকগুলিকে অগ্রাধিকার দিতে দেয়।
 
-  Decks/subdecks are always ordered alphabetically, so you can give them a numeric prefix like
-  001 to control the order they appear in. You can also use `_` and `~` as a
-  prefix to place items at the top or bottom.
+    ডেক/সাবডেকগুলি সর্বদা বর্ণানুক্রমিকভাবে সাজানো হয়, তাই আপনি সেগুলিকে একটি সংখ্যাসূচক উপসর্গ যেমন 001 দিতে পারেন যাতে তারা যে ক্রমে প্রদর্শিত হয় তা নিয়ন্ত্রণ করা যায়। আপনি `_` এবং `~` একটি উপসর্গ হিসাবে ব্যবহার করতে পারেন যাতে আইটেমগুলিকে উপরে বা নীচে রাখা যায়।
 
-  Although position order depends initially on the insertion order option, you can manually
-  [reposition](./browsing.md#cards) cards in different
-  ways.
+    যদিও অবস্থানের ক্রম প্রাথমিকভাবে সন্নিবেশ ক্রম বিকল্পের উপর নির্ভর করে, আপনি ম্যানুয়ালি [পুনঃস্থাপন](./browsing.md#cards) করতে পারেন
+    বিভিন্ন উপায়ে কার্ড।
 
-- **Deck, then random notes**: Gathers cards from each subdeck in order, starting from the top.
-  Cards from each subdeck are gathered from randomly selected notes.
+-   **ডেক, তারপর এলোমেলো নোট**: প্রতিটি সাবডেক থেকে কার্ডগুলি ক্রমানুসারে সংগ্রহ করে, উপর থেকে শুরু করে।
+    প্রতিটি সাবডেক থেকে কার্ডগুলি এলোমেলোভাবে নির্বাচিত নোট থেকে সংগ্রহ করা হয়।
 
-- **Ascending position**: Gathers cards by ascending position (due #), which is typically the oldest-added first.
+-   **আরোহী অবস্থান**: আরোহী অবস্থান (বকেয়া #) অনুসারে কার্ডগুলি সংগ্রহ করে, যা সাধারণত সবচেয়ে পুরোনো-যোগ করা হয়।
 
-- **Descending position**: Gathers cards by descending position (due #), which is typically the latest-added first.
+-   **অবরোহী অবস্থান**: অবরোহী অবস্থান (বকেয়া #) অনুসারে কার্ডগুলি সংগ্রহ করে, যা সাধারণত সবচেয়ে সাম্প্রতিক-যোগ করা হয়।
 
-- **Random notes**: Gathers cards from randomly selected notes.
+-   **এলোমেলো নোট**: এলোমেলোভাবে নির্বাচিত নোট থেকে কার্ডগুলি সংগ্রহ করে।
 
-- **Random cards**: Gathers cards in a random order.
+-   **এলোমেলো কার্ড**: এলোমেলো ক্রমে কার্ডগুলি সংগ্রহ করে।
 
-### New Card Sort Order
+### নতুন কার্ড সাজানোর ক্রম
 
-Controls how the new cards are sorted after they have been gathered. The options are:
+নতুন কার্ডগুলি সংগ্রহ করার পরে কীভাবে সাজানো হয় তা নিয়ন্ত্রণ করে। বিকল্পগুলি হল:
 
-- **Card type, then order gathered**: Shows cards in order of card type number. Cards of each card type number are shown in the order they were gathered. If you have sibling burying disabled, this ensures all front→back cards are seen before any back→front cards.
-  This order is useful if you don't want sibling cards to appear too close to each other.
+-   **কার্ডের ধরন, তারপর সংগৃহীত ক্রম**: কার্ডের ধরন নম্বর অনুসারে কার্ডগুলি দেখায়। প্রতিটি কার্ডের ধরন নম্বরের কার্ডগুলি যে ক্রমে সংগ্রহ করা হয়েছিল সেই ক্রমে দেখানো হয়। যদি আপনার সহোদর পোঁতা অক্ষম করা হয়, তাহলে এটি নিশ্চিত করে যে যেকোনো ব্যাক→ফ্রন্ট কার্ডের আগে সমস্ত ফ্রন্ট→ব্যাক কার্ড দেখা যায়।
+    যদি আপনি সহোদর কার্ডগুলিকে একে অপরের খুব কাছাকাছি দেখাতে না চান তবে এই ক্রমটি কার্যকর।
 
-- **Order gathered**: Shows cards exactly as they were gathered. If sibling burying is disabled, this typically results in all sibling cards appearing one after the other.
+-   **সংগৃহীত ক্রম**: কার্ডগুলি ঠিক যেমন সংগ্রহ করা হয়েছিল তেমনভাবে দেখায়। যদি সহোদর পোঁতা অক্ষম করা হয়, তাহলে এটি সাধারণত সমস্ত সহোদর কার্ডগুলিকে একের পর এক দেখায়।
 
-- **Card type, then random**: Shows cards in order of card type number, but shuffles the cards of each card type number.
-  This order is useful if you don't want sibling cards to appear too close to each other, but still want the cards to appear in a random order.
+-   **কার্ডের ধরন, তারপর এলোমেলো**: কার্ডের ধরন নম্বর অনুসারে কার্ডগুলি দেখায়, তবে প্রতিটি কার্ডের ধরন নম্বরের কার্ডগুলিকে এলোমেলো করে।
+    যদি আপনি সহোদর কার্ডগুলিকে একে অপরের খুব কাছাকাছি দেখাতে না চান, তবে এখনও কার্ডগুলিকে এলোমেলো ক্রমে দেখাতে চান তবে এই ক্রমটি কার্যকর।
 
-- **Random note, then card type**: Picks notes at random, then shows all of their siblings in order.
+-   **এলোমেলো নোট, তারপর কার্ডের ধরন**: এলোমেলোভাবে নোট নির্বাচন করে, তারপর তাদের সমস্ত সহোদরকে ক্রমে দেখায়।
 
-- **Random**: Fully shuffles the gathered cards.
+-   **এলোমেলো**: সংগৃহীত কার্ডগুলিকে সম্পূর্ণ এলোমেলো করে।
 
-### New/Review Order
+### নতুন/রিভিউ অর্ডার
 
-Whether new cards should be mixed in with review cards, shown before them, or shown after them.
+নতুন কার্ডগুলি রিভিউ কার্ডগুলির সাথে মিশ্রিত করা উচিত, তাদের আগে দেখানো উচিত, নাকি তাদের পরে দেখানো উচিত।
 
-### Interday Learning/Review Order
+### আন্তঃদিন শেখা/রিভিউ অর্ডার
 
-Whether (re)learning cards that cross a day boundary should be mixed in with review cards,
-shown before them, or shown after them. Because learning cards tend to be harder than
-review cards, some users prefer to see them at the end (getting the easy stuff done
-first), or at the start (allowing more time to review forgotten ones).
+দিনের সীমা অতিক্রমকারী (পুনরায়) শেখার কার্ডগুলি রিভিউ কার্ডগুলির সাথে মিশ্রিত করা উচিত,
+তাদের আগে দেখানো উচিত, নাকি তাদের পরে দেখানো উচিত। যেহেতু শেখার কার্ডগুলি
+রিভিউ কার্ডগুলির চেয়ে কঠিন হতে থাকে, কিছু ব্যবহারকারী তাদের শেষে দেখতে পছন্দ করেন
+(সহজ জিনিসগুলি প্রথমে সম্পন্ন করা), বা শুরুতে (ভুলে যাওয়াগুলি পর্যালোচনা করার জন্য আরও সময় দেওয়া)।
 
-### Review Sort Order
+### রিভিউ সাজানোর ক্রম
 
-Controls how the review cards are sorted. The options are:
+রিভিউ কার্ডগুলি কীভাবে সাজানো হয় তা নিয়ন্ত্রণ করে। বিকল্পগুলি হল:
 
-- **Due date, then random**: The default order prioritizes cards that have been waiting
-  longer, and it's the recommended order when you are up to date, or when you only have a small
-  backlog. If you have taken an extended break or have fallen behind in your reviews,
-  you may want to consider changing the sort order temporarily.
-- **Due date, then deck**: This also prioritizes cards that have been waiting
-  longer, and then shows review cards for each subdeck in turn.
-- **Deck, then due date**: Shows review cards for each
-  subdeck in turn. This order is generally not recommended, as having material appear
-  consistently in the same order makes it easier to guess the answer based on context,
-  and leads to weaker memories.
-- **Ascending intervals**: Shows cards with shorter intervals first.
-- **Descending intervals**: Shows cards with longer intervals first.
-- **Ascending ease**: Shows more difficult cards first.
-- **Descending ease**: Shows less difficult cards first.
-- **Relative overdueness**: Shows cards that you're more likely to have forgotten first. This is generally recommended if
-  you have a large backlog that may take some time to get through, and you want to
-  reduce the chances of forgetting more cards.
+-   **বকেয়া তারিখ, তারপর এলোমেলো**: ডিফল্ট ক্রমটি এমন কার্ডগুলিকে অগ্রাধিকার দেয় যা
+    দীর্ঘ সময় ধরে অপেক্ষা করছে, এবং আপনি যদি আপ-টু-ডেট থাকেন বা আপনার কাছে শুধুমাত্র একটি ছোট
+    ব্যাকলগ থাকে তবে এটি প্রস্তাবিত ক্রম। যদি আপনি একটি দীর্ঘ বিরতি নিয়ে থাকেন বা আপনার রিভিউতে পিছিয়ে পড়ে থাকেন,
+    তবে আপনি সাময়িকভাবে সাজানোর ক্রম পরিবর্তন করার কথা বিবেচনা করতে চাইতে পারেন।
+-   **বকেয়া তারিখ, তারপর ডেক**: এটি এমন কার্ডগুলিকেও অগ্রাধিকার দেয় যা
+    দীর্ঘ সময় ধরে অপেক্ষা করছে, এবং তারপরে প্রতিটি সাবডেকের জন্য রিভিউ কার্ডগুলি দেখায়।
+-   **ডেক, তারপর বকেয়া তারিখ**: প্রতিটি
+    সাবডেকের জন্য রিভিউ কার্ডগুলি দেখায়। এই ক্রমটি সাধারণত প্রস্তাবিত নয়, কারণ উপাদানগুলি
+    একই ক্রমে ধারাবাহিকভাবে প্রদর্শিত হলে প্রসঙ্গ থেকে উত্তর অনুমান করা সহজ হয়,
+    এবং দুর্বল স্মৃতিতে পরিণত হয়।
+-   **আরোহী ব্যবধান**: কম ব্যবধান সহ কার্ডগুলি প্রথমে দেখায়।
+-   **অবরোহী ব্যবধান**: বেশি ব্যবধান সহ কার্ডগুলি প্রথমে দেখায়।
+-   **আরোহী সহজতা**: আরও কঠিন কার্ডগুলি প্রথমে দেখায়।
+-   **অবরোহী সহজতা**: কম কঠিন কার্ডগুলি প্রথমে দেখায়।
+-   **আপেক্ষিক বিলম্বেতা**: যে কার্ডগুলি আপনি বেশি ভুলে যেতে পারেন সেগুলিকে প্রথমে দেখায়। এটি সাধারণত প্রস্তাবিত হয় যদি
+    আপনার কাছে একটি বড় ব্যাকলগ থাকে যা পার হতে কিছু সময় লাগতে পারে, এবং আপনি আরও কার্ড ভুলে যাওয়ার সম্ভাবনা কমাতে চান।
 
-  When using the SM-2 algorithm, overdueness is determined by comparing how
-  overdue cards are, and how long their interval is. For example, a card with a
-  current interval of 5 days that is overdue by 2 days, will display before a card
-  with a current interval of 10 days that is overdue by 3 days.
+    SM-2 অ্যালগরিদম ব্যবহার করার সময়, বিলম্বিতা নির্ভর করে কার্ডগুলি কতটা
+    বকেয়া, এবং তাদের ব্যবধান কত। উদাহরণস্বরূপ, একটি কার্ড যার বর্তমান
+    ব্যবধান 5 দিন এবং 2 দিন বকেয়া, সেটি একটি কার্ডের আগে প্রদর্শিত হবে
+    যার বর্তমান ব্যবধান 10 দিন এবং 3 দিন বকেয়া।
 
-  When FSRS is enabled, this sort order is removed; the FSRS equivalent is **Ascending retrievability**,
-  which is calculated based on each card's retrievability (probability of recall) and the desired retention in the preset.
+    যখন FSRS সক্ষম করা হয়, তখন এই সাজানোর ক্রমটি সরানো হয়; FSRS সমতুল্য হল **আরোহী পুনরুদ্ধারযোগ্যতা**,
+    যা প্রতিটি কার্ডের পুনরুদ্ধারযোগ্যতা (মনে রাখার সম্ভাবনা) এবং প্রিসেটে কাঙ্ক্ষিত ধারণের উপর ভিত্তি করে গণনা করা হয়।
 
-## Burying
+## পোঁতা
 
-When Anki gathers cards, it first gathers intraday learning cards, then interday learning cards, then review cards, and finally new cards. This affects how burying works:
+যখন আঙ্কি কার্ড সংগ্রহ করে, তখন এটি প্রথমে আন্তঃদিন শেখার কার্ড, তারপর আন্তঃদিন শেখার কার্ড, তারপর রিভিউ কার্ড, এবং অবশেষে নতুন কার্ড সংগ্রহ করে। এটি পোঁতা কীভাবে কাজ করে তা প্রভাবিত করে:
 
-- If you have all burying options enabled, the sibling that comes earliest in that list will be shown. For example, a review card will be shown in preference to a new card.
-- Siblings later in the list can not bury earlier card types. For example, if you disable burying of new cards, and study a new card, it will not bury any interday learning or review cards, and you may see both a review sibling and new sibling in the same session.
+-   যদি আপনার সমস্ত পোঁতা বিকল্প সক্ষম থাকে, তাহলে তালিকার প্রথম দিকের সহোদরটি দেখানো হবে। উদাহরণস্বরূপ, একটি নতুন কার্ডের চেয়ে একটি রিভিউ কার্ড অগ্রাধিকার পাবে।
+-   তালিকার পরের দিকের সহোদররা আগের কার্ডের ধরনগুলিকে পোঁতা করতে পারবে না। উদাহরণস্বরূপ, যদি আপনি নতুন কার্ডের পোঁতা অক্ষম করেন, এবং একটি নতুন কার্ড অধ্যয়ন করেন, তাহলে এটি কোনো আন্তঃদিন শেখার বা রিভিউ কার্ডকে পোঁতা করবে না, এবং আপনি একই সেশনে একটি রিভিউ সহোদর এবং একটি নতুন সহোদর উভয়ই দেখতে পারেন।
 
-The options are:
+বিকল্পগুলি হল:
 
-- **Bury new siblings**: Whether other new cards of the same note (e.g. reverse cards, adjacent cloze deletions) will be delayed until the next day.
-- **Bury review siblings**: Whether other review cards of the same note will be delayed until the next day.
-- **Bury interday learning siblings**: Whether other learning cards of the same note that crossed a day boundary will be delayed until the next day.
+-   **নতুন সহোদরদের পোঁতা**: একই নোটের অন্যান্য নতুন কার্ডগুলি (যেমন বিপরীত কার্ড, সংলগ্ন ক্লোজ ডিলিশন) পরের দিন পর্যন্ত বিলম্বিত হবে কিনা।
+-   **রিভিউ সহোদরদের পোঁতা**: একই নোটের অন্যান্য রিভিউ কার্ডগুলি পরের দিন পর্যন্ত বিলম্বিত হবে কিনা।
+-   **আন্তঃদিন শেখার সহোদরদের পোঁতা**: একই নোটের অন্যান্য শেখার কার্ডগুলি যা একটি দিনের সীমা অতিক্রম করেছে তা পরের দিন পর্যন্ত বিলম্বিত হবে কিনা।
 
-For more info about burying cards, please see [this section](./studying.md#siblings-and-burying) of the manual.
+কার্ড পোঁতা সম্পর্কে আরও তথ্যের জন্য, অনুগ্রহ করে ম্যানুয়ালের [এই বিভাগটি](./studying.md#siblings-and-burying) দেখুন।
 
-## Audio
+## অডিও
 
-- **Don't play audio automatically**: By default, Anki automatically plays any audio you have on
-  cards. If you turn on this option Anki will not play audio until you press the replay audio key, <kbd>R</kbd> or <kbd>F5</kbd>.
+-   **অডিও স্বয়ংক্রিয়ভাবে চালাবেন না**: ডিফল্টরূপে, আঙ্কি আপনার কার্ডে থাকা যেকোনো অডিও স্বয়ংক্রিয়ভাবে চালায়।
+    যদি আপনি এই বিকল্পটি চালু করেন তবে আঙ্কি অডিও চালাবে না যতক্ষণ না আপনি পুনরায় অডিও চালানোর কী, <kbd>R</kbd> বা <kbd>F5</kbd> চাপেন।
 
-- **Skip question when replaying answer**: Controls whether audio from
-  the question side is played when you use replay action on the answer side. Note that, Anki [does not automatically play](./templates/fields.md#special-fields) audio from the `{{FrontSide}}` field. This option does not influence the behaviour of automatic play.
+-   **উত্তর পুনরায় চালানোর সময় প্রশ্ন এড়িয়ে যান**: আপনি উত্তর পুনরায় চালানোর সময়
+    প্রশ্নের দিক থেকে অডিও চালানো হবে কিনা তা নিয়ন্ত্রণ করে। মনে রাখবেন যে, আঙ্কি
+    `{{FrontSide}}` ক্ষেত্র থেকে অডিও [স্বয়ংক্রিয়ভাবে চালায় না](./templates/fields.md#special-fields)।
+    এই বিকল্পটি স্বয়ংক্রিয় খেলার আচরণকে প্রভাবিত করে না।
 
-## Timers
+## টাইমার
 
 <a id="timer"></a>
 
-Anki monitors how long it takes you to answer each card, so that it
-can show you how long was spent studying each day. The time taken does
-not influence scheduling.
+আঙ্কি প্রতিটি কার্ডের উত্তর দিতে আপনার কতক্ষণ লাগে তা পর্যবেক্ষণ করে, যাতে
+প্রতিদিন অধ্যয়নে কত সময় ব্যয় হয়েছে তা আপনাকে দেখাতে পারে। নেওয়া সময়
+সময়সূচী প্রভাবিত করে না।
 
-### Internal Timer
+### অভ্যন্তরীণ টাইমার
 
-- Maximum answer seconds: The default limit is 60 seconds. If you take
-  longer than that, Anki assumes you have walked away from your computer
-  or have been distracted, and caps the recorded time at 60 seconds, so
-  that you don’t end up with inaccurate statistics.
-- This internal timer runs from when the question is shown until you press a button to grade your answer. If you consistently
-  spend longer than 60 seconds on a card,
-  you may want to consider either raising
-  this limit, or even better, making your cards simpler.
+-   সর্বোচ্চ উত্তরের সেকেন্ড: ডিফল্ট সীমা 60 সেকেন্ড। যদি আপনার
+    তার চেয়ে বেশি সময় লাগে, তাহলে আঙ্কি ধরে নেয় যে আপনি আপনার কম্পিউটার থেকে
+    দূরে চলে গেছেন বা বিভ্রান্ত হয়েছেন, এবং রেকর্ড করা সময় 60 সেকেন্ডে
+    সীমাবদ্ধ করে, যাতে আপনি ভুল পরিসংখ্যান দিয়ে শেষ না করেন।
+-   এই অভ্যন্তরীণ টাইমারটি প্রশ্ন দেখানো থেকে শুরু করে আপনার উত্তর গ্রেড করার জন্য একটি বোতাম চাপার সময় পর্যন্ত চলে। যদি আপনি একটি কার্ডে ধারাবাহিকভাবে
+    60 সেকেন্ডের বেশি সময় ব্যয় করেন,
+    তাহলে আপনি হয়তো
+    এই সীমা বাড়ানোর কথা বিবেচনা করতে চাইতে পারেন, অথবা আরও ভালো, আপনার কার্ডগুলিকে আরও সহজ করা।
 
-### On-screen Timer
+### অন-স্ক্রিন টাইমার
 
-- Show on-screen timer: On the Study screen, show a timer that counts the time
-  you're taking to study each card. (This timer will stop when it reaches the Maximum answer seconds set for the internal timer.)
-- Stop on-screen timer on answer: Whether the on-screen timer should continue running from when you show
-  the answer until you press a button to grade your answer. This option does not impact the time that is recorded for your statistics.
+-   অন-স্ক্রিন টাইমার দেখান: অধ্যয়ন স্ক্রিনে, একটি টাইমার দেখান যা প্রতিটি কার্ড অধ্যয়ন করতে আপনার যে সময় লাগছে তা গণনা করে। (এই টাইমারটি অভ্যন্তরীণ টাইমারের জন্য সেট করা সর্বোচ্চ উত্তর সেকেন্ডে পৌঁছালে বন্ধ হয়ে যাবে।)
+-   উত্তরে অন-স্ক্রিন টাইমার বন্ধ করুন: আপনি উত্তর দেখানোর পর থেকে আপনার উত্তর গ্রেড করার জন্য একটি বোতাম চাপার সময় পর্যন্ত অন-স্ক্রিন টাইমারটি চলতে থাকবে কিনা। এই বিকল্পটি আপনার পরিসংখ্যানের জন্য রেকর্ড করা সময়কে প্রভাবিত করে না।
 
-## Auto Advance
+## অটো অ্যাডভান্স
 
-Requires Anki 23.12 or later. Auto Advance allows you to automatically take some actions after a certain amount of time has passed. To use it, you must first set a non-zero
-time in **Seconds to show question for** and/or **Seconds to show answer for**. Then, in the
-study screen, use the Auto Advance action from the **More** button to start advancing.
+আঙ্কি 23.12 বা তার পরবর্তী সংস্করণ প্রয়োজন। অটো অ্যাডভান্স আপনাকে একটি নির্দিষ্ট সময় অতিক্রান্ত হওয়ার পরে স্বয়ংক্রিয়ভাবে কিছু ক্রিয়া সম্পাদন করতে দেয়। এটি ব্যবহার করতে, আপনাকে প্রথমে **প্রশ্ন দেখানোর জন্য সেকেন্ড** এবং/অথবা **উত্তর দেখানোর জন্য সেকেন্ড** এ একটি অ-শূন্য সময় সেট করতে হবে। তারপরে, অধ্যয়ন স্ক্রিনে, এগিয়ে যাওয়া শুরু করতে **আরও** বোতাম থেকে অটো অ্যাডভান্স ক্রিয়াটি ব্যবহার করুন।
 
-## Easy Days
+## সহজ দিন
 
-If you want to spend less time on Anki on some days of the week, such as Sundays, this feature can help you do that.
-After the interval is calculated, it will be adjusted by a small amount to change the due date.
-Note that setting all days to "Reduced" or "Minimum" will result in the same workload as setting all days to "Normal".
-This feature works with both FSRS and the legacy SM-2 algorithm.
-Changing your Easy Days configuration doesn't retroactively change existing intervals and will only affect future intervals. Simply put, you will not see immediate changes in the number of due cards.
+যদি আপনি সপ্তাহের কিছু দিন, যেমন রবিবার, আঙ্কি-তে কম সময় ব্যয় করতে চান, তাহলে এই বৈশিষ্ট্যটি আপনাকে তা করতে সাহায্য করতে পারে।
+ব্যবধান গণনা করার পরে, এটি অল্প পরিমাণে সামঞ্জস্য করা হবে যাতে নির্ধারিত তারিখ পরিবর্তন হয়।
+মনে রাখবেন যে সমস্ত দিনকে "হ্রাসকৃত" বা "সর্বনিম্ন" সেট করলে সমস্ত দিনকে "সাধারণ" সেট করার মতোই কাজের চাপ হবে।
+এই বৈশিষ্ট্যটি FSRS এবং লিগ্যাসি SM-2 অ্যালগরিদম উভয় ক্ষেত্রেই কাজ করে।
+আপনার সহজ দিনের কনফিগারেশন পরিবর্তন করলে বিদ্যমান ব্যবধানগুলি পূর্ববর্তীভাবে পরিবর্তিত হয় না এবং শুধুমাত্র ভবিষ্যতের ব্যবধানগুলিকে প্রভাবিত করবে। সহজ কথায়, আপনি বকেয়া কার্ডের সংখ্যায় তাৎক্ষণিক পরিবর্তন দেখতে পাবেন না।
 
 ## FSRS
 
-The [Free Spaced Repetition Scheduler (FSRS)](https://github.com/open-spaced-repetition/fsrs4anki/wiki/ABC-of-FSRS) is an alternative to Anki's legacy
-SuperMemo 2 (SM-2) algorithm. By more accurately determining how much information you are likely
-to forget, it can help you remember more material in the same amount of time.
+[ফ্রি স্পেসড রিপিটেশন শিডিউলার (FSRS)](https://github.com/open-spaced-repetition/fsrs4anki/wiki/ABC-of-FSRS) আঙ্কির লিগ্যাসি
+সুপারমেমো 2 (SM-2) অ্যালগরিদমের একটি বিকল্প। আপনি কতটা তথ্য ভুলে যেতে পারেন তা আরও সঠিকভাবে নির্ধারণ করে, এটি আপনাকে একই সময়ে আরও উপাদান মনে রাখতে সাহায্য করতে পারে।
 
-When you turn on FSRS, some new options
-become available, and SM-2 specific options, such as **Graduating interval**,
-**Easy bonus**, etc. are hidden. This option is shared by all presets.
+যখন আপনি FSRS চালু করেন, তখন কিছু নতুন বিকল্প
+উপলভ্য হয়, এবং SM-2 নির্দিষ্ট বিকল্পগুলি, যেমন **স্নাতক ব্যবধান**,
+**সহজ বোনাস**, ইত্যাদি লুকানো থাকে। এই বিকল্পটি সমস্ত প্রিসেট দ্বারা শেয়ার করা হয়।
 
-**Before Enabling**
+**সক্ষম করার আগে**
 
-- Please ensure all of your Anki clients support FSRS. Anki 23.10, AnkiMobile 23.10,
-  and AnkiWeb all support it. AnkiDroid supports it in 2.17+. If
-  one of your clients doesn't support it, things will not work correctly.
-- If you previously used the "custom scheduling" version of FSRS, please make
-  sure you clear out the custom scheduling section before enabling FSRS.
+-   দয়া করে নিশ্চিত করুন যে আপনার সমস্ত আঙ্কি ক্লায়েন্ট FSRS সমর্থন করে। আঙ্কি 23.10, আঙ্কি মোবাইল 23.10,
+    এবং আঙ্কিওয়েব সকলেই এটি সমর্থন করে। আঙ্কিড্রয়েড 2.17+ এ এটি সমর্থন করে। যদি
+    আপনার ক্লায়েন্টগুলির মধ্যে কোনটি এটি সমর্থন না করে, তাহলে জিনিসগুলি সঠিকভাবে কাজ করবে না।
+-   যদি আপনি পূর্বে FSRS এর "কাস্টম শিডিউলিং" সংস্করণ ব্যবহার করে থাকেন, তবে FSRS সক্ষম করার আগে
+    দয়া করে কাস্টম শিডিউলিং বিভাগটি পরিষ্কার করে নিন।
 
-### A Short Guide
+### একটি সংক্ষিপ্ত নির্দেশিকা
 
-- Enable FSRS under the "FSRS" section, at the bottom of the deck options page. FSRS can only be enabled globally; you cannot enable it for some presets and disable it for others.
-- Ensure that all your learning and re-learning steps are shorter than 1d and can be completed on the same day. 23h is not recommended even though it's less than one day because you won't be able to finish this step on the same day as your first review. Steps such as 10m or 30m are good.
-- Click the "Optimize" button under the "FSRS parameters" field. If you see a message that says "The FSRS parameters currently appear to be optimal", that's fine.
-- Choose a value of desired retention: the proportion of cards recalled successfully when they are due. **This is the most important setting in FSRS. Higher retention leads to shorter intervals and more reviews per day.** The default is 90%, which offers a good balance of retention and workload. Above 90% the workload increases very quickly, and above 97% the workload can be overwhelming. You can use ["Compute minimum recommended retention"](#compute-minimum-recommended-retention) to help you choose the value of desired retention.
+-   ডেক অপশন পৃষ্ঠার নীচে "FSRS" বিভাগের অধীনে FSRS সক্ষম করুন। FSRS শুধুমাত্র বিশ্বব্যাপী সক্ষম করা যেতে পারে; আপনি কিছু প্রিসেটের জন্য এটি সক্ষম করতে এবং অন্যদের জন্য অক্ষম করতে পারবেন না।
+-   নিশ্চিত করুন যে আপনার সমস্ত শেখার এবং পুনরায় শেখার ধাপগুলি 1 দিনের চেয়ে কম এবং একই দিনে সম্পন্ন করা যেতে পারে। 23 ঘন্টা সুপারিশ করা হয় না যদিও এটি এক দিনের চেয়ে কম কারণ আপনি আপনার প্রথম পর্যালোচনার মতো একই দিনে এই ধাপটি শেষ করতে পারবেন না। 10 মিনিট বা 30 মিনিটের মতো ধাপগুলি ভাল।
+-   "FSRS প্যারামিটার" ক্ষেত্রের অধীনে "অপ্টিমাইজ করুন" বোতামে ক্লিক করুন। যদি আপনি এমন একটি বার্তা দেখতে পান যেখানে লেখা আছে "The FSRS parameters currently appear to be optimal", তাহলে ঠিক আছে।
+-   কাঙ্ক্ষিত ধারণের একটি মান নির্বাচন করুন: যখন কার্ডগুলি নির্ধারিত থাকে তখন সফলভাবে মনে রাখা কার্ডগুলির অনুপাত। **এটি FSRS-এ সবচেয়ে গুরুত্বপূর্ণ সেটিং। উচ্চ ধারণের ফলে কম ব্যবধান এবং প্রতিদিন বেশি রিভিউ হয়।** ডিফল্ট হল 90%, যা ধারণ এবং কাজের চাপের একটি ভাল ভারসাম্য সরবরাহ করে। 90% এর উপরে কাজের চাপ খুব দ্রুত বৃদ্ধি পায়, এবং 97% এর উপরে কাজের চাপ অপ্রতিরোধ্য হতে পারে। আপনি [ন্যূনতম প্রস্তাবিত ধারণ গণনা করুন](#compute-minimum-recommended-retention) ব্যবহার করে কাঙ্ক্ষিত ধারণের মান চয়ন করতে সাহায্য পেতে পারেন।
 
-Parameters and desired retention are preset-specific, so you can create multiple presets with different settings.
+প্যারামিটার এবং কাঙ্ক্ষিত ধারণ প্রিসেট-নির্দিষ্ট, তাই আপনি বিভিন্ন সেটিংস সহ একাধিক প্রিসেট তৈরি করতে পারেন।
 
-FSRS can adapt to almost any habit, except for one: pressing "Hard" instead of "Again" when you forget the information. When you press "Hard", FSRS assumes you have recalled the information correctly (though with hesitation and a lot of mental effort). If you press "Hard" when you have failed to recall the information, all intervals will be unreasonably high. So, if you have this habit, please change it and use "Again" when you forget the information.
+FSRS প্রায় যেকোনো অভ্যাসের সাথে খাপ খাইয়ে নিতে পারে, একটি ছাড়া: তথ্য ভুলে গেলে "আবার" এর পরিবর্তে "কঠিন" চাপানো। যখন আপনি "কঠিন" চাপেন, তখন FSRS ধরে নেয় যে আপনি তথ্যটি সঠিকভাবে মনে রেখেছেন (যদিও দ্বিধা এবং প্রচুর মানসিক প্রচেষ্টার সাথে)। আপনি যদি তথ্য মনে রাখতে ব্যর্থ হন তখন "কঠিন" চাপেন, তাহলে সমস্ত ব্যবধান অযৌক্তিকভাবে বেশি হবে। তাই, যদি আপনার এই অভ্যাস থাকে, তবে দয়া করে এটি পরিবর্তন করুন এবং তথ্য ভুলে গেলে "আবার" ব্যবহার করুন।
 
-Regarding add-on compatibility, as a general rule of thumb, if an add-on affects intervals and scheduling in some way, it shouldn't be used with FSRS.
+অ্যাড-অন সামঞ্জস্যের বিষয়ে, একটি সাধারণ নিয়ম হিসাবে, যদি একটি অ্যাড-অন কোনোভাবে ব্যবধান এবং সময়সূচী প্রভাবিত করে, তবে এটি FSRS এর সাথে ব্যবহার করা উচিত নয়।
 
-### Desired Retention
+### কাঙ্ক্ষিত ধারণ
 
-Desired retention controls how likely you are to remember cards when they are scheduled for a review.
-The default value of `0.90` will schedule cards so you have a 90% chance of remembering
-them when they come up for review again. This should normally translate to remembering around 90% cards when they are reviewed, and only failing around 10%.
+কাঙ্ক্ষিত ধারণ নিয়ন্ত্রণ করে যে কার্ডগুলি পর্যালোচনার জন্য নির্ধারিত হলে আপনি সেগুলি কতটা মনে রাখতে পারবেন।
+`0.90` এর ডিফল্ট মান কার্ডগুলির সময়সূচী তৈরি করবে যাতে আপনি যখন সেগুলি আবার পর্যালোচনার জন্য আসে তখন 90% মনে রাখার সম্ভাবনা থাকে। এটি সাধারণত তাদের পর্যালোচনা করার সময় প্রায় 90% কার্ড মনে রাখার এবং শুধুমাত্র প্রায় 10% ভুলে যাওয়ার সাথে মিলে যায়।
 
-Here is a graph that shows how adjusting this value will affect your workload:
+এখানে একটি গ্রাফ রয়েছে যা দেখায় যে এই মানটি সামঞ্জস্য করলে আপনার কাজের চাপ কীভাবে প্রভাবিত হবে:
 
-![graph showing an exponential increase in workload as desired retention nears one.](./media/FSRS_retention.png)
+![গ্রাফটি দেখায় যে কাঙ্ক্ষিত ধারণ একের কাছাকাছি আসার সাথে সাথে কাজের চাপ দ্রুত বৃদ্ধি পায়।](media/FSRS_retention.png)
 
-The exact shape of the graph is different for everyone. However, there are two patterns that hold true for all:
+গ্রাফের সঠিক আকার সবার জন্য ভিন্ন। তবে, দুটি প্যাটার্ন সবার জন্য সত্য:
 
-- As desired retention approaches 1.0, the workload increases drastically.
-  Imagine you have a card with a 90% chance of remembering it after 100 days. If your desired retention is `0.90`, you'll review the card again in 100 days. But if your desired retention is `0.95`, you'll need to review it after 46 days instead.
-  This means that the intervals of your cards almost halve at `0.95` desired retention and you need to review cards twice as frequently compared to `0.90` desired retention.
-  At `0.97`, the interval will be 27 days (you'll have to review your cards 3.7x as frequently).
-  At `0.99`, the interval will be only 9 days (you'll have to review your cards more than 10x more frequently than with the defaults).
+-   কাঙ্ক্ষিত ধারণ 1.0 এর কাছাকাছি আসার সাথে সাথে কাজের চাপ নাটকীয়ভাবে বৃদ্ধি পায়।
+    কল্পনা করুন আপনার একটি কার্ড আছে যা 100 দিন পরে 90% মনে রাখার সম্ভাবনা রয়েছে। যদি আপনার কাঙ্ক্ষিত ধারণ `0.90` হয়, তাহলে আপনি 100 দিন পরে আবার কার্ডটি পর্যালোচনা করবেন। কিন্তু যদি আপনার কাঙ্ক্ষিত ধারণ `0.95` হয়, তাহলে আপনাকে 46 দিন পরে এটি পর্যালোচনা করতে হবে।
+    এর অর্থ হল আপনার কার্ডগুলির ব্যবধান `0.95` কাঙ্ক্ষিত ধারণে প্রায় অর্ধেক হয়ে যায় এবং আপনাকে `0.90` কাঙ্ক্ষিত ধারণের তুলনায় দ্বিগুণ ঘন ঘন কার্ডগুলি পর্যালোচনা করতে হবে।
+    `0.97` এ, ব্যবধান হবে 27 দিন (আপনাকে আপনার কার্ডগুলি 3.7 গুণ বেশি ঘন ঘন পর্যালোচনা করতে হবে)।
+    `0.99` এ, ব্যবধান হবে শুধুমাত্র 9 দিন (আপনাকে ডিফল্টগুলির চেয়ে 10 গুণের বেশি ঘন ঘন আপনার কার্ডগুলি পর্যালোচনা করতে হবে)।
 
-- As desired retention decreases, you'll forget a greater percentage of your
-  cards, and those cards will need to be reviewed again. Eventually, you'll
-  get to a point where the forgotten cards contribute more to your workload
-  than you gain from the longer delays. Also, keep in mind that forgetting
-  material frequently is demotivating.
+-   কাঙ্ক্ষিত ধারণ কমলে, আপনি আপনার কার্ডগুলির একটি বৃহত্তর শতাংশ ভুলে যাবেন, এবং সেই কার্ডগুলি আবার পর্যালোচনা করতে হবে। অবশেষে, আপনি এমন একটি বিন্দুতে পৌঁছাবেন যেখানে ভুলে যাওয়া কার্ডগুলি আপনার কাজের চাপকে দীর্ঘ বিলম্ব থেকে আপনার প্রাপ্তির চেয়ে বেশি অবদান রাখে। এছাড়াও, মনে রাখবেন যে ঘন ঘন উপাদান ভুলে যাওয়া হতাশাজনক।
 
-For these reasons, we suggest you be conservative when adjusting this
-number, and recommend you keep it lower than `0.97` and higher than the [minimum recommended retention](#compute-minimum-recommended-retention).
+এই কারণগুলির জন্য, আমরা আপনাকে এই সংখ্যাটি সামঞ্জস্য করার সময় রক্ষণশীল হতে পরামর্শ দিই, এবং এটিকে `0.97` এর চেয়ে কম এবং [ন্যূনতম প্রস্তাবিত ধারণ](#compute-minimum-recommended-retention) এর চেয়ে বেশি রাখার পরামর্শ দিই।
 
-### FSRS Parameters
+### FSRS প্যারামিটার
 
-FSRS parameters affect how cards are scheduled. Do not change the parameters manually or copy them from someone else.
+FSRS প্যারামিটারগুলি কার্ডগুলি কীভাবে নির্ধারিত হয় তা প্রভাবিত করে। প্যারামিটারগুলি ম্যানুয়ালি পরিবর্তন করবেন না বা অন্যের কাছ থেকে অনুলিপি করবেন না।
 
-**Optimize FSRS Parameters**
+**FSRS প্যারামিটার অপ্টিমাইজ করুন**
 
-The FSRS optimizer uses machine learning to learn your memory patterns and find parameters that best fit your review history. To do this, the optimizer requires several reviews to fine-tune the parameters.
+FSRS অপ্টিমাইজার আপনার স্মৃতি প্যাটার্ন শিখতে এবং আপনার পর্যালোচনা ইতিহাসের সাথে সবচেয়ে উপযুক্ত প্যারামিটারগুলি খুঁজে পেতে মেশিন লার্নিং ব্যবহার করে। এটি করার জন্য, অপ্টিমাইজারের প্যারামিটারগুলি ফাইন-টিউন করতে বেশ কয়েকটি পর্যালোচনার প্রয়োজন।
 
-When you click the **Optimize** button, FSRS will analyze your review history, and generate parameters that are optimal for your memory and the content you're studying. If you have decks that vary wildly in subjective difficulty, it
-is recommended to assign them separate presets, as their optimal parameters will differ. There is no need to optimize your
-parameters frequently: once every month is sufficient.
+আপনি যখন **অপ্টিমাইজ করুন** বোতামে ক্লিক করেন, তখন FSRS আপনার পর্যালোচনা ইতিহাস বিশ্লেষণ করবে এবং আপনার স্মৃতি এবং আপনি যে বিষয়বস্তু অধ্যয়ন করছেন তার জন্য সর্বোত্তম প্যারামিটার তৈরি করবে। যদি আপনার এমন ডেক থাকে যা বিষয়গত অসুবিধায় ব্যাপকভাবে পরিবর্তিত হয়, তাহলে
+সেগুলিকে আলাদা প্রিসেটে অ্যাসাইন করার পরামর্শ দেওয়া হয়, কারণ তাদের সর্বোত্তম প্যারামিটারগুলি ভিন্ন হবে। আপনার প্যারামিটারগুলি ঘন ঘন অপ্টিমাইজ করার দরকার নেই: মাসে একবারই যথেষ্ট।
 
-By default, parameters are calculated from the review history of all
-decks using the current preset. You can optionally [adjust the search](./searching.md)
-before optimizing the parameters, if you'd like to change which cards
-are used for optimization.
+ডিফল্টরূপে, প্যারামিটারগুলি বর্তমান প্রিসেট ব্যবহার করে সমস্ত ডেকের পর্যালোচনা ইতিহাস থেকে গণনা করা হয়। আপনি ঐচ্ছিকভাবে প্যারামিটারগুলি অপ্টিমাইজ করার আগে [অনুসন্ধান সামঞ্জস্য](./searching.md) করতে পারেন, যদি আপনি কোন কার্ডগুলি অপ্টিমাইজেশনের জন্য ব্যবহার করা হয় তা পরিবর্তন করতে চান।
 
-You can also optimize the parameters for all of your presets at once by clicking on **Optimize All Presets**.
+আপনি **সমস্ত প্রিসেট অপ্টিমাইজ করুন** এ ক্লিক করে আপনার সমস্ত প্রিসেটের জন্য প্যারামিটারগুলি একবারে অপ্টিমাইজ করতে পারেন।
 
-**Evaluate FSRS Parameters**
+**FSRS প্যারামিটার মূল্যায়ন করুন**
 
-You can use the **Evaluate** button to see metrics that show how well the parameters fit your review history. Smaller numbers
-indicate a better fit to your review history.
+আপনি **মূল্যায়ন** বোতামটি ব্যবহার করে মেট্রিক্স দেখতে পারেন যা দেখায় যে প্যারামিটারগুলি আপনার পর্যালোচনা ইতিহাসের সাথে কতটা ভালভাবে মিলে যায়। ছোট সংখ্যাগুলি
+আপনার পর্যালোচনা ইতিহাসের সাথে আরও ভাল ফিট নির্দেশ করে।
 
-Log loss doesn't have an intuitive interpretation. RMSE (bins) can be
-interpreted as the average difference between the predicted probability
-of recalling a card (R) and the actual
-probability measured from your review history. For example, RMSE=5% means that, on average, FSRS
-is off by 5% when predicting R. You don't need to understand these metrics to use FSRS.
+লগ লসের একটি স্বজ্ঞাত ব্যাখ্যা নেই। RMSE (বিন) কে ভবিষ্যদ্বাণী করা কার্ড মনে রাখার সম্ভাবনা (R) এবং আপনার পর্যালোচনা ইতিহাস থেকে পরিমাপ করা প্রকৃত সম্ভাবনার
+মধ্যে গড় পার্থক্য হিসাবে ব্যাখ্যা করা যেতে পারে। উদাহরণস্বরূপ, RMSE=5% মানে হল, গড়ে, R ভবিষ্যদ্বাণী করার সময় FSRS
+5% ভুল করে। FSRS ব্যবহার করার জন্য এই মেট্রিক্সগুলি আপনার বোঝার দরকার নেই।
 
-Note that log loss and RMSE (bins) are not perfectly correlated,
-so two decks may have similar RMSE values but very different log-loss values, or the other way around.
+মনে রাখবেন যে লগ লস এবং RMSE (বিন) পুরোপুরি সম্পর্কযুক্ত নয়,
+তাই দুটি ডেকের অনুরূপ RMSE মান থাকতে পারে তবে খুব ভিন্ন লগ-লস মান, বা এর বিপরীত।
 
-By default, log loss and RMSE (bins) are calculated from all decks using the current preset. You can optionally [adjust the search](./searching.md) before evaluating the parameters, if you'd like to change which cards are used for evaluation.
+ডিফল্টরূপে, লগ লস এবং RMSE (বিন) বর্তমান প্রিসেট ব্যবহার করে সমস্ত ডেক থেকে গণনা করা হয়। আপনি ঐচ্ছিকভাবে প্যারামিটারগুলি মূল্যায়ন করার আগে [অনুসন্ধান সামঞ্জস্য](./searching.md) করতে পারেন, যদি আপনি কোন কার্ডগুলি মূল্যায়নের জন্য ব্যবহার করা হয় তা পরিবর্তন করতে চান।
 
-### Reschedule Cards on Change
+### পরিবর্তনে কার্ডগুলি পুনরায় সময়সূচী করুন
 
-This option controls whether the due dates of cards will be changed when you enable FSRS, change desired retention, or change the parameters. The default is not to reschedule cards: future reviews will use the new scheduling, but there will be no immediate change to your workload. If rescheduling is enabled, the due dates of cards will be changed. Depending on your desired retention, it will often result in a large number of cards becoming due, so **this option is not recommended** when first switching from SM-2.
+এই বিকল্পটি নিয়ন্ত্রণ করে যে আপনি FSRS সক্ষম করলে, কাঙ্ক্ষিত ধারণ পরিবর্তন করলে, বা প্যারামিটার পরিবর্তন করলে কার্ডগুলির নির্ধারিত তারিখগুলি পরিবর্তিত হবে কিনা। ডিফল্ট হল কার্ডগুলি পুনরায় সময়সূচী না করা: ভবিষ্যতের রিভিউগুলি নতুন সময়সূচী ব্যবহার করবে, তবে আপনার কাজের চাপে তাৎক্ষণিক কোনো পরিবর্তন হবে না। যদি পুনরায় সময়সূচী সক্ষম করা হয়, তাহলে কার্ডগুলির নির্ধারিত তারিখগুলি পরিবর্তিত হবে। আপনার কাঙ্ক্ষিত ধারণের উপর নির্ভর করে, এটি প্রায়শই প্রচুর সংখ্যক কার্ড বকেয়া হওয়ার কারণ হবে, তাই SM-2 থেকে প্রথমবার পরিবর্তন করার সময় **এই বিকল্পটি সুপারিশ করা হয় না**।
 
-Use this option sparingly, as it will add a review entry to each of your cards, and increase the size of your collection.
+এই বিকল্পটি sparingly ব্যবহার করুন, কারণ এটি আপনার প্রতিটি কার্ডে একটি রিভিউ এন্ট্রি যোগ করবে এবং আপনার সংগ্রহের আকার বাড়াবে।
 
-If you're first switching from SM-2 and still wish to use this option, we recommend you first create a backup, enable FSRS with rescheduling, and then if needed, you can undo or restore from the backup.
+যদি আপনি SM-2 থেকে প্রথমবার পরিবর্তন করছেন এবং এখনও এই বিকল্পটি ব্যবহার করতে চান, তাহলে আমরা আপনাকে প্রথমে একটি ব্যাকআপ তৈরি করার, পুনরায় সময়সূচী সহ FSRS সক্ষম করার, এবং তারপরে প্রয়োজন হলে, আপনি পূর্বাবস্থায় ফিরিয়ে আনতে বা ব্যাকআপ থেকে পুনরুদ্ধার করতে পারেন।
 
-### Compute Minimum Recommended Retention
+### ন্যূনতম প্রস্তাবিত ধারণ গণনা করুন
 
-Compute minimum recommended retention (CMRR) attempts to find the desired retention value that leads to the most material learned, in the least amount of time. The calculated number can serve as a reference when deciding what to set your desired retention to. You may wish to choose a higher desired retention, if you’re willing to trade more study time for a greater retention rate. However, setting your desired retention lower than the minimum is not recommended, as you'll spend more time studying than necessary, due to increased forgetting.
+ন্যূনতম প্রস্তাবিত ধারণ গণনা (CMRR) কাঙ্ক্ষিত ধারণের মান খুঁজে বের করার চেষ্টা করে যা সবচেয়ে কম সময়ে সর্বাধিক শেখা উপাদান নিয়ে যায়। গণনা করা সংখ্যাটি আপনার কাঙ্ক্ষিত ধারণ কী সেট করবেন তা সিদ্ধান্ত নেওয়ার সময় একটি রেফারেন্স হিসাবে কাজ করতে পারে। আপনি যদি উচ্চতর ধারণের হারের জন্য আরও অধ্যয়নের সময় ব্যয় করতে ইচ্ছুক হন তবে আপনি একটি উচ্চতর কাঙ্ক্ষিত ধারণ নির্বাচন করতে চাইতে পারেন। তবে, ন্যূনতম ধারণের চেয়ে কম আপনার কাঙ্ক্ষিত ধারণ সেট করা সুপারিশ করা হয় না, কারণ আপনি বর্ধিত ভুলে যাওয়ার কারণে প্রয়োজনীয়তার চেয়ে বেশি সময় অধ্যয়ন করবেন।
 
-### The Simulator
+### সিমুলেটর
 
-You can use the simulator to get an estimate of your workload,
-either in reviews per day or in minutes of studying per day.
+আপনি আপনার কাজের চাপের একটি অনুমান পেতে সিমুলেটর ব্যবহার করতে পারেন,
+প্রতিদিন রিভিউ বা প্রতিদিন অধ্যয়নের মিনিটে।
 
-- **Days to simulate** controls the duration of the simulated study history.
-- **Additional new cards to simulate** controls whether the simulator should
-  simulate more cards than this preset already has. For example, if you currently have 100 cards under this preset,
-  and you set **Additional new cards to simulate** to 50, the simulator will simulate a total of 150 cards.
-  This can be useful if you plan to create more new cards in the future.
-- **New cards/day** and **Maximum reviews/day** control how many new cards will be learned each day and
-  the maximum number of reviews per day.
-- **Maximum interval** controls the maximum interval length (in days).
+-   **সিমুলেট করার দিনগুলি** সিমুলেটেড অধ্যয়ন ইতিহাসের সময়কাল নিয়ন্ত্রণ করে।
+-   **সিমুলেট করার জন্য অতিরিক্ত নতুন কার্ড** সিমুলেটরটি এই প্রিসেটে ইতিমধ্যে থাকা কার্ডগুলির চেয়ে বেশি কার্ড সিমুলেট করবে কিনা তা নিয়ন্ত্রণ করে। উদাহরণস্বরূপ, যদি আপনার বর্তমানে এই প্রিসেটের অধীনে 100টি কার্ড থাকে,
+    এবং আপনি **সিমুলেট করার জন্য অতিরিক্ত নতুন কার্ড** 50 এ সেট করেন, সিমুলেটরটি মোট 150টি কার্ড সিমুলেট করবে।
+    এটি সহায়ক হতে পারে যদি আপনি ভবিষ্যতে আরও নতুন কার্ড তৈরি করার পরিকল্পনা করেন।
+-   **প্রতিদিন নতুন কার্ড** এবং **প্রতিদিন সর্বাধিক রিভিউ** নিয়ন্ত্রণ করে যে প্রতিদিন কতগুলি নতুন কার্ড শেখা হবে এবং
+    প্রতিদিন সর্বাধিক রিভিউ সংখ্যা।
+-   **সর্বোচ্চ ব্যবধান** সর্বোচ্চ ব্যবধানের দৈর্ঘ্য (দিনে) নিয়ন্ত্রণ করে।
 
-To make the simulation as realistic as possible, the simulator takes into account the real memory states (difficulty, stability, retrievability) of your cards.
-It also uses your FSRS parameters and the value of desired retention, therefore changing them will affect the simulation.
+সিমুলেশনটিকে যতটা সম্ভব বাস্তবসম্মত করতে, সিমুলেটর আপনার কার্ডগুলির বাস্তব মেমরি স্টেট (কঠিনতা, স্থায়িত্ব, পুনরুদ্ধারযোগ্যতা) বিবেচনা করে।
+এটি আপনার FSRS প্যারামিটার এবং কাঙ্ক্ষিত ধারণের মানও ব্যবহার করে, অতএব সেগুলি পরিবর্তন করলে সিমুলেশন প্রভাবিত হবে।
 
-#### Learning and Relearning Steps
+#### শেখার এবং পুনরায় শেখার ধাপ
 
-(Re)learning steps of 1 day or greater are not recommended when using FSRS. The main
-reason they were popular with the legacy SM-2 algorithm is because repeatedly
-failing a card after it has graduated from the learning phase could reduce
-its ease a lot, leading to what some people called "ease hell". This is not
-a problem that FSRS suffers from. By keeping your learning steps under a
-day, you will allow FSRS to schedule cards at times it has calculated are
-optimal for your material and memory. Another reason not to use longer
-learning steps is because FSRS may end up scheduling the first review for a
-shorter time than your last learning step, leading to the **Hard** button
-showing a longer time than **Good**.
+FSRS ব্যবহার করার সময় 1 দিন বা তার বেশি (পুনরায়) শেখার ধাপগুলি সুপারিশ করা হয় না। এর প্রধান কারণ হল তারা লিগ্যাসি SM-2 অ্যালগরিদমের সাথে জনপ্রিয় ছিল কারণ শেখার ধাপ থেকে স্নাতক হওয়ার পরে বারবার একটি কার্ডে ব্যর্থ হলে
+তার সহজতা অনেক কমে যেতে পারে, যার ফলে কিছু লোক এটিকে "সহজ নরক" বলত। FSRS এই সমস্যায় ভোগে না। আপনার শেখার ধাপগুলিকে এক দিনের নিচে রেখে, আপনি FSRS কে কার্ডগুলিকে এমন সময়ে সময়সূচী করতে দেবেন যা এটি আপনার উপাদান এবং স্মৃতির জন্য সর্বোত্তম বলে গণনা করেছে। দীর্ঘ শেখার ধাপগুলি ব্যবহার না করার আরেকটি কারণ হল FSRS প্রথম রিভিউটি আপনার শেষ শেখার ধাপের চেয়ে কম সময়ের জন্য সময়সূচী করতে পারে, যার ফলে **হার্ড** বোতামটি **গুড** এর চেয়ে বেশি সময় দেখাবে।
 
-We also recommend you keep the number of learning steps to a minimum. Evidence
-shows that repeating a card multiple times in a single day does not significantly
-contribute to long-term memory, so your time is
-better spent on other cards or a shorter study session.
+আমরা আপনাকে শেখার ধাপের সংখ্যা সর্বনিম্ন রাখতেও সুপারিশ করি। প্রমাণ দেখায়
+যে একদিনে একটি কার্ড বারবার পুনরাবৃত্তি করলে দীর্ঘমেয়াদী স্মৃতিতে উল্লেখযোগ্যভাবে
+অবদান রাখে না, তাই আপনার সময়
+অন্যান্য কার্ডে বা একটি ছোট অধ্যয়ন সেশনে ব্যয় করা ভাল।
 
-In the latest version of Anki you can let FSRS control short-term scheduling by leaving the (re)learning steps field empty. This is an experimental feature.
-Note that just because FSRS-5 _can_ give you intervals shorter than one day doesn't necessarily mean that it _will_. Your **Again** interval can be one day long, or even longer.
+আঙ্কির সর্বশেষ সংস্করণে আপনি (পুনরায়) শেখার ধাপের ক্ষেত্রটি খালি রেখে FSRS কে স্বল্পমেয়াদী সময়সূচী নিয়ন্ত্রণ করতে দিতে পারেন। এটি একটি পরীক্ষামূলক বৈশিষ্ট্য।
+মনে রাখবেন যে FSRS-5 আপনাকে এক দিনের চেয়ে কম ব্যবধান দিতে _পারলেও_ এর মানে এই নয় যে এটি _দেবেই_। আপনার **আবার** ব্যবধান এক দিন বা তার বেশিও হতে পারে।
 
-#### Add-On Compatibility
+#### অ্যাড-অন সামঞ্জস্য
 
-Some add-ons can cause conflicts with FSRS. As a general rule of thumb,
-if an add-on affects a card's intervals, it shouldn't be used with FSRS.
-A list of commonly used add-ons and their FSRS compatibility can be found in [Add-on Compatibility](https://github.com/open-spaced-repetition/fsrs4anki#add-on-compatibility).
+কিছু অ্যাড-অন FSRS এর সাথে দ্বন্দ্ব সৃষ্টি করতে পারে। একটি সাধারণ নিয়ম হিসাবে,
+যদি একটি অ্যাড-অন একটি কার্ডের ব্যবধান প্রভাবিত করে, তবে এটি FSRS এর সাথে ব্যবহার করা উচিত নয়।
+সাধারণত ব্যবহৃত অ্যাড-অনগুলির একটি তালিকা এবং তাদের FSRS সামঞ্জস্য [অ্যাড-অন সামঞ্জস্য](https://github.com/open-spaced-repetition/fsrs4anki#add-on-compatibility) এ পাওয়া যাবে।
 
-#### More
+#### আরও
 
-Several frequently asked questions about FSRS have been answered in [its FAQ](https://faqs.ankiweb.net/frequently-asked-questions-about-fsrs.html).
+FSRS সম্পর্কে বেশ কয়েকটি প্রায়শই জিজ্ঞাসিত প্রশ্নের উত্তর [এর FAQ](https://faqs.ankiweb.net/frequently-asked-questions-about-fsrs.html) এ দেওয়া হয়েছে।
 
-For more info on FSRS, please check:
+FSRS সম্পর্কে আরও তথ্যের জন্য, অনুগ্রহ করে দেখুন:
 
-- [FSRS4Anki Wiki](https://github.com/open-spaced-repetition/fsrs4anki/wiki)
-- [FSRS4Anki on Github](https://github.com/open-spaced-repetition/fsrs4anki)
+-   [FSRS4Anki Wiki](https://github.com/open-spaced-repetition/fsrs4anki/wiki)
+-   [FSRS4Anki on Github](https://github.com/open-spaced-repetition/fsrs4anki)
 
-## Advanced
+## অ্যাডভান্সড
 
-### Maximum Interval
+### সর্বোচ্চ ব্যবধান
 
-The maximum number of days a review card will wait before it's shown again. When reviews have reached the limit, **Hard**, **Good** and **Easy** will all give the same delay. The shorter you set this, the greater your workload will be. The default is 100 years; you can decrease this to a smaller number if you’re willing to trade extra study time for higher retention.
+একটি রিভিউ কার্ড আবার দেখানোর আগে সর্বাধিক কত দিন অপেক্ষা করবে। যখন রিভিউ সীমা অতিক্রম করে, **হার্ড**, **গুড** এবং **ইজি** সব একই বিলম্ব দেবে। আপনি এটি যত কম সেট করবেন, আপনার কাজের চাপ তত বেশি হবে। ডিফল্ট হল 100 বছর; আপনি যদি উচ্চ ধারণের জন্য অতিরিক্ত অধ্যয়নের সময় ব্যয় করতে ইচ্ছুক হন তবে আপনি এটি একটি ছোট সংখ্যায় হ্রাস করতে পারেন।
 
-### Historical Retention
+### ঐতিহাসিক ধারণ
 
-This setting is hidden unless FSRS is turned on.
+FSRS চালু না থাকলে এই সেটিংটি লুকানো থাকে।
 
-When some of your review history is missing, FSRS needs to fill in the gaps. By default, it will assume that when you did those old reviews, you remembered 90% of the material. If your old retention was appreciably higher or lower than 90%, adjusting this option will allow FSRS to better approximate the missing reviews.
+যখন আপনার কিছু রিভিউ ইতিহাস অনুপস্থিত থাকে, তখন FSRS কে শূন্যস্থান পূরণ করতে হয়। ডিফল্টরূপে, এটি ধরে নেবে যে আপনি যখন সেই পুরানো রিভিউগুলি করেছিলেন, তখন আপনি 90% উপাদান মনে রেখেছিলেন। যদি আপনার পুরানো ধারণ 90% এর চেয়ে উল্লেখযোগ্যভাবে বেশি বা কম হয়, তাহলে এই বিকল্পটি সামঞ্জস্য করলে FSRS অনুপস্থিত রিভিউগুলিকে আরও ভালভাবে অনুমান করতে পারবে।
 
-Your review history may be incomplete for two reasons:
+আপনার রিভিউ ইতিহাস দুটি কারণে অসম্পূর্ণ হতে পারে:
 
-- Because you're using the **Ignore cards reviewed before** option.
-- Because you previously deleted review logs to free up space, or imported material from a different SRS program.
+-   কারণ আপনি **আগে পর্যালোচনা করা কার্ডগুলি উপেক্ষা করুন** বিকল্পটি ব্যবহার করছেন।
+-   কারণ আপনি পূর্বে স্থান খালি করার জন্য রিভিউ লগ মুছে ফেলেছিলেন, অথবা একটি ভিন্ন SRS প্রোগ্রাম থেকে উপাদান আমদানি করেছিলেন।
 
-The latter is quite rare, so unless you're using the former option, you probably don't need to adjust this setting.
+শেষেরটি বেশ বিরল, তাই আপনি পূর্ববর্তী বিকল্পটি ব্যবহার না করলে, সম্ভবত আপনার এই সেটিংটি সামঞ্জস্য করার প্রয়োজন নেই।
 
-### Ignore Cards Reviewed Before
+### আগে পর্যালোচনা করা কার্ডগুলি উপেক্ষা করুন
 
-If set, cards reviewed before the provided date will be ignored when optimizing FSRS parameters. This can be useful if you imported someone else's scheduling data, or have changed the way you use the answer buttons.
+যদি সেট করা হয়, প্রদত্ত তারিখের আগে পর্যালোচনা করা কার্ডগুলি FSRS প্যারামিটার অপ্টিমাইজ করার সময় উপেক্ষা করা হবে। আপনি যদি অন্যের সময়সূচী ডেটা আমদানি করে থাকেন, বা উত্তর বোতামগুলি ব্যবহারের পদ্ধতি পরিবর্তন করে থাকেন তবে এটি কার্যকর হতে পারে।
 
-### Starting Ease
+### শুরুর সহজতা
 
-Controls the ease that cards start out with. It is
-set when a card graduates from learning for the first time. It defaults
-to 2.50, meaning that once you have finished learning a card, answering
-**Good** on subsequent reviews will increase the delay by approximately
-2.5x (e.g. if the last delay was 10 days, the next delay would be around 25
-days). Based upon how you rate the card in subsequent reviews, the
-ease may increase or decrease from its starting value.
+কার্ডগুলির শুরুর সহজতা নিয়ন্ত্রণ করে। এটি
+যখন একটি কার্ড প্রথমবার শেখা থেকে স্নাতক হয় তখন সেট করা হয়। এটি ডিফল্টরূপে
+2.50 এ সেট করা হয়, যার অর্থ হল একবার আপনি একটি কার্ড শেখা শেষ করলে, পরবর্তী রিভিউগুলিতে
+**গুড** উত্তর দিলে বিলম্ব প্রায় 2.5 গুণ বৃদ্ধি পাবে (যেমন যদি শেষ বিলম্ব 10 দিন হয়, তাহলে পরবর্তী বিলম্ব প্রায় 25
+দিন হবে)। পরবর্তী রিভিউগুলিতে আপনি কার্ডটিকে কীভাবে রেট দেন তার উপর নির্ভর করে,
+সহজতা তার শুরুর মান থেকে বাড়তে বা কমতে পারে।
 
-### Easy Bonus
+### সহজ বোনাস
 
-An extra multiplier applied to the interval when a review card is answered
-**Easy**. With the default value of 1.30, **Easy** will give an interval that is
-1.3 times the Good interval (e.g. if the Good interval was 10 days, the Easy
-interval would be around 13 days).
+যখন একটি রিভিউ কার্ডে **ইজি** উত্তর দেওয়া হয় তখন ব্যবধানে প্রয়োগ করা একটি অতিরিক্ত গুণক।
+1.30 এর ডিফল্ট মান সহ, **ইজি** একটি ব্যবধান দেবে যা
+গুড ব্যবধানের 1.3 গুণ (যেমন যদি গুড ব্যবধান 10 দিন হয়, তাহলে সহজ
+ব্যবধান প্রায় 13 দিন হবে)।
 
-### Interval Modifier
+### ব্যবধান মডিফায়ার
 
-An extra multiplier that is applied to all reviews. At its default of 1.00 it
-does nothing. If you set it to 0.80, intervals will be generated at
-80% of their normal size (so a 10 day interval would become 8 days).
-You can thus use the multiplier to to make your reviews less or more frequent.
+সমস্ত রিভিউতে প্রয়োগ করা একটি অতিরিক্ত গুণক। এর ডিফল্ট 1.00 এ এটি
+কিছুই করে না। যদি আপনি এটি 0.80 এ সেট করেন, তাহলে ব্যবধানগুলি তাদের স্বাভাবিক আকারের
+80% এ তৈরি হবে (তাই একটি 10 দিনের ব্যবধান 8 দিন হবে)।
+আপনি এইভাবে গুণকটি ব্যবহার করে আপনার রিভিউগুলি কম বা বেশি ঘন ঘন করতে পারেন।
 
-For moderately difficult material, the average user should find they
-remember approximately 90% of mature cards when they come up for review. You
-can find out your own performance by opening the graphs/statistics for a
-deck and looking at the Answer Buttons graph - mature retention is the
-correct% on the right side of the graph. If you haven’t been studying for
-long, you may not have any mature cards yet. As performance with new
-cards and younger cards can vary considerably, it’s a good idea to wait
-until you have a reasonable amount of mature reviews before you start
-drawing conclusions about your retention rate.
+মাঝারি কঠিন উপাদানের জন্য, গড় ব্যবহারকারীকে খুঁজে বের করা উচিত যে তারা
+রিভিউর জন্য এলে পরিপক্ক কার্ডগুলির প্রায় 90% মনে রাখে। আপনি
+একটি ডেকের জন্য গ্রাফ/পরিসংখ্যান খুলে এবং উত্তর বোতাম গ্রাফ দেখে আপনার নিজস্ব কর্মক্ষমতা
+খুঁজে বের করতে পারেন - পরিপক্ক ধারণ গ্রাফের ডানদিকে সঠিক %। যদি আপনি দীর্ঘ সময় ধরে অধ্যয়ন না করে থাকেন,
+তাহলে আপনার এখনও কোনো পরিপক্ক কার্ড নাও থাকতে পারে। নতুন কার্ড এবং
+কম বয়সী কার্ডগুলির সাথে কর্মক্ষমতা উল্লেখযোগ্যভাবে পরিবর্তিত হতে পারে বলে,
+আপনার ধারণের হার সম্পর্কে সিদ্ধান্তে আসার আগে একটি যুক্তিসঙ্গত পরিমাণ পরিপক্ক রিভিউ না হওয়া পর্যন্ত অপেক্ষা করা একটি ভাল ধারণা।
 
-On the SuperMemo website, they suggest that you can find an appropriate
-multiplier for a desired retention rate. Their formula boils down to:
+সুপারমেমো ওয়েবসাইটে, তারা পরামর্শ দেয় যে আপনি একটি কাঙ্ক্ষিত ধারণের হারের জন্য একটি উপযুক্ত
+গুণক খুঁজে পেতে পারেন। তাদের সূত্রটি মূলত:
 
-    log(desired retention%) / log(current retention%)
+    লগ(কাঙ্ক্ষিত ধারণ%) / লগ(বর্তমান ধারণ%)
 
-Imagine we have a current retention rate of 85% and we want to increase
-it to 90%. We’d calculate the modifier as:
+কল্পনা করুন আমাদের বর্তমান ধারণের হার 85% এবং আমরা এটিকে 90% এ বৃদ্ধি করতে চাই। আমরা মডিফায়ারটি এইভাবে গণনা করব:
 
-    log(90%) / log(85%) = 0.65
+    লগ(90%) / লগ(85%) = 0.65
 
-You can use [Google to calculate this](https://www.google.com/search?q=log(90%25)+%2F+log(85%25)).
+আপনি [এটি গণনা করতে গুগল ব্যবহার করতে পারেন](https://www.google.com/search?q=log(90%25)+%2F+log(85%25))।
 
-If you enter the resulting 65% into the interval modifier, you should
-find over time that your retention moves closer to your desired
-retention.
+যদি আপনি প্রাপ্ত 65% কে ব্যবধান মডিফায়ারে প্রবেশ করান, তাহলে আপনি সময়ের সাথে সাথে
+আপনার ধারণ আপনার কাঙ্ক্ষিত ধারণের কাছাকাছি চলে আসবে।
 
-One important thing to note however is that the trade-off between time
-spent studying and retention is not linear: we can see here that to
-increase our retention by 5 percentage points, we would have to study 35%
-more frequently. If the material you are learning is very important then
-it may be worth the extra effort – that is, of course, something you will need to
-decide for yourself. If you are simply worried that you are forgetting too
-much, then you may find investing more time at the initial learning stage, or using mnemonics will give you more gain for less effort.
+তবে একটি গুরুত্বপূর্ণ বিষয় মনে রাখতে হবে যে অধ্যয়নে ব্যয় করা সময় এবং ধারণের মধ্যে আপোস রৈখিক নয়: আমরা এখানে দেখতে পাচ্ছি যে
+আমাদের ধারণ 5 শতাংশ পয়েন্ট বাড়ানোর জন্য, আমাদের 35%
+বেশি ঘন ঘন অধ্যয়ন করতে হবে। আপনি যে উপাদান শিখছেন তা যদি খুব গুরুত্বপূর্ণ হয় তবে
+অতিরিক্ত প্রচেষ্টা মূল্যবান হতে পারে – এটি, অবশ্যই, আপনাকে নিজের জন্য সিদ্ধান্ত নিতে হবে।
+যদি আপনি কেবল ভুলে যাওয়ার বিষয়ে উদ্বিগ্ন হন, তাহলে আপনি প্রাথমিক শেখার পর্যায়ে
+বেশি সময় ব্যয় করা, অথবা স্মৃতি সহায়ক ব্যবহার করলে কম পরিশ্রমে বেশি লাভ পাবেন।
 
-One final thing to note is that Anki forces a new interval to be at
-least 1 day longer than it was previously, so that you do not get stuck
-reviewing with the same interval forever. If your goal is to repeat a
-card once a day for multiple days, you can do that by setting more
-learning mode steps, instead of by adjusting this modifier.
+আরেকটি চূড়ান্ত বিষয় মনে রাখতে হবে যে আঙ্কি একটি নতুন ব্যবধানকে পূর্বের চেয়ে অন্তত 1 দিন বেশি হতে বাধ্য করে, যাতে আপনি একই ব্যবধানের সাথে চিরকাল রিভিউ করতে আটকে না যান। যদি আপনার লক্ষ্য একাধিক দিনের জন্য প্রতিদিন একবার একটি কার্ড পুনরাবৃত্তি করা হয়, তাহলে আপনি এই মডিফায়ারটি সামঞ্জস্য না করে আরও শেখার মোডের ধাপ সেট করে তা করতে পারেন।
 
-### Hard Interval
+### কঠিন ব্যবধান
 
-The multiplier applied when you use the **Hard** button. The percentage is relative
-to the previous interval, e.g. with a default of 1.20, a card with a 10-day interval
-will be given 12 days.
+যখন আপনি **হার্ড** বোতামটি ব্যবহার করেন তখন প্রয়োগ করা গুণক। শতাংশটি পূর্ববর্তী ব্যবধানের সাথে আপেক্ষিক, যেমন ডিফল্ট 1.20 সহ, একটি 10 দিনের ব্যবধান সহ একটি কার্ডকে 12 দিন দেওয়া হবে।
 
-### New Interval
+### নতুন ব্যবধান
 
-The multiplier applied when you use the **Again** button on a review card. The
-default 0.00 means that a review card's delay is reset to zero when you forget it
-(which then becomes 1 day after the [minimum interval](#minimum-interval) is
-applied).
+যখন আপনি একটি রিভিউ কার্ডে **আবার** বোতামটি ব্যবহার করেন তখন প্রয়োগ করা গুণক। ডিফল্ট 0.00 মানে হল যে একটি রিভিউ কার্ডের বিলম্ব আপনি যখন এটি ভুলে যান তখন শূন্যে রিসেট করা হয় (যা তারপরে [সর্বনিম্ন ব্যবধান](#minimum-interval) প্রয়োগ করার পরে 1 দিন হয়ে যায়)।
 
-If changed from the default, it is possible for forgotten cards to preserve part
-of their previous delay. For example, if a card had a 100 day interval, and you set
-the **New Interval** to 0.20, the new interval would be 20 days.
+ডিফল্ট থেকে পরিবর্তিত হলে, ভুলে যাওয়া কার্ডগুলির পক্ষে তাদের পূর্ববর্তী বিলম্বের অংশ সংরক্ষণ করা সম্ভব। উদাহরণস্বরূপ, যদি একটি কার্ডের 100 দিনের ব্যবধান থাকে, এবং আপনি **নতুন ব্যবধান** 0.20 এ সেট করেন, তাহলে নতুন ব্যবধান 20 দিন হবে।
 
-While preserving part of the interval may seem to make sense, SuperMemo has observed
-that preserving part of the delay can actually [be counter-productive](https://supermemo.guru/wiki/Post-lapse_stability). For this reason, we recommend you leave it on the default setting.
+ব্যবধানের অংশ সংরক্ষণ করা যুক্তিযুক্ত মনে হলেও, সুপারমেমো পর্যবেক্ষণ করেছে
+যে বিলম্বের অংশ সংরক্ষণ করা আসলে [বিরূপ ফলদায়ক](https://supermemo.guru/wiki/Post-lapse_stability) হতে পারে। এই কারণে, আমরা আপনাকে এটি ডিফল্ট সেটিংয়ে রাখতে সুপারিশ করি।
 
-### Custom Scheduling
+### কাস্টম সময়সূচী
 
-You can have more control over Anki's scheduling of cards by using your own JavaScript in the custom scheduling field. This is a global option, so code entered here applies to every preset.
+কাস্টম শিডিউলিং ক্ষেত্রে আপনার নিজস্ব জাভাস্ক্রিপ্ট ব্যবহার করে আপনি আঙ্কির কার্ডগুলির সময়সূচী নিয়ন্ত্রণের উপর আরও বেশি নিয়ন্ত্রণ রাখতে পারেন। এটি একটি বিশ্বব্যাপী বিকল্প, তাই এখানে প্রবেশ করা কোড প্রতিটি প্রিসেটে প্রযোজ্য হয়।
 
-Here is an example custom scheduling script. Note that, for Qt5 versions of Anki, the code needs to be transpiled.
+এখানে একটি উদাহরণ কাস্টম শিডিউলিং স্ক্রিপ্ট। মনে রাখবেন যে, আঙ্কির Qt5 সংস্করণগুলির জন্য, কোডটি ট্রান্সপাইল করার প্রয়োজন।
 
 ```javascript
 // print the existing states
@@ -680,6 +593,6 @@ if (states.good.normal?.review) {
 }
 ```
 
-You can also see [FSRS custom scheduling code](https://github.com/open-spaced-repetition/fsrs4anki/blob/main/fsrs4anki_scheduler.js) as an example.
+আপনি উদাহরণ হিসাবে [FSRS কাস্টম শিডিউলিং কোড](https://github.com/open-spaced-repetition/fsrs4anki/blob/main/fsrs4anki_scheduler.js) ও দেখতে পারেন।
 
-The various scheduling states of cards are described in [SchedulingStates](https://github.com/ankitects/anki/blob/main/proto/anki/scheduler.proto).
+কার্ডের বিভিন্ন সময়সূচী অবস্থা [SchedulingStates](https://github.com/ankitects/anki/blob/main/proto/anki/scheduler.proto) এ বর্ণিত হয়েছে।

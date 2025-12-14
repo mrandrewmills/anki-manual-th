@@ -1,141 +1,63 @@
-# Background
+# প্রেক্ষাপট
 
 <!-- toc -->
 
-Anki is a program which makes remembering things easy. Because it is a
-lot more efficient than traditional study methods, you can either
-greatly decrease your time spent studying, or greatly increase the
-amount you learn.
+আঙ্কি এমন একটি প্রোগ্রাম যা জিনিস মনে রাখা সহজ করে তোলে। যেহেতু এটি ঐতিহ্যবাহী অধ্যয়নের পদ্ধতির চেয়ে অনেক বেশি কার্যকর, তাই আপনি হয় অধ্যয়নের সময়কে উল্লেখযোগ্যভাবে হ্রাস করতে পারেন, অথবা আপনি যা শিখছেন তার পরিমাণ অনেক বাড়িয়ে দিতে পারেন।
 
-Anyone who needs to remember things in their daily life can benefit from
-Anki. Since it is content-agnostic and supports images, audio, videos
-and scientific markup, the possibilities are endless. For
-example:
+দৈনন্দিন জীবনে যাদের জিনিস মনে রাখার প্রয়োজন হয়, তারা আঙ্কি থেকে উপকৃত হতে পারেন। যেহেতু এটি বিষয়বস্তু-নিরপেক্ষ এবং ছবি, অডিও, ভিডিও এবং বৈজ্ঞানিক মার্কআপ সমর্থন করে, তাই সম্ভাবনা সীমাহীন। উদাহরণস্বরূপ:
 
-- Learning a language
+- একটি ভাষা শেখা
 
-- Studying for medical and law exams
+- চিকিৎসা এবং আইন পরীক্ষার জন্য অধ্যয়ন
 
-- Memorizing names and faces of people
+- মানুষের নাম এবং মুখ মনে রাখা
 
-- Brushing up on geography
+- ভূগোলে ঝালিয়ে নেওয়া
 
-- Mastering long poems
+- দীর্ঘ কবিতা আয়ত্ত করা
 
-- Even practising guitar chords!
+- এমনকি গিটারের কর্ড অনুশীলন করা!
 
-There are two simple concepts behind Anki: **active recall testing** and
-**spaced repetition**. They are not known to most learners, despite being well-documented in scientific literature.
-Understanding how these concepts work will make you a more effective learner.
+আঙ্কির পিছনে দুটি সহজ ধারণা রয়েছে: **সক্রিয় প্রত্যাহার পরীক্ষা** এবং **ব্যবধানযুক্ত পুনরাবৃত্তি**। বৈজ্ঞানিক সাহিত্যে সু-নথিবদ্ধ হওয়া সত্ত্বেও, বেশিরভাগ শিক্ষার্থী এগুলি সম্পর্কে অবগত নন। এই ধারণাগুলি কীভাবে কাজ করে তা বোঝা আপনাকে আরও কার্যকর শিক্ষার্থী করে তুলবে।
 
-## Active Recall Testing
+## সক্রিয় প্রত্যাহার পরীক্ষা
 
-_Active recall testing_ means being asked a question and trying to
-remember the answer. This is in contrast to _passive study_, where we
-read, watch, or listen to something without pausing to consider if we
-know the answer. Research has shown that active recall testing is far
-more effective at building strong memories than passive study. There are
-two reasons for this:
+_সক্রিয় প্রত্যাহার পরীক্ষা_ মানে একটি প্রশ্ন জিজ্ঞাসা করা এবং উত্তর মনে রাখার চেষ্টা করা। এটি _প্যাসিভ অধ্যয়ন_-এর বিপরীতে, যেখানে আমরা কিছু পড়ি, দেখি বা শুনি উত্তর জানি কিনা তা বিবেচনা না করেই। গবেষণা দেখিয়েছে যে সক্রিয় প্রত্যাহার পরীক্ষা প্যাসিভ অধ্যয়নের চেয়ে শক্তিশালী স্মৃতি তৈরি করতে অনেক বেশি কার্যকর। এর দুটি কারণ রয়েছে:
 
-- The act of recalling something _strengthens_ the memory, increasing
-  the chances we’ll be able to remember it again.
+- কিছু মনে করার কাজটি স্মৃতিকে _শক্তিশালী_ করে, যা আমাদের এটি আবার মনে রাখার সম্ভাবনা বাড়িয়ে তোলে।
 
-- When we're unable to answer a question, it tells us we need to
-  return to the material to review or relearn it.
+- যখন আমরা একটি প্রশ্নের উত্তর দিতে অক্ষম হই, তখন এটি আমাদের বলে যে আমাদের উপাদানটি পর্যালোচনা বা পুনরায় শিখতে ফিরে যেতে হবে।
 
-You have probably encountered active recall testing in your school years
-without even realizing it. When good teachers give you a series of
-questions to answer after reading an article, or make you take weekly
-tests, they are not doing it simply to see if you
-understood the material or not. By testing you, they are increasing the
-chances you will be able to remember the material in the future.
+আপনি সম্ভবত আপনার স্কুল জীবনে সক্রিয় প্রত্যাহার পরীক্ষার মুখোমুখি হয়েছেন তা না বুঝেই। যখন ভালো শিক্ষকরা আপনাকে একটি নিবন্ধ পড়ার পরে উত্তর দেওয়ার জন্য একাধিক প্রশ্ন দেন, অথবা আপনাকে সাপ্তাহিক পরীক্ষা দিতে বাধ্য করেন, তখন তারা এটি কেবল আপনি উপাদানটি বুঝতে পেরেছেন কিনা তা দেখার জন্য করেন না। আপনাকে পরীক্ষা করে, তারা ভবিষ্যতে উপাদানটি মনে রাখতে পারার সম্ভাবনা বাড়িয়ে তোলে।
 
-A good way to integrate active recall testing into your own studies is
-to use _flashcards_. With traditional paper flashcards, you write a
-question on one side of a card, and the answer on the other side. By not
-turning the card over until you've recalled the answer, you can
-learn things more effectively than passive observation allows.
+আপনার নিজের পড়াশোনায় সক্রিয় প্রত্যাহার পরীক্ষাকে একত্রিত করার একটি ভালো উপায় হল _ফ্ল্যাশকার্ড_ ব্যবহার করা। ঐতিহ্যবাহী কাগজের ফ্ল্যাশকার্ডের সাহায্যে, আপনি কার্ডের একপাশে একটি প্রশ্ন এবং অন্যপাশে উত্তর লেখেন। উত্তরটি মনে না আসা পর্যন্ত কার্ডটি উল্টানো না করে, আপনি প্যাসিভ পর্যবেক্ষণের চেয়ে আরও কার্যকরভাবে জিনিস শিখতে পারেন।
 
-## Use It or Lose It
+## ব্যবহার করুন বা হারান
 
-Our brains are efficient machines, and they rapidly forget information
-that doesn't seem useful. Chances are that you don't remember what you
-had for dinner on Monday two weeks ago, because this information is not
-usually useful. However, if you went to a fantastic restaurant that day and have spent
-the last two weeks telling people about how great it was,
-you're likely to still remember it in vivid detail.
+আমাদের মস্তিষ্ক দক্ষ যন্ত্র, এবং তারা দ্রুত এমন তথ্য ভুলে যায় যা দরকারী বলে মনে হয় না। সম্ভবত আপনি দু'সপ্তাহ আগে সোমবার রাতে কী খেয়েছিলেন তা মনে নেই, কারণ এই তথ্য সাধারণত দরকারী নয়। তবে, যদি আপনি সেদিন একটি দুর্দান্ত রেস্টুরেন্টে গিয়ে থাকেন এবং গত দু'সপ্তাহ ধরে মানুষকে এটি কতটা দুর্দান্ত ছিল তা বলতে সময় কাটিয়ে থাকেন, তাহলে আপনি সম্ভবত এটি উজ্জ্বল বিস্তারিতভাবে মনে রাখবেন।
 
-The brain's "use it or lose it" policy applies to everything we learn.
-If you spend an afternoon memorizing some science terms, and then don't
-think about that material for two weeks, you'll probably have forgotten
-most of it. In fact, studies show we forget about 75% of material learned
-within a 48 hour period. This can seem pretty depressing when you need
-to learn a lot of information!
+মস্তিষ্কের "ব্যবহার করুন বা হারান" নীতি আমরা যা শিখি তার সবকিছুর ক্ষেত্রেই প্রযোজ্য। আপনি যদি একটি বিকেলে কিছু বিজ্ঞান পদ মুখস্থ করেন এবং তারপরে দু'সপ্তাহ ধরে সেই উপাদানটি নিয়ে চিন্তা না করেন, তাহলে সম্ভবত আপনি এটির বেশিরভাগই ভুলে যাবেন। প্রকৃতপক্ষে, গবেষণায় দেখা গেছে যে আমরা 48 ঘন্টার মধ্যে শেখা প্রায় 75% উপাদান ভুলে যাই। যখন আপনাকে প্রচুর তথ্য শিখতে হয় তখন এটি বেশ হতাশাজনক মনে হতে পারে!
 
-However, the solution is simple: _review_. By reviewing newly-learned
-information, we can greatly reduce forgetting.
+তবে, সমাধানটি সহজ: _পর্যালোচনা_। নতুন শেখা তথ্যের পর্যালোচনা করে, আমরা ভুলে যাওয়াকে ব্যাপকভাবে হ্রাস করতে পারি।
 
-The only problem is that traditionally, reviewing has not been very practical. If
-you are using paper flashcards, it's easy to flick through all of them
-if you only have 30 of them to review, but as the number grows to 300 or
-3000, it quickly becomes unmanageable.
+একমাত্র সমস্যা হলো ঐতিহ্যগতভাবে, পর্যালোচনা খুব ব্যবহারিক ছিল না। আপনি যদি কাগজের ফ্ল্যাশকার্ড ব্যবহার করেন, তবে আপনার যদি পর্যালোচনা করার জন্য মাত্র 30টি থাকে তবে সেগুলি সবগুলি দ্রুত দেখে নেওয়া সহজ, কিন্তু সংখ্যাটি যখন 300 বা 3000-এ পৌঁছায়, তখন এটি দ্রুত অসহনীয় হয়ে ওঠে।
 
-## Spaced Repetition
+## ব্যবধানযুক্ত পুনরাবৃত্তি
 
-The _spacing effect_ was reported in 1885 by a German psychologist called Hermann Ebbinghaus. He
-observed that we tend to remember things more effectively, if we spread
-reviews out over time, instead of studying multiple times in one
-session. Since the 1930s, there have been a number of proposals for
-utilizing the spacing effect to improve learning, in what has come to be
-called _spaced repetition_.
+_ব্যবধান প্রভাব_ 1885 সালে জার্মান মনোবিজ্ঞানী হারম্যান এভিংহাউস দ্বারা রিপোর্ট করা হয়েছিল। তিনি লক্ষ্য করেছিলেন যে আমরা জিনিসগুলিকে আরও কার্যকরভাবে মনে রাখতে প্রবণতা রাখি, যদি আমরা একটি সেশনে একাধিকবার অধ্যয়নের পরিবর্তে, সময়ের সাথে সাথে পর্যালোচনাগুলিকে ছড়িয়ে দিই। 1930-এর দশক থেকে, শেখার উন্নতিতে ব্যবধান প্রভাব ব্যবহার করার জন্য বেশ কয়েকটি প্রস্তাব এসেছে, যা _ব্যবধানযুক্ত পুনরাবৃত্তি_ নামে পরিচিতি লাভ করেছে।
 
-One example was in 1972, when a German scientist called Sebastian Leitner
-popularized a method of spaced repetition with paper flashcards. By
-separating the paper cards into a series of boxes, and moving the
-cards to a different box on each successful or unsuccessful review, it
-was possible to see at a glance a rough estimate of how well a card was
-known and when it should be reviewed again. This was a great improvement
-over a single box of cards, and it has been widely adopted by
-computerized flashcard software. It is a rather rough approach however,
-as it cannot give you an exact date on which you should review something
-again, and it does not work very well with material of varying
-difficulty.
+এর একটি উদাহরণ ছিল 1972 সালে, যখন জার্মান বিজ্ঞানী সেবাস্টিয়ান লিটনার কাগজের ফ্ল্যাশকার্ড ব্যবহার করে ব্যবধানযুক্ত পুনরাবৃত্তির একটি পদ্ধতিকে জনপ্রিয় করেছিলেন। কাগজের কার্ডগুলিকে একাধিক বাক্সে আলাদা করে, এবং প্রতিটি সফল বা অসফল পর্যালোচনার পর কার্ডগুলিকে ভিন্ন বাক্সে সরিয়ে, এক নজরে একটি কার্ড কতটা ভালোভাবে জানা আছে এবং কখন এটি আবার পর্যালোচনা করা উচিত তার একটি মোটামুটি অনুমান দেখা সম্ভব ছিল। এটি কার্ডের একটি একক বাক্সের চেয়ে একটি দুর্দান্ত উন্নতি ছিল এবং এটি কম্পিউটারাইজড ফ্ল্যাশকার্ড সফ্টওয়্যার দ্বারা ব্যাপকভাবে গৃহীত হয়েছে। এটি একটি বরং রুক্ষ পদ্ধতি, কারণ এটি আপনাকে একটি নির্দিষ্ট তারিখ দিতে পারে না যেদিন আপনার কিছু আবার পর্যালোচনা করা উচিত, এবং এটি বিভিন্ন অসুবিধার উপাদানের সাথে খুব ভালোভাবে কাজ করে না।
 
-The biggest developments in the last 30 years have come from the authors
-of SuperMemo, a commercial flashcard program that implements spaced
-repetition. SuperMemo pioneered the concept of a system that keeps track
-of the ideal time to review material and optimizes itself based on the
-performance of the user.
+গত 30 বছরে সবচেয়ে বড় উন্নয়ন এসেছে SuperMemo-এর লেখকদের কাছ থেকে, যা ব্যবধানযুক্ত পুনরাবৃত্তি বাস্তবায়নকারী একটি বাণিজ্যিক ফ্ল্যাশকার্ড প্রোগ্রাম। SuperMemo এমন একটি সিস্টেমের ধারণার পথপ্রদর্শক ছিল যা উপাদান পর্যালোচনা করার আদর্শ সময় ট্র্যাক করে এবং ব্যবহারকারীর কর্মক্ষমতার উপর ভিত্তি করে নিজেকে অপ্টিমাইজ করে।
 
-In SuperMemo's spaced repetition system, every time you answer a
-question, you tell the program how well you were able to remember it —
-whether you forgot completely, made a small mistake, remembered with
-trouble, remembered easily, etc. The program uses this feedback to
-decide the optimal time to show you the question again. Because a memory
-gets stronger each time you successfully recall it, the time between
-reviews gets longer and longer — so you may see a question for the first
-time today, then 3 days later, 15 days later, 45 days later, and so on.
+SuperMemo-এর ব্যবধানযুক্ত পুনরাবৃত্তি পদ্ধতিতে, প্রতিবার আপনি একটি প্রশ্নের উত্তর দিলে, আপনি প্রোগ্রামকে বলেন যে আপনি এটি কতটা ভালোভাবে মনে রাখতে পেরেছিলেন - আপনি সম্পূর্ণ ভুলে গেছেন কিনা, একটি ছোট ভুল করেছেন কিনা, সমস্যা সহ মনে রেখেছেন কিনা, সহজে মনে রেখেছেন কিনা, ইত্যাদি। প্রোগ্রাম এই প্রতিক্রিয়া ব্যবহার করে আপনাকে প্রশ্নটি আবার দেখানোর সর্বোত্তম সময় নির্ধারণ করে। যেহেতু আপনি প্রতিবার সফলভাবে মনে করার সময় একটি স্মৃতি শক্তিশালী হয়, তাই পর্যালোচনার মধ্যে সময় দীর্ঘ থেকে দীর্ঘতর হতে থাকে - তাই আপনি আজ প্রথমবার একটি প্রশ্ন দেখতে পারেন, তারপর 3 দিন পরে, 15 দিন পরে, 45 দিন পরে, এবং তাই।
 
-This was a revolution in learning, as it meant material could be learned
-and retained with the absolute minimum amount of effort necessary.
-SuperMemo's slogan sums it up: with spaced repetition, you can: "forget
-about forgetting".
+এটি শেখার ক্ষেত্রে একটি বিপ্লব ছিল, কারণ এর অর্থ হল সর্বনিম্ন প্রয়োজনীয় প্রচেষ্টার মাধ্যমে উপাদান শেখা এবং ধরে রাখা যেতে পারে। SuperMemo-এর স্লোগান এটি সংক্ষিপ্ত করে: ব্যবধানযুক্ত পুনরাবৃত্তি সহ, আপনি পারেন: "ভুলে যাওয়ার কথা ভুলে যান"।
 
-## Why Anki?
+## কেন আঙ্কি?
 
-While there is no denying the huge impact SuperMemo has had on the
-field, it is not without its problems. The program is often criticized
-for being buggy and difficult to navigate. It only runs on Windows
-computers. It is proprietary software, meaning that end-users cannot extend it
-or access the raw data. And while very old versions have been made available
-for free, they are quite limited for modern use.
+যদিও SuperMemo-এর ক্ষেত্রে বিশাল প্রভাব অস্বীকার করার উপায় নেই, তবে এটি সমস্যা-মুক্ত নয়। প্রোগ্রামটি প্রায়শই বাগি এবং নেভিগেট করা কঠিন হওয়ার জন্য সমালোচিত হয়। এটি শুধুমাত্র উইন্ডোজ কম্পিউটারে চলে। এটি মালিকানাধীন সফটওয়্যার, যার অর্থ হল শেষ ব্যবহারকারীরা এটিকে প্রসারিত করতে বা কাঁচা ডেটা অ্যাক্সেস করতে পারে না। এবং যদিও খুব পুরানো সংস্করণ বিনামূল্যে উপলব্ধ করা হয়েছে, তবে আধুনিক ব্যবহারের জন্য সেগুলি বেশ সীমিত।
 
-Anki addresses these issues. There are free clients for Anki available
-on many platforms, so struggling students and teachers with budgetary
-constraints are not left out. Anki is open source, with an already
-flourishing library of add-ons contributed by end-users. It is
-multi-platform, running on Windows, macOS, Linux/FreeBSD, and some
-mobile devices. And it is considerably easier to use than SuperMemo.
+আঙ্কি এই সমস্যাগুলি সমাধান করে। অনেক প্ল্যাটফর্মে আঙ্কির জন্য বিনামূল্যে ক্লায়েন্ট উপলব্ধ, তাই আর্থিক সীমাবদ্ধতা সহ সংগ্রামরত শিক্ষার্থী এবং শিক্ষকরা বাদ পড়েন না। আঙ্কি ওপেন সোর্স, যার মধ্যে শেষ ব্যবহারকারীদের দ্বারা অবদানকৃত অ্যাড-অনগুলির একটি ইতিমধ্যেই সমৃদ্ধ লাইব্রেরি রয়েছে। এটি মাল্টি-প্ল্যাটফর্ম, উইন্ডোজ, macOS, Linux/FreeBSD এবং কিছু মোবাইল ডিভাইসে চলে। এবং এটি SuperMemo-এর চেয়ে উল্লেখযোগ্যভাবে ব্যবহার করা সহজ।
 
-Anki's spaced repetition system is based on an older version of the
-SuperMemo algorithm called [SM-2](https://faqs.ankiweb.net/what-spaced-repetition-algorithm). Recently, a new algorithm called [FSRS](https://docs.ankiweb.net/deck-options.html?highlight=FSRS#fsrs) has been integrated as an alternative to the legacy SM-2 algorithm.
+আঙ্কির ব্যবধানযুক্ত পুনরাবৃত্তি সিস্টেমটি [SM-2](https://faqs.ankiweb.net/what-spaced-repetition-algorithm) নামক SuperMemo অ্যালগরিদমের একটি পুরানো সংস্করণের উপর ভিত্তি করে তৈরি। সম্প্রতি, [FSRS](https://docs.ankiweb.net/deck-options.html?highlight=FSRS#fsrs) নামক একটি নতুন অ্যালগরিদম উত্তরাধিকারী SM-2 অ্যালগরিদমের বিকল্প হিসাবে একত্রিত করা হয়েছে।

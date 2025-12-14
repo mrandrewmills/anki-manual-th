@@ -1,585 +1,419 @@
-# Adding/Editing
+# যোগ/সম্পাদনা
 
 <!-- toc -->
 
-## Adding Cards and Notes
+## কার্ড এবং নোট যোগ করা
 
-Recall from the [basics](getting-started.md) that in Anki we add notes rather than
-cards, and Anki creates cards for us. Click **Add** in the [main window](studying.md#decks),
-and the Add Notes window will appear.
+[মৌলিক](getting-started.md) থেকে মনে রাখবেন যে আঙ্কি-তে আমরা কার্ডের পরিবর্তে নোট যোগ করি, এবং আঙ্কি আমাদের জন্য কার্ড তৈরি করে। [মূল উইন্ডোতে](studying.md#decks) **যোগ করুন** এ ক্লিক করুন, এবং নোট যোগ করুন উইন্ডোটি প্রদর্শিত হবে।
 
-![Add Screen](media/add_screen.png)
+![যোগ স্ক্রিন](media/add_screen.png)
 
-The top left of the window shows us the current [note type](getting-started.md#note-types). If it does
-not say "Basic," then you may have added some note types when you
-downloaded a shared deck. The text below assumes that "Basic" is
-selected.
+উইন্ডোর উপরের বাম দিকে আমাদের বর্তমান [নোটের ধরন](getting-started.md#note-types) দেখায়। যদি এটি "বেসিক" না বলে, তাহলে আপনি যখন একটি শেয়ার করা ডেক ডাউনলোড করেছেন তখন আপনি কিছু নোটের ধরন যোগ করে থাকতে পারেন। নীচের পাঠ্যটি ধরে নেয় যে "বেসিক" নির্বাচিত আছে।
 
-The top right of the window shows us the [deck](getting-started.md#decks) cards will be added to. If
-you would like to add cards to a new deck, you can click on the deck name
-button and then click **Add**.
+উইন্ডোর উপরের ডান দিকে আমাদের [ডেক](getting-started.md#decks) দেখায় যেখানে কার্ডগুলি যোগ করা হবে। যদি
+আপনি একটি নতুন ডেকে কার্ড যোগ করতে চান, তাহলে আপনি ডেকের নামের বোতামে ক্লিক করতে পারেন
+এবং তারপর **যোগ করুন** এ ক্লিক করুন।
 
-Below the note type, you'll see some buttons, and an area labelled
-"Front" and "Back". Front and Back are called [fields](getting-started.md#notes--fields), and you can add,
-remove, and rename them by clicking the "Fields…​" button above.
+নোটের ধরনের নীচে, আপনি কিছু বোতাম দেখতে পাবেন, এবং একটি এলাকা যা "ফ্রন্ট" এবং "ব্যাক" হিসাবে চিহ্নিত। ফ্রন্ট এবং ব্যাককে [ক্ষেত্র](getting-started.md#notes--fields) বলা হয়, এবং আপনি উপরের "ক্ষেত্র..." বোতামে ক্লিক করে সেগুলি যোগ, সরাতে এবং নাম পরিবর্তন করতে পারেন।
 
-Below the fields is another area labelled "**tags**". Tags are labels that
-you can attach to your notes, to make organizing and finding notes
-easier. You can leave the tags blank if you wish, or add one or more of
-them. Tags are separated by a space. If the tags area says
+ক্ষেত্রের নীচে আরেকটি এলাকা রয়েছে যা "**ট্যাগ**" হিসাবে চিহ্নিত। ট্যাগগুলি এমন লেবেল যা
+আপনি আপনার নোটগুলিতে সংযুক্ত করতে পারেন, যাতে নোটগুলি সংগঠিত করা এবং খুঁজে পাওয়া
+সহজ হয়। আপনি চাইলে ট্যাগগুলি ফাঁকা রাখতে পারেন, অথবা এক বা একাধিক যোগ করতে পারেন। ট্যাগগুলি একটি স্পেস দ্বারা পৃথক করা হয়। যদি ট্যাগ এলাকায় লেখা থাকে
 
     vocab check_with_tutor
 
-…​then the note you add would have two tags.
-
-When you have entered text into the front and back, you can click the
-**Add** button or press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> (<kbd>Command</kbd>+<kbd>Enter</kbd> on a Mac) to add the
-note to your collection. When you do so, a card will be created as well,
-and placed into the deck you chose. If you would like to edit a card you
-added, you can click the history button to search for a recently added
-card in the [browser](browsing.md).
-
-For more information on the buttons between the note type and the
-fields, please see the [editor](editing.md) section.
-
-### Duplicate Check
-
-Anki checks the first field for uniqueness, so it will warn you if you
-enter two cards with a Front field of "apple" (for example). The
-uniqueness check is limited to the current note type, so if you're
-studying multiple languages, two cards with the same Front would not be
-listed as duplicates as long as you had a different note type for each
-language.
-
-Anki does not check for duplicates in other fields automatically for
-efficiency reasons, but the browser has a "Find Duplicates" function,
-which you can run periodically.
-
-### Effective Learning
-
-Different people like to review in different ways, but there are some
-general concepts to keep in mind. An excellent introduction is [this article](https://super-memory.com/articles/20rules.htm) on the SuperMemo
-site. In particular:
-
-- **Keep it simple**: The shorter your cards, the easier they are to
-  review. You may be tempted to include lots of information "just in
-  case," but reviews will quickly become painful.
-
-- **Don't memorize without understanding**: If you are studying a
-  language, try to avoid large lists of words. The best way to learn
-  languages is in context, which means seeing those words used in a
-  sentence. Likewise, imagine you're studying a computer course. If
-  you attempt to memorize the mountain of acronyms, you'll find it
-  very difficult to make progress. But if you take the time to
-  understand the concepts behind the acronyms, learning the acronyms
-  will become a lot easier.
-
-## Adding a Note Type
-
-While basic note types are sufficient for simple cards with only a word
-or phrase on each side, as soon as you find yourself wanting to include
-more than one piece of information on the front or back, it's better to
-split that information up into more fields.
-
-You may find yourself thinking "but I only want one card, so why can't I
-just include the audio, a picture, a hint, and the translation in the
-Front field?" If you'd prefer to do that, that's fine. But the
-disadvantage of that approach is that all the information is stuck
-together. If you wanted to sort your cards by the hint, you wouldn't be
-able to do that as it is mixed in with the other content. You also
-wouldn't be able to do things such as moving the audio from the front to the
-back, except by laboriously copying and pasting it for every note. By
-keeping content in separate fields, you make it much easier to adjust
-the layout of your cards in the future.
-
-To create a new type of note, choose **Tools > Manage Note Types** from the
-main Anki window. Then click **Add** to add a new type of note. You will now
-see another screen that gives you a choice of note types to base the new
-type on. "Add" means to base the newly created type on one that comes
-with Anki. "Clone" means to base the newly created type on one that is
-already in your collection. For instance, if you'd created a French
-vocab type already, you might want to clone that when creating a German
-vocab type.
-
-After choosing OK, you will be asked to name the new type. The subject
-material that you are studying is a good choice here – things like "Japanese",
-"Trivia", and so on. Once you have chosen a name, close the Note Types
-window, and you will return to the adding window.
-
-## Customizing Fields
-
-To customize fields, click the **Fields...** button when adding or editing
-a note, or while the note type is selected in the Manage Note Types
-window.
-
-![Fields](media/fields.png)
-
-You can add, remove, or rename fields by clicking the appropriate
-buttons.
-
-To change the order in which the fields appear in this dialog
-and the add notes dialog, you can use the reposition button, which asks
-for the numerical position you want the field to have. So if you want to
-change a field to be the new first field, enter "1".
-
-Alternatively you can also drag and drop the field names to reorder them. To do
-that, use your mouse or finger to drag the field to the desired position. An indicator will
-show you where the field will be moved to.
-
-Do not use "Tags", "Type", "Deck", "Card", or "FrontSide" as field
-names, as they are [special fields](templates/fields.md#special-fields) and will not work
-properly.
-
-The options at the bottom of the screen allow you to edit various
-properties of the fields to be used when adding and editing the cards.
-This is _not_ where you customize what appears on your cards when
-reviewing; for that, please see [templates](templates/intro.md).
-
-- **Editing Font** allows you to customize the font and size used when
-  editing notes. This is useful if you want to make unimportant
-  information smaller, or increase the size of non-Latin characters which
-  are hard to read. The changes you make here do not affect how cards
-  appear when reviewing: to do that, please see the
-  [templates](templates/intro.md) section. If you have enabled the "type in the
-  answer" function, however, the text you type will use the font size
-  defined here. (For information about how to change the actual font face
-  when typing the answer, please see the [checking your answer](templates/fields.md#checking-your-answer) section.)
-
-- **Sort by this field…​** tells Anki to show this field in the Sort Field
-  column of the browser. You can use this to sort cards by that field.
-  Only one field can be the sort field at once.
-
-- **Reverse text direction** is useful if you are studying languages that
-  display text from right to left (RTL), such as Arabic or Hebrew. This
-  setting currently only controls editing; to make sure the text displays
-  correctly during review, you'll need to adjust your
-  [template](templates/styling.md#text-direction).
-
-- **Use HTML editor by default** is useful if you prefer to edit the fields
-  directly in HTML.
-
-- **Collapse by default**. Fields can be collapsed/expanded.
-  The animation can be disabled in the [preferences.](preferences.md)
-
-- **Exclude from unqualified searches (slower)** can be used if you want
-  the content of a certain field not to appear in unqualified [(not limited to a specific field)](searching.md#limiting-to-a-field)
-  searches.
-
-After you have added fields, you will probably want to add them to the front
-or back of your cards. For more information on that, please see the
-[templates](templates/intro.md) section.
-
-## Changing Deck / Note Type
-
-While adding, you can click on the top left button to change note type,
-and the top right button to change deck. The window that opens up will
-not only allow you to select a deck or note type, but also to add new
-decks or manage your note types.
-
-## Organizing Content
-
-### Using Decks Appropriately
-
-[Decks](getting-started.md#decks) are designed to divide your content up into
-broad categories that you wish to study separately, such as English, Geography,
-and so on. You may be tempted to create lots of little decks to keep your
-content organized, such as "my geography book chapter 1", or "food verbs", but
-this is not recommended, for the following reasons:
-
-- Lots of little decks may mean you end up seeing cards in a
-  recognizable order. On older scheduler versions, new cards can only
-  be introduced in deck order. And if you were planning to click on each deck
-  in turn (which is slow), you will end up seeing all the "chapter 1" or
-  "food verb" reviews together. This makes it easier to answer the
-  cards, as you can guess them from the context, which leads to weaker
-  memories. When you need to recall the word or phrase outside Anki,
-  you won't always have the luxury of being shown related content first!
-
-- While less of a problem than it was in earlier Anki versions,
-  adding hundreds of decks may cause slowdowns, and very large deck
-  trees with thousands of items can actually break the display of
-  the deck list in Anki versions before 2.1.50.
-
-### Using Tags
-
-Instead of creating lots of little decks, it's a better idea to use tags
-and/or fields to classify your content. Tags are a useful way to boost
-search results, find specific content, and keep your collection
-organized.
-There are many ways of using tags and flags effectively, and
-thinking in advance about how you want to use them will help you decide
-what will work best for you.
-
-Some people prefer using decks and subdecks to keep their cards organized,
-but using tags offers a big advantage over decks for that: you can add several
-tags to a single note, but a single card can only belong to one deck, which
-makes tags a more powerful and flexible categorization system than
-decks in most cases. You can also organize tags in trees [in the same way as you can do for decks](getting-started.md#decks).
-
-For example, instead of creating a "food verbs" deck, you could add those
-cards to your main language study deck, and tag the cards with "food" and
-"verb". Since each card can have multiple tags, you can do things like
-[search](searching.md#tags-decks-cards-and-notes) for all verbs, or all
-food-related vocabulary, or all verbs that are related to food.
-
-You can add tags from the Edit window and from the [Browser](browsing.md), and you can also add,
-delete, rename, or organize tags there. Please note that
-tags work at [note](getting-started.md#notes--fields) level, which means that when you tag a card that has siblings,
-all the siblings will be tagged as well. If you need to tag a single card,
-but not its siblings, you should consider using flags instead.
-
-### Using Flags
-
-Flags are similar to tags, but they will appear during study in the review
-window, showing a colored flag icon on the upper right area of the screen.
-You can also search for flagged cards in the Browse screen, rename flags
-from the browser and create filtered decks from flagged cards, but unlike tags,
-a single card can have only one flag at a time. Another important difference
-is that flags work at [card](getting-started.md#cards) level, so flagging a card that has siblings
-won't have any effect on the card's siblings.
-
-You can flag / unflag cards directly while in review mode (by pressing
-<kbd>Ctrl</kbd>+<kbd>1-7</kbd> on Windows or <kbd>Cmd</kbd>+<kbd>1-7</kbd> on Mac)
-and from the [Browser.](browsing.md)
-
-### The "Marked" Tag
-
-Anki treats a tag called "marked" specially. There are options in the review
-screen and browse screen to add and remove the "marked" tag. The study screen
-will show a star when the current card's note has that tag. And cards are
-shown in a different color in the browse screen when their note is marked.
-
-Note: Marking is mainly left around for compatibility with older Anki
-versions; most users will want to use [flags](editing.md#using-flags) instead.
-
-### Using Fields
-
-For those who like to stay very organized, you can add fields to your
-notes to classify your content, such as "book", "page", and so on. Anki
-supports searching in specific fields, which means you can do a search
-for `"book:my book" page:63` and immediately find what you're looking
-for.
-
-### Custom Study and Filtered Decks
-
-Using [custom study and filtered deck](filtered-decks.md) you can create
-temporary decks out of search
-terms. This allows you to review your content mixed together in a single
-deck most of the time (for optimum memory), but also create temporary
-decks when you need to focus on particular material, such as before a
-test. The general rule is that if you always want to be able to study
-some content separately, it should be in a normal deck; if you only
-occasionally need to be able to study it separately (for a test, when
-under a backlog, etc.), then filtered decks created from tags, flags,
-marks or fields are better.
-
-## Editing Features
-
-The editor is shown when [adding notes](editing.md), [editing a note](studying.md#editing-and-more) during reviews, or [browsing](browsing.md).
-
-![Editor icons](media/editor_icons.png)
-
-On the top left are two buttons, which open the [fields](editing.md#customizing-fields) and
-[cards](templates/intro.md) windows.
-
-On the right are buttons that control formatting. Bold, italic and
-underline work like they do in a word processing program. The next two
-buttons allow you to subscript or superscript text, which is useful for
-chemical compounds like H<sub>2</sub>O or simple mathematical equations like
-x<sup>2</sup>. Then, there are two buttons to allow you to change text colour.
+...তাহলে আপনি যে নোটটি যোগ করবেন তাতে দুটি ট্যাগ থাকবে।
 
-The rubber eraser button clears any formatting in the currently selected text — including the colour
-of the text, whether the selected text is bold, etc. The next three buttons allow creating lists, text alignment and text indent.
+আপনি ফ্রন্ট এবং ব্যাক উভয় ক্ষেত্রেই টেক্সট প্রবেশ করানোর পরে, আপনি **যোগ করুন** বোতামে ক্লিক করতে পারেন বা <kbd>Ctrl</kbd>+<kbd>Enter</kbd> (<kbd>Command</kbd>+<kbd>Enter</kbd> ম্যাক-এ) চাপতে পারেন
+নোটটি আপনার সংগ্রহে যোগ করতে। যখন আপনি এটি করেন, তখন একটি কার্ডও তৈরি হবে,
+এবং আপনার নির্বাচিত ডেকে স্থাপন করা হবে। আপনি যদি যোগ করা একটি কার্ড সম্পাদনা করতে চান, তাহলে আপনি ব্রাউজারে সম্প্রতি যোগ করা একটি কার্ড অনুসন্ধান করতে ইতিহাস বোতামে ক্লিক করতে পারেন।
 
-You can use the paper-clip button to select audio, images, and videos from
-your computer's hard drive and attach them to your notes. Alternatively, you
-can copy the media onto your computer's clipboard (for instance, by
-right-clicking an image on the web and choosing "Copy Image") and paste
-it into the field that you want to place it in. For more information
-about media, please see the [media](media.md) section.
+নোটের ধরন এবং ক্ষেত্রগুলির মধ্যে বোতামগুলি সম্পর্কে আরও তথ্যের জন্য, অনুগ্রহ করে [সম্পাদক](editing.md) বিভাগটি দেখুন।
 
-The microphone icon allows you to record from your computer's microphone
-and attach the recording to the note.
+### নকল পরীক্ষা
 
-The Fx button shows shortcuts to add MathJax or
-[LaTeX](math.md) to your notes.
+আঙ্কি অনন্যতার জন্য প্রথম ক্ষেত্রটি পরীক্ষা করে, তাই আপনি যদি "আপেল" ফ্রন্ট ক্ষেত্র সহ দুটি কার্ড প্রবেশ করান (উদাহরণস্বরূপ), তবে এটি আপনাকে সতর্ক করবে। অনন্যতা পরীক্ষা বর্তমান নোটের ধরনের মধ্যে সীমাবদ্ধ, তাই আপনি যদি একাধিক ভাষা অধ্যয়ন করেন, তবে একই ফ্রন্ট ক্ষেত্র সহ দুটি কার্ড নকল হিসাবে তালিকাভুক্ত হবে না যতক্ষণ না আপনার প্রতিটি ভাষার জন্য একটি ভিন্ন নোটের ধরন থাকে।
 
-The \[…​\] buttons are visible when a cloze note type is selected.
-![Cloze icons](media/cloze_icons.png)
+দক্ষতার কারণে আঙ্কি অন্যান্য ক্ষেত্রে স্বয়ংক্রিয়ভাবে নকল পরীক্ষা করে না, তবে ব্রাউজারে একটি "নকল খুঁজুন" ফাংশন রয়েছে, যা আপনি পর্যায়ক্রমে চালাতে পারেন।
 
-The `</>` button allows editing the underlying HTML of a field.
-![HTML icon](media/html_icon.png)
+### কার্যকর শেখা
 
-Anki 2.1.45+ supports adjusting sticky fields directly from the editing screen.
-If you click on the pin icon on the right of a field, Anki will not clear out
-the field's content after a note is added. If you find yourself entering the
-same content into multiple notes, you may find this useful. On previous Anki
-versions, sticky fields were toggled from the Fields screen.
+বিভিন্ন মানুষ বিভিন্ন উপায়ে পর্যালোচনা করতে পছন্দ করে, তবে কিছু
+সাধারণ ধারণা মনে রাখা প্রয়োজন। সুপারমেমো সাইটে [এই নিবন্ধটি](https://super-memory.com/articles/20rules.htm) একটি চমৎকার ভূমিকা। বিশেষ করে:
 
-![Pin icon](media/Pin_icon.png)
+-   **এটি সহজ রাখুন**: আপনার কার্ডগুলি যত ছোট হবে, তত সহজে সেগুলি পর্যালোচনা করা যাবে। আপনি হয়তো প্রচুর তথ্য "শুধু প্রয়োজনে" অন্তর্ভুক্ত করতে প্রলুব্ধ হতে পারেন, তবে রিভিউ দ্রুত কষ্টকর হয়ে উঠবে।
 
-Most of the buttons have shortcut keys. You can hover the mouse cursor
-over a button to see its shortcut.
+-   **না বুঝে মুখস্থ করবেন না**: আপনি যদি একটি ভাষা অধ্যয়ন করেন, তবে শব্দের বড় তালিকা এড়িয়ে চলার চেষ্টা করুন। ভাষা শেখার সেরা উপায় হল প্রসঙ্গে, যার অর্থ হল বাক্যগুলিতে সেই শব্দগুলির ব্যবহার দেখা। একইভাবে, কল্পনা করুন আপনি একটি কম্পিউটার কোর্স অধ্যয়ন করছেন। যদি আপনি প্রচুর সংক্ষিপ্ত রূপ মুখস্থ করার চেষ্টা করেন, তবে আপনার অগ্রগতি করা খুব কঠিন হবে। কিন্তু যদি আপনি সংক্ষিপ্ত রূপগুলির পিছনের ধারণাগুলি বুঝতে সময় নেন, তবে সংক্ষিপ্ত রূপগুলি শেখা অনেক সহজ হয়ে উঠবে।
 
-When pasting text, Anki will keep most formatting by default. If you
-hold down the <kbd>Shift</kbd> key while pasting, Anki will strip most of the
-formatting. Under Preferences, you can toggle "Paste without shift
-key strips formatting" to modify the default behaviour.
+## একটি নোটের ধরন যোগ করা
 
-## Cloze Deletion
+যদিও মৌলিক নোটের ধরনগুলি প্রতিটি পাশে শুধুমাত্র একটি শব্দ বা বাক্যাংশ সহ সাধারণ কার্ডগুলির জন্য যথেষ্ট, তবে যখনই আপনি সামনে বা পিছনে একাধিক তথ্য অন্তর্ভুক্ত করতে চান, তখন সেই তথ্যটিকে আরও ক্ষেত্রে বিভক্ত করা ভাল।
 
-_Cloze deletion_ is the process of hiding one or more words in a
-sentence. For example, if you have the sentence:
+আপনি হয়তো নিজেকে ভাবতে পারেন "কিন্তু আমি কেবল একটি কার্ড চাই, তাহলে কেন আমি অডিও, একটি ছবি, একটি ইঙ্গিত এবং অনুবাদ ফ্রন্ট ফিল্ডে অন্তর্ভুক্ত করতে পারি না?" যদি আপনি তা করতে পছন্দ করেন, তবে ঠিক আছে। কিন্তু সেই পদ্ধতির অসুবিধা হল যে সমস্ত তথ্য একসাথে আটকে থাকে। যদি আপনি ইঙ্গিত অনুসারে আপনার কার্ডগুলি সাজাতে চান, তবে আপনি তা করতে পারবেন না কারণ এটি অন্যান্য বিষয়বস্তুর সাথে মিশ্রিত থাকে। আপনি অডিওকে সামনে থেকে পিছনে সরাতে পারবেন না, প্রতিটি নোটের জন্য পরিশ্রম করে কপি এবং পেস্ট করা ছাড়া। বিষয়বস্তুকে পৃথক ক্ষেত্রে রেখে, আপনি ভবিষ্যতে আপনার কার্ডগুলির বিন্যাস সামঞ্জস্য করা অনেক সহজ করে তোলেন।
 
-    Canberra was founded in 1913.
+একটি নতুন ধরনের নোট তৈরি করতে, মূল আঙ্কি উইন্ডো থেকে **সরঞ্জাম > নোটের ধরন পরিচালনা করুন** নির্বাচন করুন। তারপর একটি নতুন ধরনের নোট যোগ করতে **যোগ করুন** এ ক্লিক করুন। এখন আপনি আরেকটি স্ক্রিন দেখতে পাবেন যা আপনাকে নতুন ধরনটি কোন নোটের ধরনের উপর ভিত্তি করে তৈরি করতে চান তা নির্বাচন করার সুযোগ দেয়। "যোগ করুন" মানে আঙ্কি-এর সাথে আসা একটি নোটের ধরনের উপর ভিত্তি করে নতুন তৈরি করা ধরনটি তৈরি করা। "ক্লোন করুন" মানে আপনার সংগ্রহে ইতিমধ্যে থাকা একটি নোটের ধরনের উপর ভিত্তি করে নতুন তৈরি করা ধরনটি তৈরি করা। উদাহরণস্বরূপ, যদি আপনি ইতিমধ্যেই একটি ফরাসি শব্দভান্ডারের ধরন তৈরি করে থাকেন, তাহলে আপনি একটি জার্মান শব্দভান্ডারের ধরন তৈরি করার সময় সেটি ক্লোন করতে চাইতে পারেন।
 
-…​and you create a cloze deletion on "1913", then the sentence would
-become:
+ঠিক আছে নির্বাচন করার পরে, আপনাকে নতুন ধরনের নাম জিজ্ঞাসা করা হবে। আপনি যে বিষয়বস্তু অধ্যয়ন করছেন সেটি এখানে একটি ভাল পছন্দ – যেমন "জাপানিজ", "ট্রিভিয়া", ইত্যাদি। একবার আপনি একটি নাম নির্বাচন করলে, নোটের ধরন উইন্ডোটি বন্ধ করুন, এবং আপনি যোগ করার উইন্ডোতে ফিরে আসবেন।
 
-    Canberra was founded in [...].
+## ক্ষেত্রগুলি কাস্টমাইজ করা
 
-Sometimes sections that have been removed in this fashion are said to be
-"occluded".
+ক্ষেত্রগুলি কাস্টমাইজ করতে, একটি নোট যোগ বা সম্পাদনা করার সময় **ক্ষেত্র...** বোতামে ক্লিক করুন, অথবা নোটের ধরনটি ম্যানেজ নোটের ধরন উইন্ডোতে নির্বাচিত থাকাকালীন।
 
-For more information on why you might want to use cloze deletion, see
-Rule 5 [here](https://super-memory.com/articles/20rules.htm).
+![ক্ষেত্র](media/fields.png)
 
-Anki provides a special cloze deletion type of note, to make creating
-clozes easy. To create a cloze deletion note, select the Cloze note
-type, and type some text into the "Text" field. Then drag the mouse over
-the text you want to hide to select it, and click the \[…​\] button.
-Anki will replace the text with:
+আপনি উপযুক্ত বোতামগুলিতে ক্লিক করে ক্ষেত্রগুলি যোগ, সরাতে বা নাম পরিবর্তন করতে পারেন।
 
-    Canberra was founded in {{c1::1913}}.
+এই ডায়ালগ এবং নোট যোগ করার ডায়ালগে ক্ষেত্রগুলি যে ক্রমে প্রদর্শিত হয় তা পরিবর্তন করতে, আপনি পুনর্বিন্যাস বোতামটি ব্যবহার করতে পারেন, যা আপনাকে ক্ষেত্রটির যে সংখ্যাসূচক অবস্থানটি রাখতে চান তা জিজ্ঞাসা করে। সুতরাং যদি আপনি একটি ক্ষেত্রকে নতুন প্রথম ক্ষেত্র হিসাবে পরিবর্তন করতে চান, তাহলে "1" প্রবেশ করুন।
 
-The "c1" part means that you have created one cloze deletion in the
-sentence. You can create more than one deletion if you'd like. For
-example, if you select Canberra and click \[…​\] again, the text will
-now look like:
+বিকল্পভাবে আপনি ক্ষেত্রগুলির নামগুলি টেনে এনে তাদের পুনরায় সাজাতে পারেন। এটি করতে, আপনার মাউস বা আঙুল ব্যবহার করে ক্ষেত্রটিকে কাঙ্ক্ষিত অবস্থানে টেনে আনুন। একটি নির্দেশক আপনাকে দেখাবে যে ক্ষেত্রটি কোথায় সরানো হবে।
 
-    {{c2::Canberra}} was founded in {{c1::1913}}.
+"Tags", "Type", "Deck", "Card", বা "FrontSide" ক্ষেত্র নাম হিসাবে ব্যবহার করবেন না, কারণ এগুলি [বিশেষ ক্ষেত্র](templates/fields.md#special-fields) এবং সঠিকভাবে কাজ করবে না।
 
-When you add the above note, Anki will create two cards. The first card
-will show:
+স্ক্রিনের নীচে থাকা বিকল্পগুলি আপনাকে কার্ডগুলি যোগ এবং সম্পাদনা করার সময় ব্যবহার করার জন্য ক্ষেত্রগুলির বিভিন্ন বৈশিষ্ট্য সম্পাদনা করার অনুমতি দেয়।
+এটি _নয়_ যেখানে আপনি পর্যালোচনা করার সময় আপনার কার্ডগুলিতে কী প্রদর্শিত হবে তা কাস্টমাইজ করেন; তার জন্য, অনুগ্রহ করে [টেমপ্লেট](templates/intro.md) দেখুন।
 
-    Canberra was founded in [...].
+-   **ফন্ট সম্পাদনা** আপনাকে নোট সম্পাদনা করার সময় ব্যবহৃত ফন্ট এবং আকার কাস্টমাইজ করার অনুমতি দেয়। এটি সহায়ক যদি আপনি অপ্রয়োজনীয় তথ্য ছোট করতে চান, অথবা ল্যাটিন নয় এমন অক্ষরগুলির আকার বাড়াতে চান যা পড়া কঠিন। আপনি এখানে যে পরিবর্তনগুলি করেন তা পর্যালোচনা করার সময় কার্ডগুলি কীভাবে প্রদর্শিত হয় তা প্রভাবিত করে না: এটি করতে, অনুগ্রহ করে [টেমপ্লেট](templates/intro.md) বিভাগটি দেখুন। তবে, যদি আপনি "উত্তর টাইপ করুন" ফাংশনটি সক্ষম করে থাকেন, তাহলে আপনি যে টেক্সটটি টাইপ করবেন তা এখানে সংজ্ঞায়িত ফন্ট আকার ব্যবহার করবে। (উত্তর টাইপ করার সময় আসল ফন্ট ফেস কীভাবে পরিবর্তন করবেন সে সম্পর্কে তথ্যের জন্য, অনুগ্রহ করে [আপনার উত্তর পরীক্ষা করা](templates/fields.md#checking-your-answer) বিভাগটি দেখুন।)
 
-…​on the question, with the full sentence on the answer. The other card
-will have the following on the question:
+-   **এই ক্ষেত্র দ্বারা সাজান...** আঙ্কিকে ব্রাউজারের সাজানোর ক্ষেত্র কলামে এই ক্ষেত্রটি দেখাতে বলে। আপনি এই ক্ষেত্র দ্বারা কার্ডগুলি সাজাতে এটি ব্যবহার করতে পারেন।
+    একবারে শুধুমাত্র একটি ক্ষেত্র সাজানোর ক্ষেত্র হতে পারে।
 
-    [...] was founded in 1913.
+-   **পাঠ্য দিক বিপরীত করুন** সহায়ক যদি আপনি এমন ভাষা অধ্যয়ন করেন যা ডান থেকে বামে (RTL) পাঠ্য প্রদর্শন করে, যেমন আরবি বা হিব্রু। এই সেটিংটি বর্তমানে শুধুমাত্র সম্পাদনা নিয়ন্ত্রণ করে; পর্যালোচনা করার সময় পাঠ্যটি সঠিকভাবে প্রদর্শিত হয় তা নিশ্চিত করতে, আপনাকে আপনার [টেম্পলেট](templates/styling.md#text-direction) সামঞ্জস্য করতে হবে।
 
-You can also elide multiple sections on the same card. In the above
-example, if you change c2 to c1, only one card would be created, with
-both Canberra and 1913 hidden. If you hold down <kbd>Alt</kbd> (<kbd>Option</kbd> on a Mac)
-while creating a cloze, Anki will automatically use the same number
-instead of incrementing it.
+-   **ডিফল্টরূপে HTML সম্পাদক ব্যবহার করুন** সহায়ক যদি আপনি সরাসরি HTML এ ক্ষেত্রগুলি সম্পাদনা করতে পছন্দ করেন।
 
-Cloze deletions don't need to fall on word boundaries, so if you select
-"anberra" rather than "Canberra" in the above example, the question
-would appear as "C\[…​\] was founded in 1913", giving you a hint.
+-   **ডিফল্টরূপে ভেঙে ফেলুন**। ক্ষেত্রগুলি ভেঙে ফেলা/প্রসারিত করা যেতে পারে।
+    অ্যানিমেশনটি [পছন্দগুলিতে](preferences.md) নিষ্ক্রিয় করা যেতে পারে।
 
-You can also give yourself hints that don't match the text. If you
-replace the original sentence with:
+-   **অযোগ্য অনুসন্ধান থেকে বাদ দিন (ধীর)** ব্যবহার করা যেতে পারে যদি আপনি চান
+    একটি নির্দিষ্ট ক্ষেত্রের বিষয়বস্তু অযোগ্য অনুসন্ধানগুলিতে (একটি নির্দিষ্ট ক্ষেত্রের মধ্যে সীমাবদ্ধ নয়)
+    প্রদর্শিত না হোক।
 
-    Canberra::city was founded in 1913
+আপনি ক্ষেত্রগুলি যোগ করার পরে, আপনি সম্ভবত সেগুলিকে আপনার কার্ডগুলির সামনে বা পিছনে যোগ করতে চাইবেন। সে সম্পর্কে আরও তথ্যের জন্য, অনুগ্রহ করে [টেমপ্লেট](templates/intro.md) বিভাগটি দেখুন।
 
-…​and then press \[…​\] after selecting "Canberra::city", Anki will
-treat the text after the two colons as a hint, changing the text into:
+## ডেক / নোটের ধরন পরিবর্তন করা
 
-    {{c1::Canberra::city}} was founded in 1913
+যোগ করার সময়, আপনি নোটের ধরন পরিবর্তন করতে উপরের বাম বোতামে ক্লিক করতে পারেন,
+এবং ডেক পরিবর্তন করতে উপরের ডান বোতামে ক্লিক করতে পারেন। যে উইন্ডোটি খুলবে তা
+আপনাকে শুধুমাত্র একটি ডেক বা নোটের ধরন নির্বাচন করার অনুমতি দেবে না, বরং নতুন
+ডেক যোগ করতে বা আপনার নোটের ধরনগুলি পরিচালনা করতেও দেবে।
 
-When the card comes up for review, it will appear as:
+## বিষয়বস্তু সংগঠিত করা
 
-    [city] was founded in 1913.
+### ডেকগুলি সঠিকভাবে ব্যবহার করা
 
-For information on testing your ability to type in a cloze deletion
-correctly, please see the section on [typing answers](templates/fields.md#checking-your-answer).
+[ডেকগুলি](getting-started.md#decks) আপনার বিষয়বস্তুকে প্রশস্ত বিভাগে বিভক্ত করার জন্য ডিজাইন করা হয়েছে যা আপনি আলাদাভাবে অধ্যয়ন করতে চান, যেমন ইংরেজি, ভূগোল, ইত্যাদি। আপনি হয়তো আপনার বিষয়বস্তু সংগঠিত রাখতে প্রচুর ছোট ছোট ডেক তৈরি করতে প্রলুব্ধ হতে পারেন, যেমন "আমার ভূগোল বইয়ের অধ্যায় 1", বা "খাদ্য ক্রিয়া", তবে এটি নিম্নলিখিত কারণগুলির জন্য সুপারিশ করা হয় না:
 
-From version 2.1.56, nested cloze deletions are supported. For example, the following is valid:
+-   প্রচুর ছোট ছোট ডেক মানে আপনি একটি চেনা ক্রমে কার্ড দেখতে পারেন। পুরোনো সময়সূচী সংস্করণগুলিতে, নতুন কার্ডগুলি কেবল ডেকের ক্রমে প্রবর্তন করা যেতে পারে। এবং যদি আপনি প্রতিটি ডেকে একের পর এক ক্লিক করার পরিকল্পনা করেন (যা ধীর), তাহলে আপনি "অধ্যায় 1" বা "খাদ্য ক্রিয়া" রিভিউগুলি একসাথে দেখতে পাবেন। এটি কার্ডগুলির উত্তর দেওয়া সহজ করে তোলে, কারণ আপনি প্রসঙ্গ থেকে সেগুলি অনুমান করতে পারেন, যা দুর্বল স্মৃতিতে পরিণত হয়। যখন আপনাকে আঙ্কির বাইরে শব্দ বা বাক্য মনে রাখতে হবে, তখন আপনার কাছে সর্বদা সম্পর্কিত বিষয়বস্তু প্রথমে দেখানো হবে এমন বিলাসিতা থাকবে না!
 
-    {{c1::Canberra was {{c2::founded}}}} in 1913
+-   আঙ্কির পূর্ববর্তী সংস্করণগুলির তুলনায় কম সমস্যা হলেও,
+    শত শত ডেক যোগ করা ধীরগতি ঘটাতে পারে, এবং হাজার হাজার আইটেম সহ খুব বড় ডেক
+    ট্রি আঙ্কির 2.1.50 এর আগের সংস্করণগুলিতে ডেকের তালিকা প্রদর্শনকে ভেঙে দিতে পারে।
 
-The inner cloze is entirely nested within the outer. There is no support for partial overlaps, such as:
+### ট্যাগ ব্যবহার করা
 
-    [...] founded in 1913 -> Canberra was
-    Canberra [...] in 1913 -> was founded
+প্রচুর ছোট ছোট ডেক তৈরি করার পরিবর্তে, আপনার বিষয়বস্তু শ্রেণীবদ্ধ করতে ট্যাগ
+এবং/অথবা ক্ষেত্র ব্যবহার করা একটি ভাল ধারণা। ট্যাগগুলি অনুসন্ধান ফলাফল বাড়াতে, নির্দিষ্ট
+বিষয়বস্তু খুঁজে পেতে এবং আপনার সংগ্রহ সংগঠিত রাখতে একটি কার্যকর উপায়।
+কার্যকরভাবে ট্যাগ এবং পতাকা ব্যবহার করার অনেক উপায় আছে, এবং
+আপনি কীভাবে সেগুলি ব্যবহার করতে চান তা আগে থেকে চিন্তা করলে আপনার জন্য কী সেরা কাজ করবে তা সিদ্ধান্ত নিতে সাহায্য করবে।
 
-with the word "was" appearing in both deletions.
+কিছু লোক তাদের কার্ডগুলি সংগঠিত রাখতে ডেক এবং সাবডেক ব্যবহার করতে পছন্দ করে,
+তবে ট্যাগ ব্যবহার করা ডেকের চেয়ে একটি বড় সুবিধা দেয়: আপনি একটি একক নোটে
+কয়েকটি ট্যাগ যোগ করতে পারেন, তবে একটি একক কার্ড শুধুমাত্র একটি ডেকের অন্তর্গত হতে পারে, যা
+ট্যাগগুলিকে বেশিরভাগ ক্ষেত্রে ডেকের চেয়ে আরও শক্তিশালী এবং নমনীয় শ্রেণীবদ্ধকরণ সিস্টেম করে তোলে। আপনি ট্যাগগুলিকেও গাছের মতো করে সাজাতে পারেন [যেমন আপনি ডেকের জন্য করতে পারেন](getting-started.md#decks)।
 
-The current implementation can only handle a limited amount of nesting. In Anki 24.11, it is 3 levels.
-In other versions, the limit is around 8, but Anki may become slow as you approach the limit. It is
-not possible to extend the limit. If you use this feature, it is recommended you limit yourself to a
-few levels of nesting.
+উদাহরণস্বরূপ, "খাদ্য ক্রিয়া" ডেক তৈরি করার পরিবর্তে, আপনি সেই কার্ডগুলি আপনার
+প্রধান ভাষা অধ্যয়ন ডেকে যোগ করতে পারেন এবং কার্ডগুলিকে "খাদ্য" এবং
+"ক্রিয়া" ট্যাগ করতে পারেন। যেহেতু প্রতিটি কার্ডে একাধিক ট্যাগ থাকতে পারে, তাই আপনি
+সমস্ত ক্রিয়া, বা সমস্ত খাদ্য-সম্পর্কিত শব্দভান্ডার, বা খাদ্য-সম্পর্কিত সমস্ত ক্রিয়া [অনুসন্ধান](searching.md#tags-decks-cards-and-notes) এর মতো কাজগুলি করতে পারেন।
 
-Prior to version 2.1.56, if you need to create clozes from overlapping text, add another Text
-field to your cloze, add it to the [template](templates/intro.md), and then when
-creating notes, paste the text into two separate fields, like so:
+আপনি সম্পাদনা উইন্ডো এবং [ব্রাউজার](browsing.md) থেকে ট্যাগ যোগ করতে পারেন, এবং আপনি সেখানে ট্যাগ যোগ, মুছতে, নাম পরিবর্তন করতে বা সংগঠিত করতেও পারেন। দয়া করে মনে রাখবেন যে
+ট্যাগগুলি [নোট](getting-started.md#notes--fields) স্তরে কাজ করে, যার অর্থ হল যখন আপনি একটি কার্ড ট্যাগ করেন যার সহোদর থাকে,
+তখন সমস্ত সহোদরকেও ট্যাগ করা হবে। যদি আপনাকে একটি একক কার্ড ট্যাগ করতে হয়,
+তবে তার সহোদরদের নয়, তবে আপনার পরিবর্তে পতাকা ব্যবহার করার কথা বিবেচনা করা উচিত।
 
-    Text1 field: {{c1::Canberra was founded}} in 1913
+### পতাকা ব্যবহার করা
 
-    Text2 field: {{c2::Canberra}} was founded in 1913
+পতাকাগুলি ট্যাগের মতো, তবে তারা পর্যালোচনা উইন্ডোতে অধ্যয়নের সময় প্রদর্শিত হবে,
+স্ক্রিনের উপরের ডানদিকে একটি রঙিন পতাকা আইকন দেখাবে।
+আপনি ব্রাউজ স্ক্রিনে ফ্ল্যাগ করা কার্ডগুলি অনুসন্ধান করতে পারেন, ব্রাউজার থেকে পতাকাগুলির নাম পরিবর্তন করতে পারেন
+এবং ফ্ল্যাগ করা কার্ডগুলি থেকে ফিল্টার করা ডেক তৈরি করতে পারেন, তবে ট্যাগের মতো নয়,
+একটি একক কার্ডে একবারে শুধুমাত্র একটি পতাকা থাকতে পারে। আরেকটি গুরুত্বপূর্ণ পার্থক্য হল
+যে পতাকাগুলি [কার্ড](getting-started.md#cards) স্তরে কাজ করে, তাই একটি কার্ড ফ্ল্যাগ করলে যার সহোদর থাকে,
+তার সহোদরদের উপর কোন প্রভাব ফেলবে না।
 
-The default cloze note type has a second field called Extra, that is
-shown on the answer side of each card. It can be used for adding some
-usage notes or extra information.
+আপনি সরাসরি রিভিউ মোডে (<kbd>Ctrl</kbd>+<kbd>1-7</kbd> উইন্ডোজে বা <kbd>Cmd</kbd>+<kbd>1-7</kbd> ম্যাক-এ চেপে)
+এবং [ব্রাউজার](browsing.md) থেকে কার্ড ফ্ল্যাগ/আনফ্ল্যাগ করতে পারেন।
 
-The cloze note type is treated specially by Anki, and cannot be created
-based on a regular note type. If you wish to customize it, please make
-sure to clone the existing Cloze type instead of another type of note.
-Things like formatting can be customized, but it is not possible to add
-extra card templates to the cloze note type.
+### "চিহ্নিত" ট্যাগ
 
-## Image Occlusion
+আঙ্কি "marked" নামক একটি ট্যাগকে বিশেষভাবে বিবেচনা করে। রিভিউ স্ক্রিন এবং ব্রাউজ স্ক্রিনে "marked" ট্যাগ যোগ এবং সরানোর বিকল্প রয়েছে। অধ্যয়ন স্ক্রিনে একটি তারা দেখানো হবে যখন বর্তমান কার্ডের নোটে সেই ট্যাগটি থাকবে। এবং ব্রাউজ স্ক্রিনে কার্ডগুলি ভিন্ন রঙে দেখানো হয় যখন তাদের নোট চিহ্নিত থাকে।
 
-Anki 23.10+ supports Image Occlusion cards natively. An Image
-Occlusion (IO) note is a special case of cloze deletion based on images
-instead of text, and allows you to create cards that hide some parts
-of an image, testing your knowledge of that hidden information.
+দ্রষ্টব্য: চিহ্নিতকরণ মূলত পুরোনো আঙ্কি সংস্করণগুলির সাথে সামঞ্জস্যের জন্য রাখা হয়েছে;
+বেশিরভাগ ব্যবহারকারী [পতাকা](editing.md#using-flags) ব্যবহার করতে চাইবেন।
 
-![Image Occlusion](media/io.jpg)
+### ক্ষেত্র ব্যবহার করা
 
-### Adding an image
+যারা খুব সংগঠিত থাকতে পছন্দ করেন, তারা তাদের নোটগুলিতে বিষয়বস্তু শ্রেণীবদ্ধ করতে ক্ষেত্র যোগ করতে পারেন, যেমন "বই", "পৃষ্ঠা", ইত্যাদি। আঙ্কি নির্দিষ্ট ক্ষেত্রগুলিতে অনুসন্ধান সমর্থন করে, যার অর্থ আপনি `"বই:আমার বই" পৃষ্ঠা:63` অনুসন্ধান করতে পারেন এবং অবিলম্বে আপনি যা খুঁজছেন তা খুঁজে পেতে পারেন।
 
-To add IO cards to your collection, open the Add screen, click on "Type"
-and choose "Image Occlusion" from the list of built-in note types.
-Then, click on **Select Image** to load an image file saved on your
-computer's hard drive, or on **Paste image from clipboard**
-if you have an image copied to the clipboard.
+### কাস্টম স্টাডি এবং ফিল্টার করা ডেক
 
-### Adding IO cards
+[কাস্টম স্টাডি এবং ফিল্টার করা ডেক](filtered-decks.md) ব্যবহার করে আপনি অনুসন্ধান পদগুলি থেকে
+অস্থায়ী ডেক তৈরি করতে পারেন। এটি আপনাকে বেশিরভাগ সময় একটি একক ডেকে আপনার বিষয়বস্তু মিশ্রিত করে পর্যালোচনা করার অনুমতি দেয় (সর্বোত্তম স্মৃতির জন্য), তবে যখন আপনাকে নির্দিষ্ট উপাদানগুলিতে ফোকাস করতে হয়, যেমন পরীক্ষার আগে, তখন অস্থায়ী ডেক তৈরি করতেও দেয়। সাধারণ নিয়ম হল যে আপনি যদি সর্বদা কিছু বিষয়বস্তু আলাদাভাবে অধ্যয়ন করতে চান, তবে এটি একটি স্বাভাবিক ডেকে থাকা উচিত; যদি আপনি কেবল মাঝে মাঝে এটি আলাদাভাবে অধ্যয়ন করতে চান (একটি পরীক্ষার জন্য, যখন একটি ব্যাকলগের অধীনে থাকেন, ইত্যাদি), তবে ট্যাগ, পতাকা, চিহ্ন বা ক্ষেত্রগুলি থেকে তৈরি ফিল্টার করা ডেকগুলি আরও ভাল।
 
-After loading an image, the IO editor will open. Click on the
-icons on the left to add as many areas to your image as you want.
-There are three basic shapes to choose from:
+## সম্পাদনা বৈশিষ্ট্য
 
-- Rectangle
-- Ellipse
-- Polygon
-
-You can also choose between two different IO modes for each note:
+সম্পাদকটি যখন [নোট যোগ করা](editing.md), রিভিউয়ের সময় [একটি নোট সম্পাদনা করা](studying.md#editing-and-more), বা [ব্রাউজিং](browsing.md) করা হয় তখন দেখানো হয়।
 
-- **Hide All, Guess One**: All areas are hidden and only one
-  area at a time is revealed while learning.
-- **Hide One, Guess One**: Only one area at a time is hidden
-  and will be revealed during learning. The other areas will be visible.
-
-![Image Occlusion Modes](media/io_modes.jpg)
-
-<!-- fields & tags are not intuitive to find in editor -->
-The default IO note type also has standard fields:
-**Header** (displayed above the image on the front and back of each card),
-**Back Extra** (displayed below the image on the back of each card),
-and **Comments** (not displayed on the cards). To access those from the IO editor,
-click the **Toggle Mask Editor** button.
-There you can also view and edit the **Tags** of the note.
-
-Once you're done, click on the "Add" button, at the bottom of the screen.
-Anki will add a card for each shape or group of shapes you added in the previous step,
-and you can start reviewing them normally.
-
-## Editing IO notes
-
-You can edit your IO notes by clicking on "Edit" while reviewing,
-or directly from the browser. There are several tools that you
-can use. Of note:
-
-- Select: It allows you to select one or more shapes to move,
-  resize, delete or group them.
-- Zoom: You can freely move the image and zoom in or out using the mouse wheel.
-- Shapes (Rectangle, Ellipse or Polygon): Use them to add new shapes / cards.
-- Text: It adds text areas to your image. These text areas can be moved,
-  resized or deleted, but no card will be created when you use this tool.
-- Undo / Redo.
-- Zoom In / Out - Reset zoom.
-- Toggle Translucency: Use this tool to temporarily view the hidden areas.
-- Delete: Use this tool to delete selected shapes and text areas. Please
-  note that deleting a shape won't delete its associated card automatically;
-  you will need to use Tools>Empty Cards afterwards, the same as
-  with regular cloze deletions.
-- Duplicate.
-- Group selection: Use this tool to create a cluster of shapes, which will
-  allow you to move, resize or delete them simultaneously. Please note that
-  two or more single shapes will create only one card once grouped.
-- Ungroup selection: Select a group and then click this button to make each shape independent again.
-- Alignment: This tool can be used to align your shapes / text areas as desired.
-
-While reviewing IO Cards a "Toggle Masks" button will appear just below the image.
-This button will temporarily clear all shapes of the note when using "Hide All, Guess One" mode.
-
-## Inputting Non-Latin Characters and Accents
-
-All modern computers have built-in support for typing accents and
-non-Latin characters, and multiple ways to go about it. The method we
-recommend is by using a keyboard layout for the language you want to learn.
-
-Languages with a separate script like Japanese, Chinese, Thai, and so on,
-have their own layouts specific to that language.
-
-European languages that use accents may have their own layout, but can
-often be typed on a generic "international keyboard" layout. These work
-by typing the accent, then the character you want accented - e.g. an
-apostrophe (<kbd>´</kbd>) then the letter a (<kbd>a</kbd>) gives á.
-
-### Adding international keyboard layouts
-Instructions on how to use international keyboards vary depending on the operating
-system and desktop environment that you are using. To get started, please see the
-links below.
-
-Windows:
-- <https://thegeekpage.com/how-to-add-us-international-keyboard-in-windows-10/>
-  
-Mac:
-- <http://www.macworld.com/article/1147039/os-x/accentinput.html>
-  
-Linux:
-- Gnome: <https://help.gnome.org/users/gnome-help/stable/tips-specialchars.html.en>
-- KDE Plasma: <https://userbase.kde.org/Tutorials/ComposeKey>
-
-### Adding keyboard layouts for specific languages
-Keyboards for specific languages are added in a similar way, but we can
-not cover them all here. For more information, please try searching
-on the internet for "input Japanese on a mac", "type Chinese on Windows 10", and
-so on.
-
-For Linux it's best to look at the wiki pages of your distro, e.g.
-[Arch Linux](https://wiki.archlinux.org/title/Input_method) and
-[Debian Linux](https://wiki.debian.org/Keyboard#Modern_strategy).
-As an example, `apt install ibus-anthy` on Debian allows you to type hiragana characters.
-
-### Right-to-left Languages
-If you are learning a right-to-left language, there are lots of other
-things to consider. Please see [this page](http://dotancohen.com/howto/rtl_right_to_left.html)
-for more information.
-
-### Limitations
-The toolkit on which Anki is built has trouble dealing with a few input
-methods, such as holding down keys to select accented characters on macOS,
-and typing characters by holding down the <kbd>Alt</kbd> key and typing a
-numeric code on Windows.
-
-## Unicode Normalization
-
-Text like `á` can be represented in multiple ways on a computer, such as
-using a specific code for that symbol, or by using a standard `a` and then
-another code for the accent on top. This causes problems when mixing input
-from different sources, or using different computers - if your computer
-handles keyboard input in one form, but the content is stored in a different
-form, it will not match when searching, even though the end result appears
-identical.
-
-To ensure content can easily be found in searches, Anki normalizes the text
-to a standard form. For most users this process is transparent, but if you
-are studying certain material like archaic Japanese symbols, the normalization
-process can end up converting them to a more modern equivalent.
-
-If you want character variants preserved, the following in the [debug console](./misc.md)
-will turn off normalization:
+![সম্পাদক আইকন](media/editor_icons.png)
+
+উপরের বাম দিকে দুটি বোতাম রয়েছে, যা [ক্ষেত্র](editing.md#customizing-fields) এবং
+[কার্ড](templates/intro.md) উইন্ডো খোলে।
+
+ডানদিকে ফরম্যাটিং নিয়ন্ত্রণকারী বোতাম রয়েছে। বোল্ড, ইটালিক এবং
+আন্ডারলাইন একটি ওয়ার্ড প্রসেসিং প্রোগ্রামে যেমন কাজ করে তেমনই কাজ করে। পরবর্তী দুটি
+বোতাম আপনাকে সাবস্ক্রিপ্ট বা সুপারস্ক্রিপ্ট পাঠ্য তৈরি করতে দেয়, যা
+H<sub>2</sub>O এর মতো রাসায়নিক যৌগ বা x<sup>2</sup> এর মতো সাধারণ গাণিতিক সমীকরণের জন্য কার্যকর। তারপরে, পাঠ্যের রঙ পরিবর্তন করার জন্য দুটি বোতাম রয়েছে।
+
+রাবার ইরেজার বোতামটি বর্তমানে নির্বাচিত পাঠ্যের যেকোনো ফরম্যাটিং মুছে ফেলে — যার মধ্যে পাঠ্যের রঙ, নির্বাচিত পাঠ্য বোল্ড কিনা ইত্যাদি। পরবর্তী তিনটি বোতাম তালিকা তৈরি, পাঠ্য সারিবদ্ধকরণ এবং পাঠ্য ইন্ডেন্ট করার অনুমতি দেয়।
+
+আপনি পেপার-ক্লিপ বোতামটি ব্যবহার করে আপনার কম্পিউটারের হার্ড ড্রাইভ থেকে অডিও, ছবি এবং ভিডিও নির্বাচন করতে পারেন এবং সেগুলিকে আপনার নোটগুলিতে সংযুক্ত করতে পারেন। বিকল্পভাবে, আপনি
+মিডিয়াটি আপনার কম্পিউটারের ক্লিপবোর্ডে কপি করতে পারেন (উদাহরণস্বরূপ, ওয়েবে একটি ছবির উপর ডান-ক্লিক করে এবং "ছবি কপি করুন" নির্বাচন করে) এবং আপনি যেখানে রাখতে চান সেই ফিল্ডে পেস্ট করতে পারেন। মিডিয়া সম্পর্কে আরও তথ্যের জন্য, অনুগ্রহ করে [মিডিয়া](media.md) বিভাগটি দেখুন।
+
+মাইক্রোফোন আইকনটি আপনাকে আপনার কম্পিউটারের মাইক্রোফোন থেকে রেকর্ড করতে এবং রেকর্ডিংটি নোটে সংযুক্ত করতে দেয়।
+
+Fx বোতামটি MathJax বা [LaTeX](math.md) আপনার নোটগুলিতে যোগ করার শর্টকাট দেখায়।
+
+\[…\] বোতামগুলি যখন একটি ক্লোজ নোটের ধরন নির্বাচিত থাকে তখন দৃশ্যমান হয়।
+![ক্লোজ আইকন](media/cloze_icons.png)
+
+`</>` বোতামটি একটি ক্ষেত্রের অন্তর্নিহিত HTML সম্পাদনা করার অনুমতি দেয়।
+![HTML আইকন](media/html_icon.png)
+
+আঙ্কি 2.1.45+ সরাসরি সম্পাদনা স্ক্রিন থেকে স্টিকি ক্ষেত্রগুলি সামঞ্জস্য করা সমর্থন করে।
+যদি আপনি একটি ক্ষেত্রের ডানদিকে পিন আইকনে ক্লিক করেন, আঙ্কি একটি নোট যোগ করার পরে
+ক্ষেত্রটির বিষয়বস্তু মুছে ফেলবে না। যদি আপনি একই বিষয়বস্তু একাধিক নোটে প্রবেশ করতে
+দেখেন, তবে আপনি এটি সহায়ক মনে করতে পারেন। পূর্ববর্তী আঙ্কি সংস্করণগুলিতে, স্টিকি ক্ষেত্রগুলি ক্ষেত্র স্ক্রিন থেকে টগল করা হয়েছিল।
+
+![পিন আইকন](media/Pin_icon.png)
+
+বেশিরভাগ বোতামের শর্টকাট কী রয়েছে। আপনি একটি বোতামের উপর মাউস কার্সার ঘোরালে
+এর শর্টকাট দেখতে পাবেন।
+
+পাঠ্য পেস্ট করার সময়, আঙ্কি ডিফল্টরূপে বেশিরভাগ ফরম্যাটিং বজায় রাখবে। যদি আপনি
+পেস্ট করার সময় <kbd>Shift</kbd> কী চেপে ধরেন, আঙ্কি বেশিরভাগ ফরম্যাটিং বাদ দেবে।
+পছন্দগুলির অধীনে, আপনি ডিফল্ট আচরণ পরিবর্তন করতে "শিফট কী ছাড়া পেস্ট করলে ফরম্যাটিং মুছে যাবে" টগল করতে পারেন।
+
+## ক্লোজ ডিলিশন
+
+_ক্লোজ ডিলিশন_ হল একটি বাক্যে এক বা একাধিক শব্দ লুকানোর প্রক্রিয়া। উদাহরণস্বরূপ, যদি আপনার বাক্য থাকে:
+
+    ক্যানবেরা 1913 সালে প্রতিষ্ঠিত হয়েছিল।
+
+...এবং আপনি "1913" এ একটি ক্লোজ ডিলিশন তৈরি করেন, তাহলে বাক্যটি হবে:
+
+    ক্যানবেরা [...]-এ প্রতিষ্ঠিত হয়েছিল।
+
+কখনও কখনও এই ফ্যাশনে সরানো বিভাগগুলিকে "অক্লুডেড" বলা হয়।
+
+আপনি কেন ক্লোজ ডিলিশন ব্যবহার করতে চাইতে পারেন সে সম্পর্কে আরও তথ্যের জন্য, Rule 5 [এখানে](https://super-memory.com/articles/20rules.htm) দেখুন।
+
+আঙ্কি ক্লোজ তৈরি করা সহজ করার জন্য একটি বিশেষ ক্লোজ ডিলিশন ধরনের নোট সরবরাহ করে। একটি ক্লোজ ডিলিশন নোট তৈরি করতে, ক্লোজ নোটের ধরন নির্বাচন করুন এবং "টেক্সট" ক্ষেত্রে কিছু পাঠ্য টাইপ করুন। তারপর আপনি যে পাঠ্যটি লুকাতে চান সেটি নির্বাচন করতে মাউস টেনে আনুন এবং \[\...\] বোতামে ক্লিক করুন।
+আঙ্কি পাঠ্যটিকে প্রতিস্থাপন করবে:
+
+    ক্যানবেরা {{c1::1913}} সালে প্রতিষ্ঠিত হয়েছিল।
+
+"c1" অংশটির অর্থ হল আপনি বাক্যে একটি ক্লোজ ডিলিশন তৈরি করেছেন। আপনি চাইলে একাধিক ডিলিশন তৈরি করতে পারেন। উদাহরণস্বরূপ, যদি আপনি ক্যানবেরা নির্বাচন করেন এবং আবার \[\...\] এ ক্লিক করেন, তাহলে পাঠ্যটি এখন এমন দেখাবে:
+
+    {{c2::ক্যানবেরা}} {{c1::1913}} সালে প্রতিষ্ঠিত হয়েছিল।
+
+আপনি উপরের নোটটি যোগ করলে, আঙ্কি দুটি কার্ড তৈরি করবে। প্রথম কার্ডটি দেখাবে:
+
+    ক্যানবেরা [...]-এ প্রতিষ্ঠিত হয়েছিল।
+
+...প্রশ্নের উপর, উত্তরের উপর সম্পূর্ণ বাক্য সহ। অন্য কার্ডটির প্রশ্নে নিম্নলিখিতগুলি থাকবে:
+
+    [...] 1913 সালে প্রতিষ্ঠিত হয়েছিল।
+
+আপনি একই কার্ডে একাধিক বিভাগও বাদ দিতে পারেন। উপরের উদাহরণে, যদি আপনি c2 কে c1 তে পরিবর্তন করেন, তাহলে শুধুমাত্র একটি কার্ড তৈরি হবে, যেখানে ক্যানবেরা এবং 1913 উভয়ই লুকানো থাকবে। যদি আপনি <kbd>Alt</kbd> (<kbd>Option</kbd> ম্যাক-এ) চেপে ধরে একটি ক্লোজ তৈরি করেন, তাহলে আঙ্কি স্বয়ংক্রিয়ভাবে নম্বর বৃদ্ধি না করে একই নম্বর ব্যবহার করবে।
+
+ক্লোজ ডিলিশনগুলি শব্দের সীমানায় পড়তে হবে না, তাই যদি আপনি উপরের উদাহরণে "ক্যানবেরা" এর পরিবর্তে "্যানবেরা" নির্বাচন করেন, তাহলে প্রশ্নটি "ক\[...\] 1913 সালে প্রতিষ্ঠিত হয়েছিল" হিসাবে প্রদর্শিত হবে, যা আপনাকে একটি ইঙ্গিত দেবে।
+
+আপনি নিজেকে এমন ইঙ্গিতও দিতে পারেন যা পাঠ্যের সাথে মেলে না। যদি আপনি আসল বাক্যটি প্রতিস্থাপন করেন:
+
+    ক্যানবেরা::শহর 1913 সালে প্রতিষ্ঠিত হয়েছিল
+
+...এবং তারপর "ক্যানবেরা::শহর" নির্বাচন করার পরে \[\...\] চাপেন, তাহলে আঙ্কি দুটি কোলনের পরে পাঠ্যটিকে একটি ইঙ্গিত হিসাবে বিবেচনা করবে, পাঠ্যটিকে পরিবর্তন করে:
+
+    {{c1::ক্যানবেরা::শহর}} 1913 সালে প্রতিষ্ঠিত হয়েছিল
+
+যখন কার্ডটি পর্যালোচনার জন্য আসবে, তখন এটি এমন দেখাবে:
+
+    [শহর] 1913 সালে প্রতিষ্ঠিত হয়েছিল।
+
+একটি ক্লোজ ডিলিশনে সঠিকভাবে উত্তর টাইপ করার আপনার ক্ষমতা পরীক্ষা করার বিষয়ে তথ্যের জন্য, অনুগ্রহ করে [উত্তর টাইপ করা](templates/fields.md#checking-your-answer) বিভাগটি দেখুন।
+
+2.1.56 সংস্করণ থেকে, নেস্টেড ক্লোজ ডিলিশনগুলি সমর্থিত। উদাহরণস্বরূপ, নিম্নলিখিতটি বৈধ:
+
+    {{c1::ক্যানবেরা {{c2::প্রতিষ্ঠিত হয়েছিল}}}} 1913 সালে
+
+অভ্যন্তরীণ ক্লোজটি সম্পূর্ণরূপে বাইরেরটির মধ্যে নেস্ট করা হয়েছে। আংশিক ওভারল্যাপের জন্য কোনো সমর্থন নেই, যেমন:
+
+    [...] 1913 সালে প্রতিষ্ঠিত হয়েছিল -> ক্যানবেরা ছিল
+    ক্যানবেরা [...] 1913 সালে -> প্রতিষ্ঠিত হয়েছিল
+
+"ছিল" শব্দটি উভয় ডিলিশনে প্রদর্শিত হচ্ছে।
+
+বর্তমান বাস্তবায়ন শুধুমাত্র সীমিত পরিমাণে নেস্টিং পরিচালনা করতে পারে। আঙ্কি 24.11-এ, এটি 3 স্তর।
+অন্যান্য সংস্করণগুলিতে, সীমা প্রায় 8, তবে আপনি সীমার কাছাকাছি আসার সাথে সাথে আঙ্কি ধীর হয়ে যেতে পারে। সীমা বাড়ানো সম্ভব নয়। যদি আপনি এই বৈশিষ্ট্যটি ব্যবহার করেন, তবে আপনাকে কয়েকটি স্তরের নেস্টিংয়ে নিজেকে সীমাবদ্ধ রাখার পরামর্শ দেওয়া হয়।
+
+2.1.56 সংস্করণের আগে, যদি আপনাকে ওভারল্যাপিং পাঠ্য থেকে ক্লোজ তৈরি করতে হয়, তাহলে আপনার ক্লোজে আরেকটি টেক্সট ক্ষেত্র যোগ করুন, এটি [টেমপ্লেটে](templates/intro.md) যোগ করুন এবং তারপরে
+নোট তৈরি করার সময়, টেক্সটটি দুটি পৃথক ক্ষেত্রে পেস্ট করুন, যেমন:
+
+    Text1 ক্ষেত্র: {{c1::ক্যানবেরা প্রতিষ্ঠিত হয়েছিল}} 1913 সালে
+
+    Text2 ক্ষেত্র: {{c2::ক্যানবেরা}} 1913 সালে প্রতিষ্ঠিত হয়েছিল
+
+ডিফল্ট ক্লোজ নোটের ধরনের একটি দ্বিতীয় ক্ষেত্র রয়েছে যার নাম এক্সট্রা, যা
+প্রতিটি কার্ডের উত্তর দিকে দেখানো হয়। এটি কিছু ব্যবহারের নোট বা অতিরিক্ত তথ্য যোগ করার জন্য ব্যবহার করা যেতে পারে।
+
+ক্লোজ নোটের ধরন আঙ্কি দ্বারা বিশেষভাবে বিবেচিত হয় এবং একটি নিয়মিত নোটের ধরনের উপর ভিত্তি করে তৈরি করা যায় না। যদি আপনি এটি কাস্টমাইজ করতে চান, তবে দয়া করে অন্য ধরনের নোটের পরিবর্তে বিদ্যমান ক্লোজ ধরনটি ক্লোন করতে ভুলবেন না।
+ফরম্যাটিং এর মতো বিষয়গুলি কাস্টমাইজ করা যেতে পারে, তবে ক্লোজ নোটের ধরনের সাথে অতিরিক্ত কার্ড টেমপ্লেট যোগ করা সম্ভব নয়।
+
+## চিত্র আবৃতকরণ
+
+আঙ্কি 23.10+ চিত্র আবৃতকরণ কার্ডগুলি স্থানীয়ভাবে সমর্থন করে। একটি চিত্র
+আবৃতকরণ (IO) নোট হল পাঠ্যের পরিবর্তে চিত্রের উপর ভিত্তি করে ক্লোজ ডিলিশনের একটি বিশেষ ক্ষেত্রে, এবং আপনাকে এমন কার্ড তৈরি করার অনুমতি দেয় যা একটি চিত্রের কিছু অংশ লুকিয়ে রাখে, সেই লুকানো তথ্য সম্পর্কে আপনার জ্ঞান পরীক্ষা করে।
+
+![চিত্র আবৃতকরণ](media/io.jpg)
+
+### একটি চিত্র যোগ করা
+
+আপনার সংগ্রহে IO কার্ড যোগ করতে, যোগ স্ক্রিনটি খুলুন, "প্রকার" এ ক্লিক করুন
+এবং অন্তর্নির্মিত নোটের ধরনের তালিকা থেকে "চিত্র আবৃতকরণ" নির্বাচন করুন।
+তারপর, আপনার কম্পিউটারের হার্ড ড্রাইভে সংরক্ষিত একটি চিত্র ফাইল লোড করতে **চিত্র নির্বাচন করুন** এ ক্লিক করুন, অথবা
+যদি আপনার ক্লিপবোর্ডে একটি চিত্র কপি করা থাকে তবে **ক্লিপবোর্ড থেকে চিত্র পেস্ট করুন** এ ক্লিক করুন।
+
+### IO কার্ড যোগ করা
+
+একটি চিত্র লোড করার পরে, IO সম্পাদক খুলবে। আপনার চিত্রের সাথে যতগুলি এলাকা যোগ করতে চান তা যোগ করতে
+বাম দিকের আইকনগুলিতে ক্লিক করুন।
+নির্বাচন করার জন্য তিনটি মৌলিক আকার রয়েছে:
+
+-   আয়তক্ষেত্র
+-   উপবৃত্ত
+-   বহুভুজ
+
+আপনি প্রতিটি নোটের জন্য দুটি ভিন্ন IO মোডের মধ্যে নির্বাচন করতে পারেন:
+
+-   **সব লুকান, একটি অনুমান করুন**: সমস্ত এলাকা লুকানো থাকে এবং শেখার সময় একবারে শুধুমাত্র একটি
+    এলাকা প্রকাশ করা হয়।
+-   **একটি লুকান, একটি অনুমান করুন**: একবারে শুধুমাত্র একটি এলাকা লুকানো থাকে
+    এবং শেখার সময় প্রকাশ করা হবে। অন্যান্য এলাকাগুলি দৃশ্যমান থাকবে।
+
+![চিত্র আবৃতকরণ মোড](media/io_modes.jpg)
+
+<!-- সম্পাদক খুঁজে বের করার জন্য ক্ষেত্র এবং ট্যাগগুলি স্বজ্ঞাত নয় -->
+ডিফল্ট IO নোটের ধরনের মানক ক্ষেত্রও রয়েছে:
+**হেডার** (প্রতিটি কার্ডের সামনে এবং পিছনে চিত্রের উপরে প্রদর্শিত হয়),
+**ব্যাক এক্সট্রা** (প্রতিটি কার্ডের পিছনে চিত্রের নীচে প্রদর্শিত হয়),
+এবং **মন্তব্য** (কার্ডগুলিতে প্রদর্শিত হয় না)। IO সম্পাদক থেকে এগুলি অ্যাক্সেস করতে,
+**মাস্ক সম্পাদক টগল করুন** বোতামে ক্লিক করুন।
+সেখানে আপনি নোটের **ট্যাগগুলি**ও দেখতে এবং সম্পাদনা করতে পারেন।
+
+একবার আপনার কাজ শেষ হলে, স্ক্রিনের নীচে "যোগ করুন" বোতামে ক্লিক করুন।
+আঙ্কি পূর্ববর্তী ধাপে আপনার যোগ করা প্রতিটি আকার বা আকারের গোষ্ঠীর জন্য একটি কার্ড যোগ করবে,
+এবং আপনি স্বাভাবিকভাবে সেগুলি পর্যালোচনা শুরু করতে পারেন।
+
+## IO নোট সম্পাদনা করা
+
+পর্যালোচনা করার সময় "সম্পাদনা" এ ক্লিক করে, অথবা সরাসরি ব্রাউজার থেকে আপনার IO নোটগুলি সম্পাদনা করতে পারেন। আপনার ব্যবহার করার জন্য বেশ কয়েকটি সরঞ্জাম রয়েছে। উল্লেখযোগ্য:
+
+-   নির্বাচন করুন: এটি আপনাকে একটি বা একাধিক আকার নির্বাচন করতে দেয় যা সরানো,
+    আকার পরিবর্তন করা, মুছে ফেলা বা গোষ্ঠীভুক্ত করা যায়।
+-   জুম: আপনি অবাধে চিত্রটি সরাতে পারেন এবং মাউসের চাকা ব্যবহার করে জুম ইন বা আউট করতে পারেন।
+-   আকার (আয়তক্ষেত্র, উপবৃত্ত বা বহুভুজ): নতুন আকার/কার্ড যোগ করতে এগুলি ব্যবহার করুন।
+-   পাঠ্য: এটি আপনার চিত্রে পাঠ্য এলাকা যোগ করে। এই পাঠ্য এলাকাগুলি সরানো,
+    আকার পরিবর্তন করা বা মুছে ফেলা যেতে পারে, তবে আপনি এই সরঞ্জামটি ব্যবহার করলে কোনো কার্ড তৈরি হবে না।
+-   পূর্বাবস্থায় ফিরিয়ে আনুন / পুনরায় করুন।
+-   জুম ইন / আউট - জুম রিসেট করুন।
+-   স্বচ্ছতা টগল করুন: লুকানো এলাকাগুলি সাময়িকভাবে দেখতে এই সরঞ্জামটি ব্যবহার করুন।
+-   মুছুন: নির্বাচিত আকার এবং পাঠ্য এলাকাগুলি মুছতে এই সরঞ্জামটি ব্যবহার করুন। দয়া করে
+    মনে রাখবেন যে একটি আকার মুছে ফেললে স্বয়ংক্রিয়ভাবে এর সাথে যুক্ত কার্ডটি মুছে যাবে না;
+    আপনাকে পরে টুলস>খালি কার্ডস ব্যবহার করতে হবে, যেমন
+    নিয়মিত ক্লোজ ডিলিশনের ক্ষেত্রে।
+-   অনুলিপি।
+-   গোষ্ঠী নির্বাচন: আকারগুলির একটি ক্লাস্টার তৈরি করতে এই সরঞ্জামটি ব্যবহার করুন, যা আপনাকে
+    একযোগে সরানো, আকার পরিবর্তন করা বা মুছে ফেলতে দেবে। দয়া করে মনে রাখবেন যে
+    দুটি বা তার বেশি একক আকার গোষ্ঠীভুক্ত হলে শুধুমাত্র একটি কার্ড তৈরি করবে।
+-   গোষ্ঠীভুক্ত করা বাতিল করুন: একটি গোষ্ঠী নির্বাচন করুন এবং তারপরে এই বোতামে ক্লিক করুন যাতে প্রতিটি আকার আবার স্বাধীন হয়।
+-   সারিবদ্ধকরণ: এই সরঞ্জামটি আপনার আকার/পাঠ্য এলাকাগুলি পছন্দসই হিসাবে সারিবদ্ধ করতে ব্যবহার করা যেতে পারে।
+
+IO কার্ডগুলি পর্যালোচনা করার সময় চিত্রের ঠিক নীচে একটি "মাস্ক টগল করুন" বোতাম প্রদর্শিত হবে।
+"সব লুকান, একটি অনুমান করুন" মোড ব্যবহার করার সময় এই বোতামটি নোটের সমস্ত আকার সাময়িকভাবে পরিষ্কার করবে।
+
+## ল্যাটিন নয় এমন অক্ষর এবং অ্যাকসেন্ট ইনপুট করা
+
+সমস্ত আধুনিক কম্পিউটারে অ্যাকসেন্ট এবং ল্যাটিন নয় এমন অক্ষর টাইপ করার জন্য অন্তর্নির্মিত সমর্থন রয়েছে এবং এটি করার একাধিক উপায় রয়েছে। আমরা যে পদ্ধতিটি সুপারিশ করি তা হল আপনি যে ভাষা শিখতে চান তার জন্য একটি কীবোর্ড লেআউট ব্যবহার করা।
+
+জাপানি, চীনা, থাই ইত্যাদির মতো আলাদা স্ক্রিপ্ট সহ ভাষাগুলির সেই ভাষার জন্য নির্দিষ্ট নিজস্ব লেআউট রয়েছে।
+
+অ্যাকসেন্ট ব্যবহার করে ইউরোপীয় ভাষাগুলির নিজস্ব লেআউট থাকতে পারে, তবে প্রায়শই একটি জেনেরিক "আন্তর্জাতিক কীবোর্ড" লেআউটে টাইপ করা যেতে পারে। এগুলি অ্যাকসেন্ট টাইপ করে কাজ করে, তারপর আপনি যে অক্ষরটি অ্যাকসেন্ট করতে চান - যেমন একটি অ্যাপোস্ট্রফি (<kbd>´</kbd>) তারপর অক্ষর a (<kbd>a</kbd>) á দেয়।
+
+### আন্তর্জাতিক কীবোর্ড লেআউট যোগ করা
+আন্তর্জাতিক কীবোর্ড ব্যবহার করার নির্দেশাবলী অপারেটিং সিস্টেম
+এবং আপনি যে ডেস্কটপ পরিবেশ ব্যবহার করছেন তার উপর নির্ভর করে পরিবর্তিত হয়। শুরু করতে, অনুগ্রহ করে
+নীচের লিঙ্কগুলি দেখুন।
+
+উইন্ডোজ:
+-   <https://thegeekpage.com/how-to-add-us-international-keyboard-in-windows-10/>
+
+ম্যাক:
+-   <http://www.macworld.com/article/1147039/os-x/accentinput.html>
+
+লিনাক্স:
+-   গনোম: <https://help.gnome.org/users/gnome-help/stable/tips-specialchars.html.en>
+-   KDE প্লাজমা: <https://userbase.kde.org/Tutorials/ComposeKey>
+
+### নির্দিষ্ট ভাষার জন্য কীবোর্ড লেআউট যোগ করা
+নির্দিষ্ট ভাষার জন্য কীবোর্ডগুলি একইভাবে যোগ করা হয়, তবে আমরা
+এখানে সেগুলি সব কভার করতে পারি না। আরও তথ্যের জন্য, অনুগ্রহ করে ইন্টারনেট অনুসন্ধান করে দেখুন
+"ম্যাকে জাপানিজ ইনপুট", "উইন্ডোজ 10 এ চাইনিজ টাইপ করুন", ইত্যাদি।
+
+লিনাক্সের জন্য আপনার ডিস্ট্রোর উইকি পৃষ্ঠাগুলি দেখা ভাল, যেমন
+[আর্চ লিনাক্স](https://wiki.archlinux.org/title/Input_method) এবং
+[ডেবিয়ান লিনাক্স](https://wiki.debian.org/Keyboard#Modern_strategy)।
+উদাহরণস্বরূপ, ডেবিয়ানে `apt install ibus-anthy` আপনাকে হিরাগানা অক্ষর টাইপ করতে দেয়।
+
+### ডান থেকে বামে ভাষা
+যদি আপনি একটি ডান থেকে বামে ভাষা শিখছেন, তবে বিবেচনা করার মতো আরও অনেক কিছু আছে।
+আরও তথ্যের জন্য, অনুগ্রহ করে [এই পৃষ্ঠাটি](http://dotancohen.com/howto/rtl_right_to_left.html) দেখুন।
+
+### সীমাবদ্ধতা
+আঙ্কি যে টুলকিটের উপর নির্মিত তা কয়েকটি ইনপুট পদ্ধতি নিয়ে সমস্যায় পড়ে, যেমন ম্যাকওএস-এ অ্যাকসেন্টযুক্ত অক্ষর নির্বাচন করতে কী ধরে রাখা,
+এবং <kbd>Alt</kbd> কী ধরে রেখে এবং উইন্ডোজে একটি সংখ্যাসূচক কোড টাইপ করে অক্ষর টাইপ করা।
+
+## ইউনিকোড স্বাভাবিককরণ
+
+`á` এর মতো পাঠ্য একটি কম্পিউটারে একাধিক উপায়ে উপস্থাপন করা যেতে পারে, যেমন
+সেই প্রতীকটির জন্য একটি নির্দিষ্ট কোড ব্যবহার করে, অথবা একটি স্ট্যান্ডার্ড `a` এবং তারপরে
+উপরে অ্যাকসেন্টের জন্য আরেকটি কোড ব্যবহার করে। এটি বিভিন্ন উত্স থেকে ইনপুট মিশ্রিত করার সময়, বা
+বিভিন্ন কম্পিউটার ব্যবহার করার সময় সমস্যা সৃষ্টি করে - যদি আপনার কম্পিউটার
+এক ফর্মে কীবোর্ড ইনপুট পরিচালনা করে, কিন্তু বিষয়বস্তু ভিন্ন ফর্মে সংরক্ষণ করা হয়,
+তাহলে অনুসন্ধান করার সময় এটি মিলবে না, যদিও শেষ ফলাফলটি অভিন্ন দেখায়।
+
+অনুসন্ধানে বিষয়বস্তু সহজে খুঁজে পাওয়া যায় তা নিশ্চিত করতে, আঙ্কি পাঠ্যটিকে
+একটি মানক ফর্মে স্বাভাবিক করে। বেশিরভাগ ব্যবহারকারীর জন্য এই প্রক্রিয়াটি স্বচ্ছ,
+তবে আপনি যদি প্রাচীন জাপানি প্রতীকগুলির মতো নির্দিষ্ট উপাদান অধ্যয়ন করেন, তাহলে স্বাভাবিককরণ
+প্রক্রিয়াটি সেগুলিকে একটি আরও আধুনিক সমতুল্যে রূপান্তরিত করতে পারে।
+
+যদি আপনি অক্ষরের ভিন্নতাগুলি সংরক্ষণ করতে চান, তাহলে [ডিবাগ কনসোল](misc.md) এ নিম্নলিখিতটি
+স্বাভাবিককরণ বন্ধ করবে:
 
 ```python
 mw.col.conf["normalize_note_text"] = False
 ```
 
-Any content added after that will remain untouched. The trade-off is that you may
-find it difficult to search for the content if you're switching between operating
-systems, or pasting content from mixed sources.
+তারপরে যোগ করা যেকোনো বিষয়বস্তু অক্ষত থাকবে। এর ট্রেড-অফ হল যে আপনি যদি
+অপারেটিং সিস্টেমগুলির মধ্যে স্যুইচ করেন, বা মিশ্র উত্স থেকে বিষয়বস্তু পেস্ট করেন, তাহলে
+বিষয়বস্তু অনুসন্ধান করা কঠিন মনে হতে পারে।

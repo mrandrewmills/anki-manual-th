@@ -1,73 +1,40 @@
-# Contributing
+# অবদান রাখা
 
 <!-- toc -->
 
-## Sharing Decks Publicly
+## ডেকগুলি সর্বজনীনভাবে শেয়ার করা
 
-To share decks with the general public, [synchronize](syncing.md) them
-with AnkiWeb, then log into AnkiWeb and click on "Share" from the menu
-next to the deck you wish to share.
+সাধারণ জনগণের সাথে ডেক শেয়ার করতে, সেগুলিকে [সিঙ্ক্রোনাইজ করুন](syncing.md)
+আঙ্কিওয়েব-এর সাথে, তারপর আঙ্কিওয়েব-এ লগ ইন করুন এবং আপনি যে ডেকটি শেয়ার করতে চান তার পাশের মেনু থেকে "শেয়ার করুন" এ ক্লিক করুন।
 
-If you shared a deck previously (including with previous versions of
-Anki), you can update it by clicking "Share" as above. Updating a shared
-deck will not reset the download counts or ratings. You can delete a
-shared deck that you have uploaded using the Delete button on the shared
-deck's page.
+আপনি যদি আগে একটি ডেক শেয়ার করে থাকেন (আঙ্কির পূর্ববর্তী সংস্করণ সহ), আপনি উপরের মত "শেয়ার করুন" এ ক্লিক করে এটি আপডেট করতে পারেন। একটি শেয়ার করা ডেক আপডেট করা ডাউনলোড সংখ্যা বা রেটিং রিসেট করবে না। আপনি শেয়ার করা ডেকের পৃষ্ঠায় ডিলিট বোতাম ব্যবহার করে আপনার আপলোড করা একটি শেয়ার করা ডেক মুছে ফেলতে পারেন।
 
-When updating a deck, AnkiWeb expects the deck to be at the same
-location as before. If you shared a deck when it was called "Korean
-Verbs" for example, and then renamed it to "Korean::Korean Verbs",
-resharing will not be able to update the existing copy. If you have
-forgotten the original name, you can guess it by downloading the
-deck on AnkiWeb and importing it (File > Import) in a new profile
-(File > Switch profile > Add). Then you can copy the exact name of the
-deck when it was first shared. If this doesn't work, please contact
-support.
+একটি ডেক আপডেট করার সময়, আঙ্কিওয়েব আশা করে যে ডেকটি আগের মতোই একই অবস্থানে থাকবে। উদাহরণস্বরূপ, যদি আপনি একটি ডেক শেয়ার করার সময় সেটির নাম "কোরিয়ান ক্রিয়া" ছিল এবং তারপরে সেটির নাম পরিবর্তন করে "কোরিয়ান::কোরিয়ান ক্রিয়া" রাখেন, তাহলে পুনরায় শেয়ার করলে বিদ্যমান অনুলিপিটি আপডেট করা সম্ভব হবে না। যদি আপনি আসল নামটি ভুলে গিয়ে থাকেন, তাহলে আপনি আঙ্কিওয়েব-এ ডেকটি ডাউনলোড করে এবং একটি নতুন প্রোফাইলে (ফাইল > আমদানি) আমদানি করে এটি অনুমান করতে পারেন (ফাইল > প্রোফাইল পরিবর্তন করুন > যোগ করুন)। তারপরে আপনি যখন প্রথমবার ডেকটি শেয়ার করেছিলেন তখন তার সঠিক নামটি অনুলিপি করতে পারেন। যদি এটি কাজ না করে, অনুগ্রহ করে সাপোর্টের সাথে যোগাযোগ করুন।
 
-When you update a shared deck, users who downloaded the deck previously
-will not automatically receive updates. If they download the deck again
-and re-import it, newly added material will be imported without altering
-their existing study progress, provided neither you nor the user has
-altered the note type since the first import.
+যখন আপনি একটি শেয়ার করা ডেক আপডেট করেন, তখন যে ব্যবহারকারীরা আগে ডেকটি ডাউনলোড করেছেন তারা স্বয়ংক্রিয়ভাবে আপডেট পাবেন না। যদি তারা ডেকটি আবার ডাউনলোড করে এবং পুনরায় আমদানি করে, তবে নতুন যোগ করা উপাদানগুলি তাদের বিদ্যমান অধ্যয়নের অগ্রগতি পরিবর্তন না করেই আমদানি করা হবে, যদি আপনি বা ব্যবহারকারী কেউই প্রথম আমদানির পর থেকে নোটের ধরন পরিবর্তন না করে থাকেন।
 
-## Sharing Decks Privately
+## ডেকগুলি ব্যক্তিগতভাবে শেয়ার করা
 
-If you’d like to share decks with a limited group of people (such as a
-study group or class) rather than the general public, you can do so by
-sharing them outside of AnkiWeb.
+আপনি যদি সাধারণ জনগণের পরিবর্তে একটি সীমিত গোষ্ঠীর সাথে (যেমন একটি অধ্যয়ন গোষ্ঠী বা ক্লাস) ডেক শেয়ার করতে চান, তাহলে আপনি আঙ্কিওয়েব-এর বাইরে সেগুলি শেয়ার করে তা করতে পারেন।
 
-To share a deck privately, go to the File menu and choose Export. Select
-a single deck (not "All Decks"), and turn off "include scheduling
-information". This will produce an .apkg file which you can share with
-others.
+একটি ডেক ব্যক্তিগতভাবে শেয়ার করতে, ফাইল মেনুতে যান এবং রপ্তানি নির্বাচন করুন। একটি একক ডেক নির্বাচন করুন ("সমস্ত ডেক" নয়), এবং "সময়সূচী তথ্য অন্তর্ভুক্ত করুন" বন্ধ করুন। এটি একটি .apkg ফাইল তৈরি করবে যা আপনি অন্যদের সাথে শেয়ার করতে পারেন।
 
-You can share the .apkg file by emailing it to people, placing it on a
-website or shared folder, or using a free file sharing service like
-Dropbox or Google Drive and sending people a link.
+আপনি .apkg ফাইলটি ইমেল করে, একটি ওয়েবসাইটে বা শেয়ার করা ফোল্ডারে রেখে, অথবা ড্রপবক্স বা গুগল ড্রাইভের মতো একটি বিনামূল্যে ফাইল শেয়ারিং পরিষেবা ব্যবহার করে এবং লোকেদের একটি লিঙ্ক পাঠিয়ে শেয়ার করতে পারেন।
 
-Both the computer version and mobile clients make it easy to import from
-an apkg file simply by clicking or tapping on it. AnkiWeb does not have
-the ability to import apkg files however, so the recipients of your deck
-will need to have the computer version or Anki on their mobile device.
+কম্পিউটার সংস্করণ এবং মোবাইল ক্লায়েন্ট উভয়ই একটি .apkg ফাইল থেকে কেবল ক্লিক বা ট্যাপ করে আমদানি করা সহজ করে তোলে। তবে আঙ্কিওয়েব-এর .apkg ফাইল আমদানি করার ক্ষমতা নেই, তাই আপনার ডেকের প্রাপকদের তাদের মোবাইল ডিভাইসে কম্পিউটার সংস্করণ বা আঙ্কি থাকতে হবে।
 
-When a user imports an .apkg file, cards that already exist in their
-collection will be ignored and any new cards will be added. As long as
-they use the same note type, modified cards will also be updated. To
-prevent data loss, cards that have been deleted in the new apkg file
-will not be deleted in the user’s collection, so if you need to delete
-cards from users' decks for whatever reason, you will need to contact
-them about it.
+যখন একজন ব্যবহারকারী একটি .apkg ফাইল আমদানি করেন, তখন তাদের সংগ্রহে ইতিমধ্যে বিদ্যমান কার্ডগুলি উপেক্ষা করা হবে এবং যেকোনো নতুন কার্ড যোগ করা হবে। যতক্ষণ তারা একই নোটের ধরন ব্যবহার করে, ততক্ষণ পরিবর্তিত কার্ডগুলিও আপডেট করা হবে। ডেটা হারানো প্রতিরোধ করতে, নতুন .apkg ফাইলে মুছে ফেলা কার্ডগুলি ব্যবহারকারীর সংগ্রহে মুছে ফেলা হবে না, তাই যদি আপনাকে কোনো কারণে ব্যবহারকারীদের ডেক থেকে কার্ড মুছতে হয়, তাহলে আপনাকে তাদের সাথে এই বিষয়ে যোগাযোগ করতে হবে।
 
-## Sharing Add-ons
+## অ্যাড-অন শেয়ার করা
 
-Please see <https://addon-docs.ankiweb.net/sharing.html>
+অনুগ্রহ করে দেখুন <https://addon-docs.ankiweb.net/sharing.html>
 
-## Translating Anki
+## আঙ্কি অনুবাদ করা
 
-Please see <https://translating.ankiweb.net>
+অনুগ্রহ করে দেখুন <https://translating.ankiweb.net>
 
-## Contributing Code
+## কোড অবদান রাখা
 
-Anki's source code is available at <https://github.com/ankitects/anki>
+আঙ্কির সোর্স কোড <https://github.com/ankitects/anki> এ উপলব্ধ।
 
-Before contributing, please see [contributing.md](https://github.com/ankitects/anki/blob/main/docs/contributing.md).
+অবদান রাখার আগে, অনুগ্রহ করে দেখুন [contributing.md](https://github.com/ankitects/anki/blob/main/docs/contributing.md)।
