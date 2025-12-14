@@ -1,86 +1,52 @@
-# Card Generation
+# কার্ড তৈরি
 
 <!-- toc -->
 
-## Reverse Cards
+## বিপরীত কার্ড
 
-You can watch [a video about reversing cards](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on) on YouTube.
+আপনি ইউটিউবে [কার্ড উল্টানো সম্পর্কে একটি ভিডিও দেখতে পারেন](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)।
 
-If you want to create cards that go in both directions (e.g., both
-“ookii”→“big” and “big”→“ookii”), you have several options. The simplest
-is to select the “Basic (and reversed card)” built-in note type. This
-will generate two cards, one in each direction.
+আপনি যদি এমন কার্ড তৈরি করতে চান যা উভয় দিকেই যায় (যেমন, "ookii"→"big" এবং "big"→"ookii"), তাহলে আপনার কাছে বেশ কয়েকটি বিকল্প রয়েছে। সবচেয়ে সহজ হল "Basic (and reversed card)" বিল্ট-ইন নোট টাইপ নির্বাচন করা। এটি দুটি কার্ড তৈরি করবে, প্রতিটি দিকে একটি করে।
 
-If you want to generate reverse cards for only some of your material
-(perhaps you only want to take the time to study reverses for the most
-important material, or some of your cards don’t make sense reversed),
-you can select the “Basic (optional reversed card)” note type. This note
-type generates a forward-only card when you fill in only the first two
-fields; if you additionally enter something in the “Add Reverse” field
-(like a "y"), Anki will generate a reverse card as well. The contents of
-this field will never be displayed on a card.
+আপনি যদি আপনার কিছু উপাদানের জন্য শুধুমাত্র বিপরীত কার্ড তৈরি করতে চান (হয়তো আপনি শুধুমাত্র সবচেয়ে গুরুত্বপূর্ণ উপাদানের জন্য বিপরীতগুলি অধ্যয়ন করতে সময় দিতে চান, অথবা আপনার কিছু কার্ড উল্টানো অবস্থায় অর্থপূর্ণ নয়), তাহলে আপনি "Basic (optional reversed card)" নোট টাইপ নির্বাচন করতে পারেন। এই নোট টাইপটি একটি ফরোয়ার্ড-অনলি কার্ড তৈরি করে যখন আপনি শুধুমাত্র প্রথম দুটি ফিল্ড পূরণ করেন; যদি আপনি অতিরিক্তভাবে "Add Reverse" ফিল্ডে কিছু প্রবেশ করান (যেমন একটি "y"), Anki একটি বিপরীত কার্ডও তৈরি করবে। এই ফিল্ডের বিষয়বস্তু কার্ডে কখনও প্রদর্শিত হবে না।
 
-## Card Generation & Deletion
+## কার্ড তৈরি এবং মুছে ফেলা
 
-Anki will not create cards with empty front sides. Thus if “My Field”
-was empty, and one card’s front template included only that field, the
-card would not be created.
+Anki খালি সামনের দিক সহ কার্ড তৈরি করবে না। সুতরাং যদি "My Field" খালি থাকে, এবং একটি কার্ডের সামনের টেমপ্লেটে শুধুমাত্র সেই ফিল্ডটি অন্তর্ভুক্ত থাকে, তাহলে কার্ডটি তৈরি হবে না।
 
-When you edit a previously added note, Anki will automatically create
-extra cards if they were previously blank but no longer are. If your
-edits have made some cards blank when they previously were not, however,
-Anki will not delete them immediately, as that could lead to accidental
-data loss. To remove the empty cards, go to Tools → Empty Cards in the
-main window. You will be shown a list of empty cards and be given the
-option to delete them.
+আপনি যখন পূর্বে যোগ করা একটি নোট সম্পাদনা করেন, তখন Anki স্বয়ংক্রিয়ভাবে অতিরিক্ত কার্ড তৈরি করবে যদি সেগুলি পূর্বে খালি থাকে কিন্তু এখন আর খালি না থাকে। আপনার সম্পাদনাগুলি যদি কিছু কার্ডকে খালি করে তোলে যা পূর্বে খালি ছিল না, তবে Anki সেগুলিকে অবিলম্বে মুছে ফেলবে না, কারণ এর ফলে দুর্ঘটনাক্রমে ডেটা নষ্ট হতে পারে। খালি কার্ডগুলি সরাতে, মূল উইন্ডোতে Tools → Empty Cards-এ যান। আপনাকে খালি কার্ডগুলির একটি তালিকা দেখানো হবে এবং সেগুলি মুছে ফেলার বিকল্প দেওয়া হবে।
 
-Because of the way that card generation works, it is not possible to
-manually delete individual cards, as they would just end up being recreated
-the next time the note was edited. Instead, you should make the
-relevant conditional replacement fields empty and then use the Empty
-Cards option.
+কার্ড তৈরির পদ্ধতির কারণে, স্বতন্ত্র কার্ড ম্যানুয়ালি মুছে ফেলা সম্ভব নয়, কারণ নোটটি পরের বার সম্পাদনা করা হলে সেগুলি আবার তৈরি হবে। পরিবর্তে, আপনাকে প্রাসঙ্গিক শর্তসাপেক্ষ প্রতিস্থাপন ফিল্ডগুলি খালি করতে হবে এবং তারপর Empty Cards বিকল্পটি ব্যবহার করতে হবে।
 
-Anki does not consider special fields or non-field text for the purposes
-of card generation. Thus if your front template looked like the
-following, no card would be generated if Country was empty:
+Anki কার্ড তৈরির উদ্দেশ্যে বিশেষ ফিল্ড বা নন-ফিল্ড টেক্সট বিবেচনা করে না। সুতরাং যদি আপনার সামনের টেমপ্লেটটি নিম্নলিখিতটির মতো দেখায়, তাহলে Country খালি থাকলে কোনো কার্ড তৈরি হবে না:
 
-    Where is {{Country}} on the map?
+    মানচিত্রে {{Country}} কোথায়?
 
-## Selective Card Generation
+## নির্বাচনী কার্ড তৈরি
 
-Sometimes you may want to generate extra cards for only some of your
-material, such as testing your ability to recall the most important
-words of a set. You can accomplish this by adding an extra field to your
-note, and adding some text into it (such as "1") on the notes you want
-the extra card. Then in the card template, you can make the card’s
-creation depend on that field being non-empty. For more information on
-this, please see the conditional replacement section below.
+কখনও কখনও আপনি আপনার কিছু উপাদানের জন্য শুধুমাত্র অতিরিক্ত কার্ড তৈরি করতে চাইতে পারেন, যেমন একটি সেটের সবচেয়ে গুরুত্বপূর্ণ শব্দগুলি স্মরণ করার আপনার ক্ষমতা পরীক্ষা করা। আপনি আপনার নোটে একটি অতিরিক্ত ফিল্ড যোগ করে এবং তাতে কিছু টেক্সট (যেমন "1") যোগ করে এটি সম্পন্ন করতে পারেন, যে নোটগুলিতে আপনি অতিরিক্ত কার্ড চান। তারপর কার্ড টেমপ্লেটে, আপনি সেই ফিল্ডটি খালি না থাকার উপর নির্ভর করে কার্ড তৈরি করতে পারেন। এই বিষয়ে আরও তথ্যের জন্য, অনুগ্রহ করে নীচের শর্তসাপেক্ষ প্রতিস্থাপন বিভাগটি দেখুন।
 
-## Conditional Replacement
+## শর্তসাপেক্ষ প্রতিস্থাপন
 
-It is possible to include certain text, fields, or HTML on your cards
-only if a field is empty or not empty. An example:
+কার্ডে শুধুমাত্র একটি ফিল্ড খালি থাকলে বা খালি না থাকলে নির্দিষ্ট টেক্সট, ফিল্ড বা HTML অন্তর্ভুক্ত করা সম্ভব। একটি উদাহরণ:
 
-    This text is always shown.
+    এই টেক্সটটি সর্বদা দেখানো হয়।
 
     {{#FieldName}}
-        This text is only shown if FieldName has text in it
+        এই টেক্সটটি শুধুমাত্র তখনই দেখানো হয় যখন FieldName-এ টেক্সট থাকে
     {{/FieldName}}
 
     {{^FieldName}}
-        This text is only shown if FieldName is empty
+        এই টেক্সটটি শুধুমাত্র তখনই দেখানো হয় যখন FieldName খালি থাকে
     {{/FieldName}}
 
-A real life example is only showing a label if the field is not empty:
+একটি বাস্তব জীবনের উদাহরণ হল ফিল্ডটি খালি না থাকলে শুধুমাত্র একটি লেবেল দেখানো:
 
     {{#Tags}}
-        Tags: {{Tags}}
+        ট্যাগ: {{Tags}}
     {{/Tags}}
 
-Or say you want to display a specific field in blue on the front of your
-card if there are extra notes on the back (perhaps the fact that there
-are notes serves as a reminder that you should spend more time thinking
-about the answer). You can style the field as follows:
+অথবা ধরুন আপনি আপনার কার্ডের সামনে একটি নির্দিষ্ট ফিল্ড নীল রঙে প্রদর্শন করতে চান যদি পিছনে অতিরিক্ত নোট থাকে (হয়তো নোট থাকার বিষয়টি আপনাকে মনে করিয়ে দেয় যে উত্তর সম্পর্কে আরও বেশি সময় চিন্তা করা উচিত)। আপনি ফিল্ডটি নিম্নরূপ স্টাইল করতে পারেন:
 
     {{#Notes}}
         <span style="color:blue;">
@@ -92,25 +58,19 @@ about the answer). You can style the field as follows:
         </span>
     {{/Notes}}
 
-You can also use conditional replacement to control which cards are
-generated. This works since Anki will not generate
-cards which would have a blank front side. For
-example, consider a card with two fields on the front:
+আপনি শর্তসাপেক্ষ প্রতিস্থাপন ব্যবহার করে কোন কার্ডগুলি তৈরি হবে তা নিয়ন্ত্রণ করতে পারেন। এটি কাজ করে কারণ Anki এমন কার্ড তৈরি করবে না যেগুলির সামনের দিক খালি থাকবে। উদাহরণস্বরূপ, সামনে দুটি ফিল্ড সহ একটি কার্ড বিবেচনা করুন:
 
     {{Expression}}
     {{Notes}}
 
-Normally a card would be generated if either the expression or notes
-field had text in it. If you only wanted a card generated if expression
-was not empty, then you could change the template to this:
+সাধারণত একটি কার্ড তৈরি হবে যদি এক্সপ্রেশন বা নোট ফিল্ডে টেক্সট থাকে। আপনি যদি শুধুমাত্র এক্সপ্রেশন খালি না থাকলে একটি কার্ড তৈরি করতে চান, তাহলে আপনি টেমপ্লেটটি এইভাবে পরিবর্তন করতে পারেন:
 
     {{#Expression}}
         {{Expression}}
         {{Notes}}
     {{/Expression}}
 
-And if you wanted to require both fields, you could use two conditional
-replacements:
+এবং আপনি যদি উভয় ফিল্ডের প্রয়োজন হয়, তাহলে আপনি দুটি শর্তসাপেক্ষ প্রতিস্থাপন ব্যবহার করতে পারেন:
 
     {{#Expression}}
         {{#Notes}}
@@ -119,78 +79,54 @@ replacements:
         {{/Notes}}
     {{/Expression}}
 
-Keep in mind that this only works when you place the
-conditional replacement code on the _front_ of the card; if you do this
-on the back, you will simply end up with cards with a blank back side.
-Similarly, since this works by checking if the front field would be
-empty, it is important to make sure you wrap the "entire" front side in
-the conditional replacement; for instance, the following would not work
-as expected:
+মনে রাখবেন যে এটি শুধুমাত্র তখনই কাজ করে যখন আপনি শর্তসাপেক্ষ প্রতিস্থাপন কোডটি কার্ডের _সামনে_ রাখেন; আপনি যদি এটি পিছনে করেন, তাহলে আপনি শুধুমাত্র খালি পিছনের দিক সহ কার্ড পাবেন। একইভাবে, যেহেতু এটি সামনের ফিল্ডটি খালি থাকবে কিনা তা পরীক্ষা করে কাজ করে, তাই শর্তসাপেক্ষ প্রতিস্থাপনে "পুরো" সামনের দিকটি মোড়ানো গুরুত্বপূর্ণ; উদাহরণস্বরূপ, নিম্নলিখিতটি প্রত্যাশিতভাবে কাজ করবে না:
 
     {{#Expression}}
         {{Expression}}
     {{/Expression}}
     {{Notes}}
 
-## Blank Back Sides
+## খালি পিছনের দিক
 
-Card generation only looks at the front side of the card. For example, if you have a
-front template:
+কার্ড তৈরি শুধুমাত্র কার্ডের সামনের দিকটি দেখে। উদাহরণস্বরূপ, যদি আপনার একটি সামনের টেমপ্লেট থাকে:
 
     {{Field 1}}
 
-and a back template:
+এবং একটি পিছনের টেমপ্লেট:
 
     {{Field 2}}
 
-Then a card will be generated if Field 1 is non-empty. If Field 2 is empty, the card
-will still be generated, and you will get a blank back side.
+তাহলে Field 1 খালি না থাকলে একটি কার্ড তৈরি হবে। যদি Field 2 খালি থাকে, কার্ডটি এখনও তৈরি হবে, এবং আপনি একটি খালি পিছনের দিক পাবেন।
 
-If you wish to avoid a blank back side, you will need to place a required field
-on the front template as a conditional, like so:
+আপনি যদি একটি খালি পিছনের দিক এড়াতে চান, তাহলে আপনাকে প্রয়োজনীয় ফিল্ডটি সামনের টেমপ্লেটে একটি শর্তসাপেক্ষ হিসাবে রাখতে হবে, যেমন:
 
     {{#Field 2}}
         {{Field 1}}
     {{/Field 2}}
 
-This will ensure the card is generated only if both Field 2 and Field 1 are non-empty.
+এটি নিশ্চিত করবে যে কার্ডটি শুধুমাত্র Field 2 এবং Field 1 উভয়ই খালি না থাকলে তৈরি হবে।
 
-## Adding Empty Notes
+## খালি নোট যোগ করা
 
-When you add a new note in Anki, if the card
-templates and note fields combine to produce no cards, a blank card will be
-created using the first template. This allows you to add material even if it's
-incomplete, and modify it or the template later to make it valid. If you don't
-wish to keep an empty note, you can remove it with the Empty Cards function.
+আপনি যখন Anki-তে একটি নতুন নোট যোগ করেন, যদি কার্ড টেমপ্লেট এবং নোট ফিল্ডগুলি একত্রিত হয়ে কোনো কার্ড তৈরি না করে, তাহলে প্রথম টেমপ্লেট ব্যবহার করে একটি খালি কার্ড তৈরি করা হবে। এটি আপনাকে অসম্পূর্ণ হলেও উপাদান যোগ করতে এবং পরবর্তীতে এটিকে বৈধ করতে বা টেমপ্লেটটি সংশোধন করতে দেয়। আপনি যদি একটি খালি নোট রাখতে না চান, তাহলে আপনি Empty Cards ফাংশন ব্যবহার করে এটি সরাতে পারেন।
 
-## Cloze Templates
+## ক্লোজ টেমপ্লেট
 
-Please see the [cloze deletion](../editing.md#cloze-deletion) section for background info.
+পটভূমি তথ্যের জন্য অনুগ্রহ করে [ক্লোজ ডিলেশন](../editing.md#cloze-deletion) বিভাগটি দেখুন।
 
-The cloze note type functions differently from regular note types.
-Instead of a customizable number of card types, it has a single type
-which is shared by all cloze deletions on a note.
+ক্লোজ নোট টাইপ নিয়মিত নোট টাইপ থেকে ভিন্নভাবে কাজ করে। কাস্টমাইজযোগ্য সংখ্যক কার্ড টাইপের পরিবর্তে, এটি একটি একক টাইপ রয়েছে যা একটি নোটে সমস্ত ক্লোজ ডিলেশন দ্বারা শেয়ার করা হয়।
 
-As mentioned in the card generation section above, generation of regular
-cards depends on one or more fields on the question being non-empty.
-Cloze deletion note types are generated differently:
+উপরে কার্ড তৈরি বিভাগে উল্লিখিত হিসাবে, নিয়মিত কার্ড তৈরি প্রশ্নের উপর এক বা একাধিক ফিল্ড খালি না থাকার উপর নির্ভর করে। ক্লোজ ডিলেশন নোট টাইপগুলি ভিন্নভাবে তৈরি হয়:
 
-- Anki looks on the front template for one or more cloze replacements,
-  like {{cloze:FieldName}}.
+- Anki সামনের টেমপ্লেটে এক বা একাধিক ক্লোজ প্রতিস্থাপন খোঁজে, যেমন {{cloze:FieldName}}।
 
-- It then looks in the FieldName field for all cloze references, like
-  {{c1::text}}.
+- তারপর এটি FieldName ফিল্ডে সমস্ত ক্লোজ রেফারেন্স খোঁজে, যেমন {{c1::text}}।
 
-- For each separate number, a card will be generated.
+- প্রতিটি পৃথক নম্বরের জন্য, একটি কার্ড তৈরি করা হবে।
 
-Because card generation functions differently for cloze deletion cards,
-{{cloze:…​}} tags can not be used with a regular note type - they
-will only function properly when used with a cloze note type.
+যেহেতু ক্লোজ ডিলেশন কার্ডগুলির জন্য কার্ড তৈরি ভিন্নভাবে কাজ করে, {{cloze:…​}} ট্যাগগুলি নিয়মিত নোট টাইপের সাথে ব্যবহার করা যায় না - এগুলি শুধুমাত্র একটি ক্লোজ নোট টাইপের সাথে ব্যবহার করা হলে সঠিকভাবে কাজ করবে।
 
-Conditional generation provides a special field so you can check which
-card you are rendering. If you wanted to display the "hint1" field on
-the first cloze, and "hint2" field on the second cloze for example, you
-could use the following template:
+শর্তসাপেক্ষ তৈরি একটি বিশেষ ফিল্ড সরবরাহ করে যাতে আপনি কোন কার্ডটি রেন্ডার করছেন তা পরীক্ষা করতে পারেন। আপনি যদি প্রথম ক্লোজে "hint1" ফিল্ড এবং দ্বিতীয় ক্লোজে "hint2" ফিল্ড প্রদর্শন করতে চান, উদাহরণস্বরূপ, আপনি নিম্নলিখিত টেমপ্লেটটি ব্যবহার করতে পারেন:
 
     {{cloze:Text}}
 

@@ -1,27 +1,22 @@
-# Field Replacements
+# ফিল্ড প্রতিস্থাপন
 
 <!-- toc -->
 
-## Basic Replacements
+## বেসিক প্রতিস্থাপন
 
-The most basic template looks something like this:
+সবচেয়ে বেসিক টেমপ্লেটটি এইরকম দেখতে হয়:
 
     {{Front}}
 
-When you place text within curly brackets, Anki looks for a field by
-that name, and replaces the text with the actual content of the field.
+যখন আপনি কোঁকড়া বন্ধনীগুলির মধ্যে টেক্সট রাখেন, তখন Anki সেই নামের একটি ফিল্ড খোঁজে এবং টেক্সটটিকে ফিল্ডের আসল বিষয়বস্তু দিয়ে প্রতিস্থাপন করে।
 
-Field names are case sensitive. If you have a field named `Front`,
-writing `{{front}}` will not work properly.
+ফিল্ডের নামগুলি কেস-সংবেদনশীল। আপনার যদি `Front` নামের একটি ফিল্ড থাকে, তাহলে `{{front}}` লিখলে সঠিকভাবে কাজ করবে না।
 
-Your templates are not limited to a list of fields. You can also include
-arbitrary text on your templates. For example, if you’re studying
-capital cities, and you’ve created a note type with a “Country” field,
-you might create a front template like this:
+আপনার টেমপ্লেটগুলি শুধুমাত্র ফিল্ডের তালিকায় সীমাবদ্ধ নয়। আপনি আপনার টেমপ্লেটে ইচ্ছামত টেক্সটও অন্তর্ভুক্ত করতে পারেন। উদাহরণস্বরূপ, আপনি যদি রাজধানীর শহরগুলি অধ্যয়ন করছেন এবং আপনি একটি "Country" ফিল্ড সহ একটি নোট টাইপ তৈরি করেছেন, তাহলে আপনি এইরকম একটি ফ্রন্ট টেমপ্লেট তৈরি করতে পারেন:
 
-    What's the capital city of {{Country}}?
+    {{Country}}-এর রাজধানীর নাম কী?
 
-The default back template will look something like this:
+ডিফল্ট ব্যাক টেমপ্লেটটি এইরকম দেখতে হবে:
 
     {{FrontSide}}
 
@@ -29,105 +24,84 @@ The default back template will look something like this:
 
     {{Back}}
 
-This means “show me the text that’s on the front side, then a divider
-line, and then the Back field”.
+এর মানে হল "আমাকে ফ্রন্ট সাইডের টেক্সটটি দেখান, তারপর একটি বিভাজক লাইন এবং তারপর Back ফিল্ডটি দেখান"।
 
-The "id=answer" part tells Anki where the divider is between the
-question and the answer. This allows Anki to automatically scroll to the
-spot where the answer starts when you press **show answer** on a long card
-(especially useful on mobile devices with small screens). If you don’t
-want a horizontal line at the beginning of the answer, you can use
-another HTML element such as a paragraph or div instead.
+"id=answer" অংশটি Anki-কে বলে দেয় যে প্রশ্ন এবং উত্তরের মধ্যে বিভাজকটি কোথায় আছে। এটি Anki-কে দীর্ঘ কার্ডে **উত্তর দেখান** চাপার সময় স্বয়ংক্রিয়ভাবে উত্তরের শুরুতে স্ক্রোল করতে দেয় (বিশেষ করে ছোট পর্দার মোবাইল ডিভাইসে উপযোগী)। আপনি যদি উত্তরের শুরুতে একটি অনুভূমিক লাইন না চান, তাহলে আপনি পরিবর্তে একটি অনুচ্ছেদ বা div-এর মতো অন্য একটি HTML উপাদান ব্যবহার করতে পারেন।
 
-## Newlines
+## নতুন লাইন
 
-Card templates are like web pages, which means a special command is required
-to create a new line. For example, if you wrote the following in the template:
+কার্ড টেমপ্লেটগুলি ওয়েব পেজের মতো, যার মানে একটি নতুন লাইন তৈরি করার জন্য একটি বিশেষ কমান্ড প্রয়োজন। উদাহরণস্বরূপ, আপনি যদি টেমপ্লেটে নিম্নলিখিতটি লেখেন:
 
-    one
-    two
+    এক
+    দুই
 
-In the preview, you’d actually see:
+প্রিভিউতে, আপনি আসলে দেখতে পাবেন:
 
-    one two
+    এক দুই
 
-To add a new line, you need to add a &lt;br&gt; code to the end of a
-line, like so:
+একটি নতুন লাইন যোগ করতে, আপনাকে একটি লাইনের শেষে একটি &lt;br&gt; কোড যোগ করতে হবে, যেমন:
 
-    one<br>
-    two
+    এক<br>
+    দুই
 
-The br code stands for "(line) br(eak)".
+br কোডটি "(লাইন) br(eak)"-এর জন্য ব্যবহৃত হয়।
 
-The same applies for fields. If you want to display two fields, one on
-each line, you would use
+একই জিনিস ফিল্ডের ক্ষেত্রেও প্রযোজ্য। আপনি যদি দুটি ফিল্ড প্রদর্শন করতে চান, প্রতিটি একটি লাইনে, তাহলে আপনি ব্যবহার করবেন:
 
     {{Field 1}}<br>
     {{Field 2}}
 
-## Text to Speech for individual fields
+## স্বতন্ত্র ফিল্ডের জন্য টেক্সট-টু-স্পিচ
 
-This feature requires Anki 2.1.20, AnkiMobile 2.0.56 or AnkiDroid 2.17.
+এই বৈশিষ্ট্যের জন্য Anki 2.1.20, AnkiMobile 2.0.56 বা AnkiDroid 2.17 প্রয়োজন।
 
-To have Anki read the Front field in a US English voice, you can place
-the following in your card template:
+Anki-কে US English ভয়েসে Front ফিল্ডটি পড়ানোর জন্য, আপনি আপনার কার্ড টেমপ্লেটে নিম্নলিখিতটি রাখতে পারেন:
 
     {{tts en_US:Front}}
 
-On Windows, macOS, and iOS, Anki will use the OS’s built-in voices. On
-Linux, no voices are built in, but voices can be provided by add-ons,
-such as [this one](https://ankiweb.net/shared/info/391644525).
+Windows, macOS এবং iOS-এ, Anki OS-এর বিল্ট-ইন ভয়েস ব্যবহার করবে। Linux-এ, কোনো ভয়েস বিল্ট-ইন নেই, তবে অ্যাড-অন দ্বারা ভয়েস সরবরাহ করা যেতে পারে, যেমন [এটি](https://ankiweb.net/shared/info/391644525)।
 
-To see a list of all available languages/voices, place the following on
-your card template:
+সমস্ত উপলব্ধ ভাষা/ভয়েসের একটি তালিকা দেখতে, আপনার কার্ড টেমপ্লেটে নিম্নলিখিতটি রাখুন:
 
     {{tts-voices:}}
 
-If there are multiple voices that support your chosen language, you can
-specify desired voices in a list, and Anki will choose the first
-available voice. For example:
+যদি আপনার নির্বাচিত ভাষাকে সমর্থন করে এমন একাধিক ভয়েস থাকে, তাহলে আপনি একটি তালিকায় পছন্দসই ভয়েসগুলি নির্দিষ্ট করতে পারেন, এবং Anki প্রথম উপলব্ধ ভয়েসটি বেছে নেবে। উদাহরণস্বরূপ:
 
     {{tts ja_JP voices=Apple_Otoya,Microsoft_Haruka:Field}}
 
-This would use Otoya when on an Apple device, and Haruka when on a
-Windows PC.
+এটি একটি Apple ডিভাইসে থাকাকালীন Otoya এবং একটি Windows PC-তে থাকাকালীন Haruka ব্যবহার করবে।
 
-Specifying a different speed is possible in some TTS implementations:
+কিছু TTS বাস্তবায়নে একটি ভিন্ন গতি নির্দিষ্ট করা সম্ভব:
 
     {{tts fr_FR speed=0.8:SomeField}}
 
-Both speed and voices are optional, but the language must be included.
+গতি এবং ভয়েস উভয়ই ঐচ্ছিক, তবে ভাষা অবশ্যই অন্তর্ভুক্ত করতে হবে।
 
-On a Mac, you can customize the available voices:
+একটি Mac-এ, আপনি উপলব্ধ ভয়েসগুলি কাস্টমাইজ করতে পারেন:
 
-- Open the System Preferences screen.
+- সিস্টেম প্রেফারেন্স স্ক্রিনটি খুলুন।
 
-- Click on Accessibility.
+- অ্যাক্সেসিবিলিটিতে ক্লিক করুন।
 
-- Click on Speech.
+- স্পিচে ক্লিক করুন।
 
-- Click on the system voice dropdown, and choose Customize.
+- সিস্টেম ভয়েস ড্রপডাউনে ক্লিক করুন এবং কাস্টমাইজ বাছুন।
 
-Some voices sound better than others, so experiment to choose the one
-you prefer. Please note that the Siri voice can only be used by Apple
-apps. Once you’ve installed new voices, you’ll need to restart Anki for
-the new voices to become available.
+কিছু ভয়েস অন্যদের চেয়ে ভাল শোনায়, তাই আপনার পছন্দেরটি বেছে নিতে পরীক্ষা করুন। দয়া করে মনে রাখবেন যে সিরি ভয়েস শুধুমাত্র Apple অ্যাপ দ্বারা ব্যবহার করা যেতে পারে। আপনি নতুন ভয়েস ইনস্টল করার পরে, নতুন ভয়েসগুলি উপলব্ধ হওয়ার জন্য আপনাকে Anki পুনরায় চালু করতে হবে।
 
-On Windows, some voices like Cortana can not be selected, as Microsoft
-does not make those voices available to other applications.
+Windows-এ, Cortana-এর মতো কিছু ভয়েস নির্বাচন করা যায় না, কারণ Microsoft সেই ভয়েসগুলিকে অন্য অ্যাপ্লিকেশনগুলির জন্য উপলব্ধ করে না।
 
-On a cloze note type, you can make Anki read only the elided sections
-using the `cloze-only` filter, like so:
+একটি ক্লোজ নোট টাইপে, আপনি `cloze-only` ফিল্টার ব্যবহার করে Anki-কে শুধুমাত্র এলইডেড বিভাগগুলি পড়াতে পারেন, যেমন:
 
     {{tts en_US:cloze-only:Text}}
 
-The cloze-only filter is supported in Anki 2.1.29+, AnkiMobile 2.0.65+, and AnkiDroid 2.17+.
+The cloze-only ফিল্টারটি Anki 2.1.29+, AnkiMobile 2.0.65+ এবং AnkiDroid 2.17+ এ সমর্থিত।
 
-## Text to Speech for multiple fields and static text
+## একাধিক ফিল্ড এবং স্ট্যাটিক টেক্সটের জন্য টেক্সট-টু-স্পিচ
 
-This feature requires Anki 2.1.50+, AnkiMobile 2.0.84+, or AnkiDroid 2.17+.
+এই বৈশিষ্ট্যের জন্য Anki 2.1.50+, AnkiMobile 2.0.84+, বা AnkiDroid 2.17+ প্রয়োজন।
 
-If you want TTS to read multiple fields or static text included in the template, you can use the following:
+আপনি যদি TTS একাধিক ফিল্ড বা টেমপ্লেটে অন্তর্ভুক্ত স্ট্যাটিক টেক্সট পড়তে চান, তাহলে আপনি নিম্নলিখিতটি ব্যবহার করতে পারেন:
 
 ```
 [anki:tts lang=en_US] This text should be read. Here is {{Field1}} and {{Field2}}[/anki:tts]
@@ -135,68 +109,46 @@ If you want TTS to read multiple fields or static text included in the template,
 This is other text on the template. It is outside of the tags so it should not be read.
 ```
 
-## Special Fields
+## বিশেষ ফিল্ড
 
-There are some special fields you can include in your templates:
+আপনার টেমপ্লেটগুলিতে আপনি কিছু বিশেষ ফিল্ড অন্তর্ভুক্ত করতে পারেন:
 
-    The note's tags: {{Tags}}
+    নোটের ট্যাগ: {{Tags}}
 
-    The type of note: {{Type}}
+    নোটের প্রকার: {{Type}}
 
-    The card's deck: {{Deck}}
+    কার্ডের ডেক: {{Deck}}
 
-    The card's subdeck: {{Subdeck}}
+    কার্ডের সাবডেক: {{Subdeck}}
 
-    The card's flag: {{CardFlag}}
+    কার্ডের পতাকা: {{CardFlag}}
 
-    The type of card ("Forward", etc): {{Card}}
+    কার্ডের প্রকার ("Forward", ইত্যাদি): {{Card}}
 
-    The content of the front template
-    (only valid in back template): {{FrontSide}}
+    ফ্রন্ট টেমপ্লেটের বিষয়বস্তু
+    (শুধুমাত্র ব্যাক টেমপ্লেটে বৈধ): {{FrontSide}}
 
-FrontSide will not automatically play any audio that was on the front side
-of the card. If you wish to have the same audio play automatically on both
-the front and back of the card, you’ll need to manually include the audio
-fields on the back as well.
+FrontSide কার্ডের ফ্রন্ট সাইডে থাকা কোনো অডিও স্বয়ংক্রিয়ভাবে প্লে করবে না। আপনি যদি কার্ডের ফ্রন্ট এবং ব্যাক উভয় দিকেই একই অডিও স্বয়ংক্রিয়ভাবে প্লে করতে চান, তাহলে আপনাকে ম্যানুয়ালি ব্যাকের অডিও ফিল্ডগুলিও অন্তর্ভুক্ত করতে হবে।
 
-As with other fields, special field names are case sensitive - you must use
-`{{Tags}}` rather than `{{tags}}` for example.
+অন্যান্য ফিল্ডের মতো, বিশেষ ফিল্ডের নামগুলিও কেস-সংবেদনশীল - আপনাকে অবশ্যই `{{Tags}}`-এর পরিবর্তে `{{tags}}` ব্যবহার করতে হবে উদাহরণস্বরূপ।
 
-## Hint Fields
+## হিন্ট ফিল্ড
 
-It’s possible to add a field to the front or back of a card, but make it
-hidden until you explicitly show it. We call this a _hint field_. Before
-adding a hint, please bear in mind that the easier you make it to answer
-a question in Anki, the less likely you are to remember that question
-when you encounter it in real life. Please have a read about the
-"minimum information principle" on
-<https://super-memory.com/articles/20rules.htm> before proceeding.
+একটি কার্ডের সামনে বা পিছনে একটি ফিল্ড যোগ করা সম্ভব, তবে আপনি স্পষ্টভাবে এটি না দেখানো পর্যন্ত এটিকে লুকিয়ে রাখা যায়। আমরা একে একটি _হিন্ট ফিল্ড_ বলি। একটি হিন্ট যোগ করার আগে, দয়া করে মনে রাখবেন যে আপনি Anki-তে একটি প্রশ্নের উত্তর দেওয়া যত সহজ করবেন, বাস্তব জীবনে সেই প্রশ্নের মুখোমুখি হলে আপনার মনে রাখার সম্ভাবনা তত কম হবে। এগিয়ে যাওয়ার আগে অনুগ্রহ করে <https://super-memory.com/articles/20rules.htm>-এ "ন্যূনতম তথ্য নীতি" সম্পর্কে পড়ুন।
 
-First, you’ll need to add a field to store the hint in if you have not
-already. Please see the [fields](../editing.md#customizing-fields) section if you’re not sure how
-to do this.
+প্রথমে, যদি আপনি এখনও না করে থাকেন তবে হিন্টটি সংরক্ষণ করার জন্য আপনাকে একটি ফিল্ড যোগ করতে হবে। আপনি যদি এটি কীভাবে করতে হয় তা নিশ্চিত না হন তবে অনুগ্রহ করে [ফিল্ড](../editing.md#customizing-fields) বিভাগটি দেখুন।
 
-Assuming you’ve created a field called MyField, you can tell Anki to
-include it on the card but hide it by default by adding the following to
-your template:
+ধরা যাক আপনি MyField নামে একটি ফিল্ড তৈরি করেছেন, আপনি Anki-কে কার্ডে এটি অন্তর্ভুক্ত করতে বলতে পারেন তবে ডিফল্টরূপে এটি লুকাতে আপনার টেমপ্লেটে নিম্নলিখিতটি যোগ করে:
 
     {{hint:MyField}}
 
-This will show a link labeled “show hint”; when you click it, the
-content of the field will be displayed on the card. (If MyField is
-empty, nothing will be shown.)
+এটি "হিন্ট দেখান" লেবেলযুক্ত একটি লিঙ্ক দেখাবে; যখন আপনি এটিতে ক্লিক করবেন, তখন ফিল্ডের বিষয়বস্তু কার্ডে প্রদর্শিত হবে। (যদি MyField খালি থাকে, কিছুই দেখানো হবে না।)
 
-If you show the hint on the question and then reveal the answer, the
-hint will be hidden again. If you want to have the hint always revealed
-when the answer is shown, you will need to remove `{{FrontSide}}` from
-your back template and manually add the fields you wish to appear.
+আপনি যদি প্রশ্নে হিন্টটি দেখান এবং তারপরে উত্তরটি প্রকাশ করেন, হিন্টটি আবার লুকিয়ে যাবে। আপনি যদি উত্তরটি দেখানোর সময় হিন্টটি সর্বদা প্রকাশিত রাখতে চান, তাহলে আপনাকে আপনার ব্যাক টেমপ্লেট থেকে `{{FrontSide}}` সরাতে হবে এবং আপনি যে ফিল্ডগুলি উপস্থিত করতে চান তা ম্যানুয়ালি যোগ করতে হবে।
 
-It is not currently possible to use a hint field for audio — the audio
-will play regardless of whether you’ve clicked on the hint link.
+বর্তমানে অডিওর জন্য একটি হিন্ট ফিল্ড ব্যবহার করা সম্ভব নয় — আপনি হিন্ট লিঙ্কে ক্লিক করেছেন কিনা তা নির্বিশেষে অডিওটি প্লে হবে।
 
-If you want to customize the appearance or behaviour, you’ll need to
-implement the hint field yourself. We can not provide any support for
-doing so, but the following code should get you started:
+আপনি যদি চেহারা বা আচরণ কাস্টমাইজ করতে চান, তাহলে আপনাকে হিন্ট ফিল্ডটি নিজেই প্রয়োগ করতে হবে। আমরা এটি করার জন্য কোনো সমর্থন প্রদান করতে পারি না, তবে নিম্নলিখিত কোডটি আপনাকে শুরু করতে সাহায্য করবে:
 
     {{#Back}}
     <a class=hint href="#"
@@ -204,74 +156,53 @@ doing so, but the following code should get you started:
     Show Back</a><div id="hint4753594160" class=hint style="display: none">{{Back}}</div>
     {{/Back}}
 
-## Dictionary Links
+## অভিধান লিঙ্ক
 
-You can also use field replacement to create dictionary links. Imagine
-you’re studying a language and your favourite online dictionary allows
-you to search for text using a web URL like:
+আপনি অভিধান লিঙ্ক তৈরি করতে ফিল্ড প্রতিস্থাপনও ব্যবহার করতে পারেন। কল্পনা করুন আপনি একটি ভাষা অধ্যয়ন করছেন এবং আপনার প্রিয় অনলাইন অভিধান আপনাকে একটি ওয়েব URL ব্যবহার করে টেক্সট অনুসন্ধান করতে দেয় যেমন:
 
     http://example.com/search?q=myword
 
-You could add an automatic link by doing the following in your template:
+আপনি আপনার টেমপ্লেটে নিম্নলিখিতটি করে একটি স্বয়ংক্রিয় লিঙ্ক যোগ করতে পারেন:
 
     {{Expression}}
 
     <a href="http://example.com/search?q={{Expression}}">check in dictionary</a>
 
-The template above would allow you to search for each note’s expression
-by clicking on the link while reviewing. There is a caveat however, so
-please see the next section.
+উপরের টেমপ্লেটটি আপনাকে পর্যালোচনার সময় লিঙ্কে ক্লিক করে প্রতিটি নোটের এক্সপ্রেশন অনুসন্ধান করার অনুমতি দেবে। তবে একটি সতর্কতা আছে, তাই অনুগ্রহ করে পরবর্তী বিভাগটি দেখুন।
 
-## HTML Stripping
+## HTML স্ট্রিপিং
 
-Like templates, fields are stored in HTML. In the dictionary link
-example above, if the expression contained the word "myword" without any
-formatting, then the HTML would be the same: "myword". But when you
-include formatting in your fields, extra HTML is included. If "myword"
-was bolded for example, the actual HTML would be
-"&lt;b&gt;myword&lt;/b&gt;".
+টেমপ্লেটের মতো, ফিল্ডগুলিও HTML-এ সংরক্ষণ করা হয়। উপরের অভিধান লিঙ্ক উদাহরণে, যদি এক্সপ্রেশনে কোনো বিন্যাস ছাড়াই "myword" শব্দটি থাকে, তাহলে HTML একই হবে: "myword"। কিন্তু যখন আপনি আপনার ফিল্ডে বিন্যাস অন্তর্ভুক্ত করেন, তখন অতিরিক্ত HTML অন্তর্ভুক্ত হয়। উদাহরণস্বরূপ, যদি "myword" বোল্ড করা হয়, তাহলে আসল HTML হবে "&lt;b&gt;myword&lt;/b&gt;"।
 
-This can present a problem for things like dictionary links. In the
-above example, the dictionary link would end up being:
+এটি অভিধান লিঙ্কের মতো জিনিসগুলির জন্য একটি সমস্যা তৈরি করতে পারে। উপরের উদাহরণে, অভিধান লিঙ্কটি শেষ পর্যন্ত হবে:
 
     <a href="http://example.com/search?q=<b>myword</b>">check in dictionary</a>
 
-The extra characters in the link would likely confuse the dictionary
-site, and you’re likely not to get any matches.
+লিঙ্কে অতিরিক্ত অক্ষরগুলি সম্ভবত অভিধান সাইটটিকে বিভ্রান্ত করবে, এবং আপনার সম্ভবত কোনো মিল খুঁজে পাওয়ার সম্ভাবনা নেই।
 
-To solve this, Anki provides the ability to strip formatting from fields
-when they are replaced. If you prefix a field name with text:, Anki will
-not include any formatting. So a dictionary link that worked even with
-formatted text would be:
+এটি সমাধান করার জন্য, Anki ফিল্ডগুলি প্রতিস্থাপন করার সময় ফর্ম্যাটিং স্ট্রিপ করার ক্ষমতা প্রদান করে। আপনি যদি একটি ফিল্ডের নামের আগে text: উপসর্গ যোগ করেন, Anki কোনো ফর্ম্যাটিং অন্তর্ভুক্ত করবে না। তাই একটি অভিধান লিঙ্ক যা ফর্ম্যাটেড টেক্সটের সাথেও কাজ করবে তা হল:
 
     <a href="http://example.com/search?q={{text:Expression}}">check in dictionary</a>
 
-## Right To Left Text
+## ডান থেকে বামে টেক্সট
 
-If you’re using a language that reads from right to left, you’ll need
-to adjust the template like so:
+আপনি যদি এমন একটি ভাষা ব্যবহার করেন যা ডান থেকে বামে পড়া হয়, তাহলে আপনাকে টেমপ্লেটটি এইভাবে সামঞ্জস্য করতে হবে:
 
     <div dir=rtl>{{FieldThatHasRTLTextInIt}}</div>
 
-## Ruby Characters
+## রুবি অক্ষর
 
-Some languages commonly use annotations above the text to display the
-pronunciation of characters. These annotations are known as
-[ruby characters](https://en.wikipedia.org/wiki/Ruby_character).
-In Japanese, these are known as [furigana](https://en.wikipedia.org/wiki/Furigana).
+কিছু ভাষা সাধারণত অক্ষরের উচ্চারণ প্রদর্শনের জন্য টেক্সটের উপরে টীকা ব্যবহার করে। এই টীকাগুলি [রুবি অক্ষর](https://en.wikipedia.org/wiki/Ruby_character) হিসাবে পরিচিত। জাপানিতে, এগুলি [ফুরিগানা](https://en.wikipedia.org/wiki/Furigana) হিসাবে পরিচিত।
 
-In Anki, you can display ruby characters by using the following syntax:
+Anki-তে, আপনি নিম্নলিখিত সিনট্যাক্স ব্যবহার করে রুবি অক্ষর প্রদর্শন করতে পারেন:
 
     Text[Ruby]
 
-Suppose the text above is written in MyField. By default, if you simply use
-`{{Myfield}}`, the field will be displayed as is. To properly position the
-ruby characters above the text, use the `furigana` filter in the templates
-like so:
+ধরুন উপরের টেক্সটটি MyField-এ লেখা আছে। ডিফল্টরূপে, আপনি যদি কেবল `{{Myfield}}` ব্যবহার করেন, ফিল্ডটি যেমন আছে তেমনই প্রদর্শিত হবে। টেক্সটের উপরে রুবি অক্ষরগুলি সঠিকভাবে স্থাপন করতে, টেমপ্লেটগুলিতে `furigana` ফিল্টারটি এইভাবে ব্যবহার করুন:
 
     {{furigana:MyField}}
 
-Here are some examples:
+এখানে কিছু উদাহরণ দেওয়া হল:
 
 <!-- prettier-ignore -->
 | Raw Text            | Rendered Text                                                                             |
@@ -281,17 +212,11 @@ Here are some examples:
 | `世[よ]の 中[なか]` | <ruby><rb>世</rb><rt>よ</rt></ruby>の<ruby><rb>中</rb><rt>なか</rt></ruby>                |
 | `世[よ]の中[なか]`  | <ruby><rb>世</rb><rt>よ</rt></ruby><ruby><rb>の中</rb><rt>なか</rt></ruby> _(incorrect!)_ |
 
-Notice how the third example has a space before the 中 character. This is
-necessary to specify that the ruby text applies only to that character.
-If there was no space, the ruby text will be misplaced above the の character,
-as shown in the fourth example.
+লক্ষ্য করুন কিভাবে তৃতীয় উদাহরণে 中 অক্ষরের আগে একটি স্পেস আছে। এটি নির্দিষ্ট করার জন্য প্রয়োজনীয় যে রুবি টেক্সট শুধুমাত্র সেই অক্ষরের জন্য প্রযোজ্য। যদি কোনো স্পেস না থাকত, রুবি টেক্সটটি の অক্ষরের উপরে ভুলভাবে স্থাপন করা হবে, যেমনটি চতুর্থ উদাহরণে দেখানো হয়েছে।
 
-### Additional Ruby Character Filters
+### অতিরিক্ত রুবি অক্ষর ফিল্টার
 
-In addition to the `furigana` filter, you can also only show certain parts
-of the ruby text, with the `kana` and `kanji` filters. The `kana` filter will
-only show the ruby text, while the `kanji` filter removes the ruby text
-entirely.
+`furigana` ফিল্টার ছাড়াও, আপনি রুবি টেক্সটের শুধুমাত্র নির্দিষ্ট অংশ দেখাতে পারেন, `kana` এবং `kanji` ফিল্টারগুলির সাথে। `kana` ফিল্টারটি শুধুমাত্র রুবি টেক্সট দেখাবে, যখন `kanji` ফিল্টার রুবি টেক্সট সম্পূর্ণভাবে সরিয়ে দেয়।
 
 <!-- prettier-ignore -->
 | Raw Text           | Field Filter           | Rendered Text                                 |
@@ -300,36 +225,27 @@ entirely.
 | `日本語[にほんご]` | `{{kana:MyField}}`     | にほんご                                      |
 | `日本語[にほんご]` | `{{kanji:MyField}}`    | 日本語                                        |
 
-These names are, again, borrowed from Japanese.
-The term [kana](https://en.wikipedia.org/wiki/Kana) represents the phonetic
-system used to describe how words are pronounced, whereas the term
-[kanji](https://en.wikipedia.org/wiki/Kanji) represents its Chinese characters.
+এই নামগুলিও জাপানি থেকে ধার করা হয়েছে। [কানা](https://en.wikipedia.org/wiki/Kana) শব্দটি শব্দগুলি কীভাবে উচ্চারিত হয় তা বর্ণনা করতে ব্যবহৃত ধ্বনিগত সিস্টেমকে প্রতিনিধিত্ব করে, যেখানে [কাঞ্জি](https://en.wikipedia.org/wiki/Kanji) শব্দটি তার চীনা অক্ষরগুলিকে প্রতিনিধিত্ব করে।
 
-## Media & LaTeX
+## মিডিয়া এবং LaTeX
 
-Anki does not scan templates for media references, because it is slow to
-do so. This has implications for including media on the template.
+Anki মিডিয়া রেফারেন্সের জন্য টেমপ্লেট স্ক্যান করে না, কারণ এটি করতে ধীর। এটি টেমপ্লেটে মিডিয়া অন্তর্ভুক্ত করার জন্য প্রভাব ফেলে।
 
-### Static Sounds/Images
+### স্ট্যাটিক সাউন্ড/ছবি
 
-If you wish to include images or sounds on your cards that are the same
-for every card (e.g. a company logo at the top of each card):
+আপনি যদি আপনার কার্ডে এমন ছবি বা শব্দ অন্তর্ভুক্ত করতে চান যা প্রতিটি কার্ডের জন্য একই (যেমন প্রতিটি কার্ডের শীর্ষে একটি কোম্পানির লোগো):
 
-1. Rename the file so it starts with an underscore, e.g "\_logo.jpg".
-   The underscore tells Anki that the file is used by the template and
-   it should be exported when sharing the deck.
+1. ফাইলটির নাম পরিবর্তন করুন যাতে এটি একটি আন্ডারস্কোর দিয়ে শুরু হয়, যেমন "_logo.jpg"। আন্ডারস্কোর Anki-কে বলে যে ফাইলটি টেমপ্লেট দ্বারা ব্যবহৃত হয় এবং ডেক শেয়ার করার সময় এটি এক্সপোর্ট করা উচিত।
 
-2. Add a reference to the media on your front or back template, like:
+2. আপনার ফ্রন্ট বা ব্যাক টেমপ্লেটে মিডিয়ার একটি রেফারেন্স যোগ করুন, যেমন:
 
 <!-- -->
 
     <img src="_logo.jpg">
 
-### Field References
+### ফিল্ড রেফারেন্স
 
-Media references to fields are not supported. They may or may not display
-during review, and will not work when checking for unused media,
-importing/exporting, and so on. Examples that won’t work:
+ফিল্ডে মিডিয়া রেফারেন্স সমর্থিত নয়। পর্যালোচনার সময় সেগুলি প্রদর্শিত হতে পারে বা নাও হতে পারে, এবং অব্যবহৃত মিডিয়া পরীক্ষা করার সময়, আমদানি/রপ্তানি করার সময় এবং আরও অনেক কিছুর সময় কাজ করবে না। যে উদাহরণগুলি কাজ করবে না:
 
     <img src="{{Expression}}.jpg">
 
@@ -337,19 +253,15 @@ importing/exporting, and so on. Examples that won’t work:
 
     [latex]{{Field 1}}[/latex]
 
-Instead, you should include the media references in the field. Please
-see the [importing section](../importing/text-files.md#importing-media) for more information.
+পরিবর্তে, আপনার ফিল্ডে মিডিয়া রেফারেন্স অন্তর্ভুক্ত করা উচিত। আরও তথ্যের জন্য অনুগ্রহ করে [আমদানি বিভাগ](../importing/text-files.md#importing-media) দেখুন।
 
-## Checking Your Answer
+## আপনার উত্তর পরীক্ষা করা
 
-You can watch [a video about this feature](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on) on
-YouTube.
+আপনি ইউটিউবে [এই বৈশিষ্ট্য সম্পর্কে একটি ভিডিও দেখতে পারেন](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)।
 
-The easiest way to check your answer is to click "Basic" at the top
-left of the card adding screen, and select "Basic (type in the answer)".
+আপনার উত্তর পরীক্ষা করার সবচেয়ে সহজ উপায় হল কার্ড যোগ করার পর্দার উপরের বাম দিকে "বেসিক" ক্লিক করা এবং "বেসিক (উত্তর টাইপ করুন)" নির্বাচন করা।
 
-If you have downloaded a shared deck and would like to type in the answer
-with it, you can modify its card template. If it has a template like:
+আপনি যদি একটি শেয়ার্ড ডেক ডাউনলোড করে থাকেন এবং এটির সাথে উত্তর টাইপ করতে চান, তাহলে আপনি তার কার্ড টেমপ্লেট পরিবর্তন করতে পারেন। যদি এটির একটি টেমপ্লেট থাকে যেমন:
 
     {{Native Word}}
 
@@ -359,70 +271,48 @@ with it, you can modify its card template. If it has a template like:
 
     {{Foreign Word}}
 
-To type in the foreign word and check if you are correct, you need to
-edit your front template so that it looks like this:
+বিদেশী শব্দটি টাইপ করতে এবং আপনি সঠিক কিনা তা পরীক্ষা করতে, আপনাকে আপনার ফ্রন্ট টেমপ্লেটটি সম্পাদনা করতে হবে যাতে এটি এইরকম দেখায়:
 
     {{Native Word}}
     {{type:Foreign Word}}
 
-Here, we have added `type:` in front of the field we want to
-compare. Since FrontSide is on the back of the card, the type answer box
-will appear on the back as well.
+এখানে, আমরা যে ফিল্ডটির সাথে তুলনা করতে চাই তার সামনে `type:` যোগ করেছি। যেহেতু FrontSide কার্ডের পিছনে রয়েছে, তাই টাইপ উত্তর বাক্সটিও পিছনে উপস্থিত হবে।
 
-When reviewing, Anki will display a text box where you can type in the
-answer, and upon hitting <kbd>Enter</kbd> or showing the answer, Anki will show you
-which parts you got right and which parts you got wrong. The text box’s
-font size will be the size you configured for that field (via the
-“Fields” button when editing).
+পর্যালোচনার সময়, Anki একটি টেক্সট বক্স প্রদর্শন করবে যেখানে আপনি উত্তর টাইপ করতে পারেন, এবং <kbd>Enter</kbd> চাপার পরে বা উত্তর দেখানোর পরে, Anki আপনাকে দেখাবে কোন অংশগুলি আপনি সঠিক পেয়েছেন এবং কোন অংশগুলি আপনি ভুল পেয়েছেন। টেক্সট বক্সের ফন্ট সাইজটি সেই ফিল্ডের জন্য আপনার কনফিগার করা সাইজ হবে ("ফিল্ডস" বোতামের মাধ্যমে সম্পাদনা করার সময়)।
 
-Note that the type answer boxes don't appear in the preview dialog or in AnkiWeb.
+মনে রাখবেন যে টাইপ উত্তর বাক্সগুলি প্রিভিউ ডায়ালগে বা AnkiWeb-এ উপস্থিত হয় না।
 
-This feature does not change how the cards are answered, so it’s still
-up to you to decide how well you remembered or not.
+এই বৈশিষ্ট্যটি কার্ডগুলির উত্তর দেওয়ার পদ্ধতি পরিবর্তন করে না, তাই আপনি কতটা ভালভাবে মনে রেখেছেন বা না রেখেছেন তা সিদ্ধান্ত নেওয়া এখনও আপনার উপর নির্ভর করে।
 
-Only one typing comparison can be used on a card. If you add the above
-text multiple times, it will not work. It also only supports a single
-line, so it is not useful for comparing against a field that is
-comprised of multiple lines.
+একটি কার্ডে শুধুমাত্র একটি টাইপিং তুলনা ব্যবহার করা যেতে পারে। আপনি যদি উপরের টেক্সটটি একাধিকবার যোগ করেন তবে এটি কাজ করবে না। এটি শুধুমাত্র একটি একক লাইন সমর্থন করে, তাই এটি একাধিক লাইন নিয়ে গঠিত একটি ফিল্ডের সাথে তুলনা করার জন্য উপযোগী নয়।
 
-Anki uses a monospaced font for the answer comparison so that the
-“provided” and “correct” sections line up. If you wish to override the
-font for the answer comparison, you can put the following at the bottom
-of your styling section:
+Anki উত্তর তুলনার জন্য একটি মনোস্পেসড ফন্ট ব্যবহার করে যাতে "প্রদত্ত" এবং "সঠিক" বিভাগগুলি সারিবদ্ধ থাকে। আপনি যদি উত্তর তুলনার জন্য ফন্টটি ওভাররাইড করতে চান, তাহলে আপনি আপনার স্টাইলিং বিভাগের নীচে নিম্নলিখিতটি রাখতে পারেন:
 
     code#typeans { font-family: "myfontname"; }
 
-Which will affect the following HTML for the answer comparison:
+যা উত্তর তুলনার জন্য নিম্নলিখিত HTML-কে প্রভাবিত করবে:
 
     <code id=typeans>...</code>
 
-Advanced users can override the default type-answer colors with the css
-classes "typeGood", "typeBad" and "typeMissed". AnkiMobile supports
-"typeGood" and "typeBad", but not "typeMissed".
+উন্নত ব্যবহারকারীরা "typeGood", "typeBad" এবং "typeMissed" সিএসএস ক্লাসগুলির সাথে ডিফল্ট টাইপ-উত্তর রঙগুলি ওভাররাইড করতে পারেন। AnkiMobile "typeGood" এবং "typeBad" সমর্থন করে, কিন্তু "typeMissed" সমর্থন করে না।
 
-If you wish to override the size of the typing box and don’t want to
-change the font in the Fields dialog, you can override the default
-inline style using `!important`, like so:
+আপনি যদি টাইপিং বক্সের সাইজ ওভাররাইড করতে চান এবং ফিল্ডস ডায়ালগে ফন্ট পরিবর্তন করতে না চান, তাহলে আপনি `!important` ব্যবহার করে ডিফল্ট ইনলাইন স্টাইল ওভাররাইড করতে পারেন, যেমন:
 
     #typeans { font-size: 50px !important; }
 
-It is also possible to type in the answer for cloze deletion cards. To
-do this, add `{{type:cloze:Text}}` to both the front and back
-template, so the back looks something like this:
+ক্লোজ ডিলেশন কার্ডের জন্য উত্তর টাইপ করাও সম্ভব। এটি করতে, ফ্রন্ট এবং ব্যাক উভয় টেমপ্লেটে `{{type:cloze:Text}}` যোগ করুন, যাতে ব্যাকটি এইরকম দেখায়:
 
     {{cloze:Text}}
     {{type:cloze:Text}}
     {{Extra}}
 
 
-If there are multiple sections elided, you can separate the answers in
-the text box with a comma.
+যদি একাধিক বিভাগ এলইড করা হয়, তাহলে আপনি কমা দিয়ে টেক্সট বক্সে উত্তরগুলি আলাদা করতে পারেন।
 
-### Ignoring Diacritics
+### ডায়াক্রিটিক্স উপেক্ষা করা
 
-If you don't want Anki to compare accents on characters in your typed input with the correct answer, you can do so by using `type:nc` in your fields.
+আপনি যদি না চান যে Anki আপনার টাইপ করা ইনপুটের অক্ষরের অ্যাকসেন্টকে সঠিক উত্তরের সাথে তুলনা করুক, তাহলে আপনি আপনার ফিল্ডে `type:nc` ব্যবহার করে তা করতে পারেন।
 
     {{type:nc:Front}}
 
-This makes sure a difference in accents isn't marked as incorrect by Anki. 
-For example, `بطيخ` would be treated the same as `بَطِّيخ` or `elite` would be treated same as `élite`.
+এটি নিশ্চিত করে যে অ্যাকসেন্টের পার্থক্য Anki দ্বারা ভুল হিসাবে চিহ্নিত করা হয় না। উদাহরণস্বরূপ, `بطيخ` কে `بَطِّيخ`-এর মতো একই হিসাবে বিবেচনা করা হবে বা `elite` কে `élite`-এর মতো একই হিসাবে বিবেচনা করা হবে।

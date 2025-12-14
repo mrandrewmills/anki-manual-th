@@ -1,54 +1,30 @@
-# Card Templates
+# কার্ড টেমপ্লেট
 
-Card templates tell Anki which fields should appear on the front and back of your card,
-and control which cards will be generated when certain fields have text in them.
-By adjusting your card templates, you can alter the design and styling of many of your
-cards at once.
+কার্ড টেমপ্লেটগুলো Anki-কে বলে দেয় যে আপনার কার্ডের সামনে এবং পিছনে কোন ফিল্ডগুলো প্রদর্শিত হবে,
+এবং নির্দিষ্ট ফিল্ডে টেক্সট থাকলে কোন কার্ডগুলো তৈরি হবে তা নিয়ন্ত্রণ করে।
+আপনার কার্ড টেমপ্লেটগুলো সামঞ্জস্য করার মাধ্যমে, আপনি আপনার অনেকগুলো কার্ডের ডিজাইন এবং স্টাইলিং
+একসাথে পরিবর্তন করতে পারেন।
 
-Card templates are covered in some of the intro videos:
+কার্ড টেমপ্লেট সম্পর্কে কিছু পরিচিতিমূলক ভিডিওতে আলোচনা করা হয়েছে:
 
-- [Switching Card Order](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)
+- [কার্ডের ক্রম পরিবর্তন](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)
 
-- [Styling Cards](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)
+- [কার্ডের স্টাইলিং](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)
 
-- [Typing in the Answer](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)
+- [উত্তরের টাইপিং](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)
 
-## The Templates Screen
+## টেমপ্লেট স্ক্রিন
 
-You can modify card templates by clicking the **Cards...** button inside the
-editing screen.
+আপনি এডিটিং স্ক্রিনের মধ্যে **Cards...** বাটনে ক্লিক করে কার্ড টেমপ্লেটগুলো পরিবর্তন করতে পারেন।
 
+আপনি <kbd>Ctrl</kbd>+<kbd>1</kbd>, <kbd>Ctrl</kbd>+<kbd>2</kbd>, এবং <kbd>Ctrl</kbd>+<kbd>3</kbd> ব্যবহার করে **Front template**, **Back template** এবং **Styling**-এর মধ্যে পরিবর্তন করতে পারেন।
 
-You can switch between **Front template**, **Back template** and **Styling** with <kbd>Ctrl</kbd>+<kbd>1</kbd>, <kbd>Ctrl</kbd>+<kbd>2</kbd>, and <kbd>Ctrl</kbd>+<kbd>3</kbd>.
+Anki-তে, টেমপ্লেটগুলো HTML-এ লেখা হয়, যা ওয়েব পেজ লেখার ভাষা। স্টাইলিং অংশটি হলো CSS, যা ওয়েব পেজের স্টাইলিংয়ের জন্য ব্যবহৃত ভাষা।
 
-In Anki, templates are written in HTML, which is the language that web
-pages are written in. The styling section is CSS, which is the language
-used for styling web pages.
+ডানদিকে বর্তমানে নির্বাচিত কার্ডের সামনে এবং পিছনের একটি প্রিভিউ দেখানো হয়। আপনি যদি নোট যোগ করার সময় উইন্ডোটি খুলে থাকেন, তাহলে প্রিভিউটি আপনি Add Notes উইন্ডোতে টাইপ করা টেক্সটের উপর ভিত্তি করে হবে। আপনি যদি কোনো নোট সম্পাদনা করার সময় উইন্ডোটি খুলে থাকেন, তাহলে প্রিভিউটি সেই নোটের বিষয়বস্তুর উপর ভিত্তি করে হবে। আপনি যদি Tools → Manage Note Types থেকে উইন্ডোটি খুলে থাকেন, তাহলে Anki বিষয়বস্তুর পরিবর্তে প্রতিটি ফিল্ডের নাম বন্ধনীর মধ্যে প্রদর্শন করবে।
 
-On the right is a preview of the front and back of the currently
-selected card. If you opened the window while adding notes, the preview
-will be based on the text you had typed into the Add Notes window. If
-you opened the window while editing a note, the preview will be based on
-the content of that note. If you opened the window from Tools → Manage
-Note Types, Anki will display each field’s name in parentheses in place
-of content.
+উইন্ডোর উপরের ডানদিকে একটি Options বাটন রয়েছে যা আপনাকে কার্ডগুলোর নাম পরিবর্তন বা পুনর্বিন্যাস করার বিকল্প দেয়, পাশাপাশি নিম্নলিখিত দুটি বিকল্পও প্রদান করে:
 
-At the top right of the window is an Options button that gives you
-options to rename or reorder the cards, as well as the following two
-options:
+- **Deck Override** বিকল্পটি আপনাকে বর্তমান কার্ড টাইপ থেকে তৈরি কার্ডগুলো কোন ডেকে রাখা হবে তা পরিবর্তন করার সুযোগ দেয়। ডিফল্টভাবে, কার্ডগুলো সেই ডেকে রাখা হয় যা আপনি Add Notes উইন্ডোতে নির্বাচন করেন। আপনি যদি এখানে একটি ডেক সেট করেন, তাহলে সেই কার্ডের ধরনটি 'অ্যাড নোটস' উইন্ডোতে তালিকাভুক্ত ডেকের পরিবর্তে আপনার নির্দিষ্ট করা ডেকে রাখা হবে। এটি তখন কার্যকর হতে পারে যখন আপনি কার্ডগুলোকে বিভিন্ন ডেকে আলাদা করতে চান (উদাহরণস্বরূপ, কোনো ভাষা শেখার সময়, প্রোডাকশন কার্ডগুলো একটি ডেকে এবং রিকগনিশন কার্ডগুলো অন্য একটি ডেকে রাখার জন্য)। কার্ডগুলো বর্তমানে কোন ডেকে যাচ্ছে তা পরীক্ষা করার জন্য আপনি আবার 'ডেক ওভাররাইড' বিকল্পটি নির্বাচন করতে পারেন।
 
-- The **Deck Override** option allows you to change the deck that cards
-  generated from the current card type will be placed into. By
-  default, cards are placed into the deck you provide in the Add Notes
-  window. If you set a deck here, that card type will be placed into
-  the deck you specified, instead of the deck listed in the Add Notes
-  window. This can be useful if you want to separate cards into
-  different decks (for instance, when studying a language, to put
-  production cards in one deck and recognition cards in another). You
-  can check which deck the cards are currently going to by choosing
-  Deck Override again.
-
-- The **Browser Appearance** option allows you to set different (perhaps
-  simplified) templates for display in the Question and Answer columns
-  of the browser; see [browser appearance](styling.md#browser-appearance) for more
-  information.
+- **ব্রাউজার অ্যাপিয়ারেন্স** বিকল্পটি আপনাকে ব্রাউজারের প্রশ্ন এবং উত্তর কলামে প্রদর্শনের জন্য বিভিন্ন (সম্ভবত সরলীকৃত) টেমপ্লেট সেট করার সুযোগ দেয়; আরও তথ্যের জন্য [ব্রাউজার অ্যাপিয়ারেন্স](styling.md#browser-appearance) দেখুন।

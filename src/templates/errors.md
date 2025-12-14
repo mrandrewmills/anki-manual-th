@@ -1,167 +1,153 @@
-# Checks and Errors
+# পরীক্ষা এবং ত্রুটি
 
 <!-- toc -->
 
-When you save changes to a note type or export a deck, Anki 2.1.45+ checks
-for some common errors. These errors will cause issues later on when anyone studies
-the affected cards, so Anki won't let you proceed before you have fixed them.
+আপনি যখন একটি নোট টাইপে পরিবর্তন সেভ করেন বা একটি ডেক এক্সপোর্ট করেন, তখন Anki 2.1.45+ কিছু সাধারণ ত্রুটি পরীক্ষা করে। এই ত্রুটিগুলো পরে সমস্যা সৃষ্টি করবে যখন কেউ প্রভাবিত কার্ডগুলো অধ্যয়ন করবে, তাই আপনি সেগুলো ঠিক না করা পর্যন্ত Anki আপনাকে সামনে এগোতে দেবে না।
 
-## Basics
+## মৌলিক বিষয়
 
-Please see [Key Concepts](../getting-started.md#key-concepts) before reading further.
+আরও পড়ার আগে অনুগ্রহ করে [মূল ধারণা](../getting-started.md#key-concepts) দেখুন।
 
-Most of the errors below will require you to modify your note type/card template. To do so:
+নীচের বেশিরভাগ ত্রুটি ঠিক করার জন্য আপনাকে আপনার নোট টাইপ/কার্ড টেমপ্লেট পরিবর্তন করতে হবে। এটি করতে:
 
-- Open the Browse screen, and look at the items on the left.
-- Locate the note type mentioned in error message. You can use the search bar at the top left
-  if necessary.
-- Click on the note type, to show its cards/notes on the right.
-- Click the Cards... button at the top of the editing area to open the [templates screen](./intro.md#the-templates-screen).
+- ব্রাউজ স্ক্রিন খুলুন এবং বাম দিকের আইটেমগুলো দেখুন।
+- ত্রুটির বার্তায় উল্লিখিত নোট টাইপটি খুঁজুন। প্রয়োজনে আপনি উপরের বাম দিকের সার্চ বারটি ব্যবহার করতে পারেন।
+- ডানদিকে এর কার্ড/নোটগুলো দেখানোর জন্য নোট টাইপটিতে ক্লিক করুন।
+- [টেমপ্লেট স্ক্রিন](./intro.md#the-templates-screen) খোলার জন্য এডিটিং এলাকার উপরের Cards... বাটনে ক্লিক করুন।
 
-## Specific Issues
+## নির্দিষ্ট সমস্যা
 
-### Template Syntax Error
+### টেমপ্লেট সিনট্যাক্স ত্রুটি
 
-This kind of error indicates an incorrect usage of the [field replacement](./fields.md)
-syntax.
+এই ধরনের ত্রুটি [ফিল্ড রিপ্লেসমেন্ট](./fields.md) সিনট্যাক্সের ভুল ব্যবহার নির্দেশ করে।
 
-You can correct mistakes on the template by opening the card templates screen:
+আপনি কার্ড টেমপ্লেট স্ক্রিন খুলে টেমপ্লেটের ভুলগুলো সংশোধন করতে পারেন:
 
-- On the computer version, edit a problem card, and then click on the Cards... button
-- On AnkiMobile, while viewing a problem card in the study screen, tap the cog/gear, then Card Template.
+- কম্পিউটার সংস্করণে, একটি সমস্যাযুক্ত কার্ড এডিট করুন এবং তারপর Cards... বাটনে ক্লিক করুন।
+- AnkiMobile-এ, স্টাডি স্ক্রিনে একটি সমস্যাযুক্ত কার্ড দেখার সময়, গিয়ার আইকনে ট্যাপ করুন, তারপর Card Template-এ যান।
 
-When you correct a mistake, it will update all cards of that type - you do not need to make the same change for every card that uses the template.
+আপনি যখন একটি ভুল সংশোধন করবেন, তখন এটি সেই ধরনের সমস্ত কার্ড আপডেট করবে - টেমপ্লেট ব্যবহারকারী প্রতিটি কার্ডের জন্য আপনাকে একই পরিবর্তন করার প্রয়োজন নেই।
 
-What needs changing will depend on the message you are getting.
+কী পরিবর্তন করতে হবে তা আপনি যে বার্তাটি পাচ্ছেন তার উপর নির্ভর করবে।
 
-**Found '{{Field}}', but there is no field called 'Field'**
+**'{{Field}}' পাওয়া গেছে, কিন্তু 'Field' নামের কোনো ফিল্ড নেই**
 
-This indicates your template includes the name of a field that doesn't exist. To fix the problem, locate the
-`{{Field}}` inside the card template, and remove it.
+এটি নির্দেশ করে যে আপনার টেমপ্লেটে এমন একটি ফিল্ডের নাম অন্তর্ভুক্ত রয়েছে যা বিদ্যমান নেই। সমস্যাটি ঠিক করতে, কার্ড টেমপ্লেটের মধ্যে `{{Field}}` খুঁজুন এবং এটি সরিয়ে ফেলুন।
 
-**Missing }} in {{Field**
+**{{Field-এ }} অনুপস্থিত**
 
-This message is shown when {{ is found in the template without a matching }}. For example, if you have
+এই বার্তাটি তখন দেখানো হয় যখন টেমপ্লেটে একটি জোড়া } ছাড়াই {{ পাওয়া যায়। উদাহরণস্বরূপ, যদি আপনার কাছে থাকে
 
 ```
 {{Field
 ```
 
-then this needs to be changed to
+তাহলে এটিকে পরিবর্তন করে করতে হবে
 
 ```
 {{Field}}
 ```
 
-**Missing {{/Field}}**
+**{{/Field}} অনুপস্থিত**
 
-This means Anki found `{{#Field}}` or `{{^Field}}` in your card template, without a matching `{{/Field}}`. Removing `{{#Field}}` or `{{^Field}}` from the template will fix the error.
+এর মানে হলো Anki আপনার কার্ড টেমপ্লেটে `{{#Field}}` বা `{{^Field}}` খুঁজে পেয়েছে, কিন্তু এর সাথে সামঞ্জস্যপূর্ণ `{{/Field}}` খুঁজে পায়নি। টেমপ্লেট থেকে `{{#Field}}` বা `{{^Field}}` সরিয়ে ফেললে ত্রুটিটি ঠিক হয়ে যাবে।
 
-**Found {{/One}}, but expected {{/Two}}**
+**{{/One}} পাওয়া গেছে, কিন্তু {{/Two}} প্রত্যাশিত ছিল**
 
-Conditional replacements need to be closed in the same order they are opened. For example, the following template is incorrect:
+শর্তসাপেক্ষ প্রতিস্থাপনগুলো যে ক্রমে খোলা হয়, সেই একই ক্রমে বন্ধ করতে হয়। উদাহরণস্বরূপ, নিম্নলিখিত টেমপ্লেটটি ভুল:
 
 ```
 {{#One}}
-  {{#Two}}
-    {{Three}}
-  {{/One}}
+{{#Two}}
+{{Three}}
+{{/One}}
 {{/Two}}
 ```
 
-To fix the problem, the template should be changed like so:
+সমস্যাটি ঠিক করতে, টেমপ্লেটটি এভাবে পরিবর্তন করতে হবে:
 
 ```
 {{#One}}
-  {{#Two}}
-    {{Three}}
-  {{/Two}}
+{{#Two}}
+{{Three}}
+{{/Two}}
 {{/One}}
 ```
 
-**Found {{/Field}}, but missing '{{#Field}}' or '{{^Field}}'**
+**{{/Field}} পাওয়া গেছে, কিন্তু '{{#Field}}' বা '{{^Field}}' অনুপস্থিত**
 
-Closing tags must be matched by opening tags. For example, the following is invalid, because there is no `{{#Two}}` or `{{^Two}}` at the start:
+ক্লোজিং ট্যাগ অবশ্যই ওপেনিং ট্যাগ দ্বারা মেলানো হতে হবে। উদাহরণস্বরূপ, নিম্নলিখিতটি অবৈধ, কারণ শুরুতে কোনো `{{#Two}}` বা `{{^Two}}` নেই:
 
 ```
-  {{Field}}
+{{Field}}
 {{/Two}}
 ```
 
-It can be fixed by removing the closing tag:
+ক্লোজিং ট্যাগটি সরিয়ে এটি ঠিক করা যেতে পারে:
 
 ```
 {{Field}}
 ```
 
-### Identical Front Sides
+### অভিন্ন সম্মুখভাগ
 
-You have Anki configured to create two identical questions for each input. This can
-happen if you add a new card type without making any adjustments to it. Identical
-cards double your workload, and make Anki's scheduling less effective.
+আপনি Anki-কে এমনভাবে কনফিগার করেছেন যে এটি প্রতিটি ইনপুটের জন্য দুটি অভিন্ন প্রশ্ন তৈরি করে। এটি ঘটতে পারে যদি আপনি কোনো নতুন কার্ড টাইপ যোগ করেন এবং তাতে কোনো পরিবর্তন না করেন। অভিন্ন কার্ড আপনার কাজের চাপ দ্বিগুণ করে এবং Anki-এর শিডিউলিংকে কম কার্যকর করে তোলে।
 
-To fix this, open the [templates screen](./intro.md#the-templates-screen), and
-select one of the duplicates at the top. Then use the button on the top right to
-remove the selected card type. This will delete all the duplicate cards/notes that
-were using the card type as well.
+এটি ঠিক করতে, [টেমপ্লেট স্ক্রিন](./intro.md#the-templates-screen) খুলুন এবং উপরের ডুপ্লিকেটগুলোর মধ্যে একটি নির্বাচন করুন। তারপর উপরের ডানদিকের বোতামটি ব্যবহার করে নির্বাচিত কার্ড টাইপটি সরিয়ে ফেলুন। এটি সেই কার্ড টাইপটি ব্যবহার করা সমস্ত ডুপ্লিকেট কার্ড/নোটগুলোও মুছে দেবে।
 
-### Front of Card is Blank
+### কার্ডের সম্মুখভাগ ফাঁকা
 
 <div id="no-field-replacement-on-front-side" />
 
-Anki displays cards by combining the fields you've entered with a
-template that says which fields should appear on the front and back of your cards. If you receive a
-message that a card has a blank front, it means either none of the fields included on your front template have any text in them, or you have fields that have text,
-but none are included on the front template.
-You can fix this problem by editing the card on the computer version, clicking on **Cards...**,
-and checking to make sure at least one field with some text on it is included on the front template.
-You can add extra fields with the Add Field button.
+Anki আপনার প্রবেশ করানো ফিল্ডগুলোকে একটি টেমপ্লেটের সাথে একত্রিত করে কার্ডগুলো প্রদর্শন করে, যা বলে দেয় কোন ফিল্ডগুলো আপনার কার্ডের সামনে এবং পিছনে প্রদর্শিত হবে। আপনি যদি এমন কোনো বার্তা পান যে একটি কার্ডের সামনের অংশটি ফাঁকা, তাহলে এর অর্থ হলো আপনার সামনের টেমপ্লেটে অন্তর্ভুক্ত কোনো ফিল্ডেই কোনো লেখা নেই, অথবা আপনার কাছে এমন ফিল্ড আছে যেগুলোতে লেখা আছে, কিন্তু সেগুলোর কোনোটিই সামনের টেমপ্লেটে অন্তর্ভুক্ত নয়।
+আপনি কম্পিউটার সংস্করণে কার্ডটি এডিট করে, **Cards...**-এ ক্লিক করে এবং নিশ্চিত হয়ে যে অন্তত একটি ফিল্ডে কিছু লেখা আছে এবং সেটি সামনের টেমপ্লেটে অন্তর্ভুক্ত আছে, এই সমস্যাটি সমাধান করতে পারেন।
+আপনি Add Field বাটন ব্যবহার করে অতিরিক্ত ফিল্ড যোগ করতে পারেন।
 
-If you are using the Cloze note type,
-please make sure you've included one or more cloze deletions in the Text field, e.g. {{c1::some cloze-deleted text}}.
+আপনি যদি ক্লোজ নোট টাইপ ব্যবহার করেন,
+তাহলে অনুগ্রহ করে নিশ্চিত করুন যে আপনি Text ফিল্ডে এক বা একাধিক ক্লোজ ডিলিশন অন্তর্ভুক্ত করেছেন, যেমন {{c1::কিছু ক্লোজ-ডিলিট করা লেখা}}।
 
-If you're using the type-in-the-answer functionality, please make sure you've included another field on the front side as well. 
+আপনি যদি টাইপ-ইন-দ্য-অ্যানসার কার্যকারিতা ব্যবহার করেন, তাহলে অনুগ্রহ করে নিশ্চিত করুন যে আপনি সামনের দিকে আরেকটি ফিল্ডও অন্তর্ভুক্ত করেছেন।
 
-### No Cloze Filter on Cloze Note Type
+### ক্লোজ নোট টাইপে কোনো ক্লোজ ফিল্টার নেই
+
 <div id="no-cloze-filter-on-cloze-notetype" />
 
-A Cloze note type's front and back templates should have a [cloze](../editing.md#cloze-deletion)
-filter. If one is missing, you will need to add it back so that Anki can create cloze cards
-correctly.
+একটি ক্লোজ নোট টাইপের সামনের এবং পিছনের টেমপ্লেটে একটি [cloze](../editing.md#cloze-deletion)
+ফিল্টার থাকা উচিত। যদি কোনোটি অনুপস্থিত থাকে, তাহলে আপনাকে এটি আবার যোগ করতে হবে যাতে Anki সঠিকভাবে ক্লোজ কার্ড তৈরি করতে পারে।
 
-#### Single empty cards
+#### একক ফাঁকা কার্ড
 
-When making clozes, each cloze number is turned into a separate card. For example, the following will create three cards:
+ক্লোজ তৈরি করার সময়, প্রতিটি ক্লোজ নম্বর একটি আলাদা কার্ডে পরিণত হয়। উদাহরণস্বরূপ, নিম্নলিখিতটি তিনটি কার্ড তৈরি করবে:
 
 ```
 {{c1::This}} is a {{c2::sample}} {{c3::sentence}}.
 ```
 
-If you later edit the text, and either remove or change a cloze number, the previously created card may become blank. For example:
+আপনি যদি পরে লেখাটি এডিট করেন এবং কোনো ক্লোজ নম্বর সরিয়ে দেন বা পরিবর্তন করেন, তাহলে পূর্বে তৈরি কার্ডটি ফাঁকা হয়ে যেতে পারে। উদাহরণস্বরূপ:
 
 ```
 {{c1::This}} is a {{c2::sample}}
 ```
 
-and
+এবং
 
 ```
-{{c1::This}} is a {{c2::sample}} {{c1::sentence}}.
+{{c1::This}} is a {{c2::sample}} {{c1::sএই দুটি পরিবর্তনই কার্ড ৩-কে ফাঁকা করে দেবে। যখন আপনি কার্ড ৩ দেখবেন, তখন আপনি একটি বার্তা দেখতে পাবেন যা নির্দেশ করবে যে কার্ডটি ফাঁকা এবং 'এমটি কার্ডস' (Empty Cards) ফাংশন ব্যবহার করে এটি পরিষ্কার করা যেতে পারে। আপনি কম্পিউটার সংস্করণের প্রধান উইন্ডোর 'টুলস' মেনুর মাধ্যমে সেই ফাংশনটি অ্যাক্সেস করতে পারেন এবং ফাঁকা কার্ডগুলি সরানোর জন্য এটি ব্যবহার করতে পারেন। অনুগ্রহ করে প্রথমে রিপোর্ট করা ফাঁকা কার্ডগুলি পরীক্ষা করুন, এবং যদি কোনো সন্দেহ থাকে, তবে এগিয়ে যাওয়ার আগে 'ফাইল > এক্সপোর্ট' মেনু আইটেম ব্যবহার করে একটি ব্যাকআপ তৈরি করুন।
+
+#### সমস্ত ক্লোজ কার্ড ফাঁকা
+
+আপনি যদি ভুলবশত আপনার কার্ড টেমপ্লেট পরিবর্তন করেন, তবে এটি কোনো ক্লোজ ডিলিটশন প্রদর্শিত হওয়া থেকে বাধা দিতে পারে। যদি এমনটি ঘটে থাকে, অনুগ্রহ করে এই ধরনের একটি সমস্যাযুক্ত কার্ড সম্পাদনা করুন এবং প্রথম ফিল্ডটির নামটি লিখে রাখুন - এটিকে সাধারণত "Text" বলা হয়। তারপর, অনুগ্রহ করে:
+
+- 'কার্ডস...' বাটনে ক্লিক করুন
+- সামনের লেখাটি প্রতিস্থাপন করুন
+
 ```
 
-are both changes that would make card 3 blank. When you view card 3, you'll see a message indicating that the card is blank, and can be cleaned up with the Empty Cards function. You can access that function via the Tools menu of the computer version's main window, and use it to remove blank cards. Please check the reported empty cards first, and if in doubt, create a backup with the File>Export menu item before proceeding.
+{{cloze:Text}}
 
-#### All cloze cards empty
+```
 
-If you accidentally modify your card template, it may prevent any cloze deletions from appearing. If that has happened, please edit one such problem card, and note down the name of the first field - it is usually called "Text". Then, please:
+- পেছনের লেখাটিও একই দিয়ে প্রতিস্থাপন করুন।
 
-- Click on the Cards... button
-- Replace the front text with
-
-  ```
-  {{cloze:Text}}
-  ```
-
-- Replace the back text with the same.
-
-If your field was called something other than Text, replace Text with the name of the field.
+যদি আপনার ফিল্ডটির নাম 'Text' ছাড়া অন্য কিছু হয়, তবে 'Text'-এর পরিবর্তে ফিল্ডটির নামটি ব্যবহার করুন।
+```

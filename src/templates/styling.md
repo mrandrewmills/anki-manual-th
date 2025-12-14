@@ -1,52 +1,34 @@
-# Styling & HTML
+# স্টাইলিং এবং HTML
 
 <!-- toc -->
 
-## Card Styling
+## কার্ড স্টাইলিং
 
-You can watch [a video about styling cards](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on) on YouTube.
-The video shows Anki 2.0’s interface, but the concepts are largely the
-same.
+আপনি ইউটিউবে [কার্ড স্টাইলিং সম্পর্কে একটি ভিডিও দেখতে পারেন](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)।
+ভিডিওটি Anki 2.0-এর ইন্টারফেস দেখায়, তবে ধারণাগুলি মূলত একই।
 
-The styling section of the Cards screen can be accessed by clicking the
-"Styling" button next to the "Back Template" button. In that section,
-you can change the background color of the card, the default font, the
-text alignment, and so on.
+কার্ড স্ক্রিনের স্টাইলিং বিভাগে "Back Template" বোতামের পাশের "Styling" বোতামে ক্লিক করে প্রবেশ করা যায়। সেই বিভাগে, আপনি কার্ডের পটভূমির রঙ, ডিফল্ট ফন্ট, পাঠ্য বিন্যাস এবং আরও অনেক কিছু পরিবর্তন করতে পারেন।
 
-The standard options available to you are:
+আপনার জন্য উপলব্ধ স্ট্যান্ডার্ড বিকল্পগুলি হল:
 
-**font-family**\
-The name of the font to use on the card. If your font has spaces in it
-like "MS Unicode", then you need to surround the font name in double
-quotes, like `font-family: "MS Unicode";`. It is also possible to use multiple fonts on
-one card; for information on that, please see below.
+**font-family**\ 
+কার্ডে ব্যবহার করার জন্য ফন্টের নাম। যদি আপনার ফন্টে "MS Unicode"-এর মতো স্পেস থাকে, তাহলে আপনাকে ফন্টের নামটি ডবল কোটেশনে আবদ্ধ করতে হবে, যেমন `font-family: "MS Unicode";`। একটি কার্ডে একাধিক ফন্ট ব্যবহার করাও সম্ভব; এই বিষয়ে তথ্যের জন্য, অনুগ্রহ করে নীচে দেখুন।
 
-**font-size**\
-The size of the font in pixels. When changing it, make sure you leave px
-at the end.
+**font-size**\ 
+পিক্সেলে ফন্টের আকার। এটি পরিবর্তন করার সময়, নিশ্চিত করুন যে আপনি শেষে px রেখেছেন।
 
-**text-align**\
-Whether the text should be aligned in the center, left, or right.
+**text-align**\ 
+পাঠ্যটি কেন্দ্রে, বামে বা ডানে সারিবদ্ধ হবে কিনা।
 
-**color**\
-The color of the text. Simple color names like "blue", "lightyellow",
-and so on will work, or you can use HTML color codes to select arbitrary
-colors. Please see [this webpage](https://htmlcolorcodes.com/) for more
-information.
+**color**\ 
+পাঠ্যের রঙ। "blue", "lightyellow" ইত্যাদির মতো সাধারণ রঙের নাম কাজ করবে, অথবা আপনি ইচ্ছামত রঙ নির্বাচন করতে HTML রঙ কোড ব্যবহার করতে পারেন। আরও তথ্যের জন্য অনুগ্রহ করে [এই ওয়েবপৃষ্ঠাটি](https://htmlcolorcodes.com/) দেখুন।
 
-**background-color**\
-The color of the card background.
+**background-color**\ 
+কার্ডের পটভূমির রঙ।
 
-Any CSS can be placed in the styling section – advanced users may wish
-to do things like add a background image or gradient, for example. If
-you’re wondering how to get some particular formatting, please search
-the web for information about how to do it in CSS, as there is a great
-deal of documentation available.
+যেকোনো CSS স্টাইলিং বিভাগে রাখা যেতে পারে – উন্নত ব্যবহারকারীরা উদাহরণস্বরূপ একটি পটভূমি চিত্র বা গ্রেডিয়েন্ট যোগ করার মতো জিনিসগুলি করতে চাইতে পারেন। আপনি যদি ভাবছেন কিভাবে কিছু নির্দিষ্ট বিন্যাস পাবেন, অনুগ্রহ করে ওয়েবে অনুসন্ধান করুন কিভাবে এটি CSS-এ করতে হয়, কারণ প্রচুর ডকুমেন্টেশন উপলব্ধ আছে।
 
-The styling is shared between all cards, which means that when you make
-an adjustment it will affect all cards for that note type. It is also
-possible to specify card-specific styling, however. The following
-example will use a yellow background on all cards except the first one:
+স্টাইলিং সমস্ত কার্ডের মধ্যে শেয়ার করা হয়, যার মানে আপনি যখন একটি সমন্বয় করেন তখন এটি সেই নোট প্রকারের সমস্ত কার্ডকে প্রভাবিত করবে। তবে, কার্ড-নির্দিষ্ট স্টাইলিং নির্দিষ্ট করাও সম্ভব। নিম্নলিখিত উদাহরণটি প্রথমটি ছাড়া সমস্ত কার্ডে একটি হলুদ পটভূমি ব্যবহার করবে:
 
 ```css
 .card {
@@ -57,11 +39,9 @@ example will use a yellow background on all cards except the first one:
 }
 ```
 
-## Image Resizing
+## চিত্র পুনরায় আকার পরিবর্তন
 
-Anki shrinks images to fit the screen by default. You can change this by adding
-the following to the bottom of your styling section (outside of the default
-`.card { ... }`):
+Anki ডিফল্টরূপে স্ক্রিনে ফিট করার জন্য চিত্রগুলিকে সঙ্কুচিত করে। আপনি আপনার স্টাইলিং বিভাগের নীচে নিম্নলিখিতটি যোগ করে এটি পরিবর্তন করতে পারেন (ডিফল্ট `.card { ... }`-এর বাইরে):
 
 ```css
 img {
@@ -70,11 +50,7 @@ img {
 }
 ```
 
-AnkiDroid sometimes has [trouble scaling images to fit the
-screen](https://github.com/ankidroid/Anki-Android/issues/3612). Setting maximum
-image dimensions using css should fix this, but seems to be ignored as of
-AnkiDroid 2.9. A fix is to append `!important` to each style directive, for
-example:
+AnkiDroid কখনও কখনও [স্ক্রিনে ফিট করার জন্য চিত্রগুলি স্কেল করতে সমস্যা](https://github.com/ankidroid/Anki-Android/issues/3612) করে। css ব্যবহার করে সর্বাধিক চিত্রের মাত্রা নির্ধারণ করা এটি ঠিক করা উচিত, তবে AnkiDroid 2.9 অনুযায়ী এটি উপেক্ষা করা হয়েছে বলে মনে হচ্ছে। একটি সমাধান হল প্রতিটি স্টাইল নির্দেশে `!important` যুক্ত করা, উদাহরণস্বরূপ:
 
 ```css
 img {
@@ -83,9 +59,7 @@ img {
 }
 ```
 
-If you try to change the style for images and find that the star that
-appears on marked cards is affected (for instance, it becomes way too
-large), you can target it with the following:
+আপনি যদি চিত্রগুলির জন্য স্টাইল পরিবর্তন করার চেষ্টা করেন এবং দেখেন যে চিহ্নিত কার্ডগুলিতে প্রদর্শিত তারকা প্রভাবিত হয়েছে (উদাহরণস্বরূপ, এটি খুব বড় হয়ে গেছে), আপনি নিম্নলিখিতটি দিয়ে এটিকে লক্ষ্য করতে পারেন:
 
 ```css
 img#star {
@@ -93,56 +67,45 @@ img#star {
 }
 ```
 
-You can explore the styling of cards interactively by using Chrome:
+আপনি Chrome ব্যবহার করে কার্ডের স্টাইলিং ইন্টারেক্টিভভাবে অন্বেষণ করতে পারেন:
 
 <https://addon-docs.ankiweb.net/porting2.0.html#webview-changes>
 
-Anki 2.1.50+ supports image resizing within the editor natively.
+Anki 2.1.50+ সম্পাদকের মধ্যে স্থানীয়ভাবে চিত্র পুনরায় আকার পরিবর্তন সমর্থন করে।
 
-## Field Styling
+## ফিল্ড স্টাইলিং
 
-The default styling applies to the whole card. You can also make certain
-fields or part of the card use a different font, color, and so on. This
-is particularly important when studying foreign languages, as Anki will
-sometimes be unable to correctly display characters unless an
-appropriate font has been chosen.
+ডিফল্ট স্টাইলিং পুরো কার্ডে প্রযোজ্য। আপনি নির্দিষ্ট ফিল্ড বা কার্ডের অংশকে একটি ভিন্ন ফন্ট, রঙ ইত্যাদি ব্যবহার করতে পারেন। এটি বিদেশী ভাষা অধ্যয়নের সময় বিশেষভাবে গুরুত্বপূর্ণ, কারণ Anki কখনও কখনও একটি উপযুক্ত ফন্ট নির্বাচন না করা হলে অক্ষরগুলি সঠিকভাবে প্রদর্শন করতে অক্ষম হবে।
 
-Say you have an “Expression” field, and you want to give it the macOS Thai
-font “Ayuthaya”. Imagine your template already reads:
+ধরুন আপনার একটি "Expression" ফিল্ড আছে, এবং আপনি এটিকে macOS থাই ফন্ট "Ayuthaya" দিতে চান। কল্পনা করুন আপনার টেমপ্লেটটি ইতিমধ্যে পড়ছে:
 
     What is {{Expression}}?
 
     {{Notes}}
 
-What we need to do is wrap the text we want to style in some HTML. We
-will put the following in front of the text:
+আমাদের যা করতে হবে তা হল আমরা যে পাঠ্যটি স্টাইল করতে চাই তা কিছু HTML-এ মোড়ানো। আমরা পাঠ্যের সামনে নিম্নলিখিতটি রাখব:
 
     <div class=mystyle1>
 
-And the following behind it:
+এবং এর পিছনে নিম্নলিখিতটি:
 
     </div>
 
-By wrapping the text like the above, we tell Anki to style the wrapped
-text with a custom style called “mystyle1”, which we will create later.
+উপরের মত পাঠ্যটি মোড়ানোর মাধ্যমে, আমরা Anki-কে "mystyle1" নামে একটি কাস্টম স্টাইল দিয়ে মোড়ানো পাঠ্যটি স্টাইল করতে বলি, যা আমরা পরে তৈরি করব।
 
-Thus if we wanted the entire “What is …​?” expression to use the Thai
-font, we would use:
+সুতরাং আমরা যদি পুরো "What is …?" এক্সপ্রেশনটি থাই ফন্ট ব্যবহার করতে চাই, আমরা ব্যবহার করব:
 
     <div class=mystyle1>What is {{Expression}}?</div>
 
     {{Notes}}
 
-And if we wanted only the expression field itself to use the Thai font,
-we’d use:
+এবং যদি আমরা শুধুমাত্র এক্সপ্রেশন ফিল্ডটি থাই ফন্ট ব্যবহার করতে চাই, আমরা ব্যবহার করব:
 
     What is <div class=mystyle1>{{Expression}}</div>?
 
     {{Notes}}
 
-After we’ve edited the template, we now need to move to the Styling
-section between the templates. Before editing it, it should look
-something like:
+আমরা টেমপ্লেটটি সম্পাদনা করার পরে, আমাদের এখন টেমপ্লেটগুলির মধ্যে স্টাইলিং বিভাগে যেতে হবে। এটি সম্পাদনা করার আগে, এটি এইরকম দেখতে হবে:
 
 ```css
 .card {
@@ -154,7 +117,7 @@ something like:
 }
 ```
 
-Add your new style to the bottom, so it looks like:
+আপনার নতুন স্টাইলটি নীচে যোগ করুন, যাতে এটি এইরকম দেখায়:
 
 ```css
 .card {
@@ -170,9 +133,7 @@ Add your new style to the bottom, so it looks like:
 }
 ```
 
-You can include any styling you want in the style. If you wanted to
-increase the font size too, you’d change the mystyle1 section to look
-like:
+আপনি স্টাইলে যেকোনো স্টাইলিং অন্তর্ভুক্ত করতে পারেন। আপনি যদি ফন্টের আকারও বাড়াতে চান, তাহলে আপনি mystyle1 বিভাগটি পরিবর্তন করে এইরকম দেখতে পাবেন:
 
 ```css
 .mystyle1 {
@@ -181,20 +142,15 @@ like:
 }
 ```
 
-It’s also possible to bundle custom fonts with your deck, so you don’t
-need to install them on your computer or mobile device. Please see the
-[installing fonts](#installing-fonts) section for more info.
+আপনার ডেকের সাথে কাস্টম ফন্ট বান্ডিল করাও সম্ভব, তাই আপনাকে সেগুলি আপনার কম্পিউটার বা মোবাইল ডিভাইসে ইনস্টল করতে হবে না। আরও তথ্যের জন্য অনুগ্রহ করে [ফন্ট ইনস্টল করা](#installing-fonts) বিভাগটি দেখুন।
 
-## Audio Replay Buttons
+## অডিও রিপ্লে বোতাম
 
-When audio or text to speech is included on your cards, Anki will show
-buttons you can click on to replay the audio.
+যখন আপনার কার্ডে অডিও বা টেক্সট টু স্পিচ অন্তর্ভুক্ত করা হয়, তখন Anki বোতাম দেখাবে যা আপনি অডিওটি পুনরায় প্লে করতে ক্লিক করতে পারেন।
 
-If you prefer not to see the buttons, you can hide them in the
-preferences screen.
+আপনি যদি বোতামগুলি দেখতে না চান, তাহলে আপনি পছন্দ স্ক্রিনে সেগুলি লুকাতে পারেন।
 
-You can customize their appearance in your card styling, for example, to
-make them smaller and colored, you could use the following:
+আপনি আপনার কার্ড স্টাইলিংয়ে তাদের চেহারা কাস্টমাইজ করতে পারেন, উদাহরণস্বরূপ, সেগুলিকে ছোট এবং রঙিন করতে, আপনি নিম্নলিখিতটি ব্যবহার করতে পারেন:
 
 ```css
 .replay-button svg {
@@ -210,10 +166,9 @@ make them smaller and colored, you could use the following:
 }
 ```
 
-## Text Direction
+## পাঠ্য দিকনির্দেশ
 
-If you use a language that is written right-to-left, such as Arabic or Hebrew,
-you can add the CSS `direction` property to the .card section for correct display during review:
+আপনি যদি আরবি বা হিব্রুর মতো ডান-থেকে-বামে লেখা ভাষা ব্যবহার করেন, তাহলে পর্যালোচনার সময় সঠিক প্রদর্শনের জন্য আপনি .card বিভাগে CSS `direction` প্রপার্টি যোগ করতে পারেন:
 
 ```css
 .card {
@@ -221,42 +176,27 @@ you can add the CSS `direction` property to the .card section for correct displa
 }
 ```
 
-This will change the direction of the entire card. You can change the direction
-of only certain fields by wrapping their references in some HTML:
+এটি পুরো কার্ডের দিক পরিবর্তন করবে। আপনি শুধুমাত্র নির্দিষ্ট ফিল্ডের দিক পরিবর্তন করতে পারেন তাদের রেফারেন্সগুলি কিছু HTML-এ মোড়ানোর মাধ্যমে:
 
     <div dir="rtl">{{Front}}</div>
 
-To change the direction of fields in the editor, please see
-the [editing](../editing.md#customizing-fields) section.
+সম্পাদকে ফিল্ডের দিক পরিবর্তন করতে, অনুগ্রহ করে [সম্পাদনা](../editing.md#customizing-fields) বিভাগটি দেখুন।
 
-## Other HTML
+## অন্যান্য HTML
 
-Your templates can contain arbitrary HTML, which means that all the
-layout possibilities used on internet web pages can also be used on your
-cards. Things like tables, lists, images, links to external pages and so
-on are all supported. With tables for example, you could change the
-layout so that the front and back of a card appear on the left and right
-instead of the top and bottom.
+আপনার টেমপ্লেটগুলিতে ইচ্ছামত HTML থাকতে পারে, যার মানে হল ইন্টারনেট ওয়েব পৃষ্ঠাগুলিতে ব্যবহৃত সমস্ত লেআউট সম্ভাবনা আপনার কার্ডগুলিতেও ব্যবহার করা যেতে পারে। টেবিল, তালিকা, চিত্র, বহিরাগত পৃষ্ঠাগুলির লিঙ্ক ইত্যাদির মতো জিনিসগুলি সবই সমর্থিত। টেবিলের সাথে উদাহরণস্বরূপ, আপনি লেআউটটি পরিবর্তন করতে পারেন যাতে একটি কার্ডের সামনে এবং পিছনে উপরে এবং নীচের পরিবর্তে বাম এবং ডানে উপস্থিত হয়।
 
-Covering all of HTML’s features is outside the scope of this manual, but
-there are plenty of good introductory guides to HTML available on the
-web if you’d like to learn more.
+HTML-এর সমস্ত বৈশিষ্ট্য কভার করা এই ম্যানুয়ালের আওতার বাইরে, তবে আপনি যদি আরও জানতে চান তবে ওয়েবে HTML-এর প্রচুর ভাল পরিচায়ক গাইড উপলব্ধ আছে।
 
-## Browser Appearance
+## ব্রাউজার চেহারা
 
-If your card templates are complex, it may be difficult to read the
-question and answer columns (called "Front" and "Back") in the [card list](../browsing.md#cardnote-table). The "browser appearance" option allows you to define a
-custom template to be used only in the browser, so you can include only
-the important fields and change the order if you desire. The syntax is
-the same as in standard card templates.
+যদি আপনার কার্ড টেমপ্লেটগুলি জটিল হয়, তাহলে [কার্ড তালিকা](../browsing.md#cardnote-table)-এ প্রশ্ন এবং উত্তর কলাম ("Front" এবং "Back" বলা হয়) পড়া কঠিন হতে পারে। "ব্রাউজার চেহারা" বিকল্পটি আপনাকে শুধুমাত্র ব্রাউজারে ব্যবহার করার জন্য একটি কাস্টম টেমপ্লেট সংজ্ঞায়িত করতে দেয়, যাতে আপনি শুধুমাত্র গুরুত্বপূর্ণ ফিল্ডগুলি অন্তর্ভুক্ত করতে পারেন এবং ইচ্ছা করলে ক্রম পরিবর্তন করতে পারেন। সিনট্যাক্সটি স্ট্যান্ডার্ড কার্ড টেমপ্লেটের মতোই।
 
-When using this option, if the text in the question column is repeated at the beginning of the answer column, Anki will display the text only in the question column. For example, if the question column text is "People in Ladakh speak", and the answer is "People in Ladakh speak Ladakhi", the answer column will only display "Ladakhi", omitting the rest.
+এই বিকল্পটি ব্যবহার করার সময়, যদি প্রশ্ন কলামের পাঠ্যটি উত্তর কলামের শুরুতে পুনরাবৃত্তি হয়, Anki শুধুমাত্র প্রশ্ন কলামে পাঠ্যটি প্রদর্শন করবে। উদাহরণস্বরূপ, যদি প্রশ্ন কলামের পাঠ্যটি "লাদাখের লোকেরা কথা বলে" হয়, এবং উত্তরটি "লাদাখের লোকেরা লাদাখি ভাষায় কথা বলে" হয়, উত্তর কলামটি শুধুমাত্র "লাদাখি" প্রদর্শন করবে, বাকিটা বাদ দিয়ে।
 
-## Platform-Specific CSS
+## প্ল্যাটফর্ম-নির্দিষ্ট CSS
 
-Anki defines some special CSS classes that allow you to define different
-styling for different platforms. The example below shows how to vary the
-font depending on where you’re reviewing:
+Anki কিছু বিশেষ CSS ক্লাস সংজ্ঞায়িত করে যা আপনাকে বিভিন্ন প্ল্যাটফর্মের জন্য বিভিন্ন স্টাইলিং সংজ্ঞায়িত করতে দেয়। নীচের উদাহরণটি দেখায় কিভাবে আপনি কোথায় পর্যালোচনা করছেন তার উপর নির্ভর করে ফন্টটি পরিবর্তন করতে পারেন:
 
 ```css
 /* Windows */
@@ -290,54 +230,39 @@ font depending on where you’re reviewing:
 }
 ```
 
-And in the template:
+এবং টেমপ্লেটে:
 
 ```html
 <div class="example">{{Field}}</div>
 ```
 
-You can also use properties like .gecko, .opera, and .ie to select
-particular browsers when using AnkiWeb. Please see
-<http://rafael.adm.br/css_browser_selector/> for a full list of options.
+AnkiWeb ব্যবহার করার সময় নির্দিষ্ট ব্রাউজার নির্বাচন করতে আপনি .gecko, .opera, এবং .ie-এর মতো বৈশিষ্ট্যগুলিও ব্যবহার করতে পারেন। বিকল্পগুলির একটি সম্পূর্ণ তালিকার জন্য অনুগ্রহ করে <http://rafael.adm.br/css_browser_selector/> দেখুন।
 
-## Installing Fonts
+## ফন্ট ইনস্টল করা
 
-You can install fonts directly to Anki. This is useful if you’re using Anki on
-a work or school computer where you don’t have permission to install new fonts,
-or if you’re using Anki on a mobile device.
+আপনি সরাসরি Anki-তে ফন্ট ইনস্টল করতে পারেন। এটি দরকারী যদি আপনি একটি কর্মক্ষেত্র বা স্কুল কম্পিউটারে Anki ব্যবহার করেন যেখানে আপনার নতুন ফন্ট ইনস্টল করার অনুমতি নেই, অথবা যদি আপনি একটি মোবাইল ডিভাইসে Anki ব্যবহার করেন।
 
-Anki supports the most widely used font formats, such as TrueType (.ttf),
-OpenType (.otf), Web Open Font Format (.woff) and others.
+Anki সবচেয়ে বহুল ব্যবহৃত ফন্ট ফরম্যাটগুলিকে সমর্থন করে, যেমন TrueType (.ttf), OpenType (.otf), Web Open Font Format (.woff) এবং অন্যান্য।
 
-### Add Font to Media Folder
+### মিডিয়া ফোল্ডারে ফন্ট যোগ করুন
 
-Once you have downloaded a supported font, such as "Arial.ttf", you have to add
-it to the media folder.
+একবার আপনি একটি সমর্থিত ফন্ট ডাউনলোড করলে, যেমন "Arial.ttf", আপনাকে এটি মিডিয়া ফোল্ডারে যোগ করতে হবে।
 
-1. Rename the file, adding an underscore at the start, so it becomes
-   like "\_arial.ttf". Adding an underscore will tell Anki that this
-   file will be used on a template, and should not be deleted when
-   checking for unused media.
+1. ফাইলটির নাম পরিবর্তন করুন, শুরুতে একটি আন্ডারস্কোর যোগ করুন, যাতে এটি "_arial.ttf"-এর মতো হয়ে যায়। একটি আন্ডারস্কোর যোগ করা Anki-কে বলবে যে এই ফাইলটি একটি টেমপ্লেটে ব্যবহার করা হবে, এবং অব্যবহৃত মিডিয়া পরীক্ষা করার সময় মুছে ফেলা উচিত নয়।
 
-2.  In your computer’s file browser, go to your Anki application data folder (see [File Locations](../files.md#file-locations) for details),
-    and then into your profile folder (e.g., "User 1").
+2. আপনার কম্পিউটারের ফাইল ব্রাউজারে, আপনার Anki অ্যাপ্লিকেশন ডেটা ফোল্ডারে যান (বিস্তারিত জানার জন্য [ফাইলের অবস্থান](../files.md#file-locations) দেখুন), এবং তারপর আপনার প্রোফাইল ফোল্ডারে (যেমন, "User 1")।
 
-3. Inside the folder, you should see a folder called collection.media.
-   Drag the renamed file to that folder.
+3. ফোল্ডারের ভিতরে, আপনি collection.media নামে একটি ফোল্ডার দেখতে পাবেন। পুনঃনামকরণ করা ফাইলটি সেই ফোল্ডারে টেনে আনুন।
 
-### Update Template to Use That Font
+### সেই ফন্ট ব্যবহার করার জন্য টেমপ্লেট আপডেট করুন
 
-After the font has been added to the media folder, you need to update the
-template.
+ফন্টটি মিডিয়া ফোল্ডারে যোগ করার পরে, আপনাকে টেমপ্লেটটি আপডেট করতে হবে।
 
-1. Click **Add** at the top of the main screen, and then select the
-   note type you want to change with the top left button.
+1. মূল স্ক্রিনের শীর্ষে **Add**-এ ক্লিক করুন, এবং তারপর উপরের বাম বোতাম দিয়ে আপনি যে নোট প্রকারটি পরিবর্তন করতে চান তা নির্বাচন করুন।
 
-2. Click **Cards**.
+2. **Cards**-এ ক্লিক করুন।
 
-3. In the styling section, add the following text to the bottom (after
-   the last "}" character), replacing "\_arial.ttf" with the name of
-   the file you copied into your media folder:
+3. স্টাইলিং বিভাগে, নীচের পাঠ্যটি নীচে যোগ করুন ("}" অক্ষরের পরে), "_arial.ttf" ಅನ್ನು আপনি আপনার মিডিয়া ফোল্ডারে অনুলিপি করা ফাইলের নামের সাথে প্রতিস্থাপন করুন:
 
 ```css
 @font-face {
@@ -346,25 +271,17 @@ template.
 }
 ```
 
-Only change the "arial" part, not the "myfont" part.
+শুধুমাত্র "arial" অংশটি পরিবর্তন করুন, "myfont" অংশটি নয়।
 
-After that, you can either change the font for the entire card, or for
-individual fields. To change the font for the entire card, simply locate
-the font-family: line in the .card section and change the font to
-"myfont". To change the font for only certain fields, please see the
-[Field Styling](#field-styling) instructions above.
+এর পরে, আপনি হয় পুরো কার্ডের জন্য ফন্ট পরিবর্তন করতে পারেন, অথবা স্বতন্ত্র ফিল্ডের জন্য। পুরো কার্ডের জন্য ফন্ট পরিবর্তন করতে, কেবল .card বিভাগে font-family: লাইনটি সনাক্ত করুন এবং ফন্টটি "myfont"-এ পরিবর্তন করুন। শুধুমাত্র নির্দিষ্ট ফিল্ডের জন্য ফন্ট পরিবর্তন করতে, অনুগ্রহ করে উপরের [ফিল্ড স্টাইলিং](#field-styling) নির্দেশাবলী দেখুন।
 
-Please make sure the filenames match exactly. If the file is called
-arial.TTF and you write arial.ttf in your card templates, it will not
-work.
+অনুগ্রহ করে নিশ্চিত করুন যে ফাইলের নামগুলি হুবহু মেলে। যদি ফাইলটির নাম arial.TTF হয় এবং আপনি আপনার কার্ড টেমপ্লেটে arial.ttf লেখেন, তবে এটি কাজ করবে না।
 
-## Night Mode
+## নাইট মোড
 
-You can customize the way templates appear when night mode is enabled in
-the preferences screen.
+আপনি পছন্দ স্ক্রিনে নাইট মোড সক্ষম করা হলে টেমপ্লেটগুলি যেভাবে উপস্থিত হয় তা কাস্টমাইজ করতে পারেন।
 
-If you wanted a lighter grey background, you could use
-something like:
+আপনি যদি একটি হালকা ধূসর পটভূমি চান, আপনি এইরকম কিছু ব্যবহার করতে পারেন:
 
 ```css
 .card.nightMode {
@@ -372,8 +289,7 @@ something like:
 }
 ```
 
-If you have a "myclass" style, the following would show the text in
-yellow when night mode is enabled:
+আপনার যদি একটি "myclass" স্টাইল থাকে, তাহলে নিম্নলিখিতটি নাইট মোড সক্ষম করা হলে পাঠ্যটি হলুদ রঙে দেখাবে:
 
 ```css
 .nightMode .myclass {
@@ -381,16 +297,11 @@ yellow when night mode is enabled:
 }
 ```
 
-## Fading and Scrolling
+## ফেইডিং এবং স্ক্রোলিং
 
-Anki will automatically scroll to the answer by default. It looks for an
-HTML element with id=answer, and scrolls to that. You can place the id
-on a different element to adjust the scrolling position, or remove the
-id=answer to turn off scrolling.
+Anki ডিফল্টরূপে স্বয়ংক্রিয়ভাবে উত্তরে স্ক্রোল করবে। এটি id=answer সহ একটি HTML উপাদান খোঁজে, এবং সেখানে স্ক্রোল করে। আপনি স্ক্রোলিং অবস্থান সামঞ্জস্য করতে একটি ভিন্ন উপাদানে id রাখতে পারেন, অথবা স্ক্রোলিং বন্ধ করতে id=answer সরাতে পারেন।
 
-The question side of a card fades in by default. If you wish to adjust
-this delay, you can place the following at the top of your front card
-template:
+একটি কার্ডের প্রশ্নের দিকটি ডিফল্টরূপে ফেইড ইন হয়। আপনি যদি এই বিলম্বটি সামঞ্জস্য করতে চান, তাহলে আপনি আপনার সামনের কার্ড টেমপ্লেটের শীর্ষে নিম্নলিখিতটি রাখতে পারেন:
 
 ```html
 <script>
@@ -399,32 +310,14 @@ template:
 </script>
 ```
 
-100 (milliseconds) is the default; set to 0 to disable fading.
+100 (মিলিসেকেন্ড) হল ডিফল্ট; ফেইডিং অক্ষম করতে 0 সেট করুন।
 
-## Javascript
+## জাভাস্ক্রিপ্ট
 
-As Anki cards are treated like web pages, it is possible to embed some
-Javascript on your cards via the card template. For a good reference
-please read [this post](https://forums.ankiweb.net/t/card-templates-user-input-101-buttons-keyboard-shortcuts-etc-guide/13756)
-in the forums.
+যেহেতু Anki কার্ডগুলিকে ওয়েব পৃষ্ঠার মতো বিবেচনা করা হয়, তাই কার্ড টেমপ্লেটের মাধ্যমে আপনার কার্ডগুলিতে কিছু জাভাস্ক্রিপ্ট এম্বেড করা সম্ভব। একটি ভাল রেফারেন্সের জন্য অনুগ্রহ করে ফোরামে [এই পোস্টটি](https://forums.ankiweb.net/t/card-templates-user-input-101-buttons-keyboard-shortcuts-etc-guide/13756) পড়ুন।
 
-Because Javascript is an advanced feature and so many things can go
-wrong, **Javascript functionality is provided without any support or
-warranty**. We can not provide any assistance with writing Javascript,
-and can not guarantee any code you have written will continue to work
-without modification in future Anki updates. If you are not comfortable
-addressing any issues you encounter on your own, then please avoid using
-Javascript.
+যেহেতু জাভাস্ক্রিপ্ট একটি উন্নত বৈশিষ্ট্য এবং অনেক কিছু ভুল হতে পারে, **জাভাস্ক্রিপ্ট কার্যকারিতা কোনো সমর্থন বা ওয়ারেন্টি ছাড়াই প্রদান করা হয়**। আমরা জাভাস্ক্রিপ্ট লেখার জন্য কোনো সহায়তা প্রদান করতে পারি না, এবং গ্যারান্টি দিতে পারি না যে আপনার লেখা কোনো কোড ভবিষ্যতে Anki আপডেটে পরিবর্তন ছাড়াই কাজ করতে থাকবে। আপনি যদি নিজের সম্মুখীন হওয়া কোনো সমস্যা সমাধান করতে স্বাচ্ছন্দ্যবোধ না করেন, তাহলে অনুগ্রহ করে জাভাস্ক্রিপ্ট ব্যবহার করা থেকে বিরত থাকুন।
 
-Each Anki client may implement card display differently, so you will
-need to test the behaviour across platforms. A number of clients are
-implemented by keeping a long running webpage and dynamically updating
-parts of it as cards are reviewed, so your Javascript will need to
-update sections of the document using things like
-document.getElementById() rather than doing things like
-document.write().
+প্রতিটি Anki ক্লায়েন্ট কার্ড প্রদর্শন ভিন্নভাবে প্রয়োগ করতে পারে, তাই আপনাকে প্ল্যাটফর্ম জুড়ে আচরণ পরীক্ষা করতে হবে। বেশ কয়েকটি ক্লায়েন্ট একটি দীর্ঘ চলমান ওয়েবপৃষ্ঠা রেখে এবং কার্ডগুলি পর্যালোচনা করার সাথে সাথে এর অংশগুলি গতিশীলভাবে আপডেট করে প্রয়োগ করা হয়, তাই আপনার জাভাস্ক্রিপ্টকে document.write()-এর মতো জিনিসগুলি করার পরিবর্তে document.getElementById()-এর মতো জিনিসগুলি ব্যবহার করে নথির বিভাগগুলি আপডেট করতে হবে।
 
-Functions like window.alert may not be available. Anki will write
-javascript errors to the terminal, so you'll need to [view the console](https://addon-docs.ankiweb.net/console-output.html#console-output) to
-see them. To debug issues with JavaScript, you can use Chrome's
-[inspector](https://addon-docs.ankiweb.net/debugging.html#webviews).
+window.alert-এর মতো ফাংশন উপলব্ধ নাও থাকতে পারে। Anki টার্মিনালে জাভাস্ক্রিপ্ট ত্রুটি লিখবে, তাই সেগুলি দেখতে আপনাকে [কনসোল দেখতে হবে](https://addon-docs.ankiweb.net/console-output.html#console-output)। জাভাস্ক্রিপ্টের সাথে সমস্যা ডিবাগ করতে, আপনি Chrome-এর [ইন্সপেক্টর](https://addon-docs.ankiweb.net/debugging.html#webviews) ব্যবহার করতে পারেন।
